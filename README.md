@@ -19,12 +19,12 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 {
   "repositories": [
     {
-      "type": "git",
-      "url": "https://github.com//.git"
+        "type": "git",
+        "url": "https://github.com/mchicherin/reepay-php-api.git"
     }
   ],
   "require": {
-    "/": "*@dev"
+    "mchicherin/reepay-php-api": "*@dev"
   }
 }
 ```
@@ -36,7 +36,7 @@ Then run `composer install`
 Download the files and include `autoload.php`:
 
 ```php
-    require_once('/path/to/SwaggerClient-php/autoload.php');
+    require_once('/path/to/code/autoload.php');
 ```
 
 ## Tests
