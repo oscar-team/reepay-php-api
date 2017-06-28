@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **createRefund**
-> \Swagger\Client\Model\InlineResponse20021 createRefund($body)
+> \Swagger\Client\Model\InlineResponse20023 createRefund($body)
 
 Create refund
 
@@ -29,7 +29,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\RefundApi();
-$body = new \Swagger\Client\Model\Body24(); // \Swagger\Client\Model\Body24 | 
+$body = new \Swagger\Client\Model\Body26(); // \Swagger\Client\Model\Body26 | 
 
 try {
     $result = $api_instance->createRefund($body);
@@ -44,11 +44,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body24**](../Model/\Swagger\Client\Model\Body24.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body26**](../Model/\Swagger\Client\Model\Body26.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20021**](../Model/InlineResponse20021.md)
+[**\Swagger\Client\Model\InlineResponse20023**](../Model/InlineResponse20023.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRefund**
-> \Swagger\Client\Model\InlineResponse20021 getRefund($id)
+> \Swagger\Client\Model\InlineResponse20023 getRefund($id)
 
 Get refund
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20021**](../Model/InlineResponse20021.md)
+[**\Swagger\Client\Model\InlineResponse20023**](../Model/InlineResponse20023.md)
 
 ### Authorization
 

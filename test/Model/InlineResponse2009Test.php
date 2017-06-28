@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * InlineResponse2009Test Class Doc Comment
  *
  * @category    Class */
-// * @description A page in a paginated charge search
+// * @description InlineResponse2009
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
@@ -83,65 +83,65 @@ class InlineResponse2009Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "page"
+     * Test attribute "token"
      */
-    public function testPropertyPage()
+    public function testPropertyToken()
     {
 
     }
 
     /**
-     * Test attribute "size"
+     * Test attribute "user"
      */
-    public function testPropertySize()
+    public function testPropertyUser()
     {
 
     }
 
     /**
-     * Test attribute "count"
+     * Test attribute "account"
      */
-    public function testPropertyCount()
+    public function testPropertyAccount()
     {
 
     }
 
     /**
-     * Test attribute "search"
+     * Test attribute "organisation"
      */
-    public function testPropertySearch()
+    public function testPropertyOrganisation()
     {
 
     }
 
     /**
-     * Test attribute "sort"
+     * Test attribute "organisations"
      */
-    public function testPropertySort()
+    public function testPropertyOrganisations()
     {
 
     }
 
     /**
-     * Test attribute "content"
+     * Test attribute "groups"
      */
-    public function testPropertyContent()
+    public function testPropertyGroups()
     {
 
     }
 
     /**
-     * Test attribute "total_elements"
+     * Test attribute "permissions"
      */
-    public function testPropertyTotalElements()
+    public function testPropertyPermissions()
     {
 
     }
 
     /**
-     * Test attribute "total_pages"
+     * Test attribute "token_ttl"
      */
-    public function testPropertyTotalPages()
+    public function testPropertyTokenTtl()
     {
 
     }

@@ -83,9 +83,9 @@ class Body11Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "subscription"
+     * Test attribute "name"
      */
-    public function testPropertySubscription()
+    public function testPropertyName()
     {
 
     }
@@ -99,25 +99,49 @@ class Body11Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "code"
      */
-    public function testPropertyAmount()
+    public function testPropertyCode()
     {
 
     }
 
     /**
-     * Test attribute "text"
+     * Test attribute "discount"
      */
-    public function testPropertyText()
+    public function testPropertyDiscount()
     {
 
     }
 
     /**
-     * Test attribute "valid_from"
+     * Test attribute "all_plans"
      */
-    public function testPropertyValidFrom()
+    public function testPropertyAllPlans()
+    {
+
+    }
+
+    /**
+     * Test attribute "eligible_plans"
+     */
+    public function testPropertyEligiblePlans()
+    {
+
+    }
+
+    /**
+     * Test attribute "max_redemptions"
+     */
+    public function testPropertyMaxRedemptions()
+    {
+
+    }
+
+    /**
+     * Test attribute "valid_until"
+     */
+    public function testPropertyValidUntil()
     {
 
     }

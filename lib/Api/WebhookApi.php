@@ -92,9 +92,9 @@ class WebhookApi
      *
      * Disable webhooks
      *
-     * @param \Swagger\Client\Model\Body47 $body  (optional)
+     * @param \Swagger\Client\Model\Body49 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20030[]
+     * @return \Swagger\Client\Model\InlineResponse20032[]
      */
     public function disableWebhooks($body = null)
     {
@@ -107,9 +107,9 @@ class WebhookApi
      *
      * Disable webhooks
      *
-     * @param \Swagger\Client\Model\Body47 $body  (optional)
+     * @param \Swagger\Client\Model\Body49 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20030[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20032[], HTTP status code, HTTP response headers (array of strings)
      */
     public function disableWebhooksWithHttpInfo($body = null)
     {
@@ -157,15 +157,15 @@ class WebhookApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20030[]',
+                '\Swagger\Client\Model\InlineResponse20032[]',
                 '/v1/webhook/disable'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20030[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20032[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20030[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20032[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -201,7 +201,7 @@ class WebhookApi
      *
      * @param string $id Webhook id or event id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20030[]
+     * @return \Swagger\Client\Model\InlineResponse20032[]
      */
     public function getWebhook($id)
     {
@@ -216,7 +216,7 @@ class WebhookApi
      *
      * @param string $id Webhook id or event id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20030[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20032[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookWithHttpInfo($id)
     {
@@ -271,15 +271,15 @@ class WebhookApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20030[]',
+                '\Swagger\Client\Model\InlineResponse20032[]',
                 '/v1/webhook/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20030[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20032[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20030[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20032[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -315,7 +315,7 @@ class WebhookApi
      *
      * @param string $id Webhook id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20031[]
+     * @return \Swagger\Client\Model\InlineResponse20033[]
      */
     public function getWebhookRequests($id)
     {
@@ -330,7 +330,7 @@ class WebhookApi
      *
      * @param string $id Webhook id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20031[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20033[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhookRequestsWithHttpInfo($id)
     {
@@ -385,15 +385,15 @@ class WebhookApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20031[]',
+                '\Swagger\Client\Model\InlineResponse20033[]',
                 '/v1/webhook/{id}/request'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20031[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20033[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20031[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20033[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -431,7 +431,7 @@ class WebhookApi
      * @param int $size Page size. A maximum of 100 is allowed. (optional, default to 100)
      * @param string $state Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60; (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20030[]
+     * @return \Swagger\Client\Model\InlineResponse20032[]
      */
     public function getWebhooks($created_before, $size = null, $state = null)
     {
@@ -448,7 +448,7 @@ class WebhookApi
      * @param int $size Page size. A maximum of 100 is allowed. (optional, default to 100)
      * @param string $state Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60; (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20030[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20032[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getWebhooksWithHttpInfo($created_before, $size = null, $state = null)
     {
@@ -514,15 +514,15 @@ class WebhookApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20030[]',
+                '\Swagger\Client\Model\InlineResponse20032[]',
                 '/v1/webhook'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20030[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20032[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20030[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20032[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -556,9 +556,9 @@ class WebhookApi
      *
      * Re-send webhooks
      *
-     * @param \Swagger\Client\Model\Body46 $body  (optional)
+     * @param \Swagger\Client\Model\Body48 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20030[]
+     * @return \Swagger\Client\Model\InlineResponse20032[]
      */
     public function resendJson($body = null)
     {
@@ -571,9 +571,9 @@ class WebhookApi
      *
      * Re-send webhooks
      *
-     * @param \Swagger\Client\Model\Body46 $body  (optional)
+     * @param \Swagger\Client\Model\Body48 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20030[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20032[], HTTP status code, HTTP response headers (array of strings)
      */
     public function resendJsonWithHttpInfo($body = null)
     {
@@ -621,15 +621,15 @@ class WebhookApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20030[]',
+                '\Swagger\Client\Model\InlineResponse20032[]',
                 '/v1/webhook/resend'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20030[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20032[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20030[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20032[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -663,9 +663,9 @@ class WebhookApi
      *
      * Update and resend webhooks
      *
-     * @param \Swagger\Client\Model\Body48 $body  (optional)
+     * @param \Swagger\Client\Model\Body50 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20030[]
+     * @return \Swagger\Client\Model\InlineResponse20032[]
      */
     public function updateWebhooks($body = null)
     {
@@ -678,9 +678,9 @@ class WebhookApi
      *
      * Update and resend webhooks
      *
-     * @param \Swagger\Client\Model\Body48 $body  (optional)
+     * @param \Swagger\Client\Model\Body50 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20030[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20032[], HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWebhooksWithHttpInfo($body = null)
     {
@@ -728,15 +728,15 @@ class WebhookApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20030[]',
+                '\Swagger\Client\Model\InlineResponse20032[]',
                 '/v1/webhook/update'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20030[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20032[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20030[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20032[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

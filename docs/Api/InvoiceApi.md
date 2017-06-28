@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **cancelAllDunningPending**
-> \Swagger\Client\Model\InlineResponse20015[] cancelAllDunningPending($handle)
+> \Swagger\Client\Model\InlineResponse20016[] cancelAllDunningPending($handle)
 
 Cancel all dunning and pending
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015[]**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\InlineResponse20016[]**](../Model/InlineResponse20016.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cancelInvoice**
-> \Swagger\Client\Model\InlineResponse20015 cancelInvoice($id)
+> \Swagger\Client\Model\InlineResponse20016 cancelInvoice($id)
 
 Cancel invoice
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cancelSettleLater**
-> \Swagger\Client\Model\InlineResponse20015 cancelSettleLater($id)
+> \Swagger\Client\Model\InlineResponse20016 cancelSettleLater($id)
 
 Cancel settle later
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cancelTransaction**
-> \Swagger\Client\Model\InlineResponse20015Transactions cancelTransaction($id, $transaction)
+> \Swagger\Client\Model\InlineResponse20016Transactions cancelTransaction($id, $transaction)
 
 Cancel transaction
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015Transactions**](../Model/InlineResponse20015Transactions.md)
+[**\Swagger\Client\Model\InlineResponse20016Transactions**](../Model/InlineResponse20016Transactions.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **detachFromSubscription**
-> \Swagger\Client\Model\InlineResponse20015 detachFromSubscription($id)
+> \Swagger\Client\Model\InlineResponse20016 detachFromSubscription($id)
 
 Detach from subscription
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInvoice**
-> \Swagger\Client\Model\InlineResponse20015 getInvoice($id)
+> \Swagger\Client\Model\InlineResponse20016 getInvoice($id)
 
 Get invoice
 
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInvoices**
-> \Swagger\Client\Model\InlineResponse20020 getInvoices($page, $size, $search, $sort)
+> \Swagger\Client\Model\InlineResponse20021 getInvoices($page, $size, $search, $sort)
 
 Get list of invoices
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20020**](../Model/InlineResponse20020.md)
+[**\Swagger\Client\Model\InlineResponse20021**](../Model/InlineResponse20021.md)
 
 ### Authorization
 
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **manualSettle**
-> \Swagger\Client\Model\InlineResponse20015 manualSettle($id, $body)
+> \Swagger\Client\Model\InlineResponse20016 manualSettle($id, $body)
 
 Manual settle
 
@@ -420,7 +420,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\InvoiceApi();
 $id = "id_example"; // string | Invoice id or handle
-$body = new \Swagger\Client\Model\Body21(); // \Swagger\Client\Model\Body21 | 
+$body = new \Swagger\Client\Model\Body23(); // \Swagger\Client\Model\Body23 | 
 
 try {
     $result = $api_instance->manualSettle($id, $body);
@@ -436,11 +436,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Invoice id or handle |
- **body** | [**\Swagger\Client\Model\Body21**](../Model/\Swagger\Client\Model\Body21.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body23**](../Model/\Swagger\Client\Model\Body23.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **reactivateInvoice**
-> \Swagger\Client\Model\InlineResponse20015 reactivateInvoice($id)
+> \Swagger\Client\Model\InlineResponse20016 reactivateInvoice($id)
 
 Reactivate invoice
 
@@ -493,7 +493,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **settle**
-> \Swagger\Client\Model\InlineResponse20015 settle($id, $body)
+> \Swagger\Client\Model\InlineResponse20016 settle($id, $body)
 
 Settle
 
@@ -528,7 +528,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\InvoiceApi();
 $id = "id_example"; // string | Invoice id or handle
-$body = new \Swagger\Client\Model\Body22(); // \Swagger\Client\Model\Body22 | 
+$body = new \Swagger\Client\Model\Body24(); // \Swagger\Client\Model\Body24 | 
 
 try {
     $result = $api_instance->settle($id, $body);
@@ -544,11 +544,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Invoice id or handle |
- **body** | [**\Swagger\Client\Model\Body22**](../Model/\Swagger\Client\Model\Body22.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body24**](../Model/\Swagger\Client\Model\Body24.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **transaction**
-> \Swagger\Client\Model\InlineResponse20015Transactions transaction($id, $transaction)
+> \Swagger\Client\Model\InlineResponse20016Transactions transaction($id, $transaction)
 
 Get transaction
 
@@ -603,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015Transactions**](../Model/InlineResponse20015Transactions.md)
+[**\Swagger\Client\Model\InlineResponse20016Transactions**](../Model/InlineResponse20016Transactions.md)
 
 ### Authorization
 
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **transactionList**
-> \Swagger\Client\Model\InlineResponse20019 transactionList($id, $page, $size, $search, $sort)
+> \Swagger\Client\Model\InlineResponse20022 transactionList($id, $page, $size, $search, $sort)
 
 Get transaction list
 
@@ -719,7 +719,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
+[**\Swagger\Client\Model\InlineResponse20022**](../Model/InlineResponse20022.md)
 
 ### Authorization
 

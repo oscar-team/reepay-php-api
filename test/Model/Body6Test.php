@@ -83,17 +83,57 @@ class Body6Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "card_types"
+     * Test attribute "subscription"
      */
-    public function testPropertyCardTypes()
+    public function testPropertySubscription()
     {
 
     }
 
     /**
-     * Test attribute "provider_settings"
+     * Test attribute "handle"
      */
-    public function testPropertyProviderSettings()
+    public function testPropertyHandle()
+    {
+
+    }
+
+    /**
+     * Test attribute "ordertext"
+     */
+    public function testPropertyOrdertext()
+    {
+
+    }
+
+    /**
+     * Test attribute "quantity"
+     */
+    public function testPropertyQuantity()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "vat"
+     */
+    public function testPropertyVat()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount_incl_vat"
+     */
+    public function testPropertyAmountInclVat()
     {
 
     }

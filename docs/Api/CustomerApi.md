@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **activatePaymentMethod**
-> \Swagger\Client\Model\InlineResponse20014 activatePaymentMethod($handle, $method_id)
+> \Swagger\Client\Model\InlineResponse20015 activatePaymentMethod($handle, $method_id)
 
 Activate payment method
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addCardJson**
-> \Swagger\Client\Model\InlineResponse20014Cards addCardJson($handle, $body)
+> \Swagger\Client\Model\InlineResponse20015Cards addCardJson($handle, $body)
 
 Add card payment method
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20014Cards**](../Model/InlineResponse20014Cards.md)
+[**\Swagger\Client\Model\InlineResponse20015Cards**](../Model/InlineResponse20015Cards.md)
 
 ### Authorization
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCustomerInvoice**
-> \Swagger\Client\Model\InlineResponse20015 createCustomerInvoice($handle, $body)
+> \Swagger\Client\Model\InlineResponse20016 createCustomerInvoice($handle, $body)
 
 Create invoice for customer
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
 
 ### Authorization
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCustomerJson**
-> \Swagger\Client\Model\InlineResponse20012Content createCustomerJson($body)
+> \Swagger\Client\Model\InlineResponse20017Content createCustomerJson($body)
 
 Create customer
 
@@ -208,7 +208,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\CustomerApi();
-$body = new \Swagger\Client\Model\Body12(); // \Swagger\Client\Model\Body12 | 
+$body = new \Swagger\Client\Model\Body18(); // \Swagger\Client\Model\Body18 | 
 
 try {
     $result = $api_instance->createCustomerJson($body);
@@ -223,11 +223,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body12**](../Model/\Swagger\Client\Model\Body12.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body18**](../Model/\Swagger\Client\Model\Body18.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20012Content**](../Model/InlineResponse20012Content.md)
+[**\Swagger\Client\Model\InlineResponse20017Content**](../Model/InlineResponse20017Content.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCustomerNoteJson**
-> \Swagger\Client\Model\InlineResponse20013 createCustomerNoteJson($handle, $body)
+> \Swagger\Client\Model\InlineResponse20014 createCustomerNoteJson($handle, $body)
 
 Create customer note
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\Swagger\Client\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
 
 ### Authorization
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteCustomer**
-> \Swagger\Client\Model\InlineResponse20012Content deleteCustomer($handle)
+> \Swagger\Client\Model\InlineResponse20017Content deleteCustomer($handle)
 
 Delete customer
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20012Content**](../Model/InlineResponse20012Content.md)
+[**\Swagger\Client\Model\InlineResponse20017Content**](../Model/InlineResponse20017Content.md)
 
 ### Authorization
 
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCard**
-> \Swagger\Client\Model\InlineResponse20014Cards getCard($handle, $id)
+> \Swagger\Client\Model\InlineResponse20015Cards getCard($handle, $id)
 
 Get card
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20014Cards**](../Model/InlineResponse20014Cards.md)
+[**\Swagger\Client\Model\InlineResponse20015Cards**](../Model/InlineResponse20015Cards.md)
 
 ### Authorization
 
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomer**
-> \Swagger\Client\Model\InlineResponse20012Content getCustomer($handle)
+> \Swagger\Client\Model\InlineResponse20017Content getCustomer($handle)
 
 Get customer
 
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20012Content**](../Model/InlineResponse20012Content.md)
+[**\Swagger\Client\Model\InlineResponse20017Content**](../Model/InlineResponse20017Content.md)
 
 ### Authorization
 
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomerNotes**
-> \Swagger\Client\Model\InlineResponse20013[] getCustomerNotes($handle)
+> \Swagger\Client\Model\InlineResponse20014[] getCustomerNotes($handle)
 
 Get customer notes
 
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20013[]**](../Model/InlineResponse20013.md)
+[**\Swagger\Client\Model\InlineResponse20014[]**](../Model/InlineResponse20014.md)
 
 ### Authorization
 
@@ -565,7 +565,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomerPaymentMethods**
-> \Swagger\Client\Model\InlineResponse20014 getCustomerPaymentMethods($handle, $only_active)
+> \Swagger\Client\Model\InlineResponse20015 getCustomerPaymentMethods($handle, $only_active)
 
 Get payment methods
 
@@ -606,7 +606,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
 
 ### Authorization
 
@@ -620,7 +620,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomers**
-> \Swagger\Client\Model\InlineResponse20012 getCustomers($page, $size, $search, $sort)
+> \Swagger\Client\Model\InlineResponse20017 getCustomers($page, $size, $search, $sort)
 
 Get list of customers
 
@@ -665,7 +665,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
+[**\Swagger\Client\Model\InlineResponse20017**](../Model/InlineResponse20017.md)
 
 ### Authorization
 
@@ -679,7 +679,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **importCardJson**
-> \Swagger\Client\Model\InlineResponse20014Cards importCardJson($handle, $body)
+> \Swagger\Client\Model\InlineResponse20015Cards importCardJson($handle, $body)
 
 Import card payment method
 
@@ -720,7 +720,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20014Cards**](../Model/InlineResponse20014Cards.md)
+[**\Swagger\Client\Model\InlineResponse20015Cards**](../Model/InlineResponse20015Cards.md)
 
 ### Authorization
 
@@ -734,7 +734,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **inactivatePaymentMethod**
-> \Swagger\Client\Model\InlineResponse20014 inactivatePaymentMethod($handle, $method_id)
+> \Swagger\Client\Model\InlineResponse20015 inactivatePaymentMethod($handle, $method_id)
 
 Inactivate payment method
 
@@ -775,7 +775,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
 
 ### Authorization
 
@@ -789,7 +789,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **reactivateCard**
-> \Swagger\Client\Model\InlineResponse20014Cards reactivateCard($handle, $card_id)
+> \Swagger\Client\Model\InlineResponse20015Cards reactivateCard($handle, $card_id)
 
 Reactivate failed card
 
@@ -830,7 +830,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20014Cards**](../Model/InlineResponse20014Cards.md)
+[**\Swagger\Client\Model\InlineResponse20015Cards**](../Model/InlineResponse20015Cards.md)
 
 ### Authorization
 
@@ -844,7 +844,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCustomerJson**
-> \Swagger\Client\Model\InlineResponse20012Content updateCustomerJson($handle, $body)
+> \Swagger\Client\Model\InlineResponse20017Content updateCustomerJson($handle, $body)
 
 Update customer
 
@@ -865,7 +865,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\CustomerApi();
 $handle = "handle_example"; // string | Customer handle
-$body = new \Swagger\Client\Model\Body13(); // \Swagger\Client\Model\Body13 | 
+$body = new \Swagger\Client\Model\Body19(); // \Swagger\Client\Model\Body19 | 
 
 try {
     $result = $api_instance->updateCustomerJson($handle, $body);
@@ -881,11 +881,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Customer handle |
- **body** | [**\Swagger\Client\Model\Body13**](../Model/\Swagger\Client\Model\Body13.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body19**](../Model/\Swagger\Client\Model\Body19.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20012Content**](../Model/InlineResponse20012Content.md)
+[**\Swagger\Client\Model\InlineResponse20017Content**](../Model/InlineResponse20017Content.md)
 
 ### Authorization
 

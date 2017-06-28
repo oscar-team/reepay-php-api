@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * InlineResponse20010Test Class Doc Comment
  *
  * @category    Class */
-// * @description A page in a paginated coupon search
+// * @description InlineResponse20010
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
@@ -83,65 +83,17 @@ class InlineResponse20010Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "page"
+     * Test attribute "token"
      */
-    public function testPropertyPage()
+    public function testPropertyToken()
     {
 
     }
 
     /**
-     * Test attribute "size"
+     * Test attribute "token_ttl"
      */
-    public function testPropertySize()
-    {
-
-    }
-
-    /**
-     * Test attribute "count"
-     */
-    public function testPropertyCount()
-    {
-
-    }
-
-    /**
-     * Test attribute "search"
-     */
-    public function testPropertySearch()
-    {
-
-    }
-
-    /**
-     * Test attribute "sort"
-     */
-    public function testPropertySort()
-    {
-
-    }
-
-    /**
-     * Test attribute "content"
-     */
-    public function testPropertyContent()
-    {
-
-    }
-
-    /**
-     * Test attribute "total_elements"
-     */
-    public function testPropertyTotalElements()
-    {
-
-    }
-
-    /**
-     * Test attribute "total_pages"
-     */
-    public function testPropertyTotalPages()
+    public function testPropertyTokenTtl()
     {
 
     }

@@ -54,7 +54,6 @@ class Body42 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'email' => 'string',
         'groups' => 'string[]'
     ];
 
@@ -68,7 +67,6 @@ class Body42 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'email' => 'email',
         'groups' => 'groups'
     ];
 
@@ -78,7 +76,6 @@ class Body42 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'email' => 'setEmail',
         'groups' => 'setGroups'
     ];
 
@@ -88,7 +85,6 @@ class Body42 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'email' => 'getEmail',
         'groups' => 'getGroups'
     ];
 
@@ -123,7 +119,6 @@ class Body42 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['groups'] = isset($data['groups']) ? $data['groups'] : null;
     }
 
@@ -136,9 +131,6 @@ class Body42 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['email'] === null) {
-            $invalid_properties[] = "'email' can't be null";
-        }
         if ($this->container['groups'] === null) {
             $invalid_properties[] = "'groups' can't be null";
         }
@@ -154,36 +146,12 @@ class Body42 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['email'] === null) {
-            return false;
-        }
         if ($this->container['groups'] === null) {
             return false;
         }
         return true;
     }
 
-
-    /**
-     * Gets email
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     * @param string $email User email
-     * @return $this
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
 
     /**
      * Gets groups

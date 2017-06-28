@@ -72,7 +72,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUser**
-> \Swagger\Client\Model\InlineResponse20029 getUser($id)
+> \Swagger\Client\Model\InlineResponse20031 getUser($id)
 
 Get user
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
+[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUsers**
-> \Swagger\Client\Model\InlineResponse20029[] getUsers()
+> \Swagger\Client\Model\InlineResponse20031[] getUsers()
 
 Get users
 
@@ -160,7 +160,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20029[]**](../Model/InlineResponse20029.md)
+[**\Swagger\Client\Model\InlineResponse20031[]**](../Model/InlineResponse20031.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **inviteUser**
-> \Swagger\Client\Model\InlineResponse20029 inviteUser($body)
+> \Swagger\Client\Model\InlineResponse20031 inviteUser($body)
 
 Invite user
 
@@ -194,7 +194,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\UserApi();
-$body = new \Swagger\Client\Model\Body42(); // \Swagger\Client\Model\Body42 | 
+$body = new \Swagger\Client\Model\Body43(); // \Swagger\Client\Model\Body43 | 
 
 try {
     $result = $api_instance->inviteUser($body);
@@ -209,11 +209,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body42**](../Model/\Swagger\Client\Model\Body42.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body43**](../Model/\Swagger\Client\Model\Body43.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
+[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **inviteUserAccept**
-> \Swagger\Client\Model\InlineResponse20029 inviteUserAccept($token, $body)
+> \Swagger\Client\Model\InlineResponse20031 inviteUserAccept($token, $body)
 
 Accept invite
 
@@ -240,7 +240,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\UserApi();
 $token = "token_example"; // string | Invite token
-$body = new \Swagger\Client\Model\Body43(); // \Swagger\Client\Model\Body43 | 
+$body = new \Swagger\Client\Model\Body44(); // \Swagger\Client\Model\Body44 | 
 
 try {
     $result = $api_instance->inviteUserAccept($token, $body);
@@ -256,11 +256,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**| Invite token |
- **body** | [**\Swagger\Client\Model\Body43**](../Model/\Swagger\Client\Model\Body43.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body44**](../Model/\Swagger\Client\Model\Body44.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
+[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
 
 ### Authorization
 
@@ -274,7 +274,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **inviteUserGet**
-> \Swagger\Client\Model\InlineResponse20029 inviteUserGet($token)
+> \Swagger\Client\Model\InlineResponse20031 inviteUserGet($token)
 
 Get invite
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
+[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
 
 ### Authorization
 
@@ -331,7 +331,7 @@ Reset password request
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\UserApi();
-$body = new \Swagger\Client\Model\Body44(); // \Swagger\Client\Model\Body44 | 
+$body = new \Swagger\Client\Model\Body45(); // \Swagger\Client\Model\Body45 | 
 
 try {
     $api_instance->resetPassword($body);
@@ -345,7 +345,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body44**](../Model/\Swagger\Client\Model\Body44.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body45**](../Model/\Swagger\Client\Model\Body45.md)|  | [optional]
 
 ### Return type
 
@@ -363,7 +363,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **resetPasswordWithToken**
-> \Swagger\Client\Model\InlineResponse2008User resetPasswordWithToken($token, $body)
+> \Swagger\Client\Model\InlineResponse2009User resetPasswordWithToken($token, $body)
 
 Reset password
 
@@ -376,7 +376,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\UserApi();
 $token = "token_example"; // string | Reset password token
-$body = new \Swagger\Client\Model\Body45(); // \Swagger\Client\Model\Body45 | 
+$body = new \Swagger\Client\Model\Body46(); // \Swagger\Client\Model\Body46 | 
 
 try {
     $result = $api_instance->resetPasswordWithToken($token, $body);
@@ -392,11 +392,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**| Reset password token |
- **body** | [**\Swagger\Client\Model\Body45**](../Model/\Swagger\Client\Model\Body45.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body46**](../Model/\Swagger\Client\Model\Body46.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2008User**](../Model/InlineResponse2008User.md)
+[**\Swagger\Client\Model\InlineResponse2009User**](../Model/InlineResponse2009User.md)
 
 ### Authorization
 
@@ -410,9 +410,119 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAuth**
-> \Swagger\Client\Model\InlineResponse20029 updateAuth($id, $body)
+> \Swagger\Client\Model\InlineResponse20031 updateAuth($id, $body)
 
 Update user groups
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: apiKey
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Configure HTTP basic authorization: basicAuth
+Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+
+$api_instance = new Swagger\Client\Api\UserApi();
+$id = "id_example"; // string | User id
+$body = new \Swagger\Client\Model\Body42(); // \Swagger\Client\Model\Body42 | 
+
+try {
+    $result = $api_instance->updateAuth($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UserApi->updateAuth: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| User id |
+ **body** | [**\Swagger\Client\Model\Body42**](../Model/\Swagger\Client\Model\Body42.md)|  | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updatePassword**
+> \Swagger\Client\Model\InlineResponse20031 updatePassword($id, $body)
+
+Change password
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: apiKey
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Configure HTTP basic authorization: basicAuth
+Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+
+$api_instance = new Swagger\Client\Api\UserApi();
+$id = "id_example"; // string | User id
+$body = new \Swagger\Client\Model\Body47(); // \Swagger\Client\Model\Body47 | 
+
+try {
+    $result = $api_instance->updatePassword($id, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UserApi->updatePassword: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| User id |
+ **body** | [**\Swagger\Client\Model\Body47**](../Model/\Swagger\Client\Model\Body47.md)|  | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateUser**
+> \Swagger\Client\Model\InlineResponse20031 updateUser($id, $body)
+
+Update user
 
 
 
@@ -434,116 +544,6 @@ $id = "id_example"; // string | User id
 $body = new \Swagger\Client\Model\Body41(); // \Swagger\Client\Model\Body41 | 
 
 try {
-    $result = $api_instance->updateAuth($id, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UserApi->updateAuth: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| User id |
- **body** | [**\Swagger\Client\Model\Body41**](../Model/\Swagger\Client\Model\Body41.md)|  | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **updatePassword**
-> \Swagger\Client\Model\InlineResponse20029 updatePassword($id, $body)
-
-Change password
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$api_instance = new Swagger\Client\Api\UserApi();
-$id = "id_example"; // string | User id
-$body = new \Swagger\Client\Model\Body40(); // \Swagger\Client\Model\Body40 | 
-
-try {
-    $result = $api_instance->updatePassword($id, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UserApi->updatePassword: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| User id |
- **body** | [**\Swagger\Client\Model\Body40**](../Model/\Swagger\Client\Model\Body40.md)|  | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **updateUser**
-> \Swagger\Client\Model\InlineResponse20029 updateUser($id, $body)
-
-Update user
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$api_instance = new Swagger\Client\Api\UserApi();
-$id = "id_example"; // string | User id
-$body = new \Swagger\Client\Model\Body39(); // \Swagger\Client\Model\Body39 | 
-
-try {
     $result = $api_instance->updateUser($id, $body);
     print_r($result);
 } catch (Exception $e) {
@@ -557,11 +557,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| User id |
- **body** | [**\Swagger\Client\Model\Body39**](../Model/\Swagger\Client\Model\Body39.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body41**](../Model/\Swagger\Client\Model\Body41.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
+[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
 
 ### Authorization
 
@@ -575,7 +575,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **verifyEmail**
-> \Swagger\Client\Model\InlineResponse2008User verifyEmail($token)
+> \Swagger\Client\Model\InlineResponse2009User verifyEmail($token)
 
 Verify email
 
@@ -606,7 +606,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2008User**](../Model/InlineResponse2008User.md)
+[**\Swagger\Client\Model\InlineResponse2009User**](../Model/InlineResponse2009User.md)
 
 ### Authorization
 

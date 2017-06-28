@@ -92,9 +92,9 @@ class AgreementApi
      *
      * Create card gateway agreement
      *
-     * @param \Swagger\Client\Model\Body5 $body  (optional)
+     * @param \Swagger\Client\Model\Body8 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2006
+     * @return \Swagger\Client\Model\InlineResponse2008
      */
     public function createCardGatewayAgreement($body = null)
     {
@@ -107,9 +107,9 @@ class AgreementApi
      *
      * Create card gateway agreement
      *
-     * @param \Swagger\Client\Model\Body5 $body  (optional)
+     * @param \Swagger\Client\Model\Body8 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCardGatewayAgreementWithHttpInfo($body = null)
     {
@@ -157,15 +157,15 @@ class AgreementApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2006',
+                '\Swagger\Client\Model\InlineResponse2008',
                 '/v1/agreement/card_gateway'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2006', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2008', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2006', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2008', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -201,7 +201,7 @@ class AgreementApi
      *
      * @param string $id Agreement id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2006
+     * @return \Swagger\Client\Model\InlineResponse2008
      */
     public function deleteCardGatewayAgreement($id)
     {
@@ -216,7 +216,7 @@ class AgreementApi
      *
      * @param string $id Agreement id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteCardGatewayAgreementWithHttpInfo($id)
     {
@@ -271,15 +271,15 @@ class AgreementApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2006',
+                '\Swagger\Client\Model\InlineResponse2008',
                 '/v1/agreement/card_gateway/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2006', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2008', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2006', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2008', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -315,7 +315,7 @@ class AgreementApi
      *
      * @param string $id Agreement id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2006
+     * @return \Swagger\Client\Model\InlineResponse2008
      */
     public function disableCardGatewayAgreement($id)
     {
@@ -330,7 +330,7 @@ class AgreementApi
      *
      * @param string $id Agreement id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
      */
     public function disableCardGatewayAgreementWithHttpInfo($id)
     {
@@ -385,15 +385,15 @@ class AgreementApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2006',
+                '\Swagger\Client\Model\InlineResponse2008',
                 '/v1/agreement/card_gateway/{id}/disable'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2006', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2008', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2006', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2008', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -429,7 +429,7 @@ class AgreementApi
      *
      * @param string $id Agreement id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2006
+     * @return \Swagger\Client\Model\InlineResponse2008
      */
     public function enableCardGatewayAgreement($id)
     {
@@ -444,7 +444,7 @@ class AgreementApi
      *
      * @param string $id Agreement id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
      */
     public function enableCardGatewayAgreementWithHttpInfo($id)
     {
@@ -499,15 +499,15 @@ class AgreementApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2006',
+                '\Swagger\Client\Model\InlineResponse2008',
                 '/v1/agreement/card_gateway/{id}/enable'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2006', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2008', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2006', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2008', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -543,7 +543,7 @@ class AgreementApi
      *
      * @param string $id Agreement id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2006
+     * @return \Swagger\Client\Model\InlineResponse2008
      */
     public function getCardGatewayAgreement($id)
     {
@@ -558,7 +558,7 @@ class AgreementApi
      *
      * @param string $id Agreement id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCardGatewayAgreementWithHttpInfo($id)
     {
@@ -613,15 +613,15 @@ class AgreementApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2006',
+                '\Swagger\Client\Model\InlineResponse2008',
                 '/v1/agreement/card_gateway/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2006', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2008', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2006', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2008', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -658,7 +658,7 @@ class AgreementApi
      * @param bool $only_active Get only active (optional, default to false)
      * @param bool $non_deleted Get only non-deleted (optional, default to false)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2006[]
+     * @return \Swagger\Client\Model\InlineResponse2008[]
      */
     public function getCardGatewayAgreements($only_active = null, $non_deleted = null)
     {
@@ -674,7 +674,7 @@ class AgreementApi
      * @param bool $only_active Get only active (optional, default to false)
      * @param bool $non_deleted Get only non-deleted (optional, default to false)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2006[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2008[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCardGatewayAgreementsWithHttpInfo($only_active = null, $non_deleted = null)
     {
@@ -725,15 +725,15 @@ class AgreementApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2006[]',
+                '\Swagger\Client\Model\InlineResponse2008[]',
                 '/v1/agreement/card_gateway'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2006[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2008[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2006[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2008[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -768,9 +768,9 @@ class AgreementApi
      * Update card gateway agreement
      *
      * @param string $id Agreement id (required)
-     * @param \Swagger\Client\Model\Body6 $body  (optional)
+     * @param \Swagger\Client\Model\Body7 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2006
+     * @return \Swagger\Client\Model\InlineResponse2008
      */
     public function updateCardGatewayAgreement($id, $body = null)
     {
@@ -784,9 +784,9 @@ class AgreementApi
      * Update card gateway agreement
      *
      * @param string $id Agreement id (required)
-     * @param \Swagger\Client\Model\Body6 $body  (optional)
+     * @param \Swagger\Client\Model\Body7 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2006, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2008, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateCardGatewayAgreementWithHttpInfo($id, $body = null)
     {
@@ -846,15 +846,15 @@ class AgreementApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2006',
+                '\Swagger\Client\Model\InlineResponse2008',
                 '/v1/agreement/card_gateway/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2006', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2008', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2006', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2008', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

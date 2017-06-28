@@ -54,7 +54,7 @@ class Body37 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'next_period_start' => 'string'
+        'source' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class Body37 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'next_period_start' => 'next_period_start'
+        'source' => 'source'
     ];
 
 
@@ -76,7 +76,7 @@ class Body37 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'next_period_start' => 'setNextPeriodStart'
+        'source' => 'setSource'
     ];
 
 
@@ -85,7 +85,7 @@ class Body37 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'next_period_start' => 'getNextPeriodStart'
+        'source' => 'getSource'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class Body37 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['next_period_start'] = isset($data['next_period_start']) ? $data['next_period_start'] : null;
+        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
     }
 
     /**
@@ -131,9 +131,6 @@ class Body37 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['next_period_start'] === null) {
-            $invalid_properties[] = "'next_period_start' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -146,30 +143,27 @@ class Body37 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['next_period_start'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets next_period_start
+     * Gets source
      * @return string
      */
-    public function getNextPeriodStart()
+    public function getSource()
     {
-        return $this->container['next_period_start'];
+        return $this->container['source'];
     }
 
     /**
-     * Sets next_period_start
-     * @param string $next_period_start Date and time of requested next period start on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`. The date and time must be in the future.
+     * Sets source
+     * @param string $source The payment method source. Either an existing payment method for the customer, e.g. existing card id `ca_...` or a card token `ct_...` generated with token API, Reepay JS library or hosted page.
      * @return $this
      */
-    public function setNextPeriodStart($next_period_start)
+    public function setSource($source)
     {
-        $this->container['next_period_start'] = $next_period_start;
+        $this->container['source'] = $source;
 
         return $this;
     }

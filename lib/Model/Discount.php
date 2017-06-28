@@ -148,7 +148,7 @@ class Discount implements ArrayAccess
     }
 
     const STATE_ACTIVE = 'active';
-    const STATE_DISABLED = 'disabled';
+    const STATE_DELETED = 'deleted';
     const FIXED_PERIOD_UNIT_MONTHS = 'months';
     const FIXED_PERIOD_UNIT_DAYS = 'days';
     
@@ -162,7 +162,7 @@ class Discount implements ArrayAccess
     {
         return [
             self::STATE_ACTIVE,
-            self::STATE_DISABLED,
+            self::STATE_DELETED,
         ];
     }
     
@@ -235,9 +235,9 @@ class Discount implements ArrayAccess
         if ($this->container['state'] === null) {
             $invalid_properties[] = "'state' can't be null";
         }
-        $allowed_values = ["active", "disabled"];
+        $allowed_values = ["active", "deleted"];
         if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'disabled'.";
+            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'deleted'.";
         }
 
         if ($this->container['created'] === null) {
@@ -289,7 +289,7 @@ class Discount implements ArrayAccess
         if ($this->container['state'] === null) {
             return false;
         }
-        $allowed_values = ["active", "disabled"];
+        $allowed_values = ["active", "deleted"];
         if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
@@ -442,14 +442,14 @@ class Discount implements ArrayAccess
 
     /**
      * Sets state
-     * @param string $state Discount state `active` or `disabled`.
+     * @param string $state Discount state `active` or `deleted`.
      * @return $this
      */
     public function setState($state)
     {
-        $allowed_values = array('active', 'disabled');
+        $allowed_values = array('active', 'deleted');
         if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'disabled'");
+            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'deleted'");
         }
         $this->container['state'] = $state;
 

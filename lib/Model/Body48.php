@@ -54,10 +54,7 @@ class Body48 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'webhooks' => 'string[]',
-        'url' => 'string',
-        'username' => 'string',
-        'password' => 'string'
+        'webhooks' => 'string[]'
     ];
 
     public static function swaggerTypes()
@@ -70,10 +67,7 @@ class Body48 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'webhooks' => 'webhooks',
-        'url' => 'url',
-        'username' => 'username',
-        'password' => 'password'
+        'webhooks' => 'webhooks'
     ];
 
 
@@ -82,10 +76,7 @@ class Body48 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'webhooks' => 'setWebhooks',
-        'url' => 'setUrl',
-        'username' => 'setUsername',
-        'password' => 'setPassword'
+        'webhooks' => 'setWebhooks'
     ];
 
 
@@ -94,10 +85,7 @@ class Body48 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'webhooks' => 'getWebhooks',
-        'url' => 'getUrl',
-        'username' => 'getUsername',
-        'password' => 'getPassword'
+        'webhooks' => 'getWebhooks'
     ];
 
     public static function attributeMap()
@@ -132,9 +120,6 @@ class Body48 implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['webhooks'] = isset($data['webhooks']) ? $data['webhooks'] : null;
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
     }
 
     /**
@@ -149,9 +134,6 @@ class Body48 implements ArrayAccess
         if ($this->container['webhooks'] === null) {
             $invalid_properties[] = "'webhooks' can't be null";
         }
-        if ($this->container['url'] === null) {
-            $invalid_properties[] = "'url' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -165,9 +147,6 @@ class Body48 implements ArrayAccess
     {
 
         if ($this->container['webhooks'] === null) {
-            return false;
-        }
-        if ($this->container['url'] === null) {
             return false;
         }
         return true;
@@ -185,75 +164,12 @@ class Body48 implements ArrayAccess
 
     /**
      * Sets webhooks
-     * @param string[] $webhooks List of ids for webhooks to update and resend. The ids can be either webhook ids or event ids. A maximum of 100 ids is allowed.
+     * @param string[] $webhooks List of ids for webhooks to resend. The ids can be either webhook ids or event ids. A maximum of 100 ids is allowed.
      * @return $this
      */
     public function setWebhooks($webhooks)
     {
         $this->container['webhooks'] = $webhooks;
-
-        return $this;
-    }
-
-    /**
-     * Gets url
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     * @param string $url New webhook url
-     * @return $this
-     */
-    public function setUrl($url)
-    {
-        $this->container['url'] = $url;
-
-        return $this;
-    }
-
-    /**
-     * Gets username
-     * @return string
-     */
-    public function getUsername()
-    {
-        return $this->container['username'];
-    }
-
-    /**
-     * Sets username
-     * @param string $username Optional basic auth username
-     * @return $this
-     */
-    public function setUsername($username)
-    {
-        $this->container['username'] = $username;
-
-        return $this;
-    }
-
-    /**
-     * Gets password
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->container['password'];
-    }
-
-    /**
-     * Sets password
-     * @param string $password Optional basic auth password
-     * @return $this
-     */
-    public function setPassword($password)
-    {
-        $this->container['password'] = $password;
 
         return $this;
     }

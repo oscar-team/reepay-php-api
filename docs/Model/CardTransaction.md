@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**card** | [**\Swagger\Client\Model\InlineResponse20014Cards**](InlineResponse20014Cards.md) |  | [optional] 
+**card** | [**\Swagger\Client\Model\InlineResponse20015Cards**](InlineResponse20015Cards.md) |  | [optional] 
 **error** | **string** | Error code if failed. See [transaction errors](https://docs.reepay.com/api/#transaction-errors). | [optional] 
 **fingerprint** | **string** | Uniquely identifies this particular card number | [optional] 
 **ref_transaction** | **string** | Id of a possible referenced transaction | [optional] 

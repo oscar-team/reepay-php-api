@@ -64,8 +64,8 @@ class Transaction implements ArrayAccess
         'failed' => '\DateTime',
         'refunded' => '\DateTime',
         'created' => '\DateTime',
-        'card_transaction' => '\Swagger\Client\Model\InlineResponse20015CardTransaction',
-        'manual_transaction' => '\Swagger\Client\Model\InlineResponse20015ManualTransaction'
+        'card_transaction' => '\Swagger\Client\Model\InlineResponse20016CardTransaction',
+        'manual_transaction' => '\Swagger\Client\Model\InlineResponse20016ManualTransaction'
     ];
 
     public static function swaggerTypes()
@@ -546,7 +546,7 @@ class Transaction implements ArrayAccess
 
     /**
      * Gets card_transaction
-     * @return \Swagger\Client\Model\InlineResponse20015CardTransaction
+     * @return \Swagger\Client\Model\InlineResponse20016CardTransaction
      */
     public function getCardTransaction()
     {
@@ -555,7 +555,7 @@ class Transaction implements ArrayAccess
 
     /**
      * Sets card_transaction
-     * @param \Swagger\Client\Model\InlineResponse20015CardTransaction $card_transaction
+     * @param \Swagger\Client\Model\InlineResponse20016CardTransaction $card_transaction
      * @return $this
      */
     public function setCardTransaction($card_transaction)
@@ -567,7 +567,7 @@ class Transaction implements ArrayAccess
 
     /**
      * Gets manual_transaction
-     * @return \Swagger\Client\Model\InlineResponse20015ManualTransaction
+     * @return \Swagger\Client\Model\InlineResponse20016ManualTransaction
      */
     public function getManualTransaction()
     {
@@ -576,7 +576,7 @@ class Transaction implements ArrayAccess
 
     /**
      * Sets manual_transaction
-     * @param \Swagger\Client\Model\InlineResponse20015ManualTransaction $manual_transaction
+     * @param \Swagger\Client\Model\InlineResponse20016ManualTransaction $manual_transaction
      * @return $this
      */
     public function setManualTransaction($manual_transaction)

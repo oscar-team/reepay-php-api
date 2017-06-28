@@ -35,7 +35,7 @@ use \ArrayAccess;
  * InlineResponse20012 Class Doc Comment
  *
  * @category    Class
- * @description A page in a paginated customer search
+ * @description A page in a paginated coupon search
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -385,7 +385,7 @@ class InlineResponse20012 implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Swagger\Client\Model\InlineResponse20012Content[] $content List of customers for current page
+     * @param \Swagger\Client\Model\InlineResponse20012Content[] $content List of coupon for current page
      * @return $this
      */
     public function setContent($content)

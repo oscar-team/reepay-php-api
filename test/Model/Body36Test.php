@@ -83,9 +83,9 @@ class Body36Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "code"
+     * Test attribute "next_period_start"
      */
-    public function testPropertyCode()
+    public function testPropertyNextPeriodStart()
     {
 
     }

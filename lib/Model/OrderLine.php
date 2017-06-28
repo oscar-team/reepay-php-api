@@ -176,6 +176,7 @@ class OrderLine implements ArrayAccess
     }
 
     const ORIGIN_PLAN = 'plan';
+    const ORIGIN_ADD_ON = 'add_on';
     const ORIGIN_ONDEMAND = 'ondemand';
     const ORIGIN_ADDITIONAL_COST = 'additional_cost';
     const ORIGIN_CREDIT = 'credit';
@@ -191,6 +192,7 @@ class OrderLine implements ArrayAccess
     {
         return [
             self::ORIGIN_PLAN,
+            self::ORIGIN_ADD_ON,
             self::ORIGIN_ONDEMAND,
             self::ORIGIN_ADDITIONAL_COST,
             self::ORIGIN_CREDIT,
@@ -263,9 +265,9 @@ class OrderLine implements ArrayAccess
         if ($this->container['origin'] === null) {
             $invalid_properties[] = "'origin' can't be null";
         }
-        $allowed_values = ["plan", "ondemand", "additional_cost", "credit", "discount"];
+        $allowed_values = ["plan", "add_on", "ondemand", "additional_cost", "credit", "discount"];
         if (!in_array($this->container['origin'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'origin', must be one of 'plan', 'ondemand', 'additional_cost', 'credit', 'discount'.";
+            $invalid_properties[] = "invalid value for 'origin', must be one of 'plan', 'add_on', 'ondemand', 'additional_cost', 'credit', 'discount'.";
         }
 
         if ($this->container['timestamp'] === null) {
@@ -322,7 +324,7 @@ class OrderLine implements ArrayAccess
         if ($this->container['origin'] === null) {
             return false;
         }
-        $allowed_values = ["plan", "ondemand", "additional_cost", "credit", "discount"];
+        $allowed_values = ["plan", "add_on", "ondemand", "additional_cost", "credit", "discount"];
         if (!in_array($this->container['origin'], $allowed_values)) {
             return false;
         }
@@ -472,14 +474,14 @@ class OrderLine implements ArrayAccess
 
     /**
      * Sets origin
-     * @param string $origin Order line origin, one of the following: `plan`, `ondemand`, `additional_cost`, `credit`, `discount`
+     * @param string $origin Order line origin, one of the following: `plan`, `add_on`, `ondemand`, `additional_cost`, `credit`, `discount`
      * @return $this
      */
     public function setOrigin($origin)
     {
-        $allowed_values = array('plan', 'ondemand', 'additional_cost', 'credit', 'discount');
+        $allowed_values = array('plan', 'add_on', 'ondemand', 'additional_cost', 'credit', 'discount');
         if ((!in_array($origin, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'origin', must be one of 'plan', 'ondemand', 'additional_cost', 'credit', 'discount'");
+            throw new \InvalidArgumentException("Invalid value for 'origin', must be one of 'plan', 'add_on', 'ondemand', 'additional_cost', 'credit', 'discount'");
         }
         $this->container['origin'] = $origin;
 

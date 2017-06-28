@@ -54,7 +54,11 @@ class InlineResponse20014 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'cards' => '\Swagger\Client\Model\InlineResponse20014Cards[]'
+        'note' => 'string',
+        'id' => 'string',
+        'created' => '\DateTime',
+        'user_name' => 'string',
+        'user_email' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +71,11 @@ class InlineResponse20014 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'cards' => 'cards'
+        'note' => 'note',
+        'id' => 'id',
+        'created' => 'created',
+        'user_name' => 'user_name',
+        'user_email' => 'user_email'
     ];
 
 
@@ -76,7 +84,11 @@ class InlineResponse20014 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'cards' => 'setCards'
+        'note' => 'setNote',
+        'id' => 'setId',
+        'created' => 'setCreated',
+        'user_name' => 'setUserName',
+        'user_email' => 'setUserEmail'
     ];
 
 
@@ -85,7 +97,11 @@ class InlineResponse20014 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'cards' => 'getCards'
+        'note' => 'getNote',
+        'id' => 'getId',
+        'created' => 'getCreated',
+        'user_name' => 'getUserName',
+        'user_email' => 'getUserEmail'
     ];
 
     public static function attributeMap()
@@ -119,7 +135,11 @@ class InlineResponse20014 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['cards'] = isset($data['cards']) ? $data['cards'] : null;
+        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['created'] = isset($data['created']) ? $data['created'] : null;
+        $this->container['user_name'] = isset($data['user_name']) ? $data['user_name'] : null;
+        $this->container['user_email'] = isset($data['user_email']) ? $data['user_email'] : null;
     }
 
     /**
@@ -131,6 +151,15 @@ class InlineResponse20014 implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['note'] === null) {
+            $invalid_properties[] = "'note' can't be null";
+        }
+        if ($this->container['id'] === null) {
+            $invalid_properties[] = "'id' can't be null";
+        }
+        if ($this->container['created'] === null) {
+            $invalid_properties[] = "'created' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -143,27 +172,120 @@ class InlineResponse20014 implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['note'] === null) {
+            return false;
+        }
+        if ($this->container['id'] === null) {
+            return false;
+        }
+        if ($this->container['created'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets cards
-     * @return \Swagger\Client\Model\InlineResponse20014Cards[]
+     * Gets note
+     * @return string
      */
-    public function getCards()
+    public function getNote()
     {
-        return $this->container['cards'];
+        return $this->container['note'];
     }
 
     /**
-     * Sets cards
-     * @param \Swagger\Client\Model\InlineResponse20014Cards[] $cards List of cards
+     * Sets note
+     * @param string $note Customer note text. Maximum 4096 characters.
      * @return $this
      */
-    public function setCards($cards)
+    public function setNote($note)
     {
-        $this->container['cards'] = $cards;
+        $this->container['note'] = $note;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     * @param string $id Unique id for note assigned by Reepay
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets created
+     * @return \DateTime
+     */
+    public function getCreated()
+    {
+        return $this->container['created'];
+    }
+
+    /**
+     * Sets created
+     * @param \DateTime $created Date when the customer note was created. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @return $this
+     */
+    public function setCreated($created)
+    {
+        $this->container['created'] = $created;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_name
+     * @return string
+     */
+    public function getUserName()
+    {
+        return $this->container['user_name'];
+    }
+
+    /**
+     * Sets user_name
+     * @param string $user_name User name of the note creator
+     * @return $this
+     */
+    public function setUserName($user_name)
+    {
+        $this->container['user_name'] = $user_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_email
+     * @return string
+     */
+    public function getUserEmail()
+    {
+        return $this->container['user_email'];
+    }
+
+    /**
+     * Sets user_email
+     * @param string $user_email User email of the note creator
+     * @return $this
+     */
+    public function setUserEmail($user_email)
+    {
+        $this->container['user_email'] = $user_email;
 
         return $this;
     }

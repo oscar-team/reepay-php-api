@@ -90,28 +90,4 @@ class Body48Test extends \PHPUnit_Framework_TestCase
 
     }
 
-    /**
-     * Test attribute "url"
-     */
-    public function testPropertyUrl()
-    {
-
-    }
-
-    /**
-     * Test attribute "username"
-     */
-    public function testPropertyUsername()
-    {
-
-    }
-
-    /**
-     * Test attribute "password"
-     */
-    public function testPropertyPassword()
-    {
-
-    }
-
 }

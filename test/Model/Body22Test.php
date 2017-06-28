@@ -83,17 +83,33 @@ class Body22Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "due"
+     * Test attribute "name"
      */
-    public function testPropertyDue()
+    public function testPropertyName()
     {
 
     }
 
     /**
-     * Test attribute "payment_method"
+     * Test attribute "schedule"
      */
-    public function testPropertyPaymentMethod()
+    public function testPropertySchedule()
+    {
+
+    }
+
+    /**
+     * Test attribute "default_plan"
+     */
+    public function testPropertyDefaultPlan()
+    {
+
+    }
+
+    /**
+     * Test attribute "final_subscription_action"
+     */
+    public function testPropertyFinalSubscriptionAction()
     {
 
     }

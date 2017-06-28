@@ -176,6 +176,28 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for getSubscriptionAddOn
+     *
+     * Get subscription add-on.
+     *
+     */
+    public function testGetSubscriptionAddOn()
+    {
+
+    }
+
+    /**
+     * Test case for getSubscriptionAddOns
+     *
+     * Get subscription add-ons.
+     *
+     */
+    public function testGetSubscriptionAddOns()
+    {
+
+    }
+
+    /**
      * Test case for getSubscriptionDiscount
      *
      * Get subscription discount.

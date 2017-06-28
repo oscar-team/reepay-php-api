@@ -54,8 +54,8 @@ class CouponRedemption implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'coupon' => '\Swagger\Client\Model\InlineResponse20010Content',
-        'subscription_discount' => '\Swagger\Client\Model\InlineResponse20025'
+        'coupon' => '\Swagger\Client\Model\InlineResponse20012Content',
+        'subscription_discount' => '\Swagger\Client\Model\InlineResponse20028'
     ];
 
     public static function swaggerTypes()
@@ -154,7 +154,7 @@ class CouponRedemption implements ArrayAccess
 
     /**
      * Gets coupon
-     * @return \Swagger\Client\Model\InlineResponse20010Content
+     * @return \Swagger\Client\Model\InlineResponse20012Content
      */
     public function getCoupon()
     {
@@ -163,7 +163,7 @@ class CouponRedemption implements ArrayAccess
 
     /**
      * Sets coupon
-     * @param \Swagger\Client\Model\InlineResponse20010Content $coupon
+     * @param \Swagger\Client\Model\InlineResponse20012Content $coupon
      * @return $this
      */
     public function setCoupon($coupon)
@@ -175,7 +175,7 @@ class CouponRedemption implements ArrayAccess
 
     /**
      * Gets subscription_discount
-     * @return \Swagger\Client\Model\InlineResponse20025
+     * @return \Swagger\Client\Model\InlineResponse20028
      */
     public function getSubscriptionDiscount()
     {
@@ -184,7 +184,7 @@ class CouponRedemption implements ArrayAccess
 
     /**
      * Sets subscription_discount
-     * @param \Swagger\Client\Model\InlineResponse20025 $subscription_discount
+     * @param \Swagger\Client\Model\InlineResponse20028 $subscription_discount
      * @return $this
      */
     public function setSubscriptionDiscount($subscription_discount)

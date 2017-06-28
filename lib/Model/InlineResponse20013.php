@@ -54,11 +54,15 @@ class InlineResponse20013 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'note' => 'string',
-        'id' => 'string',
+        'subscription' => 'string',
+        'handle' => 'string',
+        'amount' => 'int',
+        'text' => 'string',
+        'state' => 'string',
         'created' => '\DateTime',
-        'user_name' => 'string',
-        'user_email' => 'string'
+        'valid_from' => 'string',
+        'credit_invoices' => '\Swagger\Client\Model\InlineResponse20013CreditInvoices[]',
+        'pending_amount' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -71,11 +75,15 @@ class InlineResponse20013 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'note' => 'note',
-        'id' => 'id',
+        'subscription' => 'subscription',
+        'handle' => 'handle',
+        'amount' => 'amount',
+        'text' => 'text',
+        'state' => 'state',
         'created' => 'created',
-        'user_name' => 'user_name',
-        'user_email' => 'user_email'
+        'valid_from' => 'valid_from',
+        'credit_invoices' => 'credit_invoices',
+        'pending_amount' => 'pending_amount'
     ];
 
 
@@ -84,11 +92,15 @@ class InlineResponse20013 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'note' => 'setNote',
-        'id' => 'setId',
+        'subscription' => 'setSubscription',
+        'handle' => 'setHandle',
+        'amount' => 'setAmount',
+        'text' => 'setText',
+        'state' => 'setState',
         'created' => 'setCreated',
-        'user_name' => 'setUserName',
-        'user_email' => 'setUserEmail'
+        'valid_from' => 'setValidFrom',
+        'credit_invoices' => 'setCreditInvoices',
+        'pending_amount' => 'setPendingAmount'
     ];
 
 
@@ -97,11 +109,15 @@ class InlineResponse20013 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'note' => 'getNote',
-        'id' => 'getId',
+        'subscription' => 'getSubscription',
+        'handle' => 'getHandle',
+        'amount' => 'getAmount',
+        'text' => 'getText',
+        'state' => 'getState',
         'created' => 'getCreated',
-        'user_name' => 'getUserName',
-        'user_email' => 'getUserEmail'
+        'valid_from' => 'getValidFrom',
+        'credit_invoices' => 'getCreditInvoices',
+        'pending_amount' => 'getPendingAmount'
     ];
 
     public static function attributeMap()
@@ -119,8 +135,24 @@ class InlineResponse20013 implements ArrayAccess
         return self::$getters;
     }
 
+    const STATE_PENDING = 'pending';
+    const STATE_TRANSFERRED = 'transferred';
+    const STATE_CANCELLED = 'cancelled';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getStateAllowableValues()
+    {
+        return [
+            self::STATE_PENDING,
+            self::STATE_TRANSFERRED,
+            self::STATE_CANCELLED,
+        ];
+    }
     
 
     /**
@@ -135,11 +167,15 @@ class InlineResponse20013 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['note'] = isset($data['note']) ? $data['note'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['subscription'] = isset($data['subscription']) ? $data['subscription'] : null;
+        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
+        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['user_name'] = isset($data['user_name']) ? $data['user_name'] : null;
-        $this->container['user_email'] = isset($data['user_email']) ? $data['user_email'] : null;
+        $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
+        $this->container['credit_invoices'] = isset($data['credit_invoices']) ? $data['credit_invoices'] : null;
+        $this->container['pending_amount'] = isset($data['pending_amount']) ? $data['pending_amount'] : null;
     }
 
     /**
@@ -151,15 +187,40 @@ class InlineResponse20013 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['note'] === null) {
-            $invalid_properties[] = "'note' can't be null";
+        if ($this->container['subscription'] === null) {
+            $invalid_properties[] = "'subscription' can't be null";
         }
-        if ($this->container['id'] === null) {
-            $invalid_properties[] = "'id' can't be null";
+        if ($this->container['handle'] === null) {
+            $invalid_properties[] = "'handle' can't be null";
         }
+        if ($this->container['amount'] === null) {
+            $invalid_properties[] = "'amount' can't be null";
+        }
+        if (($this->container['amount'] < 0)) {
+            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['text'] === null) {
+            $invalid_properties[] = "'text' can't be null";
+        }
+        if ($this->container['state'] === null) {
+            $invalid_properties[] = "'state' can't be null";
+        }
+        $allowed_values = ["pending", "transferred", "cancelled"];
+        if (!in_array($this->container['state'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'state', must be one of 'pending', 'transferred', 'cancelled'.";
+        }
+
         if ($this->container['created'] === null) {
             $invalid_properties[] = "'created' can't be null";
         }
+        if ($this->container['pending_amount'] === null) {
+            $invalid_properties[] = "'pending_amount' can't be null";
+        }
+        if (($this->container['pending_amount'] < 0)) {
+            $invalid_properties[] = "invalid value for 'pending_amount', must be bigger than or equal to 0.";
+        }
+
         return $invalid_properties;
     }
 
@@ -172,13 +233,35 @@ class InlineResponse20013 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['note'] === null) {
+        if ($this->container['subscription'] === null) {
             return false;
         }
-        if ($this->container['id'] === null) {
+        if ($this->container['handle'] === null) {
+            return false;
+        }
+        if ($this->container['amount'] === null) {
+            return false;
+        }
+        if ($this->container['amount'] < 0) {
+            return false;
+        }
+        if ($this->container['text'] === null) {
+            return false;
+        }
+        if ($this->container['state'] === null) {
+            return false;
+        }
+        $allowed_values = ["pending", "transferred", "cancelled"];
+        if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
         if ($this->container['created'] === null) {
+            return false;
+        }
+        if ($this->container['pending_amount'] === null) {
+            return false;
+        }
+        if ($this->container['pending_amount'] < 0) {
             return false;
         }
         return true;
@@ -186,43 +269,115 @@ class InlineResponse20013 implements ArrayAccess
 
 
     /**
-     * Gets note
+     * Gets subscription
      * @return string
      */
-    public function getNote()
+    public function getSubscription()
     {
-        return $this->container['note'];
+        return $this->container['subscription'];
     }
 
     /**
-     * Sets note
-     * @param string $note Customer note text. Maximum 4096 characters.
+     * Sets subscription
+     * @param string $subscription Subscription by handle to add the credit to
      * @return $this
      */
-    public function setNote($note)
+    public function setSubscription($subscription)
     {
-        $this->container['note'] = $note;
+        $this->container['subscription'] = $subscription;
 
         return $this;
     }
 
     /**
-     * Gets id
+     * Gets handle
      * @return string
      */
-    public function getId()
+    public function getHandle()
     {
-        return $this->container['id'];
+        return $this->container['handle'];
     }
 
     /**
-     * Sets id
-     * @param string $id Unique id for note assigned by Reepay
+     * Sets handle
+     * @param string $handle Per account unique handle for the credit. Max length 255 with allowable characters [a-zA-Z0-9_.-@].
      * @return $this
      */
-    public function setId($id)
+    public function setHandle($handle)
     {
-        $this->container['id'] = $id;
+        $this->container['handle'] = $handle;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     * @return int
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     * @param int $amount Credit amount in the smallest unit for the account currency
+     * @return $this
+     */
+    public function setAmount($amount)
+    {
+
+        if (($amount < 0)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling InlineResponse20013., must be bigger than or equal to 0.');
+        }
+
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets text
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->container['text'];
+    }
+
+    /**
+     * Sets text
+     * @param string $text Text describing the credit. Will be on affected invoices.
+     * @return $this
+     */
+    public function setText($text)
+    {
+        $this->container['text'] = $text;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     * @param string $state State of the credit, one of the following: `pending`, `transferred`, `cancelled`. Pending credits have not yet been transferred fully to invoices. Cancelled credits have been manually cancelled.
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $allowed_values = array('pending', 'transferred', 'cancelled');
+        if ((!in_array($state, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'pending', 'transferred', 'cancelled'");
+        }
+        $this->container['state'] = $state;
 
         return $this;
     }
@@ -238,7 +393,7 @@ class InlineResponse20013 implements ArrayAccess
 
     /**
      * Sets created
-     * @param \DateTime $created Date when the customer note was created. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @param \DateTime $created Date when the credit was created. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      * @return $this
      */
     public function setCreated($created)
@@ -249,43 +404,69 @@ class InlineResponse20013 implements ArrayAccess
     }
 
     /**
-     * Gets user_name
+     * Gets valid_from
      * @return string
      */
-    public function getUserName()
+    public function getValidFrom()
     {
-        return $this->container['user_name'];
+        return $this->container['valid_from'];
     }
 
     /**
-     * Sets user_name
-     * @param string $user_name User name of the note creator
+     * Sets valid_from
+     * @param string $valid_from Date on the form yyyy-MM-dd from which the credit is valid. The credit will not be deducted from invoices before this date.
      * @return $this
      */
-    public function setUserName($user_name)
+    public function setValidFrom($valid_from)
     {
-        $this->container['user_name'] = $user_name;
+        $this->container['valid_from'] = $valid_from;
 
         return $this;
     }
 
     /**
-     * Gets user_email
-     * @return string
+     * Gets credit_invoices
+     * @return \Swagger\Client\Model\InlineResponse20013CreditInvoices[]
      */
-    public function getUserEmail()
+    public function getCreditInvoices()
     {
-        return $this->container['user_email'];
+        return $this->container['credit_invoices'];
     }
 
     /**
-     * Sets user_email
-     * @param string $user_email User email of the note creator
+     * Sets credit_invoices
+     * @param \Swagger\Client\Model\InlineResponse20013CreditInvoices[] $credit_invoices List of invoices where the credit is applied
      * @return $this
      */
-    public function setUserEmail($user_email)
+    public function setCreditInvoices($credit_invoices)
     {
-        $this->container['user_email'] = $user_email;
+        $this->container['credit_invoices'] = $credit_invoices;
+
+        return $this;
+    }
+
+    /**
+     * Gets pending_amount
+     * @return int
+     */
+    public function getPendingAmount()
+    {
+        return $this->container['pending_amount'];
+    }
+
+    /**
+     * Sets pending_amount
+     * @param int $pending_amount Remaining amount not transferred to invoices
+     * @return $this
+     */
+    public function setPendingAmount($pending_amount)
+    {
+
+        if (($pending_amount < 0)) {
+            throw new \InvalidArgumentException('invalid value for $pending_amount when calling InlineResponse20013., must be bigger than or equal to 0.');
+        }
+
+        $this->container['pending_amount'] = $pending_amount;
 
         return $this;
     }

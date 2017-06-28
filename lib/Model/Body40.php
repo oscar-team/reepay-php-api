@@ -54,7 +54,7 @@ class Body40 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'password' => 'string'
+        'code' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class Body40 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'password' => 'password'
+        'code' => 'code'
     ];
 
 
@@ -76,7 +76,7 @@ class Body40 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'password' => 'setPassword'
+        'code' => 'setCode'
     ];
 
 
@@ -85,7 +85,7 @@ class Body40 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'password' => 'getPassword'
+        'code' => 'getCode'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class Body40 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
     }
 
     /**
@@ -131,8 +131,8 @@ class Body40 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['password'] === null) {
-            $invalid_properties[] = "'password' can't be null";
+        if ($this->container['code'] === null) {
+            $invalid_properties[] = "'code' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +146,7 @@ class Body40 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['password'] === null) {
+        if ($this->container['code'] === null) {
             return false;
         }
         return true;
@@ -154,22 +154,22 @@ class Body40 implements ArrayAccess
 
 
     /**
-     * Gets password
+     * Gets code
      * @return string
      */
-    public function getPassword()
+    public function getCode()
     {
-        return $this->container['password'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets password
-     * @param string $password New password
+     * Sets code
+     * @param string $code Coupon code
      * @return $this
      */
-    public function setPassword($password)
+    public function setCode($code)
     {
-        $this->container['password'] = $password;
+        $this->container['code'] = $code;
 
         return $this;
     }

@@ -83,6 +83,14 @@ class Body20Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "handle"
+     */
+    public function testPropertyHandle()
+    {
+
+    }
+
+    /**
      * Test attribute "name"
      */
     public function testPropertyName()
@@ -91,25 +99,57 @@ class Body20Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "schedule"
+     * Test attribute "description"
      */
-    public function testPropertySchedule()
+    public function testPropertyDescription()
     {
 
     }
 
     /**
-     * Test attribute "default_plan"
+     * Test attribute "amount"
      */
-    public function testPropertyDefaultPlan()
+    public function testPropertyAmount()
     {
 
     }
 
     /**
-     * Test attribute "final_subscription_action"
+     * Test attribute "percentage"
      */
-    public function testPropertyFinalSubscriptionAction()
+    public function testPropertyPercentage()
+    {
+
+    }
+
+    /**
+     * Test attribute "apply_to"
+     */
+    public function testPropertyApplyTo()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_count"
+     */
+    public function testPropertyFixedCount()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_period_unit"
+     */
+    public function testPropertyFixedPeriodUnit()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_period"
+     */
+    public function testPropertyFixedPeriod()
     {
 
     }

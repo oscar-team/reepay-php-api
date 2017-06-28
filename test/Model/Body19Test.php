@@ -83,41 +83,89 @@ class Body19Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "email"
      */
-    public function testPropertyName()
+    public function testPropertyEmail()
     {
 
     }
 
     /**
-     * Test attribute "schedule"
+     * Test attribute "address"
      */
-    public function testPropertySchedule()
+    public function testPropertyAddress()
     {
 
     }
 
     /**
-     * Test attribute "handle"
+     * Test attribute "address2"
      */
-    public function testPropertyHandle()
+    public function testPropertyAddress2()
     {
 
     }
 
     /**
-     * Test attribute "default_plan"
+     * Test attribute "city"
      */
-    public function testPropertyDefaultPlan()
+    public function testPropertyCity()
     {
 
     }
 
     /**
-     * Test attribute "final_subscription_action"
+     * Test attribute "country"
      */
-    public function testPropertyFinalSubscriptionAction()
+    public function testPropertyCountry()
+    {
+
+    }
+
+    /**
+     * Test attribute "phone"
+     */
+    public function testPropertyPhone()
+    {
+
+    }
+
+    /**
+     * Test attribute "company"
+     */
+    public function testPropertyCompany()
+    {
+
+    }
+
+    /**
+     * Test attribute "vat"
+     */
+    public function testPropertyVat()
+    {
+
+    }
+
+    /**
+     * Test attribute "first_name"
+     */
+    public function testPropertyFirstName()
+    {
+
+    }
+
+    /**
+     * Test attribute "last_name"
+     */
+    public function testPropertyLastName()
+    {
+
+    }
+
+    /**
+     * Test attribute "postal_code"
+     */
+    public function testPropertyPostalCode()
     {
 
     }

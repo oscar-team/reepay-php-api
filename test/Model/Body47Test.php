@@ -83,9 +83,9 @@ class Body47Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "webhooks"
+     * Test attribute "password"
      */
-    public function testPropertyWebhooks()
+    public function testPropertyPassword()
     {
 
     }

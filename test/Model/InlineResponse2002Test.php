@@ -83,17 +83,57 @@ class InlineResponse2002Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "key"
+     * Test attribute "urls"
      */
-    public function testPropertyKey()
+    public function testPropertyUrls()
     {
 
     }
 
     /**
-     * Test attribute "created"
+     * Test attribute "username"
      */
-    public function testPropertyCreated()
+    public function testPropertyUsername()
+    {
+
+    }
+
+    /**
+     * Test attribute "password"
+     */
+    public function testPropertyPassword()
+    {
+
+    }
+
+    /**
+     * Test attribute "disabled"
+     */
+    public function testPropertyDisabled()
+    {
+
+    }
+
+    /**
+     * Test attribute "secret"
+     */
+    public function testPropertySecret()
+    {
+
+    }
+
+    /**
+     * Test attribute "alert_emails"
+     */
+    public function testPropertyAlertEmails()
+    {
+
+    }
+
+    /**
+     * Test attribute "alert_count"
+     */
+    public function testPropertyAlertCount()
     {
 
     }

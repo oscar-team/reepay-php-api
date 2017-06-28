@@ -54,12 +54,8 @@ class Body24 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'invoice' => 'string',
-        'key' => 'string',
-        'amount' => 'int',
-        'text' => 'string',
-        'note_lines' => '\Swagger\Client\Model\V1refundNoteLines[]',
-        'manual_transfer' => '\Swagger\Client\Model\V1refundManualTransfer'
+        'due' => 'string',
+        'payment_method' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -72,12 +68,8 @@ class Body24 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'invoice' => 'invoice',
-        'key' => 'key',
-        'amount' => 'amount',
-        'text' => 'text',
-        'note_lines' => 'note_lines',
-        'manual_transfer' => 'manual_transfer'
+        'due' => 'due',
+        'payment_method' => 'payment_method'
     ];
 
 
@@ -86,12 +78,8 @@ class Body24 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'invoice' => 'setInvoice',
-        'key' => 'setKey',
-        'amount' => 'setAmount',
-        'text' => 'setText',
-        'note_lines' => 'setNoteLines',
-        'manual_transfer' => 'setManualTransfer'
+        'due' => 'setDue',
+        'payment_method' => 'setPaymentMethod'
     ];
 
 
@@ -100,12 +88,8 @@ class Body24 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'invoice' => 'getInvoice',
-        'key' => 'getKey',
-        'amount' => 'getAmount',
-        'text' => 'getText',
-        'note_lines' => 'getNoteLines',
-        'manual_transfer' => 'getManualTransfer'
+        'due' => 'getDue',
+        'payment_method' => 'getPaymentMethod'
     ];
 
     public static function attributeMap()
@@ -139,12 +123,8 @@ class Body24 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['invoice'] = isset($data['invoice']) ? $data['invoice'] : null;
-        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-        $this->container['note_lines'] = isset($data['note_lines']) ? $data['note_lines'] : null;
-        $this->container['manual_transfer'] = isset($data['manual_transfer']) ? $data['manual_transfer'] : null;
+        $this->container['due'] = isset($data['due']) ? $data['due'] : null;
+        $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
     }
 
     /**
@@ -155,13 +135,6 @@ class Body24 implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-
-        if ($this->container['invoice'] === null) {
-            $invalid_properties[] = "'invoice' can't be null";
-        }
-        if (!is_null($this->container['amount']) && ($this->container['amount'] < 1)) {
-            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 1.";
-        }
 
         return $invalid_properties;
     }
@@ -175,143 +148,48 @@ class Body24 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['invoice'] === null) {
-            return false;
-        }
-        if ($this->container['amount'] < 1) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets invoice
+     * Gets due
      * @return string
      */
-    public function getInvoice()
+    public function getDue()
     {
-        return $this->container['invoice'];
+        return $this->container['due'];
     }
 
     /**
-     * Sets invoice
-     * @param string $invoice Handle or id for invoice/charge to refund
+     * Sets due
+     * @param string $due Optional due date and time on the form yyyy-MM-dd, yyyyMMdd, yyyy-MM-ddTHH:mm and yyyy-MM-ddTHH:mm:ss from which the invoice should be tried settled. Only allowed for one-time customer invoices.
      * @return $this
      */
-    public function setInvoice($invoice)
+    public function setDue($due)
     {
-        $this->container['invoice'] = $invoice;
+        $this->container['due'] = $due;
 
         return $this;
     }
 
     /**
-     * Gets key
+     * Gets payment_method
      * @return string
      */
-    public function getKey()
+    public function getPaymentMethod()
     {
-        return $this->container['key'];
+        return $this->container['payment_method'];
     }
 
     /**
-     * Sets key
-     * @param string $key Optional idempotency key. Only one refund can be performed for the same key. An idempotency key identifies uniquely the request and multiple requests with the same key and invoice will yield the same result. In case of networking errors the same request with same key can safely be retried.
+     * Sets payment_method
+     * @param string $payment_method Payment method id to use to settle invoice. Must be a payment method supporting instant settle, e.g. credit card. Is required for one-time invoices if the amount on the invoice is more than zero.
      * @return $this
      */
-    public function setKey($key)
+    public function setPaymentMethod($payment_method)
     {
-        $this->container['key'] = $key;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
-     * @return int
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     * @param int $amount Optional amount in the smallest unit for the account currency. Either `amount` or `note_lines` can be provided, if neither is provided the full refundable amount is refunded.
-     * @return $this
-     */
-    public function setAmount($amount)
-    {
-
-        if (!is_null($amount) && ($amount < 1)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling Body24., must be bigger than or equal to 1.');
-        }
-
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets text
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->container['text'];
-    }
-
-    /**
-     * Sets text
-     * @param string $text Optional refund text to use on credit note. Used in conjunction with `amount`. Ignored if `note_lines` is provided.
-     * @return $this
-     */
-    public function setText($text)
-    {
-        $this->container['text'] = $text;
-
-        return $this;
-    }
-
-    /**
-     * Gets note_lines
-     * @return \Swagger\Client\Model\V1refundNoteLines[]
-     */
-    public function getNoteLines()
-    {
-        return $this->container['note_lines'];
-    }
-
-    /**
-     * Sets note_lines
-     * @param \Swagger\Client\Model\V1refundNoteLines[] $note_lines Refund credit note lines to give detailed information for credit note. Either this or `amount` must be provided.
-     * @return $this
-     */
-    public function setNoteLines($note_lines)
-    {
-        $this->container['note_lines'] = $note_lines;
-
-        return $this;
-    }
-
-    /**
-     * Gets manual_transfer
-     * @return \Swagger\Client\Model\V1refundManualTransfer
-     */
-    public function getManualTransfer()
-    {
-        return $this->container['manual_transfer'];
-    }
-
-    /**
-     * Sets manual_transfer
-     * @param \Swagger\Client\Model\V1refundManualTransfer $manual_transfer
-     * @return $this
-     */
-    public function setManualTransfer($manual_transfer)
-    {
-        $this->container['manual_transfer'] = $manual_transfer;
+        $this->container['payment_method'] = $payment_method;
 
         return $this;
     }

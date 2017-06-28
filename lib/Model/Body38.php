@@ -54,7 +54,16 @@ class Body38 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'source' => 'string'
+        'handle' => 'string',
+        'instant' => 'bool',
+        'due' => 'string',
+        'settle' => '\Swagger\Client\Model\V1customerhandleinvoiceSettle',
+        'plan_manual' => 'bool',
+        'collect_additional_costs' => 'bool',
+        'collect_credit' => 'bool',
+        'apply_discounts' => 'bool',
+        'order_lines' => '\Swagger\Client\Model\V1chargeOrderLines[]',
+        'manual_transfer' => '\Swagger\Client\Model\V1customerhandleinvoiceManualTransfer'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +76,16 @@ class Body38 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'source' => 'source'
+        'handle' => 'handle',
+        'instant' => 'instant',
+        'due' => 'due',
+        'settle' => 'settle',
+        'plan_manual' => 'plan_manual',
+        'collect_additional_costs' => 'collect_additional_costs',
+        'collect_credit' => 'collect_credit',
+        'apply_discounts' => 'apply_discounts',
+        'order_lines' => 'order_lines',
+        'manual_transfer' => 'manual_transfer'
     ];
 
 
@@ -76,7 +94,16 @@ class Body38 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'source' => 'setSource'
+        'handle' => 'setHandle',
+        'instant' => 'setInstant',
+        'due' => 'setDue',
+        'settle' => 'setSettle',
+        'plan_manual' => 'setPlanManual',
+        'collect_additional_costs' => 'setCollectAdditionalCosts',
+        'collect_credit' => 'setCollectCredit',
+        'apply_discounts' => 'setApplyDiscounts',
+        'order_lines' => 'setOrderLines',
+        'manual_transfer' => 'setManualTransfer'
     ];
 
 
@@ -85,7 +112,16 @@ class Body38 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'source' => 'getSource'
+        'handle' => 'getHandle',
+        'instant' => 'getInstant',
+        'due' => 'getDue',
+        'settle' => 'getSettle',
+        'plan_manual' => 'getPlanManual',
+        'collect_additional_costs' => 'getCollectAdditionalCosts',
+        'collect_credit' => 'getCollectCredit',
+        'apply_discounts' => 'getApplyDiscounts',
+        'order_lines' => 'getOrderLines',
+        'manual_transfer' => 'getManualTransfer'
     ];
 
     public static function attributeMap()
@@ -119,7 +155,16 @@ class Body38 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
+        $this->container['instant'] = isset($data['instant']) ? $data['instant'] : null;
+        $this->container['due'] = isset($data['due']) ? $data['due'] : null;
+        $this->container['settle'] = isset($data['settle']) ? $data['settle'] : null;
+        $this->container['plan_manual'] = isset($data['plan_manual']) ? $data['plan_manual'] : null;
+        $this->container['collect_additional_costs'] = isset($data['collect_additional_costs']) ? $data['collect_additional_costs'] : null;
+        $this->container['collect_credit'] = isset($data['collect_credit']) ? $data['collect_credit'] : null;
+        $this->container['apply_discounts'] = isset($data['apply_discounts']) ? $data['apply_discounts'] : null;
+        $this->container['order_lines'] = isset($data['order_lines']) ? $data['order_lines'] : null;
+        $this->container['manual_transfer'] = isset($data['manual_transfer']) ? $data['manual_transfer'] : null;
     }
 
     /**
@@ -131,6 +176,9 @@ class Body38 implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['handle'] === null) {
+            $invalid_properties[] = "'handle' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -143,27 +191,219 @@ class Body38 implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['handle'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets source
+     * Gets handle
      * @return string
      */
-    public function getSource()
+    public function getHandle()
     {
-        return $this->container['source'];
+        return $this->container['handle'];
     }
 
     /**
-     * Sets source
-     * @param string $source The payment method source. Either an existing payment method for the customer, e.g. existing card id `ca_...` or a card token `ct_...` generated with token API, Reepay JS library or hosted page.
+     * Sets handle
+     * @param string $handle Per account unique handle for the invoice. Max length 255 with allowable characters [a-zA-Z0-9_.-@].
      * @return $this
      */
-    public function setSource($source)
+    public function setHandle($handle)
     {
-        $this->container['source'] = $source;
+        $this->container['handle'] = $handle;
+
+        return $this;
+    }
+
+    /**
+     * Gets instant
+     * @return bool
+     */
+    public function getInstant()
+    {
+        return $this->container['instant'];
+    }
+
+    /**
+     * Sets instant
+     * @param bool $instant Create and process invoice instantly and leave as either `settled` or `failed`. The default is to leave the invoice for automatic processing and potential dunning management as other subscription invoices (default false).
+     * @return $this
+     */
+    public function setInstant($instant)
+    {
+        $this->container['instant'] = $instant;
+
+        return $this;
+    }
+
+    /**
+     * Gets due
+     * @return string
+     */
+    public function getDue()
+    {
+        return $this->container['due'];
+    }
+
+    /**
+     * Sets due
+     * @param string $due Optional due date and time on the form yyyy-MM-dd, yyyyMMdd, yyyy-MM-ddTHH:mm and yyyy-MM-ddTHH:mm:ss from which the invoice is eligible to be collected. Will not be used when `instant` is used.
+     * @return $this
+     */
+    public function setDue($due)
+    {
+        $this->container['due'] = $due;
+
+        return $this;
+    }
+
+    /**
+     * Gets settle
+     * @return \Swagger\Client\Model\V1customerhandleinvoiceSettle
+     */
+    public function getSettle()
+    {
+        return $this->container['settle'];
+    }
+
+    /**
+     * Sets settle
+     * @param \Swagger\Client\Model\V1customerhandleinvoiceSettle $settle
+     * @return $this
+     */
+    public function setSettle($settle)
+    {
+        $this->container['settle'] = $settle;
+
+        return $this;
+    }
+
+    /**
+     * Gets plan_manual
+     * @return bool
+     */
+    public function getPlanManual()
+    {
+        return $this->container['plan_manual'];
+    }
+
+    /**
+     * Sets plan_manual
+     * @param bool $plan_manual Create manually for plan by adding plan product and potential add-ons as order line (default false)
+     * @return $this
+     */
+    public function setPlanManual($plan_manual)
+    {
+        $this->container['plan_manual'] = $plan_manual;
+
+        return $this;
+    }
+
+    /**
+     * Gets collect_additional_costs
+     * @return bool
+     */
+    public function getCollectAdditionalCosts()
+    {
+        return $this->container['collect_additional_costs'];
+    }
+
+    /**
+     * Sets collect_additional_costs
+     * @param bool $collect_additional_costs Collect pending additional costs and transfer to invoice (default true)
+     * @return $this
+     */
+    public function setCollectAdditionalCosts($collect_additional_costs)
+    {
+        $this->container['collect_additional_costs'] = $collect_additional_costs;
+
+        return $this;
+    }
+
+    /**
+     * Gets collect_credit
+     * @return bool
+     */
+    public function getCollectCredit()
+    {
+        return $this->container['collect_credit'];
+    }
+
+    /**
+     * Sets collect_credit
+     * @param bool $collect_credit Collect pending credit and transfer to invoice (default true)
+     * @return $this
+     */
+    public function setCollectCredit($collect_credit)
+    {
+        $this->container['collect_credit'] = $collect_credit;
+
+        return $this;
+    }
+
+    /**
+     * Gets apply_discounts
+     * @return bool
+     */
+    public function getApplyDiscounts()
+    {
+        return $this->container['apply_discounts'];
+    }
+
+    /**
+     * Sets apply_discounts
+     * @param bool $apply_discounts Apply potential discounts for the subscription to the invoice order lines (default true)
+     * @return $this
+     */
+    public function setApplyDiscounts($apply_discounts)
+    {
+        $this->container['apply_discounts'] = $apply_discounts;
+
+        return $this;
+    }
+
+    /**
+     * Gets order_lines
+     * @return \Swagger\Client\Model\V1chargeOrderLines[]
+     */
+    public function getOrderLines()
+    {
+        return $this->container['order_lines'];
+    }
+
+    /**
+     * Sets order_lines
+     * @param \Swagger\Client\Model\V1chargeOrderLines[] $order_lines Optional additional order lines for the invoice
+     * @return $this
+     */
+    public function setOrderLines($order_lines)
+    {
+        $this->container['order_lines'] = $order_lines;
+
+        return $this;
+    }
+
+    /**
+     * Gets manual_transfer
+     * @return \Swagger\Client\Model\V1customerhandleinvoiceManualTransfer
+     */
+    public function getManualTransfer()
+    {
+        return $this->container['manual_transfer'];
+    }
+
+    /**
+     * Sets manual_transfer
+     * @param \Swagger\Client\Model\V1customerhandleinvoiceManualTransfer $manual_transfer
+     * @return $this
+     */
+    public function setManualTransfer($manual_transfer)
+    {
+        $this->container['manual_transfer'] = $manual_transfer;
 
         return $this;
     }

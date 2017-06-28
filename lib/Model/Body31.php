@@ -54,9 +54,7 @@ class Body31 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'notice_periods' => 'int',
-        'notice_periods_after_current' => 'bool',
-        'expire_at' => 'string'
+        'compensation_method' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -69,9 +67,7 @@ class Body31 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'notice_periods' => 'notice_periods',
-        'notice_periods_after_current' => 'notice_periods_after_current',
-        'expire_at' => 'expire_at'
+        'compensation_method' => 'compensation_method'
     ];
 
 
@@ -80,9 +76,7 @@ class Body31 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'notice_periods' => 'setNoticePeriods',
-        'notice_periods_after_current' => 'setNoticePeriodsAfterCurrent',
-        'expire_at' => 'setExpireAt'
+        'compensation_method' => 'setCompensationMethod'
     ];
 
 
@@ -91,9 +85,7 @@ class Body31 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'notice_periods' => 'getNoticePeriods',
-        'notice_periods_after_current' => 'getNoticePeriodsAfterCurrent',
-        'expire_at' => 'getExpireAt'
+        'compensation_method' => 'getCompensationMethod'
     ];
 
     public static function attributeMap()
@@ -111,8 +103,24 @@ class Body31 implements ArrayAccess
         return self::$getters;
     }
 
+    const COMPENSATION_METHOD_FULL_REFUND = 'full_refund';
+    const COMPENSATION_METHOD_PRORATED_REFUND = 'prorated_refund';
+    const COMPENSATION_METHOD_NONE = 'none';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getCompensationMethodAllowableValues()
+    {
+        return [
+            self::COMPENSATION_METHOD_FULL_REFUND,
+            self::COMPENSATION_METHOD_PRORATED_REFUND,
+            self::COMPENSATION_METHOD_NONE,
+        ];
+    }
     
 
     /**
@@ -127,9 +135,7 @@ class Body31 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['notice_periods'] = isset($data['notice_periods']) ? $data['notice_periods'] : null;
-        $this->container['notice_periods_after_current'] = isset($data['notice_periods_after_current']) ? $data['notice_periods_after_current'] : null;
-        $this->container['expire_at'] = isset($data['expire_at']) ? $data['expire_at'] : null;
+        $this->container['compensation_method'] = isset($data['compensation_method']) ? $data['compensation_method'] : null;
     }
 
     /**
@@ -140,6 +146,11 @@ class Body31 implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        $allowed_values = ["full_refund", "prorated_refund", "none"];
+        if (!in_array($this->container['compensation_method'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'compensation_method', must be one of 'full_refund', 'prorated_refund', 'none'.";
+        }
 
         return $invalid_properties;
     }
@@ -153,69 +164,35 @@ class Body31 implements ArrayAccess
     public function valid()
     {
 
+        $allowed_values = ["full_refund", "prorated_refund", "none"];
+        if (!in_array($this->container['compensation_method'], $allowed_values)) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets notice_periods
-     * @return int
-     */
-    public function getNoticePeriods()
-    {
-        return $this->container['notice_periods'];
-    }
-
-    /**
-     * Sets notice_periods
-     * @param int $notice_periods Optional override of the notice periods set for plan. See plan for the definition of notice periods.
-     * @return $this
-     */
-    public function setNoticePeriods($notice_periods)
-    {
-        $this->container['notice_periods'] = $notice_periods;
-
-        return $this;
-    }
-
-    /**
-     * Gets notice_periods_after_current
-     * @return bool
-     */
-    public function getNoticePeriodsAfterCurrent()
-    {
-        return $this->container['notice_periods_after_current'];
-    }
-
-    /**
-     * Sets notice_periods_after_current
-     * @param bool $notice_periods_after_current Optional override of the notice periods after current setting for plan. See plan for the definition of notice periods.
-     * @return $this
-     */
-    public function setNoticePeriodsAfterCurrent($notice_periods_after_current)
-    {
-        $this->container['notice_periods_after_current'] = $notice_periods_after_current;
-
-        return $this;
-    }
-
-    /**
-     * Gets expire_at
+     * Gets compensation_method
      * @return string
      */
-    public function getExpireAt()
+    public function getCompensationMethod()
     {
-        return $this->container['expire_at'];
+        return $this->container['compensation_method'];
     }
 
     /**
-     * Sets expire_at
-     * @param string $expire_at Optional fixed date and time on when the subscription should expire. The fixed expire date takes precedence over notice periods and fixation periods. The fixed expire date must be after the end of the current periods. On the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`.
+     * Sets compensation_method
+     * @param string $compensation_method Optional method for compensation of partial period, either `full_refund`, `prorated_refund` or `none`
      * @return $this
      */
-    public function setExpireAt($expire_at)
+    public function setCompensationMethod($compensation_method)
     {
-        $this->container['expire_at'] = $expire_at;
+        $allowed_values = array('full_refund', 'prorated_refund', 'none');
+        if (!is_null($compensation_method) && (!in_array($compensation_method, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'compensation_method', must be one of 'full_refund', 'prorated_refund', 'none'");
+        }
+        $this->container['compensation_method'] = $compensation_method;
 
         return $this;
     }

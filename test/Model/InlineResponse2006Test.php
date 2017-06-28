@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * InlineResponse2006Test Class Doc Comment
  *
  * @category    Class */
-// * @description InlineResponse2006
+// * @description A page in a paginated add-on search
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
@@ -83,49 +83,65 @@ class InlineResponse2006Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "provider"
+     * Test attribute "page"
      */
-    public function testPropertyProvider()
+    public function testPropertyPage()
     {
 
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "size"
      */
-    public function testPropertyId()
+    public function testPropertySize()
     {
 
     }
 
     /**
-     * Test attribute "state"
+     * Test attribute "count"
      */
-    public function testPropertyState()
+    public function testPropertyCount()
     {
 
     }
 
     /**
-     * Test attribute "card_types"
+     * Test attribute "search"
      */
-    public function testPropertyCardTypes()
+    public function testPropertySearch()
     {
 
     }
 
     /**
-     * Test attribute "provider_settings"
+     * Test attribute "sort"
      */
-    public function testPropertyProviderSettings()
+    public function testPropertySort()
     {
 
     }
 
     /**
-     * Test attribute "gw_ref"
+     * Test attribute "content"
      */
-    public function testPropertyGwRef()
+    public function testPropertyContent()
+    {
+
+    }
+
+    /**
+     * Test attribute "total_elements"
+     */
+    public function testPropertyTotalElements()
+    {
+
+    }
+
+    /**
+     * Test attribute "total_pages"
+     */
+    public function testPropertyTotalPages()
     {
 
     }

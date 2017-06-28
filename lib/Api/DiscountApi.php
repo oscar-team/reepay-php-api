@@ -92,9 +92,9 @@ class DiscountApi
      *
      * Create discount
      *
-     * @param \Swagger\Client\Model\Body18 $body  (optional)
+     * @param \Swagger\Client\Model\Body20 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20016Content
+     * @return \Swagger\Client\Model\InlineResponse20018Content
      */
     public function createDiscount($body = null)
     {
@@ -107,9 +107,9 @@ class DiscountApi
      *
      * Create discount
      *
-     * @param \Swagger\Client\Model\Body18 $body  (optional)
+     * @param \Swagger\Client\Model\Body20 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20016Content, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20018Content, HTTP status code, HTTP response headers (array of strings)
      */
     public function createDiscountWithHttpInfo($body = null)
     {
@@ -157,15 +157,15 @@ class DiscountApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20016Content',
+                '\Swagger\Client\Model\InlineResponse20018Content',
                 '/v1/discount'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016Content', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20018Content', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016Content', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20018Content', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -201,7 +201,7 @@ class DiscountApi
      *
      * @param string $handle Discount handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20016Content
+     * @return \Swagger\Client\Model\InlineResponse20018Content
      */
     public function deleteDiscount($handle)
     {
@@ -216,7 +216,7 @@ class DiscountApi
      *
      * @param string $handle Discount handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20016Content, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20018Content, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteDiscountWithHttpInfo($handle)
     {
@@ -271,15 +271,15 @@ class DiscountApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20016Content',
+                '\Swagger\Client\Model\InlineResponse20018Content',
                 '/v1/discount/{handle}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016Content', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20018Content', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016Content', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20018Content', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -315,7 +315,7 @@ class DiscountApi
      *
      * @param string $handle Discount handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20016Content
+     * @return \Swagger\Client\Model\InlineResponse20018Content
      */
     public function getDiscount($handle)
     {
@@ -330,7 +330,7 @@ class DiscountApi
      *
      * @param string $handle Discount handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20016Content, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20018Content, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDiscountWithHttpInfo($handle)
     {
@@ -385,15 +385,15 @@ class DiscountApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20016Content',
+                '\Swagger\Client\Model\InlineResponse20018Content',
                 '/v1/discount/{handle}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016Content', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20018Content', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016Content', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20018Content', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -432,7 +432,7 @@ class DiscountApi
      * @param string $search Optional search expression (required)
      * @param string $sort Optional sorting expression (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20016
+     * @return \Swagger\Client\Model\InlineResponse20018
      */
     public function getDiscounts($page, $size, $search, $sort)
     {
@@ -450,7 +450,7 @@ class DiscountApi
      * @param string $search Optional search expression (required)
      * @param string $sort Optional sorting expression (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20016, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20018, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDiscountsWithHttpInfo($page, $size, $search, $sort)
     {
@@ -536,15 +536,15 @@ class DiscountApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20016',
+                '\Swagger\Client\Model\InlineResponse20018',
                 '/v1/discount'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20018', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20018', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -580,7 +580,7 @@ class DiscountApi
      *
      * @param string $handle Discount handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20016Content
+     * @return \Swagger\Client\Model\InlineResponse20018Content
      */
     public function undeleteDiscount($handle)
     {
@@ -595,7 +595,7 @@ class DiscountApi
      *
      * @param string $handle Discount handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20016Content, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20018Content, HTTP status code, HTTP response headers (array of strings)
      */
     public function undeleteDiscountWithHttpInfo($handle)
     {
@@ -650,15 +650,15 @@ class DiscountApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20016Content',
+                '\Swagger\Client\Model\InlineResponse20018Content',
                 '/v1/discount/{handle}/undelete'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016Content', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20018Content', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016Content', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20018Content', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

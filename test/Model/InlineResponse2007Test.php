@@ -83,17 +83,97 @@ class InlineResponse2007Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "token"
+     * Test attribute "invoice"
      */
-    public function testPropertyToken()
+    public function testPropertyInvoice()
     {
 
     }
 
     /**
-     * Test attribute "token_ttl"
+     * Test attribute "state"
      */
-    public function testPropertyTokenTtl()
+    public function testPropertyState()
+    {
+
+    }
+
+    /**
+     * Test attribute "subscription"
+     */
+    public function testPropertySubscription()
+    {
+
+    }
+
+    /**
+     * Test attribute "handle"
+     */
+    public function testPropertyHandle()
+    {
+
+    }
+
+    /**
+     * Test attribute "ordertext"
+     */
+    public function testPropertyOrdertext()
+    {
+
+    }
+
+    /**
+     * Test attribute "quantity"
+     */
+    public function testPropertyQuantity()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "vat"
+     */
+    public function testPropertyVat()
+    {
+
+    }
+
+    /**
+     * Test attribute "created"
+     */
+    public function testPropertyCreated()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount_incl_vat"
+     */
+    public function testPropertyAmountInclVat()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount_vat"
+     */
+    public function testPropertyAmountVat()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount_ex_vat"
+     */
+    public function testPropertyAmountExVat()
     {
 
     }

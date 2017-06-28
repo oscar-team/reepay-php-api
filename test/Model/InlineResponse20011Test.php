@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * InlineResponse20011Test Class Doc Comment
  *
  * @category    Class */
-// * @description InlineResponse20011
+// * @description A page in a paginated charge search
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
@@ -83,73 +83,65 @@ class InlineResponse20011Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "subscription"
+     * Test attribute "page"
      */
-    public function testPropertySubscription()
+    public function testPropertyPage()
     {
 
     }
 
     /**
-     * Test attribute "handle"
+     * Test attribute "size"
      */
-    public function testPropertyHandle()
+    public function testPropertySize()
     {
 
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "count"
      */
-    public function testPropertyAmount()
+    public function testPropertyCount()
     {
 
     }
 
     /**
-     * Test attribute "text"
+     * Test attribute "search"
      */
-    public function testPropertyText()
+    public function testPropertySearch()
     {
 
     }
 
     /**
-     * Test attribute "state"
+     * Test attribute "sort"
      */
-    public function testPropertyState()
+    public function testPropertySort()
     {
 
     }
 
     /**
-     * Test attribute "created"
+     * Test attribute "content"
      */
-    public function testPropertyCreated()
+    public function testPropertyContent()
     {
 
     }
 
     /**
-     * Test attribute "valid_from"
+     * Test attribute "total_elements"
      */
-    public function testPropertyValidFrom()
+    public function testPropertyTotalElements()
     {
 
     }
 
     /**
-     * Test attribute "credit_invoices"
+     * Test attribute "total_pages"
      */
-    public function testPropertyCreditInvoices()
-    {
-
-    }
-
-    /**
-     * Test attribute "pending_amount"
-     */
-    public function testPropertyPendingAmount()
+    public function testPropertyTotalPages()
     {
 
     }

@@ -83,57 +83,49 @@ class Body26Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "invoice"
      */
-    public function testPropertyName()
+    public function testPropertyInvoice()
     {
 
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "key"
      */
-    public function testPropertyDescription()
+    public function testPropertyKey()
     {
 
     }
 
     /**
-     * Test attribute "vat"
+     * Test attribute "amount"
      */
-    public function testPropertyVat()
+    public function testPropertyAmount()
     {
 
     }
 
     /**
-     * Test attribute "dunning_plan"
+     * Test attribute "text"
      */
-    public function testPropertyDunningPlan()
+    public function testPropertyText()
     {
 
     }
 
     /**
-     * Test attribute "renewal_reminder_email_days"
+     * Test attribute "note_lines"
      */
-    public function testPropertyRenewalReminderEmailDays()
+    public function testPropertyNoteLines()
     {
 
     }
 
     /**
-     * Test attribute "trial_reminder_email_days"
+     * Test attribute "manual_transfer"
      */
-    public function testPropertyTrialReminderEmailDays()
-    {
-
-    }
-
-    /**
-     * Test attribute "partial_period_handling"
-     */
-    public function testPropertyPartialPeriodHandling()
+    public function testPropertyManualTransfer()
     {
 
     }

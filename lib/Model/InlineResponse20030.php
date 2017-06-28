@@ -54,20 +54,12 @@ class InlineResponse20030 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'event' => 'string',
-        'state' => 'string',
-        'url' => 'string',
-        'username' => 'string',
-        'password' => 'string',
-        'content' => 'string',
-        'created' => '\DateTime',
-        'success' => '\DateTime',
-        'count' => 'int',
-        'last_fail' => '\DateTime',
-        'first_fail' => '\DateTime',
-        'alert_count' => 'int',
-        'alert_sent' => '\DateTime'
+        'date' => '\DateTime',
+        'invoice' => '\Swagger\Client\Model\InlineResponse20016',
+        'paid' => 'int',
+        'consumed' => 'int',
+        'remaining' => 'int',
+        'online_refundable' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -80,20 +72,12 @@ class InlineResponse20030 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'event' => 'event',
-        'state' => 'state',
-        'url' => 'url',
-        'username' => 'username',
-        'password' => 'password',
-        'content' => 'content',
-        'created' => 'created',
-        'success' => 'success',
-        'count' => 'count',
-        'last_fail' => 'last_fail',
-        'first_fail' => 'first_fail',
-        'alert_count' => 'alert_count',
-        'alert_sent' => 'alert_sent'
+        'date' => 'date',
+        'invoice' => 'invoice',
+        'paid' => 'paid',
+        'consumed' => 'consumed',
+        'remaining' => 'remaining',
+        'online_refundable' => 'online_refundable'
     ];
 
 
@@ -102,20 +86,12 @@ class InlineResponse20030 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'event' => 'setEvent',
-        'state' => 'setState',
-        'url' => 'setUrl',
-        'username' => 'setUsername',
-        'password' => 'setPassword',
-        'content' => 'setContent',
-        'created' => 'setCreated',
-        'success' => 'setSuccess',
-        'count' => 'setCount',
-        'last_fail' => 'setLastFail',
-        'first_fail' => 'setFirstFail',
-        'alert_count' => 'setAlertCount',
-        'alert_sent' => 'setAlertSent'
+        'date' => 'setDate',
+        'invoice' => 'setInvoice',
+        'paid' => 'setPaid',
+        'consumed' => 'setConsumed',
+        'remaining' => 'setRemaining',
+        'online_refundable' => 'setOnlineRefundable'
     ];
 
 
@@ -124,20 +100,12 @@ class InlineResponse20030 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'event' => 'getEvent',
-        'state' => 'getState',
-        'url' => 'getUrl',
-        'username' => 'getUsername',
-        'password' => 'getPassword',
-        'content' => 'getContent',
-        'created' => 'getCreated',
-        'success' => 'getSuccess',
-        'count' => 'getCount',
-        'last_fail' => 'getLastFail',
-        'first_fail' => 'getFirstFail',
-        'alert_count' => 'getAlertCount',
-        'alert_sent' => 'getAlertSent'
+        'date' => 'getDate',
+        'invoice' => 'getInvoice',
+        'paid' => 'getPaid',
+        'consumed' => 'getConsumed',
+        'remaining' => 'getRemaining',
+        'online_refundable' => 'getOnlineRefundable'
     ];
 
     public static function attributeMap()
@@ -155,26 +123,8 @@ class InlineResponse20030 implements ArrayAccess
         return self::$getters;
     }
 
-    const STATE_PENDING = 'pending';
-    const STATE_DISABLED = 'disabled';
-    const STATE_FAILED = 'failed';
-    const STATE_COMPLETED = 'completed';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStateAllowableValues()
-    {
-        return [
-            self::STATE_PENDING,
-            self::STATE_DISABLED,
-            self::STATE_FAILED,
-            self::STATE_COMPLETED,
-        ];
-    }
     
 
     /**
@@ -189,20 +139,12 @@ class InlineResponse20030 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['event'] = isset($data['event']) ? $data['event'] : null;
-        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
-        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
-        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
-        $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
-        $this->container['last_fail'] = isset($data['last_fail']) ? $data['last_fail'] : null;
-        $this->container['first_fail'] = isset($data['first_fail']) ? $data['first_fail'] : null;
-        $this->container['alert_count'] = isset($data['alert_count']) ? $data['alert_count'] : null;
-        $this->container['alert_sent'] = isset($data['alert_sent']) ? $data['alert_sent'] : null;
+        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
+        $this->container['invoice'] = isset($data['invoice']) ? $data['invoice'] : null;
+        $this->container['paid'] = isset($data['paid']) ? $data['paid'] : null;
+        $this->container['consumed'] = isset($data['consumed']) ? $data['consumed'] : null;
+        $this->container['remaining'] = isset($data['remaining']) ? $data['remaining'] : null;
+        $this->container['online_refundable'] = isset($data['online_refundable']) ? $data['online_refundable'] : null;
     }
 
     /**
@@ -214,32 +156,6 @@ class InlineResponse20030 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['id'] === null) {
-            $invalid_properties[] = "'id' can't be null";
-        }
-        if ($this->container['event'] === null) {
-            $invalid_properties[] = "'event' can't be null";
-        }
-        if ($this->container['state'] === null) {
-            $invalid_properties[] = "'state' can't be null";
-        }
-        $allowed_values = ["pending", "disabled", "failed", "completed"];
-        if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'pending', 'disabled', 'failed', 'completed'.";
-        }
-
-        if ($this->container['url'] === null) {
-            $invalid_properties[] = "'url' can't be null";
-        }
-        if ($this->container['content'] === null) {
-            $invalid_properties[] = "'content' can't be null";
-        }
-        if ($this->container['created'] === null) {
-            $invalid_properties[] = "'created' can't be null";
-        }
-        if ($this->container['count'] === null) {
-            $invalid_properties[] = "'count' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -252,329 +168,132 @@ class InlineResponse20030 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['id'] === null) {
-            return false;
-        }
-        if ($this->container['event'] === null) {
-            return false;
-        }
-        if ($this->container['state'] === null) {
-            return false;
-        }
-        $allowed_values = ["pending", "disabled", "failed", "completed"];
-        if (!in_array($this->container['state'], $allowed_values)) {
-            return false;
-        }
-        if ($this->container['url'] === null) {
-            return false;
-        }
-        if ($this->container['content'] === null) {
-            return false;
-        }
-        if ($this->container['created'] === null) {
-            return false;
-        }
-        if ($this->container['count'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets id
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     * @param string $id Unique webhook id assigned by Reepay
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets event
-     * @return string
-     */
-    public function getEvent()
-    {
-        return $this->container['event'];
-    }
-
-    /**
-     * Sets event
-     * @param string $event Event id of the event this webhook is for
-     * @return $this
-     */
-    public function setEvent($event)
-    {
-        $this->container['event'] = $event;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     * @return string
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     * @param string $state The webhook state, one of the following: `pending`, `disabled`, `failed`, `completed`
-     * @return $this
-     */
-    public function setState($state)
-    {
-        $allowed_values = array('pending', 'disabled', 'failed', 'completed');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'pending', 'disabled', 'failed', 'completed'");
-        }
-        $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
-     * Gets url
-     * @return string
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     * @param string $url Webhook url
-     * @return $this
-     */
-    public function setUrl($url)
-    {
-        $this->container['url'] = $url;
-
-        return $this;
-    }
-
-    /**
-     * Gets username
-     * @return string
-     */
-    public function getUsername()
-    {
-        return $this->container['username'];
-    }
-
-    /**
-     * Sets username
-     * @param string $username Optional basic auth username
-     * @return $this
-     */
-    public function setUsername($username)
-    {
-        $this->container['username'] = $username;
-
-        return $this;
-    }
-
-    /**
-     * Gets password
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->container['password'];
-    }
-
-    /**
-     * Sets password
-     * @param string $password Optional basic auth password (masked)
-     * @return $this
-     */
-    public function setPassword($password)
-    {
-        $this->container['password'] = $password;
-
-        return $this;
-    }
-
-    /**
-     * Gets content
-     * @return string
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /**
-     * Sets content
-     * @param string $content JSON content of the webhook
-     * @return $this
-     */
-    public function setContent($content)
-    {
-        $this->container['content'] = $content;
-
-        return $this;
-    }
-
-    /**
-     * Gets created
+     * Gets date
      * @return \DateTime
      */
-    public function getCreated()
+    public function getDate()
     {
-        return $this->container['created'];
+        return $this->container['date'];
     }
 
     /**
-     * Sets created
-     * @param \DateTime $created Creation date in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * Sets date
+     * @param \DateTime $date Date in period for this period balance
      * @return $this
      */
-    public function setCreated($created)
+    public function setDate($date)
     {
-        $this->container['created'] = $created;
+        $this->container['date'] = $date;
 
         return $this;
     }
 
     /**
-     * Gets success
-     * @return \DateTime
+     * Gets invoice
+     * @return \Swagger\Client\Model\InlineResponse20016
      */
-    public function getSuccess()
+    public function getInvoice()
     {
-        return $this->container['success'];
+        return $this->container['invoice'];
     }
 
     /**
-     * Sets success
-     * @param \DateTime $success Date of successful invocation in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * Sets invoice
+     * @param \Swagger\Client\Model\InlineResponse20016 $invoice
      * @return $this
      */
-    public function setSuccess($success)
+    public function setInvoice($invoice)
     {
-        $this->container['success'] = $success;
+        $this->container['invoice'] = $invoice;
 
         return $this;
     }
 
     /**
-     * Gets count
+     * Gets paid
      * @return int
      */
-    public function getCount()
+    public function getPaid()
     {
-        return $this->container['count'];
+        return $this->container['paid'];
     }
 
     /**
-     * Sets count
-     * @param int $count Number of invocations performed
+     * Sets paid
+     * @param int $paid The plan amount paid and settled for this period
      * @return $this
      */
-    public function setCount($count)
+    public function setPaid($paid)
     {
-        $this->container['count'] = $count;
+        $this->container['paid'] = $paid;
 
         return $this;
     }
 
     /**
-     * Gets last_fail
-     * @return \DateTime
-     */
-    public function getLastFail()
-    {
-        return $this->container['last_fail'];
-    }
-
-    /**
-     * Sets last_fail
-     * @param \DateTime $last_fail Date of last failed invocation in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
-     * @return $this
-     */
-    public function setLastFail($last_fail)
-    {
-        $this->container['last_fail'] = $last_fail;
-
-        return $this;
-    }
-
-    /**
-     * Gets first_fail
-     * @return \DateTime
-     */
-    public function getFirstFail()
-    {
-        return $this->container['first_fail'];
-    }
-
-    /**
-     * Sets first_fail
-     * @param \DateTime $first_fail Date of first failed invocation in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
-     * @return $this
-     */
-    public function setFirstFail($first_fail)
-    {
-        $this->container['first_fail'] = $first_fail;
-
-        return $this;
-    }
-
-    /**
-     * Gets alert_count
+     * Gets consumed
      * @return int
      */
-    public function getAlertCount()
+    public function getConsumed()
     {
-        return $this->container['alert_count'];
+        return $this->container['consumed'];
     }
 
     /**
-     * Sets alert_count
-     * @param int $alert_count Number of failed invocations before an alert email is sent
+     * Sets consumed
+     * @param int $consumed The partial plan amount consumed up to date for this period
      * @return $this
      */
-    public function setAlertCount($alert_count)
+    public function setConsumed($consumed)
     {
-        $this->container['alert_count'] = $alert_count;
+        $this->container['consumed'] = $consumed;
 
         return $this;
     }
 
     /**
-     * Gets alert_sent
-     * @return \DateTime
+     * Gets remaining
+     * @return int
      */
-    public function getAlertSent()
+    public function getRemaining()
     {
-        return $this->container['alert_sent'];
+        return $this->container['remaining'];
     }
 
     /**
-     * Sets alert_sent
-     * @param \DateTime $alert_sent Date when an optional alert email sending was requested in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * Sets remaining
+     * @param int $remaining The partial plan amount remaining for this period. This amount can be refunded in the case the subscription is expired or put on hold and the amount has been paid.
      * @return $this
      */
-    public function setAlertSent($alert_sent)
+    public function setRemaining($remaining)
     {
-        $this->container['alert_sent'] = $alert_sent;
+        $this->container['remaining'] = $remaining;
+
+        return $this;
+    }
+
+    /**
+     * Gets online_refundable
+     * @return int
+     */
+    public function getOnlineRefundable()
+    {
+        return $this->container['online_refundable'];
+    }
+
+    /**
+     * Sets online_refundable
+     * @param int $online_refundable The amount that can be online refunded on the subscription
+     * @return $this
+     */
+    public function setOnlineRefundable($online_refundable)
+    {
+        $this->container['online_refundable'] = $online_refundable;
 
         return $this;
     }

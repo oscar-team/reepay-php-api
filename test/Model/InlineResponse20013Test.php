@@ -83,17 +83,41 @@ class InlineResponse20013Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "note"
+     * Test attribute "subscription"
      */
-    public function testPropertyNote()
+    public function testPropertySubscription()
     {
 
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "handle"
      */
-    public function testPropertyId()
+    public function testPropertyHandle()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "text"
+     */
+    public function testPropertyText()
+    {
+
+    }
+
+    /**
+     * Test attribute "state"
+     */
+    public function testPropertyState()
     {
 
     }
@@ -107,17 +131,25 @@ class InlineResponse20013Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "user_name"
+     * Test attribute "valid_from"
      */
-    public function testPropertyUserName()
+    public function testPropertyValidFrom()
     {
 
     }
 
     /**
-     * Test attribute "user_email"
+     * Test attribute "credit_invoices"
      */
-    public function testPropertyUserEmail()
+    public function testPropertyCreditInvoices()
+    {
+
+    }
+
+    /**
+     * Test attribute "pending_amount"
+     */
+    public function testPropertyPendingAmount()
     {
 
     }

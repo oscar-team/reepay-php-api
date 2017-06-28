@@ -83,14 +83,6 @@ class Body42Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "email"
-     */
-    public function testPropertyEmail()
-    {
-
-    }
-
-    /**
      * Test attribute "groups"
      */
     public function testPropertyGroups()

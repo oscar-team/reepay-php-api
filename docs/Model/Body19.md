@@ -3,11 +3,17 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | Dunning plan name | 
-**schedule** | **int[]** | The schedule as list of intervals in days | 
-**handle** | **string** | Per account unique handle for the customer. Max length 255 with allowable characters [a-zA-Z0-9_.-@]. | 
-**default_plan** | **bool** | If this is default plan | 
-**final_subscription_action** | **string** | Action to take for subscription if dunning fails, one of the following: &#x60;expire&#x60;, &#x60;on_hold&#x60;, &#x60;none&#x60; | 
+**email** | **string** | Customer email | [optional] 
+**address** | **string** | Customer address | [optional] 
+**address2** | **string** | Customer address2 | [optional] 
+**city** | **string** | Customer city | [optional] 
+**country** | **string** | Customer country in ISO 3166-1 alpha-2 | [optional] 
+**phone** | **string** | Customer phone number | [optional] 
+**company** | **string** | Customer company | [optional] 
+**vat** | **string** | Customer vat number | [optional] 
+**first_name** | **string** | Customer first name | [optional] 
+**last_name** | **string** | Customer last name | [optional] 
+**postal_code** | **string** | Customer postal code | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

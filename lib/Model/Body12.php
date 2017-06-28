@@ -54,20 +54,11 @@ class Body12 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'email' => 'string',
-        'address' => 'string',
-        'address2' => 'string',
-        'city' => 'string',
-        'country' => 'string',
-        'phone' => 'string',
-        'company' => 'string',
-        'vat' => 'string',
-        'handle' => 'string',
-        'test' => 'bool',
-        'first_name' => 'string',
-        'last_name' => 'string',
-        'postal_code' => 'string',
-        'generate_handle' => 'bool'
+        'name' => 'string',
+        'all_plans' => 'bool',
+        'eligible_plans' => 'string[]',
+        'max_redemptions' => 'int',
+        'valid_until' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -80,20 +71,11 @@ class Body12 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'email' => 'email',
-        'address' => 'address',
-        'address2' => 'address2',
-        'city' => 'city',
-        'country' => 'country',
-        'phone' => 'phone',
-        'company' => 'company',
-        'vat' => 'vat',
-        'handle' => 'handle',
-        'test' => 'test',
-        'first_name' => 'first_name',
-        'last_name' => 'last_name',
-        'postal_code' => 'postal_code',
-        'generate_handle' => 'generate_handle'
+        'name' => 'name',
+        'all_plans' => 'all_plans',
+        'eligible_plans' => 'eligible_plans',
+        'max_redemptions' => 'max_redemptions',
+        'valid_until' => 'valid_until'
     ];
 
 
@@ -102,20 +84,11 @@ class Body12 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'email' => 'setEmail',
-        'address' => 'setAddress',
-        'address2' => 'setAddress2',
-        'city' => 'setCity',
-        'country' => 'setCountry',
-        'phone' => 'setPhone',
-        'company' => 'setCompany',
-        'vat' => 'setVat',
-        'handle' => 'setHandle',
-        'test' => 'setTest',
-        'first_name' => 'setFirstName',
-        'last_name' => 'setLastName',
-        'postal_code' => 'setPostalCode',
-        'generate_handle' => 'setGenerateHandle'
+        'name' => 'setName',
+        'all_plans' => 'setAllPlans',
+        'eligible_plans' => 'setEligiblePlans',
+        'max_redemptions' => 'setMaxRedemptions',
+        'valid_until' => 'setValidUntil'
     ];
 
 
@@ -124,20 +97,11 @@ class Body12 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'email' => 'getEmail',
-        'address' => 'getAddress',
-        'address2' => 'getAddress2',
-        'city' => 'getCity',
-        'country' => 'getCountry',
-        'phone' => 'getPhone',
-        'company' => 'getCompany',
-        'vat' => 'getVat',
-        'handle' => 'getHandle',
-        'test' => 'getTest',
-        'first_name' => 'getFirstName',
-        'last_name' => 'getLastName',
-        'postal_code' => 'getPostalCode',
-        'generate_handle' => 'getGenerateHandle'
+        'name' => 'getName',
+        'all_plans' => 'getAllPlans',
+        'eligible_plans' => 'getEligiblePlans',
+        'max_redemptions' => 'getMaxRedemptions',
+        'valid_until' => 'getValidUntil'
     ];
 
     public static function attributeMap()
@@ -171,20 +135,11 @@ class Body12 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
-        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
-        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
-        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['company'] = isset($data['company']) ? $data['company'] : null;
-        $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
-        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
-        $this->container['test'] = isset($data['test']) ? $data['test'] : null;
-        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
-        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
-        $this->container['generate_handle'] = isset($data['generate_handle']) ? $data['generate_handle'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['all_plans'] = isset($data['all_plans']) ? $data['all_plans'] : null;
+        $this->container['eligible_plans'] = isset($data['eligible_plans']) ? $data['eligible_plans'] : null;
+        $this->container['max_redemptions'] = isset($data['max_redemptions']) ? $data['max_redemptions'] : null;
+        $this->container['valid_until'] = isset($data['valid_until']) ? $data['valid_until'] : null;
     }
 
     /**
@@ -195,6 +150,13 @@ class Body12 implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if ($this->container['name'] === null) {
+            $invalid_properties[] = "'name' can't be null";
+        }
+        if (!is_null($this->container['max_redemptions']) && ($this->container['max_redemptions'] < 1)) {
+            $invalid_properties[] = "invalid value for 'max_redemptions', must be bigger than or equal to 1.";
+        }
 
         return $invalid_properties;
     }
@@ -208,300 +170,122 @@ class Body12 implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['name'] === null) {
+            return false;
+        }
+        if ($this->container['max_redemptions'] < 1) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets email
+     * Gets name
      * @return string
      */
-    public function getEmail()
+    public function getName()
     {
-        return $this->container['email'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets email
-     * @param string $email Customer email
+     * Sets name
+     * @param string $name Internal name for the coupon.
      * @return $this
      */
-    public function setEmail($email)
+    public function setName($name)
     {
-        $this->container['email'] = $email;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets address
-     * @return string
-     */
-    public function getAddress()
-    {
-        return $this->container['address'];
-    }
-
-    /**
-     * Sets address
-     * @param string $address Customer address
-     * @return $this
-     */
-    public function setAddress($address)
-    {
-        $this->container['address'] = $address;
-
-        return $this;
-    }
-
-    /**
-     * Gets address2
-     * @return string
-     */
-    public function getAddress2()
-    {
-        return $this->container['address2'];
-    }
-
-    /**
-     * Sets address2
-     * @param string $address2 Customer address2
-     * @return $this
-     */
-    public function setAddress2($address2)
-    {
-        $this->container['address2'] = $address2;
-
-        return $this;
-    }
-
-    /**
-     * Gets city
-     * @return string
-     */
-    public function getCity()
-    {
-        return $this->container['city'];
-    }
-
-    /**
-     * Sets city
-     * @param string $city Customer city
-     * @return $this
-     */
-    public function setCity($city)
-    {
-        $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets country
-     * @return string
-     */
-    public function getCountry()
-    {
-        return $this->container['country'];
-    }
-
-    /**
-     * Sets country
-     * @param string $country Customer country in ISO 3166-1 alpha-2
-     * @return $this
-     */
-    public function setCountry($country)
-    {
-        $this->container['country'] = $country;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone
-     * @return string
-     */
-    public function getPhone()
-    {
-        return $this->container['phone'];
-    }
-
-    /**
-     * Sets phone
-     * @param string $phone Customer phone number
-     * @return $this
-     */
-    public function setPhone($phone)
-    {
-        $this->container['phone'] = $phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets company
-     * @return string
-     */
-    public function getCompany()
-    {
-        return $this->container['company'];
-    }
-
-    /**
-     * Sets company
-     * @param string $company Customer company
-     * @return $this
-     */
-    public function setCompany($company)
-    {
-        $this->container['company'] = $company;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat
-     * @return string
-     */
-    public function getVat()
-    {
-        return $this->container['vat'];
-    }
-
-    /**
-     * Sets vat
-     * @param string $vat Customer vat number
-     * @return $this
-     */
-    public function setVat($vat)
-    {
-        $this->container['vat'] = $vat;
-
-        return $this;
-    }
-
-    /**
-     * Gets handle
-     * @return string
-     */
-    public function getHandle()
-    {
-        return $this->container['handle'];
-    }
-
-    /**
-     * Sets handle
-     * @param string $handle Per account unique handle for the customer. Max length 255 with allowable characters [a-zA-Z0-9_.-@]. Must be provided if generate_handle is not defined.
-     * @return $this
-     */
-    public function setHandle($handle)
-    {
-        $this->container['handle'] = $handle;
-
-        return $this;
-    }
-
-    /**
-     * Gets test
+     * Gets all_plans
      * @return bool
      */
-    public function getTest()
+    public function getAllPlans()
     {
-        return $this->container['test'];
+        return $this->container['all_plans'];
     }
 
     /**
-     * Sets test
-     * @param bool $test Test flag. If given it will be verified that the account state matches the intended create state.
+     * Sets all_plans
+     * @param bool $all_plans Whether all plans are eligible for this coupon. Defaults to false.
      * @return $this
      */
-    public function setTest($test)
+    public function setAllPlans($all_plans)
     {
-        $this->container['test'] = $test;
+        $this->container['all_plans'] = $all_plans;
 
         return $this;
     }
 
     /**
-     * Gets first_name
+     * Gets eligible_plans
+     * @return string[]
+     */
+    public function getEligiblePlans()
+    {
+        return $this->container['eligible_plans'];
+    }
+
+    /**
+     * Sets eligible_plans
+     * @param string[] $eligible_plans If not all_plans are set to true, then the set of eligible plan handles must be defined.
+     * @return $this
+     */
+    public function setEligiblePlans($eligible_plans)
+    {
+        $this->container['eligible_plans'] = $eligible_plans;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_redemptions
+     * @return int
+     */
+    public function getMaxRedemptions()
+    {
+        return $this->container['max_redemptions'];
+    }
+
+    /**
+     * Sets max_redemptions
+     * @param int $max_redemptions Optional maximum number of times this coupon can be redeemed.
+     * @return $this
+     */
+    public function setMaxRedemptions($max_redemptions)
+    {
+
+        if (!is_null($max_redemptions) && ($max_redemptions < 1)) {
+            throw new \InvalidArgumentException('invalid value for $max_redemptions when calling Body12., must be bigger than or equal to 1.');
+        }
+
+        $this->container['max_redemptions'] = $max_redemptions;
+
+        return $this;
+    }
+
+    /**
+     * Gets valid_until
      * @return string
      */
-    public function getFirstName()
+    public function getValidUntil()
     {
-        return $this->container['first_name'];
+        return $this->container['valid_until'];
     }
 
     /**
-     * Sets first_name
-     * @param string $first_name Customer first name
+     * Sets valid_until
+     * @param string $valid_until Optional date and time until which the coupon is redeemable. Date and time on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`.
      * @return $this
      */
-    public function setFirstName($first_name)
+    public function setValidUntil($valid_until)
     {
-        $this->container['first_name'] = $first_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_name
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->container['last_name'];
-    }
-
-    /**
-     * Sets last_name
-     * @param string $last_name Customer last name
-     * @return $this
-     */
-    public function setLastName($last_name)
-    {
-        $this->container['last_name'] = $last_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets postal_code
-     * @return string
-     */
-    public function getPostalCode()
-    {
-        return $this->container['postal_code'];
-    }
-
-    /**
-     * Sets postal_code
-     * @param string $postal_code Customer postal code
-     * @return $this
-     */
-    public function setPostalCode($postal_code)
-    {
-        $this->container['postal_code'] = $postal_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets generate_handle
-     * @return bool
-     */
-    public function getGenerateHandle()
-    {
-        return $this->container['generate_handle'];
-    }
-
-    /**
-     * Sets generate_handle
-     * @param bool $generate_handle Auto generate handle on the form cust-[sequence_number]
-     * @return $this
-     */
-    public function setGenerateHandle($generate_handle)
-    {
-        $this->container['generate_handle'] = $generate_handle;
+        $this->container['valid_until'] = $valid_until;
 
         return $this;
     }

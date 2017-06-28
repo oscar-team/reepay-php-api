@@ -54,12 +54,10 @@ class InlineResponse20027 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'date' => '\DateTime',
-        'invoice' => '\Swagger\Client\Model\InlineResponse20015',
-        'paid' => 'int',
-        'consumed' => 'int',
-        'remaining' => 'int',
-        'online_refundable' => 'int'
+        'from' => 'string',
+        'to' => 'string',
+        'amount' => 'int',
+        'currency' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -72,12 +70,10 @@ class InlineResponse20027 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'date' => 'date',
-        'invoice' => 'invoice',
-        'paid' => 'paid',
-        'consumed' => 'consumed',
-        'remaining' => 'remaining',
-        'online_refundable' => 'online_refundable'
+        'from' => 'from',
+        'to' => 'to',
+        'amount' => 'amount',
+        'currency' => 'currency'
     ];
 
 
@@ -86,12 +82,10 @@ class InlineResponse20027 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'date' => 'setDate',
-        'invoice' => 'setInvoice',
-        'paid' => 'setPaid',
-        'consumed' => 'setConsumed',
-        'remaining' => 'setRemaining',
-        'online_refundable' => 'setOnlineRefundable'
+        'from' => 'setFrom',
+        'to' => 'setTo',
+        'amount' => 'setAmount',
+        'currency' => 'setCurrency'
     ];
 
 
@@ -100,12 +94,10 @@ class InlineResponse20027 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'date' => 'getDate',
-        'invoice' => 'getInvoice',
-        'paid' => 'getPaid',
-        'consumed' => 'getConsumed',
-        'remaining' => 'getRemaining',
-        'online_refundable' => 'getOnlineRefundable'
+        'from' => 'getFrom',
+        'to' => 'getTo',
+        'amount' => 'getAmount',
+        'currency' => 'getCurrency'
     ];
 
     public static function attributeMap()
@@ -139,12 +131,10 @@ class InlineResponse20027 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['date'] = isset($data['date']) ? $data['date'] : null;
-        $this->container['invoice'] = isset($data['invoice']) ? $data['invoice'] : null;
-        $this->container['paid'] = isset($data['paid']) ? $data['paid'] : null;
-        $this->container['consumed'] = isset($data['consumed']) ? $data['consumed'] : null;
-        $this->container['remaining'] = isset($data['remaining']) ? $data['remaining'] : null;
-        $this->container['online_refundable'] = isset($data['online_refundable']) ? $data['online_refundable'] : null;
+        $this->container['from'] = isset($data['from']) ? $data['from'] : null;
+        $this->container['to'] = isset($data['to']) ? $data['to'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
     }
 
     /**
@@ -156,6 +146,22 @@ class InlineResponse20027 implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['from'] === null) {
+            $invalid_properties[] = "'from' can't be null";
+        }
+        if ($this->container['to'] === null) {
+            $invalid_properties[] = "'to' can't be null";
+        }
+        if ($this->container['amount'] === null) {
+            $invalid_properties[] = "'amount' can't be null";
+        }
+        if (($this->container['amount'] < 0)) {
+            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['currency'] === null) {
+            $invalid_properties[] = "'currency' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -168,132 +174,110 @@ class InlineResponse20027 implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['from'] === null) {
+            return false;
+        }
+        if ($this->container['to'] === null) {
+            return false;
+        }
+        if ($this->container['amount'] === null) {
+            return false;
+        }
+        if ($this->container['amount'] < 0) {
+            return false;
+        }
+        if ($this->container['currency'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets date
-     * @return \DateTime
+     * Gets from
+     * @return string
      */
-    public function getDate()
+    public function getFrom()
     {
-        return $this->container['date'];
+        return $this->container['from'];
     }
 
     /**
-     * Sets date
-     * @param \DateTime $date Date in period for this period balance
+     * Sets from
+     * @param string $from From date on the form yyyy-MM-dd
      * @return $this
      */
-    public function setDate($date)
+    public function setFrom($from)
     {
-        $this->container['date'] = $date;
+        $this->container['from'] = $from;
 
         return $this;
     }
 
     /**
-     * Gets invoice
-     * @return \Swagger\Client\Model\InlineResponse20015
+     * Gets to
+     * @return string
      */
-    public function getInvoice()
+    public function getTo()
     {
-        return $this->container['invoice'];
+        return $this->container['to'];
     }
 
     /**
-     * Sets invoice
-     * @param \Swagger\Client\Model\InlineResponse20015 $invoice
+     * Sets to
+     * @param string $to To date on the form yyyy-MM-dd
      * @return $this
      */
-    public function setInvoice($invoice)
+    public function setTo($to)
     {
-        $this->container['invoice'] = $invoice;
+        $this->container['to'] = $to;
 
         return $this;
     }
 
     /**
-     * Gets paid
+     * Gets amount
      * @return int
      */
-    public function getPaid()
+    public function getAmount()
     {
-        return $this->container['paid'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets paid
-     * @param int $paid The plan amount paid and settled for this period
+     * Sets amount
+     * @param int $amount Amount corresponding to the interval in the smallest unit for the currency
      * @return $this
      */
-    public function setPaid($paid)
+    public function setAmount($amount)
     {
-        $this->container['paid'] = $paid;
+
+        if (($amount < 0)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling InlineResponse20027., must be bigger than or equal to 0.');
+        }
+
+        $this->container['amount'] = $amount;
 
         return $this;
     }
 
     /**
-     * Gets consumed
-     * @return int
+     * Gets currency
+     * @return string
      */
-    public function getConsumed()
+    public function getCurrency()
     {
-        return $this->container['consumed'];
+        return $this->container['currency'];
     }
 
     /**
-     * Sets consumed
-     * @param int $consumed The partial plan amount consumed up to date for this period
+     * Sets currency
+     * @param string $currency Currency in ISO 4217 three letter alpha code
      * @return $this
      */
-    public function setConsumed($consumed)
+    public function setCurrency($currency)
     {
-        $this->container['consumed'] = $consumed;
-
-        return $this;
-    }
-
-    /**
-     * Gets remaining
-     * @return int
-     */
-    public function getRemaining()
-    {
-        return $this->container['remaining'];
-    }
-
-    /**
-     * Sets remaining
-     * @param int $remaining The partial plan amount remaining for this period. This amount can be refunded in the case the subscription is expired or put on hold and the amount has been paid.
-     * @return $this
-     */
-    public function setRemaining($remaining)
-    {
-        $this->container['remaining'] = $remaining;
-
-        return $this;
-    }
-
-    /**
-     * Gets online_refundable
-     * @return int
-     */
-    public function getOnlineRefundable()
-    {
-        return $this->container['online_refundable'];
-    }
-
-    /**
-     * Sets online_refundable
-     * @param int $online_refundable The amount that can be online refunded on the subscription
-     * @return $this
-     */
-    public function setOnlineRefundable($online_refundable)
-    {
-        $this->container['online_refundable'] = $online_refundable;
+        $this->container['currency'] = $currency;
 
         return $this;
     }

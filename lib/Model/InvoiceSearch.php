@@ -60,7 +60,7 @@ class InvoiceSearch implements ArrayAccess
         'count' => 'int',
         'search' => 'string',
         'sort' => 'string',
-        'content' => '\Swagger\Client\Model\InlineResponse20015[]',
+        'content' => '\Swagger\Client\Model\InlineResponse20016[]',
         'total_elements' => 'int',
         'total_pages' => 'int'
     ];
@@ -376,7 +376,7 @@ class InvoiceSearch implements ArrayAccess
 
     /**
      * Gets content
-     * @return \Swagger\Client\Model\InlineResponse20015[]
+     * @return \Swagger\Client\Model\InlineResponse20016[]
      */
     public function getContent()
     {
@@ -385,7 +385,7 @@ class InvoiceSearch implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Swagger\Client\Model\InlineResponse20015[] $content List of invoices for current page
+     * @param \Swagger\Client\Model\InlineResponse20016[] $content List of invoices for current page
      * @return $this
      */
     public function setContent($content)

@@ -83,73 +83,17 @@ class Body7Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "handle"
+     * Test attribute "card_types"
      */
-    public function testPropertyHandle()
+    public function testPropertyCardTypes()
     {
 
     }
 
     /**
-     * Test attribute "key"
+     * Test attribute "provider_settings"
      */
-    public function testPropertyKey()
-    {
-
-    }
-
-    /**
-     * Test attribute "amount"
-     */
-    public function testPropertyAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "customer"
-     */
-    public function testPropertyCustomer()
-    {
-
-    }
-
-    /**
-     * Test attribute "source"
-     */
-    public function testPropertySource()
-    {
-
-    }
-
-    /**
-     * Test attribute "settle"
-     */
-    public function testPropertySettle()
-    {
-
-    }
-
-    /**
-     * Test attribute "ordertext"
-     */
-    public function testPropertyOrdertext()
-    {
-
-    }
-
-    /**
-     * Test attribute "order_lines"
-     */
-    public function testPropertyOrderLines()
-    {
-
-    }
-
-    /**
-     * Test attribute "customer_handle"
-     */
-    public function testPropertyCustomerHandle()
+    public function testPropertyProviderSettings()
     {
 
     }

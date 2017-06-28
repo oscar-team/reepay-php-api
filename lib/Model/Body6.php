@@ -54,8 +54,13 @@ class Body6 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'card_types' => 'string[]',
-        'provider_settings' => 'map[string,object]'
+        'subscription' => 'string',
+        'handle' => 'string',
+        'ordertext' => 'string',
+        'quantity' => 'int',
+        'amount' => 'int',
+        'vat' => 'float',
+        'amount_incl_vat' => 'bool'
     ];
 
     public static function swaggerTypes()
@@ -68,8 +73,13 @@ class Body6 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'card_types' => 'card_types',
-        'provider_settings' => 'provider_settings'
+        'subscription' => 'subscription',
+        'handle' => 'handle',
+        'ordertext' => 'ordertext',
+        'quantity' => 'quantity',
+        'amount' => 'amount',
+        'vat' => 'vat',
+        'amount_incl_vat' => 'amount_incl_vat'
     ];
 
 
@@ -78,8 +88,13 @@ class Body6 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'card_types' => 'setCardTypes',
-        'provider_settings' => 'setProviderSettings'
+        'subscription' => 'setSubscription',
+        'handle' => 'setHandle',
+        'ordertext' => 'setOrdertext',
+        'quantity' => 'setQuantity',
+        'amount' => 'setAmount',
+        'vat' => 'setVat',
+        'amount_incl_vat' => 'setAmountInclVat'
     ];
 
 
@@ -88,8 +103,13 @@ class Body6 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'card_types' => 'getCardTypes',
-        'provider_settings' => 'getProviderSettings'
+        'subscription' => 'getSubscription',
+        'handle' => 'getHandle',
+        'ordertext' => 'getOrdertext',
+        'quantity' => 'getQuantity',
+        'amount' => 'getAmount',
+        'vat' => 'getVat',
+        'amount_incl_vat' => 'getAmountInclVat'
     ];
 
     public static function attributeMap()
@@ -123,8 +143,13 @@ class Body6 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['card_types'] = isset($data['card_types']) ? $data['card_types'] : null;
-        $this->container['provider_settings'] = isset($data['provider_settings']) ? $data['provider_settings'] : null;
+        $this->container['subscription'] = isset($data['subscription']) ? $data['subscription'] : null;
+        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
+        $this->container['ordertext'] = isset($data['ordertext']) ? $data['ordertext'] : null;
+        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
+        $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
     }
 
     /**
@@ -136,9 +161,34 @@ class Body6 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['card_types'] === null) {
-            $invalid_properties[] = "'card_types' can't be null";
+        if ($this->container['subscription'] === null) {
+            $invalid_properties[] = "'subscription' can't be null";
         }
+        if ($this->container['handle'] === null) {
+            $invalid_properties[] = "'handle' can't be null";
+        }
+        if ($this->container['ordertext'] === null) {
+            $invalid_properties[] = "'ordertext' can't be null";
+        }
+        if (!is_null($this->container['quantity']) && ($this->container['quantity'] < 1)) {
+            $invalid_properties[] = "invalid value for 'quantity', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['amount'] === null) {
+            $invalid_properties[] = "'amount' can't be null";
+        }
+        if (($this->container['amount'] < 0)) {
+            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['vat']) && ($this->container['vat'] > 1)) {
+            $invalid_properties[] = "invalid value for 'vat', must be smaller than or equal to 1.";
+        }
+
+        if (!is_null($this->container['vat']) && ($this->container['vat'] < 0)) {
+            $invalid_properties[] = "invalid value for 'vat', must be bigger than or equal to 0.";
+        }
+
         return $invalid_properties;
     }
 
@@ -151,7 +201,28 @@ class Body6 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['card_types'] === null) {
+        if ($this->container['subscription'] === null) {
+            return false;
+        }
+        if ($this->container['handle'] === null) {
+            return false;
+        }
+        if ($this->container['ordertext'] === null) {
+            return false;
+        }
+        if ($this->container['quantity'] < 1) {
+            return false;
+        }
+        if ($this->container['amount'] === null) {
+            return false;
+        }
+        if ($this->container['amount'] < 0) {
+            return false;
+        }
+        if ($this->container['vat'] > 1) {
+            return false;
+        }
+        if ($this->container['vat'] < 0) {
             return false;
         }
         return true;
@@ -159,43 +230,166 @@ class Body6 implements ArrayAccess
 
 
     /**
-     * Gets card_types
-     * @return string[]
+     * Gets subscription
+     * @return string
      */
-    public function getCardTypes()
+    public function getSubscription()
     {
-        return $this->container['card_types'];
+        return $this->container['subscription'];
     }
 
     /**
-     * Sets card_types
-     * @param string[] $card_types Card types supported by agreement
+     * Sets subscription
+     * @param string $subscription Subscription handle
      * @return $this
      */
-    public function setCardTypes($card_types)
+    public function setSubscription($subscription)
     {
-        $this->container['card_types'] = $card_types;
+        $this->container['subscription'] = $subscription;
 
         return $this;
     }
 
     /**
-     * Gets provider_settings
-     * @return map[string,object]
+     * Gets handle
+     * @return string
      */
-    public function getProviderSettings()
+    public function getHandle()
     {
-        return $this->container['provider_settings'];
+        return $this->container['handle'];
     }
 
     /**
-     * Sets provider_settings
-     * @param map[string,object] $provider_settings Key value map of provider settings
+     * Sets handle
+     * @param string $handle Per account unique handle for the additional cost
      * @return $this
      */
-    public function setProviderSettings($provider_settings)
+    public function setHandle($handle)
     {
-        $this->container['provider_settings'] = $provider_settings;
+        $this->container['handle'] = $handle;
+
+        return $this;
+    }
+
+    /**
+     * Gets ordertext
+     * @return string
+     */
+    public function getOrdertext()
+    {
+        return $this->container['ordertext'];
+    }
+
+    /**
+     * Sets ordertext
+     * @param string $ordertext Order text for the additional cost. Will be on affected invoices.
+     * @return $this
+     */
+    public function setOrdertext($ordertext)
+    {
+        $this->container['ordertext'] = $ordertext;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity
+     * @return int
+     */
+    public function getQuantity()
+    {
+        return $this->container['quantity'];
+    }
+
+    /**
+     * Sets quantity
+     * @param int $quantity Quantity for the additional cost. Default 1.
+     * @return $this
+     */
+    public function setQuantity($quantity)
+    {
+
+        if (!is_null($quantity) && ($quantity < 1)) {
+            throw new \InvalidArgumentException('invalid value for $quantity when calling Body6., must be bigger than or equal to 1.');
+        }
+
+        $this->container['quantity'] = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     * @return int
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     * @param int $amount Per quantity amount in the smallest unit for the account currency
+     * @return $this
+     */
+    public function setAmount($amount)
+    {
+
+        if (($amount < 0)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling Body6., must be bigger than or equal to 0.');
+        }
+
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets vat
+     * @return float
+     */
+    public function getVat()
+    {
+        return $this->container['vat'];
+    }
+
+    /**
+     * Sets vat
+     * @param float $vat Optional vat for additional cost. Account default is used if none given.
+     * @return $this
+     */
+    public function setVat($vat)
+    {
+
+        if (!is_null($vat) && ($vat > 1)) {
+            throw new \InvalidArgumentException('invalid value for $vat when calling Body6., must be smaller than or equal to 1.');
+        }
+        if (!is_null($vat) && ($vat < 0)) {
+            throw new \InvalidArgumentException('invalid value for $vat when calling Body6., must be bigger than or equal to 0.');
+        }
+
+        $this->container['vat'] = $vat;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount_incl_vat
+     * @return bool
+     */
+    public function getAmountInclVat()
+    {
+        return $this->container['amount_incl_vat'];
+    }
+
+    /**
+     * Sets amount_incl_vat
+     * @param bool $amount_incl_vat Whether the per quantity amount is including VAT. Defaults to true.
+     * @return $this
+     */
+    public function setAmountInclVat($amount_incl_vat)
+    {
+        $this->container['amount_incl_vat'] = $amount_incl_vat;
 
         return $this;
     }

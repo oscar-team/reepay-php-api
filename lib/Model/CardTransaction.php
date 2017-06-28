@@ -54,7 +54,7 @@ class CardTransaction implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'card' => '\Swagger\Client\Model\InlineResponse20014Cards',
+        'card' => '\Swagger\Client\Model\InlineResponse20015Cards',
         'error' => 'string',
         'fingerprint' => 'string',
         'ref_transaction' => 'string',
@@ -275,7 +275,7 @@ class CardTransaction implements ArrayAccess
 
     /**
      * Gets card
-     * @return \Swagger\Client\Model\InlineResponse20014Cards
+     * @return \Swagger\Client\Model\InlineResponse20015Cards
      */
     public function getCard()
     {
@@ -284,7 +284,7 @@ class CardTransaction implements ArrayAccess
 
     /**
      * Sets card
-     * @param \Swagger\Client\Model\InlineResponse20014Cards $card
+     * @param \Swagger\Client\Model\InlineResponse20015Cards $card
      * @return $this
      */
     public function setCard($card)

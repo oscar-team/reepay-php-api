@@ -54,10 +54,24 @@ class InlineResponse20028 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'from' => 'string',
-        'to' => 'string',
+        'handle' => 'string',
+        'discount' => 'string',
+        'state' => 'string',
+        'coupon' => 'string',
+        'deleted' => '\DateTime',
+        'created' => '\DateTime',
+        'name' => 'string',
+        'description' => 'string',
         'amount' => 'int',
-        'currency' => 'string'
+        'percentage' => 'int',
+        'count' => 'int',
+        'invoices' => 'string[]',
+        'apply_to' => 'string[]',
+        'fixed_count' => 'int',
+        'fixed_period_unit' => 'string',
+        'fixed_period' => 'int',
+        'fixed_usage_reached' => 'bool',
+        'fixed_period_passed' => 'bool'
     ];
 
     public static function swaggerTypes()
@@ -70,10 +84,24 @@ class InlineResponse20028 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'from' => 'from',
-        'to' => 'to',
+        'handle' => 'handle',
+        'discount' => 'discount',
+        'state' => 'state',
+        'coupon' => 'coupon',
+        'deleted' => 'deleted',
+        'created' => 'created',
+        'name' => 'name',
+        'description' => 'description',
         'amount' => 'amount',
-        'currency' => 'currency'
+        'percentage' => 'percentage',
+        'count' => 'count',
+        'invoices' => 'invoices',
+        'apply_to' => 'apply_to',
+        'fixed_count' => 'fixed_count',
+        'fixed_period_unit' => 'fixed_period_unit',
+        'fixed_period' => 'fixed_period',
+        'fixed_usage_reached' => 'fixed_usage_reached',
+        'fixed_period_passed' => 'fixed_period_passed'
     ];
 
 
@@ -82,10 +110,24 @@ class InlineResponse20028 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'from' => 'setFrom',
-        'to' => 'setTo',
+        'handle' => 'setHandle',
+        'discount' => 'setDiscount',
+        'state' => 'setState',
+        'coupon' => 'setCoupon',
+        'deleted' => 'setDeleted',
+        'created' => 'setCreated',
+        'name' => 'setName',
+        'description' => 'setDescription',
         'amount' => 'setAmount',
-        'currency' => 'setCurrency'
+        'percentage' => 'setPercentage',
+        'count' => 'setCount',
+        'invoices' => 'setInvoices',
+        'apply_to' => 'setApplyTo',
+        'fixed_count' => 'setFixedCount',
+        'fixed_period_unit' => 'setFixedPeriodUnit',
+        'fixed_period' => 'setFixedPeriod',
+        'fixed_usage_reached' => 'setFixedUsageReached',
+        'fixed_period_passed' => 'setFixedPeriodPassed'
     ];
 
 
@@ -94,10 +136,24 @@ class InlineResponse20028 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'from' => 'getFrom',
-        'to' => 'getTo',
+        'handle' => 'getHandle',
+        'discount' => 'getDiscount',
+        'state' => 'getState',
+        'coupon' => 'getCoupon',
+        'deleted' => 'getDeleted',
+        'created' => 'getCreated',
+        'name' => 'getName',
+        'description' => 'getDescription',
         'amount' => 'getAmount',
-        'currency' => 'getCurrency'
+        'percentage' => 'getPercentage',
+        'count' => 'getCount',
+        'invoices' => 'getInvoices',
+        'apply_to' => 'getApplyTo',
+        'fixed_count' => 'getFixedCount',
+        'fixed_period_unit' => 'getFixedPeriodUnit',
+        'fixed_period' => 'getFixedPeriod',
+        'fixed_usage_reached' => 'getFixedUsageReached',
+        'fixed_period_passed' => 'getFixedPeriodPassed'
     ];
 
     public static function attributeMap()
@@ -115,8 +171,36 @@ class InlineResponse20028 implements ArrayAccess
         return self::$getters;
     }
 
+    const STATE_ACTIVE = 'active';
+    const STATE_DISABLED = 'disabled';
+    const FIXED_PERIOD_UNIT_MONTHS = 'months';
+    const FIXED_PERIOD_UNIT_DAYS = 'days';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getStateAllowableValues()
+    {
+        return [
+            self::STATE_ACTIVE,
+            self::STATE_DISABLED,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getFixedPeriodUnitAllowableValues()
+    {
+        return [
+            self::FIXED_PERIOD_UNIT_MONTHS,
+            self::FIXED_PERIOD_UNIT_DAYS,
+        ];
+    }
     
 
     /**
@@ -131,10 +215,24 @@ class InlineResponse20028 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['from'] = isset($data['from']) ? $data['from'] : null;
-        $this->container['to'] = isset($data['to']) ? $data['to'] : null;
+        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
+        $this->container['discount'] = isset($data['discount']) ? $data['discount'] : null;
+        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
+        $this->container['coupon'] = isset($data['coupon']) ? $data['coupon'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
+        $this->container['created'] = isset($data['created']) ? $data['created'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['percentage'] = isset($data['percentage']) ? $data['percentage'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['invoices'] = isset($data['invoices']) ? $data['invoices'] : null;
+        $this->container['apply_to'] = isset($data['apply_to']) ? $data['apply_to'] : null;
+        $this->container['fixed_count'] = isset($data['fixed_count']) ? $data['fixed_count'] : null;
+        $this->container['fixed_period_unit'] = isset($data['fixed_period_unit']) ? $data['fixed_period_unit'] : null;
+        $this->container['fixed_period'] = isset($data['fixed_period']) ? $data['fixed_period'] : null;
+        $this->container['fixed_usage_reached'] = isset($data['fixed_usage_reached']) ? $data['fixed_usage_reached'] : null;
+        $this->container['fixed_period_passed'] = isset($data['fixed_period_passed']) ? $data['fixed_period_passed'] : null;
     }
 
     /**
@@ -146,21 +244,65 @@ class InlineResponse20028 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['from'] === null) {
-            $invalid_properties[] = "'from' can't be null";
+        if ($this->container['handle'] === null) {
+            $invalid_properties[] = "'handle' can't be null";
         }
-        if ($this->container['to'] === null) {
-            $invalid_properties[] = "'to' can't be null";
+        if ($this->container['discount'] === null) {
+            $invalid_properties[] = "'discount' can't be null";
         }
-        if ($this->container['amount'] === null) {
-            $invalid_properties[] = "'amount' can't be null";
+        if ($this->container['state'] === null) {
+            $invalid_properties[] = "'state' can't be null";
         }
-        if (($this->container['amount'] < 0)) {
-            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
+        $allowed_values = ["active", "disabled"];
+        if (!in_array($this->container['state'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'disabled'.";
         }
 
-        if ($this->container['currency'] === null) {
-            $invalid_properties[] = "'currency' can't be null";
+        if ($this->container['created'] === null) {
+            $invalid_properties[] = "'created' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalid_properties[] = "'name' can't be null";
+        }
+        if (!is_null($this->container['amount']) && ($this->container['amount'] < 1)) {
+            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 1.";
+        }
+
+        if (!is_null($this->container['percentage']) && ($this->container['percentage'] > 100)) {
+            $invalid_properties[] = "invalid value for 'percentage', must be smaller than or equal to 100.";
+        }
+
+        if (!is_null($this->container['percentage']) && ($this->container['percentage'] < 1)) {
+            $invalid_properties[] = "invalid value for 'percentage', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['count'] === null) {
+            $invalid_properties[] = "'count' can't be null";
+        }
+        if ($this->container['invoices'] === null) {
+            $invalid_properties[] = "'invoices' can't be null";
+        }
+        if ($this->container['apply_to'] === null) {
+            $invalid_properties[] = "'apply_to' can't be null";
+        }
+        if (!is_null($this->container['fixed_count']) && ($this->container['fixed_count'] < 1)) {
+            $invalid_properties[] = "invalid value for 'fixed_count', must be bigger than or equal to 1.";
+        }
+
+        $allowed_values = ["months", "days"];
+        if (!in_array($this->container['fixed_period_unit'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'fixed_period_unit', must be one of 'months', 'days'.";
+        }
+
+        if (!is_null($this->container['fixed_period']) && ($this->container['fixed_period'] < 1)) {
+            $invalid_properties[] = "invalid value for 'fixed_period', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['fixed_usage_reached'] === null) {
+            $invalid_properties[] = "'fixed_usage_reached' can't be null";
+        }
+        if ($this->container['fixed_period_passed'] === null) {
+            $invalid_properties[] = "'fixed_period_passed' can't be null";
         }
         return $invalid_properties;
     }
@@ -174,19 +316,57 @@ class InlineResponse20028 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['from'] === null) {
+        if ($this->container['handle'] === null) {
             return false;
         }
-        if ($this->container['to'] === null) {
+        if ($this->container['discount'] === null) {
             return false;
         }
-        if ($this->container['amount'] === null) {
+        if ($this->container['state'] === null) {
             return false;
         }
-        if ($this->container['amount'] < 0) {
+        $allowed_values = ["active", "disabled"];
+        if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
-        if ($this->container['currency'] === null) {
+        if ($this->container['created'] === null) {
+            return false;
+        }
+        if ($this->container['name'] === null) {
+            return false;
+        }
+        if ($this->container['amount'] < 1) {
+            return false;
+        }
+        if ($this->container['percentage'] > 100) {
+            return false;
+        }
+        if ($this->container['percentage'] < 1) {
+            return false;
+        }
+        if ($this->container['count'] === null) {
+            return false;
+        }
+        if ($this->container['invoices'] === null) {
+            return false;
+        }
+        if ($this->container['apply_to'] === null) {
+            return false;
+        }
+        if ($this->container['fixed_count'] < 1) {
+            return false;
+        }
+        $allowed_values = ["months", "days"];
+        if (!in_array($this->container['fixed_period_unit'], $allowed_values)) {
+            return false;
+        }
+        if ($this->container['fixed_period'] < 1) {
+            return false;
+        }
+        if ($this->container['fixed_usage_reached'] === null) {
+            return false;
+        }
+        if ($this->container['fixed_period_passed'] === null) {
             return false;
         }
         return true;
@@ -194,43 +374,173 @@ class InlineResponse20028 implements ArrayAccess
 
 
     /**
-     * Gets from
+     * Gets handle
      * @return string
      */
-    public function getFrom()
+    public function getHandle()
     {
-        return $this->container['from'];
+        return $this->container['handle'];
     }
 
     /**
-     * Sets from
-     * @param string $from From date on the form yyyy-MM-dd
+     * Sets handle
+     * @param string $handle Per subscription unique handle for the subscription discount.
      * @return $this
      */
-    public function setFrom($from)
+    public function setHandle($handle)
     {
-        $this->container['from'] = $from;
+        $this->container['handle'] = $handle;
 
         return $this;
     }
 
     /**
-     * Gets to
+     * Gets discount
      * @return string
      */
-    public function getTo()
+    public function getDiscount()
     {
-        return $this->container['to'];
+        return $this->container['discount'];
     }
 
     /**
-     * Sets to
-     * @param string $to To date on the form yyyy-MM-dd
+     * Sets discount
+     * @param string $discount Discount for subscription discount
      * @return $this
      */
-    public function setTo($to)
+    public function setDiscount($discount)
     {
-        $this->container['to'] = $to;
+        $this->container['discount'] = $discount;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     * @param string $state Discount state `active` or `disabled`.
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $allowed_values = array('active', 'disabled');
+        if ((!in_array($state, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'disabled'");
+        }
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets coupon
+     * @return string
+     */
+    public function getCoupon()
+    {
+        return $this->container['coupon'];
+    }
+
+    /**
+     * Sets coupon
+     * @param string $coupon Coupon reference if this discount was released by a coupon code
+     * @return $this
+     */
+    public function setCoupon($coupon)
+    {
+        $this->container['coupon'] = $coupon;
+
+        return $this;
+    }
+
+    /**
+     * Gets deleted
+     * @return \DateTime
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     * @param \DateTime $deleted Date when the discount was deleted if deleted. In ISO-8601 extended offset date-time format.
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
+
+        return $this;
+    }
+
+    /**
+     * Gets created
+     * @return \DateTime
+     */
+    public function getCreated()
+    {
+        return $this->container['created'];
+    }
+
+    /**
+     * Sets created
+     * @param \DateTime $created Date when the discount was created. In ISO-8601 extended offset date-time format.
+     * @return $this
+     */
+    public function setCreated($created)
+    {
+        $this->container['created'] = $created;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     * @param string $name Name of discount. Will be used as order line text.
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets description
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     * @param string $description Optional description of discount
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
 
         return $this;
     }
@@ -246,14 +556,14 @@ class InlineResponse20028 implements ArrayAccess
 
     /**
      * Sets amount
-     * @param int $amount Amount corresponding to the interval in the smallest unit for the currency
+     * @param int $amount Fixed amount discount deducted from order line amounts including VAT
      * @return $this
      */
     public function setAmount($amount)
     {
 
-        if (($amount < 0)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling InlineResponse20028., must be bigger than or equal to 0.');
+        if (!is_null($amount) && ($amount < 1)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling InlineResponse20028., must be bigger than or equal to 1.');
         }
 
         $this->container['amount'] = $amount;
@@ -262,22 +572,212 @@ class InlineResponse20028 implements ArrayAccess
     }
 
     /**
-     * Gets currency
-     * @return string
+     * Gets percentage
+     * @return int
      */
-    public function getCurrency()
+    public function getPercentage()
     {
-        return $this->container['currency'];
+        return $this->container['percentage'];
     }
 
     /**
-     * Sets currency
-     * @param string $currency Currency in ISO 4217 three letter alpha code
+     * Sets percentage
+     * @param int $percentage Percentage discount applied to each applicable order line
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setPercentage($percentage)
     {
-        $this->container['currency'] = $currency;
+
+        if (!is_null($percentage) && ($percentage > 100)) {
+            throw new \InvalidArgumentException('invalid value for $percentage when calling InlineResponse20028., must be smaller than or equal to 100.');
+        }
+        if (!is_null($percentage) && ($percentage < 1)) {
+            throw new \InvalidArgumentException('invalid value for $percentage when calling InlineResponse20028., must be bigger than or equal to 1.');
+        }
+
+        $this->container['percentage'] = $percentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets count
+     * @return int
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     * @param int $count Number of invoices this subscription discount has been applied to
+     * @return $this
+     */
+    public function setCount($count)
+    {
+        $this->container['count'] = $count;
+
+        return $this;
+    }
+
+    /**
+     * Gets invoices
+     * @return string[]
+     */
+    public function getInvoices()
+    {
+        return $this->container['invoices'];
+    }
+
+    /**
+     * Sets invoices
+     * @param string[] $invoices List of invoices this subscription discount has been applied to
+     * @return $this
+     */
+    public function setInvoices($invoices)
+    {
+        $this->container['invoices'] = $invoices;
+
+        return $this;
+    }
+
+    /**
+     * Gets apply_to
+     * @return string[]
+     */
+    public function getApplyTo()
+    {
+        return $this->container['apply_to'];
+    }
+
+    /**
+     * Sets apply_to
+     * @param string[] $apply_to Which order lines the discount is applicable to: `all`, `setup_fee`, `plan`, `additional_cost`, `add_on` and `ondemand`
+     * @return $this
+     */
+    public function setApplyTo($apply_to)
+    {
+        $this->container['apply_to'] = $apply_to;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixed_count
+     * @return int
+     */
+    public function getFixedCount()
+    {
+        return $this->container['fixed_count'];
+    }
+
+    /**
+     * Sets fixed_count
+     * @param int $fixed_count Apply discount to a fixed number of invoices
+     * @return $this
+     */
+    public function setFixedCount($fixed_count)
+    {
+
+        if (!is_null($fixed_count) && ($fixed_count < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fixed_count when calling InlineResponse20028., must be bigger than or equal to 1.');
+        }
+
+        $this->container['fixed_count'] = $fixed_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixed_period_unit
+     * @return string
+     */
+    public function getFixedPeriodUnit()
+    {
+        return $this->container['fixed_period_unit'];
+    }
+
+    /**
+     * Sets fixed_period_unit
+     * @param string $fixed_period_unit Time unit use for fixed valid period
+     * @return $this
+     */
+    public function setFixedPeriodUnit($fixed_period_unit)
+    {
+        $allowed_values = array('months', 'days');
+        if (!is_null($fixed_period_unit) && (!in_array($fixed_period_unit, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'fixed_period_unit', must be one of 'months', 'days'");
+        }
+        $this->container['fixed_period_unit'] = $fixed_period_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixed_period
+     * @return int
+     */
+    public function getFixedPeriod()
+    {
+        return $this->container['fixed_period'];
+    }
+
+    /**
+     * Sets fixed_period
+     * @param int $fixed_period Fixed period length e.g. 12 months or 14 days
+     * @return $this
+     */
+    public function setFixedPeriod($fixed_period)
+    {
+
+        if (!is_null($fixed_period) && ($fixed_period < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fixed_period when calling InlineResponse20028., must be bigger than or equal to 1.');
+        }
+
+        $this->container['fixed_period'] = $fixed_period;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixed_usage_reached
+     * @return bool
+     */
+    public function getFixedUsageReached()
+    {
+        return $this->container['fixed_usage_reached'];
+    }
+
+    /**
+     * Sets fixed_usage_reached
+     * @param bool $fixed_usage_reached Whether fixed usage for subscription discount has been reached
+     * @return $this
+     */
+    public function setFixedUsageReached($fixed_usage_reached)
+    {
+        $this->container['fixed_usage_reached'] = $fixed_usage_reached;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixed_period_passed
+     * @return bool
+     */
+    public function getFixedPeriodPassed()
+    {
+        return $this->container['fixed_period_passed'];
+    }
+
+    /**
+     * Sets fixed_period_passed
+     * @param bool $fixed_period_passed Whether fixed period for subscription discount has been passed
+     * @return $this
+     */
+    public function setFixedPeriodPassed($fixed_period_passed)
+    {
+        $this->container['fixed_period_passed'] = $fixed_period_passed;
 
         return $this;
     }

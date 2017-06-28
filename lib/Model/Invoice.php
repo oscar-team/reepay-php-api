@@ -69,7 +69,7 @@ class Invoice implements ArrayAccess
         'settled' => '\DateTime',
         'cancelled' => '\DateTime',
         'authorized' => '\DateTime',
-        'credits' => '\Swagger\Client\Model\InlineResponse20011CreditInvoices[]',
+        'credits' => '\Swagger\Client\Model\InlineResponse20013CreditInvoices[]',
         'created' => '\DateTime',
         'plan_version' => 'int',
         'dunning_plan' => 'string',
@@ -81,10 +81,10 @@ class Invoice implements ArrayAccess
         'refunded_amount' => 'int',
         'authorized_amount' => 'int',
         'period_number' => 'int',
-        'order_lines' => '\Swagger\Client\Model\InlineResponse2009OrderLines[]',
+        'order_lines' => '\Swagger\Client\Model\InlineResponse20011OrderLines[]',
         'additional_costs' => 'string[]',
-        'transactions' => '\Swagger\Client\Model\InlineResponse20015Transactions[]',
-        'credit_notes' => '\Swagger\Client\Model\InlineResponse20015CreditNotes[]',
+        'transactions' => '\Swagger\Client\Model\InlineResponse20016Transactions[]',
+        'credit_notes' => '\Swagger\Client\Model\InlineResponse20016CreditNotes[]',
         'dunning_start' => '\DateTime',
         'dunning_count' => 'int',
         'dunning_expired' => '\DateTime',
@@ -869,7 +869,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Gets credits
-     * @return \Swagger\Client\Model\InlineResponse20011CreditInvoices[]
+     * @return \Swagger\Client\Model\InlineResponse20013CreditInvoices[]
      */
     public function getCredits()
     {
@@ -878,7 +878,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Sets credits
-     * @param \Swagger\Client\Model\InlineResponse20011CreditInvoices[] $credits Credits applied to invoice
+     * @param \Swagger\Client\Model\InlineResponse20013CreditInvoices[] $credits Credits applied to invoice
      * @return $this
      */
     public function setCredits($credits)
@@ -1131,7 +1131,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Gets order_lines
-     * @return \Swagger\Client\Model\InlineResponse2009OrderLines[]
+     * @return \Swagger\Client\Model\InlineResponse20011OrderLines[]
      */
     public function getOrderLines()
     {
@@ -1140,7 +1140,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Sets order_lines
-     * @param \Swagger\Client\Model\InlineResponse2009OrderLines[] $order_lines Order lines for invoice sorted by descending timestamp
+     * @param \Swagger\Client\Model\InlineResponse20011OrderLines[] $order_lines Order lines for invoice sorted by descending timestamp
      * @return $this
      */
     public function setOrderLines($order_lines)
@@ -1173,7 +1173,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Gets transactions
-     * @return \Swagger\Client\Model\InlineResponse20015Transactions[]
+     * @return \Swagger\Client\Model\InlineResponse20016Transactions[]
      */
     public function getTransactions()
     {
@@ -1182,7 +1182,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Sets transactions
-     * @param \Swagger\Client\Model\InlineResponse20015Transactions[] $transactions Invoice transactions
+     * @param \Swagger\Client\Model\InlineResponse20016Transactions[] $transactions Invoice transactions
      * @return $this
      */
     public function setTransactions($transactions)
@@ -1194,7 +1194,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Gets credit_notes
-     * @return \Swagger\Client\Model\InlineResponse20015CreditNotes[]
+     * @return \Swagger\Client\Model\InlineResponse20016CreditNotes[]
      */
     public function getCreditNotes()
     {
@@ -1203,7 +1203,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Sets credit_notes
-     * @param \Swagger\Client\Model\InlineResponse20015CreditNotes[] $credit_notes Invoice credit notes
+     * @param \Swagger\Client\Model\InlineResponse20016CreditNotes[] $credit_notes Invoice credit notes
      * @return $this
      */
     public function setCreditNotes($credit_notes)

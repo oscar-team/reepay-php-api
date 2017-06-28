@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **settled** | [**\DateTime**](\DateTime.md) | When the invoice settled, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
 **cancelled** | [**\DateTime**](\DateTime.md) | When the invoice was cancelled, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
 **authorized** | [**\DateTime**](\DateTime.md) | When the invoice was authorized, if the invoice went through an authorize and settle flow, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
-**credits** | [**\Swagger\Client\Model\InlineResponse20011CreditInvoices[]**](InlineResponse20011CreditInvoices.md) | Credits applied to invoice | 
+**credits** | [**\Swagger\Client\Model\InlineResponse20013CreditInvoices[]**](InlineResponse20013CreditInvoices.md) | Credits applied to invoice | 
 **created** | [**\DateTime**](\DateTime.md) | When the invoice was created, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | 
 **plan_version** | **int** | Subscription plan version | [optional] 
 **dunning_plan** | **string** | Dunning plan handle | [optional] 
@@ -30,10 +30,10 @@ Name | Type | Description | Notes
 **refunded_amount** | **int** | Refunded amount | 
 **authorized_amount** | **int** | Authorized amount | [optional] 
 **period_number** | **int** | The subscription period this invoice is for | [optional] 
-**order_lines** | [**\Swagger\Client\Model\InlineResponse2009OrderLines[]**](InlineResponse2009OrderLines.md) | Order lines for invoice sorted by descending timestamp | 
+**order_lines** | [**\Swagger\Client\Model\InlineResponse20011OrderLines[]**](InlineResponse20011OrderLines.md) | Order lines for invoice sorted by descending timestamp | 
 **additional_costs** | **string[]** | Additional costs for invoice | 
-**transactions** | [**\Swagger\Client\Model\InlineResponse20015Transactions[]**](InlineResponse20015Transactions.md) | Invoice transactions | 
-**credit_notes** | [**\Swagger\Client\Model\InlineResponse20015CreditNotes[]**](InlineResponse20015CreditNotes.md) | Invoice credit notes | [optional] 
+**transactions** | [**\Swagger\Client\Model\InlineResponse20016Transactions[]**](InlineResponse20016Transactions.md) | Invoice transactions | 
+**credit_notes** | [**\Swagger\Client\Model\InlineResponse20016CreditNotes[]**](InlineResponse20016CreditNotes.md) | Invoice credit notes | [optional] 
 **dunning_start** | [**\DateTime**](\DateTime.md) | When dunning for the invoice was started, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
 **dunning_count** | **int** | Number of dunning events for invoice (number of reminders sent) | [optional] 
 **dunning_expired** | [**\DateTime**](\DateTime.md) | When dunning for the invoice expired, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 

@@ -83,33 +83,17 @@ class Body4Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "subscription"
+     * Test attribute "name"
      */
-    public function testPropertySubscription()
+    public function testPropertyName()
     {
 
     }
 
     /**
-     * Test attribute "handle"
+     * Test attribute "description"
      */
-    public function testPropertyHandle()
-    {
-
-    }
-
-    /**
-     * Test attribute "ordertext"
-     */
-    public function testPropertyOrdertext()
-    {
-
-    }
-
-    /**
-     * Test attribute "quantity"
-     */
-    public function testPropertyQuantity()
+    public function testPropertyDescription()
     {
 
     }
@@ -134,6 +118,22 @@ class Body4Test extends \PHPUnit_Framework_TestCase
      * Test attribute "amount_incl_vat"
      */
     public function testPropertyAmountInclVat()
+    {
+
+    }
+
+    /**
+     * Test attribute "all_plans"
+     */
+    public function testPropertyAllPlans()
+    {
+
+    }
+
+    /**
+     * Test attribute "eligible_plans"
+     */
+    public function testPropertyEligiblePlans()
     {
 
     }

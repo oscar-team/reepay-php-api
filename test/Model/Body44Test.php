@@ -83,9 +83,17 @@ class Body44Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "name"
      */
-    public function testPropertyEmail()
+    public function testPropertyName()
+    {
+
+    }
+
+    /**
+     * Test attribute "password"
+     */
+    public function testPropertyPassword()
     {
 
     }

@@ -63,7 +63,9 @@ class ChangeSubscription implements ArrayAccess
         'compensation_method' => 'string',
         'partial_period_handling' => 'string',
         'start_date' => 'string',
-        'cancel_change' => 'bool'
+        'cancel_change' => 'bool',
+        'add_ons' => '\Swagger\Client\Model\V1subscriptionhandleAddOns[]',
+        'remove_add_ons' => 'string[]'
     ];
 
     public static function swaggerTypes()
@@ -85,7 +87,9 @@ class ChangeSubscription implements ArrayAccess
         'compensation_method' => 'compensation_method',
         'partial_period_handling' => 'partial_period_handling',
         'start_date' => 'start_date',
-        'cancel_change' => 'cancel_change'
+        'cancel_change' => 'cancel_change',
+        'add_ons' => 'add_ons',
+        'remove_add_ons' => 'remove_add_ons'
     ];
 
 
@@ -103,7 +107,9 @@ class ChangeSubscription implements ArrayAccess
         'compensation_method' => 'setCompensationMethod',
         'partial_period_handling' => 'setPartialPeriodHandling',
         'start_date' => 'setStartDate',
-        'cancel_change' => 'setCancelChange'
+        'cancel_change' => 'setCancelChange',
+        'add_ons' => 'setAddOns',
+        'remove_add_ons' => 'setRemoveAddOns'
     ];
 
 
@@ -121,7 +127,9 @@ class ChangeSubscription implements ArrayAccess
         'compensation_method' => 'getCompensationMethod',
         'partial_period_handling' => 'getPartialPeriodHandling',
         'start_date' => 'getStartDate',
-        'cancel_change' => 'getCancelChange'
+        'cancel_change' => 'getCancelChange',
+        'add_ons' => 'getAddOns',
+        'remove_add_ons' => 'getRemoveAddOns'
     ];
 
     public static function attributeMap()
@@ -231,6 +239,8 @@ class ChangeSubscription implements ArrayAccess
         $this->container['partial_period_handling'] = isset($data['partial_period_handling']) ? $data['partial_period_handling'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
         $this->container['cancel_change'] = isset($data['cancel_change']) ? $data['cancel_change'] : null;
+        $this->container['add_ons'] = isset($data['add_ons']) ? $data['add_ons'] : null;
+        $this->container['remove_add_ons'] = isset($data['remove_add_ons']) ? $data['remove_add_ons'] : null;
     }
 
     /**
@@ -494,7 +504,7 @@ class ChangeSubscription implements ArrayAccess
 
     /**
      * Sets partial_period_handling
-     * @param string $partial_period_handling Optional argument to override plan setting on how to handle a potential initial partial billing period for fixed day scheduling. The options are to bill for a full period, bill prorated for the partial period, bill a zero amoumt, or not to consider the period before first fixed day a billing period. The default is to bill prorated. Options: `bill_full`, `bill_prorated`, `bill_zero_amount`, `no_bill`.
+     * @param string $partial_period_handling Optional argument to override plan setting on how to handle a potential initial partial billing period for fixed day scheduling. The options are to bill for a full period, bill prorated for the partial period, bill a zero amount, or not to consider the period before first fixed day a billing period. The default is to bill prorated. Options: `bill_full`, `bill_prorated`, `bill_zero_amount`, `no_bill`.
      * @return $this
      */
     public function setPartialPeriodHandling($partial_period_handling)
@@ -546,6 +556,48 @@ class ChangeSubscription implements ArrayAccess
     public function setCancelChange($cancel_change)
     {
         $this->container['cancel_change'] = $cancel_change;
+
+        return $this;
+    }
+
+    /**
+     * Gets add_ons
+     * @return \Swagger\Client\Model\V1subscriptionhandleAddOns[]
+     */
+    public function getAddOns()
+    {
+        return $this->container['add_ons'];
+    }
+
+    /**
+     * Sets add_ons
+     * @param \Swagger\Client\Model\V1subscriptionhandleAddOns[] $add_ons Add-ons to attach to subscription
+     * @return $this
+     */
+    public function setAddOns($add_ons)
+    {
+        $this->container['add_ons'] = $add_ons;
+
+        return $this;
+    }
+
+    /**
+     * Gets remove_add_ons
+     * @return string[]
+     */
+    public function getRemoveAddOns()
+    {
+        return $this->container['remove_add_ons'];
+    }
+
+    /**
+     * Sets remove_add_ons
+     * @param string[] $remove_add_ons Subscription add-ons to remove from subscription by subscription add-on handle
+     * @return $this
+     */
+    public function setRemoveAddOns($remove_add_ons)
+    {
+        $this->container['remove_add_ons'] = $remove_add_ons;
 
         return $this;
     }

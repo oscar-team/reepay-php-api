@@ -54,11 +54,17 @@ class Body19 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'schedule' => 'int[]',
-        'handle' => 'string',
-        'default_plan' => 'bool',
-        'final_subscription_action' => 'string'
+        'email' => 'string',
+        'address' => 'string',
+        'address2' => 'string',
+        'city' => 'string',
+        'country' => 'string',
+        'phone' => 'string',
+        'company' => 'string',
+        'vat' => 'string',
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'postal_code' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -71,11 +77,17 @@ class Body19 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'schedule' => 'schedule',
-        'handle' => 'handle',
-        'default_plan' => 'default_plan',
-        'final_subscription_action' => 'final_subscription_action'
+        'email' => 'email',
+        'address' => 'address',
+        'address2' => 'address2',
+        'city' => 'city',
+        'country' => 'country',
+        'phone' => 'phone',
+        'company' => 'company',
+        'vat' => 'vat',
+        'first_name' => 'first_name',
+        'last_name' => 'last_name',
+        'postal_code' => 'postal_code'
     ];
 
 
@@ -84,11 +96,17 @@ class Body19 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'schedule' => 'setSchedule',
-        'handle' => 'setHandle',
-        'default_plan' => 'setDefaultPlan',
-        'final_subscription_action' => 'setFinalSubscriptionAction'
+        'email' => 'setEmail',
+        'address' => 'setAddress',
+        'address2' => 'setAddress2',
+        'city' => 'setCity',
+        'country' => 'setCountry',
+        'phone' => 'setPhone',
+        'company' => 'setCompany',
+        'vat' => 'setVat',
+        'first_name' => 'setFirstName',
+        'last_name' => 'setLastName',
+        'postal_code' => 'setPostalCode'
     ];
 
 
@@ -97,11 +115,17 @@ class Body19 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'schedule' => 'getSchedule',
-        'handle' => 'getHandle',
-        'default_plan' => 'getDefaultPlan',
-        'final_subscription_action' => 'getFinalSubscriptionAction'
+        'email' => 'getEmail',
+        'address' => 'getAddress',
+        'address2' => 'getAddress2',
+        'city' => 'getCity',
+        'country' => 'getCountry',
+        'phone' => 'getPhone',
+        'company' => 'getCompany',
+        'vat' => 'getVat',
+        'first_name' => 'getFirstName',
+        'last_name' => 'getLastName',
+        'postal_code' => 'getPostalCode'
     ];
 
     public static function attributeMap()
@@ -119,24 +143,8 @@ class Body19 implements ArrayAccess
         return self::$getters;
     }
 
-    const FINAL_SUBSCRIPTION_ACTION_EXPIRE = 'expire';
-    const FINAL_SUBSCRIPTION_ACTION_ON_HOLD = 'on_hold';
-    const FINAL_SUBSCRIPTION_ACTION_NONE = 'none';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getFinalSubscriptionActionAllowableValues()
-    {
-        return [
-            self::FINAL_SUBSCRIPTION_ACTION_EXPIRE,
-            self::FINAL_SUBSCRIPTION_ACTION_ON_HOLD,
-            self::FINAL_SUBSCRIPTION_ACTION_NONE,
-        ];
-    }
     
 
     /**
@@ -151,11 +159,17 @@ class Body19 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['schedule'] = isset($data['schedule']) ? $data['schedule'] : null;
-        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
-        $this->container['default_plan'] = isset($data['default_plan']) ? $data['default_plan'] : null;
-        $this->container['final_subscription_action'] = isset($data['final_subscription_action']) ? $data['final_subscription_action'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
+        $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
+        $this->container['company'] = isset($data['company']) ? $data['company'] : null;
+        $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
+        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
+        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
     }
 
     /**
@@ -166,26 +180,6 @@ class Body19 implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-
-        if ($this->container['name'] === null) {
-            $invalid_properties[] = "'name' can't be null";
-        }
-        if ($this->container['schedule'] === null) {
-            $invalid_properties[] = "'schedule' can't be null";
-        }
-        if ($this->container['handle'] === null) {
-            $invalid_properties[] = "'handle' can't be null";
-        }
-        if ($this->container['default_plan'] === null) {
-            $invalid_properties[] = "'default_plan' can't be null";
-        }
-        if ($this->container['final_subscription_action'] === null) {
-            $invalid_properties[] = "'final_subscription_action' can't be null";
-        }
-        $allowed_values = ["expire", "on_hold", "none"];
-        if (!in_array($this->container['final_subscription_action'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'final_subscription_action', must be one of 'expire', 'on_hold', 'none'.";
-        }
 
         return $invalid_properties;
     }
@@ -199,134 +193,237 @@ class Body19 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['name'] === null) {
-            return false;
-        }
-        if ($this->container['schedule'] === null) {
-            return false;
-        }
-        if ($this->container['handle'] === null) {
-            return false;
-        }
-        if ($this->container['default_plan'] === null) {
-            return false;
-        }
-        if ($this->container['final_subscription_action'] === null) {
-            return false;
-        }
-        $allowed_values = ["expire", "on_hold", "none"];
-        if (!in_array($this->container['final_subscription_action'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets name
+     * Gets email
      * @return string
      */
-    public function getName()
+    public function getEmail()
     {
-        return $this->container['name'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets name
-     * @param string $name Dunning plan name
+     * Sets email
+     * @param string $email Customer email
      * @return $this
      */
-    public function setName($name)
+    public function setEmail($email)
     {
-        $this->container['name'] = $name;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets schedule
-     * @return int[]
-     */
-    public function getSchedule()
-    {
-        return $this->container['schedule'];
-    }
-
-    /**
-     * Sets schedule
-     * @param int[] $schedule The schedule as list of intervals in days
-     * @return $this
-     */
-    public function setSchedule($schedule)
-    {
-        $this->container['schedule'] = $schedule;
-
-        return $this;
-    }
-
-    /**
-     * Gets handle
+     * Gets address
      * @return string
      */
-    public function getHandle()
+    public function getAddress()
     {
-        return $this->container['handle'];
+        return $this->container['address'];
     }
 
     /**
-     * Sets handle
-     * @param string $handle Per account unique handle for the customer. Max length 255 with allowable characters [a-zA-Z0-9_.-@].
+     * Sets address
+     * @param string $address Customer address
      * @return $this
      */
-    public function setHandle($handle)
+    public function setAddress($address)
     {
-        $this->container['handle'] = $handle;
+        $this->container['address'] = $address;
 
         return $this;
     }
 
     /**
-     * Gets default_plan
-     * @return bool
-     */
-    public function getDefaultPlan()
-    {
-        return $this->container['default_plan'];
-    }
-
-    /**
-     * Sets default_plan
-     * @param bool $default_plan If this is default plan
-     * @return $this
-     */
-    public function setDefaultPlan($default_plan)
-    {
-        $this->container['default_plan'] = $default_plan;
-
-        return $this;
-    }
-
-    /**
-     * Gets final_subscription_action
+     * Gets address2
      * @return string
      */
-    public function getFinalSubscriptionAction()
+    public function getAddress2()
     {
-        return $this->container['final_subscription_action'];
+        return $this->container['address2'];
     }
 
     /**
-     * Sets final_subscription_action
-     * @param string $final_subscription_action Action to take for subscription if dunning fails, one of the following: `expire`, `on_hold`, `none`
+     * Sets address2
+     * @param string $address2 Customer address2
      * @return $this
      */
-    public function setFinalSubscriptionAction($final_subscription_action)
+    public function setAddress2($address2)
     {
-        $allowed_values = array('expire', 'on_hold', 'none');
-        if ((!in_array($final_subscription_action, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'final_subscription_action', must be one of 'expire', 'on_hold', 'none'");
-        }
-        $this->container['final_subscription_action'] = $final_subscription_action;
+        $this->container['address2'] = $address2;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     * @param string $city Customer city
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     * @param string $country Customer country in ISO 3166-1 alpha-2
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     * @param string $phone Customer phone number
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets company
+     * @return string
+     */
+    public function getCompany()
+    {
+        return $this->container['company'];
+    }
+
+    /**
+     * Sets company
+     * @param string $company Customer company
+     * @return $this
+     */
+    public function setCompany($company)
+    {
+        $this->container['company'] = $company;
+
+        return $this;
+    }
+
+    /**
+     * Gets vat
+     * @return string
+     */
+    public function getVat()
+    {
+        return $this->container['vat'];
+    }
+
+    /**
+     * Sets vat
+     * @param string $vat Customer vat number
+     * @return $this
+     */
+    public function setVat($vat)
+    {
+        $this->container['vat'] = $vat;
+
+        return $this;
+    }
+
+    /**
+     * Gets first_name
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->container['first_name'];
+    }
+
+    /**
+     * Sets first_name
+     * @param string $first_name Customer first name
+     * @return $this
+     */
+    public function setFirstName($first_name)
+    {
+        $this->container['first_name'] = $first_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_name
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->container['last_name'];
+    }
+
+    /**
+     * Sets last_name
+     * @param string $last_name Customer last name
+     * @return $this
+     */
+    public function setLastName($last_name)
+    {
+        $this->container['last_name'] = $last_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets postal_code
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postal_code'];
+    }
+
+    /**
+     * Sets postal_code
+     * @param string $postal_code Customer postal code
+     * @return $this
+     */
+    public function setPostalCode($postal_code)
+    {
+        $this->container['postal_code'] = $postal_code;
 
         return $this;
     }

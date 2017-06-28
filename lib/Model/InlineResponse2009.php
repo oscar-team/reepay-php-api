@@ -35,7 +35,6 @@ use \ArrayAccess;
  * InlineResponse2009 Class Doc Comment
  *
  * @category    Class
- * @description A page in a paginated charge search
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -55,14 +54,14 @@ class InlineResponse2009 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'page' => 'int',
-        'size' => 'int',
-        'count' => 'int',
-        'search' => 'string',
-        'sort' => 'string',
-        'content' => '\Swagger\Client\Model\InlineResponse2009Content[]',
-        'total_elements' => 'int',
-        'total_pages' => 'int'
+        'token' => 'string',
+        'user' => '\Swagger\Client\Model\InlineResponse2009User',
+        'account' => '\Swagger\Client\Model\InlineResponse2009Account',
+        'organisation' => '\Swagger\Client\Model\InlineResponse2009Organisation',
+        'organisations' => '\Swagger\Client\Model\InlineResponse2009Organisations[]',
+        'groups' => 'string[]',
+        'permissions' => 'string[]',
+        'token_ttl' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -75,14 +74,14 @@ class InlineResponse2009 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'page' => 'page',
-        'size' => 'size',
-        'count' => 'count',
-        'search' => 'search',
-        'sort' => 'sort',
-        'content' => 'content',
-        'total_elements' => 'total_elements',
-        'total_pages' => 'total_pages'
+        'token' => 'token',
+        'user' => 'user',
+        'account' => 'account',
+        'organisation' => 'organisation',
+        'organisations' => 'organisations',
+        'groups' => 'groups',
+        'permissions' => 'permissions',
+        'token_ttl' => 'token_ttl'
     ];
 
 
@@ -91,14 +90,14 @@ class InlineResponse2009 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'page' => 'setPage',
-        'size' => 'setSize',
-        'count' => 'setCount',
-        'search' => 'setSearch',
-        'sort' => 'setSort',
-        'content' => 'setContent',
-        'total_elements' => 'setTotalElements',
-        'total_pages' => 'setTotalPages'
+        'token' => 'setToken',
+        'user' => 'setUser',
+        'account' => 'setAccount',
+        'organisation' => 'setOrganisation',
+        'organisations' => 'setOrganisations',
+        'groups' => 'setGroups',
+        'permissions' => 'setPermissions',
+        'token_ttl' => 'setTokenTtl'
     ];
 
 
@@ -107,14 +106,14 @@ class InlineResponse2009 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'page' => 'getPage',
-        'size' => 'getSize',
-        'count' => 'getCount',
-        'search' => 'getSearch',
-        'sort' => 'getSort',
-        'content' => 'getContent',
-        'total_elements' => 'getTotalElements',
-        'total_pages' => 'getTotalPages'
+        'token' => 'getToken',
+        'user' => 'getUser',
+        'account' => 'getAccount',
+        'organisation' => 'getOrganisation',
+        'organisations' => 'getOrganisations',
+        'groups' => 'getGroups',
+        'permissions' => 'getPermissions',
+        'token_ttl' => 'getTokenTtl'
     ];
 
     public static function attributeMap()
@@ -148,14 +147,14 @@ class InlineResponse2009 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['page'] = isset($data['page']) ? $data['page'] : null;
-        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
-        $this->container['search'] = isset($data['search']) ? $data['search'] : null;
-        $this->container['sort'] = isset($data['sort']) ? $data['sort'] : null;
-        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
-        $this->container['total_elements'] = isset($data['total_elements']) ? $data['total_elements'] : null;
-        $this->container['total_pages'] = isset($data['total_pages']) ? $data['total_pages'] : null;
+        $this->container['token'] = isset($data['token']) ? $data['token'] : null;
+        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
+        $this->container['account'] = isset($data['account']) ? $data['account'] : null;
+        $this->container['organisation'] = isset($data['organisation']) ? $data['organisation'] : null;
+        $this->container['organisations'] = isset($data['organisations']) ? $data['organisations'] : null;
+        $this->container['groups'] = isset($data['groups']) ? $data['groups'] : null;
+        $this->container['permissions'] = isset($data['permissions']) ? $data['permissions'] : null;
+        $this->container['token_ttl'] = isset($data['token_ttl']) ? $data['token_ttl'] : null;
     }
 
     /**
@@ -167,44 +166,21 @@ class InlineResponse2009 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['page'] === null) {
-            $invalid_properties[] = "'page' can't be null";
+        if ($this->container['token'] === null) {
+            $invalid_properties[] = "'token' can't be null";
         }
-        if (($this->container['page'] < 1)) {
-            $invalid_properties[] = "invalid value for 'page', must be bigger than or equal to 1.";
+        if ($this->container['organisations'] === null) {
+            $invalid_properties[] = "'organisations' can't be null";
         }
-
-        if ($this->container['size'] === null) {
-            $invalid_properties[] = "'size' can't be null";
+        if ($this->container['groups'] === null) {
+            $invalid_properties[] = "'groups' can't be null";
         }
-        if (($this->container['size'] < 1)) {
-            $invalid_properties[] = "invalid value for 'size', must be bigger than or equal to 1.";
+        if ($this->container['permissions'] === null) {
+            $invalid_properties[] = "'permissions' can't be null";
         }
-
-        if ($this->container['count'] === null) {
-            $invalid_properties[] = "'count' can't be null";
+        if ($this->container['token_ttl'] === null) {
+            $invalid_properties[] = "'token_ttl' can't be null";
         }
-        if (($this->container['count'] < 0)) {
-            $invalid_properties[] = "invalid value for 'count', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['content'] === null) {
-            $invalid_properties[] = "'content' can't be null";
-        }
-        if ($this->container['total_elements'] === null) {
-            $invalid_properties[] = "'total_elements' can't be null";
-        }
-        if (($this->container['total_elements'] < 0)) {
-            $invalid_properties[] = "invalid value for 'total_elements', must be bigger than or equal to 0.";
-        }
-
-        if ($this->container['total_pages'] === null) {
-            $invalid_properties[] = "'total_pages' can't be null";
-        }
-        if (($this->container['total_pages'] < 0)) {
-            $invalid_properties[] = "invalid value for 'total_pages', must be bigger than or equal to 0.";
-        }
-
         return $invalid_properties;
     }
 
@@ -217,37 +193,19 @@ class InlineResponse2009 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['page'] === null) {
+        if ($this->container['token'] === null) {
             return false;
         }
-        if ($this->container['page'] < 1) {
+        if ($this->container['organisations'] === null) {
             return false;
         }
-        if ($this->container['size'] === null) {
+        if ($this->container['groups'] === null) {
             return false;
         }
-        if ($this->container['size'] < 1) {
+        if ($this->container['permissions'] === null) {
             return false;
         }
-        if ($this->container['count'] === null) {
-            return false;
-        }
-        if ($this->container['count'] < 0) {
-            return false;
-        }
-        if ($this->container['content'] === null) {
-            return false;
-        }
-        if ($this->container['total_elements'] === null) {
-            return false;
-        }
-        if ($this->container['total_elements'] < 0) {
-            return false;
-        }
-        if ($this->container['total_pages'] === null) {
-            return false;
-        }
-        if ($this->container['total_pages'] < 0) {
+        if ($this->container['token_ttl'] === null) {
             return false;
         }
         return true;
@@ -255,194 +213,169 @@ class InlineResponse2009 implements ArrayAccess
 
 
     /**
-     * Gets page
-     * @return int
-     */
-    public function getPage()
-    {
-        return $this->container['page'];
-    }
-
-    /**
-     * Sets page
-     * @param int $page Number of current page in paginated list
-     * @return $this
-     */
-    public function setPage($page)
-    {
-
-        if (($page < 1)) {
-            throw new \InvalidArgumentException('invalid value for $page when calling InlineResponse2009., must be bigger than or equal to 1.');
-        }
-
-        $this->container['page'] = $page;
-
-        return $this;
-    }
-
-    /**
-     * Gets size
-     * @return int
-     */
-    public function getSize()
-    {
-        return $this->container['size'];
-    }
-
-    /**
-     * Sets size
-     * @param int $size Page size in paginated list
-     * @return $this
-     */
-    public function setSize($size)
-    {
-
-        if (($size < 1)) {
-            throw new \InvalidArgumentException('invalid value for $size when calling InlineResponse2009., must be bigger than or equal to 1.');
-        }
-
-        $this->container['size'] = $size;
-
-        return $this;
-    }
-
-    /**
-     * Gets count
-     * @return int
-     */
-    public function getCount()
-    {
-        return $this->container['count'];
-    }
-
-    /**
-     * Sets count
-     * @param int $count Number of elements in current page
-     * @return $this
-     */
-    public function setCount($count)
-    {
-
-        if (($count < 0)) {
-            throw new \InvalidArgumentException('invalid value for $count when calling InlineResponse2009., must be bigger than or equal to 0.');
-        }
-
-        $this->container['count'] = $count;
-
-        return $this;
-    }
-
-    /**
-     * Gets search
+     * Gets token
      * @return string
      */
-    public function getSearch()
+    public function getToken()
     {
-        return $this->container['search'];
+        return $this->container['token'];
     }
 
     /**
-     * Sets search
-     * @param string $search Optional search expression used
+     * Sets token
+     * @param string $token Authentication token to use in X-Auth-Token
      * @return $this
      */
-    public function setSearch($search)
+    public function setToken($token)
     {
-        $this->container['search'] = $search;
+        $this->container['token'] = $token;
 
         return $this;
     }
 
     /**
-     * Gets sort
-     * @return string
+     * Gets user
+     * @return \Swagger\Client\Model\InlineResponse2009User
      */
-    public function getSort()
+    public function getUser()
     {
-        return $this->container['sort'];
+        return $this->container['user'];
     }
 
     /**
-     * Sets sort
-     * @param string $sort Optional sort expression used
+     * Sets user
+     * @param \Swagger\Client\Model\InlineResponse2009User $user
      * @return $this
      */
-    public function setSort($sort)
+    public function setUser($user)
     {
-        $this->container['sort'] = $sort;
+        $this->container['user'] = $user;
 
         return $this;
     }
 
     /**
-     * Gets content
-     * @return \Swagger\Client\Model\InlineResponse2009Content[]
+     * Gets account
+     * @return \Swagger\Client\Model\InlineResponse2009Account
      */
-    public function getContent()
+    public function getAccount()
     {
-        return $this->container['content'];
+        return $this->container['account'];
     }
 
     /**
-     * Sets content
-     * @param \Swagger\Client\Model\InlineResponse2009Content[] $content List of charges for current page
+     * Sets account
+     * @param \Swagger\Client\Model\InlineResponse2009Account $account
      * @return $this
      */
-    public function setContent($content)
+    public function setAccount($account)
     {
-        $this->container['content'] = $content;
+        $this->container['account'] = $account;
 
         return $this;
     }
 
     /**
-     * Gets total_elements
+     * Gets organisation
+     * @return \Swagger\Client\Model\InlineResponse2009Organisation
+     */
+    public function getOrganisation()
+    {
+        return $this->container['organisation'];
+    }
+
+    /**
+     * Sets organisation
+     * @param \Swagger\Client\Model\InlineResponse2009Organisation $organisation
+     * @return $this
+     */
+    public function setOrganisation($organisation)
+    {
+        $this->container['organisation'] = $organisation;
+
+        return $this;
+    }
+
+    /**
+     * Gets organisations
+     * @return \Swagger\Client\Model\InlineResponse2009Organisations[]
+     */
+    public function getOrganisations()
+    {
+        return $this->container['organisations'];
+    }
+
+    /**
+     * Sets organisations
+     * @param \Swagger\Client\Model\InlineResponse2009Organisations[] $organisations List of organisations for user
+     * @return $this
+     */
+    public function setOrganisations($organisations)
+    {
+        $this->container['organisations'] = $organisations;
+
+        return $this;
+    }
+
+    /**
+     * Gets groups
+     * @return string[]
+     */
+    public function getGroups()
+    {
+        return $this->container['groups'];
+    }
+
+    /**
+     * Sets groups
+     * @param string[] $groups List user groups
+     * @return $this
+     */
+    public function setGroups($groups)
+    {
+        $this->container['groups'] = $groups;
+
+        return $this;
+    }
+
+    /**
+     * Gets permissions
+     * @return string[]
+     */
+    public function getPermissions()
+    {
+        return $this->container['permissions'];
+    }
+
+    /**
+     * Sets permissions
+     * @param string[] $permissions List user permissions
+     * @return $this
+     */
+    public function setPermissions($permissions)
+    {
+        $this->container['permissions'] = $permissions;
+
+        return $this;
+    }
+
+    /**
+     * Gets token_ttl
      * @return int
      */
-    public function getTotalElements()
+    public function getTokenTtl()
     {
-        return $this->container['total_elements'];
+        return $this->container['token_ttl'];
     }
 
     /**
-     * Sets total_elements
-     * @param int $total_elements Total number of elements in paginated list
+     * Sets token_ttl
+     * @param int $token_ttl Token time-to-live in minutes
      * @return $this
      */
-    public function setTotalElements($total_elements)
+    public function setTokenTtl($token_ttl)
     {
-
-        if (($total_elements < 0)) {
-            throw new \InvalidArgumentException('invalid value for $total_elements when calling InlineResponse2009., must be bigger than or equal to 0.');
-        }
-
-        $this->container['total_elements'] = $total_elements;
-
-        return $this;
-    }
-
-    /**
-     * Gets total_pages
-     * @return int
-     */
-    public function getTotalPages()
-    {
-        return $this->container['total_pages'];
-    }
-
-    /**
-     * Sets total_pages
-     * @param int $total_pages Total number of pages in paginated list
-     * @return $this
-     */
-    public function setTotalPages($total_pages)
-    {
-
-        if (($total_pages < 0)) {
-            throw new \InvalidArgumentException('invalid value for $total_pages when calling InlineResponse2009., must be bigger than or equal to 0.');
-        }
-
-        $this->container['total_pages'] = $total_pages;
+        $this->container['token_ttl'] = $token_ttl;
 
         return $this;
     }

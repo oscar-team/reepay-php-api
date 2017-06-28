@@ -54,7 +54,7 @@ class Body45 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'password' => 'string'
+        'email' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class Body45 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'password' => 'password'
+        'email' => 'email'
     ];
 
 
@@ -76,7 +76,7 @@ class Body45 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'password' => 'setPassword'
+        'email' => 'setEmail'
     ];
 
 
@@ -85,7 +85,7 @@ class Body45 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'password' => 'getPassword'
+        'email' => 'getEmail'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class Body45 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
     }
 
     /**
@@ -131,8 +131,8 @@ class Body45 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['password'] === null) {
-            $invalid_properties[] = "'password' can't be null";
+        if ($this->container['email'] === null) {
+            $invalid_properties[] = "'email' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +146,7 @@ class Body45 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['password'] === null) {
+        if ($this->container['email'] === null) {
             return false;
         }
         return true;
@@ -154,22 +154,22 @@ class Body45 implements ArrayAccess
 
 
     /**
-     * Gets password
+     * Gets email
      * @return string
      */
-    public function getPassword()
+    public function getEmail()
     {
-        return $this->container['password'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets password
-     * @param string $password New password
+     * Sets email
+     * @param string $email User email
      * @return $this
      */
-    public function setPassword($password)
+    public function setEmail($email)
     {
-        $this->container['password'] = $password;
+        $this->container['email'] = $email;
 
         return $this;
     }

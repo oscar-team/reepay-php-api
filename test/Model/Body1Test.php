@@ -83,129 +83,49 @@ class Body1Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "handle"
+     * Test attribute "urls"
      */
-    public function testPropertyHandle()
+    public function testPropertyUrls()
     {
 
     }
 
     /**
-     * Test attribute "currency"
+     * Test attribute "username"
      */
-    public function testPropertyCurrency()
+    public function testPropertyUsername()
     {
 
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "password"
      */
-    public function testPropertyName()
+    public function testPropertyPassword()
     {
 
     }
 
     /**
-     * Test attribute "address"
+     * Test attribute "disabled"
      */
-    public function testPropertyAddress()
+    public function testPropertyDisabled()
     {
 
     }
 
     /**
-     * Test attribute "address2"
+     * Test attribute "alert_emails"
      */
-    public function testPropertyAddress2()
+    public function testPropertyAlertEmails()
     {
 
     }
 
     /**
-     * Test attribute "city"
+     * Test attribute "alert_count"
      */
-    public function testPropertyCity()
-    {
-
-    }
-
-    /**
-     * Test attribute "locale"
-     */
-    public function testPropertyLocale()
-    {
-
-    }
-
-    /**
-     * Test attribute "timezone"
-     */
-    public function testPropertyTimezone()
-    {
-
-    }
-
-    /**
-     * Test attribute "country"
-     */
-    public function testPropertyCountry()
-    {
-
-    }
-
-    /**
-     * Test attribute "email"
-     */
-    public function testPropertyEmail()
-    {
-
-    }
-
-    /**
-     * Test attribute "phone"
-     */
-    public function testPropertyPhone()
-    {
-
-    }
-
-    /**
-     * Test attribute "vat"
-     */
-    public function testPropertyVat()
-    {
-
-    }
-
-    /**
-     * Test attribute "website"
-     */
-    public function testPropertyWebsite()
-    {
-
-    }
-
-    /**
-     * Test attribute "logo"
-     */
-    public function testPropertyLogo()
-    {
-
-    }
-
-    /**
-     * Test attribute "postal_code"
-     */
-    public function testPropertyPostalCode()
-    {
-
-    }
-
-    /**
-     * Test attribute "default_vat"
-     */
-    public function testPropertyDefaultVat()
+    public function testPropertyAlertCount()
     {
 
     }

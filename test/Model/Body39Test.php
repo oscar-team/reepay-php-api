@@ -83,9 +83,17 @@ class Body39Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "handle"
      */
-    public function testPropertyEmail()
+    public function testPropertyHandle()
+    {
+
+    }
+
+    /**
+     * Test attribute "discount"
+     */
+    public function testPropertyDiscount()
     {
 
     }
@@ -94,6 +102,62 @@ class Body39Test extends \PHPUnit_Framework_TestCase
      * Test attribute "name"
      */
     public function testPropertyName()
+    {
+
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "percentage"
+     */
+    public function testPropertyPercentage()
+    {
+
+    }
+
+    /**
+     * Test attribute "apply_to"
+     */
+    public function testPropertyApplyTo()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_count"
+     */
+    public function testPropertyFixedCount()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_period_unit"
+     */
+    public function testPropertyFixedPeriodUnit()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_period"
+     */
+    public function testPropertyFixedPeriod()
     {
 
     }

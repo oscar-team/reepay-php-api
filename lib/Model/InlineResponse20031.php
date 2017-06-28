@@ -55,11 +55,13 @@ class InlineResponse20031 implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'id' => 'string',
-        'initiated' => '\DateTime',
-        'duration' => 'int',
-        'headers' => 'string',
-        'content' => 'string',
-        'http_status' => 'int'
+        'email' => 'string',
+        'name' => 'string',
+        'state' => 'string',
+        'groups' => 'string[]',
+        'permissions' => 'string[]',
+        'verified_email' => 'bool',
+        'invite_expires' => '\DateTime'
     ];
 
     public static function swaggerTypes()
@@ -73,11 +75,13 @@ class InlineResponse20031 implements ArrayAccess
      */
     protected static $attributeMap = [
         'id' => 'id',
-        'initiated' => 'initiated',
-        'duration' => 'duration',
-        'headers' => 'headers',
-        'content' => 'content',
-        'http_status' => 'http_status'
+        'email' => 'email',
+        'name' => 'name',
+        'state' => 'state',
+        'groups' => 'groups',
+        'permissions' => 'permissions',
+        'verified_email' => 'verified_email',
+        'invite_expires' => 'invite_expires'
     ];
 
 
@@ -87,11 +91,13 @@ class InlineResponse20031 implements ArrayAccess
      */
     protected static $setters = [
         'id' => 'setId',
-        'initiated' => 'setInitiated',
-        'duration' => 'setDuration',
-        'headers' => 'setHeaders',
-        'content' => 'setContent',
-        'http_status' => 'setHttpStatus'
+        'email' => 'setEmail',
+        'name' => 'setName',
+        'state' => 'setState',
+        'groups' => 'setGroups',
+        'permissions' => 'setPermissions',
+        'verified_email' => 'setVerifiedEmail',
+        'invite_expires' => 'setInviteExpires'
     ];
 
 
@@ -101,11 +107,13 @@ class InlineResponse20031 implements ArrayAccess
      */
     protected static $getters = [
         'id' => 'getId',
-        'initiated' => 'getInitiated',
-        'duration' => 'getDuration',
-        'headers' => 'getHeaders',
-        'content' => 'getContent',
-        'http_status' => 'getHttpStatus'
+        'email' => 'getEmail',
+        'name' => 'getName',
+        'state' => 'getState',
+        'groups' => 'getGroups',
+        'permissions' => 'getPermissions',
+        'verified_email' => 'getVerifiedEmail',
+        'invite_expires' => 'getInviteExpires'
     ];
 
     public static function attributeMap()
@@ -123,8 +131,22 @@ class InlineResponse20031 implements ArrayAccess
         return self::$getters;
     }
 
+    const STATE_ACTIVE = 'active';
+    const STATE_INVITED = 'invited';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getStateAllowableValues()
+    {
+        return [
+            self::STATE_ACTIVE,
+            self::STATE_INVITED,
+        ];
+    }
     
 
     /**
@@ -140,11 +162,13 @@ class InlineResponse20031 implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['initiated'] = isset($data['initiated']) ? $data['initiated'] : null;
-        $this->container['duration'] = isset($data['duration']) ? $data['duration'] : null;
-        $this->container['headers'] = isset($data['headers']) ? $data['headers'] : null;
-        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
-        $this->container['http_status'] = isset($data['http_status']) ? $data['http_status'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
+        $this->container['groups'] = isset($data['groups']) ? $data['groups'] : null;
+        $this->container['permissions'] = isset($data['permissions']) ? $data['permissions'] : null;
+        $this->container['verified_email'] = isset($data['verified_email']) ? $data['verified_email'] : null;
+        $this->container['invite_expires'] = isset($data['invite_expires']) ? $data['invite_expires'] : null;
     }
 
     /**
@@ -159,11 +183,25 @@ class InlineResponse20031 implements ArrayAccess
         if ($this->container['id'] === null) {
             $invalid_properties[] = "'id' can't be null";
         }
-        if ($this->container['initiated'] === null) {
-            $invalid_properties[] = "'initiated' can't be null";
+        if ($this->container['email'] === null) {
+            $invalid_properties[] = "'email' can't be null";
         }
-        if ($this->container['duration'] === null) {
-            $invalid_properties[] = "'duration' can't be null";
+        if ($this->container['state'] === null) {
+            $invalid_properties[] = "'state' can't be null";
+        }
+        $allowed_values = ["active", "invited"];
+        if (!in_array($this->container['state'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'invited'.";
+        }
+
+        if ($this->container['groups'] === null) {
+            $invalid_properties[] = "'groups' can't be null";
+        }
+        if ($this->container['permissions'] === null) {
+            $invalid_properties[] = "'permissions' can't be null";
+        }
+        if ($this->container['verified_email'] === null) {
+            $invalid_properties[] = "'verified_email' can't be null";
         }
         return $invalid_properties;
     }
@@ -180,10 +218,23 @@ class InlineResponse20031 implements ArrayAccess
         if ($this->container['id'] === null) {
             return false;
         }
-        if ($this->container['initiated'] === null) {
+        if ($this->container['email'] === null) {
             return false;
         }
-        if ($this->container['duration'] === null) {
+        if ($this->container['state'] === null) {
+            return false;
+        }
+        $allowed_values = ["active", "invited"];
+        if (!in_array($this->container['state'], $allowed_values)) {
+            return false;
+        }
+        if ($this->container['groups'] === null) {
+            return false;
+        }
+        if ($this->container['permissions'] === null) {
+            return false;
+        }
+        if ($this->container['verified_email'] === null) {
             return false;
         }
         return true;
@@ -201,7 +252,7 @@ class InlineResponse20031 implements ArrayAccess
 
     /**
      * Sets id
-     * @param string $id Unique webhook id assigned by Reepay
+     * @param string $id Unique id for the user assigned by Reepay
      * @return $this
      */
     public function setId($id)
@@ -212,106 +263,152 @@ class InlineResponse20031 implements ArrayAccess
     }
 
     /**
-     * Gets initiated
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param string $email User email
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     * @param string $name User name
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     * @param string $state State of user for account: `active`, `invited`
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $allowed_values = array('active', 'invited');
+        if ((!in_array($state, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'invited'");
+        }
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets groups
+     * @return string[]
+     */
+    public function getGroups()
+    {
+        return $this->container['groups'];
+    }
+
+    /**
+     * Sets groups
+     * @param string[] $groups List of user groups
+     * @return $this
+     */
+    public function setGroups($groups)
+    {
+        $this->container['groups'] = $groups;
+
+        return $this;
+    }
+
+    /**
+     * Gets permissions
+     * @return string[]
+     */
+    public function getPermissions()
+    {
+        return $this->container['permissions'];
+    }
+
+    /**
+     * Sets permissions
+     * @param string[] $permissions List of user permissions
+     * @return $this
+     */
+    public function setPermissions($permissions)
+    {
+        $this->container['permissions'] = $permissions;
+
+        return $this;
+    }
+
+    /**
+     * Gets verified_email
+     * @return bool
+     */
+    public function getVerifiedEmail()
+    {
+        return $this->container['verified_email'];
+    }
+
+    /**
+     * Sets verified_email
+     * @param bool $verified_email Email verified
+     * @return $this
+     */
+    public function setVerifiedEmail($verified_email)
+    {
+        $this->container['verified_email'] = $verified_email;
+
+        return $this;
+    }
+
+    /**
+     * Gets invite_expires
      * @return \DateTime
      */
-    public function getInitiated()
+    public function getInviteExpires()
     {
-        return $this->container['initiated'];
+        return $this->container['invite_expires'];
     }
 
     /**
-     * Sets initiated
-     * @param \DateTime $initiated Date when the webhook request was initiated, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * Sets invite_expires
+     * @param \DateTime $invite_expires Expiry date for invite
      * @return $this
      */
-    public function setInitiated($initiated)
+    public function setInviteExpires($invite_expires)
     {
-        $this->container['initiated'] = $initiated;
-
-        return $this;
-    }
-
-    /**
-     * Gets duration
-     * @return int
-     */
-    public function getDuration()
-    {
-        return $this->container['duration'];
-    }
-
-    /**
-     * Sets duration
-     * @param int $duration Duration in milliseconds of request
-     * @return $this
-     */
-    public function setDuration($duration)
-    {
-        $this->container['duration'] = $duration;
-
-        return $this;
-    }
-
-    /**
-     * Gets headers
-     * @return string
-     */
-    public function getHeaders()
-    {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers
-     * @param string $headers HTTP headers received, null if no response
-     * @return $this
-     */
-    public function setHeaders($headers)
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
-    /**
-     * Gets content
-     * @return string
-     */
-    public function getContent()
-    {
-        return $this->container['content'];
-    }
-
-    /**
-     * Sets content
-     * @param string $content Truncated content received, null if no response
-     * @return $this
-     */
-    public function setContent($content)
-    {
-        $this->container['content'] = $content;
-
-        return $this;
-    }
-
-    /**
-     * Gets http_status
-     * @return int
-     */
-    public function getHttpStatus()
-    {
-        return $this->container['http_status'];
-    }
-
-    /**
-     * Sets http_status
-     * @param int $http_status HTTP status code received, null if no response
-     * @return $this
-     */
-    public function setHttpStatus($http_status)
-    {
-        $this->container['http_status'] = $http_status;
+        $this->container['invite_expires'] = $invite_expires;
 
         return $this;
     }

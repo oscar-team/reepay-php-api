@@ -35,6 +35,7 @@ use \ArrayAccess;
  * InlineResponse20021 Class Doc Comment
  *
  * @category    Class
+ * @description A page in a paginated invoice search
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,18 +55,14 @@ class InlineResponse20021 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'state' => 'string',
-        'invoice' => 'string',
-        'amount' => 'int',
-        'currency' => 'string',
-        'transaction' => 'string',
-        'error' => 'string',
-        'type' => 'string',
-        'created' => '\DateTime',
-        'credit_note_id' => 'string',
-        'ref_transaction' => 'string',
-        'error_state' => 'string'
+        'page' => 'int',
+        'size' => 'int',
+        'count' => 'int',
+        'search' => 'string',
+        'sort' => 'string',
+        'content' => '\Swagger\Client\Model\InlineResponse20016[]',
+        'total_elements' => 'int',
+        'total_pages' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -78,18 +75,14 @@ class InlineResponse20021 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'state' => 'state',
-        'invoice' => 'invoice',
-        'amount' => 'amount',
-        'currency' => 'currency',
-        'transaction' => 'transaction',
-        'error' => 'error',
-        'type' => 'type',
-        'created' => 'created',
-        'credit_note_id' => 'credit_note_id',
-        'ref_transaction' => 'ref_transaction',
-        'error_state' => 'error_state'
+        'page' => 'page',
+        'size' => 'size',
+        'count' => 'count',
+        'search' => 'search',
+        'sort' => 'sort',
+        'content' => 'content',
+        'total_elements' => 'total_elements',
+        'total_pages' => 'total_pages'
     ];
 
 
@@ -98,18 +91,14 @@ class InlineResponse20021 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'state' => 'setState',
-        'invoice' => 'setInvoice',
-        'amount' => 'setAmount',
-        'currency' => 'setCurrency',
-        'transaction' => 'setTransaction',
-        'error' => 'setError',
-        'type' => 'setType',
-        'created' => 'setCreated',
-        'credit_note_id' => 'setCreditNoteId',
-        'ref_transaction' => 'setRefTransaction',
-        'error_state' => 'setErrorState'
+        'page' => 'setPage',
+        'size' => 'setSize',
+        'count' => 'setCount',
+        'search' => 'setSearch',
+        'sort' => 'setSort',
+        'content' => 'setContent',
+        'total_elements' => 'setTotalElements',
+        'total_pages' => 'setTotalPages'
     ];
 
 
@@ -118,18 +107,14 @@ class InlineResponse20021 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'state' => 'getState',
-        'invoice' => 'getInvoice',
-        'amount' => 'getAmount',
-        'currency' => 'getCurrency',
-        'transaction' => 'getTransaction',
-        'error' => 'getError',
-        'type' => 'getType',
-        'created' => 'getCreated',
-        'credit_note_id' => 'getCreditNoteId',
-        'ref_transaction' => 'getRefTransaction',
-        'error_state' => 'getErrorState'
+        'page' => 'getPage',
+        'size' => 'getSize',
+        'count' => 'getCount',
+        'search' => 'getSearch',
+        'sort' => 'getSort',
+        'content' => 'getContent',
+        'total_elements' => 'getTotalElements',
+        'total_pages' => 'getTotalPages'
     ];
 
     public static function attributeMap()
@@ -147,50 +132,8 @@ class InlineResponse20021 implements ArrayAccess
         return self::$getters;
     }
 
-    const STATE_REFUNDED = 'refunded';
-    const STATE_FAILED = 'failed';
-    const TYPE_CARD = 'card';
-    const TYPE_MANUAL = 'manual';
-    const ERROR_STATE_HARD_DECLINED = 'hard_declined';
-    const ERROR_STATE_PROCESSING_ERROR = 'processing_error';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStateAllowableValues()
-    {
-        return [
-            self::STATE_REFUNDED,
-            self::STATE_FAILED,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_CARD,
-            self::TYPE_MANUAL,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getErrorStateAllowableValues()
-    {
-        return [
-            self::ERROR_STATE_HARD_DECLINED,
-            self::ERROR_STATE_PROCESSING_ERROR,
-        ];
-    }
     
 
     /**
@@ -205,18 +148,14 @@ class InlineResponse20021 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
-        $this->container['invoice'] = isset($data['invoice']) ? $data['invoice'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
-        $this->container['transaction'] = isset($data['transaction']) ? $data['transaction'] : null;
-        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['credit_note_id'] = isset($data['credit_note_id']) ? $data['credit_note_id'] : null;
-        $this->container['ref_transaction'] = isset($data['ref_transaction']) ? $data['ref_transaction'] : null;
-        $this->container['error_state'] = isset($data['error_state']) ? $data['error_state'] : null;
+        $this->container['page'] = isset($data['page']) ? $data['page'] : null;
+        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['search'] = isset($data['search']) ? $data['search'] : null;
+        $this->container['sort'] = isset($data['sort']) ? $data['sort'] : null;
+        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
+        $this->container['total_elements'] = isset($data['total_elements']) ? $data['total_elements'] : null;
+        $this->container['total_pages'] = isset($data['total_pages']) ? $data['total_pages'] : null;
     }
 
     /**
@@ -228,47 +167,42 @@ class InlineResponse20021 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['id'] === null) {
-            $invalid_properties[] = "'id' can't be null";
+        if ($this->container['page'] === null) {
+            $invalid_properties[] = "'page' can't be null";
         }
-        if ($this->container['state'] === null) {
-            $invalid_properties[] = "'state' can't be null";
-        }
-        $allowed_values = ["refunded", "failed"];
-        if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'refunded', 'failed'.";
+        if (($this->container['page'] < 1)) {
+            $invalid_properties[] = "invalid value for 'page', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['invoice'] === null) {
-            $invalid_properties[] = "'invoice' can't be null";
+        if ($this->container['size'] === null) {
+            $invalid_properties[] = "'size' can't be null";
         }
-        if ($this->container['amount'] === null) {
-            $invalid_properties[] = "'amount' can't be null";
-        }
-        if (($this->container['amount'] < 0)) {
-            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
+        if (($this->container['size'] < 1)) {
+            $invalid_properties[] = "invalid value for 'size', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['currency'] === null) {
-            $invalid_properties[] = "'currency' can't be null";
+        if ($this->container['count'] === null) {
+            $invalid_properties[] = "'count' can't be null";
         }
-        if ($this->container['transaction'] === null) {
-            $invalid_properties[] = "'transaction' can't be null";
-        }
-        if ($this->container['type'] === null) {
-            $invalid_properties[] = "'type' can't be null";
-        }
-        $allowed_values = ["card", "manual"];
-        if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'type', must be one of 'card', 'manual'.";
+        if (($this->container['count'] < 0)) {
+            $invalid_properties[] = "invalid value for 'count', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['created'] === null) {
-            $invalid_properties[] = "'created' can't be null";
+        if ($this->container['content'] === null) {
+            $invalid_properties[] = "'content' can't be null";
         }
-        $allowed_values = ["hard_declined", "processing_error"];
-        if (!in_array($this->container['error_state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'error_state', must be one of 'hard_declined', 'processing_error'.";
+        if ($this->container['total_elements'] === null) {
+            $invalid_properties[] = "'total_elements' can't be null";
+        }
+        if (($this->container['total_elements'] < 0)) {
+            $invalid_properties[] = "invalid value for 'total_elements', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['total_pages'] === null) {
+            $invalid_properties[] = "'total_pages' can't be null";
+        }
+        if (($this->container['total_pages'] < 0)) {
+            $invalid_properties[] = "invalid value for 'total_pages', must be bigger than or equal to 0.";
         }
 
         return $invalid_properties;
@@ -283,43 +217,37 @@ class InlineResponse20021 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['id'] === null) {
+        if ($this->container['page'] === null) {
             return false;
         }
-        if ($this->container['state'] === null) {
+        if ($this->container['page'] < 1) {
             return false;
         }
-        $allowed_values = ["refunded", "failed"];
-        if (!in_array($this->container['state'], $allowed_values)) {
+        if ($this->container['size'] === null) {
             return false;
         }
-        if ($this->container['invoice'] === null) {
+        if ($this->container['size'] < 1) {
             return false;
         }
-        if ($this->container['amount'] === null) {
+        if ($this->container['count'] === null) {
             return false;
         }
-        if ($this->container['amount'] < 0) {
+        if ($this->container['count'] < 0) {
             return false;
         }
-        if ($this->container['currency'] === null) {
+        if ($this->container['content'] === null) {
             return false;
         }
-        if ($this->container['transaction'] === null) {
+        if ($this->container['total_elements'] === null) {
             return false;
         }
-        if ($this->container['type'] === null) {
+        if ($this->container['total_elements'] < 0) {
             return false;
         }
-        $allowed_values = ["card", "manual"];
-        if (!in_array($this->container['type'], $allowed_values)) {
+        if ($this->container['total_pages'] === null) {
             return false;
         }
-        if ($this->container['created'] === null) {
-            return false;
-        }
-        $allowed_values = ["hard_declined", "processing_error"];
-        if (!in_array($this->container['error_state'], $allowed_values)) {
+        if ($this->container['total_pages'] < 0) {
             return false;
         }
         return true;
@@ -327,270 +255,194 @@ class InlineResponse20021 implements ArrayAccess
 
 
     /**
-     * Gets id
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     * @param string $id Refund id assigned by Reepay
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     * @return string
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     * @param string $state The refund state either `refunded` or `failed`
-     * @return $this
-     */
-    public function setState($state)
-    {
-        $allowed_values = array('refunded', 'failed');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'refunded', 'failed'");
-        }
-        $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
-     * Gets invoice
-     * @return string
-     */
-    public function getInvoice()
-    {
-        return $this->container['invoice'];
-    }
-
-    /**
-     * Sets invoice
-     * @param string $invoice Invoice/charge handle
-     * @return $this
-     */
-    public function setInvoice($invoice)
-    {
-        $this->container['invoice'] = $invoice;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
+     * Gets page
      * @return int
      */
-    public function getAmount()
+    public function getPage()
     {
-        return $this->container['amount'];
+        return $this->container['page'];
     }
 
     /**
-     * Sets amount
-     * @param int $amount Refunded amount
+     * Sets page
+     * @param int $page Number of current page in paginated list
      * @return $this
      */
-    public function setAmount($amount)
+    public function setPage($page)
     {
 
-        if (($amount < 0)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling InlineResponse20021., must be bigger than or equal to 0.');
+        if (($page < 1)) {
+            throw new \InvalidArgumentException('invalid value for $page when calling InlineResponse20021., must be bigger than or equal to 1.');
         }
 
-        $this->container['amount'] = $amount;
+        $this->container['page'] = $page;
 
         return $this;
     }
 
     /**
-     * Gets currency
-     * @return string
+     * Gets size
+     * @return int
      */
-    public function getCurrency()
+    public function getSize()
     {
-        return $this->container['currency'];
+        return $this->container['size'];
     }
 
     /**
-     * Sets currency
-     * @param string $currency Currency for the account in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code
+     * Sets size
+     * @param int $size Page size in paginated list
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setSize($size)
     {
-        $this->container['currency'] = $currency;
 
-        return $this;
-    }
-
-    /**
-     * Gets transaction
-     * @return string
-     */
-    public function getTransaction()
-    {
-        return $this->container['transaction'];
-    }
-
-    /**
-     * Sets transaction
-     * @param string $transaction Transaction id assigned by Reepay
-     * @return $this
-     */
-    public function setTransaction($transaction)
-    {
-        $this->container['transaction'] = $transaction;
-
-        return $this;
-    }
-
-    /**
-     * Gets error
-     * @return string
-     */
-    public function getError()
-    {
-        return $this->container['error'];
-    }
-
-    /**
-     * Sets error
-     * @param string $error Reepay error code if failed. See [transaction errors](https://docs.reepay.com/api/#transaction-errors).
-     * @return $this
-     */
-    public function setError($error)
-    {
-        $this->container['error'] = $error;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     * @param string $type Type of refund, either `card` or `manual`
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $allowed_values = array('card', 'manual');
-        if ((!in_array($type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'card', 'manual'");
+        if (($size < 1)) {
+            throw new \InvalidArgumentException('invalid value for $size when calling InlineResponse20021., must be bigger than or equal to 1.');
         }
-        $this->container['type'] = $type;
+
+        $this->container['size'] = $size;
 
         return $this;
     }
 
     /**
-     * Gets created
-     * @return \DateTime
+     * Gets count
+     * @return int
      */
-    public function getCreated()
+    public function getCount()
     {
-        return $this->container['created'];
+        return $this->container['count'];
     }
 
     /**
-     * Sets created
-     * @param \DateTime $created When the refund was created, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * Sets count
+     * @param int $count Number of elements in current page
      * @return $this
      */
-    public function setCreated($created)
+    public function setCount($count)
     {
-        $this->container['created'] = $created;
 
-        return $this;
-    }
-
-    /**
-     * Gets credit_note_id
-     * @return string
-     */
-    public function getCreditNoteId()
-    {
-        return $this->container['credit_note_id'];
-    }
-
-    /**
-     * Sets credit_note_id
-     * @param string $credit_note_id Credit note id for successful refund
-     * @return $this
-     */
-    public function setCreditNoteId($credit_note_id)
-    {
-        $this->container['credit_note_id'] = $credit_note_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets ref_transaction
-     * @return string
-     */
-    public function getRefTransaction()
-    {
-        return $this->container['ref_transaction'];
-    }
-
-    /**
-     * Sets ref_transaction
-     * @param string $ref_transaction Id of a possible settled transaction that has been refunded
-     * @return $this
-     */
-    public function setRefTransaction($ref_transaction)
-    {
-        $this->container['ref_transaction'] = $ref_transaction;
-
-        return $this;
-    }
-
-    /**
-     * Gets error_state
-     * @return string
-     */
-    public function getErrorState()
-    {
-        return $this->container['error_state'];
-    }
-
-    /**
-     * Sets error_state
-     * @param string $error_state Reepay error state if failed: `hard_declined` or `processing_error`. A hard decline indicates a refund decline by acquirer. A processing error indicates an error processing the refund either at Reepay, the acquirer, or between Reepay amd the acquirer.
-     * @return $this
-     */
-    public function setErrorState($error_state)
-    {
-        $allowed_values = array('hard_declined', 'processing_error');
-        if (!is_null($error_state) && (!in_array($error_state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'error_state', must be one of 'hard_declined', 'processing_error'");
+        if (($count < 0)) {
+            throw new \InvalidArgumentException('invalid value for $count when calling InlineResponse20021., must be bigger than or equal to 0.');
         }
-        $this->container['error_state'] = $error_state;
+
+        $this->container['count'] = $count;
+
+        return $this;
+    }
+
+    /**
+     * Gets search
+     * @return string
+     */
+    public function getSearch()
+    {
+        return $this->container['search'];
+    }
+
+    /**
+     * Sets search
+     * @param string $search Optional search expression used
+     * @return $this
+     */
+    public function setSearch($search)
+    {
+        $this->container['search'] = $search;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort
+     * @return string
+     */
+    public function getSort()
+    {
+        return $this->container['sort'];
+    }
+
+    /**
+     * Sets sort
+     * @param string $sort Optional sort expression used
+     * @return $this
+     */
+    public function setSort($sort)
+    {
+        $this->container['sort'] = $sort;
+
+        return $this;
+    }
+
+    /**
+     * Gets content
+     * @return \Swagger\Client\Model\InlineResponse20016[]
+     */
+    public function getContent()
+    {
+        return $this->container['content'];
+    }
+
+    /**
+     * Sets content
+     * @param \Swagger\Client\Model\InlineResponse20016[] $content List of invoices for current page
+     * @return $this
+     */
+    public function setContent($content)
+    {
+        $this->container['content'] = $content;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_elements
+     * @return int
+     */
+    public function getTotalElements()
+    {
+        return $this->container['total_elements'];
+    }
+
+    /**
+     * Sets total_elements
+     * @param int $total_elements Total number of elements in paginated list
+     * @return $this
+     */
+    public function setTotalElements($total_elements)
+    {
+
+        if (($total_elements < 0)) {
+            throw new \InvalidArgumentException('invalid value for $total_elements when calling InlineResponse20021., must be bigger than or equal to 0.');
+        }
+
+        $this->container['total_elements'] = $total_elements;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_pages
+     * @return int
+     */
+    public function getTotalPages()
+    {
+        return $this->container['total_pages'];
+    }
+
+    /**
+     * Sets total_pages
+     * @param int $total_pages Total number of pages in paginated list
+     * @return $this
+     */
+    public function setTotalPages($total_pages)
+    {
+
+        if (($total_pages < 0)) {
+            throw new \InvalidArgumentException('invalid value for $total_pages when calling InlineResponse20021., must be bigger than or equal to 0.');
+        }
+
+        $this->container['total_pages'] = $total_pages;
 
         return $this;
     }

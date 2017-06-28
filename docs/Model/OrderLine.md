@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **amount** | **int** | Order line total amount including vat | 
 **vat** | **float** | Order line vat percent | 
 **quantity** | **int** | Order line quantity | 
-**origin** | **string** | Order line origin, one of the following: &#x60;plan&#x60;, &#x60;ondemand&#x60;, &#x60;additional_cost&#x60;, &#x60;credit&#x60;, &#x60;discount&#x60; | 
+**origin** | **string** | Order line origin, one of the following: &#x60;plan&#x60;, &#x60;add_on&#x60;, &#x60;ondemand&#x60;, &#x60;additional_cost&#x60;, &#x60;credit&#x60;, &#x60;discount&#x60; | 
 **timestamp** | [**\DateTime**](\DateTime.md) | Timestamp from order line origin, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | 
 **discounted_amount** | **int** | Order line amount after potential discount has been deducted | [optional] 
 **amount_vat** | **int** | Order line total vat amount | 

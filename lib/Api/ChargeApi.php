@@ -94,7 +94,7 @@ class ChargeApi
      *
      * @param string $handle Charge handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2009Content
+     * @return \Swagger\Client\Model\InlineResponse20011Content
      */
     public function cancelCharge($handle)
     {
@@ -109,7 +109,7 @@ class ChargeApi
      *
      * @param string $handle Charge handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2009Content, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20011Content, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelChargeWithHttpInfo($handle)
     {
@@ -164,15 +164,15 @@ class ChargeApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2009Content',
+                '\Swagger\Client\Model\InlineResponse20011Content',
                 '/v1/charge/{handle}/cancel'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2009Content', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20011Content', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2009Content', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20011Content', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -206,9 +206,9 @@ class ChargeApi
      *
      * Create charge
      *
-     * @param \Swagger\Client\Model\Body7 $body  (optional)
+     * @param \Swagger\Client\Model\Body9 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2009Content
+     * @return \Swagger\Client\Model\InlineResponse20011Content
      */
     public function createCharge($body = null)
     {
@@ -221,9 +221,9 @@ class ChargeApi
      *
      * Create charge
      *
-     * @param \Swagger\Client\Model\Body7 $body  (optional)
+     * @param \Swagger\Client\Model\Body9 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2009Content, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20011Content, HTTP status code, HTTP response headers (array of strings)
      */
     public function createChargeWithHttpInfo($body = null)
     {
@@ -271,15 +271,15 @@ class ChargeApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2009Content',
+                '\Swagger\Client\Model\InlineResponse20011Content',
                 '/v1/charge'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2009Content', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20011Content', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2009Content', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20011Content', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -315,7 +315,7 @@ class ChargeApi
      *
      * @param string $handle Charge handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2009Content
+     * @return \Swagger\Client\Model\InlineResponse20011Content
      */
     public function getCharge($handle)
     {
@@ -330,7 +330,7 @@ class ChargeApi
      *
      * @param string $handle Charge handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2009Content, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20011Content, HTTP status code, HTTP response headers (array of strings)
      */
     public function getChargeWithHttpInfo($handle)
     {
@@ -385,15 +385,15 @@ class ChargeApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2009Content',
+                '\Swagger\Client\Model\InlineResponse20011Content',
                 '/v1/charge/{handle}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2009Content', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20011Content', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2009Content', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20011Content', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -432,7 +432,7 @@ class ChargeApi
      * @param string $search Optional search expression (optional)
      * @param string $sort Optional sorting expression (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2009
+     * @return \Swagger\Client\Model\InlineResponse20011
      */
     public function getCharges($page = null, $size = null, $search = null, $sort = null)
     {
@@ -450,7 +450,7 @@ class ChargeApi
      * @param string $search Optional search expression (optional)
      * @param string $sort Optional sorting expression (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2009, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20011, HTTP status code, HTTP response headers (array of strings)
      */
     public function getChargesWithHttpInfo($page = null, $size = null, $search = null, $sort = null)
     {
@@ -520,15 +520,15 @@ class ChargeApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2009',
+                '\Swagger\Client\Model\InlineResponse20011',
                 '/v1/charge'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2009', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20011', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2009', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20011', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -563,9 +563,9 @@ class ChargeApi
      * Settle charge
      *
      * @param string $handle Charge handle (required)
-     * @param \Swagger\Client\Model\Body8 $body  (optional)
+     * @param \Swagger\Client\Model\Body10 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2009Content
+     * @return \Swagger\Client\Model\InlineResponse20011Content
      */
     public function settleCharge($handle, $body = null)
     {
@@ -579,9 +579,9 @@ class ChargeApi
      * Settle charge
      *
      * @param string $handle Charge handle (required)
-     * @param \Swagger\Client\Model\Body8 $body  (optional)
+     * @param \Swagger\Client\Model\Body10 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2009Content, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20011Content, HTTP status code, HTTP response headers (array of strings)
      */
     public function settleChargeWithHttpInfo($handle, $body = null)
     {
@@ -641,15 +641,15 @@ class ChargeApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2009Content',
+                '\Swagger\Client\Model\InlineResponse20011Content',
                 '/v1/charge/{handle}/settle'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2009Content', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20011Content', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2009Content', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20011Content', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

@@ -54,22 +54,12 @@ class Body1 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'handle' => 'string',
-        'currency' => 'string',
-        'name' => 'string',
-        'address' => 'string',
-        'address2' => 'string',
-        'city' => 'string',
-        'locale' => 'string',
-        'timezone' => 'string',
-        'country' => 'string',
-        'email' => 'string',
-        'phone' => 'string',
-        'vat' => 'string',
-        'website' => 'string',
-        'logo' => 'string',
-        'postal_code' => 'string',
-        'default_vat' => 'float'
+        'urls' => 'string[]',
+        'username' => 'string',
+        'password' => 'string',
+        'disabled' => 'bool',
+        'alert_emails' => 'string[]',
+        'alert_count' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -82,22 +72,12 @@ class Body1 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'handle' => 'handle',
-        'currency' => 'currency',
-        'name' => 'name',
-        'address' => 'address',
-        'address2' => 'address2',
-        'city' => 'city',
-        'locale' => 'locale',
-        'timezone' => 'timezone',
-        'country' => 'country',
-        'email' => 'email',
-        'phone' => 'phone',
-        'vat' => 'vat',
-        'website' => 'website',
-        'logo' => 'logo',
-        'postal_code' => 'postal_code',
-        'default_vat' => 'default_vat'
+        'urls' => 'urls',
+        'username' => 'username',
+        'password' => 'password',
+        'disabled' => 'disabled',
+        'alert_emails' => 'alert_emails',
+        'alert_count' => 'alert_count'
     ];
 
 
@@ -106,22 +86,12 @@ class Body1 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'handle' => 'setHandle',
-        'currency' => 'setCurrency',
-        'name' => 'setName',
-        'address' => 'setAddress',
-        'address2' => 'setAddress2',
-        'city' => 'setCity',
-        'locale' => 'setLocale',
-        'timezone' => 'setTimezone',
-        'country' => 'setCountry',
-        'email' => 'setEmail',
-        'phone' => 'setPhone',
-        'vat' => 'setVat',
-        'website' => 'setWebsite',
-        'logo' => 'setLogo',
-        'postal_code' => 'setPostalCode',
-        'default_vat' => 'setDefaultVat'
+        'urls' => 'setUrls',
+        'username' => 'setUsername',
+        'password' => 'setPassword',
+        'disabled' => 'setDisabled',
+        'alert_emails' => 'setAlertEmails',
+        'alert_count' => 'setAlertCount'
     ];
 
 
@@ -130,22 +100,12 @@ class Body1 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'handle' => 'getHandle',
-        'currency' => 'getCurrency',
-        'name' => 'getName',
-        'address' => 'getAddress',
-        'address2' => 'getAddress2',
-        'city' => 'getCity',
-        'locale' => 'getLocale',
-        'timezone' => 'getTimezone',
-        'country' => 'getCountry',
-        'email' => 'getEmail',
-        'phone' => 'getPhone',
-        'vat' => 'getVat',
-        'website' => 'getWebsite',
-        'logo' => 'getLogo',
-        'postal_code' => 'getPostalCode',
-        'default_vat' => 'getDefaultVat'
+        'urls' => 'getUrls',
+        'username' => 'getUsername',
+        'password' => 'getPassword',
+        'disabled' => 'getDisabled',
+        'alert_emails' => 'getAlertEmails',
+        'alert_count' => 'getAlertCount'
     ];
 
     public static function attributeMap()
@@ -179,22 +139,12 @@ class Body1 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
-        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
-        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
-        $this->container['locale'] = isset($data['locale']) ? $data['locale'] : null;
-        $this->container['timezone'] = isset($data['timezone']) ? $data['timezone'] : null;
-        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
-        $this->container['website'] = isset($data['website']) ? $data['website'] : null;
-        $this->container['logo'] = isset($data['logo']) ? $data['logo'] : null;
-        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
-        $this->container['default_vat'] = isset($data['default_vat']) ? $data['default_vat'] : null;
+        $this->container['urls'] = isset($data['urls']) ? $data['urls'] : null;
+        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['disabled'] = isset($data['disabled']) ? $data['disabled'] : null;
+        $this->container['alert_emails'] = isset($data['alert_emails']) ? $data['alert_emails'] : null;
+        $this->container['alert_count'] = isset($data['alert_count']) ? $data['alert_count'] : null;
     }
 
     /**
@@ -206,30 +156,14 @@ class Body1 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['handle'] === null) {
-            $invalid_properties[] = "'handle' can't be null";
+        if ($this->container['urls'] === null) {
+            $invalid_properties[] = "'urls' can't be null";
         }
-        if ($this->container['name'] === null) {
-            $invalid_properties[] = "'name' can't be null";
+        if ($this->container['disabled'] === null) {
+            $invalid_properties[] = "'disabled' can't be null";
         }
-        if ($this->container['locale'] === null) {
-            $invalid_properties[] = "'locale' can't be null";
-        }
-        if ($this->container['timezone'] === null) {
-            $invalid_properties[] = "'timezone' can't be null";
-        }
-        if ($this->container['country'] === null) {
-            $invalid_properties[] = "'country' can't be null";
-        }
-        if ($this->container['default_vat'] === null) {
-            $invalid_properties[] = "'default_vat' can't be null";
-        }
-        if (($this->container['default_vat'] > 1)) {
-            $invalid_properties[] = "invalid value for 'default_vat', must be smaller than or equal to 1.";
-        }
-
-        if (($this->container['default_vat'] < 0)) {
-            $invalid_properties[] = "invalid value for 'default_vat', must be bigger than or equal to 0.";
+        if (!is_null($this->container['alert_count']) && ($this->container['alert_count'] < 4)) {
+            $invalid_properties[] = "invalid value for 'alert_count', must be bigger than or equal to 4.";
         }
 
         return $invalid_properties;
@@ -244,28 +178,13 @@ class Body1 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['handle'] === null) {
+        if ($this->container['urls'] === null) {
             return false;
         }
-        if ($this->container['name'] === null) {
+        if ($this->container['disabled'] === null) {
             return false;
         }
-        if ($this->container['locale'] === null) {
-            return false;
-        }
-        if ($this->container['timezone'] === null) {
-            return false;
-        }
-        if ($this->container['country'] === null) {
-            return false;
-        }
-        if ($this->container['default_vat'] === null) {
-            return false;
-        }
-        if ($this->container['default_vat'] > 1) {
-            return false;
-        }
-        if ($this->container['default_vat'] < 0) {
+        if ($this->container['alert_count'] < 4) {
             return false;
         }
         return true;
@@ -273,345 +192,132 @@ class Body1 implements ArrayAccess
 
 
     /**
-     * Gets handle
-     * @return string
+     * Gets urls
+     * @return string[]
      */
-    public function getHandle()
+    public function getUrls()
     {
-        return $this->container['handle'];
+        return $this->container['urls'];
     }
 
     /**
-     * Sets handle
-     * @param string $handle Per organisation unique handle for the account
+     * Sets urls
+     * @param string[] $urls Webhook urls
      * @return $this
      */
-    public function setHandle($handle)
+    public function setUrls($urls)
     {
-        $this->container['handle'] = $handle;
+        $this->container['urls'] = $urls;
 
         return $this;
     }
 
     /**
-     * Gets currency
+     * Gets username
      * @return string
      */
-    public function getCurrency()
+    public function getUsername()
     {
-        return $this->container['currency'];
+        return $this->container['username'];
     }
 
     /**
-     * Sets currency
-     * @param string $currency Currency for the account in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code
+     * Sets username
+     * @param string $username Optional HTTP Basic Auth username
      * @return $this
      */
-    public function setCurrency($currency)
+    public function setUsername($username)
     {
-        $this->container['currency'] = $currency;
+        $this->container['username'] = $username;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets password
      * @return string
      */
-    public function getName()
+    public function getPassword()
     {
-        return $this->container['name'];
+        return $this->container['password'];
     }
 
     /**
-     * Sets name
-     * @param string $name Account name
+     * Sets password
+     * @param string $password Optional HTTP Basic Auth password
      * @return $this
      */
-    public function setName($name)
+    public function setPassword($password)
     {
-        $this->container['name'] = $name;
+        $this->container['password'] = $password;
 
         return $this;
     }
 
     /**
-     * Gets address
-     * @return string
+     * Gets disabled
+     * @return bool
      */
-    public function getAddress()
+    public function getDisabled()
     {
-        return $this->container['address'];
+        return $this->container['disabled'];
     }
 
     /**
-     * Sets address
-     * @param string $address Account address
+     * Sets disabled
+     * @param bool $disabled Webhook disabled
      * @return $this
      */
-    public function setAddress($address)
+    public function setDisabled($disabled)
     {
-        $this->container['address'] = $address;
+        $this->container['disabled'] = $disabled;
 
         return $this;
     }
 
     /**
-     * Gets address2
-     * @return string
+     * Gets alert_emails
+     * @return string[]
      */
-    public function getAddress2()
+    public function getAlertEmails()
     {
-        return $this->container['address2'];
+        return $this->container['alert_emails'];
     }
 
     /**
-     * Sets address2
-     * @param string $address2 Account address2
+     * Sets alert_emails
+     * @param string[] $alert_emails Optional list of emails to send alert to if webhook fails
      * @return $this
      */
-    public function setAddress2($address2)
+    public function setAlertEmails($alert_emails)
     {
-        $this->container['address2'] = $address2;
+        $this->container['alert_emails'] = $alert_emails;
 
         return $this;
     }
 
     /**
-     * Gets city
-     * @return string
+     * Gets alert_count
+     * @return int
      */
-    public function getCity()
+    public function getAlertCount()
     {
-        return $this->container['city'];
+        return $this->container['alert_count'];
     }
 
     /**
-     * Sets city
-     * @param string $city Account city
+     * Sets alert_count
+     * @param int $alert_count Number of requests to perform before alert email is sent, must be greater than or equal to four (1 hour)
      * @return $this
      */
-    public function setCity($city)
-    {
-        $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets locale
-     * @return string
-     */
-    public function getLocale()
-    {
-        return $this->container['locale'];
-    }
-
-    /**
-     * Sets locale
-     * @param string $locale Account locale on the form 'language_country'
-     * @return $this
-     */
-    public function setLocale($locale)
-    {
-        $this->container['locale'] = $locale;
-
-        return $this;
-    }
-
-    /**
-     * Gets timezone
-     * @return string
-     */
-    public function getTimezone()
-    {
-        return $this->container['timezone'];
-    }
-
-    /**
-     * Sets timezone
-     * @param string $timezone Account time zone ID as abbreviation or full name. See [Wikipedia](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
-     * @return $this
-     */
-    public function setTimezone($timezone)
-    {
-        $this->container['timezone'] = $timezone;
-
-        return $this;
-    }
-
-    /**
-     * Gets country
-     * @return string
-     */
-    public function getCountry()
-    {
-        return $this->container['country'];
-    }
-
-    /**
-     * Sets country
-     * @param string $country Account country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
-     * @return $this
-     */
-    public function setCountry($country)
-    {
-        $this->container['country'] = $country;
-
-        return $this;
-    }
-
-    /**
-     * Gets email
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->container['email'];
-    }
-
-    /**
-     * Sets email
-     * @param string $email Account email
-     * @return $this
-     */
-    public function setEmail($email)
-    {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone
-     * @return string
-     */
-    public function getPhone()
-    {
-        return $this->container['phone'];
-    }
-
-    /**
-     * Sets phone
-     * @param string $phone Account phone
-     * @return $this
-     */
-    public function setPhone($phone)
-    {
-        $this->container['phone'] = $phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat
-     * @return string
-     */
-    public function getVat()
-    {
-        return $this->container['vat'];
-    }
-
-    /**
-     * Sets vat
-     * @param string $vat Account vat number
-     * @return $this
-     */
-    public function setVat($vat)
-    {
-        $this->container['vat'] = $vat;
-
-        return $this;
-    }
-
-    /**
-     * Gets website
-     * @return string
-     */
-    public function getWebsite()
-    {
-        return $this->container['website'];
-    }
-
-    /**
-     * Sets website
-     * @param string $website Account website
-     * @return $this
-     */
-    public function setWebsite($website)
-    {
-        $this->container['website'] = $website;
-
-        return $this;
-    }
-
-    /**
-     * Gets logo
-     * @return string
-     */
-    public function getLogo()
-    {
-        return $this->container['logo'];
-    }
-
-    /**
-     * Sets logo
-     * @param string $logo Account logo url
-     * @return $this
-     */
-    public function setLogo($logo)
-    {
-        $this->container['logo'] = $logo;
-
-        return $this;
-    }
-
-    /**
-     * Gets postal_code
-     * @return string
-     */
-    public function getPostalCode()
-    {
-        return $this->container['postal_code'];
-    }
-
-    /**
-     * Sets postal_code
-     * @param string $postal_code Account postal code
-     * @return $this
-     */
-    public function setPostalCode($postal_code)
-    {
-        $this->container['postal_code'] = $postal_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets default_vat
-     * @return float
-     */
-    public function getDefaultVat()
-    {
-        return $this->container['default_vat'];
-    }
-
-    /**
-     * Sets default_vat
-     * @param float $default_vat Default vat for account
-     * @return $this
-     */
-    public function setDefaultVat($default_vat)
+    public function setAlertCount($alert_count)
     {
 
-        if (($default_vat > 1)) {
-            throw new \InvalidArgumentException('invalid value for $default_vat when calling Body1., must be smaller than or equal to 1.');
-        }
-        if (($default_vat < 0)) {
-            throw new \InvalidArgumentException('invalid value for $default_vat when calling Body1., must be bigger than or equal to 0.');
+        if (!is_null($alert_count) && ($alert_count < 4)) {
+            throw new \InvalidArgumentException('invalid value for $alert_count when calling Body1., must be bigger than or equal to 4.');
         }
 
-        $this->container['default_vat'] = $default_vat;
+        $this->container['alert_count'] = $alert_count;
 
         return $this;
     }

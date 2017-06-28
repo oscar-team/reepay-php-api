@@ -54,11 +54,10 @@ class Body10 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'all_plans' => 'bool',
-        'eligible_plans' => 'string[]',
-        'max_redemptions' => 'int',
-        'valid_until' => 'string'
+        'key' => 'string',
+        'amount' => 'int',
+        'ordertext' => 'string',
+        'order_lines' => '\Swagger\Client\Model\V1chargeOrderLines[]'
     ];
 
     public static function swaggerTypes()
@@ -71,11 +70,10 @@ class Body10 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'all_plans' => 'all_plans',
-        'eligible_plans' => 'eligible_plans',
-        'max_redemptions' => 'max_redemptions',
-        'valid_until' => 'valid_until'
+        'key' => 'key',
+        'amount' => 'amount',
+        'ordertext' => 'ordertext',
+        'order_lines' => 'order_lines'
     ];
 
 
@@ -84,11 +82,10 @@ class Body10 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'all_plans' => 'setAllPlans',
-        'eligible_plans' => 'setEligiblePlans',
-        'max_redemptions' => 'setMaxRedemptions',
-        'valid_until' => 'setValidUntil'
+        'key' => 'setKey',
+        'amount' => 'setAmount',
+        'ordertext' => 'setOrdertext',
+        'order_lines' => 'setOrderLines'
     ];
 
 
@@ -97,11 +94,10 @@ class Body10 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'all_plans' => 'getAllPlans',
-        'eligible_plans' => 'getEligiblePlans',
-        'max_redemptions' => 'getMaxRedemptions',
-        'valid_until' => 'getValidUntil'
+        'key' => 'getKey',
+        'amount' => 'getAmount',
+        'ordertext' => 'getOrdertext',
+        'order_lines' => 'getOrderLines'
     ];
 
     public static function attributeMap()
@@ -135,11 +131,10 @@ class Body10 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['all_plans'] = isset($data['all_plans']) ? $data['all_plans'] : null;
-        $this->container['eligible_plans'] = isset($data['eligible_plans']) ? $data['eligible_plans'] : null;
-        $this->container['max_redemptions'] = isset($data['max_redemptions']) ? $data['max_redemptions'] : null;
-        $this->container['valid_until'] = isset($data['valid_until']) ? $data['valid_until'] : null;
+        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['ordertext'] = isset($data['ordertext']) ? $data['ordertext'] : null;
+        $this->container['order_lines'] = isset($data['order_lines']) ? $data['order_lines'] : null;
     }
 
     /**
@@ -151,11 +146,8 @@ class Body10 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['name'] === null) {
-            $invalid_properties[] = "'name' can't be null";
-        }
-        if (!is_null($this->container['max_redemptions']) && ($this->container['max_redemptions'] < 1)) {
-            $invalid_properties[] = "invalid value for 'max_redemptions', must be bigger than or equal to 1.";
+        if (!is_null($this->container['amount']) && ($this->container['amount'] < 0)) {
+            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
         }
 
         return $invalid_properties;
@@ -170,10 +162,7 @@ class Body10 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['name'] === null) {
-            return false;
-        }
-        if ($this->container['max_redemptions'] < 1) {
+        if ($this->container['amount'] < 0) {
             return false;
         }
         return true;
@@ -181,111 +170,90 @@ class Body10 implements ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets key
      * @return string
      */
-    public function getName()
+    public function getKey()
     {
-        return $this->container['name'];
+        return $this->container['key'];
     }
 
     /**
-     * Sets name
-     * @param string $name Internal name for the coupon.
+     * Sets key
+     * @param string $key Optional idempotency key. Only one settle can be performed for the same handle. If two settle attempts are attempted and the first succeeds the second will fail because charge is already settled or authorized. An idempotency key identifies uniquely the request and multiple requests with the same key will yield the same result. In case of networking errors the same request with same key can safely be retried.
      * @return $this
      */
-    public function setName($name)
+    public function setKey($key)
     {
-        $this->container['name'] = $name;
+        $this->container['key'] = $key;
 
         return $this;
     }
 
     /**
-     * Gets all_plans
-     * @return bool
-     */
-    public function getAllPlans()
-    {
-        return $this->container['all_plans'];
-    }
-
-    /**
-     * Sets all_plans
-     * @param bool $all_plans Whether all plans are eligible for this coupon. Defaults to false.
-     * @return $this
-     */
-    public function setAllPlans($all_plans)
-    {
-        $this->container['all_plans'] = $all_plans;
-
-        return $this;
-    }
-
-    /**
-     * Gets eligible_plans
-     * @return string[]
-     */
-    public function getEligiblePlans()
-    {
-        return $this->container['eligible_plans'];
-    }
-
-    /**
-     * Sets eligible_plans
-     * @param string[] $eligible_plans If not all_plans are set to true, then the set of eligible plan handles must be defined.
-     * @return $this
-     */
-    public function setEligiblePlans($eligible_plans)
-    {
-        $this->container['eligible_plans'] = $eligible_plans;
-
-        return $this;
-    }
-
-    /**
-     * Gets max_redemptions
+     * Gets amount
      * @return int
      */
-    public function getMaxRedemptions()
+    public function getAmount()
     {
-        return $this->container['max_redemptions'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets max_redemptions
-     * @param int $max_redemptions Optional maximum number of times this coupon can be redeemed.
+     * Sets amount
+     * @param int $amount Optional amount different from authorized amount to settle. Must be less than or equal to the authorized amount. Either `amount` or `order_lines` can be provided.
      * @return $this
      */
-    public function setMaxRedemptions($max_redemptions)
+    public function setAmount($amount)
     {
 
-        if (!is_null($max_redemptions) && ($max_redemptions < 1)) {
-            throw new \InvalidArgumentException('invalid value for $max_redemptions when calling Body10., must be bigger than or equal to 1.');
+        if (!is_null($amount) && ($amount < 0)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling Body10., must be bigger than or equal to 0.');
         }
 
-        $this->container['max_redemptions'] = $max_redemptions;
+        $this->container['amount'] = $amount;
 
         return $this;
     }
 
     /**
-     * Gets valid_until
+     * Gets ordertext
      * @return string
      */
-    public function getValidUntil()
+    public function getOrdertext()
     {
-        return $this->container['valid_until'];
+        return $this->container['ordertext'];
     }
 
     /**
-     * Sets valid_until
-     * @param string $valid_until Optional date and time until which the coupon is redeemable. Date and time on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`.
+     * Sets ordertext
+     * @param string $ordertext Optional alternative order text to use in conjunction with `amount`. Ignored if `order_lines` is provided. If new `amount` is provided but no new `ordertext` the original order text will be used.
      * @return $this
      */
-    public function setValidUntil($valid_until)
+    public function setOrdertext($ordertext)
     {
-        $this->container['valid_until'] = $valid_until;
+        $this->container['ordertext'] = $ordertext;
+
+        return $this;
+    }
+
+    /**
+     * Gets order_lines
+     * @return \Swagger\Client\Model\V1chargeOrderLines[]
+     */
+    public function getOrderLines()
+    {
+        return $this->container['order_lines'];
+    }
+
+    /**
+     * Sets order_lines
+     * @param \Swagger\Client\Model\V1chargeOrderLines[] $order_lines Optional new order lines to replace old order lines for the charge. The order lines controls the amount. The new amount must be less than or equal to the authorized amount.
+     * @return $this
+     */
+    public function setOrderLines($order_lines)
+    {
+        $this->container['order_lines'] = $order_lines;
 
         return $this;
     }

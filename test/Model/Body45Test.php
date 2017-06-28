@@ -83,9 +83,9 @@ class Body45Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "password"
+     * Test attribute "email"
      */
-    public function testPropertyPassword()
+    public function testPropertyEmail()
     {
 
     }

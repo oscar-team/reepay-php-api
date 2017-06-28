@@ -83,17 +83,33 @@ class Body23Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "subdomain"
+     * Test attribute "comment"
      */
-    public function testPropertySubdomain()
+    public function testPropertyComment()
     {
 
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "reference"
      */
-    public function testPropertyName()
+    public function testPropertyReference()
+    {
+
+    }
+
+    /**
+     * Test attribute "method"
+     */
+    public function testPropertyMethod()
+    {
+
+    }
+
+    /**
+     * Test attribute "payment_date"
+     */
+    public function testPropertyPaymentDate()
     {
 
     }

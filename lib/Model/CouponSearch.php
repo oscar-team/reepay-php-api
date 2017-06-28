@@ -60,7 +60,7 @@ class CouponSearch implements ArrayAccess
         'count' => 'int',
         'search' => 'string',
         'sort' => 'string',
-        'content' => '\Swagger\Client\Model\InlineResponse20010Content[]',
+        'content' => '\Swagger\Client\Model\InlineResponse20012Content[]',
         'total_elements' => 'int',
         'total_pages' => 'int'
     ];
@@ -376,7 +376,7 @@ class CouponSearch implements ArrayAccess
 
     /**
      * Gets content
-     * @return \Swagger\Client\Model\InlineResponse20010Content[]
+     * @return \Swagger\Client\Model\InlineResponse20012Content[]
      */
     public function getContent()
     {
@@ -385,7 +385,7 @@ class CouponSearch implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Swagger\Client\Model\InlineResponse20010Content[] $content List of coupon for current page
+     * @param \Swagger\Client\Model\InlineResponse20012Content[] $content List of coupon for current page
      * @return $this
      */
     public function setContent($content)

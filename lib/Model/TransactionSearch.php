@@ -60,7 +60,7 @@ class TransactionSearch implements ArrayAccess
         'count' => 'int',
         'search' => 'string',
         'sort' => 'string',
-        'content' => '\Swagger\Client\Model\InlineResponse20015Transactions[]',
+        'content' => '\Swagger\Client\Model\InlineResponse20016Transactions[]',
         'total_elements' => 'int',
         'total_pages' => 'int'
     ];
@@ -376,7 +376,7 @@ class TransactionSearch implements ArrayAccess
 
     /**
      * Gets content
-     * @return \Swagger\Client\Model\InlineResponse20015Transactions[]
+     * @return \Swagger\Client\Model\InlineResponse20016Transactions[]
      */
     public function getContent()
     {
@@ -385,7 +385,7 @@ class TransactionSearch implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Swagger\Client\Model\InlineResponse20015Transactions[] $content List of transactions for current page
+     * @param \Swagger\Client\Model\InlineResponse20016Transactions[] $content List of transactions for current page
      * @return $this
      */
     public function setContent($content)

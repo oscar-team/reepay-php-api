@@ -54,10 +54,9 @@ class Body8 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'key' => 'string',
-        'amount' => 'int',
-        'ordertext' => 'string',
-        'order_lines' => '\Swagger\Client\Model\V1chargeOrderLines[]'
+        'provider' => 'string',
+        'card_types' => 'string[]',
+        'provider_settings' => 'map[string,object]'
     ];
 
     public static function swaggerTypes()
@@ -70,10 +69,9 @@ class Body8 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'key' => 'key',
-        'amount' => 'amount',
-        'ordertext' => 'ordertext',
-        'order_lines' => 'order_lines'
+        'provider' => 'provider',
+        'card_types' => 'card_types',
+        'provider_settings' => 'provider_settings'
     ];
 
 
@@ -82,10 +80,9 @@ class Body8 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'key' => 'setKey',
-        'amount' => 'setAmount',
-        'ordertext' => 'setOrdertext',
-        'order_lines' => 'setOrderLines'
+        'provider' => 'setProvider',
+        'card_types' => 'setCardTypes',
+        'provider_settings' => 'setProviderSettings'
     ];
 
 
@@ -94,10 +91,9 @@ class Body8 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'key' => 'getKey',
-        'amount' => 'getAmount',
-        'ordertext' => 'getOrdertext',
-        'order_lines' => 'getOrderLines'
+        'provider' => 'getProvider',
+        'card_types' => 'getCardTypes',
+        'provider_settings' => 'getProviderSettings'
     ];
 
     public static function attributeMap()
@@ -131,10 +127,9 @@ class Body8 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['ordertext'] = isset($data['ordertext']) ? $data['ordertext'] : null;
-        $this->container['order_lines'] = isset($data['order_lines']) ? $data['order_lines'] : null;
+        $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
+        $this->container['card_types'] = isset($data['card_types']) ? $data['card_types'] : null;
+        $this->container['provider_settings'] = isset($data['provider_settings']) ? $data['provider_settings'] : null;
     }
 
     /**
@@ -146,10 +141,12 @@ class Body8 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if (!is_null($this->container['amount']) && ($this->container['amount'] < 0)) {
-            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
+        if ($this->container['provider'] === null) {
+            $invalid_properties[] = "'provider' can't be null";
         }
-
+        if ($this->container['card_types'] === null) {
+            $invalid_properties[] = "'card_types' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -162,7 +159,10 @@ class Body8 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['amount'] < 0) {
+        if ($this->container['provider'] === null) {
+            return false;
+        }
+        if ($this->container['card_types'] === null) {
             return false;
         }
         return true;
@@ -170,90 +170,64 @@ class Body8 implements ArrayAccess
 
 
     /**
-     * Gets key
+     * Gets provider
      * @return string
      */
-    public function getKey()
+    public function getProvider()
     {
-        return $this->container['key'];
+        return $this->container['provider'];
     }
 
     /**
-     * Sets key
-     * @param string $key Optional idempotency key. Only one settle can be performed for the same handle. If two settle attempts are attempted and the first succeeds the second will fail because charge is already settled or authorized. An idempotency key identifies uniquely the request and multiple requests with the same key will yield the same result. In case of networking errors the same request with same key can safely be retried.
+     * Sets provider
+     * @param string $provider Card types supported by agreement
      * @return $this
      */
-    public function setKey($key)
+    public function setProvider($provider)
     {
-        $this->container['key'] = $key;
+        $this->container['provider'] = $provider;
 
         return $this;
     }
 
     /**
-     * Gets amount
-     * @return int
+     * Gets card_types
+     * @return string[]
      */
-    public function getAmount()
+    public function getCardTypes()
     {
-        return $this->container['amount'];
+        return $this->container['card_types'];
     }
 
     /**
-     * Sets amount
-     * @param int $amount Optional amount different from authorized amount to settle. Must be less than or equal to the authorized amount. Either `amount` or `order_lines` can be provided.
+     * Sets card_types
+     * @param string[] $card_types Card types supported by agreement
      * @return $this
      */
-    public function setAmount($amount)
+    public function setCardTypes($card_types)
     {
-
-        if (!is_null($amount) && ($amount < 0)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling Body8., must be bigger than or equal to 0.');
-        }
-
-        $this->container['amount'] = $amount;
+        $this->container['card_types'] = $card_types;
 
         return $this;
     }
 
     /**
-     * Gets ordertext
-     * @return string
+     * Gets provider_settings
+     * @return map[string,object]
      */
-    public function getOrdertext()
+    public function getProviderSettings()
     {
-        return $this->container['ordertext'];
+        return $this->container['provider_settings'];
     }
 
     /**
-     * Sets ordertext
-     * @param string $ordertext Optional alternative order text to use in conjunction with `amount`. Ignored if `order_lines` is provided. If new `amount` is provided but no new `ordertext` the original order text will be used.
+     * Sets provider_settings
+     * @param map[string,object] $provider_settings Key value map of provider settings
      * @return $this
      */
-    public function setOrdertext($ordertext)
+    public function setProviderSettings($provider_settings)
     {
-        $this->container['ordertext'] = $ordertext;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_lines
-     * @return \Swagger\Client\Model\V1chargeOrderLines[]
-     */
-    public function getOrderLines()
-    {
-        return $this->container['order_lines'];
-    }
-
-    /**
-     * Sets order_lines
-     * @param \Swagger\Client\Model\V1chargeOrderLines[] $order_lines Optional new order lines to replace old order lines for the charge. The order lines controls the amount. The new amount must be less than or equal to the authorized amount.
-     * @return $this
-     */
-    public function setOrderLines($order_lines)
-    {
-        $this->container['order_lines'] = $order_lines;
+        $this->container['provider_settings'] = $provider_settings;
 
         return $this;
     }

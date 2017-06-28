@@ -83,65 +83,49 @@ class InlineResponse2008Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "token"
+     * Test attribute "provider"
      */
-    public function testPropertyToken()
+    public function testPropertyProvider()
     {
 
     }
 
     /**
-     * Test attribute "user"
+     * Test attribute "id"
      */
-    public function testPropertyUser()
+    public function testPropertyId()
     {
 
     }
 
     /**
-     * Test attribute "account"
+     * Test attribute "state"
      */
-    public function testPropertyAccount()
+    public function testPropertyState()
     {
 
     }
 
     /**
-     * Test attribute "organisation"
+     * Test attribute "card_types"
      */
-    public function testPropertyOrganisation()
+    public function testPropertyCardTypes()
     {
 
     }
 
     /**
-     * Test attribute "organisations"
+     * Test attribute "provider_settings"
      */
-    public function testPropertyOrganisations()
+    public function testPropertyProviderSettings()
     {
 
     }
 
     /**
-     * Test attribute "groups"
+     * Test attribute "gw_ref"
      */
-    public function testPropertyGroups()
-    {
-
-    }
-
-    /**
-     * Test attribute "permissions"
-     */
-    public function testPropertyPermissions()
-    {
-
-    }
-
-    /**
-     * Test attribute "token_ttl"
-     */
-    public function testPropertyTokenTtl()
+    public function testPropertyGwRef()
     {
 
     }

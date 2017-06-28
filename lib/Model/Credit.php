@@ -61,7 +61,7 @@ class Credit implements ArrayAccess
         'state' => 'string',
         'created' => '\DateTime',
         'valid_from' => 'string',
-        'credit_invoices' => '\Swagger\Client\Model\InlineResponse20011CreditInvoices[]',
+        'credit_invoices' => '\Swagger\Client\Model\InlineResponse20013CreditInvoices[]',
         'pending_amount' => 'int'
     ];
 
@@ -426,7 +426,7 @@ class Credit implements ArrayAccess
 
     /**
      * Gets credit_invoices
-     * @return \Swagger\Client\Model\InlineResponse20011CreditInvoices[]
+     * @return \Swagger\Client\Model\InlineResponse20013CreditInvoices[]
      */
     public function getCreditInvoices()
     {
@@ -435,7 +435,7 @@ class Credit implements ArrayAccess
 
     /**
      * Sets credit_invoices
-     * @param \Swagger\Client\Model\InlineResponse20011CreditInvoices[] $credit_invoices List of invoices where the credit is applied
+     * @param \Swagger\Client\Model\InlineResponse20013CreditInvoices[] $credit_invoices List of invoices where the credit is applied
      * @return $this
      */
     public function setCreditInvoices($credit_invoices)

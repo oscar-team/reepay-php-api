@@ -35,6 +35,7 @@ use \ArrayAccess;
  * InlineResponse20017 Class Doc Comment
  *
  * @category    Class
+ * @description A page in a paginated customer search
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,13 +55,14 @@ class InlineResponse20017 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'schedule' => 'int[]',
-        'handle' => 'string',
-        'state' => 'string',
-        'created' => '\DateTime',
-        'default_plan' => 'bool',
-        'final_subscription_action' => 'string'
+        'page' => 'int',
+        'size' => 'int',
+        'count' => 'int',
+        'search' => 'string',
+        'sort' => 'string',
+        'content' => '\Swagger\Client\Model\InlineResponse20017Content[]',
+        'total_elements' => 'int',
+        'total_pages' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -73,13 +75,14 @@ class InlineResponse20017 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'schedule' => 'schedule',
-        'handle' => 'handle',
-        'state' => 'state',
-        'created' => 'created',
-        'default_plan' => 'default_plan',
-        'final_subscription_action' => 'final_subscription_action'
+        'page' => 'page',
+        'size' => 'size',
+        'count' => 'count',
+        'search' => 'search',
+        'sort' => 'sort',
+        'content' => 'content',
+        'total_elements' => 'total_elements',
+        'total_pages' => 'total_pages'
     ];
 
 
@@ -88,13 +91,14 @@ class InlineResponse20017 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'schedule' => 'setSchedule',
-        'handle' => 'setHandle',
-        'state' => 'setState',
-        'created' => 'setCreated',
-        'default_plan' => 'setDefaultPlan',
-        'final_subscription_action' => 'setFinalSubscriptionAction'
+        'page' => 'setPage',
+        'size' => 'setSize',
+        'count' => 'setCount',
+        'search' => 'setSearch',
+        'sort' => 'setSort',
+        'content' => 'setContent',
+        'total_elements' => 'setTotalElements',
+        'total_pages' => 'setTotalPages'
     ];
 
 
@@ -103,13 +107,14 @@ class InlineResponse20017 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'schedule' => 'getSchedule',
-        'handle' => 'getHandle',
-        'state' => 'getState',
-        'created' => 'getCreated',
-        'default_plan' => 'getDefaultPlan',
-        'final_subscription_action' => 'getFinalSubscriptionAction'
+        'page' => 'getPage',
+        'size' => 'getSize',
+        'count' => 'getCount',
+        'search' => 'getSearch',
+        'sort' => 'getSort',
+        'content' => 'getContent',
+        'total_elements' => 'getTotalElements',
+        'total_pages' => 'getTotalPages'
     ];
 
     public static function attributeMap()
@@ -127,38 +132,8 @@ class InlineResponse20017 implements ArrayAccess
         return self::$getters;
     }
 
-    const STATE_ACTIVE = 'active';
-    const STATE_DELETED = 'deleted';
-    const FINAL_SUBSCRIPTION_ACTION_EXPIRE = 'expire';
-    const FINAL_SUBSCRIPTION_ACTION_ON_HOLD = 'on_hold';
-    const FINAL_SUBSCRIPTION_ACTION_NONE = 'none';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStateAllowableValues()
-    {
-        return [
-            self::STATE_ACTIVE,
-            self::STATE_DELETED,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getFinalSubscriptionActionAllowableValues()
-    {
-        return [
-            self::FINAL_SUBSCRIPTION_ACTION_EXPIRE,
-            self::FINAL_SUBSCRIPTION_ACTION_ON_HOLD,
-            self::FINAL_SUBSCRIPTION_ACTION_NONE,
-        ];
-    }
     
 
     /**
@@ -173,13 +148,14 @@ class InlineResponse20017 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['schedule'] = isset($data['schedule']) ? $data['schedule'] : null;
-        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
-        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
-        $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['default_plan'] = isset($data['default_plan']) ? $data['default_plan'] : null;
-        $this->container['final_subscription_action'] = isset($data['final_subscription_action']) ? $data['final_subscription_action'] : null;
+        $this->container['page'] = isset($data['page']) ? $data['page'] : null;
+        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['search'] = isset($data['search']) ? $data['search'] : null;
+        $this->container['sort'] = isset($data['sort']) ? $data['sort'] : null;
+        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
+        $this->container['total_elements'] = isset($data['total_elements']) ? $data['total_elements'] : null;
+        $this->container['total_pages'] = isset($data['total_pages']) ? $data['total_pages'] : null;
     }
 
     /**
@@ -191,35 +167,42 @@ class InlineResponse20017 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['name'] === null) {
-            $invalid_properties[] = "'name' can't be null";
+        if ($this->container['page'] === null) {
+            $invalid_properties[] = "'page' can't be null";
         }
-        if ($this->container['schedule'] === null) {
-            $invalid_properties[] = "'schedule' can't be null";
-        }
-        if ($this->container['handle'] === null) {
-            $invalid_properties[] = "'handle' can't be null";
-        }
-        if ($this->container['state'] === null) {
-            $invalid_properties[] = "'state' can't be null";
-        }
-        $allowed_values = ["active", "deleted"];
-        if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'deleted'.";
+        if (($this->container['page'] < 1)) {
+            $invalid_properties[] = "invalid value for 'page', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['created'] === null) {
-            $invalid_properties[] = "'created' can't be null";
+        if ($this->container['size'] === null) {
+            $invalid_properties[] = "'size' can't be null";
         }
-        if ($this->container['default_plan'] === null) {
-            $invalid_properties[] = "'default_plan' can't be null";
+        if (($this->container['size'] < 1)) {
+            $invalid_properties[] = "invalid value for 'size', must be bigger than or equal to 1.";
         }
-        if ($this->container['final_subscription_action'] === null) {
-            $invalid_properties[] = "'final_subscription_action' can't be null";
+
+        if ($this->container['count'] === null) {
+            $invalid_properties[] = "'count' can't be null";
         }
-        $allowed_values = ["expire", "on_hold", "none"];
-        if (!in_array($this->container['final_subscription_action'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'final_subscription_action', must be one of 'expire', 'on_hold', 'none'.";
+        if (($this->container['count'] < 0)) {
+            $invalid_properties[] = "invalid value for 'count', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['content'] === null) {
+            $invalid_properties[] = "'content' can't be null";
+        }
+        if ($this->container['total_elements'] === null) {
+            $invalid_properties[] = "'total_elements' can't be null";
+        }
+        if (($this->container['total_elements'] < 0)) {
+            $invalid_properties[] = "invalid value for 'total_elements', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['total_pages'] === null) {
+            $invalid_properties[] = "'total_pages' can't be null";
+        }
+        if (($this->container['total_pages'] < 0)) {
+            $invalid_properties[] = "invalid value for 'total_pages', must be bigger than or equal to 0.";
         }
 
         return $invalid_properties;
@@ -234,33 +217,37 @@ class InlineResponse20017 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['name'] === null) {
+        if ($this->container['page'] === null) {
             return false;
         }
-        if ($this->container['schedule'] === null) {
+        if ($this->container['page'] < 1) {
             return false;
         }
-        if ($this->container['handle'] === null) {
+        if ($this->container['size'] === null) {
             return false;
         }
-        if ($this->container['state'] === null) {
+        if ($this->container['size'] < 1) {
             return false;
         }
-        $allowed_values = ["active", "deleted"];
-        if (!in_array($this->container['state'], $allowed_values)) {
+        if ($this->container['count'] === null) {
             return false;
         }
-        if ($this->container['created'] === null) {
+        if ($this->container['count'] < 0) {
             return false;
         }
-        if ($this->container['default_plan'] === null) {
+        if ($this->container['content'] === null) {
             return false;
         }
-        if ($this->container['final_subscription_action'] === null) {
+        if ($this->container['total_elements'] === null) {
             return false;
         }
-        $allowed_values = ["expire", "on_hold", "none"];
-        if (!in_array($this->container['final_subscription_action'], $allowed_values)) {
+        if ($this->container['total_elements'] < 0) {
+            return false;
+        }
+        if ($this->container['total_pages'] === null) {
+            return false;
+        }
+        if ($this->container['total_pages'] < 0) {
             return false;
         }
         return true;
@@ -268,156 +255,194 @@ class InlineResponse20017 implements ArrayAccess
 
 
     /**
-     * Gets name
-     * @return string
+     * Gets page
+     * @return int
      */
-    public function getName()
+    public function getPage()
     {
-        return $this->container['name'];
+        return $this->container['page'];
     }
 
     /**
-     * Sets name
-     * @param string $name Dunning plan name
+     * Sets page
+     * @param int $page Number of current page in paginated list
      * @return $this
      */
-    public function setName($name)
+    public function setPage($page)
     {
-        $this->container['name'] = $name;
 
-        return $this;
-    }
-
-    /**
-     * Gets schedule
-     * @return int[]
-     */
-    public function getSchedule()
-    {
-        return $this->container['schedule'];
-    }
-
-    /**
-     * Sets schedule
-     * @param int[] $schedule The schedule as list of intervals in days
-     * @return $this
-     */
-    public function setSchedule($schedule)
-    {
-        $this->container['schedule'] = $schedule;
-
-        return $this;
-    }
-
-    /**
-     * Gets handle
-     * @return string
-     */
-    public function getHandle()
-    {
-        return $this->container['handle'];
-    }
-
-    /**
-     * Sets handle
-     * @param string $handle Per account unique handle for the customer. Max length 255 with allowable characters [a-zA-Z0-9_.-@].
-     * @return $this
-     */
-    public function setHandle($handle)
-    {
-        $this->container['handle'] = $handle;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     * @return string
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     * @param string $state State of dunning plan, one of the following: `active`, `deleted`.
-     * @return $this
-     */
-    public function setState($state)
-    {
-        $allowed_values = array('active', 'deleted');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'deleted'");
+        if (($page < 1)) {
+            throw new \InvalidArgumentException('invalid value for $page when calling InlineResponse20017., must be bigger than or equal to 1.');
         }
-        $this->container['state'] = $state;
+
+        $this->container['page'] = $page;
 
         return $this;
     }
 
     /**
-     * Gets created
-     * @return \DateTime
+     * Gets size
+     * @return int
      */
-    public function getCreated()
+    public function getSize()
     {
-        return $this->container['created'];
+        return $this->container['size'];
     }
 
     /**
-     * Sets created
-     * @param \DateTime $created Date when the dunning plan was created. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * Sets size
+     * @param int $size Page size in paginated list
      * @return $this
      */
-    public function setCreated($created)
+    public function setSize($size)
     {
-        $this->container['created'] = $created;
+
+        if (($size < 1)) {
+            throw new \InvalidArgumentException('invalid value for $size when calling InlineResponse20017., must be bigger than or equal to 1.');
+        }
+
+        $this->container['size'] = $size;
 
         return $this;
     }
 
     /**
-     * Gets default_plan
-     * @return bool
+     * Gets count
+     * @return int
      */
-    public function getDefaultPlan()
+    public function getCount()
     {
-        return $this->container['default_plan'];
+        return $this->container['count'];
     }
 
     /**
-     * Sets default_plan
-     * @param bool $default_plan If this is default plan
+     * Sets count
+     * @param int $count Number of elements in current page
      * @return $this
      */
-    public function setDefaultPlan($default_plan)
+    public function setCount($count)
     {
-        $this->container['default_plan'] = $default_plan;
+
+        if (($count < 0)) {
+            throw new \InvalidArgumentException('invalid value for $count when calling InlineResponse20017., must be bigger than or equal to 0.');
+        }
+
+        $this->container['count'] = $count;
 
         return $this;
     }
 
     /**
-     * Gets final_subscription_action
+     * Gets search
      * @return string
      */
-    public function getFinalSubscriptionAction()
+    public function getSearch()
     {
-        return $this->container['final_subscription_action'];
+        return $this->container['search'];
     }
 
     /**
-     * Sets final_subscription_action
-     * @param string $final_subscription_action Action to take for subscription if dunning fails, one of the following: `expire`, `on_hold`, `none`
+     * Sets search
+     * @param string $search Optional search expression used
      * @return $this
      */
-    public function setFinalSubscriptionAction($final_subscription_action)
+    public function setSearch($search)
     {
-        $allowed_values = array('expire', 'on_hold', 'none');
-        if ((!in_array($final_subscription_action, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'final_subscription_action', must be one of 'expire', 'on_hold', 'none'");
+        $this->container['search'] = $search;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort
+     * @return string
+     */
+    public function getSort()
+    {
+        return $this->container['sort'];
+    }
+
+    /**
+     * Sets sort
+     * @param string $sort Optional sort expression used
+     * @return $this
+     */
+    public function setSort($sort)
+    {
+        $this->container['sort'] = $sort;
+
+        return $this;
+    }
+
+    /**
+     * Gets content
+     * @return \Swagger\Client\Model\InlineResponse20017Content[]
+     */
+    public function getContent()
+    {
+        return $this->container['content'];
+    }
+
+    /**
+     * Sets content
+     * @param \Swagger\Client\Model\InlineResponse20017Content[] $content List of customers for current page
+     * @return $this
+     */
+    public function setContent($content)
+    {
+        $this->container['content'] = $content;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_elements
+     * @return int
+     */
+    public function getTotalElements()
+    {
+        return $this->container['total_elements'];
+    }
+
+    /**
+     * Sets total_elements
+     * @param int $total_elements Total number of elements in paginated list
+     * @return $this
+     */
+    public function setTotalElements($total_elements)
+    {
+
+        if (($total_elements < 0)) {
+            throw new \InvalidArgumentException('invalid value for $total_elements when calling InlineResponse20017., must be bigger than or equal to 0.');
         }
-        $this->container['final_subscription_action'] = $final_subscription_action;
+
+        $this->container['total_elements'] = $total_elements;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_pages
+     * @return int
+     */
+    public function getTotalPages()
+    {
+        return $this->container['total_pages'];
+    }
+
+    /**
+     * Sets total_pages
+     * @param int $total_pages Total number of pages in paginated list
+     * @return $this
+     */
+    public function setTotalPages($total_pages)
+    {
+
+        if (($total_pages < 0)) {
+            throw new \InvalidArgumentException('invalid value for $total_pages when calling InlineResponse20017., must be bigger than or equal to 0.');
+        }
+
+        $this->container['total_pages'] = $total_pages;
 
         return $this;
     }

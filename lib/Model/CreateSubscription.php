@@ -72,7 +72,8 @@ class CreateSubscription implements ArrayAccess
         'grace_duration' => 'int',
         'no_trial' => 'bool',
         'subscription_discounts' => '\Swagger\Client\Model\V1subscriptionSubscriptionDiscounts[]',
-        'coupon_codes' => 'string[]'
+        'coupon_codes' => 'string[]',
+        'add_ons' => '\Swagger\Client\Model\V1subscriptionhandleAddOns[]'
     ];
 
     public static function swaggerTypes()
@@ -103,7 +104,8 @@ class CreateSubscription implements ArrayAccess
         'grace_duration' => 'grace_duration',
         'no_trial' => 'no_trial',
         'subscription_discounts' => 'subscription_discounts',
-        'coupon_codes' => 'coupon_codes'
+        'coupon_codes' => 'coupon_codes',
+        'add_ons' => 'add_ons'
     ];
 
 
@@ -130,7 +132,8 @@ class CreateSubscription implements ArrayAccess
         'grace_duration' => 'setGraceDuration',
         'no_trial' => 'setNoTrial',
         'subscription_discounts' => 'setSubscriptionDiscounts',
-        'coupon_codes' => 'setCouponCodes'
+        'coupon_codes' => 'setCouponCodes',
+        'add_ons' => 'setAddOns'
     ];
 
 
@@ -157,7 +160,8 @@ class CreateSubscription implements ArrayAccess
         'grace_duration' => 'getGraceDuration',
         'no_trial' => 'getNoTrial',
         'subscription_discounts' => 'getSubscriptionDiscounts',
-        'coupon_codes' => 'getCouponCodes'
+        'coupon_codes' => 'getCouponCodes',
+        'add_ons' => 'getAddOns'
     ];
 
     public static function attributeMap()
@@ -210,6 +214,7 @@ class CreateSubscription implements ArrayAccess
         $this->container['no_trial'] = isset($data['no_trial']) ? $data['no_trial'] : null;
         $this->container['subscription_discounts'] = isset($data['subscription_discounts']) ? $data['subscription_discounts'] : null;
         $this->container['coupon_codes'] = isset($data['coupon_codes']) ? $data['coupon_codes'] : null;
+        $this->container['add_ons'] = isset($data['add_ons']) ? $data['add_ons'] : null;
     }
 
     /**
@@ -692,6 +697,27 @@ class CreateSubscription implements ArrayAccess
     public function setCouponCodes($coupon_codes)
     {
         $this->container['coupon_codes'] = $coupon_codes;
+
+        return $this;
+    }
+
+    /**
+     * Gets add_ons
+     * @return \Swagger\Client\Model\V1subscriptionhandleAddOns[]
+     */
+    public function getAddOns()
+    {
+        return $this->container['add_ons'];
+    }
+
+    /**
+     * Sets add_ons
+     * @param \Swagger\Client\Model\V1subscriptionhandleAddOns[] $add_ons Add-ons to attach to subscription
+     * @return $this
+     */
+    public function setAddOns($add_ons)
+    {
+        $this->container['add_ons'] = $add_ons;
 
         return $this;
     }

@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * InlineResponse20020Test Class Doc Comment
  *
  * @category    Class */
-// * @description A page in a paginated invoice search
+// * @description A page in a sliced event list
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
@@ -107,41 +107,9 @@ class InlineResponse20020Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "search"
-     */
-    public function testPropertySearch()
-    {
-
-    }
-
-    /**
-     * Test attribute "sort"
-     */
-    public function testPropertySort()
-    {
-
-    }
-
-    /**
      * Test attribute "content"
      */
     public function testPropertyContent()
-    {
-
-    }
-
-    /**
-     * Test attribute "total_elements"
-     */
-    public function testPropertyTotalElements()
-    {
-
-    }
-
-    /**
-     * Test attribute "total_pages"
-     */
-    public function testPropertyTotalPages()
     {
 
     }

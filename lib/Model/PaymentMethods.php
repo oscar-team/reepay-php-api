@@ -54,7 +54,7 @@ class PaymentMethods implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'cards' => '\Swagger\Client\Model\InlineResponse20014Cards[]'
+        'cards' => '\Swagger\Client\Model\InlineResponse20015Cards[]'
     ];
 
     public static function swaggerTypes()
@@ -149,7 +149,7 @@ class PaymentMethods implements ArrayAccess
 
     /**
      * Gets cards
-     * @return \Swagger\Client\Model\InlineResponse20014Cards[]
+     * @return \Swagger\Client\Model\InlineResponse20015Cards[]
      */
     public function getCards()
     {
@@ -158,7 +158,7 @@ class PaymentMethods implements ArrayAccess
 
     /**
      * Sets cards
-     * @param \Swagger\Client\Model\InlineResponse20014Cards[] $cards List of cards
+     * @param \Swagger\Client\Model\InlineResponse20015Cards[] $cards List of cards
      * @return $this
      */
     public function setCards($cards)

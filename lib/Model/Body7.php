@@ -54,15 +54,8 @@ class Body7 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'handle' => 'string',
-        'key' => 'string',
-        'amount' => 'int',
-        'customer' => '\Swagger\Client\Model\V1chargeCustomer',
-        'source' => 'string',
-        'settle' => 'bool',
-        'ordertext' => 'string',
-        'order_lines' => '\Swagger\Client\Model\V1chargeOrderLines[]',
-        'customer_handle' => 'string'
+        'card_types' => 'string[]',
+        'provider_settings' => 'map[string,object]'
     ];
 
     public static function swaggerTypes()
@@ -75,15 +68,8 @@ class Body7 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'handle' => 'handle',
-        'key' => 'key',
-        'amount' => 'amount',
-        'customer' => 'customer',
-        'source' => 'source',
-        'settle' => 'settle',
-        'ordertext' => 'ordertext',
-        'order_lines' => 'order_lines',
-        'customer_handle' => 'customer_handle'
+        'card_types' => 'card_types',
+        'provider_settings' => 'provider_settings'
     ];
 
 
@@ -92,15 +78,8 @@ class Body7 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'handle' => 'setHandle',
-        'key' => 'setKey',
-        'amount' => 'setAmount',
-        'customer' => 'setCustomer',
-        'source' => 'setSource',
-        'settle' => 'setSettle',
-        'ordertext' => 'setOrdertext',
-        'order_lines' => 'setOrderLines',
-        'customer_handle' => 'setCustomerHandle'
+        'card_types' => 'setCardTypes',
+        'provider_settings' => 'setProviderSettings'
     ];
 
 
@@ -109,15 +88,8 @@ class Body7 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'handle' => 'getHandle',
-        'key' => 'getKey',
-        'amount' => 'getAmount',
-        'customer' => 'getCustomer',
-        'source' => 'getSource',
-        'settle' => 'getSettle',
-        'ordertext' => 'getOrdertext',
-        'order_lines' => 'getOrderLines',
-        'customer_handle' => 'getCustomerHandle'
+        'card_types' => 'getCardTypes',
+        'provider_settings' => 'getProviderSettings'
     ];
 
     public static function attributeMap()
@@ -151,15 +123,8 @@ class Body7 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
-        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
-        $this->container['settle'] = isset($data['settle']) ? $data['settle'] : null;
-        $this->container['ordertext'] = isset($data['ordertext']) ? $data['ordertext'] : null;
-        $this->container['order_lines'] = isset($data['order_lines']) ? $data['order_lines'] : null;
-        $this->container['customer_handle'] = isset($data['customer_handle']) ? $data['customer_handle'] : null;
+        $this->container['card_types'] = isset($data['card_types']) ? $data['card_types'] : null;
+        $this->container['provider_settings'] = isset($data['provider_settings']) ? $data['provider_settings'] : null;
     }
 
     /**
@@ -171,15 +136,8 @@ class Body7 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['handle'] === null) {
-            $invalid_properties[] = "'handle' can't be null";
-        }
-        if (!is_null($this->container['amount']) && ($this->container['amount'] < 1)) {
-            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['source'] === null) {
-            $invalid_properties[] = "'source' can't be null";
+        if ($this->container['card_types'] === null) {
+            $invalid_properties[] = "'card_types' can't be null";
         }
         return $invalid_properties;
     }
@@ -193,13 +151,7 @@ class Body7 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['handle'] === null) {
-            return false;
-        }
-        if ($this->container['amount'] < 1) {
-            return false;
-        }
-        if ($this->container['source'] === null) {
+        if ($this->container['card_types'] === null) {
             return false;
         }
         return true;
@@ -207,195 +159,43 @@ class Body7 implements ArrayAccess
 
 
     /**
-     * Gets handle
-     * @return string
+     * Gets card_types
+     * @return string[]
      */
-    public function getHandle()
+    public function getCardTypes()
     {
-        return $this->container['handle'];
+        return $this->container['card_types'];
     }
 
     /**
-     * Sets handle
-     * @param string $handle Per account unique reference to charge/invoice. E.g. order id from own system. Multiple payments can be attempted for the same handle but only one authorized or settled charge can exist per handle. Max length 255 with allowable characters [a-zA-Z0-9_.-@].
+     * Sets card_types
+     * @param string[] $card_types Card types supported by agreement
      * @return $this
      */
-    public function setHandle($handle)
+    public function setCardTypes($card_types)
     {
-        $this->container['handle'] = $handle;
+        $this->container['card_types'] = $card_types;
 
         return $this;
     }
 
     /**
-     * Gets key
-     * @return string
+     * Gets provider_settings
+     * @return map[string,object]
      */
-    public function getKey()
+    public function getProviderSettings()
     {
-        return $this->container['key'];
+        return $this->container['provider_settings'];
     }
 
     /**
-     * Sets key
-     * @param string $key Optional idempotency key. Only one authorization or settle can be performed for the same handle. If two create attempts are attempted and the first succeeds the second will fail because charge is already settled or authorized. An idempotency key identifies uniquely the request and multiple requests with the same key and handle will yield the same result. In case of networking errors the same request with same key can safely be retried.
+     * Sets provider_settings
+     * @param map[string,object] $provider_settings Key value map of provider settings
      * @return $this
      */
-    public function setKey($key)
+    public function setProviderSettings($provider_settings)
     {
-        $this->container['key'] = $key;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
-     * @return int
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     * @param int $amount Amount in the smallest unit for the account currency. Either `amount` or `order_lines` must be provided if charge/invoice does not already exists.
-     * @return $this
-     */
-    public function setAmount($amount)
-    {
-
-        if (!is_null($amount) && ($amount < 1)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling Body7., must be bigger than or equal to 1.');
-        }
-
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets customer
-     * @return \Swagger\Client\Model\V1chargeCustomer
-     */
-    public function getCustomer()
-    {
-        return $this->container['customer'];
-    }
-
-    /**
-     * Sets customer
-     * @param \Swagger\Client\Model\V1chargeCustomer $customer
-     * @return $this
-     */
-    public function setCustomer($customer)
-    {
-        $this->container['customer'] = $customer;
-
-        return $this;
-    }
-
-    /**
-     * Gets source
-     * @return string
-     */
-    public function getSource()
-    {
-        return $this->container['source'];
-    }
-
-    /**
-     * Sets source
-     * @param string $source The source for the payment. Either an existing payment method for the customer, e.g. `ca_...` or a card token `ct_...` generated with token API or Reepay JS library.
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        $this->container['source'] = $source;
-
-        return $this;
-    }
-
-    /**
-     * Gets settle
-     * @return bool
-     */
-    public function getSettle()
-    {
-        return $this->container['settle'];
-    }
-
-    /**
-     * Sets settle
-     * @param bool $settle Whether or not to immediately settle the charge. Default is true. If not settled immediately the charge will be authorized and can later be settled. Normally this have to be done within 7 days.
-     * @return $this
-     */
-    public function setSettle($settle)
-    {
-        $this->container['settle'] = $settle;
-
-        return $this;
-    }
-
-    /**
-     * Gets ordertext
-     * @return string
-     */
-    public function getOrdertext()
-    {
-        return $this->container['ordertext'];
-    }
-
-    /**
-     * Sets ordertext
-     * @param string $ordertext Optional order text. Used in conjunction with `amount`. Ignored if `order_lines` is provided.
-     * @return $this
-     */
-    public function setOrdertext($ordertext)
-    {
-        $this->container['ordertext'] = $ordertext;
-
-        return $this;
-    }
-
-    /**
-     * Gets order_lines
-     * @return \Swagger\Client\Model\V1chargeOrderLines[]
-     */
-    public function getOrderLines()
-    {
-        return $this->container['order_lines'];
-    }
-
-    /**
-     * Sets order_lines
-     * @param \Swagger\Client\Model\V1chargeOrderLines[] $order_lines Order lines for the charge. The order lines controls the amount. Only required if charge/invoice does not already exist. If given for existing charge the order lines and amount are adjusted.
-     * @return $this
-     */
-    public function setOrderLines($order_lines)
-    {
-        $this->container['order_lines'] = $order_lines;
-
-        return $this;
-    }
-
-    /**
-     * Gets customer_handle
-     * @return string
-     */
-    public function getCustomerHandle()
-    {
-        return $this->container['customer_handle'];
-    }
-
-    /**
-     * Sets customer_handle
-     * @param string $customer_handle Customer reference. If charge does not already exist either this reference must be provided or a create customer object must be provided. .
-     * @return $this
-     */
-    public function setCustomerHandle($customer_handle)
-    {
-        $this->container['customer_handle'] = $customer_handle;
+        $this->container['provider_settings'] = $provider_settings;
 
         return $this;
     }

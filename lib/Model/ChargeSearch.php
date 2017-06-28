@@ -60,7 +60,7 @@ class ChargeSearch implements ArrayAccess
         'count' => 'int',
         'search' => 'string',
         'sort' => 'string',
-        'content' => '\Swagger\Client\Model\InlineResponse2009Content[]',
+        'content' => '\Swagger\Client\Model\InlineResponse20011Content[]',
         'total_elements' => 'int',
         'total_pages' => 'int'
     ];
@@ -376,7 +376,7 @@ class ChargeSearch implements ArrayAccess
 
     /**
      * Gets content
-     * @return \Swagger\Client\Model\InlineResponse2009Content[]
+     * @return \Swagger\Client\Model\InlineResponse20011Content[]
      */
     public function getContent()
     {
@@ -385,7 +385,7 @@ class ChargeSearch implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Swagger\Client\Model\InlineResponse2009Content[] $content List of charges for current page
+     * @param \Swagger\Client\Model\InlineResponse20011Content[] $content List of charges for current page
      * @return $this
      */
     public function setContent($content)

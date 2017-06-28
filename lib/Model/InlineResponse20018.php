@@ -35,7 +35,7 @@ use \ArrayAccess;
  * InlineResponse20018 Class Doc Comment
  *
  * @category    Class
- * @description A page in a sliced event list
+ * @description A page in a paginated discount search
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -58,7 +58,11 @@ class InlineResponse20018 implements ArrayAccess
         'page' => 'int',
         'size' => 'int',
         'count' => 'int',
-        'content' => '\Swagger\Client\Model\InlineResponse20018Content[]'
+        'search' => 'string',
+        'sort' => 'string',
+        'content' => '\Swagger\Client\Model\InlineResponse20018Content[]',
+        'total_elements' => 'int',
+        'total_pages' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -74,7 +78,11 @@ class InlineResponse20018 implements ArrayAccess
         'page' => 'page',
         'size' => 'size',
         'count' => 'count',
-        'content' => 'content'
+        'search' => 'search',
+        'sort' => 'sort',
+        'content' => 'content',
+        'total_elements' => 'total_elements',
+        'total_pages' => 'total_pages'
     ];
 
 
@@ -86,7 +94,11 @@ class InlineResponse20018 implements ArrayAccess
         'page' => 'setPage',
         'size' => 'setSize',
         'count' => 'setCount',
-        'content' => 'setContent'
+        'search' => 'setSearch',
+        'sort' => 'setSort',
+        'content' => 'setContent',
+        'total_elements' => 'setTotalElements',
+        'total_pages' => 'setTotalPages'
     ];
 
 
@@ -98,7 +110,11 @@ class InlineResponse20018 implements ArrayAccess
         'page' => 'getPage',
         'size' => 'getSize',
         'count' => 'getCount',
-        'content' => 'getContent'
+        'search' => 'getSearch',
+        'sort' => 'getSort',
+        'content' => 'getContent',
+        'total_elements' => 'getTotalElements',
+        'total_pages' => 'getTotalPages'
     ];
 
     public static function attributeMap()
@@ -135,7 +151,11 @@ class InlineResponse20018 implements ArrayAccess
         $this->container['page'] = isset($data['page']) ? $data['page'] : null;
         $this->container['size'] = isset($data['size']) ? $data['size'] : null;
         $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['search'] = isset($data['search']) ? $data['search'] : null;
+        $this->container['sort'] = isset($data['sort']) ? $data['sort'] : null;
         $this->container['content'] = isset($data['content']) ? $data['content'] : null;
+        $this->container['total_elements'] = isset($data['total_elements']) ? $data['total_elements'] : null;
+        $this->container['total_pages'] = isset($data['total_pages']) ? $data['total_pages'] : null;
     }
 
     /**
@@ -171,6 +191,20 @@ class InlineResponse20018 implements ArrayAccess
         if ($this->container['content'] === null) {
             $invalid_properties[] = "'content' can't be null";
         }
+        if ($this->container['total_elements'] === null) {
+            $invalid_properties[] = "'total_elements' can't be null";
+        }
+        if (($this->container['total_elements'] < 0)) {
+            $invalid_properties[] = "invalid value for 'total_elements', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['total_pages'] === null) {
+            $invalid_properties[] = "'total_pages' can't be null";
+        }
+        if (($this->container['total_pages'] < 0)) {
+            $invalid_properties[] = "invalid value for 'total_pages', must be bigger than or equal to 0.";
+        }
+
         return $invalid_properties;
     }
 
@@ -202,6 +236,18 @@ class InlineResponse20018 implements ArrayAccess
             return false;
         }
         if ($this->container['content'] === null) {
+            return false;
+        }
+        if ($this->container['total_elements'] === null) {
+            return false;
+        }
+        if ($this->container['total_elements'] < 0) {
+            return false;
+        }
+        if ($this->container['total_pages'] === null) {
+            return false;
+        }
+        if ($this->container['total_pages'] < 0) {
             return false;
         }
         return true;
@@ -287,6 +333,48 @@ class InlineResponse20018 implements ArrayAccess
     }
 
     /**
+     * Gets search
+     * @return string
+     */
+    public function getSearch()
+    {
+        return $this->container['search'];
+    }
+
+    /**
+     * Sets search
+     * @param string $search Optional search expression used
+     * @return $this
+     */
+    public function setSearch($search)
+    {
+        $this->container['search'] = $search;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort
+     * @return string
+     */
+    public function getSort()
+    {
+        return $this->container['sort'];
+    }
+
+    /**
+     * Sets sort
+     * @param string $sort Optional sort expression used
+     * @return $this
+     */
+    public function setSort($sort)
+    {
+        $this->container['sort'] = $sort;
+
+        return $this;
+    }
+
+    /**
      * Gets content
      * @return \Swagger\Client\Model\InlineResponse20018Content[]
      */
@@ -297,12 +385,64 @@ class InlineResponse20018 implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Swagger\Client\Model\InlineResponse20018Content[] $content List of events for current slice
+     * @param \Swagger\Client\Model\InlineResponse20018Content[] $content List of discounts for current page
      * @return $this
      */
     public function setContent($content)
     {
         $this->container['content'] = $content;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_elements
+     * @return int
+     */
+    public function getTotalElements()
+    {
+        return $this->container['total_elements'];
+    }
+
+    /**
+     * Sets total_elements
+     * @param int $total_elements Total number of elements in paginated list
+     * @return $this
+     */
+    public function setTotalElements($total_elements)
+    {
+
+        if (($total_elements < 0)) {
+            throw new \InvalidArgumentException('invalid value for $total_elements when calling InlineResponse20018., must be bigger than or equal to 0.');
+        }
+
+        $this->container['total_elements'] = $total_elements;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_pages
+     * @return int
+     */
+    public function getTotalPages()
+    {
+        return $this->container['total_pages'];
+    }
+
+    /**
+     * Sets total_pages
+     * @param int $total_pages Total number of pages in paginated list
+     * @return $this
+     */
+    public function setTotalPages($total_pages)
+    {
+
+        if (($total_pages < 0)) {
+            throw new \InvalidArgumentException('invalid value for $total_pages when calling InlineResponse20018., must be bigger than or equal to 0.');
+        }
+
+        $this->container['total_pages'] = $total_pages;
 
         return $this;
     }

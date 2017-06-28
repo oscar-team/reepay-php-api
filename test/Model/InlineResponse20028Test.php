@@ -83,17 +83,65 @@ class InlineResponse20028Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "from"
+     * Test attribute "handle"
      */
-    public function testPropertyFrom()
+    public function testPropertyHandle()
     {
 
     }
 
     /**
-     * Test attribute "to"
+     * Test attribute "discount"
      */
-    public function testPropertyTo()
+    public function testPropertyDiscount()
+    {
+
+    }
+
+    /**
+     * Test attribute "state"
+     */
+    public function testPropertyState()
+    {
+
+    }
+
+    /**
+     * Test attribute "coupon"
+     */
+    public function testPropertyCoupon()
+    {
+
+    }
+
+    /**
+     * Test attribute "deleted"
+     */
+    public function testPropertyDeleted()
+    {
+
+    }
+
+    /**
+     * Test attribute "created"
+     */
+    public function testPropertyCreated()
+    {
+
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
     {
 
     }
@@ -107,9 +155,73 @@ class InlineResponse20028Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "currency"
+     * Test attribute "percentage"
      */
-    public function testPropertyCurrency()
+    public function testPropertyPercentage()
+    {
+
+    }
+
+    /**
+     * Test attribute "count"
+     */
+    public function testPropertyCount()
+    {
+
+    }
+
+    /**
+     * Test attribute "invoices"
+     */
+    public function testPropertyInvoices()
+    {
+
+    }
+
+    /**
+     * Test attribute "apply_to"
+     */
+    public function testPropertyApplyTo()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_count"
+     */
+    public function testPropertyFixedCount()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_period_unit"
+     */
+    public function testPropertyFixedPeriodUnit()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_period"
+     */
+    public function testPropertyFixedPeriod()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_usage_reached"
+     */
+    public function testPropertyFixedUsageReached()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_period_passed"
+     */
+    public function testPropertyFixedPeriodPassed()
     {
 
     }

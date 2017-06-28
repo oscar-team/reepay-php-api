@@ -3,12 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**urls** | **string[]** | Webhook urls | 
-**username** | **string** | Optional HTTP Basic Auth username | [optional] 
-**password** | **string** | Optional HTTP Basic Auth password | [optional] 
-**disabled** | **bool** | Webhook disabled | 
-**alert_emails** | **string[]** | Optional list of emails to send alert to if webhook fails | [optional] 
-**alert_count** | **int** | Number of requests to perform before alert email is sent, must be greater than or equal to four (1 hour) | [optional] 
+**bcc** | **string** | Optional Bcc email address to use for all mails. Rfc 822 address. | [optional] 
+**default_from** | **string** | Default email sender address. Rfc 822 address. | 
+**reply_to** | **string** | Optional Reply-To email address. Rfc 822 address. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

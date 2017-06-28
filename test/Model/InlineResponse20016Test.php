@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * InlineResponse20016Test Class Doc Comment
  *
  * @category    Class */
-// * @description A page in a paginated discount search
+// * @description InlineResponse20016
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
@@ -83,65 +83,305 @@ class InlineResponse20016Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "page"
+     * Test attribute "id"
      */
-    public function testPropertyPage()
+    public function testPropertyId()
     {
 
     }
 
     /**
-     * Test attribute "size"
+     * Test attribute "handle"
      */
-    public function testPropertySize()
+    public function testPropertyHandle()
     {
 
     }
 
     /**
-     * Test attribute "count"
+     * Test attribute "customer"
      */
-    public function testPropertyCount()
+    public function testPropertyCustomer()
     {
 
     }
 
     /**
-     * Test attribute "search"
+     * Test attribute "subscription"
      */
-    public function testPropertySearch()
+    public function testPropertySubscription()
     {
 
     }
 
     /**
-     * Test attribute "sort"
+     * Test attribute "plan"
      */
-    public function testPropertySort()
+    public function testPropertyPlan()
     {
 
     }
 
     /**
-     * Test attribute "content"
+     * Test attribute "state"
      */
-    public function testPropertyContent()
+    public function testPropertyState()
     {
 
     }
 
     /**
-     * Test attribute "total_elements"
+     * Test attribute "type"
      */
-    public function testPropertyTotalElements()
+    public function testPropertyType()
     {
 
     }
 
     /**
-     * Test attribute "total_pages"
+     * Test attribute "amount"
      */
-    public function testPropertyTotalPages()
+    public function testPropertyAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "number"
+     */
+    public function testPropertyNumber()
+    {
+
+    }
+
+    /**
+     * Test attribute "currency"
+     */
+    public function testPropertyCurrency()
+    {
+
+    }
+
+    /**
+     * Test attribute "due"
+     */
+    public function testPropertyDue()
+    {
+
+    }
+
+    /**
+     * Test attribute "failed"
+     */
+    public function testPropertyFailed()
+    {
+
+    }
+
+    /**
+     * Test attribute "settled"
+     */
+    public function testPropertySettled()
+    {
+
+    }
+
+    /**
+     * Test attribute "cancelled"
+     */
+    public function testPropertyCancelled()
+    {
+
+    }
+
+    /**
+     * Test attribute "authorized"
+     */
+    public function testPropertyAuthorized()
+    {
+
+    }
+
+    /**
+     * Test attribute "credits"
+     */
+    public function testPropertyCredits()
+    {
+
+    }
+
+    /**
+     * Test attribute "created"
+     */
+    public function testPropertyCreated()
+    {
+
+    }
+
+    /**
+     * Test attribute "plan_version"
+     */
+    public function testPropertyPlanVersion()
+    {
+
+    }
+
+    /**
+     * Test attribute "dunning_plan"
+     */
+    public function testPropertyDunningPlan()
+    {
+
+    }
+
+    /**
+     * Test attribute "discount_amount"
+     */
+    public function testPropertyDiscountAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "org_amount"
+     */
+    public function testPropertyOrgAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount_vat"
+     */
+    public function testPropertyAmountVat()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount_ex_vat"
+     */
+    public function testPropertyAmountExVat()
+    {
+
+    }
+
+    /**
+     * Test attribute "settled_amount"
+     */
+    public function testPropertySettledAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "refunded_amount"
+     */
+    public function testPropertyRefundedAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "authorized_amount"
+     */
+    public function testPropertyAuthorizedAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "period_number"
+     */
+    public function testPropertyPeriodNumber()
+    {
+
+    }
+
+    /**
+     * Test attribute "order_lines"
+     */
+    public function testPropertyOrderLines()
+    {
+
+    }
+
+    /**
+     * Test attribute "additional_costs"
+     */
+    public function testPropertyAdditionalCosts()
+    {
+
+    }
+
+    /**
+     * Test attribute "transactions"
+     */
+    public function testPropertyTransactions()
+    {
+
+    }
+
+    /**
+     * Test attribute "credit_notes"
+     */
+    public function testPropertyCreditNotes()
+    {
+
+    }
+
+    /**
+     * Test attribute "dunning_start"
+     */
+    public function testPropertyDunningStart()
+    {
+
+    }
+
+    /**
+     * Test attribute "dunning_count"
+     */
+    public function testPropertyDunningCount()
+    {
+
+    }
+
+    /**
+     * Test attribute "dunning_expired"
+     */
+    public function testPropertyDunningExpired()
+    {
+
+    }
+
+    /**
+     * Test attribute "period_from"
+     */
+    public function testPropertyPeriodFrom()
+    {
+
+    }
+
+    /**
+     * Test attribute "period_to"
+     */
+    public function testPropertyPeriodTo()
+    {
+
+    }
+
+    /**
+     * Test attribute "settle_later"
+     */
+    public function testPropertySettleLater()
+    {
+
+    }
+
+    /**
+     * Test attribute "settle_later_payment_method"
+     */
+    public function testPropertySettleLaterPaymentMethod()
     {
 
     }

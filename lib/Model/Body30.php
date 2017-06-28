@@ -54,25 +54,18 @@ class Body30 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'customer' => 'string',
+        'timing' => 'string',
         'plan' => 'string',
         'amount' => 'int',
         'quantity' => 'int',
-        'test' => 'bool',
-        'handle' => 'string',
-        'source' => 'string',
-        'signup_method' => 'string',
-        'conditional_create' => 'bool',
-        'create_customer' => '\Swagger\Client\Model\V1chargeCustomer',
-        'plan_version' => 'int',
+        'billing' => 'string',
         'amount_incl_vat' => 'bool',
-        'generate_handle' => 'bool',
+        'compensation_method' => 'string',
+        'partial_period_handling' => 'string',
         'start_date' => 'string',
-        'end_date' => 'string',
-        'grace_duration' => 'int',
-        'no_trial' => 'bool',
-        'subscription_discounts' => '\Swagger\Client\Model\V1subscriptionSubscriptionDiscounts[]',
-        'coupon_codes' => 'string[]'
+        'cancel_change' => 'bool',
+        'add_ons' => '\Swagger\Client\Model\V1subscriptionhandleAddOns[]',
+        'remove_add_ons' => 'string[]'
     ];
 
     public static function swaggerTypes()
@@ -85,25 +78,18 @@ class Body30 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'customer' => 'customer',
+        'timing' => 'timing',
         'plan' => 'plan',
         'amount' => 'amount',
         'quantity' => 'quantity',
-        'test' => 'test',
-        'handle' => 'handle',
-        'source' => 'source',
-        'signup_method' => 'signup_method',
-        'conditional_create' => 'conditional_create',
-        'create_customer' => 'create_customer',
-        'plan_version' => 'plan_version',
+        'billing' => 'billing',
         'amount_incl_vat' => 'amount_incl_vat',
-        'generate_handle' => 'generate_handle',
+        'compensation_method' => 'compensation_method',
+        'partial_period_handling' => 'partial_period_handling',
         'start_date' => 'start_date',
-        'end_date' => 'end_date',
-        'grace_duration' => 'grace_duration',
-        'no_trial' => 'no_trial',
-        'subscription_discounts' => 'subscription_discounts',
-        'coupon_codes' => 'coupon_codes'
+        'cancel_change' => 'cancel_change',
+        'add_ons' => 'add_ons',
+        'remove_add_ons' => 'remove_add_ons'
     ];
 
 
@@ -112,25 +98,18 @@ class Body30 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'customer' => 'setCustomer',
+        'timing' => 'setTiming',
         'plan' => 'setPlan',
         'amount' => 'setAmount',
         'quantity' => 'setQuantity',
-        'test' => 'setTest',
-        'handle' => 'setHandle',
-        'source' => 'setSource',
-        'signup_method' => 'setSignupMethod',
-        'conditional_create' => 'setConditionalCreate',
-        'create_customer' => 'setCreateCustomer',
-        'plan_version' => 'setPlanVersion',
+        'billing' => 'setBilling',
         'amount_incl_vat' => 'setAmountInclVat',
-        'generate_handle' => 'setGenerateHandle',
+        'compensation_method' => 'setCompensationMethod',
+        'partial_period_handling' => 'setPartialPeriodHandling',
         'start_date' => 'setStartDate',
-        'end_date' => 'setEndDate',
-        'grace_duration' => 'setGraceDuration',
-        'no_trial' => 'setNoTrial',
-        'subscription_discounts' => 'setSubscriptionDiscounts',
-        'coupon_codes' => 'setCouponCodes'
+        'cancel_change' => 'setCancelChange',
+        'add_ons' => 'setAddOns',
+        'remove_add_ons' => 'setRemoveAddOns'
     ];
 
 
@@ -139,25 +118,18 @@ class Body30 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'customer' => 'getCustomer',
+        'timing' => 'getTiming',
         'plan' => 'getPlan',
         'amount' => 'getAmount',
         'quantity' => 'getQuantity',
-        'test' => 'getTest',
-        'handle' => 'getHandle',
-        'source' => 'getSource',
-        'signup_method' => 'getSignupMethod',
-        'conditional_create' => 'getConditionalCreate',
-        'create_customer' => 'getCreateCustomer',
-        'plan_version' => 'getPlanVersion',
+        'billing' => 'getBilling',
         'amount_incl_vat' => 'getAmountInclVat',
-        'generate_handle' => 'getGenerateHandle',
+        'compensation_method' => 'getCompensationMethod',
+        'partial_period_handling' => 'getPartialPeriodHandling',
         'start_date' => 'getStartDate',
-        'end_date' => 'getEndDate',
-        'grace_duration' => 'getGraceDuration',
-        'no_trial' => 'getNoTrial',
-        'subscription_discounts' => 'getSubscriptionDiscounts',
-        'coupon_codes' => 'getCouponCodes'
+        'cancel_change' => 'getCancelChange',
+        'add_ons' => 'getAddOns',
+        'remove_add_ons' => 'getRemoveAddOns'
     ];
 
     public static function attributeMap()
@@ -175,8 +147,74 @@ class Body30 implements ArrayAccess
         return self::$getters;
     }
 
+    const TIMING_IMMEDIATE = 'immediate';
+    const TIMING_RENEWAL = 'renewal';
+    const BILLING_PRORATED = 'prorated';
+    const BILLING_FULL = 'full';
+    const BILLING_ZERO_AMOUNT = 'zero_amount';
+    const BILLING_NONE = 'none';
+    const COMPENSATION_METHOD_FULL_REFUND = 'full_refund';
+    const COMPENSATION_METHOD_PRORATED_REFUND = 'prorated_refund';
+    const COMPENSATION_METHOD_NONE = 'none';
+    const PARTIAL_PERIOD_HANDLING_BILL_FULL = 'bill_full';
+    const PARTIAL_PERIOD_HANDLING_BILL_PRORATED = 'bill_prorated';
+    const PARTIAL_PERIOD_HANDLING_BILL_ZERO_AMOUNT = 'bill_zero_amount';
+    const PARTIAL_PERIOD_HANDLING_NO_BILL = 'no_bill';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getTimingAllowableValues()
+    {
+        return [
+            self::TIMING_IMMEDIATE,
+            self::TIMING_RENEWAL,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getBillingAllowableValues()
+    {
+        return [
+            self::BILLING_PRORATED,
+            self::BILLING_FULL,
+            self::BILLING_ZERO_AMOUNT,
+            self::BILLING_NONE,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getCompensationMethodAllowableValues()
+    {
+        return [
+            self::COMPENSATION_METHOD_FULL_REFUND,
+            self::COMPENSATION_METHOD_PRORATED_REFUND,
+            self::COMPENSATION_METHOD_NONE,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getPartialPeriodHandlingAllowableValues()
+    {
+        return [
+            self::PARTIAL_PERIOD_HANDLING_BILL_FULL,
+            self::PARTIAL_PERIOD_HANDLING_BILL_PRORATED,
+            self::PARTIAL_PERIOD_HANDLING_BILL_ZERO_AMOUNT,
+            self::PARTIAL_PERIOD_HANDLING_NO_BILL,
+        ];
+    }
     
 
     /**
@@ -191,25 +229,18 @@ class Body30 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
+        $this->container['timing'] = isset($data['timing']) ? $data['timing'] : null;
         $this->container['plan'] = isset($data['plan']) ? $data['plan'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
-        $this->container['test'] = isset($data['test']) ? $data['test'] : null;
-        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
-        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
-        $this->container['signup_method'] = isset($data['signup_method']) ? $data['signup_method'] : null;
-        $this->container['conditional_create'] = isset($data['conditional_create']) ? $data['conditional_create'] : null;
-        $this->container['create_customer'] = isset($data['create_customer']) ? $data['create_customer'] : null;
-        $this->container['plan_version'] = isset($data['plan_version']) ? $data['plan_version'] : null;
+        $this->container['billing'] = isset($data['billing']) ? $data['billing'] : null;
         $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
-        $this->container['generate_handle'] = isset($data['generate_handle']) ? $data['generate_handle'] : null;
+        $this->container['compensation_method'] = isset($data['compensation_method']) ? $data['compensation_method'] : null;
+        $this->container['partial_period_handling'] = isset($data['partial_period_handling']) ? $data['partial_period_handling'] : null;
         $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
-        $this->container['grace_duration'] = isset($data['grace_duration']) ? $data['grace_duration'] : null;
-        $this->container['no_trial'] = isset($data['no_trial']) ? $data['no_trial'] : null;
-        $this->container['subscription_discounts'] = isset($data['subscription_discounts']) ? $data['subscription_discounts'] : null;
-        $this->container['coupon_codes'] = isset($data['coupon_codes']) ? $data['coupon_codes'] : null;
+        $this->container['cancel_change'] = isset($data['cancel_change']) ? $data['cancel_change'] : null;
+        $this->container['add_ons'] = isset($data['add_ons']) ? $data['add_ons'] : null;
+        $this->container['remove_add_ons'] = isset($data['remove_add_ons']) ? $data['remove_add_ons'] : null;
     }
 
     /**
@@ -221,9 +252,14 @@ class Body30 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['plan'] === null) {
-            $invalid_properties[] = "'plan' can't be null";
+        if ($this->container['timing'] === null) {
+            $invalid_properties[] = "'timing' can't be null";
         }
+        $allowed_values = ["immediate", "renewal"];
+        if (!in_array($this->container['timing'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'timing', must be one of 'immediate', 'renewal'.";
+        }
+
         if (!is_null($this->container['amount']) && ($this->container['amount'] < 0)) {
             $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
         }
@@ -232,15 +268,19 @@ class Body30 implements ArrayAccess
             $invalid_properties[] = "invalid value for 'quantity', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['signup_method'] === null) {
-            $invalid_properties[] = "'signup_method' can't be null";
-        }
-        if (!is_null($this->container['plan_version']) && ($this->container['plan_version'] < 1)) {
-            $invalid_properties[] = "invalid value for 'plan_version', must be bigger than or equal to 1.";
+        $allowed_values = ["prorated", "full", "zero_amount", "none"];
+        if (!in_array($this->container['billing'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'billing', must be one of 'prorated', 'full', 'zero_amount', 'none'.";
         }
 
-        if (!is_null($this->container['grace_duration']) && ($this->container['grace_duration'] < 0)) {
-            $invalid_properties[] = "invalid value for 'grace_duration', must be bigger than or equal to 0.";
+        $allowed_values = ["full_refund", "prorated_refund", "none"];
+        if (!in_array($this->container['compensation_method'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'compensation_method', must be one of 'full_refund', 'prorated_refund', 'none'.";
+        }
+
+        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
+        if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'.";
         }
 
         return $invalid_properties;
@@ -255,7 +295,11 @@ class Body30 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['plan'] === null) {
+        if ($this->container['timing'] === null) {
+            return false;
+        }
+        $allowed_values = ["immediate", "renewal"];
+        if (!in_array($this->container['timing'], $allowed_values)) {
             return false;
         }
         if ($this->container['amount'] < 0) {
@@ -264,13 +308,16 @@ class Body30 implements ArrayAccess
         if ($this->container['quantity'] < 1) {
             return false;
         }
-        if ($this->container['signup_method'] === null) {
+        $allowed_values = ["prorated", "full", "zero_amount", "none"];
+        if (!in_array($this->container['billing'], $allowed_values)) {
             return false;
         }
-        if ($this->container['plan_version'] < 1) {
+        $allowed_values = ["full_refund", "prorated_refund", "none"];
+        if (!in_array($this->container['compensation_method'], $allowed_values)) {
             return false;
         }
-        if ($this->container['grace_duration'] < 0) {
+        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
+        if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
             return false;
         }
         return true;
@@ -278,22 +325,26 @@ class Body30 implements ArrayAccess
 
 
     /**
-     * Gets customer
+     * Gets timing
      * @return string
      */
-    public function getCustomer()
+    public function getTiming()
     {
-        return $this->container['customer'];
+        return $this->container['timing'];
     }
 
     /**
-     * Sets customer
-     * @param string $customer Customer handle of existing customer. Customer can also be provided in same operation by supplying the parameter `create_customer`.
+     * Sets timing
+     * @param string $timing When to perform the subscription change. Either `immediate` or `renewal`.
      * @return $this
      */
-    public function setCustomer($customer)
+    public function setTiming($timing)
     {
-        $this->container['customer'] = $customer;
+        $allowed_values = array('immediate', 'renewal');
+        if ((!in_array($timing, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'timing', must be one of 'immediate', 'renewal'");
+        }
+        $this->container['timing'] = $timing;
 
         return $this;
     }
@@ -309,7 +360,7 @@ class Body30 implements ArrayAccess
 
     /**
      * Sets plan
-     * @param string $plan Plan handle
+     * @param string $plan The handle of the plan to change to
      * @return $this
      */
     public function setPlan($plan)
@@ -372,153 +423,26 @@ class Body30 implements ArrayAccess
     }
 
     /**
-     * Gets test
-     * @return bool
-     */
-    public function getTest()
-    {
-        return $this->container['test'];
-    }
-
-    /**
-     * Sets test
-     * @param bool $test Test flag. If given it will be verified that the account state matches the intended create state.
-     * @return $this
-     */
-    public function setTest($test)
-    {
-        $this->container['test'] = $test;
-
-        return $this;
-    }
-
-    /**
-     * Gets handle
+     * Gets billing
      * @return string
      */
-    public function getHandle()
+    public function getBilling()
     {
-        return $this->container['handle'];
+        return $this->container['billing'];
     }
 
     /**
-     * Sets handle
-     * @param string $handle Per account unique handle for the subscription. Max length 255 with allowable characters [a-zA-Z0-9_.-@]. Must be provided if generate_handle not defined.
+     * Sets billing
+     * @param string $billing In the case of immediate change and change not affecting billing period, how to bill for the remaining partial period. Either `prorated`, `full`, `zero_amount` or `none`. The default is `prorated`.
      * @return $this
      */
-    public function setHandle($handle)
+    public function setBilling($billing)
     {
-        $this->container['handle'] = $handle;
-
-        return $this;
-    }
-
-    /**
-     * Gets source
-     * @return string
-     */
-    public function getSource()
-    {
-        return $this->container['source'];
-    }
-
-    /**
-     * Sets source
-     * @param string $source The payment method source if signup method `source`. Either an existing payment method for the customer, e.g. existing card id `ca_...` or a card token `ct_...` generated with token API, Reepay JS library or hosted page.
-     * @return $this
-     */
-    public function setSource($source)
-    {
-        $this->container['source'] = $source;
-
-        return $this;
-    }
-
-    /**
-     * Gets signup_method
-     * @return string
-     */
-    public function getSignupMethod()
-    {
-        return $this->container['signup_method'];
-    }
-
-    /**
-     * Sets signup_method
-     * @param string $signup_method The signup method, how to get payment information from customer, one of the following: `source`, `email`, `link`. The `source` method takes a token (e.g. card token `ct_..`) or a reference to an existing customer payment method (e.g. card `ca_..`). The method `email` will send an email to customer requesting payment information with a link to a hosted page. The method `link` does not do anything but the hosted page link in the subscription object can be provided to the customer as a link to enter payment information.
-     * @return $this
-     */
-    public function setSignupMethod($signup_method)
-    {
-        $this->container['signup_method'] = $signup_method;
-
-        return $this;
-    }
-
-    /**
-     * Gets conditional_create
-     * @return bool
-     */
-    public function getConditionalCreate()
-    {
-        return $this->container['conditional_create'];
-    }
-
-    /**
-     * Sets conditional_create
-     * @param bool $conditional_create If the subscription is eligible to bill for the first period right away, this option will make the creation conditional on a successful payment of the first invoice. Will require a signup method of `source`. Default is false.
-     * @return $this
-     */
-    public function setConditionalCreate($conditional_create)
-    {
-        $this->container['conditional_create'] = $conditional_create;
-
-        return $this;
-    }
-
-    /**
-     * Gets create_customer
-     * @return \Swagger\Client\Model\V1chargeCustomer
-     */
-    public function getCreateCustomer()
-    {
-        return $this->container['create_customer'];
-    }
-
-    /**
-     * Sets create_customer
-     * @param \Swagger\Client\Model\V1chargeCustomer $create_customer
-     * @return $this
-     */
-    public function setCreateCustomer($create_customer)
-    {
-        $this->container['create_customer'] = $create_customer;
-
-        return $this;
-    }
-
-    /**
-     * Gets plan_version
-     * @return int
-     */
-    public function getPlanVersion()
-    {
-        return $this->container['plan_version'];
-    }
-
-    /**
-     * Sets plan_version
-     * @param int $plan_version Optional plan version, default is to use newest version of plan
-     * @return $this
-     */
-    public function setPlanVersion($plan_version)
-    {
-
-        if (!is_null($plan_version) && ($plan_version < 1)) {
-            throw new \InvalidArgumentException('invalid value for $plan_version when calling Body30., must be bigger than or equal to 1.');
+        $allowed_values = array('prorated', 'full', 'zero_amount', 'none');
+        if (!is_null($billing) && (!in_array($billing, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'billing', must be one of 'prorated', 'full', 'zero_amount', 'none'");
         }
-
-        $this->container['plan_version'] = $plan_version;
+        $this->container['billing'] = $billing;
 
         return $this;
     }
@@ -545,22 +469,51 @@ class Body30 implements ArrayAccess
     }
 
     /**
-     * Gets generate_handle
-     * @return bool
+     * Gets compensation_method
+     * @return string
      */
-    public function getGenerateHandle()
+    public function getCompensationMethod()
     {
-        return $this->container['generate_handle'];
+        return $this->container['compensation_method'];
     }
 
     /**
-     * Sets generate_handle
-     * @param bool $generate_handle Auto generate handle on the form sub-[sequence_number]
+     * Sets compensation_method
+     * @param string $compensation_method In the case of immediate change, optional method for compensation of partial period, either `full_refund`, `prorated_refund` or `none`. Default is prorated_refund
      * @return $this
      */
-    public function setGenerateHandle($generate_handle)
+    public function setCompensationMethod($compensation_method)
     {
-        $this->container['generate_handle'] = $generate_handle;
+        $allowed_values = array('full_refund', 'prorated_refund', 'none');
+        if (!is_null($compensation_method) && (!in_array($compensation_method, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'compensation_method', must be one of 'full_refund', 'prorated_refund', 'none'");
+        }
+        $this->container['compensation_method'] = $compensation_method;
+
+        return $this;
+    }
+
+    /**
+     * Gets partial_period_handling
+     * @return string
+     */
+    public function getPartialPeriodHandling()
+    {
+        return $this->container['partial_period_handling'];
+    }
+
+    /**
+     * Sets partial_period_handling
+     * @param string $partial_period_handling Optional argument to override plan setting on how to handle a potential initial partial billing period for fixed day scheduling. The options are to bill for a full period, bill prorated for the partial period, bill a zero amount, or not to consider the period before first fixed day a billing period. The default is to bill prorated. Options: `bill_full`, `bill_prorated`, `bill_zero_amount`, `no_bill`.
+     * @return $this
+     */
+    public function setPartialPeriodHandling($partial_period_handling)
+    {
+        $allowed_values = array('bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill');
+        if (!is_null($partial_period_handling) && (!in_array($partial_period_handling, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'");
+        }
+        $this->container['partial_period_handling'] = $partial_period_handling;
 
         return $this;
     }
@@ -576,7 +529,7 @@ class Body30 implements ArrayAccess
 
     /**
      * Sets start_date
-     * @param string $start_date Date and time on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss` from which the subscription is eligible to schedule first invoice. If no time part is given start of day will be used. A start date in the past can be used, but no more than one period length in the past. A start date in the past can result in an instant invoice for a past billing period start. Default value is current date and time.
+     * @param string $start_date If the subscription change results in a new period due to change to a plan with different scheduling, an optional date and time from which the subscription is eligible to schedule first invoice can be given. See subscription create and subscription reactivate argument `start_date`.
      * @return $this
      */
     public function setStartDate($start_date)
@@ -587,111 +540,64 @@ class Body30 implements ArrayAccess
     }
 
     /**
-     * Gets end_date
-     * @return string
-     */
-    public function getEndDate()
-    {
-        return $this->container['end_date'];
-    }
-
-    /**
-     * Sets end_date
-     * @param string $end_date Fixed date and time on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss` where the subscription will automatically cancel. The subscription will expire at the end of the billing period containing the end date. Default is no fixed end date.
-     * @return $this
-     */
-    public function setEndDate($end_date)
-    {
-        $this->container['end_date'] = $end_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets grace_duration
-     * @return int
-     */
-    public function getGraceDuration()
-    {
-        return $this->container['grace_duration'];
-    }
-
-    /**
-     * Sets grace_duration
-     * @param int $grace_duration A grace duration in seconds from the creation of a subscription where no dunning process is started for a failing invoice. This allows a certain amount of time for the customer to sign up with a payment method.
-     * @return $this
-     */
-    public function setGraceDuration($grace_duration)
-    {
-
-        if (!is_null($grace_duration) && ($grace_duration < 0)) {
-            throw new \InvalidArgumentException('invalid value for $grace_duration when calling Body30., must be bigger than or equal to 0.');
-        }
-
-        $this->container['grace_duration'] = $grace_duration;
-
-        return $this;
-    }
-
-    /**
-     * Gets no_trial
+     * Gets cancel_change
      * @return bool
      */
-    public function getNoTrial()
+    public function getCancelChange()
     {
-        return $this->container['no_trial'];
+        return $this->container['cancel_change'];
     }
 
     /**
-     * Sets no_trial
-     * @param bool $no_trial Override plan trial settings and disable trial
+     * Sets cancel_change
+     * @param bool $cancel_change If there are pending changes at renewal for the subscription they can be cancelled using this argument and timing=renewal
      * @return $this
      */
-    public function setNoTrial($no_trial)
+    public function setCancelChange($cancel_change)
     {
-        $this->container['no_trial'] = $no_trial;
+        $this->container['cancel_change'] = $cancel_change;
 
         return $this;
     }
 
     /**
-     * Gets subscription_discounts
-     * @return \Swagger\Client\Model\V1subscriptionSubscriptionDiscounts[]
+     * Gets add_ons
+     * @return \Swagger\Client\Model\V1subscriptionhandleAddOns[]
      */
-    public function getSubscriptionDiscounts()
+    public function getAddOns()
     {
-        return $this->container['subscription_discounts'];
+        return $this->container['add_ons'];
     }
 
     /**
-     * Sets subscription_discounts
-     * @param \Swagger\Client\Model\V1subscriptionSubscriptionDiscounts[] $subscription_discounts Discounts to attach to subscription
+     * Sets add_ons
+     * @param \Swagger\Client\Model\V1subscriptionhandleAddOns[] $add_ons Add-ons to attach to subscription
      * @return $this
      */
-    public function setSubscriptionDiscounts($subscription_discounts)
+    public function setAddOns($add_ons)
     {
-        $this->container['subscription_discounts'] = $subscription_discounts;
+        $this->container['add_ons'] = $add_ons;
 
         return $this;
     }
 
     /**
-     * Gets coupon_codes
+     * Gets remove_add_ons
      * @return string[]
      */
-    public function getCouponCodes()
+    public function getRemoveAddOns()
     {
-        return $this->container['coupon_codes'];
+        return $this->container['remove_add_ons'];
     }
 
     /**
-     * Sets coupon_codes
-     * @param string[] $coupon_codes Coupon codes to redeem for subscription
+     * Sets remove_add_ons
+     * @param string[] $remove_add_ons Subscription add-ons to remove from subscription by subscription add-on handle
      * @return $this
      */
-    public function setCouponCodes($coupon_codes)
+    public function setRemoveAddOns($remove_add_ons)
     {
-        $this->container['coupon_codes'] = $coupon_codes;
+        $this->container['remove_add_ons'] = $remove_add_ons;
 
         return $this;
     }

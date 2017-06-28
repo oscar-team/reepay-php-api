@@ -83,9 +83,161 @@ class Body32Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "compensation_method"
+     * Test attribute "customer"
      */
-    public function testPropertyCompensationMethod()
+    public function testPropertyCustomer()
+    {
+
+    }
+
+    /**
+     * Test attribute "plan"
+     */
+    public function testPropertyPlan()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "quantity"
+     */
+    public function testPropertyQuantity()
+    {
+
+    }
+
+    /**
+     * Test attribute "test"
+     */
+    public function testPropertyTest()
+    {
+
+    }
+
+    /**
+     * Test attribute "handle"
+     */
+    public function testPropertyHandle()
+    {
+
+    }
+
+    /**
+     * Test attribute "source"
+     */
+    public function testPropertySource()
+    {
+
+    }
+
+    /**
+     * Test attribute "signup_method"
+     */
+    public function testPropertySignupMethod()
+    {
+
+    }
+
+    /**
+     * Test attribute "conditional_create"
+     */
+    public function testPropertyConditionalCreate()
+    {
+
+    }
+
+    /**
+     * Test attribute "create_customer"
+     */
+    public function testPropertyCreateCustomer()
+    {
+
+    }
+
+    /**
+     * Test attribute "plan_version"
+     */
+    public function testPropertyPlanVersion()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount_incl_vat"
+     */
+    public function testPropertyAmountInclVat()
+    {
+
+    }
+
+    /**
+     * Test attribute "generate_handle"
+     */
+    public function testPropertyGenerateHandle()
+    {
+
+    }
+
+    /**
+     * Test attribute "start_date"
+     */
+    public function testPropertyStartDate()
+    {
+
+    }
+
+    /**
+     * Test attribute "end_date"
+     */
+    public function testPropertyEndDate()
+    {
+
+    }
+
+    /**
+     * Test attribute "grace_duration"
+     */
+    public function testPropertyGraceDuration()
+    {
+
+    }
+
+    /**
+     * Test attribute "no_trial"
+     */
+    public function testPropertyNoTrial()
+    {
+
+    }
+
+    /**
+     * Test attribute "subscription_discounts"
+     */
+    public function testPropertySubscriptionDiscounts()
+    {
+
+    }
+
+    /**
+     * Test attribute "coupon_codes"
+     */
+    public function testPropertyCouponCodes()
+    {
+
+    }
+
+    /**
+     * Test attribute "add_ons"
+     */
+    public function testPropertyAddOns()
     {
 
     }

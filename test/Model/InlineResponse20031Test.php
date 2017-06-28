@@ -91,41 +91,57 @@ class InlineResponse20031Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "initiated"
+     * Test attribute "email"
      */
-    public function testPropertyInitiated()
+    public function testPropertyEmail()
     {
 
     }
 
     /**
-     * Test attribute "duration"
+     * Test attribute "name"
      */
-    public function testPropertyDuration()
+    public function testPropertyName()
     {
 
     }
 
     /**
-     * Test attribute "headers"
+     * Test attribute "state"
      */
-    public function testPropertyHeaders()
+    public function testPropertyState()
     {
 
     }
 
     /**
-     * Test attribute "content"
+     * Test attribute "groups"
      */
-    public function testPropertyContent()
+    public function testPropertyGroups()
     {
 
     }
 
     /**
-     * Test attribute "http_status"
+     * Test attribute "permissions"
      */
-    public function testPropertyHttpStatus()
+    public function testPropertyPermissions()
+    {
+
+    }
+
+    /**
+     * Test attribute "verified_email"
+     */
+    public function testPropertyVerifiedEmail()
+    {
+
+    }
+
+    /**
+     * Test attribute "invite_expires"
+     */
+    public function testPropertyInviteExpires()
     {
 
     }

@@ -83,33 +83,57 @@ class InlineResponse20018ContentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "handle"
      */
-    public function testPropertyId()
+    public function testPropertyHandle()
     {
 
     }
 
     /**
-     * Test attribute "customer"
+     * Test attribute "name"
      */
-    public function testPropertyCustomer()
+    public function testPropertyName()
     {
 
     }
 
     /**
-     * Test attribute "subscription"
+     * Test attribute "description"
      */
-    public function testPropertySubscription()
+    public function testPropertyDescription()
     {
 
     }
 
     /**
-     * Test attribute "invoice"
+     * Test attribute "amount"
      */
-    public function testPropertyInvoice()
+    public function testPropertyAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "percentage"
+     */
+    public function testPropertyPercentage()
+    {
+
+    }
+
+    /**
+     * Test attribute "state"
+     */
+    public function testPropertyState()
+    {
+
+    }
+
+    /**
+     * Test attribute "deleted"
+     */
+    public function testPropertyDeleted()
     {
 
     }
@@ -123,9 +147,33 @@ class InlineResponse20018ContentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "event_type"
+     * Test attribute "apply_to"
      */
-    public function testPropertyEventType()
+    public function testPropertyApplyTo()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_count"
+     */
+    public function testPropertyFixedCount()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_period_unit"
+     */
+    public function testPropertyFixedPeriodUnit()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_period"
+     */
+    public function testPropertyFixedPeriod()
     {
 
     }

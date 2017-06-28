@@ -83,81 +83,17 @@ class Body35Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "handle"
+     * Test attribute "start_date"
      */
-    public function testPropertyHandle()
+    public function testPropertyStartDate()
     {
 
     }
 
     /**
-     * Test attribute "discount"
+     * Test attribute "partial_period_handling"
      */
-    public function testPropertyDiscount()
-    {
-
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-
-    }
-
-    /**
-     * Test attribute "description"
-     */
-    public function testPropertyDescription()
-    {
-
-    }
-
-    /**
-     * Test attribute "amount"
-     */
-    public function testPropertyAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "percentage"
-     */
-    public function testPropertyPercentage()
-    {
-
-    }
-
-    /**
-     * Test attribute "apply_to"
-     */
-    public function testPropertyApplyTo()
-    {
-
-    }
-
-    /**
-     * Test attribute "fixed_count"
-     */
-    public function testPropertyFixedCount()
-    {
-
-    }
-
-    /**
-     * Test attribute "fixed_period_unit"
-     */
-    public function testPropertyFixedPeriodUnit()
-    {
-
-    }
-
-    /**
-     * Test attribute "fixed_period"
-     */
-    public function testPropertyFixedPeriod()
+    public function testPropertyPartialPeriodHandling()
     {
 
     }

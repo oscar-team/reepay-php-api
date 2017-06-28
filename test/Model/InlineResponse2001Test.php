@@ -83,129 +83,9 @@ class InlineResponse2001Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "handle"
+     * Test attribute "key"
      */
-    public function testPropertyHandle()
-    {
-
-    }
-
-    /**
-     * Test attribute "currency"
-     */
-    public function testPropertyCurrency()
-    {
-
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-
-    }
-
-    /**
-     * Test attribute "address"
-     */
-    public function testPropertyAddress()
-    {
-
-    }
-
-    /**
-     * Test attribute "address2"
-     */
-    public function testPropertyAddress2()
-    {
-
-    }
-
-    /**
-     * Test attribute "city"
-     */
-    public function testPropertyCity()
-    {
-
-    }
-
-    /**
-     * Test attribute "locale"
-     */
-    public function testPropertyLocale()
-    {
-
-    }
-
-    /**
-     * Test attribute "timezone"
-     */
-    public function testPropertyTimezone()
-    {
-
-    }
-
-    /**
-     * Test attribute "country"
-     */
-    public function testPropertyCountry()
-    {
-
-    }
-
-    /**
-     * Test attribute "email"
-     */
-    public function testPropertyEmail()
-    {
-
-    }
-
-    /**
-     * Test attribute "phone"
-     */
-    public function testPropertyPhone()
-    {
-
-    }
-
-    /**
-     * Test attribute "vat"
-     */
-    public function testPropertyVat()
-    {
-
-    }
-
-    /**
-     * Test attribute "website"
-     */
-    public function testPropertyWebsite()
-    {
-
-    }
-
-    /**
-     * Test attribute "logo"
-     */
-    public function testPropertyLogo()
-    {
-
-    }
-
-    /**
-     * Test attribute "id"
-     */
-    public function testPropertyId()
-    {
-
-    }
-
-    /**
-     * Test attribute "organisation"
-     */
-    public function testPropertyOrganisation()
+    public function testPropertyKey()
     {
 
     }
@@ -214,30 +94,6 @@ class InlineResponse2001Test extends \PHPUnit_Framework_TestCase
      * Test attribute "created"
      */
     public function testPropertyCreated()
-    {
-
-    }
-
-    /**
-     * Test attribute "state"
-     */
-    public function testPropertyState()
-    {
-
-    }
-
-    /**
-     * Test attribute "postal_code"
-     */
-    public function testPropertyPostalCode()
-    {
-
-    }
-
-    /**
-     * Test attribute "default_vat"
-     */
-    public function testPropertyDefaultVat()
     {
 
     }

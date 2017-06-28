@@ -54,8 +54,9 @@ class Body33 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'start_date' => 'string',
-        'partial_period_handling' => 'string'
+        'notice_periods' => 'int',
+        'notice_periods_after_current' => 'bool',
+        'expire_at' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -68,8 +69,9 @@ class Body33 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'start_date' => 'start_date',
-        'partial_period_handling' => 'partial_period_handling'
+        'notice_periods' => 'notice_periods',
+        'notice_periods_after_current' => 'notice_periods_after_current',
+        'expire_at' => 'expire_at'
     ];
 
 
@@ -78,8 +80,9 @@ class Body33 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'start_date' => 'setStartDate',
-        'partial_period_handling' => 'setPartialPeriodHandling'
+        'notice_periods' => 'setNoticePeriods',
+        'notice_periods_after_current' => 'setNoticePeriodsAfterCurrent',
+        'expire_at' => 'setExpireAt'
     ];
 
 
@@ -88,8 +91,9 @@ class Body33 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'start_date' => 'getStartDate',
-        'partial_period_handling' => 'getPartialPeriodHandling'
+        'notice_periods' => 'getNoticePeriods',
+        'notice_periods_after_current' => 'getNoticePeriodsAfterCurrent',
+        'expire_at' => 'getExpireAt'
     ];
 
     public static function attributeMap()
@@ -107,26 +111,8 @@ class Body33 implements ArrayAccess
         return self::$getters;
     }
 
-    const PARTIAL_PERIOD_HANDLING_BILL_FULL = 'bill_full';
-    const PARTIAL_PERIOD_HANDLING_BILL_PRORATED = 'bill_prorated';
-    const PARTIAL_PERIOD_HANDLING_BILL_ZERO_AMOUNT = 'bill_zero_amount';
-    const PARTIAL_PERIOD_HANDLING_NO_BILL = 'no_bill';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getPartialPeriodHandlingAllowableValues()
-    {
-        return [
-            self::PARTIAL_PERIOD_HANDLING_BILL_FULL,
-            self::PARTIAL_PERIOD_HANDLING_BILL_PRORATED,
-            self::PARTIAL_PERIOD_HANDLING_BILL_ZERO_AMOUNT,
-            self::PARTIAL_PERIOD_HANDLING_NO_BILL,
-        ];
-    }
     
 
     /**
@@ -141,8 +127,9 @@ class Body33 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
-        $this->container['partial_period_handling'] = isset($data['partial_period_handling']) ? $data['partial_period_handling'] : null;
+        $this->container['notice_periods'] = isset($data['notice_periods']) ? $data['notice_periods'] : null;
+        $this->container['notice_periods_after_current'] = isset($data['notice_periods_after_current']) ? $data['notice_periods_after_current'] : null;
+        $this->container['expire_at'] = isset($data['expire_at']) ? $data['expire_at'] : null;
     }
 
     /**
@@ -153,11 +140,6 @@ class Body33 implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-
-        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
-        if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'.";
-        }
 
         return $invalid_properties;
     }
@@ -171,56 +153,69 @@ class Body33 implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
-        if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets start_date
-     * @return string
+     * Gets notice_periods
+     * @return int
      */
-    public function getStartDate()
+    public function getNoticePeriods()
     {
-        return $this->container['start_date'];
+        return $this->container['notice_periods'];
     }
 
     /**
-     * Sets start_date
-     * @param string $start_date Optional date and time from which the subscription is eligible to schedule first invoice after reactivation. If no time part is given start of day will be used. A start date in the past can be used, but not before the date when the subscription was put on hold. A start date in the past can result in invoices for past billing periods. Default value is current date and time. On the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`
+     * Sets notice_periods
+     * @param int $notice_periods Optional override of the notice periods set for plan. See plan for the definition of notice periods.
      * @return $this
      */
-    public function setStartDate($start_date)
+    public function setNoticePeriods($notice_periods)
     {
-        $this->container['start_date'] = $start_date;
+        $this->container['notice_periods'] = $notice_periods;
 
         return $this;
     }
 
     /**
-     * Gets partial_period_handling
-     * @return string
+     * Gets notice_periods_after_current
+     * @return bool
      */
-    public function getPartialPeriodHandling()
+    public function getNoticePeriodsAfterCurrent()
     {
-        return $this->container['partial_period_handling'];
+        return $this->container['notice_periods_after_current'];
     }
 
     /**
-     * Sets partial_period_handling
-     * @param string $partial_period_handling Optional argument to override plan setting on how to handle a potential initial partial billing period for fixed day scheduling. The options are to bill for a full period, bill prorated for the partial period, bill a zero amoumt, or not to consider the period before first fixed day a billing period. The default is to bill prorated. Options: `bill_full`, `bill_prorated`, `bill_zero_amount`, `no_bill`.
+     * Sets notice_periods_after_current
+     * @param bool $notice_periods_after_current Optional override of the notice periods after current setting for plan. See plan for the definition of notice periods.
      * @return $this
      */
-    public function setPartialPeriodHandling($partial_period_handling)
+    public function setNoticePeriodsAfterCurrent($notice_periods_after_current)
     {
-        $allowed_values = array('bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill');
-        if (!is_null($partial_period_handling) && (!in_array($partial_period_handling, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'");
-        }
-        $this->container['partial_period_handling'] = $partial_period_handling;
+        $this->container['notice_periods_after_current'] = $notice_periods_after_current;
+
+        return $this;
+    }
+
+    /**
+     * Gets expire_at
+     * @return string
+     */
+    public function getExpireAt()
+    {
+        return $this->container['expire_at'];
+    }
+
+    /**
+     * Sets expire_at
+     * @param string $expire_at Optional fixed date and time on when the subscription should expire. The fixed expire date takes precedence over notice periods and fixation periods. The fixed expire date must be after the end of the current periods. On the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`.
+     * @return $this
+     */
+    public function setExpireAt($expire_at)
+    {
+        $this->container['expire_at'] = $expire_at;
 
         return $this;
     }

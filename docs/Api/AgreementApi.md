@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **createCardGatewayAgreement**
-> \Swagger\Client\Model\InlineResponse2006 createCardGatewayAgreement($body)
+> \Swagger\Client\Model\InlineResponse2008 createCardGatewayAgreement($body)
 
 Create card gateway agreement
 
@@ -34,7 +34,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\AgreementApi();
-$body = new \Swagger\Client\Model\Body5(); // \Swagger\Client\Model\Body5 | 
+$body = new \Swagger\Client\Model\Body8(); // \Swagger\Client\Model\Body8 | 
 
 try {
     $result = $api_instance->createCardGatewayAgreement($body);
@@ -49,11 +49,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body5**](../Model/\Swagger\Client\Model\Body5.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body8**](../Model/\Swagger\Client\Model\Body8.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\Swagger\Client\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteCardGatewayAgreement**
-> \Swagger\Client\Model\InlineResponse2006 deleteCardGatewayAgreement($id)
+> \Swagger\Client\Model\InlineResponse2008 deleteCardGatewayAgreement($id)
 
 Delete card gateway agreement
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\Swagger\Client\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **disableCardGatewayAgreement**
-> \Swagger\Client\Model\InlineResponse2006 disableCardGatewayAgreement($id)
+> \Swagger\Client\Model\InlineResponse2008 disableCardGatewayAgreement($id)
 
 Disable card gateway agreement
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\Swagger\Client\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **enableCardGatewayAgreement**
-> \Swagger\Client\Model\InlineResponse2006 enableCardGatewayAgreement($id)
+> \Swagger\Client\Model\InlineResponse2008 enableCardGatewayAgreement($id)
 
 Enable card gateway agreement
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\Swagger\Client\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
 
 ### Authorization
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCardGatewayAgreement**
-> \Swagger\Client\Model\InlineResponse2006 getCardGatewayAgreement($id)
+> \Swagger\Client\Model\InlineResponse2008 getCardGatewayAgreement($id)
 
 Get card gateway agreement
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\Swagger\Client\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
 
 ### Authorization
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCardGatewayAgreements**
-> \Swagger\Client\Model\InlineResponse2006[] getCardGatewayAgreements($only_active, $non_deleted)
+> \Swagger\Client\Model\InlineResponse2008[] getCardGatewayAgreements($only_active, $non_deleted)
 
 Get all card gateway agreements
 
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2006[]**](../Model/InlineResponse2006.md)
+[**\Swagger\Client\Model\InlineResponse2008[]**](../Model/InlineResponse2008.md)
 
 ### Authorization
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCardGatewayAgreement**
-> \Swagger\Client\Model\InlineResponse2006 updateCardGatewayAgreement($id, $body)
+> \Swagger\Client\Model\InlineResponse2008 updateCardGatewayAgreement($id, $body)
 
 Update card gateway agreement
 
@@ -355,7 +355,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\AgreementApi();
 $id = "id_example"; // string | Agreement id
-$body = new \Swagger\Client\Model\Body6(); // \Swagger\Client\Model\Body6 | 
+$body = new \Swagger\Client\Model\Body7(); // \Swagger\Client\Model\Body7 | 
 
 try {
     $result = $api_instance->updateCardGatewayAgreement($id, $body);
@@ -371,11 +371,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Agreement id |
- **body** | [**\Swagger\Client\Model\Body6**](../Model/\Swagger\Client\Model\Body6.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body7**](../Model/\Swagger\Client\Model\Body7.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\Swagger\Client\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
 
 ### Authorization
 

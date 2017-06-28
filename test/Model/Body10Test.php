@@ -83,41 +83,33 @@ class Body10Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "key"
      */
-    public function testPropertyName()
+    public function testPropertyKey()
     {
 
     }
 
     /**
-     * Test attribute "all_plans"
+     * Test attribute "amount"
      */
-    public function testPropertyAllPlans()
+    public function testPropertyAmount()
     {
 
     }
 
     /**
-     * Test attribute "eligible_plans"
+     * Test attribute "ordertext"
      */
-    public function testPropertyEligiblePlans()
+    public function testPropertyOrdertext()
     {
 
     }
 
     /**
-     * Test attribute "max_redemptions"
+     * Test attribute "order_lines"
      */
-    public function testPropertyMaxRedemptions()
-    {
-
-    }
-
-    /**
-     * Test attribute "valid_until"
-     */
-    public function testPropertyValidUntil()
+    public function testPropertyOrderLines()
     {
 
     }

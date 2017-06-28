@@ -83,49 +83,33 @@ class InlineResponse20027Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "date"
+     * Test attribute "from"
      */
-    public function testPropertyDate()
+    public function testPropertyFrom()
     {
 
     }
 
     /**
-     * Test attribute "invoice"
+     * Test attribute "to"
      */
-    public function testPropertyInvoice()
+    public function testPropertyTo()
     {
 
     }
 
     /**
-     * Test attribute "paid"
+     * Test attribute "amount"
      */
-    public function testPropertyPaid()
+    public function testPropertyAmount()
     {
 
     }
 
     /**
-     * Test attribute "consumed"
+     * Test attribute "currency"
      */
-    public function testPropertyConsumed()
-    {
-
-    }
-
-    /**
-     * Test attribute "remaining"
-     */
-    public function testPropertyRemaining()
-    {
-
-    }
-
-    /**
-     * Test attribute "online_refundable"
-     */
-    public function testPropertyOnlineRefundable()
+    public function testPropertyCurrency()
     {
 
     }

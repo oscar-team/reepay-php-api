@@ -57,7 +57,7 @@ class OrganisationLogin implements ArrayAccess
         'id' => 'string',
         'subdomain' => 'string',
         'name' => 'string',
-        'accounts' => '\Swagger\Client\Model\InlineResponse2008Account[]'
+        'accounts' => '\Swagger\Client\Model\InlineResponse2009Account[]'
     ];
 
     public static function swaggerTypes()
@@ -251,7 +251,7 @@ class OrganisationLogin implements ArrayAccess
 
     /**
      * Gets accounts
-     * @return \Swagger\Client\Model\InlineResponse2008Account[]
+     * @return \Swagger\Client\Model\InlineResponse2009Account[]
      */
     public function getAccounts()
     {
@@ -260,7 +260,7 @@ class OrganisationLogin implements ArrayAccess
 
     /**
      * Sets accounts
-     * @param \Swagger\Client\Model\InlineResponse2008Account[] $accounts Organisation accounts
+     * @param \Swagger\Client\Model\InlineResponse2009Account[] $accounts Organisation accounts
      * @return $this
      */
     public function setAccounts($accounts)

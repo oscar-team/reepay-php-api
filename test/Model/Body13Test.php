@@ -83,89 +83,41 @@ class Body13Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "subscription"
      */
-    public function testPropertyEmail()
+    public function testPropertySubscription()
     {
 
     }
 
     /**
-     * Test attribute "address"
+     * Test attribute "handle"
      */
-    public function testPropertyAddress()
+    public function testPropertyHandle()
     {
 
     }
 
     /**
-     * Test attribute "address2"
+     * Test attribute "amount"
      */
-    public function testPropertyAddress2()
+    public function testPropertyAmount()
     {
 
     }
 
     /**
-     * Test attribute "city"
+     * Test attribute "text"
      */
-    public function testPropertyCity()
+    public function testPropertyText()
     {
 
     }
 
     /**
-     * Test attribute "country"
+     * Test attribute "valid_from"
      */
-    public function testPropertyCountry()
-    {
-
-    }
-
-    /**
-     * Test attribute "phone"
-     */
-    public function testPropertyPhone()
-    {
-
-    }
-
-    /**
-     * Test attribute "company"
-     */
-    public function testPropertyCompany()
-    {
-
-    }
-
-    /**
-     * Test attribute "vat"
-     */
-    public function testPropertyVat()
-    {
-
-    }
-
-    /**
-     * Test attribute "first_name"
-     */
-    public function testPropertyFirstName()
-    {
-
-    }
-
-    /**
-     * Test attribute "last_name"
-     */
-    public function testPropertyLastName()
-    {
-
-    }
-
-    /**
-     * Test attribute "postal_code"
-     */
-    public function testPropertyPostalCode()
+    public function testPropertyValidFrom()
     {
 
     }

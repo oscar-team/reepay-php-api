@@ -83,25 +83,9 @@ class Body31Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "notice_periods"
+     * Test attribute "compensation_method"
      */
-    public function testPropertyNoticePeriods()
-    {
-
-    }
-
-    /**
-     * Test attribute "notice_periods_after_current"
-     */
-    public function testPropertyNoticePeriodsAfterCurrent()
-    {
-
-    }
-
-    /**
-     * Test attribute "expire_at"
-     */
-    public function testPropertyExpireAt()
+    public function testPropertyCompensationMethod()
     {
 
     }

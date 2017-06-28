@@ -83,9 +83,81 @@ class Body38Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "source"
+     * Test attribute "handle"
      */
-    public function testPropertySource()
+    public function testPropertyHandle()
+    {
+
+    }
+
+    /**
+     * Test attribute "instant"
+     */
+    public function testPropertyInstant()
+    {
+
+    }
+
+    /**
+     * Test attribute "due"
+     */
+    public function testPropertyDue()
+    {
+
+    }
+
+    /**
+     * Test attribute "settle"
+     */
+    public function testPropertySettle()
+    {
+
+    }
+
+    /**
+     * Test attribute "plan_manual"
+     */
+    public function testPropertyPlanManual()
+    {
+
+    }
+
+    /**
+     * Test attribute "collect_additional_costs"
+     */
+    public function testPropertyCollectAdditionalCosts()
+    {
+
+    }
+
+    /**
+     * Test attribute "collect_credit"
+     */
+    public function testPropertyCollectCredit()
+    {
+
+    }
+
+    /**
+     * Test attribute "apply_discounts"
+     */
+    public function testPropertyApplyDiscounts()
+    {
+
+    }
+
+    /**
+     * Test attribute "order_lines"
+     */
+    public function testPropertyOrderLines()
+    {
+
+    }
+
+    /**
+     * Test attribute "manual_transfer"
+     */
+    public function testPropertyManualTransfer()
     {
 
     }

@@ -94,7 +94,7 @@ class InvoiceApi
      *
      * @param string $handle Subscriptiom handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20015[]
+     * @return \Swagger\Client\Model\InlineResponse20016[]
      */
     public function cancelAllDunningPending($handle)
     {
@@ -109,7 +109,7 @@ class InvoiceApi
      *
      * @param string $handle Subscriptiom handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20015[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20016[], HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelAllDunningPendingWithHttpInfo($handle)
     {
@@ -164,15 +164,15 @@ class InvoiceApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20015[]',
+                '\Swagger\Client\Model\InlineResponse20016[]',
                 '/v1/invoice/cancel_all_dunning_pending/subscription/{handle}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20015[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20015[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -208,7 +208,7 @@ class InvoiceApi
      *
      * @param string $id Invoice id or handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20015
+     * @return \Swagger\Client\Model\InlineResponse20016
      */
     public function cancelInvoice($id)
     {
@@ -223,7 +223,7 @@ class InvoiceApi
      *
      * @param string $id Invoice id or handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20016, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelInvoiceWithHttpInfo($id)
     {
@@ -278,15 +278,15 @@ class InvoiceApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20015',
+                '\Swagger\Client\Model\InlineResponse20016',
                 '/v1/invoice/{id}/cancel'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20015', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20015', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -322,7 +322,7 @@ class InvoiceApi
      *
      * @param string $id Invoice id or handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20015
+     * @return \Swagger\Client\Model\InlineResponse20016
      */
     public function cancelSettleLater($id)
     {
@@ -337,7 +337,7 @@ class InvoiceApi
      *
      * @param string $id Invoice id or handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20016, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelSettleLaterWithHttpInfo($id)
     {
@@ -392,15 +392,15 @@ class InvoiceApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20015',
+                '\Swagger\Client\Model\InlineResponse20016',
                 '/v1/invoice/{id}/settle/cancel'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20015', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20015', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -437,7 +437,7 @@ class InvoiceApi
      * @param string $id Invoice id or handle (required)
      * @param string $transaction Transaction id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20015Transactions
+     * @return \Swagger\Client\Model\InlineResponse20016Transactions
      */
     public function cancelTransaction($id, $transaction)
     {
@@ -453,7 +453,7 @@ class InvoiceApi
      * @param string $id Invoice id or handle (required)
      * @param string $transaction Transaction id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20015Transactions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20016Transactions, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelTransactionWithHttpInfo($id, $transaction)
     {
@@ -520,15 +520,15 @@ class InvoiceApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20015Transactions',
+                '\Swagger\Client\Model\InlineResponse20016Transactions',
                 '/v1/invoice/{id}/transaction/{transaction}/cancel'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20015Transactions', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016Transactions', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20015Transactions', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016Transactions', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -564,7 +564,7 @@ class InvoiceApi
      *
      * @param string $id Invoice id or handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20015
+     * @return \Swagger\Client\Model\InlineResponse20016
      */
     public function detachFromSubscription($id)
     {
@@ -579,7 +579,7 @@ class InvoiceApi
      *
      * @param string $id Invoice id or handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20016, HTTP status code, HTTP response headers (array of strings)
      */
     public function detachFromSubscriptionWithHttpInfo($id)
     {
@@ -634,15 +634,15 @@ class InvoiceApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20015',
+                '\Swagger\Client\Model\InlineResponse20016',
                 '/v1/invoice/{id}/detach'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20015', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20015', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -678,7 +678,7 @@ class InvoiceApi
      *
      * @param string $id Invoice id or handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20015
+     * @return \Swagger\Client\Model\InlineResponse20016
      */
     public function getInvoice($id)
     {
@@ -693,7 +693,7 @@ class InvoiceApi
      *
      * @param string $id Invoice id or handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20016, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInvoiceWithHttpInfo($id)
     {
@@ -748,15 +748,15 @@ class InvoiceApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20015',
+                '\Swagger\Client\Model\InlineResponse20016',
                 '/v1/invoice/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20015', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20015', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -795,7 +795,7 @@ class InvoiceApi
      * @param string $search Optional search expression (optional)
      * @param string $sort Optional sorting expression (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20020
+     * @return \Swagger\Client\Model\InlineResponse20021
      */
     public function getInvoices($page = null, $size = null, $search = null, $sort = null)
     {
@@ -813,7 +813,7 @@ class InvoiceApi
      * @param string $search Optional search expression (optional)
      * @param string $sort Optional sorting expression (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20020, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20021, HTTP status code, HTTP response headers (array of strings)
      */
     public function getInvoicesWithHttpInfo($page = null, $size = null, $search = null, $sort = null)
     {
@@ -883,15 +883,15 @@ class InvoiceApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20020',
+                '\Swagger\Client\Model\InlineResponse20021',
                 '/v1/invoice'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20020', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20021', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20020', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20021', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -926,9 +926,9 @@ class InvoiceApi
      * Manual settle
      *
      * @param string $id Invoice id or handle (required)
-     * @param \Swagger\Client\Model\Body21 $body  (optional)
+     * @param \Swagger\Client\Model\Body23 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20015
+     * @return \Swagger\Client\Model\InlineResponse20016
      */
     public function manualSettle($id, $body = null)
     {
@@ -942,9 +942,9 @@ class InvoiceApi
      * Manual settle
      *
      * @param string $id Invoice id or handle (required)
-     * @param \Swagger\Client\Model\Body21 $body  (optional)
+     * @param \Swagger\Client\Model\Body23 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20016, HTTP status code, HTTP response headers (array of strings)
      */
     public function manualSettleWithHttpInfo($id, $body = null)
     {
@@ -1004,15 +1004,15 @@ class InvoiceApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20015',
+                '\Swagger\Client\Model\InlineResponse20016',
                 '/v1/invoice/{id}/manual_settle'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20015', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20015', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1048,7 +1048,7 @@ class InvoiceApi
      *
      * @param string $id Invoice id or handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20015
+     * @return \Swagger\Client\Model\InlineResponse20016
      */
     public function reactivateInvoice($id)
     {
@@ -1063,7 +1063,7 @@ class InvoiceApi
      *
      * @param string $id Invoice id or handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20016, HTTP status code, HTTP response headers (array of strings)
      */
     public function reactivateInvoiceWithHttpInfo($id)
     {
@@ -1118,15 +1118,15 @@ class InvoiceApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20015',
+                '\Swagger\Client\Model\InlineResponse20016',
                 '/v1/invoice/{id}/reactivate'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20015', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20015', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1161,9 +1161,9 @@ class InvoiceApi
      * Settle
      *
      * @param string $id Invoice id or handle (required)
-     * @param \Swagger\Client\Model\Body22 $body  (optional)
+     * @param \Swagger\Client\Model\Body24 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20015
+     * @return \Swagger\Client\Model\InlineResponse20016
      */
     public function settle($id, $body = null)
     {
@@ -1177,9 +1177,9 @@ class InvoiceApi
      * Settle
      *
      * @param string $id Invoice id or handle (required)
-     * @param \Swagger\Client\Model\Body22 $body  (optional)
+     * @param \Swagger\Client\Model\Body24 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20016, HTTP status code, HTTP response headers (array of strings)
      */
     public function settleWithHttpInfo($id, $body = null)
     {
@@ -1239,15 +1239,15 @@ class InvoiceApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20015',
+                '\Swagger\Client\Model\InlineResponse20016',
                 '/v1/invoice/{id}/settle'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20015', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20015', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1284,7 +1284,7 @@ class InvoiceApi
      * @param string $id Invoice id or handle (required)
      * @param string $transaction Transaction id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20015Transactions
+     * @return \Swagger\Client\Model\InlineResponse20016Transactions
      */
     public function transaction($id, $transaction)
     {
@@ -1300,7 +1300,7 @@ class InvoiceApi
      * @param string $id Invoice id or handle (required)
      * @param string $transaction Transaction id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20015Transactions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20016Transactions, HTTP status code, HTTP response headers (array of strings)
      */
     public function transactionWithHttpInfo($id, $transaction)
     {
@@ -1367,15 +1367,15 @@ class InvoiceApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20015Transactions',
+                '\Swagger\Client\Model\InlineResponse20016Transactions',
                 '/v1/invoice/{id}/transaction/{transaction}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20015Transactions', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016Transactions', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20015Transactions', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016Transactions', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1543,7 +1543,7 @@ class InvoiceApi
      * @param string $search Optional search expression (optional)
      * @param string $sort Optional sorting expression (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20019
+     * @return \Swagger\Client\Model\InlineResponse20022
      */
     public function transactionList($id, $page = null, $size = null, $search = null, $sort = null)
     {
@@ -1562,7 +1562,7 @@ class InvoiceApi
      * @param string $search Optional search expression (optional)
      * @param string $sort Optional sorting expression (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20019, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20022, HTTP status code, HTTP response headers (array of strings)
      */
     public function transactionListWithHttpInfo($id, $page = null, $size = null, $search = null, $sort = null)
     {
@@ -1644,15 +1644,15 @@ class InvoiceApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20019',
+                '\Swagger\Client\Model\InlineResponse20022',
                 '/v1/invoice/{id}/transaction'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20019', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20022', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20019', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20022', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

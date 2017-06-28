@@ -54,8 +54,8 @@ class Body43 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'password' => 'string'
+        'email' => 'string',
+        'groups' => 'string[]'
     ];
 
     public static function swaggerTypes()
@@ -68,8 +68,8 @@ class Body43 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'password' => 'password'
+        'email' => 'email',
+        'groups' => 'groups'
     ];
 
 
@@ -78,8 +78,8 @@ class Body43 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'password' => 'setPassword'
+        'email' => 'setEmail',
+        'groups' => 'setGroups'
     ];
 
 
@@ -88,8 +88,8 @@ class Body43 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'password' => 'getPassword'
+        'email' => 'getEmail',
+        'groups' => 'getGroups'
     ];
 
     public static function attributeMap()
@@ -123,8 +123,8 @@ class Body43 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['groups'] = isset($data['groups']) ? $data['groups'] : null;
     }
 
     /**
@@ -136,8 +136,11 @@ class Body43 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['password'] === null) {
-            $invalid_properties[] = "'password' can't be null";
+        if ($this->container['email'] === null) {
+            $invalid_properties[] = "'email' can't be null";
+        }
+        if ($this->container['groups'] === null) {
+            $invalid_properties[] = "'groups' can't be null";
         }
         return $invalid_properties;
     }
@@ -151,7 +154,10 @@ class Body43 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['password'] === null) {
+        if ($this->container['email'] === null) {
+            return false;
+        }
+        if ($this->container['groups'] === null) {
             return false;
         }
         return true;
@@ -159,43 +165,43 @@ class Body43 implements ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets email
      * @return string
      */
-    public function getName()
+    public function getEmail()
     {
-        return $this->container['name'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets name
-     * @param string $name User name
+     * Sets email
+     * @param string $email User email
      * @return $this
      */
-    public function setName($name)
+    public function setEmail($email)
     {
-        $this->container['name'] = $name;
+        $this->container['email'] = $email;
 
         return $this;
     }
 
     /**
-     * Gets password
-     * @return string
+     * Gets groups
+     * @return string[]
      */
-    public function getPassword()
+    public function getGroups()
     {
-        return $this->container['password'];
+        return $this->container['groups'];
     }
 
     /**
-     * Sets password
-     * @param string $password New password
+     * Sets groups
+     * @param string[] $groups User groups
      * @return $this
      */
-    public function setPassword($password)
+    public function setGroups($groups)
     {
-        $this->container['password'] = $password;
+        $this->container['groups'] = $groups;
 
         return $this;
     }

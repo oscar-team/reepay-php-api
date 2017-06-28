@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **login**
-> \Swagger\Client\Model\InlineResponse2008 login($email, $password, $organisation, $account)
+> \Swagger\Client\Model\InlineResponse2009 login($email, $password, $organisation, $account)
 
 User login
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2008**](../Model/InlineResponse2008.md)
+[**\Swagger\Client\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **renew**
-> \Swagger\Client\Model\InlineResponse2007 renew()
+> \Swagger\Client\Model\InlineResponse20010 renew()
 
 Renew user login
 
@@ -88,7 +88,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
+[**\Swagger\Client\Model\InlineResponse20010**](../Model/InlineResponse20010.md)
 
 ### Authorization
 

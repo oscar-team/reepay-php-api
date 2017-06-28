@@ -83,9 +83,41 @@ class InlineResponse20014Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "cards"
+     * Test attribute "note"
      */
-    public function testPropertyCards()
+    public function testPropertyNote()
+    {
+
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+
+    }
+
+    /**
+     * Test attribute "created"
+     */
+    public function testPropertyCreated()
+    {
+
+    }
+
+    /**
+     * Test attribute "user_name"
+     */
+    public function testPropertyUserName()
+    {
+
+    }
+
+    /**
+     * Test attribute "user_email"
+     */
+    public function testPropertyUserEmail()
     {
 
     }

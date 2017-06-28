@@ -3,20 +3,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **string** | Customer email | [optional] 
-**address** | **string** | Customer address | [optional] 
-**address2** | **string** | Customer address2 | [optional] 
-**city** | **string** | Customer city | [optional] 
-**country** | **string** | Customer country in ISO 3166-1 alpha-2 | [optional] 
-**phone** | **string** | Customer phone number | [optional] 
-**company** | **string** | Customer company | [optional] 
-**vat** | **string** | Customer vat number | [optional] 
-**handle** | **string** | Per account unique handle for the customer. Max length 255 with allowable characters [a-zA-Z0-9_.-@]. Must be provided if generate_handle is not defined. | [optional] 
-**test** | **bool** | Test flag. If given it will be verified that the account state matches the intended create state. | [optional] 
-**first_name** | **string** | Customer first name | [optional] 
-**last_name** | **string** | Customer last name | [optional] 
-**postal_code** | **string** | Customer postal code | [optional] 
-**generate_handle** | **bool** | Auto generate handle on the form cust-[sequence_number] | [optional] 
+**name** | **string** | Internal name for the coupon. | 
+**all_plans** | **bool** | Whether all plans are eligible for this coupon. Defaults to false. | [optional] 
+**eligible_plans** | **string[]** | If not all_plans are set to true, then the set of eligible plan handles must be defined. | [optional] 
+**max_redemptions** | **int** | Optional maximum number of times this coupon can be redeemed. | [optional] 
+**valid_until** | **string** | Optional date and time until which the coupon is redeemable. Date and time on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60; and &#x60;yyyy-MM-ddTHH:mm:ss&#x60;. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

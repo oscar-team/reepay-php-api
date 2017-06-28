@@ -54,9 +54,22 @@ class Body implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'discount_apply_order' => 'string',
-        'discount_percentage_apply' => 'string',
-        'multiple_allowed' => 'bool'
+        'handle' => 'string',
+        'currency' => 'string',
+        'name' => 'string',
+        'address' => 'string',
+        'address2' => 'string',
+        'city' => 'string',
+        'locale' => 'string',
+        'timezone' => 'string',
+        'country' => 'string',
+        'email' => 'string',
+        'phone' => 'string',
+        'vat' => 'string',
+        'website' => 'string',
+        'logo' => 'string',
+        'postal_code' => 'string',
+        'default_vat' => 'float'
     ];
 
     public static function swaggerTypes()
@@ -69,9 +82,22 @@ class Body implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'discount_apply_order' => 'discount_apply_order',
-        'discount_percentage_apply' => 'discount_percentage_apply',
-        'multiple_allowed' => 'multiple_allowed'
+        'handle' => 'handle',
+        'currency' => 'currency',
+        'name' => 'name',
+        'address' => 'address',
+        'address2' => 'address2',
+        'city' => 'city',
+        'locale' => 'locale',
+        'timezone' => 'timezone',
+        'country' => 'country',
+        'email' => 'email',
+        'phone' => 'phone',
+        'vat' => 'vat',
+        'website' => 'website',
+        'logo' => 'logo',
+        'postal_code' => 'postal_code',
+        'default_vat' => 'default_vat'
     ];
 
 
@@ -80,9 +106,22 @@ class Body implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'discount_apply_order' => 'setDiscountApplyOrder',
-        'discount_percentage_apply' => 'setDiscountPercentageApply',
-        'multiple_allowed' => 'setMultipleAllowed'
+        'handle' => 'setHandle',
+        'currency' => 'setCurrency',
+        'name' => 'setName',
+        'address' => 'setAddress',
+        'address2' => 'setAddress2',
+        'city' => 'setCity',
+        'locale' => 'setLocale',
+        'timezone' => 'setTimezone',
+        'country' => 'setCountry',
+        'email' => 'setEmail',
+        'phone' => 'setPhone',
+        'vat' => 'setVat',
+        'website' => 'setWebsite',
+        'logo' => 'setLogo',
+        'postal_code' => 'setPostalCode',
+        'default_vat' => 'setDefaultVat'
     ];
 
 
@@ -91,9 +130,22 @@ class Body implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'discount_apply_order' => 'getDiscountApplyOrder',
-        'discount_percentage_apply' => 'getDiscountPercentageApply',
-        'multiple_allowed' => 'getMultipleAllowed'
+        'handle' => 'getHandle',
+        'currency' => 'getCurrency',
+        'name' => 'getName',
+        'address' => 'getAddress',
+        'address2' => 'getAddress2',
+        'city' => 'getCity',
+        'locale' => 'getLocale',
+        'timezone' => 'getTimezone',
+        'country' => 'getCountry',
+        'email' => 'getEmail',
+        'phone' => 'getPhone',
+        'vat' => 'getVat',
+        'website' => 'getWebsite',
+        'logo' => 'getLogo',
+        'postal_code' => 'getPostalCode',
+        'default_vat' => 'getDefaultVat'
     ];
 
     public static function attributeMap()
@@ -111,36 +163,8 @@ class Body implements ArrayAccess
         return self::$getters;
     }
 
-    const DISCOUNT_APPLY_ORDER_PERCENTAGE_FIRST = 'percentage_first';
-    const DISCOUNT_APPLY_ORDER_AMOUNT_FIRST = 'amount_first';
-    const DISCOUNT_PERCENTAGE_APPLY_FULL = 'full';
-    const DISCOUNT_PERCENTAGE_APPLY_COMPOUND = 'compound';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getDiscountApplyOrderAllowableValues()
-    {
-        return [
-            self::DISCOUNT_APPLY_ORDER_PERCENTAGE_FIRST,
-            self::DISCOUNT_APPLY_ORDER_AMOUNT_FIRST,
-        ];
-    }
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getDiscountPercentageApplyAllowableValues()
-    {
-        return [
-            self::DISCOUNT_PERCENTAGE_APPLY_FULL,
-            self::DISCOUNT_PERCENTAGE_APPLY_COMPOUND,
-        ];
-    }
     
 
     /**
@@ -155,9 +179,22 @@ class Body implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['discount_apply_order'] = isset($data['discount_apply_order']) ? $data['discount_apply_order'] : null;
-        $this->container['discount_percentage_apply'] = isset($data['discount_percentage_apply']) ? $data['discount_percentage_apply'] : null;
-        $this->container['multiple_allowed'] = isset($data['multiple_allowed']) ? $data['multiple_allowed'] : null;
+        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
+        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
+        $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['locale'] = isset($data['locale']) ? $data['locale'] : null;
+        $this->container['timezone'] = isset($data['timezone']) ? $data['timezone'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
+        $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
+        $this->container['website'] = isset($data['website']) ? $data['website'] : null;
+        $this->container['logo'] = isset($data['logo']) ? $data['logo'] : null;
+        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
+        $this->container['default_vat'] = isset($data['default_vat']) ? $data['default_vat'] : null;
     }
 
     /**
@@ -169,25 +206,32 @@ class Body implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['discount_apply_order'] === null) {
-            $invalid_properties[] = "'discount_apply_order' can't be null";
+        if ($this->container['handle'] === null) {
+            $invalid_properties[] = "'handle' can't be null";
         }
-        $allowed_values = ["percentage_first", "amount_first"];
-        if (!in_array($this->container['discount_apply_order'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'discount_apply_order', must be one of 'percentage_first', 'amount_first'.";
+        if ($this->container['name'] === null) {
+            $invalid_properties[] = "'name' can't be null";
+        }
+        if ($this->container['locale'] === null) {
+            $invalid_properties[] = "'locale' can't be null";
+        }
+        if ($this->container['timezone'] === null) {
+            $invalid_properties[] = "'timezone' can't be null";
+        }
+        if ($this->container['country'] === null) {
+            $invalid_properties[] = "'country' can't be null";
+        }
+        if ($this->container['default_vat'] === null) {
+            $invalid_properties[] = "'default_vat' can't be null";
+        }
+        if (($this->container['default_vat'] > 1)) {
+            $invalid_properties[] = "invalid value for 'default_vat', must be smaller than or equal to 1.";
         }
 
-        if ($this->container['discount_percentage_apply'] === null) {
-            $invalid_properties[] = "'discount_percentage_apply' can't be null";
-        }
-        $allowed_values = ["full", "compound"];
-        if (!in_array($this->container['discount_percentage_apply'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'discount_percentage_apply', must be one of 'full', 'compound'.";
+        if (($this->container['default_vat'] < 0)) {
+            $invalid_properties[] = "invalid value for 'default_vat', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['multiple_allowed'] === null) {
-            $invalid_properties[] = "'multiple_allowed' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -200,21 +244,28 @@ class Body implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['discount_apply_order'] === null) {
+        if ($this->container['handle'] === null) {
             return false;
         }
-        $allowed_values = ["percentage_first", "amount_first"];
-        if (!in_array($this->container['discount_apply_order'], $allowed_values)) {
+        if ($this->container['name'] === null) {
             return false;
         }
-        if ($this->container['discount_percentage_apply'] === null) {
+        if ($this->container['locale'] === null) {
             return false;
         }
-        $allowed_values = ["full", "compound"];
-        if (!in_array($this->container['discount_percentage_apply'], $allowed_values)) {
+        if ($this->container['timezone'] === null) {
             return false;
         }
-        if ($this->container['multiple_allowed'] === null) {
+        if ($this->container['country'] === null) {
+            return false;
+        }
+        if ($this->container['default_vat'] === null) {
+            return false;
+        }
+        if ($this->container['default_vat'] > 1) {
+            return false;
+        }
+        if ($this->container['default_vat'] < 0) {
             return false;
         }
         return true;
@@ -222,72 +273,345 @@ class Body implements ArrayAccess
 
 
     /**
-     * Gets discount_apply_order
+     * Gets handle
      * @return string
      */
-    public function getDiscountApplyOrder()
+    public function getHandle()
     {
-        return $this->container['discount_apply_order'];
+        return $this->container['handle'];
     }
 
     /**
-     * Sets discount_apply_order
-     * @param string $discount_apply_order The order to apply multiple discounts in, one of the following: `percentage_first`, `amount_first`
+     * Sets handle
+     * @param string $handle Per organisation unique handle for the account
      * @return $this
      */
-    public function setDiscountApplyOrder($discount_apply_order)
+    public function setHandle($handle)
     {
-        $allowed_values = array('percentage_first', 'amount_first');
-        if ((!in_array($discount_apply_order, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'discount_apply_order', must be one of 'percentage_first', 'amount_first'");
-        }
-        $this->container['discount_apply_order'] = $discount_apply_order;
+        $this->container['handle'] = $handle;
 
         return $this;
     }
 
     /**
-     * Gets discount_percentage_apply
+     * Gets currency
      * @return string
      */
-    public function getDiscountPercentageApply()
+    public function getCurrency()
     {
-        return $this->container['discount_percentage_apply'];
+        return $this->container['currency'];
     }
 
     /**
-     * Sets discount_percentage_apply
-     * @param string $discount_percentage_apply The rule for applying multiple percentage discounts, one of the following: `full`, `compound`
+     * Sets currency
+     * @param string $currency Currency for the account in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code
      * @return $this
      */
-    public function setDiscountPercentageApply($discount_percentage_apply)
+    public function setCurrency($currency)
     {
-        $allowed_values = array('full', 'compound');
-        if ((!in_array($discount_percentage_apply, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'discount_percentage_apply', must be one of 'full', 'compound'");
-        }
-        $this->container['discount_percentage_apply'] = $discount_percentage_apply;
+        $this->container['currency'] = $currency;
 
         return $this;
     }
 
     /**
-     * Gets multiple_allowed
-     * @return bool
+     * Gets name
+     * @return string
      */
-    public function getMultipleAllowed()
+    public function getName()
     {
-        return $this->container['multiple_allowed'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets multiple_allowed
-     * @param bool $multiple_allowed If multiple discounts per subscription is allowed
+     * Sets name
+     * @param string $name Account name
      * @return $this
      */
-    public function setMultipleAllowed($multiple_allowed)
+    public function setName($name)
     {
-        $this->container['multiple_allowed'] = $multiple_allowed;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets address
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->container['address'];
+    }
+
+    /**
+     * Sets address
+     * @param string $address Account address
+     * @return $this
+     */
+    public function setAddress($address)
+    {
+        $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets address2
+     * @return string
+     */
+    public function getAddress2()
+    {
+        return $this->container['address2'];
+    }
+
+    /**
+     * Sets address2
+     * @param string $address2 Account address2
+     * @return $this
+     */
+    public function setAddress2($address2)
+    {
+        $this->container['address2'] = $address2;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     * @param string $city Account city
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets locale
+     * @return string
+     */
+    public function getLocale()
+    {
+        return $this->container['locale'];
+    }
+
+    /**
+     * Sets locale
+     * @param string $locale Account locale on the form 'language_country'
+     * @return $this
+     */
+    public function setLocale($locale)
+    {
+        $this->container['locale'] = $locale;
+
+        return $this;
+    }
+
+    /**
+     * Gets timezone
+     * @return string
+     */
+    public function getTimezone()
+    {
+        return $this->container['timezone'];
+    }
+
+    /**
+     * Sets timezone
+     * @param string $timezone Account time zone ID as abbreviation or full name. See [Wikipedia](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+     * @return $this
+     */
+    public function setTimezone($timezone)
+    {
+        $this->container['timezone'] = $timezone;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     * @param string $country Account country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param string $email Account email
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     * @param string $phone Account phone
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets vat
+     * @return string
+     */
+    public function getVat()
+    {
+        return $this->container['vat'];
+    }
+
+    /**
+     * Sets vat
+     * @param string $vat Account vat number
+     * @return $this
+     */
+    public function setVat($vat)
+    {
+        $this->container['vat'] = $vat;
+
+        return $this;
+    }
+
+    /**
+     * Gets website
+     * @return string
+     */
+    public function getWebsite()
+    {
+        return $this->container['website'];
+    }
+
+    /**
+     * Sets website
+     * @param string $website Account website
+     * @return $this
+     */
+    public function setWebsite($website)
+    {
+        $this->container['website'] = $website;
+
+        return $this;
+    }
+
+    /**
+     * Gets logo
+     * @return string
+     */
+    public function getLogo()
+    {
+        return $this->container['logo'];
+    }
+
+    /**
+     * Sets logo
+     * @param string $logo Account logo url
+     * @return $this
+     */
+    public function setLogo($logo)
+    {
+        $this->container['logo'] = $logo;
+
+        return $this;
+    }
+
+    /**
+     * Gets postal_code
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postal_code'];
+    }
+
+    /**
+     * Sets postal_code
+     * @param string $postal_code Account postal code
+     * @return $this
+     */
+    public function setPostalCode($postal_code)
+    {
+        $this->container['postal_code'] = $postal_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets default_vat
+     * @return float
+     */
+    public function getDefaultVat()
+    {
+        return $this->container['default_vat'];
+    }
+
+    /**
+     * Sets default_vat
+     * @param float $default_vat Default vat for account
+     * @return $this
+     */
+    public function setDefaultVat($default_vat)
+    {
+
+        if (($default_vat > 1)) {
+            throw new \InvalidArgumentException('invalid value for $default_vat when calling Body., must be smaller than or equal to 1.');
+        }
+        if (($default_vat < 0)) {
+            throw new \InvalidArgumentException('invalid value for $default_vat when calling Body., must be bigger than or equal to 0.');
+        }
+
+        $this->container['default_vat'] = $default_vat;
 
         return $this;
     }

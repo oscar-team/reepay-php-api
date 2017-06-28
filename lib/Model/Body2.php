@@ -54,12 +54,9 @@ class Body2 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'urls' => 'string[]',
-        'username' => 'string',
-        'password' => 'string',
-        'disabled' => 'bool',
-        'alert_emails' => 'string[]',
-        'alert_count' => 'int'
+        'bcc' => 'string',
+        'default_from' => 'string',
+        'reply_to' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -72,12 +69,9 @@ class Body2 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'urls' => 'urls',
-        'username' => 'username',
-        'password' => 'password',
-        'disabled' => 'disabled',
-        'alert_emails' => 'alert_emails',
-        'alert_count' => 'alert_count'
+        'bcc' => 'bcc',
+        'default_from' => 'default_from',
+        'reply_to' => 'reply_to'
     ];
 
 
@@ -86,12 +80,9 @@ class Body2 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'urls' => 'setUrls',
-        'username' => 'setUsername',
-        'password' => 'setPassword',
-        'disabled' => 'setDisabled',
-        'alert_emails' => 'setAlertEmails',
-        'alert_count' => 'setAlertCount'
+        'bcc' => 'setBcc',
+        'default_from' => 'setDefaultFrom',
+        'reply_to' => 'setReplyTo'
     ];
 
 
@@ -100,12 +91,9 @@ class Body2 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'urls' => 'getUrls',
-        'username' => 'getUsername',
-        'password' => 'getPassword',
-        'disabled' => 'getDisabled',
-        'alert_emails' => 'getAlertEmails',
-        'alert_count' => 'getAlertCount'
+        'bcc' => 'getBcc',
+        'default_from' => 'getDefaultFrom',
+        'reply_to' => 'getReplyTo'
     ];
 
     public static function attributeMap()
@@ -139,12 +127,9 @@ class Body2 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['urls'] = isset($data['urls']) ? $data['urls'] : null;
-        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
-        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
-        $this->container['disabled'] = isset($data['disabled']) ? $data['disabled'] : null;
-        $this->container['alert_emails'] = isset($data['alert_emails']) ? $data['alert_emails'] : null;
-        $this->container['alert_count'] = isset($data['alert_count']) ? $data['alert_count'] : null;
+        $this->container['bcc'] = isset($data['bcc']) ? $data['bcc'] : null;
+        $this->container['default_from'] = isset($data['default_from']) ? $data['default_from'] : null;
+        $this->container['reply_to'] = isset($data['reply_to']) ? $data['reply_to'] : null;
     }
 
     /**
@@ -156,16 +141,9 @@ class Body2 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['urls'] === null) {
-            $invalid_properties[] = "'urls' can't be null";
+        if ($this->container['default_from'] === null) {
+            $invalid_properties[] = "'default_from' can't be null";
         }
-        if ($this->container['disabled'] === null) {
-            $invalid_properties[] = "'disabled' can't be null";
-        }
-        if (!is_null($this->container['alert_count']) && ($this->container['alert_count'] < 4)) {
-            $invalid_properties[] = "invalid value for 'alert_count', must be bigger than or equal to 4.";
-        }
-
         return $invalid_properties;
     }
 
@@ -178,13 +156,7 @@ class Body2 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['urls'] === null) {
-            return false;
-        }
-        if ($this->container['disabled'] === null) {
-            return false;
-        }
-        if ($this->container['alert_count'] < 4) {
+        if ($this->container['default_from'] === null) {
             return false;
         }
         return true;
@@ -192,132 +164,64 @@ class Body2 implements ArrayAccess
 
 
     /**
-     * Gets urls
-     * @return string[]
-     */
-    public function getUrls()
-    {
-        return $this->container['urls'];
-    }
-
-    /**
-     * Sets urls
-     * @param string[] $urls Webhook urls
-     * @return $this
-     */
-    public function setUrls($urls)
-    {
-        $this->container['urls'] = $urls;
-
-        return $this;
-    }
-
-    /**
-     * Gets username
+     * Gets bcc
      * @return string
      */
-    public function getUsername()
+    public function getBcc()
     {
-        return $this->container['username'];
+        return $this->container['bcc'];
     }
 
     /**
-     * Sets username
-     * @param string $username Optional HTTP Basic Auth username
+     * Sets bcc
+     * @param string $bcc Optional Bcc email address to use for all mails. Rfc 822 address.
      * @return $this
      */
-    public function setUsername($username)
+    public function setBcc($bcc)
     {
-        $this->container['username'] = $username;
+        $this->container['bcc'] = $bcc;
 
         return $this;
     }
 
     /**
-     * Gets password
+     * Gets default_from
      * @return string
      */
-    public function getPassword()
+    public function getDefaultFrom()
     {
-        return $this->container['password'];
+        return $this->container['default_from'];
     }
 
     /**
-     * Sets password
-     * @param string $password Optional HTTP Basic Auth password
+     * Sets default_from
+     * @param string $default_from Default email sender address. Rfc 822 address.
      * @return $this
      */
-    public function setPassword($password)
+    public function setDefaultFrom($default_from)
     {
-        $this->container['password'] = $password;
+        $this->container['default_from'] = $default_from;
 
         return $this;
     }
 
     /**
-     * Gets disabled
-     * @return bool
+     * Gets reply_to
+     * @return string
      */
-    public function getDisabled()
+    public function getReplyTo()
     {
-        return $this->container['disabled'];
+        return $this->container['reply_to'];
     }
 
     /**
-     * Sets disabled
-     * @param bool $disabled Webhook disabled
+     * Sets reply_to
+     * @param string $reply_to Optional Reply-To email address. Rfc 822 address.
      * @return $this
      */
-    public function setDisabled($disabled)
+    public function setReplyTo($reply_to)
     {
-        $this->container['disabled'] = $disabled;
-
-        return $this;
-    }
-
-    /**
-     * Gets alert_emails
-     * @return string[]
-     */
-    public function getAlertEmails()
-    {
-        return $this->container['alert_emails'];
-    }
-
-    /**
-     * Sets alert_emails
-     * @param string[] $alert_emails Optional list of emails to send alert to if webhook fails
-     * @return $this
-     */
-    public function setAlertEmails($alert_emails)
-    {
-        $this->container['alert_emails'] = $alert_emails;
-
-        return $this;
-    }
-
-    /**
-     * Gets alert_count
-     * @return int
-     */
-    public function getAlertCount()
-    {
-        return $this->container['alert_count'];
-    }
-
-    /**
-     * Sets alert_count
-     * @param int $alert_count Number of requests to perform before alert email is sent, must be greater than or equal to four (1 hour)
-     * @return $this
-     */
-    public function setAlertCount($alert_count)
-    {
-
-        if (!is_null($alert_count) && ($alert_count < 4)) {
-            throw new \InvalidArgumentException('invalid value for $alert_count when calling Body2., must be bigger than or equal to 4.');
-        }
-
-        $this->container['alert_count'] = $alert_count;
+        $this->container['reply_to'] = $reply_to;
 
         return $this;
     }

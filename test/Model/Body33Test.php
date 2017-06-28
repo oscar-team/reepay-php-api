@@ -83,17 +83,25 @@ class Body33Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "start_date"
+     * Test attribute "notice_periods"
      */
-    public function testPropertyStartDate()
+    public function testPropertyNoticePeriods()
     {
 
     }
 
     /**
-     * Test attribute "partial_period_handling"
+     * Test attribute "notice_periods_after_current"
      */
-    public function testPropertyPartialPeriodHandling()
+    public function testPropertyNoticePeriodsAfterCurrent()
+    {
+
+    }
+
+    /**
+     * Test attribute "expire_at"
+     */
+    public function testPropertyExpireAt()
     {
 
     }

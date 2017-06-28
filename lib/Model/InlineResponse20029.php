@@ -54,14 +54,8 @@ class InlineResponse20029 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'email' => 'string',
-        'name' => 'string',
-        'state' => 'string',
-        'groups' => 'string[]',
-        'permissions' => 'string[]',
-        'verified_email' => 'bool',
-        'invite_expires' => '\DateTime'
+        'coupon' => '\Swagger\Client\Model\InlineResponse20012Content',
+        'subscription_discount' => '\Swagger\Client\Model\InlineResponse20028'
     ];
 
     public static function swaggerTypes()
@@ -74,14 +68,8 @@ class InlineResponse20029 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'email' => 'email',
-        'name' => 'name',
-        'state' => 'state',
-        'groups' => 'groups',
-        'permissions' => 'permissions',
-        'verified_email' => 'verified_email',
-        'invite_expires' => 'invite_expires'
+        'coupon' => 'coupon',
+        'subscription_discount' => 'subscription_discount'
     ];
 
 
@@ -90,14 +78,8 @@ class InlineResponse20029 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'email' => 'setEmail',
-        'name' => 'setName',
-        'state' => 'setState',
-        'groups' => 'setGroups',
-        'permissions' => 'setPermissions',
-        'verified_email' => 'setVerifiedEmail',
-        'invite_expires' => 'setInviteExpires'
+        'coupon' => 'setCoupon',
+        'subscription_discount' => 'setSubscriptionDiscount'
     ];
 
 
@@ -106,14 +88,8 @@ class InlineResponse20029 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'email' => 'getEmail',
-        'name' => 'getName',
-        'state' => 'getState',
-        'groups' => 'getGroups',
-        'permissions' => 'getPermissions',
-        'verified_email' => 'getVerifiedEmail',
-        'invite_expires' => 'getInviteExpires'
+        'coupon' => 'getCoupon',
+        'subscription_discount' => 'getSubscriptionDiscount'
     ];
 
     public static function attributeMap()
@@ -131,22 +107,8 @@ class InlineResponse20029 implements ArrayAccess
         return self::$getters;
     }
 
-    const STATE_ACTIVE = 'active';
-    const STATE_INVITED = 'invited';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStateAllowableValues()
-    {
-        return [
-            self::STATE_ACTIVE,
-            self::STATE_INVITED,
-        ];
-    }
     
 
     /**
@@ -161,14 +123,8 @@ class InlineResponse20029 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
-        $this->container['groups'] = isset($data['groups']) ? $data['groups'] : null;
-        $this->container['permissions'] = isset($data['permissions']) ? $data['permissions'] : null;
-        $this->container['verified_email'] = isset($data['verified_email']) ? $data['verified_email'] : null;
-        $this->container['invite_expires'] = isset($data['invite_expires']) ? $data['invite_expires'] : null;
+        $this->container['coupon'] = isset($data['coupon']) ? $data['coupon'] : null;
+        $this->container['subscription_discount'] = isset($data['subscription_discount']) ? $data['subscription_discount'] : null;
     }
 
     /**
@@ -180,29 +136,6 @@ class InlineResponse20029 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['id'] === null) {
-            $invalid_properties[] = "'id' can't be null";
-        }
-        if ($this->container['email'] === null) {
-            $invalid_properties[] = "'email' can't be null";
-        }
-        if ($this->container['state'] === null) {
-            $invalid_properties[] = "'state' can't be null";
-        }
-        $allowed_values = ["active", "invited"];
-        if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'invited'.";
-        }
-
-        if ($this->container['groups'] === null) {
-            $invalid_properties[] = "'groups' can't be null";
-        }
-        if ($this->container['permissions'] === null) {
-            $invalid_properties[] = "'permissions' can't be null";
-        }
-        if ($this->container['verified_email'] === null) {
-            $invalid_properties[] = "'verified_email' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -215,200 +148,48 @@ class InlineResponse20029 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['id'] === null) {
-            return false;
-        }
-        if ($this->container['email'] === null) {
-            return false;
-        }
-        if ($this->container['state'] === null) {
-            return false;
-        }
-        $allowed_values = ["active", "invited"];
-        if (!in_array($this->container['state'], $allowed_values)) {
-            return false;
-        }
-        if ($this->container['groups'] === null) {
-            return false;
-        }
-        if ($this->container['permissions'] === null) {
-            return false;
-        }
-        if ($this->container['verified_email'] === null) {
-            return false;
-        }
         return true;
     }
 
 
     /**
-     * Gets id
-     * @return string
+     * Gets coupon
+     * @return \Swagger\Client\Model\InlineResponse20012Content
      */
-    public function getId()
+    public function getCoupon()
     {
-        return $this->container['id'];
+        return $this->container['coupon'];
     }
 
     /**
-     * Sets id
-     * @param string $id Unique id for the user assigned by Reepay
+     * Sets coupon
+     * @param \Swagger\Client\Model\InlineResponse20012Content $coupon
      * @return $this
      */
-    public function setId($id)
+    public function setCoupon($coupon)
     {
-        $this->container['id'] = $id;
+        $this->container['coupon'] = $coupon;
 
         return $this;
     }
 
     /**
-     * Gets email
-     * @return string
+     * Gets subscription_discount
+     * @return \Swagger\Client\Model\InlineResponse20028
      */
-    public function getEmail()
+    public function getSubscriptionDiscount()
     {
-        return $this->container['email'];
+        return $this->container['subscription_discount'];
     }
 
     /**
-     * Sets email
-     * @param string $email User email
+     * Sets subscription_discount
+     * @param \Swagger\Client\Model\InlineResponse20028 $subscription_discount
      * @return $this
      */
-    public function setEmail($email)
+    public function setSubscriptionDiscount($subscription_discount)
     {
-        $this->container['email'] = $email;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     * @param string $name User name
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     * @return string
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     * @param string $state State of user for account: `active`, `invited`
-     * @return $this
-     */
-    public function setState($state)
-    {
-        $allowed_values = array('active', 'invited');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'invited'");
-        }
-        $this->container['state'] = $state;
-
-        return $this;
-    }
-
-    /**
-     * Gets groups
-     * @return string[]
-     */
-    public function getGroups()
-    {
-        return $this->container['groups'];
-    }
-
-    /**
-     * Sets groups
-     * @param string[] $groups List of user groups
-     * @return $this
-     */
-    public function setGroups($groups)
-    {
-        $this->container['groups'] = $groups;
-
-        return $this;
-    }
-
-    /**
-     * Gets permissions
-     * @return string[]
-     */
-    public function getPermissions()
-    {
-        return $this->container['permissions'];
-    }
-
-    /**
-     * Sets permissions
-     * @param string[] $permissions List of user permissions
-     * @return $this
-     */
-    public function setPermissions($permissions)
-    {
-        $this->container['permissions'] = $permissions;
-
-        return $this;
-    }
-
-    /**
-     * Gets verified_email
-     * @return bool
-     */
-    public function getVerifiedEmail()
-    {
-        return $this->container['verified_email'];
-    }
-
-    /**
-     * Sets verified_email
-     * @param bool $verified_email Email verified
-     * @return $this
-     */
-    public function setVerifiedEmail($verified_email)
-    {
-        $this->container['verified_email'] = $verified_email;
-
-        return $this;
-    }
-
-    /**
-     * Gets invite_expires
-     * @return \DateTime
-     */
-    public function getInviteExpires()
-    {
-        return $this->container['invite_expires'];
-    }
-
-    /**
-     * Sets invite_expires
-     * @param \DateTime $invite_expires Expiry date for invite
-     * @return $this
-     */
-    public function setInviteExpires($invite_expires)
-    {
-        $this->container['invite_expires'] = $invite_expires;
+        $this->container['subscription_discount'] = $subscription_discount;
 
         return $this;
     }

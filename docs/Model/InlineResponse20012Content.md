@@ -3,48 +3,20 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **string** | Customer email | [optional] 
-**address** | **string** | Customer address | [optional] 
-**address2** | **string** | Customer address2 | [optional] 
-**city** | **string** | Customer city | [optional] 
-**country** | **string** | Customer country in ISO 3166-1 alpha-2 | [optional] 
-**phone** | **string** | Customer phone number | [optional] 
-**company** | **string** | Customer company | [optional] 
-**vat** | **string** | Customer vat number | [optional] 
-**handle** | **string** | Per account unique handle for the customer. Max length 255 with allowable characters [a-zA-Z0-9_.-@]. | 
-**test** | **bool** | Test flag | [optional] 
-**subscriptions** | **int** | Number of active subscriptions for this customer (deprecated, will be removed in a later version, use active_subscriptions) | 
-**created** | [**\DateTime**](\DateTime.md) | Date when the customer was created. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | 
-**deleted** | [**\DateTime**](\DateTime.md) | Date when the customer was deleted. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
-**first_name** | **string** | Customer first name | [optional] 
-**last_name** | **string** | Customer last name | [optional] 
-**postal_code** | **string** | Customer postal code | [optional] 
-**active_subscriptions** | **int** | Number of active subscriptions for this customer | 
-**trial_active_subscriptions** | **int** | Number of active subscriptions in trial for this customer | 
-**trial_cancelled_subscriptions** | **int** | Number of cancelled subscriptions in trial for this customer | 
-**expired_subscriptions** | **int** | Number of expired subscription for this customer | 
-**on_hold_subscriptions** | **int** | Number of subscription on hold for this customer | 
-**cancelled_subscriptions** | **int** | Number of cancelled subscription for this customer | 
-**non_renewing_subscriptions** | **int** | Number of non renewing (active subscriptions not renewing at billing period end) subscriptions for this customer | 
-**failed_invoices** | **int** | Number of failed invoices for this customer | 
-**failed_amount** | **int** | Summed amount for failed invoices | 
-**cancelled_invoices** | **int** | Number of cancelled invoices for this customer | 
-**cancelled_amount** | **int** | Summed amount for cancelled invoices | 
-**pending_invoices** | **int** | Number of pending invoices for this customer | 
-**pending_amount** | **int** | Summed amount for pending invoices | 
-**dunning_invoices** | **int** | Number of dunning invoices for this customer | 
-**dunning_amount** | **int** | Summed amount for dunning invoices | 
-**settled_invoices** | **int** | Number of settled invoices for this customer | 
-**settled_amount** | **int** | Summed settled amount | 
-**refunded_amount** | **int** | Summed refunded amount | 
-**pending_additional_costs** | **int** | Number of pending additional costs | 
-**pending_additional_cost_amount** | **int** | Summed amount of pending additional costs incl vat | 
-**transferred_additional_costs** | **int** | Number of additional costs that have been applied to invoices | 
-**transferred_additional_cost_amount** | **int** | Summed amount of additional costs that have been applied to invoices | 
-**pending_credits** | **int** | Number of credits that have not fully been applied to invoices | 
-**pending_credit_amount** | **int** | Summed credit amount not yet applied to invoices | 
-**transferred_credits** | **int** | Number of credits that have fully been applied to invoices | 
-**transferred_credit_amount** | **int** | Summed credit amount that have been applied to invoices | 
+**handle** | **string** | Per account unique handle for the coupon | 
+**code** | **string** | The coupon code. Maximum 100 characters. | 
+**discount** | **string** | Discount to use for coupon | 
+**name** | **string** | Internal name for the coupon. | 
+**state** | **string** | Coupon state &#x60;active&#x60;, &#x60;expired&#x60;, &#x60;deleted&#x60; or &#x60;generating&#x60; | 
+**type** | **string** | Coupon type either &#x60;single&#x60; or &#x60;set&#x60; | 
+**redemptions** | **int** | Number of times the coupon has been redeemed | 
+**expired** | [**\DateTime**](\DateTime.md) | Date and time for expire if state expired. In ISO-8601 extended offset date-time format. | [optional] 
+**created** | [**\DateTime**](\DateTime.md) | Date when the coupon was created. In ISO-8601 extended offset date-time format. | 
+**all_plans** | **bool** | Whether all plans are eligible for this coupon. Defaults to false. | [optional] 
+**eligible_plans** | **string[]** | If not all_plans are set to true, then the set of eligible plan handles must be defined. | [optional] 
+**max_redemptions** | **int** | Optional maximum number of times this coupon can be redeemed. | [optional] 
+**valid_until** | [**\DateTime**](\DateTime.md) | Optional date and time until which the coupon is redeemable. In ISO-8601 extended offset date-time format. | [optional] 
+**expire_reason** | **string** | The expire reason if expired. One of &#x60;early&#x60;, &#x60;valid_until&#x60; or &#x60;max&#x60;. Respectively on demand early expire, valid until has passed or max redemptions has been reached. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

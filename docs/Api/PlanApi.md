@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **createPlanJson**
-> \Swagger\Client\Model\InlineResponse20022 createPlanJson($body)
+> \Swagger\Client\Model\InlineResponse20024 createPlanJson($body)
 
 Create plan
 
@@ -35,7 +35,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\PlanApi();
-$body = new \Swagger\Client\Model\Body25(); // \Swagger\Client\Model\Body25 | 
+$body = new \Swagger\Client\Model\Body29(); // \Swagger\Client\Model\Body29 | 
 
 try {
     $result = $api_instance->createPlanJson($body);
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body25**](../Model/\Swagger\Client\Model\Body25.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body29**](../Model/\Swagger\Client\Model\Body29.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20022**](../Model/InlineResponse20022.md)
+[**\Swagger\Client\Model\InlineResponse20024**](../Model/InlineResponse20024.md)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deletePlan**
-> \Swagger\Client\Model\InlineResponse20022 deletePlan($handle)
+> \Swagger\Client\Model\InlineResponse20024 deletePlan($handle)
 
 Delete plan
 
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20022**](../Model/InlineResponse20022.md)
+[**\Swagger\Client\Model\InlineResponse20024**](../Model/InlineResponse20024.md)
 
 ### Authorization
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCurrentPlan**
-> \Swagger\Client\Model\InlineResponse20022 getCurrentPlan($handle)
+> \Swagger\Client\Model\InlineResponse20024 getCurrentPlan($handle)
 
 Get plan
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20022**](../Model/InlineResponse20022.md)
+[**\Swagger\Client\Model\InlineResponse20024**](../Model/InlineResponse20024.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPlan**
-> \Swagger\Client\Model\InlineResponse20022 getPlan($handle, $version)
+> \Swagger\Client\Model\InlineResponse20024 getPlan($handle, $version)
 
 Get plan version
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20022**](../Model/InlineResponse20022.md)
+[**\Swagger\Client\Model\InlineResponse20024**](../Model/InlineResponse20024.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPlans**
-> \Swagger\Client\Model\InlineResponse20022[] getPlans($handle)
+> \Swagger\Client\Model\InlineResponse20024[] getPlans($handle)
 
 Get list of plan versions
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20022[]**](../Model/InlineResponse20022.md)
+[**\Swagger\Client\Model\InlineResponse20024[]**](../Model/InlineResponse20024.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPlansList**
-> \Swagger\Client\Model\InlineResponse20022[] getPlansList($only_active)
+> \Swagger\Client\Model\InlineResponse20024[] getPlansList($only_active)
 
 Get list of plans
 
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20022[]**](../Model/InlineResponse20022.md)
+[**\Swagger\Client\Model\InlineResponse20024[]**](../Model/InlineResponse20024.md)
 
 ### Authorization
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **supersedePlanJson**
-> \Swagger\Client\Model\InlineResponse20022 supersedePlanJson($handle, $body)
+> \Swagger\Client\Model\InlineResponse20024 supersedePlanJson($handle, $body)
 
 Supersede plan
 
@@ -356,7 +356,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\PlanApi();
 $handle = "handle_example"; // string | Plan handle
-$body = new \Swagger\Client\Model\Body27(); // \Swagger\Client\Model\Body27 | 
+$body = new \Swagger\Client\Model\Body28(); // \Swagger\Client\Model\Body28 | 
 
 try {
     $result = $api_instance->supersedePlanJson($handle, $body);
@@ -372,11 +372,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Plan handle |
- **body** | [**\Swagger\Client\Model\Body27**](../Model/\Swagger\Client\Model\Body27.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body28**](../Model/\Swagger\Client\Model\Body28.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20022**](../Model/InlineResponse20022.md)
+[**\Swagger\Client\Model\InlineResponse20024**](../Model/InlineResponse20024.md)
 
 ### Authorization
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePlanJson**
-> \Swagger\Client\Model\InlineResponse20022 updatePlanJson($handle, $body)
+> \Swagger\Client\Model\InlineResponse20024 updatePlanJson($handle, $body)
 
 Update plan
 
@@ -411,7 +411,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\PlanApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\Body26(); // \Swagger\Client\Model\Body26 | 
+$body = new \Swagger\Client\Model\Body27(); // \Swagger\Client\Model\Body27 | 
 
 try {
     $result = $api_instance->updatePlanJson($handle, $body);
@@ -427,11 +427,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\Body26**](../Model/\Swagger\Client\Model\Body26.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body27**](../Model/\Swagger\Client\Model\Body27.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20022**](../Model/InlineResponse20022.md)
+[**\Swagger\Client\Model\InlineResponse20024**](../Model/InlineResponse20024.md)
 
 ### Authorization
 

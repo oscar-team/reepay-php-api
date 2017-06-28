@@ -54,9 +54,15 @@ class Body5 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'provider' => 'string',
-        'card_types' => 'string[]',
-        'provider_settings' => 'map[string,object]'
+        'name' => 'string',
+        'description' => 'string',
+        'amount' => 'int',
+        'vat' => 'float',
+        'handle' => 'string',
+        'type' => 'string',
+        'amount_incl_vat' => 'bool',
+        'all_plans' => 'bool',
+        'eligible_plans' => 'string[]'
     ];
 
     public static function swaggerTypes()
@@ -69,9 +75,15 @@ class Body5 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'provider' => 'provider',
-        'card_types' => 'card_types',
-        'provider_settings' => 'provider_settings'
+        'name' => 'name',
+        'description' => 'description',
+        'amount' => 'amount',
+        'vat' => 'vat',
+        'handle' => 'handle',
+        'type' => 'type',
+        'amount_incl_vat' => 'amount_incl_vat',
+        'all_plans' => 'all_plans',
+        'eligible_plans' => 'eligible_plans'
     ];
 
 
@@ -80,9 +92,15 @@ class Body5 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'provider' => 'setProvider',
-        'card_types' => 'setCardTypes',
-        'provider_settings' => 'setProviderSettings'
+        'name' => 'setName',
+        'description' => 'setDescription',
+        'amount' => 'setAmount',
+        'vat' => 'setVat',
+        'handle' => 'setHandle',
+        'type' => 'setType',
+        'amount_incl_vat' => 'setAmountInclVat',
+        'all_plans' => 'setAllPlans',
+        'eligible_plans' => 'setEligiblePlans'
     ];
 
 
@@ -91,9 +109,15 @@ class Body5 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'provider' => 'getProvider',
-        'card_types' => 'getCardTypes',
-        'provider_settings' => 'getProviderSettings'
+        'name' => 'getName',
+        'description' => 'getDescription',
+        'amount' => 'getAmount',
+        'vat' => 'getVat',
+        'handle' => 'getHandle',
+        'type' => 'getType',
+        'amount_incl_vat' => 'getAmountInclVat',
+        'all_plans' => 'getAllPlans',
+        'eligible_plans' => 'getEligiblePlans'
     ];
 
     public static function attributeMap()
@@ -111,8 +135,22 @@ class Body5 implements ArrayAccess
         return self::$getters;
     }
 
+    const TYPE_ON_OFF = 'on_off';
+    const TYPE_QUANTITY = 'quantity';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getTypeAllowableValues()
+    {
+        return [
+            self::TYPE_ON_OFF,
+            self::TYPE_QUANTITY,
+        ];
+    }
     
 
     /**
@@ -127,9 +165,15 @@ class Body5 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
-        $this->container['card_types'] = isset($data['card_types']) ? $data['card_types'] : null;
-        $this->container['provider_settings'] = isset($data['provider_settings']) ? $data['provider_settings'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
+        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
+        $this->container['all_plans'] = isset($data['all_plans']) ? $data['all_plans'] : null;
+        $this->container['eligible_plans'] = isset($data['eligible_plans']) ? $data['eligible_plans'] : null;
     }
 
     /**
@@ -141,12 +185,35 @@ class Body5 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['provider'] === null) {
-            $invalid_properties[] = "'provider' can't be null";
+        if ($this->container['name'] === null) {
+            $invalid_properties[] = "'name' can't be null";
         }
-        if ($this->container['card_types'] === null) {
-            $invalid_properties[] = "'card_types' can't be null";
+        if ($this->container['amount'] === null) {
+            $invalid_properties[] = "'amount' can't be null";
         }
+        if (($this->container['amount'] < 0)) {
+            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['vat']) && ($this->container['vat'] > 1)) {
+            $invalid_properties[] = "invalid value for 'vat', must be smaller than or equal to 1.";
+        }
+
+        if (!is_null($this->container['vat']) && ($this->container['vat'] < 0)) {
+            $invalid_properties[] = "invalid value for 'vat', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['handle'] === null) {
+            $invalid_properties[] = "'handle' can't be null";
+        }
+        if ($this->container['type'] === null) {
+            $invalid_properties[] = "'type' can't be null";
+        }
+        $allowed_values = ["on_off", "quantity"];
+        if (!in_array($this->container['type'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'type', must be one of 'on_off', 'quantity'.";
+        }
+
         return $invalid_properties;
     }
 
@@ -159,10 +226,29 @@ class Body5 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['provider'] === null) {
+        if ($this->container['name'] === null) {
             return false;
         }
-        if ($this->container['card_types'] === null) {
+        if ($this->container['amount'] === null) {
+            return false;
+        }
+        if ($this->container['amount'] < 0) {
+            return false;
+        }
+        if ($this->container['vat'] > 1) {
+            return false;
+        }
+        if ($this->container['vat'] < 0) {
+            return false;
+        }
+        if ($this->container['handle'] === null) {
+            return false;
+        }
+        if ($this->container['type'] === null) {
+            return false;
+        }
+        $allowed_values = ["on_off", "quantity"];
+        if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -170,64 +256,207 @@ class Body5 implements ArrayAccess
 
 
     /**
-     * Gets provider
+     * Gets name
      * @return string
      */
-    public function getProvider()
+    public function getName()
     {
-        return $this->container['provider'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets provider
-     * @param string $provider Card types supported by agreement
+     * Sets name
+     * @param string $name Name of add-on. Will be used as order line text.
      * @return $this
      */
-    public function setProvider($provider)
+    public function setName($name)
     {
-        $this->container['provider'] = $provider;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets card_types
+     * Gets description
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description
+     * @param string $description Optional description of add-on
+     * @return $this
+     */
+    public function setDescription($description)
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     * @return int
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     * @param int $amount Add-on amount
+     * @return $this
+     */
+    public function setAmount($amount)
+    {
+
+        if (($amount < 0)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling Body5., must be bigger than or equal to 0.');
+        }
+
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets vat
+     * @return float
+     */
+    public function getVat()
+    {
+        return $this->container['vat'];
+    }
+
+    /**
+     * Sets vat
+     * @param float $vat Optional vat for add-on. Account default is used if none given.
+     * @return $this
+     */
+    public function setVat($vat)
+    {
+
+        if (!is_null($vat) && ($vat > 1)) {
+            throw new \InvalidArgumentException('invalid value for $vat when calling Body5., must be smaller than or equal to 1.');
+        }
+        if (!is_null($vat) && ($vat < 0)) {
+            throw new \InvalidArgumentException('invalid value for $vat when calling Body5., must be bigger than or equal to 0.');
+        }
+
+        $this->container['vat'] = $vat;
+
+        return $this;
+    }
+
+    /**
+     * Gets handle
+     * @return string
+     */
+    public function getHandle()
+    {
+        return $this->container['handle'];
+    }
+
+    /**
+     * Sets handle
+     * @param string $handle Per account unique handle for the add-on
+     * @return $this
+     */
+    public function setHandle($handle)
+    {
+        $this->container['handle'] = $handle;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     * @param string $type Add-on type `on_off` or `quantity`. An `on_off` type cannot be given a quantity when attached to subscription. Fo `quantity` type it is possible.
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $allowed_values = array('on_off', 'quantity');
+        if ((!in_array($type, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'on_off', 'quantity'");
+        }
+        $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount_incl_vat
+     * @return bool
+     */
+    public function getAmountInclVat()
+    {
+        return $this->container['amount_incl_vat'];
+    }
+
+    /**
+     * Sets amount_incl_vat
+     * @param bool $amount_incl_vat Whether the amount is including VAT. Default true.
+     * @return $this
+     */
+    public function setAmountInclVat($amount_incl_vat)
+    {
+        $this->container['amount_incl_vat'] = $amount_incl_vat;
+
+        return $this;
+    }
+
+    /**
+     * Gets all_plans
+     * @return bool
+     */
+    public function getAllPlans()
+    {
+        return $this->container['all_plans'];
+    }
+
+    /**
+     * Sets all_plans
+     * @param bool $all_plans Whether all plans are eligible for this add-on. Defaults to false.
+     * @return $this
+     */
+    public function setAllPlans($all_plans)
+    {
+        $this->container['all_plans'] = $all_plans;
+
+        return $this;
+    }
+
+    /**
+     * Gets eligible_plans
      * @return string[]
      */
-    public function getCardTypes()
+    public function getEligiblePlans()
     {
-        return $this->container['card_types'];
+        return $this->container['eligible_plans'];
     }
 
     /**
-     * Sets card_types
-     * @param string[] $card_types Card types supported by agreement
+     * Sets eligible_plans
+     * @param string[] $eligible_plans If not `all_plans` are set to true, then the set of eligible plan handles must be defined.
      * @return $this
      */
-    public function setCardTypes($card_types)
+    public function setEligiblePlans($eligible_plans)
     {
-        $this->container['card_types'] = $card_types;
-
-        return $this;
-    }
-
-    /**
-     * Gets provider_settings
-     * @return map[string,object]
-     */
-    public function getProviderSettings()
-    {
-        return $this->container['provider_settings'];
-    }
-
-    /**
-     * Sets provider_settings
-     * @param map[string,object] $provider_settings Key value map of provider settings
-     * @return $this
-     */
-    public function setProviderSettings($provider_settings)
-    {
-        $this->container['provider_settings'] = $provider_settings;
+        $this->container['eligible_plans'] = $eligible_plans;
 
         return $this;
     }

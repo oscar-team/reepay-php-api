@@ -234,4 +234,12 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     * Test attribute "add_ons"
+     */
+    public function testPropertyAddOns()
+    {
+
+    }
+
 }

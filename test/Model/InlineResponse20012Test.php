@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * InlineResponse20012Test Class Doc Comment
  *
  * @category    Class */
-// * @description A page in a paginated customer search
+// * @description A page in a paginated coupon search
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team

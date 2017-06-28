@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **cancelAdditionalCost**
-> \Swagger\Client\Model\InlineResponse2005 cancelAdditionalCost($handle)
+> \Swagger\Client\Model\InlineResponse2007 cancelAdditionalCost($handle)
 
 Cancel pending additional cost
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Swagger\Client\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAdditionalCostJson**
-> \Swagger\Client\Model\InlineResponse2005 createAdditionalCostJson($body)
+> \Swagger\Client\Model\InlineResponse2007 createAdditionalCostJson($body)
 
 Create additional cost
 
@@ -84,7 +84,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\AdditionalCostApi();
-$body = new \Swagger\Client\Model\Body4(); // \Swagger\Client\Model\Body4 | 
+$body = new \Swagger\Client\Model\Body6(); // \Swagger\Client\Model\Body6 | 
 
 try {
     $result = $api_instance->createAdditionalCostJson($body);
@@ -99,11 +99,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body4**](../Model/\Swagger\Client\Model\Body4.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body6**](../Model/\Swagger\Client\Model\Body6.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Swagger\Client\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
 
 ### Authorization
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAdditionalCost**
-> \Swagger\Client\Model\InlineResponse2005 getAdditionalCost($handle)
+> \Swagger\Client\Model\InlineResponse2007 getAdditionalCost($handle)
 
 Get additional cost
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Swagger\Client\Model\InlineResponse2007**](../Model/InlineResponse2007.md)
 
 ### Authorization
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAdditionalCosts**
-> \Swagger\Client\Model\InlineResponse2005[] getAdditionalCosts($handle)
+> \Swagger\Client\Model\InlineResponse2007[] getAdditionalCosts($handle)
 
 Get additional costs for subscription
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2005[]**](../Model/InlineResponse2005.md)
+[**\Swagger\Client\Model\InlineResponse2007[]**](../Model/InlineResponse2007.md)
 
 ### Authorization
 

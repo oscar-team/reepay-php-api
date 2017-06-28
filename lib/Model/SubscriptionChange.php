@@ -61,7 +61,9 @@ class SubscriptionChange implements ArrayAccess
         'applied' => '\DateTime',
         'updated' => '\DateTime',
         'created' => '\DateTime',
-        'amount_incl_vat' => 'bool'
+        'amount_incl_vat' => 'bool',
+        'subscription_add_ons' => '\Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns[]',
+        'remove_add_ons' => 'string[]'
     ];
 
     public static function swaggerTypes()
@@ -81,7 +83,9 @@ class SubscriptionChange implements ArrayAccess
         'applied' => 'applied',
         'updated' => 'updated',
         'created' => 'created',
-        'amount_incl_vat' => 'amount_incl_vat'
+        'amount_incl_vat' => 'amount_incl_vat',
+        'subscription_add_ons' => 'subscription_add_ons',
+        'remove_add_ons' => 'remove_add_ons'
     ];
 
 
@@ -97,7 +101,9 @@ class SubscriptionChange implements ArrayAccess
         'applied' => 'setApplied',
         'updated' => 'setUpdated',
         'created' => 'setCreated',
-        'amount_incl_vat' => 'setAmountInclVat'
+        'amount_incl_vat' => 'setAmountInclVat',
+        'subscription_add_ons' => 'setSubscriptionAddOns',
+        'remove_add_ons' => 'setRemoveAddOns'
     ];
 
 
@@ -113,7 +119,9 @@ class SubscriptionChange implements ArrayAccess
         'applied' => 'getApplied',
         'updated' => 'getUpdated',
         'created' => 'getCreated',
-        'amount_incl_vat' => 'getAmountInclVat'
+        'amount_incl_vat' => 'getAmountInclVat',
+        'subscription_add_ons' => 'getSubscriptionAddOns',
+        'remove_add_ons' => 'getRemoveAddOns'
     ];
 
     public static function attributeMap()
@@ -155,6 +163,8 @@ class SubscriptionChange implements ArrayAccess
         $this->container['updated'] = isset($data['updated']) ? $data['updated'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
         $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
+        $this->container['subscription_add_ons'] = isset($data['subscription_add_ons']) ? $data['subscription_add_ons'] : null;
+        $this->container['remove_add_ons'] = isset($data['remove_add_ons']) ? $data['remove_add_ons'] : null;
     }
 
     /**
@@ -382,6 +392,48 @@ class SubscriptionChange implements ArrayAccess
     public function setAmountInclVat($amount_incl_vat)
     {
         $this->container['amount_incl_vat'] = $amount_incl_vat;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscription_add_ons
+     * @return \Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns[]
+     */
+    public function getSubscriptionAddOns()
+    {
+        return $this->container['subscription_add_ons'];
+    }
+
+    /**
+     * Sets subscription_add_ons
+     * @param \Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns[] $subscription_add_ons List of subscription add-ons to create in change
+     * @return $this
+     */
+    public function setSubscriptionAddOns($subscription_add_ons)
+    {
+        $this->container['subscription_add_ons'] = $subscription_add_ons;
+
+        return $this;
+    }
+
+    /**
+     * Gets remove_add_ons
+     * @return string[]
+     */
+    public function getRemoveAddOns()
+    {
+        return $this->container['remove_add_ons'];
+    }
+
+    /**
+     * Sets remove_add_ons
+     * @param string[] $remove_add_ons Subscription add-ons to remove from subscription by subscription add-on handle
+     * @return $this
+     */
+    public function setRemoveAddOns($remove_add_ons)
+    {
+        $this->container['remove_add_ons'] = $remove_add_ons;
 
         return $this;
     }

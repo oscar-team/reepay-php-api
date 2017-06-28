@@ -35,6 +35,7 @@ use \ArrayAccess;
  * InlineResponse2006 Class Doc Comment
  *
  * @category    Class
+ * @description A page in a paginated add-on search
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -54,12 +55,14 @@ class InlineResponse2006 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'provider' => 'string',
-        'id' => 'string',
-        'state' => 'string',
-        'card_types' => 'string[]',
-        'provider_settings' => 'map[string,object]',
-        'gw_ref' => 'string'
+        'page' => 'int',
+        'size' => 'int',
+        'count' => 'int',
+        'search' => 'string',
+        'sort' => 'string',
+        'content' => '\Swagger\Client\Model\InlineResponse2005[]',
+        'total_elements' => 'int',
+        'total_pages' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -72,12 +75,14 @@ class InlineResponse2006 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'provider' => 'provider',
-        'id' => 'id',
-        'state' => 'state',
-        'card_types' => 'card_types',
-        'provider_settings' => 'provider_settings',
-        'gw_ref' => 'gw_ref'
+        'page' => 'page',
+        'size' => 'size',
+        'count' => 'count',
+        'search' => 'search',
+        'sort' => 'sort',
+        'content' => 'content',
+        'total_elements' => 'total_elements',
+        'total_pages' => 'total_pages'
     ];
 
 
@@ -86,12 +91,14 @@ class InlineResponse2006 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'provider' => 'setProvider',
-        'id' => 'setId',
-        'state' => 'setState',
-        'card_types' => 'setCardTypes',
-        'provider_settings' => 'setProviderSettings',
-        'gw_ref' => 'setGwRef'
+        'page' => 'setPage',
+        'size' => 'setSize',
+        'count' => 'setCount',
+        'search' => 'setSearch',
+        'sort' => 'setSort',
+        'content' => 'setContent',
+        'total_elements' => 'setTotalElements',
+        'total_pages' => 'setTotalPages'
     ];
 
 
@@ -100,12 +107,14 @@ class InlineResponse2006 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'provider' => 'getProvider',
-        'id' => 'getId',
-        'state' => 'getState',
-        'card_types' => 'getCardTypes',
-        'provider_settings' => 'getProviderSettings',
-        'gw_ref' => 'getGwRef'
+        'page' => 'getPage',
+        'size' => 'getSize',
+        'count' => 'getCount',
+        'search' => 'getSearch',
+        'sort' => 'getSort',
+        'content' => 'getContent',
+        'total_elements' => 'getTotalElements',
+        'total_pages' => 'getTotalPages'
     ];
 
     public static function attributeMap()
@@ -123,24 +132,8 @@ class InlineResponse2006 implements ArrayAccess
         return self::$getters;
     }
 
-    const STATE_ACTIVE = 'active';
-    const STATE_DISABLED = 'disabled';
-    const STATE_DELETED = 'deleted';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getStateAllowableValues()
-    {
-        return [
-            self::STATE_ACTIVE,
-            self::STATE_DISABLED,
-            self::STATE_DELETED,
-        ];
-    }
     
 
     /**
@@ -155,12 +148,14 @@ class InlineResponse2006 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
-        $this->container['card_types'] = isset($data['card_types']) ? $data['card_types'] : null;
-        $this->container['provider_settings'] = isset($data['provider_settings']) ? $data['provider_settings'] : null;
-        $this->container['gw_ref'] = isset($data['gw_ref']) ? $data['gw_ref'] : null;
+        $this->container['page'] = isset($data['page']) ? $data['page'] : null;
+        $this->container['size'] = isset($data['size']) ? $data['size'] : null;
+        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
+        $this->container['search'] = isset($data['search']) ? $data['search'] : null;
+        $this->container['sort'] = isset($data['sort']) ? $data['sort'] : null;
+        $this->container['content'] = isset($data['content']) ? $data['content'] : null;
+        $this->container['total_elements'] = isset($data['total_elements']) ? $data['total_elements'] : null;
+        $this->container['total_pages'] = isset($data['total_pages']) ? $data['total_pages'] : null;
     }
 
     /**
@@ -172,26 +167,44 @@ class InlineResponse2006 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['provider'] === null) {
-            $invalid_properties[] = "'provider' can't be null";
+        if ($this->container['page'] === null) {
+            $invalid_properties[] = "'page' can't be null";
         }
-        if ($this->container['id'] === null) {
-            $invalid_properties[] = "'id' can't be null";
-        }
-        if ($this->container['state'] === null) {
-            $invalid_properties[] = "'state' can't be null";
-        }
-        $allowed_values = ["active", "disabled", "deleted"];
-        if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'disabled', 'deleted'.";
+        if (($this->container['page'] < 1)) {
+            $invalid_properties[] = "invalid value for 'page', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['card_types'] === null) {
-            $invalid_properties[] = "'card_types' can't be null";
+        if ($this->container['size'] === null) {
+            $invalid_properties[] = "'size' can't be null";
         }
-        if ($this->container['gw_ref'] === null) {
-            $invalid_properties[] = "'gw_ref' can't be null";
+        if (($this->container['size'] < 1)) {
+            $invalid_properties[] = "invalid value for 'size', must be bigger than or equal to 1.";
         }
+
+        if ($this->container['count'] === null) {
+            $invalid_properties[] = "'count' can't be null";
+        }
+        if (($this->container['count'] < 0)) {
+            $invalid_properties[] = "invalid value for 'count', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['content'] === null) {
+            $invalid_properties[] = "'content' can't be null";
+        }
+        if ($this->container['total_elements'] === null) {
+            $invalid_properties[] = "'total_elements' can't be null";
+        }
+        if (($this->container['total_elements'] < 0)) {
+            $invalid_properties[] = "invalid value for 'total_elements', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['total_pages'] === null) {
+            $invalid_properties[] = "'total_pages' can't be null";
+        }
+        if (($this->container['total_pages'] < 0)) {
+            $invalid_properties[] = "invalid value for 'total_pages', must be bigger than or equal to 0.";
+        }
+
         return $invalid_properties;
     }
 
@@ -204,23 +217,37 @@ class InlineResponse2006 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['provider'] === null) {
+        if ($this->container['page'] === null) {
             return false;
         }
-        if ($this->container['id'] === null) {
+        if ($this->container['page'] < 1) {
             return false;
         }
-        if ($this->container['state'] === null) {
+        if ($this->container['size'] === null) {
             return false;
         }
-        $allowed_values = ["active", "disabled", "deleted"];
-        if (!in_array($this->container['state'], $allowed_values)) {
+        if ($this->container['size'] < 1) {
             return false;
         }
-        if ($this->container['card_types'] === null) {
+        if ($this->container['count'] === null) {
             return false;
         }
-        if ($this->container['gw_ref'] === null) {
+        if ($this->container['count'] < 0) {
+            return false;
+        }
+        if ($this->container['content'] === null) {
+            return false;
+        }
+        if ($this->container['total_elements'] === null) {
+            return false;
+        }
+        if ($this->container['total_elements'] < 0) {
+            return false;
+        }
+        if ($this->container['total_pages'] === null) {
+            return false;
+        }
+        if ($this->container['total_pages'] < 0) {
             return false;
         }
         return true;
@@ -228,131 +255,194 @@ class InlineResponse2006 implements ArrayAccess
 
 
     /**
-     * Gets provider
-     * @return string
+     * Gets page
+     * @return int
      */
-    public function getProvider()
+    public function getPage()
     {
-        return $this->container['provider'];
+        return $this->container['page'];
     }
 
     /**
-     * Sets provider
-     * @param string $provider Card types supported by agreement
+     * Sets page
+     * @param int $page Number of current page in paginated list
      * @return $this
      */
-    public function setProvider($provider)
+    public function setPage($page)
     {
-        $this->container['provider'] = $provider;
 
-        return $this;
-    }
-
-    /**
-     * Gets id
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     * @param string $id Card gateway agreement id
-     * @return $this
-     */
-    public function setId($id)
-    {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     * @return string
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     * @param string $state Card gateway state:
-     * @return $this
-     */
-    public function setState($state)
-    {
-        $allowed_values = array('active', 'disabled', 'deleted');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'disabled', 'deleted'");
+        if (($page < 1)) {
+            throw new \InvalidArgumentException('invalid value for $page when calling InlineResponse2006., must be bigger than or equal to 1.');
         }
-        $this->container['state'] = $state;
+
+        $this->container['page'] = $page;
 
         return $this;
     }
 
     /**
-     * Gets card_types
-     * @return string[]
+     * Gets size
+     * @return int
      */
-    public function getCardTypes()
+    public function getSize()
     {
-        return $this->container['card_types'];
+        return $this->container['size'];
     }
 
     /**
-     * Sets card_types
-     * @param string[] $card_types Card types supported by agreement
+     * Sets size
+     * @param int $size Page size in paginated list
      * @return $this
      */
-    public function setCardTypes($card_types)
+    public function setSize($size)
     {
-        $this->container['card_types'] = $card_types;
+
+        if (($size < 1)) {
+            throw new \InvalidArgumentException('invalid value for $size when calling InlineResponse2006., must be bigger than or equal to 1.');
+        }
+
+        $this->container['size'] = $size;
 
         return $this;
     }
 
     /**
-     * Gets provider_settings
-     * @return map[string,object]
+     * Gets count
+     * @return int
      */
-    public function getProviderSettings()
+    public function getCount()
     {
-        return $this->container['provider_settings'];
+        return $this->container['count'];
     }
 
     /**
-     * Sets provider_settings
-     * @param map[string,object] $provider_settings Key value map of provider settings
+     * Sets count
+     * @param int $count Number of elements in current page
      * @return $this
      */
-    public function setProviderSettings($provider_settings)
+    public function setCount($count)
     {
-        $this->container['provider_settings'] = $provider_settings;
+
+        if (($count < 0)) {
+            throw new \InvalidArgumentException('invalid value for $count when calling InlineResponse2006., must be bigger than or equal to 0.');
+        }
+
+        $this->container['count'] = $count;
 
         return $this;
     }
 
     /**
-     * Gets gw_ref
+     * Gets search
      * @return string
      */
-    public function getGwRef()
+    public function getSearch()
     {
-        return $this->container['gw_ref'];
+        return $this->container['search'];
     }
 
     /**
-     * Sets gw_ref
-     * @param string $gw_ref Card gateway reference id
+     * Sets search
+     * @param string $search Optional search expression used
      * @return $this
      */
-    public function setGwRef($gw_ref)
+    public function setSearch($search)
     {
-        $this->container['gw_ref'] = $gw_ref;
+        $this->container['search'] = $search;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort
+     * @return string
+     */
+    public function getSort()
+    {
+        return $this->container['sort'];
+    }
+
+    /**
+     * Sets sort
+     * @param string $sort Optional sort expression used
+     * @return $this
+     */
+    public function setSort($sort)
+    {
+        $this->container['sort'] = $sort;
+
+        return $this;
+    }
+
+    /**
+     * Gets content
+     * @return \Swagger\Client\Model\InlineResponse2005[]
+     */
+    public function getContent()
+    {
+        return $this->container['content'];
+    }
+
+    /**
+     * Sets content
+     * @param \Swagger\Client\Model\InlineResponse2005[] $content List of add-ons for current page
+     * @return $this
+     */
+    public function setContent($content)
+    {
+        $this->container['content'] = $content;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_elements
+     * @return int
+     */
+    public function getTotalElements()
+    {
+        return $this->container['total_elements'];
+    }
+
+    /**
+     * Sets total_elements
+     * @param int $total_elements Total number of elements in paginated list
+     * @return $this
+     */
+    public function setTotalElements($total_elements)
+    {
+
+        if (($total_elements < 0)) {
+            throw new \InvalidArgumentException('invalid value for $total_elements when calling InlineResponse2006., must be bigger than or equal to 0.');
+        }
+
+        $this->container['total_elements'] = $total_elements;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_pages
+     * @return int
+     */
+    public function getTotalPages()
+    {
+        return $this->container['total_pages'];
+    }
+
+    /**
+     * Sets total_pages
+     * @param int $total_pages Total number of pages in paginated list
+     * @return $this
+     */
+    public function setTotalPages($total_pages)
+    {
+
+        if (($total_pages < 0)) {
+            throw new \InvalidArgumentException('invalid value for $total_pages when calling InlineResponse2006., must be bigger than or equal to 0.');
+        }
+
+        $this->container['total_pages'] = $total_pages;
 
         return $this;
     }

@@ -54,8 +54,10 @@ class Body23 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'subdomain' => 'string',
-        'name' => 'string'
+        'comment' => 'string',
+        'reference' => 'string',
+        'method' => 'string',
+        'payment_date' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -68,8 +70,10 @@ class Body23 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'subdomain' => 'subdomain',
-        'name' => 'name'
+        'comment' => 'comment',
+        'reference' => 'reference',
+        'method' => 'method',
+        'payment_date' => 'payment_date'
     ];
 
 
@@ -78,8 +82,10 @@ class Body23 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'subdomain' => 'setSubdomain',
-        'name' => 'setName'
+        'comment' => 'setComment',
+        'reference' => 'setReference',
+        'method' => 'setMethod',
+        'payment_date' => 'setPaymentDate'
     ];
 
 
@@ -88,8 +94,10 @@ class Body23 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'subdomain' => 'getSubdomain',
-        'name' => 'getName'
+        'comment' => 'getComment',
+        'reference' => 'getReference',
+        'method' => 'getMethod',
+        'payment_date' => 'getPaymentDate'
     ];
 
     public static function attributeMap()
@@ -107,8 +115,26 @@ class Body23 implements ArrayAccess
         return self::$getters;
     }
 
+    const METHOD_CASH = 'cash';
+    const METHOD_BANK_TRANSFER = 'bank_transfer';
+    const METHOD_CHECK = 'check';
+    const METHOD_OTHER = 'other';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getMethodAllowableValues()
+    {
+        return [
+            self::METHOD_CASH,
+            self::METHOD_BANK_TRANSFER,
+            self::METHOD_CHECK,
+            self::METHOD_OTHER,
+        ];
+    }
     
 
     /**
@@ -123,8 +149,10 @@ class Body23 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['subdomain'] = isset($data['subdomain']) ? $data['subdomain'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
+        $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
+        $this->container['method'] = isset($data['method']) ? $data['method'] : null;
+        $this->container['payment_date'] = isset($data['payment_date']) ? $data['payment_date'] : null;
     }
 
     /**
@@ -136,11 +164,16 @@ class Body23 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['subdomain'] === null) {
-            $invalid_properties[] = "'subdomain' can't be null";
+        if ($this->container['method'] === null) {
+            $invalid_properties[] = "'method' can't be null";
         }
-        if ($this->container['name'] === null) {
-            $invalid_properties[] = "'name' can't be null";
+        $allowed_values = ["cash", "bank_transfer", "check", "other"];
+        if (!in_array($this->container['method'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'method', must be one of 'cash', 'bank_transfer', 'check', 'other'.";
+        }
+
+        if ($this->container['payment_date'] === null) {
+            $invalid_properties[] = "'payment_date' can't be null";
         }
         return $invalid_properties;
     }
@@ -154,10 +187,14 @@ class Body23 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['subdomain'] === null) {
+        if ($this->container['method'] === null) {
             return false;
         }
-        if ($this->container['name'] === null) {
+        $allowed_values = ["cash", "bank_transfer", "check", "other"];
+        if (!in_array($this->container['method'], $allowed_values)) {
+            return false;
+        }
+        if ($this->container['payment_date'] === null) {
             return false;
         }
         return true;
@@ -165,43 +202,89 @@ class Body23 implements ArrayAccess
 
 
     /**
-     * Gets subdomain
+     * Gets comment
      * @return string
      */
-    public function getSubdomain()
+    public function getComment()
     {
-        return $this->container['subdomain'];
+        return $this->container['comment'];
     }
 
     /**
-     * Sets subdomain
-     * @param string $subdomain Organisation subdomain handle in Reepay. Must match [a-z0-9-] and maximum length 64.
+     * Sets comment
+     * @param string $comment Optional comment for manual transaction
      * @return $this
      */
-    public function setSubdomain($subdomain)
+    public function setComment($comment)
     {
-        $this->container['subdomain'] = $subdomain;
+        $this->container['comment'] = $comment;
 
         return $this;
     }
 
     /**
-     * Gets name
+     * Gets reference
      * @return string
      */
-    public function getName()
+    public function getReference()
     {
-        return $this->container['name'];
+        return $this->container['reference'];
     }
 
     /**
-     * Sets name
-     * @param string $name Organisation name
+     * Sets reference
+     * @param string $reference Optional reference for the manual transaction
      * @return $this
      */
-    public function setName($name)
+    public function setReference($reference)
     {
-        $this->container['name'] = $name;
+        $this->container['reference'] = $reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets method
+     * @return string
+     */
+    public function getMethod()
+    {
+        return $this->container['method'];
+    }
+
+    /**
+     * Sets method
+     * @param string $method The payment method used for the offline manual transaction, allowable values: `cash`, `bank_transfer`, `check`, `other`
+     * @return $this
+     */
+    public function setMethod($method)
+    {
+        $allowed_values = array('cash', 'bank_transfer', 'check', 'other');
+        if ((!in_array($method, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'method', must be one of 'cash', 'bank_transfer', 'check', 'other'");
+        }
+        $this->container['method'] = $method;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_date
+     * @return string
+     */
+    public function getPaymentDate()
+    {
+        return $this->container['payment_date'];
+    }
+
+    /**
+     * Sets payment_date
+     * @param string $payment_date When the manual transaction was performed on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`
+     * @return $this
+     */
+    public function setPaymentDate($payment_date)
+    {
+        $this->container['payment_date'] = $payment_date;
 
         return $this;
     }

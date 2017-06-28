@@ -54,16 +54,8 @@ class Body35 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'handle' => 'string',
-        'discount' => 'string',
-        'name' => 'string',
-        'description' => 'string',
-        'amount' => 'int',
-        'percentage' => 'int',
-        'apply_to' => 'string[]',
-        'fixed_count' => 'int',
-        'fixed_period_unit' => 'string',
-        'fixed_period' => 'int'
+        'start_date' => 'string',
+        'partial_period_handling' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -76,16 +68,8 @@ class Body35 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'handle' => 'handle',
-        'discount' => 'discount',
-        'name' => 'name',
-        'description' => 'description',
-        'amount' => 'amount',
-        'percentage' => 'percentage',
-        'apply_to' => 'apply_to',
-        'fixed_count' => 'fixed_count',
-        'fixed_period_unit' => 'fixed_period_unit',
-        'fixed_period' => 'fixed_period'
+        'start_date' => 'start_date',
+        'partial_period_handling' => 'partial_period_handling'
     ];
 
 
@@ -94,16 +78,8 @@ class Body35 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'handle' => 'setHandle',
-        'discount' => 'setDiscount',
-        'name' => 'setName',
-        'description' => 'setDescription',
-        'amount' => 'setAmount',
-        'percentage' => 'setPercentage',
-        'apply_to' => 'setApplyTo',
-        'fixed_count' => 'setFixedCount',
-        'fixed_period_unit' => 'setFixedPeriodUnit',
-        'fixed_period' => 'setFixedPeriod'
+        'start_date' => 'setStartDate',
+        'partial_period_handling' => 'setPartialPeriodHandling'
     ];
 
 
@@ -112,16 +88,8 @@ class Body35 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'handle' => 'getHandle',
-        'discount' => 'getDiscount',
-        'name' => 'getName',
-        'description' => 'getDescription',
-        'amount' => 'getAmount',
-        'percentage' => 'getPercentage',
-        'apply_to' => 'getApplyTo',
-        'fixed_count' => 'getFixedCount',
-        'fixed_period_unit' => 'getFixedPeriodUnit',
-        'fixed_period' => 'getFixedPeriod'
+        'start_date' => 'getStartDate',
+        'partial_period_handling' => 'getPartialPeriodHandling'
     ];
 
     public static function attributeMap()
@@ -139,8 +107,10 @@ class Body35 implements ArrayAccess
         return self::$getters;
     }
 
-    const FIXED_PERIOD_UNIT_MONTHS = 'months';
-    const FIXED_PERIOD_UNIT_DAYS = 'days';
+    const PARTIAL_PERIOD_HANDLING_BILL_FULL = 'bill_full';
+    const PARTIAL_PERIOD_HANDLING_BILL_PRORATED = 'bill_prorated';
+    const PARTIAL_PERIOD_HANDLING_BILL_ZERO_AMOUNT = 'bill_zero_amount';
+    const PARTIAL_PERIOD_HANDLING_NO_BILL = 'no_bill';
     
 
     
@@ -148,11 +118,13 @@ class Body35 implements ArrayAccess
      * Gets allowable values of the enum
      * @return string[]
      */
-    public function getFixedPeriodUnitAllowableValues()
+    public function getPartialPeriodHandlingAllowableValues()
     {
         return [
-            self::FIXED_PERIOD_UNIT_MONTHS,
-            self::FIXED_PERIOD_UNIT_DAYS,
+            self::PARTIAL_PERIOD_HANDLING_BILL_FULL,
+            self::PARTIAL_PERIOD_HANDLING_BILL_PRORATED,
+            self::PARTIAL_PERIOD_HANDLING_BILL_ZERO_AMOUNT,
+            self::PARTIAL_PERIOD_HANDLING_NO_BILL,
         ];
     }
     
@@ -169,16 +141,8 @@ class Body35 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
-        $this->container['discount'] = isset($data['discount']) ? $data['discount'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['percentage'] = isset($data['percentage']) ? $data['percentage'] : null;
-        $this->container['apply_to'] = isset($data['apply_to']) ? $data['apply_to'] : null;
-        $this->container['fixed_count'] = isset($data['fixed_count']) ? $data['fixed_count'] : null;
-        $this->container['fixed_period_unit'] = isset($data['fixed_period_unit']) ? $data['fixed_period_unit'] : null;
-        $this->container['fixed_period'] = isset($data['fixed_period']) ? $data['fixed_period'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['partial_period_handling'] = isset($data['partial_period_handling']) ? $data['partial_period_handling'] : null;
     }
 
     /**
@@ -190,35 +154,9 @@ class Body35 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['handle'] === null) {
-            $invalid_properties[] = "'handle' can't be null";
-        }
-        if ($this->container['discount'] === null) {
-            $invalid_properties[] = "'discount' can't be null";
-        }
-        if (!is_null($this->container['amount']) && ($this->container['amount'] < 1)) {
-            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['percentage']) && ($this->container['percentage'] > 100)) {
-            $invalid_properties[] = "invalid value for 'percentage', must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['percentage']) && ($this->container['percentage'] < 1)) {
-            $invalid_properties[] = "invalid value for 'percentage', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['fixed_count']) && ($this->container['fixed_count'] < 1)) {
-            $invalid_properties[] = "invalid value for 'fixed_count', must be bigger than or equal to 1.";
-        }
-
-        $allowed_values = ["months", "days"];
-        if (!in_array($this->container['fixed_period_unit'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'fixed_period_unit', must be one of 'months', 'days'.";
-        }
-
-        if (!is_null($this->container['fixed_period']) && ($this->container['fixed_period'] < 1)) {
-            $invalid_properties[] = "invalid value for 'fixed_period', must be bigger than or equal to 1.";
+        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
+        if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'.";
         }
 
         return $invalid_properties;
@@ -233,29 +171,8 @@ class Body35 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['handle'] === null) {
-            return false;
-        }
-        if ($this->container['discount'] === null) {
-            return false;
-        }
-        if ($this->container['amount'] < 1) {
-            return false;
-        }
-        if ($this->container['percentage'] > 100) {
-            return false;
-        }
-        if ($this->container['percentage'] < 1) {
-            return false;
-        }
-        if ($this->container['fixed_count'] < 1) {
-            return false;
-        }
-        $allowed_values = ["months", "days"];
-        if (!in_array($this->container['fixed_period_unit'], $allowed_values)) {
-            return false;
-        }
-        if ($this->container['fixed_period'] < 1) {
+        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
+        if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
             return false;
         }
         return true;
@@ -263,238 +180,47 @@ class Body35 implements ArrayAccess
 
 
     /**
-     * Gets handle
+     * Gets start_date
      * @return string
      */
-    public function getHandle()
+    public function getStartDate()
     {
-        return $this->container['handle'];
+        return $this->container['start_date'];
     }
 
     /**
-     * Sets handle
-     * @param string $handle Per subscription unique handle for the subscription discount.
+     * Sets start_date
+     * @param string $start_date Optional date and time from which the subscription is eligible to schedule first invoice after reactivation. If no time part is given start of day will be used. A start date in the past can be used, but not before the date when the subscription was put on hold. A start date in the past can result in invoices for past billing periods. Default value is current date and time. On the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`
      * @return $this
      */
-    public function setHandle($handle)
+    public function setStartDate($start_date)
     {
-        $this->container['handle'] = $handle;
+        $this->container['start_date'] = $start_date;
 
         return $this;
     }
 
     /**
-     * Gets discount
+     * Gets partial_period_handling
      * @return string
      */
-    public function getDiscount()
+    public function getPartialPeriodHandling()
     {
-        return $this->container['discount'];
+        return $this->container['partial_period_handling'];
     }
 
     /**
-     * Sets discount
-     * @param string $discount Discount for subscription discount
+     * Sets partial_period_handling
+     * @param string $partial_period_handling Optional argument to override plan setting on how to handle a potential initial partial billing period for fixed day scheduling. The options are to bill for a full period, bill prorated for the partial period, bill a zero amoumt, or not to consider the period before first fixed day a billing period. The default is to bill prorated. Options: `bill_full`, `bill_prorated`, `bill_zero_amount`, `no_bill`.
      * @return $this
      */
-    public function setDiscount($discount)
+    public function setPartialPeriodHandling($partial_period_handling)
     {
-        $this->container['discount'] = $discount;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     * @param string $name Optional name overrding discount name
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     * @param string $description Optional description overriding discount description
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets amount
-     * @return int
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     * @param int $amount Optional overriding fixed amount from discount
-     * @return $this
-     */
-    public function setAmount($amount)
-    {
-
-        if (!is_null($amount) && ($amount < 1)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling Body35., must be bigger than or equal to 1.');
+        $allowed_values = array('bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill');
+        if (!is_null($partial_period_handling) && (!in_array($partial_period_handling, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'");
         }
-
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets percentage
-     * @return int
-     */
-    public function getPercentage()
-    {
-        return $this->container['percentage'];
-    }
-
-    /**
-     * Sets percentage
-     * @param int $percentage Optional percentage overriding percentage from discount
-     * @return $this
-     */
-    public function setPercentage($percentage)
-    {
-
-        if (!is_null($percentage) && ($percentage > 100)) {
-            throw new \InvalidArgumentException('invalid value for $percentage when calling Body35., must be smaller than or equal to 100.');
-        }
-        if (!is_null($percentage) && ($percentage < 1)) {
-            throw new \InvalidArgumentException('invalid value for $percentage when calling Body35., must be bigger than or equal to 1.');
-        }
-
-        $this->container['percentage'] = $percentage;
-
-        return $this;
-    }
-
-    /**
-     * Gets apply_to
-     * @return string[]
-     */
-    public function getApplyTo()
-    {
-        return $this->container['apply_to'];
-    }
-
-    /**
-     * Sets apply_to
-     * @param string[] $apply_to Optional overriding discount settings
-     * @return $this
-     */
-    public function setApplyTo($apply_to)
-    {
-        $this->container['apply_to'] = $apply_to;
-
-        return $this;
-    }
-
-    /**
-     * Gets fixed_count
-     * @return int
-     */
-    public function getFixedCount()
-    {
-        return $this->container['fixed_count'];
-    }
-
-    /**
-     * Sets fixed_count
-     * @param int $fixed_count Optioanl overriding discount settings
-     * @return $this
-     */
-    public function setFixedCount($fixed_count)
-    {
-
-        if (!is_null($fixed_count) && ($fixed_count < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fixed_count when calling Body35., must be bigger than or equal to 1.');
-        }
-
-        $this->container['fixed_count'] = $fixed_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets fixed_period_unit
-     * @return string
-     */
-    public function getFixedPeriodUnit()
-    {
-        return $this->container['fixed_period_unit'];
-    }
-
-    /**
-     * Sets fixed_period_unit
-     * @param string $fixed_period_unit Optioanl overriding discount settings
-     * @return $this
-     */
-    public function setFixedPeriodUnit($fixed_period_unit)
-    {
-        $allowed_values = array('months', 'days');
-        if (!is_null($fixed_period_unit) && (!in_array($fixed_period_unit, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'fixed_period_unit', must be one of 'months', 'days'");
-        }
-        $this->container['fixed_period_unit'] = $fixed_period_unit;
-
-        return $this;
-    }
-
-    /**
-     * Gets fixed_period
-     * @return int
-     */
-    public function getFixedPeriod()
-    {
-        return $this->container['fixed_period'];
-    }
-
-    /**
-     * Sets fixed_period
-     * @param int $fixed_period Optioanl overriding discount settings
-     * @return $this
-     */
-    public function setFixedPeriod($fixed_period)
-    {
-
-        if (!is_null($fixed_period) && ($fixed_period < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fixed_period when calling Body35., must be bigger than or equal to 1.');
-        }
-
-        $this->container['fixed_period'] = $fixed_period;
+        $this->container['partial_period_handling'] = $partial_period_handling;
 
         return $this;
     }

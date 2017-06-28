@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **created** | [**\DateTime**](\DateTime.md) | Date when the subscription was created. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | 
 **renewing** | **bool** | If the subscription renews at current period end. Also true for subscriptions with manual scheduling. | 
 **plan_version** | **int** | Subscription plan version | 
-**amount_incl_vat** | **bool** | If optional custom plan price this paramtere tells whether the amount is including VAT | [optional] 
+**amount_incl_vat** | **bool** | If optional custom plan price this parameter tells whether the amount is including VAT | [optional] 
 **start_date** | [**\DateTime**](\DateTime.md) | Date and time from which the subscription is eligible to schedule invoices. Either from create or from the latest reactivate or subscription change. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | 
 **end_date** | [**\DateTime**](\DateTime.md) | Fixed end date and time. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional] 
 **grace_duration** | **int** | Grace duration in seconds from the creation of a subscription where no dunning process is started for a failing invoice. This allows a certain amount of time for the customer to sign up with a payment method. | [optional] 
@@ -57,10 +57,11 @@ Name | Type | Description | Notes
 **pending_credit_amount** | **int** | Summed credit amount not yet applied to invoices | 
 **transferred_credits** | **int** | Number of credits that have fully been applied to invoices | 
 **transferred_credit_amount** | **int** | Summed credit amount that have been applied to invoices | 
-**hosted_page_links** | [**\Swagger\Client\Model\InlineResponse20023HostedPageLinks**](InlineResponse20023HostedPageLinks.md) |  | [optional] 
+**hosted_page_links** | [**\Swagger\Client\Model\InlineResponse20025HostedPageLinks**](InlineResponse20025HostedPageLinks.md) |  | [optional] 
 **subscription_discounts** | **string[]** | List of subscription discounts handles attached to subscription | [optional] 
-**pending_change** | [**\Swagger\Client\Model\InlineResponse20023PendingChange**](InlineResponse20023PendingChange.md) |  | [optional] 
-**subscription_changes** | [**\Swagger\Client\Model\InlineResponse20023PendingChange[]**](InlineResponse20023PendingChange.md) | List of subscription changes both at most one pending and previously applied | [optional] 
+**pending_change** | [**\Swagger\Client\Model\InlineResponse20025PendingChange**](InlineResponse20025PendingChange.md) |  | [optional] 
+**subscription_changes** | [**\Swagger\Client\Model\InlineResponse20025PendingChange[]**](InlineResponse20025PendingChange.md) | List of subscription changes both at most one pending and previously applied | [optional] 
+**subscription_add_ons** | **string[]** | List of subscription add-on handles attached to subscription | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

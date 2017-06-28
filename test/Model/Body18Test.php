@@ -83,6 +83,70 @@ class Body18Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+
+    }
+
+    /**
+     * Test attribute "address"
+     */
+    public function testPropertyAddress()
+    {
+
+    }
+
+    /**
+     * Test attribute "address2"
+     */
+    public function testPropertyAddress2()
+    {
+
+    }
+
+    /**
+     * Test attribute "city"
+     */
+    public function testPropertyCity()
+    {
+
+    }
+
+    /**
+     * Test attribute "country"
+     */
+    public function testPropertyCountry()
+    {
+
+    }
+
+    /**
+     * Test attribute "phone"
+     */
+    public function testPropertyPhone()
+    {
+
+    }
+
+    /**
+     * Test attribute "company"
+     */
+    public function testPropertyCompany()
+    {
+
+    }
+
+    /**
+     * Test attribute "vat"
+     */
+    public function testPropertyVat()
+    {
+
+    }
+
+    /**
      * Test attribute "handle"
      */
     public function testPropertyHandle()
@@ -91,65 +155,41 @@ class Body18Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "test"
      */
-    public function testPropertyName()
+    public function testPropertyTest()
     {
 
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "first_name"
      */
-    public function testPropertyDescription()
+    public function testPropertyFirstName()
     {
 
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "last_name"
      */
-    public function testPropertyAmount()
+    public function testPropertyLastName()
     {
 
     }
 
     /**
-     * Test attribute "percentage"
+     * Test attribute "postal_code"
      */
-    public function testPropertyPercentage()
+    public function testPropertyPostalCode()
     {
 
     }
 
     /**
-     * Test attribute "apply_to"
+     * Test attribute "generate_handle"
      */
-    public function testPropertyApplyTo()
-    {
-
-    }
-
-    /**
-     * Test attribute "fixed_count"
-     */
-    public function testPropertyFixedCount()
-    {
-
-    }
-
-    /**
-     * Test attribute "fixed_period_unit"
-     */
-    public function testPropertyFixedPeriodUnit()
-    {
-
-    }
-
-    /**
-     * Test attribute "fixed_period"
-     */
-    public function testPropertyFixedPeriod()
+    public function testPropertyGenerateHandle()
     {
 
     }

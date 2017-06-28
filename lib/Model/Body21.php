@@ -54,10 +54,11 @@ class Body21 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'comment' => 'string',
-        'reference' => 'string',
-        'method' => 'string',
-        'payment_date' => 'string'
+        'name' => 'string',
+        'schedule' => 'int[]',
+        'handle' => 'string',
+        'default_plan' => 'bool',
+        'final_subscription_action' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -70,10 +71,11 @@ class Body21 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'comment' => 'comment',
-        'reference' => 'reference',
-        'method' => 'method',
-        'payment_date' => 'payment_date'
+        'name' => 'name',
+        'schedule' => 'schedule',
+        'handle' => 'handle',
+        'default_plan' => 'default_plan',
+        'final_subscription_action' => 'final_subscription_action'
     ];
 
 
@@ -82,10 +84,11 @@ class Body21 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'comment' => 'setComment',
-        'reference' => 'setReference',
-        'method' => 'setMethod',
-        'payment_date' => 'setPaymentDate'
+        'name' => 'setName',
+        'schedule' => 'setSchedule',
+        'handle' => 'setHandle',
+        'default_plan' => 'setDefaultPlan',
+        'final_subscription_action' => 'setFinalSubscriptionAction'
     ];
 
 
@@ -94,10 +97,11 @@ class Body21 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'comment' => 'getComment',
-        'reference' => 'getReference',
-        'method' => 'getMethod',
-        'payment_date' => 'getPaymentDate'
+        'name' => 'getName',
+        'schedule' => 'getSchedule',
+        'handle' => 'getHandle',
+        'default_plan' => 'getDefaultPlan',
+        'final_subscription_action' => 'getFinalSubscriptionAction'
     ];
 
     public static function attributeMap()
@@ -115,10 +119,9 @@ class Body21 implements ArrayAccess
         return self::$getters;
     }
 
-    const METHOD_CASH = 'cash';
-    const METHOD_BANK_TRANSFER = 'bank_transfer';
-    const METHOD_CHECK = 'check';
-    const METHOD_OTHER = 'other';
+    const FINAL_SUBSCRIPTION_ACTION_EXPIRE = 'expire';
+    const FINAL_SUBSCRIPTION_ACTION_ON_HOLD = 'on_hold';
+    const FINAL_SUBSCRIPTION_ACTION_NONE = 'none';
     
 
     
@@ -126,13 +129,12 @@ class Body21 implements ArrayAccess
      * Gets allowable values of the enum
      * @return string[]
      */
-    public function getMethodAllowableValues()
+    public function getFinalSubscriptionActionAllowableValues()
     {
         return [
-            self::METHOD_CASH,
-            self::METHOD_BANK_TRANSFER,
-            self::METHOD_CHECK,
-            self::METHOD_OTHER,
+            self::FINAL_SUBSCRIPTION_ACTION_EXPIRE,
+            self::FINAL_SUBSCRIPTION_ACTION_ON_HOLD,
+            self::FINAL_SUBSCRIPTION_ACTION_NONE,
         ];
     }
     
@@ -149,10 +151,11 @@ class Body21 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['comment'] = isset($data['comment']) ? $data['comment'] : null;
-        $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
-        $this->container['method'] = isset($data['method']) ? $data['method'] : null;
-        $this->container['payment_date'] = isset($data['payment_date']) ? $data['payment_date'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['schedule'] = isset($data['schedule']) ? $data['schedule'] : null;
+        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
+        $this->container['default_plan'] = isset($data['default_plan']) ? $data['default_plan'] : null;
+        $this->container['final_subscription_action'] = isset($data['final_subscription_action']) ? $data['final_subscription_action'] : null;
     }
 
     /**
@@ -164,17 +167,26 @@ class Body21 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['method'] === null) {
-            $invalid_properties[] = "'method' can't be null";
+        if ($this->container['name'] === null) {
+            $invalid_properties[] = "'name' can't be null";
         }
-        $allowed_values = ["cash", "bank_transfer", "check", "other"];
-        if (!in_array($this->container['method'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'method', must be one of 'cash', 'bank_transfer', 'check', 'other'.";
+        if ($this->container['schedule'] === null) {
+            $invalid_properties[] = "'schedule' can't be null";
+        }
+        if ($this->container['handle'] === null) {
+            $invalid_properties[] = "'handle' can't be null";
+        }
+        if ($this->container['default_plan'] === null) {
+            $invalid_properties[] = "'default_plan' can't be null";
+        }
+        if ($this->container['final_subscription_action'] === null) {
+            $invalid_properties[] = "'final_subscription_action' can't be null";
+        }
+        $allowed_values = ["expire", "on_hold", "none"];
+        if (!in_array($this->container['final_subscription_action'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'final_subscription_action', must be one of 'expire', 'on_hold', 'none'.";
         }
 
-        if ($this->container['payment_date'] === null) {
-            $invalid_properties[] = "'payment_date' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -187,14 +199,23 @@ class Body21 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['method'] === null) {
+        if ($this->container['name'] === null) {
             return false;
         }
-        $allowed_values = ["cash", "bank_transfer", "check", "other"];
-        if (!in_array($this->container['method'], $allowed_values)) {
+        if ($this->container['schedule'] === null) {
             return false;
         }
-        if ($this->container['payment_date'] === null) {
+        if ($this->container['handle'] === null) {
+            return false;
+        }
+        if ($this->container['default_plan'] === null) {
+            return false;
+        }
+        if ($this->container['final_subscription_action'] === null) {
+            return false;
+        }
+        $allowed_values = ["expire", "on_hold", "none"];
+        if (!in_array($this->container['final_subscription_action'], $allowed_values)) {
             return false;
         }
         return true;
@@ -202,89 +223,110 @@ class Body21 implements ArrayAccess
 
 
     /**
-     * Gets comment
+     * Gets name
      * @return string
      */
-    public function getComment()
+    public function getName()
     {
-        return $this->container['comment'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets comment
-     * @param string $comment Optional comment for manual transaction
+     * Sets name
+     * @param string $name Dunning plan name
      * @return $this
      */
-    public function setComment($comment)
+    public function setName($name)
     {
-        $this->container['comment'] = $comment;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets reference
-     * @return string
+     * Gets schedule
+     * @return int[]
      */
-    public function getReference()
+    public function getSchedule()
     {
-        return $this->container['reference'];
+        return $this->container['schedule'];
     }
 
     /**
-     * Sets reference
-     * @param string $reference Optional reference for the manual transaction
+     * Sets schedule
+     * @param int[] $schedule The schedule as list of intervals in days
      * @return $this
      */
-    public function setReference($reference)
+    public function setSchedule($schedule)
     {
-        $this->container['reference'] = $reference;
+        $this->container['schedule'] = $schedule;
 
         return $this;
     }
 
     /**
-     * Gets method
+     * Gets handle
      * @return string
      */
-    public function getMethod()
+    public function getHandle()
     {
-        return $this->container['method'];
+        return $this->container['handle'];
     }
 
     /**
-     * Sets method
-     * @param string $method The payment method used for the offline manual transaction, allowable values: `cash`, `bank_transfer`, `check`, `other`
+     * Sets handle
+     * @param string $handle Per account unique handle for the customer. Max length 255 with allowable characters [a-zA-Z0-9_.-@].
      * @return $this
      */
-    public function setMethod($method)
+    public function setHandle($handle)
     {
-        $allowed_values = array('cash', 'bank_transfer', 'check', 'other');
-        if ((!in_array($method, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'method', must be one of 'cash', 'bank_transfer', 'check', 'other'");
+        $this->container['handle'] = $handle;
+
+        return $this;
+    }
+
+    /**
+     * Gets default_plan
+     * @return bool
+     */
+    public function getDefaultPlan()
+    {
+        return $this->container['default_plan'];
+    }
+
+    /**
+     * Sets default_plan
+     * @param bool $default_plan If this is default plan
+     * @return $this
+     */
+    public function setDefaultPlan($default_plan)
+    {
+        $this->container['default_plan'] = $default_plan;
+
+        return $this;
+    }
+
+    /**
+     * Gets final_subscription_action
+     * @return string
+     */
+    public function getFinalSubscriptionAction()
+    {
+        return $this->container['final_subscription_action'];
+    }
+
+    /**
+     * Sets final_subscription_action
+     * @param string $final_subscription_action Action to take for subscription if dunning fails, one of the following: `expire`, `on_hold`, `none`
+     * @return $this
+     */
+    public function setFinalSubscriptionAction($final_subscription_action)
+    {
+        $allowed_values = array('expire', 'on_hold', 'none');
+        if ((!in_array($final_subscription_action, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'final_subscription_action', must be one of 'expire', 'on_hold', 'none'");
         }
-        $this->container['method'] = $method;
-
-        return $this;
-    }
-
-    /**
-     * Gets payment_date
-     * @return string
-     */
-    public function getPaymentDate()
-    {
-        return $this->container['payment_date'];
-    }
-
-    /**
-     * Sets payment_date
-     * @param string $payment_date When the manual transaction was performed on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`
-     * @return $this
-     */
-    public function setPaymentDate($payment_date)
-    {
-        $this->container['payment_date'] = $payment_date;
+        $this->container['final_subscription_action'] = $final_subscription_action;
 
         return $this;
     }

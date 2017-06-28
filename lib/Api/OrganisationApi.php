@@ -93,7 +93,7 @@ class OrganisationApi
      * Get organisation
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2008Organisation
+     * @return \Swagger\Client\Model\InlineResponse2009Organisation
      */
     public function getOrganisation()
     {
@@ -107,7 +107,7 @@ class OrganisationApi
      * Get organisation
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2008Organisation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2009Organisation, HTTP status code, HTTP response headers (array of strings)
      */
     public function getOrganisationWithHttpInfo()
     {
@@ -150,15 +150,15 @@ class OrganisationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2008Organisation',
+                '\Swagger\Client\Model\InlineResponse2009Organisation',
                 '/v1/organisation'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2008Organisation', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2009Organisation', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2008Organisation', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2009Organisation', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -192,9 +192,9 @@ class OrganisationApi
      *
      * Update organisation
      *
-     * @param \Swagger\Client\Model\Body23 $body  (optional)
+     * @param \Swagger\Client\Model\Body25 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2008Organisation
+     * @return \Swagger\Client\Model\InlineResponse2009Organisation
      */
     public function update($body = null)
     {
@@ -207,9 +207,9 @@ class OrganisationApi
      *
      * Update organisation
      *
-     * @param \Swagger\Client\Model\Body23 $body  (optional)
+     * @param \Swagger\Client\Model\Body25 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2008Organisation, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2009Organisation, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateWithHttpInfo($body = null)
     {
@@ -257,15 +257,15 @@ class OrganisationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2008Organisation',
+                '\Swagger\Client\Model\InlineResponse2009Organisation',
                 '/v1/organisation'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2008Organisation', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2009Organisation', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2008Organisation', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2009Organisation', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

@@ -93,9 +93,9 @@ class SubscriptionApi
      * Cancel subscription
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body31 $body  (optional)
+     * @param \Swagger\Client\Model\Body33 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20023
+     * @return \Swagger\Client\Model\InlineResponse20025
      */
     public function cancelSubscription($handle, $body = null)
     {
@@ -109,9 +109,9 @@ class SubscriptionApi
      * Cancel subscription
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body31 $body  (optional)
+     * @param \Swagger\Client\Model\Body33 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20023, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20025, HTTP status code, HTTP response headers (array of strings)
      */
     public function cancelSubscriptionWithHttpInfo($handle, $body = null)
     {
@@ -171,15 +171,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20023',
+                '\Swagger\Client\Model\InlineResponse20025',
                 '/v1/subscription/{handle}/cancel'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20023', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20025', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20023', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20025', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -214,9 +214,9 @@ class SubscriptionApi
      * Change next renewal date
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body37 $body  (optional)
+     * @param \Swagger\Client\Model\Body36 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20023
+     * @return \Swagger\Client\Model\InlineResponse20025
      */
     public function changeNextPeriodStartJson($handle, $body = null)
     {
@@ -230,9 +230,9 @@ class SubscriptionApi
      * Change next renewal date
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body37 $body  (optional)
+     * @param \Swagger\Client\Model\Body36 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20023, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20025, HTTP status code, HTTP response headers (array of strings)
      */
     public function changeNextPeriodStartJsonWithHttpInfo($handle, $body = null)
     {
@@ -292,15 +292,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20023',
+                '\Swagger\Client\Model\InlineResponse20025',
                 '/v1/subscription/{handle}/change_next_period_start'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20023', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20025', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20023', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20025', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -335,9 +335,9 @@ class SubscriptionApi
      * Change subscription
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body28 $body  (optional)
+     * @param \Swagger\Client\Model\Body30 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20023
+     * @return \Swagger\Client\Model\InlineResponse20025
      */
     public function changeSubscription($handle, $body = null)
     {
@@ -351,9 +351,9 @@ class SubscriptionApi
      * Change subscription
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body28 $body  (optional)
+     * @param \Swagger\Client\Model\Body30 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20023, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20025, HTTP status code, HTTP response headers (array of strings)
      */
     public function changeSubscriptionWithHttpInfo($handle, $body = null)
     {
@@ -413,15 +413,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20023',
+                '\Swagger\Client\Model\InlineResponse20025',
                 '/v1/subscription/{handle}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20023', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20025', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20023', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20025', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -456,9 +456,9 @@ class SubscriptionApi
      * Add subscription discount
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body35 $body  (optional)
+     * @param \Swagger\Client\Model\Body39 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20025
+     * @return \Swagger\Client\Model\InlineResponse20028
      */
     public function createSubscriptionDiscount($handle, $body = null)
     {
@@ -472,9 +472,9 @@ class SubscriptionApi
      * Add subscription discount
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body35 $body  (optional)
+     * @param \Swagger\Client\Model\Body39 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20025, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20028, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSubscriptionDiscountWithHttpInfo($handle, $body = null)
     {
@@ -534,15 +534,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20025',
+                '\Swagger\Client\Model\InlineResponse20028',
                 '/v1/subscription/{handle}/discount'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20025', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20028', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20025', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20028', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -577,9 +577,9 @@ class SubscriptionApi
      * Create invoice ondemand for subscription
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body34 $body  (optional)
+     * @param \Swagger\Client\Model\Body38 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20015
+     * @return \Swagger\Client\Model\InlineResponse20016
      */
     public function createSubscriptionInvoice($handle, $body = null)
     {
@@ -593,9 +593,9 @@ class SubscriptionApi
      * Create invoice ondemand for subscription
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body34 $body  (optional)
+     * @param \Swagger\Client\Model\Body38 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20015, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20016, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSubscriptionInvoiceWithHttpInfo($handle, $body = null)
     {
@@ -655,15 +655,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20015',
+                '\Swagger\Client\Model\InlineResponse20016',
                 '/v1/subscription/{handle}/invoice'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20015', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20016', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20015', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20016', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -697,9 +697,9 @@ class SubscriptionApi
      *
      * Create subscription
      *
-     * @param \Swagger\Client\Model\Body30 $body  (optional)
+     * @param \Swagger\Client\Model\Body32 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20023
+     * @return \Swagger\Client\Model\InlineResponse20025
      */
     public function createSubscriptionJson($body = null)
     {
@@ -712,9 +712,9 @@ class SubscriptionApi
      *
      * Create subscription
      *
-     * @param \Swagger\Client\Model\Body30 $body  (optional)
+     * @param \Swagger\Client\Model\Body32 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20023, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20025, HTTP status code, HTTP response headers (array of strings)
      */
     public function createSubscriptionJsonWithHttpInfo($body = null)
     {
@@ -762,15 +762,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20023',
+                '\Swagger\Client\Model\InlineResponse20025',
                 '/v1/subscription'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20023', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20025', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20023', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20025', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -807,7 +807,7 @@ class SubscriptionApi
      * @param string $handle Subscription handle (required)
      * @param string $sd_handle Subscription discount handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20025
+     * @return \Swagger\Client\Model\InlineResponse20028
      */
     public function deleteSubscriptionDiscount($handle, $sd_handle)
     {
@@ -823,7 +823,7 @@ class SubscriptionApi
      * @param string $handle Subscription handle (required)
      * @param string $sd_handle Subscription discount handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20025, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20028, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteSubscriptionDiscountWithHttpInfo($handle, $sd_handle)
     {
@@ -890,15 +890,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20025',
+                '\Swagger\Client\Model\InlineResponse20028',
                 '/v1/subscription/{handle}/discount/{sdHandle}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20025', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20028', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20025', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20028', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -933,9 +933,9 @@ class SubscriptionApi
      * Expire subscription
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body29 $body  (optional)
+     * @param \Swagger\Client\Model\Body31 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20023
+     * @return \Swagger\Client\Model\InlineResponse20025
      */
     public function expire($handle, $body = null)
     {
@@ -949,9 +949,9 @@ class SubscriptionApi
      * Expire subscription
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body29 $body  (optional)
+     * @param \Swagger\Client\Model\Body31 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20023, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20025, HTTP status code, HTTP response headers (array of strings)
      */
     public function expireWithHttpInfo($handle, $body = null)
     {
@@ -1011,15 +1011,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20023',
+                '\Swagger\Client\Model\InlineResponse20025',
                 '/v1/subscription/{handle}/expire'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20023', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20025', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20023', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20025', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1055,7 +1055,7 @@ class SubscriptionApi
      *
      * @param string $handle Subscription handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20023
+     * @return \Swagger\Client\Model\InlineResponse20025
      */
     public function getSubscription($handle)
     {
@@ -1070,7 +1070,7 @@ class SubscriptionApi
      *
      * @param string $handle Subscription handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20023, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20025, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSubscriptionWithHttpInfo($handle)
     {
@@ -1125,15 +1125,257 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20023',
+                '\Swagger\Client\Model\InlineResponse20025',
                 '/v1/subscription/{handle}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20023', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20025', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20023', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20025', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getSubscriptionAddOn
+     *
+     * Get subscription add-on
+     *
+     * @param string $handle Subscription handle (required)
+     * @param string $sa_handle Subscription add-on handle (required)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns
+     */
+    public function getSubscriptionAddOn($handle, $sa_handle)
+    {
+        list($response) = $this->getSubscriptionAddOnWithHttpInfo($handle, $sa_handle);
+        return $response;
+    }
+
+    /**
+     * Operation getSubscriptionAddOnWithHttpInfo
+     *
+     * Get subscription add-on
+     *
+     * @param string $handle Subscription handle (required)
+     * @param string $sa_handle Subscription add-on handle (required)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getSubscriptionAddOnWithHttpInfo($handle, $sa_handle)
+    {
+        // verify the required parameter 'handle' is set
+        if ($handle === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $handle when calling getSubscriptionAddOn');
+        }
+        // verify the required parameter 'sa_handle' is set
+        if ($sa_handle === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $sa_handle when calling getSubscriptionAddOn');
+        }
+        // parse inputs
+        $resourcePath = "/v1/subscription/{handle}/add_on/{saHandle}";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
+
+        // path params
+        if ($handle !== null) {
+            $resourcePath = str_replace(
+                "{" . "handle" . "}",
+                $this->apiClient->getSerializer()->toPathValue($handle),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sa_handle !== null) {
+            $resourcePath = str_replace(
+                "{" . "saHandle" . "}",
+                $this->apiClient->getSerializer()->toPathValue($sa_handle),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('X-Auth-Token');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['X-Auth-Token'] = $apiKey;
+        }
+        // this endpoint requires HTTP basic authentication
+        if (strlen($this->apiClient->getConfig()->getUsername()) !== 0 or strlen($this->apiClient->getConfig()->getPassword()) !== 0) {
+            $headerParams['Authorization'] = 'Basic ' . base64_encode($this->apiClient->getConfig()->getUsername() . ":" . $this->apiClient->getConfig()->getPassword());
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns',
+                '/v1/subscription/{handle}/add_on/{saHandle}'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 400:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 401:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 403:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse400', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getSubscriptionAddOns
+     *
+     * Get subscription add-ons
+     *
+     * @param string $handle Subscription handle (required)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns[]
+     */
+    public function getSubscriptionAddOns($handle)
+    {
+        list($response) = $this->getSubscriptionAddOnsWithHttpInfo($handle);
+        return $response;
+    }
+
+    /**
+     * Operation getSubscriptionAddOnsWithHttpInfo
+     *
+     * Get subscription add-ons
+     *
+     * @param string $handle Subscription handle (required)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns[], HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getSubscriptionAddOnsWithHttpInfo($handle)
+    {
+        // verify the required parameter 'handle' is set
+        if ($handle === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $handle when calling getSubscriptionAddOns');
+        }
+        // parse inputs
+        $resourcePath = "/v1/subscription/{handle}/add_on";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType([]);
+
+        // path params
+        if ($handle !== null) {
+            $resourcePath = str_replace(
+                "{" . "handle" . "}",
+                $this->apiClient->getSerializer()->toPathValue($handle),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires API key authentication
+        $apiKey = $this->apiClient->getApiKeyWithPrefix('X-Auth-Token');
+        if (strlen($apiKey) !== 0) {
+            $headerParams['X-Auth-Token'] = $apiKey;
+        }
+        // this endpoint requires HTTP basic authentication
+        if (strlen($this->apiClient->getConfig()->getUsername()) !== 0 or strlen($this->apiClient->getConfig()->getPassword()) !== 0) {
+            $headerParams['Authorization'] = 'Basic ' . base64_encode($this->apiClient->getConfig()->getUsername() . ":" . $this->apiClient->getConfig()->getPassword());
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns[]',
+                '/v1/subscription/{handle}/add_on'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns[]', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1170,7 +1412,7 @@ class SubscriptionApi
      * @param string $handle Subscription handle (required)
      * @param string $sd_handle Subscription discount handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20025
+     * @return \Swagger\Client\Model\InlineResponse20028
      */
     public function getSubscriptionDiscount($handle, $sd_handle)
     {
@@ -1186,7 +1428,7 @@ class SubscriptionApi
      * @param string $handle Subscription handle (required)
      * @param string $sd_handle Subscription discount handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20025, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20028, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSubscriptionDiscountWithHttpInfo($handle, $sd_handle)
     {
@@ -1253,15 +1495,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20025',
+                '\Swagger\Client\Model\InlineResponse20028',
                 '/v1/subscription/{handle}/discount/{sdHandle}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20025', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20028', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20025', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20028', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1297,7 +1539,7 @@ class SubscriptionApi
      *
      * @param string $handle Subscription handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20025[]
+     * @return \Swagger\Client\Model\InlineResponse20028[]
      */
     public function getSubscriptionDiscounts($handle)
     {
@@ -1312,7 +1554,7 @@ class SubscriptionApi
      *
      * @param string $handle Subscription handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20025[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20028[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getSubscriptionDiscountsWithHttpInfo($handle)
     {
@@ -1367,15 +1609,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20025[]',
+                '\Swagger\Client\Model\InlineResponse20028[]',
                 '/v1/subscription/{handle}/discount'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20025[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20028[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20025[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20028[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1411,7 +1653,7 @@ class SubscriptionApi
      *
      * @param string $handle Subscription handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20014
+     * @return \Swagger\Client\Model\InlineResponse20015
      */
     public function getSubscriptionPaymentMethods($handle)
     {
@@ -1426,7 +1668,7 @@ class SubscriptionApi
      *
      * @param string $handle Subscription handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20014, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20015, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSubscriptionPaymentMethodsWithHttpInfo($handle)
     {
@@ -1481,15 +1723,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20014',
+                '\Swagger\Client\Model\InlineResponse20015',
                 '/v1/subscription/{handle}/payment_method'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20014', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20015', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20014', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20015', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1526,7 +1768,7 @@ class SubscriptionApi
      * @param string $handle Subscription handle (required)
      * @param string $date Optional period date (default now) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60; and &#x60;yyyy-MM-ddTHH:mm:ss&#x60; (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20027
+     * @return \Swagger\Client\Model\InlineResponse20030
      */
     public function getSubscriptionPeriodBalance($handle, $date = null)
     {
@@ -1542,7 +1784,7 @@ class SubscriptionApi
      * @param string $handle Subscription handle (required)
      * @param string $date Optional period date (default now) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60; and &#x60;yyyy-MM-ddTHH:mm:ss&#x60; (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20027, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20030, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSubscriptionPeriodBalanceWithHttpInfo($handle, $date = null)
     {
@@ -1601,15 +1843,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20027',
+                '\Swagger\Client\Model\InlineResponse20030',
                 '/v1/subscription/{handle}/period_balance'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20027', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20030', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20027', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20030', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1648,7 +1890,7 @@ class SubscriptionApi
      * @param string $search Optional search expression (optional)
      * @param string $sort Optional sorting expression (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20024
+     * @return \Swagger\Client\Model\InlineResponse20026
      */
     public function getSubscriptions($page = null, $size = null, $search = null, $sort = null)
     {
@@ -1666,7 +1908,7 @@ class SubscriptionApi
      * @param string $search Optional search expression (optional)
      * @param string $sort Optional sorting expression (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20024, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20026, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSubscriptionsWithHttpInfo($page = null, $size = null, $search = null, $sort = null)
     {
@@ -1736,15 +1978,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20024',
+                '\Swagger\Client\Model\InlineResponse20026',
                 '/v1/subscription'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20024', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20026', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20024', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20026', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1782,7 +2024,7 @@ class SubscriptionApi
      * @param string $from From date on the form yyyy-MM-dd (required)
      * @param string $to To date on the form yyyy-MM-dd (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20028
+     * @return \Swagger\Client\Model\InlineResponse20027
      */
     public function intervalAmount($handle, $from, $to)
     {
@@ -1799,7 +2041,7 @@ class SubscriptionApi
      * @param string $from From date on the form yyyy-MM-dd (required)
      * @param string $to To date on the form yyyy-MM-dd (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20028, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20027, HTTP status code, HTTP response headers (array of strings)
      */
     public function intervalAmountWithHttpInfo($handle, $from, $to)
     {
@@ -1870,15 +2112,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20028',
+                '\Swagger\Client\Model\InlineResponse20027',
                 '/v1/subscription/{handle}/interval_amount'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20028', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20027', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20028', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20027', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1913,9 +2155,9 @@ class SubscriptionApi
      * Subscription on hold
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body32 $body  (optional)
+     * @param \Swagger\Client\Model\Body34 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20023
+     * @return \Swagger\Client\Model\InlineResponse20025
      */
     public function onHold($handle, $body = null)
     {
@@ -1929,9 +2171,9 @@ class SubscriptionApi
      * Subscription on hold
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body32 $body  (optional)
+     * @param \Swagger\Client\Model\Body34 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20023, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20025, HTTP status code, HTTP response headers (array of strings)
      */
     public function onHoldWithHttpInfo($handle, $body = null)
     {
@@ -1991,15 +2233,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20023',
+                '\Swagger\Client\Model\InlineResponse20025',
                 '/v1/subscription/{handle}/on_hold'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20023', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20025', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20023', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20025', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -2034,9 +2276,9 @@ class SubscriptionApi
      * Reactivate subscription on hold
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body33 $body  (optional)
+     * @param \Swagger\Client\Model\Body35 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20023
+     * @return \Swagger\Client\Model\InlineResponse20025
      */
     public function reactivateSubscription($handle, $body = null)
     {
@@ -2050,9 +2292,9 @@ class SubscriptionApi
      * Reactivate subscription on hold
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body33 $body  (optional)
+     * @param \Swagger\Client\Model\Body35 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20023, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20025, HTTP status code, HTTP response headers (array of strings)
      */
     public function reactivateSubscriptionWithHttpInfo($handle, $body = null)
     {
@@ -2112,15 +2354,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20023',
+                '\Swagger\Client\Model\InlineResponse20025',
                 '/v1/subscription/{handle}/reactivate'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20023', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20025', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20023', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20025', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -2155,9 +2397,9 @@ class SubscriptionApi
      * Redeem coupon code for subscription
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body36 $body  (optional)
+     * @param \Swagger\Client\Model\Body40 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20026
+     * @return \Swagger\Client\Model\InlineResponse20029
      */
     public function redeemCouponCode($handle, $body = null)
     {
@@ -2171,9 +2413,9 @@ class SubscriptionApi
      * Redeem coupon code for subscription
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body36 $body  (optional)
+     * @param \Swagger\Client\Model\Body40 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20026, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20029, HTTP status code, HTTP response headers (array of strings)
      */
     public function redeemCouponCodeWithHttpInfo($handle, $body = null)
     {
@@ -2233,15 +2475,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20026',
+                '\Swagger\Client\Model\InlineResponse20029',
                 '/v1/subscription/{handle}/coupon'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20026', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20029', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20026', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20029', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -2277,7 +2519,7 @@ class SubscriptionApi
      *
      * @param string $handle Subscription handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20014
+     * @return \Swagger\Client\Model\InlineResponse20015
      */
     public function removeAllPaymentMethods($handle)
     {
@@ -2292,7 +2534,7 @@ class SubscriptionApi
      *
      * @param string $handle Subscription handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20014, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20015, HTTP status code, HTTP response headers (array of strings)
      */
     public function removeAllPaymentMethodsWithHttpInfo($handle)
     {
@@ -2347,15 +2589,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20014',
+                '\Swagger\Client\Model\InlineResponse20015',
                 '/v1/subscription/{handle}/payment_method'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20014', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20015', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20014', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20015', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -2392,7 +2634,7 @@ class SubscriptionApi
      * @param string $handle Subscription handle (required)
      * @param string $method_id Payment method id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20014
+     * @return \Swagger\Client\Model\InlineResponse20015
      */
     public function removePaymentMethod($handle, $method_id)
     {
@@ -2408,7 +2650,7 @@ class SubscriptionApi
      * @param string $handle Subscription handle (required)
      * @param string $method_id Payment method id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20014, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20015, HTTP status code, HTTP response headers (array of strings)
      */
     public function removePaymentMethodWithHttpInfo($handle, $method_id)
     {
@@ -2475,15 +2717,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20014',
+                '\Swagger\Client\Model\InlineResponse20015',
                 '/v1/subscription/{handle}/payment_method/{method_id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20014', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20015', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20014', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20015', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -2518,9 +2760,9 @@ class SubscriptionApi
      * Set payment method
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body38 $body  (optional)
+     * @param \Swagger\Client\Model\Body37 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20014
+     * @return \Swagger\Client\Model\InlineResponse20015
      */
     public function setPaymentMethod($handle, $body = null)
     {
@@ -2534,9 +2776,9 @@ class SubscriptionApi
      * Set payment method
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body38 $body  (optional)
+     * @param \Swagger\Client\Model\Body37 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20014, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20015, HTTP status code, HTTP response headers (array of strings)
      */
     public function setPaymentMethodWithHttpInfo($handle, $body = null)
     {
@@ -2596,15 +2838,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20014',
+                '\Swagger\Client\Model\InlineResponse20015',
                 '/v1/subscription/{handle}/payment_method'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20014', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20015', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20014', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20015', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -2640,7 +2882,7 @@ class SubscriptionApi
      *
      * @param string $handle Subscription handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20023
+     * @return \Swagger\Client\Model\InlineResponse20025
      */
     public function uncancel($handle)
     {
@@ -2655,7 +2897,7 @@ class SubscriptionApi
      *
      * @param string $handle Subscription handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20023, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20025, HTTP status code, HTTP response headers (array of strings)
      */
     public function uncancelWithHttpInfo($handle)
     {
@@ -2710,15 +2952,15 @@ class SubscriptionApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20023',
+                '\Swagger\Client\Model\InlineResponse20025',
                 '/v1/subscription/{handle}/uncancel'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20023', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20025', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20023', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20025', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

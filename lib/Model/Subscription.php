@@ -108,10 +108,11 @@ class Subscription implements ArrayAccess
         'pending_credit_amount' => 'int',
         'transferred_credits' => 'int',
         'transferred_credit_amount' => 'int',
-        'hosted_page_links' => '\Swagger\Client\Model\InlineResponse20023HostedPageLinks',
+        'hosted_page_links' => '\Swagger\Client\Model\InlineResponse20025HostedPageLinks',
         'subscription_discounts' => 'string[]',
-        'pending_change' => '\Swagger\Client\Model\InlineResponse20023PendingChange',
-        'subscription_changes' => '\Swagger\Client\Model\InlineResponse20023PendingChange[]'
+        'pending_change' => '\Swagger\Client\Model\InlineResponse20025PendingChange',
+        'subscription_changes' => '\Swagger\Client\Model\InlineResponse20025PendingChange[]',
+        'subscription_add_ons' => 'string[]'
     ];
 
     public static function swaggerTypes()
@@ -181,7 +182,8 @@ class Subscription implements ArrayAccess
         'hosted_page_links' => 'hosted_page_links',
         'subscription_discounts' => 'subscription_discounts',
         'pending_change' => 'pending_change',
-        'subscription_changes' => 'subscription_changes'
+        'subscription_changes' => 'subscription_changes',
+        'subscription_add_ons' => 'subscription_add_ons'
     ];
 
 
@@ -247,7 +249,8 @@ class Subscription implements ArrayAccess
         'hosted_page_links' => 'setHostedPageLinks',
         'subscription_discounts' => 'setSubscriptionDiscounts',
         'pending_change' => 'setPendingChange',
-        'subscription_changes' => 'setSubscriptionChanges'
+        'subscription_changes' => 'setSubscriptionChanges',
+        'subscription_add_ons' => 'setSubscriptionAddOns'
     ];
 
 
@@ -313,7 +316,8 @@ class Subscription implements ArrayAccess
         'hosted_page_links' => 'getHostedPageLinks',
         'subscription_discounts' => 'getSubscriptionDiscounts',
         'pending_change' => 'getPendingChange',
-        'subscription_changes' => 'getSubscriptionChanges'
+        'subscription_changes' => 'getSubscriptionChanges',
+        'subscription_add_ons' => 'getSubscriptionAddOns'
     ];
 
     public static function attributeMap()
@@ -453,6 +457,7 @@ class Subscription implements ArrayAccess
         $this->container['subscription_discounts'] = isset($data['subscription_discounts']) ? $data['subscription_discounts'] : null;
         $this->container['pending_change'] = isset($data['pending_change']) ? $data['pending_change'] : null;
         $this->container['subscription_changes'] = isset($data['subscription_changes']) ? $data['subscription_changes'] : null;
+        $this->container['subscription_add_ons'] = isset($data['subscription_add_ons']) ? $data['subscription_add_ons'] : null;
     }
 
     /**
@@ -1018,7 +1023,7 @@ class Subscription implements ArrayAccess
 
     /**
      * Sets amount_incl_vat
-     * @param bool $amount_incl_vat If optional custom plan price this paramtere tells whether the amount is including VAT
+     * @param bool $amount_incl_vat If optional custom plan price this parameter tells whether the amount is including VAT
      * @return $this
      */
     public function setAmountInclVat($amount_incl_vat)
@@ -1883,7 +1888,7 @@ class Subscription implements ArrayAccess
 
     /**
      * Gets hosted_page_links
-     * @return \Swagger\Client\Model\InlineResponse20023HostedPageLinks
+     * @return \Swagger\Client\Model\InlineResponse20025HostedPageLinks
      */
     public function getHostedPageLinks()
     {
@@ -1892,7 +1897,7 @@ class Subscription implements ArrayAccess
 
     /**
      * Sets hosted_page_links
-     * @param \Swagger\Client\Model\InlineResponse20023HostedPageLinks $hosted_page_links
+     * @param \Swagger\Client\Model\InlineResponse20025HostedPageLinks $hosted_page_links
      * @return $this
      */
     public function setHostedPageLinks($hosted_page_links)
@@ -1925,7 +1930,7 @@ class Subscription implements ArrayAccess
 
     /**
      * Gets pending_change
-     * @return \Swagger\Client\Model\InlineResponse20023PendingChange
+     * @return \Swagger\Client\Model\InlineResponse20025PendingChange
      */
     public function getPendingChange()
     {
@@ -1934,7 +1939,7 @@ class Subscription implements ArrayAccess
 
     /**
      * Sets pending_change
-     * @param \Swagger\Client\Model\InlineResponse20023PendingChange $pending_change
+     * @param \Swagger\Client\Model\InlineResponse20025PendingChange $pending_change
      * @return $this
      */
     public function setPendingChange($pending_change)
@@ -1946,7 +1951,7 @@ class Subscription implements ArrayAccess
 
     /**
      * Gets subscription_changes
-     * @return \Swagger\Client\Model\InlineResponse20023PendingChange[]
+     * @return \Swagger\Client\Model\InlineResponse20025PendingChange[]
      */
     public function getSubscriptionChanges()
     {
@@ -1955,12 +1960,33 @@ class Subscription implements ArrayAccess
 
     /**
      * Sets subscription_changes
-     * @param \Swagger\Client\Model\InlineResponse20023PendingChange[] $subscription_changes List of subscription changes both at most one pending and previously applied
+     * @param \Swagger\Client\Model\InlineResponse20025PendingChange[] $subscription_changes List of subscription changes both at most one pending and previously applied
      * @return $this
      */
     public function setSubscriptionChanges($subscription_changes)
     {
         $this->container['subscription_changes'] = $subscription_changes;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscription_add_ons
+     * @return string[]
+     */
+    public function getSubscriptionAddOns()
+    {
+        return $this->container['subscription_add_ons'];
+    }
+
+    /**
+     * Sets subscription_add_ons
+     * @param string[] $subscription_add_ons List of subscription add-on handles attached to subscription
+     * @return $this
+     */
+    public function setSubscriptionAddOns($subscription_add_ons)
+    {
+        $this->container['subscription_add_ons'] = $subscription_add_ons;
 
         return $this;
     }

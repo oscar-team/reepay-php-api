@@ -83,25 +83,73 @@ class Body5Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "provider"
+     * Test attribute "name"
      */
-    public function testPropertyProvider()
+    public function testPropertyName()
     {
 
     }
 
     /**
-     * Test attribute "card_types"
+     * Test attribute "description"
      */
-    public function testPropertyCardTypes()
+    public function testPropertyDescription()
     {
 
     }
 
     /**
-     * Test attribute "provider_settings"
+     * Test attribute "amount"
      */
-    public function testPropertyProviderSettings()
+    public function testPropertyAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "vat"
+     */
+    public function testPropertyVat()
+    {
+
+    }
+
+    /**
+     * Test attribute "handle"
+     */
+    public function testPropertyHandle()
+    {
+
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount_incl_vat"
+     */
+    public function testPropertyAmountInclVat()
+    {
+
+    }
+
+    /**
+     * Test attribute "all_plans"
+     */
+    public function testPropertyAllPlans()
+    {
+
+    }
+
+    /**
+     * Test attribute "eligible_plans"
+     */
+    public function testPropertyEligiblePlans()
     {
 
     }

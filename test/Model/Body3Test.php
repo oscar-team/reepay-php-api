@@ -83,25 +83,25 @@ class Body3Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "bcc"
+     * Test attribute "discount_apply_order"
      */
-    public function testPropertyBcc()
+    public function testPropertyDiscountApplyOrder()
     {
 
     }
 
     /**
-     * Test attribute "default_from"
+     * Test attribute "discount_percentage_apply"
      */
-    public function testPropertyDefaultFrom()
+    public function testPropertyDiscountPercentageApply()
     {
 
     }
 
     /**
-     * Test attribute "reply_to"
+     * Test attribute "multiple_allowed"
      */
-    public function testPropertyReplyTo()
+    public function testPropertyMultipleAllowed()
     {
 
     }

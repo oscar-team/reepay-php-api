@@ -54,7 +54,8 @@ class Body44 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'email' => 'string'
+        'name' => 'string',
+        'password' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +68,8 @@ class Body44 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'email' => 'email'
+        'name' => 'name',
+        'password' => 'password'
     ];
 
 
@@ -76,7 +78,8 @@ class Body44 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'email' => 'setEmail'
+        'name' => 'setName',
+        'password' => 'setPassword'
     ];
 
 
@@ -85,7 +88,8 @@ class Body44 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'email' => 'getEmail'
+        'name' => 'getName',
+        'password' => 'getPassword'
     ];
 
     public static function attributeMap()
@@ -119,7 +123,8 @@ class Body44 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
     }
 
     /**
@@ -131,8 +136,8 @@ class Body44 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['email'] === null) {
-            $invalid_properties[] = "'email' can't be null";
+        if ($this->container['password'] === null) {
+            $invalid_properties[] = "'password' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +151,7 @@ class Body44 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['email'] === null) {
+        if ($this->container['password'] === null) {
             return false;
         }
         return true;
@@ -154,22 +159,43 @@ class Body44 implements ArrayAccess
 
 
     /**
-     * Gets email
+     * Gets name
      * @return string
      */
-    public function getEmail()
+    public function getName()
     {
-        return $this->container['email'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets email
-     * @param string $email User email
+     * Sets name
+     * @param string $name User name
      * @return $this
      */
-    public function setEmail($email)
+    public function setName($name)
     {
-        $this->container['email'] = $email;
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets password
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->container['password'];
+    }
+
+    /**
+     * Sets password
+     * @param string $password New password
+     * @return $this
+     */
+    public function setPassword($password)
+    {
+        $this->container['password'] = $password;
 
         return $this;
     }

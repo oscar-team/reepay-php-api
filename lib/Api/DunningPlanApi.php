@@ -92,9 +92,9 @@ class DunningPlanApi
      *
      * Create dunning plan
      *
-     * @param \Swagger\Client\Model\Body19 $body  (optional)
+     * @param \Swagger\Client\Model\Body21 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20017
+     * @return \Swagger\Client\Model\InlineResponse20019
      */
     public function createDunningPlanJson($body = null)
     {
@@ -107,9 +107,9 @@ class DunningPlanApi
      *
      * Create dunning plan
      *
-     * @param \Swagger\Client\Model\Body19 $body  (optional)
+     * @param \Swagger\Client\Model\Body21 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20017, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20019, HTTP status code, HTTP response headers (array of strings)
      */
     public function createDunningPlanJsonWithHttpInfo($body = null)
     {
@@ -157,15 +157,15 @@ class DunningPlanApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20017',
+                '\Swagger\Client\Model\InlineResponse20019',
                 '/v1/dunning_plan'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20017', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20019', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20017', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20019', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -201,7 +201,7 @@ class DunningPlanApi
      *
      * @param string $handle Dunning plan handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20017
+     * @return \Swagger\Client\Model\InlineResponse20019
      */
     public function deleteDunningPlan($handle)
     {
@@ -216,7 +216,7 @@ class DunningPlanApi
      *
      * @param string $handle Dunning plan handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20017, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20019, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteDunningPlanWithHttpInfo($handle)
     {
@@ -271,15 +271,15 @@ class DunningPlanApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20017',
+                '\Swagger\Client\Model\InlineResponse20019',
                 '/v1/dunning_plan/{handle}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20017', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20019', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20017', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20019', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -315,7 +315,7 @@ class DunningPlanApi
      *
      * @param string $handle Dunning plan handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20017
+     * @return \Swagger\Client\Model\InlineResponse20019
      */
     public function getDunningPlan($handle)
     {
@@ -330,7 +330,7 @@ class DunningPlanApi
      *
      * @param string $handle Dunning plan handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20017, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20019, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDunningPlanWithHttpInfo($handle)
     {
@@ -385,15 +385,15 @@ class DunningPlanApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20017',
+                '\Swagger\Client\Model\InlineResponse20019',
                 '/v1/dunning_plan/{handle}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20017', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20019', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20017', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20019', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -428,7 +428,7 @@ class DunningPlanApi
      * Get list of dunning plans
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20017[]
+     * @return \Swagger\Client\Model\InlineResponse20019[]
      */
     public function getDunningPlans()
     {
@@ -442,7 +442,7 @@ class DunningPlanApi
      * Get list of dunning plans
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20017[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20019[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getDunningPlansWithHttpInfo()
     {
@@ -485,15 +485,15 @@ class DunningPlanApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20017[]',
+                '\Swagger\Client\Model\InlineResponse20019[]',
                 '/v1/dunning_plan'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20017[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20019[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20017[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20019[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -528,9 +528,9 @@ class DunningPlanApi
      * Update dunning plan
      *
      * @param string $handle Dunning plan handle (required)
-     * @param \Swagger\Client\Model\Body20 $body  (optional)
+     * @param \Swagger\Client\Model\Body22 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20017
+     * @return \Swagger\Client\Model\InlineResponse20019
      */
     public function updateJson($handle, $body = null)
     {
@@ -544,9 +544,9 @@ class DunningPlanApi
      * Update dunning plan
      *
      * @param string $handle Dunning plan handle (required)
-     * @param \Swagger\Client\Model\Body20 $body  (optional)
+     * @param \Swagger\Client\Model\Body22 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20017, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20019, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateJsonWithHttpInfo($handle, $body = null)
     {
@@ -606,15 +606,15 @@ class DunningPlanApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20017',
+                '\Swagger\Client\Model\InlineResponse20019',
                 '/v1/dunning_plan/{handle}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20017', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20019', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20017', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20019', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

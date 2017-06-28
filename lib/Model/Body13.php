@@ -54,17 +54,11 @@ class Body13 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'email' => 'string',
-        'address' => 'string',
-        'address2' => 'string',
-        'city' => 'string',
-        'country' => 'string',
-        'phone' => 'string',
-        'company' => 'string',
-        'vat' => 'string',
-        'first_name' => 'string',
-        'last_name' => 'string',
-        'postal_code' => 'string'
+        'subscription' => 'string',
+        'handle' => 'string',
+        'amount' => 'int',
+        'text' => 'string',
+        'valid_from' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -77,17 +71,11 @@ class Body13 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'email' => 'email',
-        'address' => 'address',
-        'address2' => 'address2',
-        'city' => 'city',
-        'country' => 'country',
-        'phone' => 'phone',
-        'company' => 'company',
-        'vat' => 'vat',
-        'first_name' => 'first_name',
-        'last_name' => 'last_name',
-        'postal_code' => 'postal_code'
+        'subscription' => 'subscription',
+        'handle' => 'handle',
+        'amount' => 'amount',
+        'text' => 'text',
+        'valid_from' => 'valid_from'
     ];
 
 
@@ -96,17 +84,11 @@ class Body13 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'email' => 'setEmail',
-        'address' => 'setAddress',
-        'address2' => 'setAddress2',
-        'city' => 'setCity',
-        'country' => 'setCountry',
-        'phone' => 'setPhone',
-        'company' => 'setCompany',
-        'vat' => 'setVat',
-        'first_name' => 'setFirstName',
-        'last_name' => 'setLastName',
-        'postal_code' => 'setPostalCode'
+        'subscription' => 'setSubscription',
+        'handle' => 'setHandle',
+        'amount' => 'setAmount',
+        'text' => 'setText',
+        'valid_from' => 'setValidFrom'
     ];
 
 
@@ -115,17 +97,11 @@ class Body13 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'email' => 'getEmail',
-        'address' => 'getAddress',
-        'address2' => 'getAddress2',
-        'city' => 'getCity',
-        'country' => 'getCountry',
-        'phone' => 'getPhone',
-        'company' => 'getCompany',
-        'vat' => 'getVat',
-        'first_name' => 'getFirstName',
-        'last_name' => 'getLastName',
-        'postal_code' => 'getPostalCode'
+        'subscription' => 'getSubscription',
+        'handle' => 'getHandle',
+        'amount' => 'getAmount',
+        'text' => 'getText',
+        'valid_from' => 'getValidFrom'
     ];
 
     public static function attributeMap()
@@ -159,17 +135,11 @@ class Body13 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
-        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
-        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
-        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
-        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
-        $this->container['company'] = isset($data['company']) ? $data['company'] : null;
-        $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
-        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
-        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
+        $this->container['subscription'] = isset($data['subscription']) ? $data['subscription'] : null;
+        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
+        $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
     }
 
     /**
@@ -181,6 +151,22 @@ class Body13 implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['subscription'] === null) {
+            $invalid_properties[] = "'subscription' can't be null";
+        }
+        if ($this->container['handle'] === null) {
+            $invalid_properties[] = "'handle' can't be null";
+        }
+        if ($this->container['amount'] === null) {
+            $invalid_properties[] = "'amount' can't be null";
+        }
+        if (($this->container['amount'] < 0)) {
+            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
+        }
+
+        if ($this->container['text'] === null) {
+            $invalid_properties[] = "'text' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -193,237 +179,131 @@ class Body13 implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['subscription'] === null) {
+            return false;
+        }
+        if ($this->container['handle'] === null) {
+            return false;
+        }
+        if ($this->container['amount'] === null) {
+            return false;
+        }
+        if ($this->container['amount'] < 0) {
+            return false;
+        }
+        if ($this->container['text'] === null) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets email
+     * Gets subscription
      * @return string
      */
-    public function getEmail()
+    public function getSubscription()
     {
-        return $this->container['email'];
+        return $this->container['subscription'];
     }
 
     /**
-     * Sets email
-     * @param string $email Customer email
+     * Sets subscription
+     * @param string $subscription Subscription by handle to add the credit to
      * @return $this
      */
-    public function setEmail($email)
+    public function setSubscription($subscription)
     {
-        $this->container['email'] = $email;
+        $this->container['subscription'] = $subscription;
 
         return $this;
     }
 
     /**
-     * Gets address
+     * Gets handle
      * @return string
      */
-    public function getAddress()
+    public function getHandle()
     {
-        return $this->container['address'];
+        return $this->container['handle'];
     }
 
     /**
-     * Sets address
-     * @param string $address Customer address
+     * Sets handle
+     * @param string $handle Per account unique handle for the credit. Max length 255 with allowable characters [a-zA-Z0-9_.-@].
      * @return $this
      */
-    public function setAddress($address)
+    public function setHandle($handle)
     {
-        $this->container['address'] = $address;
+        $this->container['handle'] = $handle;
 
         return $this;
     }
 
     /**
-     * Gets address2
-     * @return string
+     * Gets amount
+     * @return int
      */
-    public function getAddress2()
+    public function getAmount()
     {
-        return $this->container['address2'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets address2
-     * @param string $address2 Customer address2
+     * Sets amount
+     * @param int $amount Credit amount in the smallest unit for the account currency
      * @return $this
      */
-    public function setAddress2($address2)
+    public function setAmount($amount)
     {
-        $this->container['address2'] = $address2;
+
+        if (($amount < 0)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling Body13., must be bigger than or equal to 0.');
+        }
+
+        $this->container['amount'] = $amount;
 
         return $this;
     }
 
     /**
-     * Gets city
+     * Gets text
      * @return string
      */
-    public function getCity()
+    public function getText()
     {
-        return $this->container['city'];
+        return $this->container['text'];
     }
 
     /**
-     * Sets city
-     * @param string $city Customer city
+     * Sets text
+     * @param string $text Text describing the credit. Will be on affected invoices.
      * @return $this
      */
-    public function setCity($city)
+    public function setText($text)
     {
-        $this->container['city'] = $city;
+        $this->container['text'] = $text;
 
         return $this;
     }
 
     /**
-     * Gets country
+     * Gets valid_from
      * @return string
      */
-    public function getCountry()
+    public function getValidFrom()
     {
-        return $this->container['country'];
+        return $this->container['valid_from'];
     }
 
     /**
-     * Sets country
-     * @param string $country Customer country in ISO 3166-1 alpha-2
+     * Sets valid_from
+     * @param string $valid_from Date on the form yyyy-MM-dd from which the credit is valid. The credit will not be deducted from invoices before this date.
      * @return $this
      */
-    public function setCountry($country)
+    public function setValidFrom($valid_from)
     {
-        $this->container['country'] = $country;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone
-     * @return string
-     */
-    public function getPhone()
-    {
-        return $this->container['phone'];
-    }
-
-    /**
-     * Sets phone
-     * @param string $phone Customer phone number
-     * @return $this
-     */
-    public function setPhone($phone)
-    {
-        $this->container['phone'] = $phone;
-
-        return $this;
-    }
-
-    /**
-     * Gets company
-     * @return string
-     */
-    public function getCompany()
-    {
-        return $this->container['company'];
-    }
-
-    /**
-     * Sets company
-     * @param string $company Customer company
-     * @return $this
-     */
-    public function setCompany($company)
-    {
-        $this->container['company'] = $company;
-
-        return $this;
-    }
-
-    /**
-     * Gets vat
-     * @return string
-     */
-    public function getVat()
-    {
-        return $this->container['vat'];
-    }
-
-    /**
-     * Sets vat
-     * @param string $vat Customer vat number
-     * @return $this
-     */
-    public function setVat($vat)
-    {
-        $this->container['vat'] = $vat;
-
-        return $this;
-    }
-
-    /**
-     * Gets first_name
-     * @return string
-     */
-    public function getFirstName()
-    {
-        return $this->container['first_name'];
-    }
-
-    /**
-     * Sets first_name
-     * @param string $first_name Customer first name
-     * @return $this
-     */
-    public function setFirstName($first_name)
-    {
-        $this->container['first_name'] = $first_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets last_name
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->container['last_name'];
-    }
-
-    /**
-     * Sets last_name
-     * @param string $last_name Customer last name
-     * @return $this
-     */
-    public function setLastName($last_name)
-    {
-        $this->container['last_name'] = $last_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets postal_code
-     * @return string
-     */
-    public function getPostalCode()
-    {
-        return $this->container['postal_code'];
-    }
-
-    /**
-     * Sets postal_code
-     * @param string $postal_code Customer postal code
-     * @return $this
-     */
-    public function setPostalCode($postal_code)
-    {
-        $this->container['postal_code'] = $postal_code;
+        $this->container['valid_from'] = $valid_from;
 
         return $this;
     }

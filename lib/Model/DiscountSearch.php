@@ -60,7 +60,7 @@ class DiscountSearch implements ArrayAccess
         'count' => 'int',
         'search' => 'string',
         'sort' => 'string',
-        'content' => '\Swagger\Client\Model\InlineResponse20016Content[]',
+        'content' => '\Swagger\Client\Model\InlineResponse20018Content[]',
         'total_elements' => 'int',
         'total_pages' => 'int'
     ];
@@ -376,7 +376,7 @@ class DiscountSearch implements ArrayAccess
 
     /**
      * Gets content
-     * @return \Swagger\Client\Model\InlineResponse20016Content[]
+     * @return \Swagger\Client\Model\InlineResponse20018Content[]
      */
     public function getContent()
     {
@@ -385,7 +385,7 @@ class DiscountSearch implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Swagger\Client\Model\InlineResponse20016Content[] $content List of discounts for current page
+     * @param \Swagger\Client\Model\InlineResponse20018Content[] $content List of discounts for current page
      * @return $this
      */
     public function setContent($content)

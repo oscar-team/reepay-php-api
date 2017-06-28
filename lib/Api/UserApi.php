@@ -204,7 +204,7 @@ class UserApi
      *
      * @param string $id User id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20029
+     * @return \Swagger\Client\Model\InlineResponse20031
      */
     public function getUser($id)
     {
@@ -219,7 +219,7 @@ class UserApi
      *
      * @param string $id User id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20029, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20031, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUserWithHttpInfo($id)
     {
@@ -274,15 +274,15 @@ class UserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20029',
+                '\Swagger\Client\Model\InlineResponse20031',
                 '/v1/user/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20029', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20031', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20029', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20031', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -317,7 +317,7 @@ class UserApi
      * Get users
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20029[]
+     * @return \Swagger\Client\Model\InlineResponse20031[]
      */
     public function getUsers()
     {
@@ -331,7 +331,7 @@ class UserApi
      * Get users
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20029[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20031[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getUsersWithHttpInfo()
     {
@@ -374,15 +374,15 @@ class UserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20029[]',
+                '\Swagger\Client\Model\InlineResponse20031[]',
                 '/v1/user'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20029[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20031[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20029[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20031[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -416,9 +416,9 @@ class UserApi
      *
      * Invite user
      *
-     * @param \Swagger\Client\Model\Body42 $body  (optional)
+     * @param \Swagger\Client\Model\Body43 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20029
+     * @return \Swagger\Client\Model\InlineResponse20031
      */
     public function inviteUser($body = null)
     {
@@ -431,9 +431,9 @@ class UserApi
      *
      * Invite user
      *
-     * @param \Swagger\Client\Model\Body42 $body  (optional)
+     * @param \Swagger\Client\Model\Body43 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20029, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20031, HTTP status code, HTTP response headers (array of strings)
      */
     public function inviteUserWithHttpInfo($body = null)
     {
@@ -481,15 +481,15 @@ class UserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20029',
+                '\Swagger\Client\Model\InlineResponse20031',
                 '/v1/user/invite'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20029', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20031', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20029', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20031', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -524,9 +524,9 @@ class UserApi
      * Accept invite
      *
      * @param string $token Invite token (required)
-     * @param \Swagger\Client\Model\Body43 $body  (optional)
+     * @param \Swagger\Client\Model\Body44 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20029
+     * @return \Swagger\Client\Model\InlineResponse20031
      */
     public function inviteUserAccept($token, $body = null)
     {
@@ -540,9 +540,9 @@ class UserApi
      * Accept invite
      *
      * @param string $token Invite token (required)
-     * @param \Swagger\Client\Model\Body43 $body  (optional)
+     * @param \Swagger\Client\Model\Body44 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20029, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20031, HTTP status code, HTTP response headers (array of strings)
      */
     public function inviteUserAcceptWithHttpInfo($token, $body = null)
     {
@@ -593,15 +593,15 @@ class UserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20029',
+                '\Swagger\Client\Model\InlineResponse20031',
                 '/v1/user/invite/{token}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20029', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20031', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20029', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20031', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -637,7 +637,7 @@ class UserApi
      *
      * @param string $token Invite token (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20029
+     * @return \Swagger\Client\Model\InlineResponse20031
      */
     public function inviteUserGet($token)
     {
@@ -652,7 +652,7 @@ class UserApi
      *
      * @param string $token Invite token (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20029, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20031, HTTP status code, HTTP response headers (array of strings)
      */
     public function inviteUserGetWithHttpInfo($token)
     {
@@ -698,15 +698,15 @@ class UserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20029',
+                '\Swagger\Client\Model\InlineResponse20031',
                 '/v1/user/invite/{token}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20029', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20031', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20029', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20031', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -740,7 +740,7 @@ class UserApi
      *
      * Reset password request
      *
-     * @param \Swagger\Client\Model\Body44 $body  (optional)
+     * @param \Swagger\Client\Model\Body45 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return void
      */
@@ -755,7 +755,7 @@ class UserApi
      *
      * Reset password request
      *
-     * @param \Swagger\Client\Model\Body44 $body  (optional)
+     * @param \Swagger\Client\Model\Body45 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -835,9 +835,9 @@ class UserApi
      * Reset password
      *
      * @param string $token Reset password token (required)
-     * @param \Swagger\Client\Model\Body45 $body  (optional)
+     * @param \Swagger\Client\Model\Body46 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2008User
+     * @return \Swagger\Client\Model\InlineResponse2009User
      */
     public function resetPasswordWithToken($token, $body = null)
     {
@@ -851,9 +851,9 @@ class UserApi
      * Reset password
      *
      * @param string $token Reset password token (required)
-     * @param \Swagger\Client\Model\Body45 $body  (optional)
+     * @param \Swagger\Client\Model\Body46 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2008User, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2009User, HTTP status code, HTTP response headers (array of strings)
      */
     public function resetPasswordWithTokenWithHttpInfo($token, $body = null)
     {
@@ -904,15 +904,15 @@ class UserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2008User',
+                '\Swagger\Client\Model\InlineResponse2009User',
                 '/v1/user/reset_password/{token}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2008User', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2009User', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2008User', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2009User', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -947,9 +947,9 @@ class UserApi
      * Update user groups
      *
      * @param string $id User id (required)
-     * @param \Swagger\Client\Model\Body41 $body  (optional)
+     * @param \Swagger\Client\Model\Body42 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20029
+     * @return \Swagger\Client\Model\InlineResponse20031
      */
     public function updateAuth($id, $body = null)
     {
@@ -963,9 +963,9 @@ class UserApi
      * Update user groups
      *
      * @param string $id User id (required)
-     * @param \Swagger\Client\Model\Body41 $body  (optional)
+     * @param \Swagger\Client\Model\Body42 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20029, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20031, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateAuthWithHttpInfo($id, $body = null)
     {
@@ -1025,15 +1025,15 @@ class UserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20029',
+                '\Swagger\Client\Model\InlineResponse20031',
                 '/v1/user/{id}/groups'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20029', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20031', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20029', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20031', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1068,9 +1068,9 @@ class UserApi
      * Change password
      *
      * @param string $id User id (required)
-     * @param \Swagger\Client\Model\Body40 $body  (optional)
+     * @param \Swagger\Client\Model\Body47 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20029
+     * @return \Swagger\Client\Model\InlineResponse20031
      */
     public function updatePassword($id, $body = null)
     {
@@ -1084,9 +1084,9 @@ class UserApi
      * Change password
      *
      * @param string $id User id (required)
-     * @param \Swagger\Client\Model\Body40 $body  (optional)
+     * @param \Swagger\Client\Model\Body47 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20029, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20031, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePasswordWithHttpInfo($id, $body = null)
     {
@@ -1146,15 +1146,15 @@ class UserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20029',
+                '\Swagger\Client\Model\InlineResponse20031',
                 '/v1/user/{id}/password'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20029', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20031', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20029', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20031', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1189,9 +1189,9 @@ class UserApi
      * Update user
      *
      * @param string $id User id (required)
-     * @param \Swagger\Client\Model\Body39 $body  (optional)
+     * @param \Swagger\Client\Model\Body41 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20029
+     * @return \Swagger\Client\Model\InlineResponse20031
      */
     public function updateUser($id, $body = null)
     {
@@ -1205,9 +1205,9 @@ class UserApi
      * Update user
      *
      * @param string $id User id (required)
-     * @param \Swagger\Client\Model\Body39 $body  (optional)
+     * @param \Swagger\Client\Model\Body41 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20029, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20031, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateUserWithHttpInfo($id, $body = null)
     {
@@ -1267,15 +1267,15 @@ class UserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20029',
+                '\Swagger\Client\Model\InlineResponse20031',
                 '/v1/user/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20029', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20031', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20029', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20031', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -1311,7 +1311,7 @@ class UserApi
      *
      * @param string $token Verify email token (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse2008User
+     * @return \Swagger\Client\Model\InlineResponse2009User
      */
     public function verifyEmail($token)
     {
@@ -1326,7 +1326,7 @@ class UserApi
      *
      * @param string $token Verify email token (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse2008User, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse2009User, HTTP status code, HTTP response headers (array of strings)
      */
     public function verifyEmailWithHttpInfo($token)
     {
@@ -1372,15 +1372,15 @@ class UserApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse2008User',
+                '\Swagger\Client\Model\InlineResponse2009User',
                 '/v1/user/verify_email/{token}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2008User', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse2009User', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2008User', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse2009User', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

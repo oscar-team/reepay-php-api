@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **disableWebhooks**
-> \Swagger\Client\Model\InlineResponse20030[] disableWebhooks($body)
+> \Swagger\Client\Model\InlineResponse20032[] disableWebhooks($body)
 
 Disable webhooks
 
@@ -33,7 +33,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\WebhookApi();
-$body = new \Swagger\Client\Model\Body47(); // \Swagger\Client\Model\Body47 | 
+$body = new \Swagger\Client\Model\Body49(); // \Swagger\Client\Model\Body49 | 
 
 try {
     $result = $api_instance->disableWebhooks($body);
@@ -48,11 +48,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body47**](../Model/\Swagger\Client\Model\Body47.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body49**](../Model/\Swagger\Client\Model\Body49.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20030[]**](../Model/InlineResponse20030.md)
+[**\Swagger\Client\Model\InlineResponse20032[]**](../Model/InlineResponse20032.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhook**
-> \Swagger\Client\Model\InlineResponse20030[] getWebhook($id)
+> \Swagger\Client\Model\InlineResponse20032[] getWebhook($id)
 
 Get webhooks
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20030[]**](../Model/InlineResponse20030.md)
+[**\Swagger\Client\Model\InlineResponse20032[]**](../Model/InlineResponse20032.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookRequests**
-> \Swagger\Client\Model\InlineResponse20031[] getWebhookRequests($id)
+> \Swagger\Client\Model\InlineResponse20033[] getWebhookRequests($id)
 
 Get webhook requests
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20031[]**](../Model/InlineResponse20031.md)
+[**\Swagger\Client\Model\InlineResponse20033[]**](../Model/InlineResponse20033.md)
 
 ### Authorization
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhooks**
-> \Swagger\Client\Model\InlineResponse20030[] getWebhooks($created_before, $size, $state)
+> \Swagger\Client\Model\InlineResponse20032[] getWebhooks($created_before, $size, $state)
 
 Get list of webhooks
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20030[]**](../Model/InlineResponse20030.md)
+[**\Swagger\Client\Model\InlineResponse20032[]**](../Model/InlineResponse20032.md)
 
 ### Authorization
 
@@ -229,62 +229,9 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **resendJson**
-> \Swagger\Client\Model\InlineResponse20030[] resendJson($body)
+> \Swagger\Client\Model\InlineResponse20032[] resendJson($body)
 
 Re-send webhooks
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$api_instance = new Swagger\Client\Api\WebhookApi();
-$body = new \Swagger\Client\Model\Body46(); // \Swagger\Client\Model\Body46 | 
-
-try {
-    $result = $api_instance->resendJson($body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling WebhookApi->resendJson: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body46**](../Model/\Swagger\Client\Model\Body46.md)|  | [optional]
-
-### Return type
-
-[**\Swagger\Client\Model\InlineResponse20030[]**](../Model/InlineResponse20030.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **updateWebhooks**
-> \Swagger\Client\Model\InlineResponse20030[] updateWebhooks($body)
-
-Update and resend webhooks
 
 
 
@@ -305,10 +252,10 @@ $api_instance = new Swagger\Client\Api\WebhookApi();
 $body = new \Swagger\Client\Model\Body48(); // \Swagger\Client\Model\Body48 | 
 
 try {
-    $result = $api_instance->updateWebhooks($body);
+    $result = $api_instance->resendJson($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling WebhookApi->updateWebhooks: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling WebhookApi->resendJson: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -321,7 +268,60 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20030[]**](../Model/InlineResponse20030.md)
+[**\Swagger\Client\Model\InlineResponse20032[]**](../Model/InlineResponse20032.md)
+
+### Authorization
+
+[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateWebhooks**
+> \Swagger\Client\Model\InlineResponse20032[] updateWebhooks($body)
+
+Update and resend webhooks
+
+
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: apiKey
+Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Configure HTTP basic authorization: basicAuth
+Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+
+$api_instance = new Swagger\Client\Api\WebhookApi();
+$body = new \Swagger\Client\Model\Body50(); // \Swagger\Client\Model\Body50 | 
+
+try {
+    $result = $api_instance->updateWebhooks($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling WebhookApi->updateWebhooks: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\Body50**](../Model/\Swagger\Client\Model\Body50.md)|  | [optional]
+
+### Return type
+
+[**\Swagger\Client\Model\InlineResponse20032[]**](../Model/InlineResponse20032.md)
 
 ### Authorization
 

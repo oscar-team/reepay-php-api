@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getOrganisation**
-> \Swagger\Client\Model\InlineResponse2008Organisation getOrganisation()
+> \Swagger\Client\Model\InlineResponse2009Organisation getOrganisation()
 
 Get organisation
 
@@ -44,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2008Organisation**](../Model/InlineResponse2008Organisation.md)
+[**\Swagger\Client\Model\InlineResponse2009Organisation**](../Model/InlineResponse2009Organisation.md)
 
 ### Authorization
 
@@ -58,7 +58,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **update**
-> \Swagger\Client\Model\InlineResponse2008Organisation update($body)
+> \Swagger\Client\Model\InlineResponse2009Organisation update($body)
 
 Update organisation
 
@@ -78,7 +78,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\OrganisationApi();
-$body = new \Swagger\Client\Model\Body23(); // \Swagger\Client\Model\Body23 | 
+$body = new \Swagger\Client\Model\Body25(); // \Swagger\Client\Model\Body25 | 
 
 try {
     $result = $api_instance->update($body);
@@ -93,11 +93,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body23**](../Model/\Swagger\Client\Model\Body23.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body25**](../Model/\Swagger\Client\Model\Body25.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2008Organisation**](../Model/InlineResponse2008Organisation.md)
+[**\Swagger\Client\Model\InlineResponse2009Organisation**](../Model/InlineResponse2009Organisation.md)
 
 ### Authorization
 

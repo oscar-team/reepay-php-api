@@ -83,70 +83,6 @@ class InlineResponse20012ContentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "email"
-     */
-    public function testPropertyEmail()
-    {
-
-    }
-
-    /**
-     * Test attribute "address"
-     */
-    public function testPropertyAddress()
-    {
-
-    }
-
-    /**
-     * Test attribute "address2"
-     */
-    public function testPropertyAddress2()
-    {
-
-    }
-
-    /**
-     * Test attribute "city"
-     */
-    public function testPropertyCity()
-    {
-
-    }
-
-    /**
-     * Test attribute "country"
-     */
-    public function testPropertyCountry()
-    {
-
-    }
-
-    /**
-     * Test attribute "phone"
-     */
-    public function testPropertyPhone()
-    {
-
-    }
-
-    /**
-     * Test attribute "company"
-     */
-    public function testPropertyCompany()
-    {
-
-    }
-
-    /**
-     * Test attribute "vat"
-     */
-    public function testPropertyVat()
-    {
-
-    }
-
-    /**
      * Test attribute "handle"
      */
     public function testPropertyHandle()
@@ -155,17 +91,57 @@ class InlineResponse20012ContentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "test"
+     * Test attribute "code"
      */
-    public function testPropertyTest()
+    public function testPropertyCode()
     {
 
     }
 
     /**
-     * Test attribute "subscriptions"
+     * Test attribute "discount"
      */
-    public function testPropertySubscriptions()
+    public function testPropertyDiscount()
+    {
+
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+
+    }
+
+    /**
+     * Test attribute "state"
+     */
+    public function testPropertyState()
+    {
+
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+
+    }
+
+    /**
+     * Test attribute "redemptions"
+     */
+    public function testPropertyRedemptions()
+    {
+
+    }
+
+    /**
+     * Test attribute "expired"
+     */
+    public function testPropertyExpired()
     {
 
     }
@@ -179,241 +155,41 @@ class InlineResponse20012ContentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "deleted"
+     * Test attribute "all_plans"
      */
-    public function testPropertyDeleted()
+    public function testPropertyAllPlans()
     {
 
     }
 
     /**
-     * Test attribute "first_name"
+     * Test attribute "eligible_plans"
      */
-    public function testPropertyFirstName()
+    public function testPropertyEligiblePlans()
     {
 
     }
 
     /**
-     * Test attribute "last_name"
+     * Test attribute "max_redemptions"
      */
-    public function testPropertyLastName()
+    public function testPropertyMaxRedemptions()
     {
 
     }
 
     /**
-     * Test attribute "postal_code"
+     * Test attribute "valid_until"
      */
-    public function testPropertyPostalCode()
+    public function testPropertyValidUntil()
     {
 
     }
 
     /**
-     * Test attribute "active_subscriptions"
+     * Test attribute "expire_reason"
      */
-    public function testPropertyActiveSubscriptions()
-    {
-
-    }
-
-    /**
-     * Test attribute "trial_active_subscriptions"
-     */
-    public function testPropertyTrialActiveSubscriptions()
-    {
-
-    }
-
-    /**
-     * Test attribute "trial_cancelled_subscriptions"
-     */
-    public function testPropertyTrialCancelledSubscriptions()
-    {
-
-    }
-
-    /**
-     * Test attribute "expired_subscriptions"
-     */
-    public function testPropertyExpiredSubscriptions()
-    {
-
-    }
-
-    /**
-     * Test attribute "on_hold_subscriptions"
-     */
-    public function testPropertyOnHoldSubscriptions()
-    {
-
-    }
-
-    /**
-     * Test attribute "cancelled_subscriptions"
-     */
-    public function testPropertyCancelledSubscriptions()
-    {
-
-    }
-
-    /**
-     * Test attribute "non_renewing_subscriptions"
-     */
-    public function testPropertyNonRenewingSubscriptions()
-    {
-
-    }
-
-    /**
-     * Test attribute "failed_invoices"
-     */
-    public function testPropertyFailedInvoices()
-    {
-
-    }
-
-    /**
-     * Test attribute "failed_amount"
-     */
-    public function testPropertyFailedAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "cancelled_invoices"
-     */
-    public function testPropertyCancelledInvoices()
-    {
-
-    }
-
-    /**
-     * Test attribute "cancelled_amount"
-     */
-    public function testPropertyCancelledAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "pending_invoices"
-     */
-    public function testPropertyPendingInvoices()
-    {
-
-    }
-
-    /**
-     * Test attribute "pending_amount"
-     */
-    public function testPropertyPendingAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "dunning_invoices"
-     */
-    public function testPropertyDunningInvoices()
-    {
-
-    }
-
-    /**
-     * Test attribute "dunning_amount"
-     */
-    public function testPropertyDunningAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "settled_invoices"
-     */
-    public function testPropertySettledInvoices()
-    {
-
-    }
-
-    /**
-     * Test attribute "settled_amount"
-     */
-    public function testPropertySettledAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "refunded_amount"
-     */
-    public function testPropertyRefundedAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "pending_additional_costs"
-     */
-    public function testPropertyPendingAdditionalCosts()
-    {
-
-    }
-
-    /**
-     * Test attribute "pending_additional_cost_amount"
-     */
-    public function testPropertyPendingAdditionalCostAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "transferred_additional_costs"
-     */
-    public function testPropertyTransferredAdditionalCosts()
-    {
-
-    }
-
-    /**
-     * Test attribute "transferred_additional_cost_amount"
-     */
-    public function testPropertyTransferredAdditionalCostAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "pending_credits"
-     */
-    public function testPropertyPendingCredits()
-    {
-
-    }
-
-    /**
-     * Test attribute "pending_credit_amount"
-     */
-    public function testPropertyPendingCreditAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "transferred_credits"
-     */
-    public function testPropertyTransferredCredits()
-    {
-
-    }
-
-    /**
-     * Test attribute "transferred_credit_amount"
-     */
-    public function testPropertyTransferredCreditAmount()
+    public function testPropertyExpireReason()
     {
 
     }

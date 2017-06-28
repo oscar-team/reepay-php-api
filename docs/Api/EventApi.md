@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **getEvent**
-> \Swagger\Client\Model\InlineResponse20018Content getEvent($id)
+> \Swagger\Client\Model\InlineResponse20020Content getEvent($id)
 
 Get event
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20018Content**](../Model/InlineResponse20018Content.md)
+[**\Swagger\Client\Model\InlineResponse20020Content**](../Model/InlineResponse20020Content.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getEvents**
-> \Swagger\Client\Model\InlineResponse20018 getEvents($page, $size, $customer, $subscription, $invoice)
+> \Swagger\Client\Model\InlineResponse20020 getEvents($page, $size, $customer, $subscription, $invoice)
 
 Get list of events
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20018**](../Model/InlineResponse20018.md)
+[**\Swagger\Client\Model\InlineResponse20020**](../Model/InlineResponse20020.md)
 
 ### Authorization
 

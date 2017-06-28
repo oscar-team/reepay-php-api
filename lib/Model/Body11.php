@@ -54,11 +54,14 @@ class Body11 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'subscription' => 'string',
+        'name' => 'string',
         'handle' => 'string',
-        'amount' => 'int',
-        'text' => 'string',
-        'valid_from' => 'string'
+        'code' => 'string',
+        'discount' => 'string',
+        'all_plans' => 'bool',
+        'eligible_plans' => 'string[]',
+        'max_redemptions' => 'int',
+        'valid_until' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -71,11 +74,14 @@ class Body11 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'subscription' => 'subscription',
+        'name' => 'name',
         'handle' => 'handle',
-        'amount' => 'amount',
-        'text' => 'text',
-        'valid_from' => 'valid_from'
+        'code' => 'code',
+        'discount' => 'discount',
+        'all_plans' => 'all_plans',
+        'eligible_plans' => 'eligible_plans',
+        'max_redemptions' => 'max_redemptions',
+        'valid_until' => 'valid_until'
     ];
 
 
@@ -84,11 +90,14 @@ class Body11 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'subscription' => 'setSubscription',
+        'name' => 'setName',
         'handle' => 'setHandle',
-        'amount' => 'setAmount',
-        'text' => 'setText',
-        'valid_from' => 'setValidFrom'
+        'code' => 'setCode',
+        'discount' => 'setDiscount',
+        'all_plans' => 'setAllPlans',
+        'eligible_plans' => 'setEligiblePlans',
+        'max_redemptions' => 'setMaxRedemptions',
+        'valid_until' => 'setValidUntil'
     ];
 
 
@@ -97,11 +106,14 @@ class Body11 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'subscription' => 'getSubscription',
+        'name' => 'getName',
         'handle' => 'getHandle',
-        'amount' => 'getAmount',
-        'text' => 'getText',
-        'valid_from' => 'getValidFrom'
+        'code' => 'getCode',
+        'discount' => 'getDiscount',
+        'all_plans' => 'getAllPlans',
+        'eligible_plans' => 'getEligiblePlans',
+        'max_redemptions' => 'getMaxRedemptions',
+        'valid_until' => 'getValidUntil'
     ];
 
     public static function attributeMap()
@@ -135,11 +147,14 @@ class Body11 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['subscription'] = isset($data['subscription']) ? $data['subscription'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
-        $this->container['valid_from'] = isset($data['valid_from']) ? $data['valid_from'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['discount'] = isset($data['discount']) ? $data['discount'] : null;
+        $this->container['all_plans'] = isset($data['all_plans']) ? $data['all_plans'] : null;
+        $this->container['eligible_plans'] = isset($data['eligible_plans']) ? $data['eligible_plans'] : null;
+        $this->container['max_redemptions'] = isset($data['max_redemptions']) ? $data['max_redemptions'] : null;
+        $this->container['valid_until'] = isset($data['valid_until']) ? $data['valid_until'] : null;
     }
 
     /**
@@ -151,22 +166,22 @@ class Body11 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['subscription'] === null) {
-            $invalid_properties[] = "'subscription' can't be null";
+        if ($this->container['name'] === null) {
+            $invalid_properties[] = "'name' can't be null";
         }
         if ($this->container['handle'] === null) {
             $invalid_properties[] = "'handle' can't be null";
         }
-        if ($this->container['amount'] === null) {
-            $invalid_properties[] = "'amount' can't be null";
+        if ($this->container['code'] === null) {
+            $invalid_properties[] = "'code' can't be null";
         }
-        if (($this->container['amount'] < 0)) {
-            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
+        if ($this->container['discount'] === null) {
+            $invalid_properties[] = "'discount' can't be null";
+        }
+        if (!is_null($this->container['max_redemptions']) && ($this->container['max_redemptions'] < 1)) {
+            $invalid_properties[] = "invalid value for 'max_redemptions', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['text'] === null) {
-            $invalid_properties[] = "'text' can't be null";
-        }
         return $invalid_properties;
     }
 
@@ -179,19 +194,19 @@ class Body11 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['subscription'] === null) {
+        if ($this->container['name'] === null) {
             return false;
         }
         if ($this->container['handle'] === null) {
             return false;
         }
-        if ($this->container['amount'] === null) {
+        if ($this->container['code'] === null) {
             return false;
         }
-        if ($this->container['amount'] < 0) {
+        if ($this->container['discount'] === null) {
             return false;
         }
-        if ($this->container['text'] === null) {
+        if ($this->container['max_redemptions'] < 1) {
             return false;
         }
         return true;
@@ -199,22 +214,22 @@ class Body11 implements ArrayAccess
 
 
     /**
-     * Gets subscription
+     * Gets name
      * @return string
      */
-    public function getSubscription()
+    public function getName()
     {
-        return $this->container['subscription'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets subscription
-     * @param string $subscription Subscription by handle to add the credit to
+     * Sets name
+     * @param string $name Internal name for the coupon.
      * @return $this
      */
-    public function setSubscription($subscription)
+    public function setName($name)
     {
-        $this->container['subscription'] = $subscription;
+        $this->container['name'] = $name;
 
         return $this;
     }
@@ -230,7 +245,7 @@ class Body11 implements ArrayAccess
 
     /**
      * Sets handle
-     * @param string $handle Per account unique handle for the credit. Max length 255 with allowable characters [a-zA-Z0-9_.-@].
+     * @param string $handle Per account unique handle for the coupon
      * @return $this
      */
     public function setHandle($handle)
@@ -241,69 +256,132 @@ class Body11 implements ArrayAccess
     }
 
     /**
-     * Gets amount
+     * Gets code
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     * @param string $code The coupon code. Maximum 100 characters.
+     * @return $this
+     */
+    public function setCode($code)
+    {
+        $this->container['code'] = $code;
+
+        return $this;
+    }
+
+    /**
+     * Gets discount
+     * @return string
+     */
+    public function getDiscount()
+    {
+        return $this->container['discount'];
+    }
+
+    /**
+     * Sets discount
+     * @param string $discount Discount to use for coupon
+     * @return $this
+     */
+    public function setDiscount($discount)
+    {
+        $this->container['discount'] = $discount;
+
+        return $this;
+    }
+
+    /**
+     * Gets all_plans
+     * @return bool
+     */
+    public function getAllPlans()
+    {
+        return $this->container['all_plans'];
+    }
+
+    /**
+     * Sets all_plans
+     * @param bool $all_plans Whether all plans are eligible for this coupon. Defaults to false.
+     * @return $this
+     */
+    public function setAllPlans($all_plans)
+    {
+        $this->container['all_plans'] = $all_plans;
+
+        return $this;
+    }
+
+    /**
+     * Gets eligible_plans
+     * @return string[]
+     */
+    public function getEligiblePlans()
+    {
+        return $this->container['eligible_plans'];
+    }
+
+    /**
+     * Sets eligible_plans
+     * @param string[] $eligible_plans If not all_plans are set to true, then the set of eligible plan handles must be defined.
+     * @return $this
+     */
+    public function setEligiblePlans($eligible_plans)
+    {
+        $this->container['eligible_plans'] = $eligible_plans;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_redemptions
      * @return int
      */
-    public function getAmount()
+    public function getMaxRedemptions()
     {
-        return $this->container['amount'];
+        return $this->container['max_redemptions'];
     }
 
     /**
-     * Sets amount
-     * @param int $amount Credit amount in the smallest unit for the account currency
+     * Sets max_redemptions
+     * @param int $max_redemptions Optional maximum number of times this coupon can be redeemed.
      * @return $this
      */
-    public function setAmount($amount)
+    public function setMaxRedemptions($max_redemptions)
     {
 
-        if (($amount < 0)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling Body11., must be bigger than or equal to 0.');
+        if (!is_null($max_redemptions) && ($max_redemptions < 1)) {
+            throw new \InvalidArgumentException('invalid value for $max_redemptions when calling Body11., must be bigger than or equal to 1.');
         }
 
-        $this->container['amount'] = $amount;
+        $this->container['max_redemptions'] = $max_redemptions;
 
         return $this;
     }
 
     /**
-     * Gets text
+     * Gets valid_until
      * @return string
      */
-    public function getText()
+    public function getValidUntil()
     {
-        return $this->container['text'];
+        return $this->container['valid_until'];
     }
 
     /**
-     * Sets text
-     * @param string $text Text describing the credit. Will be on affected invoices.
+     * Sets valid_until
+     * @param string $valid_until Optional date and time until which the coupon is redeemable. Date and time on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`.
      * @return $this
      */
-    public function setText($text)
+    public function setValidUntil($valid_until)
     {
-        $this->container['text'] = $text;
-
-        return $this;
-    }
-
-    /**
-     * Gets valid_from
-     * @return string
-     */
-    public function getValidFrom()
-    {
-        return $this->container['valid_from'];
-    }
-
-    /**
-     * Sets valid_from
-     * @param string $valid_from Date on the form yyyy-MM-dd from which the credit is valid. The credit will not be deducted from invoices before this date.
-     * @return $this
-     */
-    public function setValidFrom($valid_from)
-    {
-        $this->container['valid_from'] = $valid_from;
+        $this->container['valid_until'] = $valid_until;
 
         return $this;
     }

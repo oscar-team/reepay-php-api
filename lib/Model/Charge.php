@@ -65,8 +65,8 @@ class Charge implements ArrayAccess
         'created' => '\DateTime',
         'transaction' => 'string',
         'error' => 'string',
-        'source' => '\Swagger\Client\Model\InlineResponse2009Source',
-        'order_lines' => '\Swagger\Client\Model\InlineResponse2009OrderLines[]',
+        'source' => '\Swagger\Client\Model\InlineResponse20011Source',
+        'order_lines' => '\Swagger\Client\Model\InlineResponse20011OrderLines[]',
         'refunded_amount' => 'int',
         'error_state' => 'string'
     ];
@@ -572,7 +572,7 @@ class Charge implements ArrayAccess
 
     /**
      * Gets source
-     * @return \Swagger\Client\Model\InlineResponse2009Source
+     * @return \Swagger\Client\Model\InlineResponse20011Source
      */
     public function getSource()
     {
@@ -581,7 +581,7 @@ class Charge implements ArrayAccess
 
     /**
      * Sets source
-     * @param \Swagger\Client\Model\InlineResponse2009Source $source
+     * @param \Swagger\Client\Model\InlineResponse20011Source $source
      * @return $this
      */
     public function setSource($source)
@@ -593,7 +593,7 @@ class Charge implements ArrayAccess
 
     /**
      * Gets order_lines
-     * @return \Swagger\Client\Model\InlineResponse2009OrderLines[]
+     * @return \Swagger\Client\Model\InlineResponse20011OrderLines[]
      */
     public function getOrderLines()
     {
@@ -602,7 +602,7 @@ class Charge implements ArrayAccess
 
     /**
      * Sets order_lines
-     * @param \Swagger\Client\Model\InlineResponse2009OrderLines[] $order_lines Order lines for charge
+     * @param \Swagger\Client\Model\InlineResponse20011OrderLines[] $order_lines Order lines for charge
      * @return $this
      */
     public function setOrderLines($order_lines)

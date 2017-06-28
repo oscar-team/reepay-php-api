@@ -83,33 +83,25 @@ class Body8Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "key"
+     * Test attribute "provider"
      */
-    public function testPropertyKey()
+    public function testPropertyProvider()
     {
 
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "card_types"
      */
-    public function testPropertyAmount()
+    public function testPropertyCardTypes()
     {
 
     }
 
     /**
-     * Test attribute "ordertext"
+     * Test attribute "provider_settings"
      */
-    public function testPropertyOrdertext()
-    {
-
-    }
-
-    /**
-     * Test attribute "order_lines"
-     */
-    public function testPropertyOrderLines()
+    public function testPropertyProviderSettings()
     {
 
     }

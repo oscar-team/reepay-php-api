@@ -58,7 +58,7 @@ class EventList implements ArrayAccess
         'page' => 'int',
         'size' => 'int',
         'count' => 'int',
-        'content' => '\Swagger\Client\Model\InlineResponse20018Content[]'
+        'content' => '\Swagger\Client\Model\InlineResponse20020Content[]'
     ];
 
     public static function swaggerTypes()
@@ -288,7 +288,7 @@ class EventList implements ArrayAccess
 
     /**
      * Gets content
-     * @return \Swagger\Client\Model\InlineResponse20018Content[]
+     * @return \Swagger\Client\Model\InlineResponse20020Content[]
      */
     public function getContent()
     {
@@ -297,7 +297,7 @@ class EventList implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Swagger\Client\Model\InlineResponse20018Content[] $content List of events for current slice
+     * @param \Swagger\Client\Model\InlineResponse20020Content[] $content List of events for current slice
      * @return $this
      */
     public function setContent($content)

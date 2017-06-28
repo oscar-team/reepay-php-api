@@ -83,25 +83,129 @@ class BodyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "discount_apply_order"
+     * Test attribute "handle"
      */
-    public function testPropertyDiscountApplyOrder()
+    public function testPropertyHandle()
     {
 
     }
 
     /**
-     * Test attribute "discount_percentage_apply"
+     * Test attribute "currency"
      */
-    public function testPropertyDiscountPercentageApply()
+    public function testPropertyCurrency()
     {
 
     }
 
     /**
-     * Test attribute "multiple_allowed"
+     * Test attribute "name"
      */
-    public function testPropertyMultipleAllowed()
+    public function testPropertyName()
+    {
+
+    }
+
+    /**
+     * Test attribute "address"
+     */
+    public function testPropertyAddress()
+    {
+
+    }
+
+    /**
+     * Test attribute "address2"
+     */
+    public function testPropertyAddress2()
+    {
+
+    }
+
+    /**
+     * Test attribute "city"
+     */
+    public function testPropertyCity()
+    {
+
+    }
+
+    /**
+     * Test attribute "locale"
+     */
+    public function testPropertyLocale()
+    {
+
+    }
+
+    /**
+     * Test attribute "timezone"
+     */
+    public function testPropertyTimezone()
+    {
+
+    }
+
+    /**
+     * Test attribute "country"
+     */
+    public function testPropertyCountry()
+    {
+
+    }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+
+    }
+
+    /**
+     * Test attribute "phone"
+     */
+    public function testPropertyPhone()
+    {
+
+    }
+
+    /**
+     * Test attribute "vat"
+     */
+    public function testPropertyVat()
+    {
+
+    }
+
+    /**
+     * Test attribute "website"
+     */
+    public function testPropertyWebsite()
+    {
+
+    }
+
+    /**
+     * Test attribute "logo"
+     */
+    public function testPropertyLogo()
+    {
+
+    }
+
+    /**
+     * Test attribute "postal_code"
+     */
+    public function testPropertyPostalCode()
+    {
+
+    }
+
+    /**
+     * Test attribute "default_vat"
+     */
+    public function testPropertyDefaultVat()
     {
 
     }

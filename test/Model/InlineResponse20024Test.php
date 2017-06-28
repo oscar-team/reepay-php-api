@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * InlineResponse20024Test Class Doc Comment
  *
  * @category    Class */
-// * @description A page in a paginated subscription search
+// * @description InlineResponse20024
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
@@ -83,65 +83,233 @@ class InlineResponse20024Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "page"
+     * Test attribute "name"
      */
-    public function testPropertyPage()
+    public function testPropertyName()
     {
 
     }
 
     /**
-     * Test attribute "size"
+     * Test attribute "description"
      */
-    public function testPropertySize()
+    public function testPropertyDescription()
     {
 
     }
 
     /**
-     * Test attribute "count"
+     * Test attribute "vat"
      */
-    public function testPropertyCount()
+    public function testPropertyVat()
     {
 
     }
 
     /**
-     * Test attribute "search"
+     * Test attribute "amount"
      */
-    public function testPropertySearch()
+    public function testPropertyAmount()
     {
 
     }
 
     /**
-     * Test attribute "sort"
+     * Test attribute "quantity"
      */
-    public function testPropertySort()
+    public function testPropertyQuantity()
     {
 
     }
 
     /**
-     * Test attribute "content"
+     * Test attribute "prepaid"
      */
-    public function testPropertyContent()
+    public function testPropertyPrepaid()
     {
 
     }
 
     /**
-     * Test attribute "total_elements"
+     * Test attribute "handle"
      */
-    public function testPropertyTotalElements()
+    public function testPropertyHandle()
     {
 
     }
 
     /**
-     * Test attribute "total_pages"
+     * Test attribute "version"
      */
-    public function testPropertyTotalPages()
+    public function testPropertyVersion()
+    {
+
+    }
+
+    /**
+     * Test attribute "state"
+     */
+    public function testPropertyState()
+    {
+
+    }
+
+    /**
+     * Test attribute "currency"
+     */
+    public function testPropertyCurrency()
+    {
+
+    }
+
+    /**
+     * Test attribute "created"
+     */
+    public function testPropertyCreated()
+    {
+
+    }
+
+    /**
+     * Test attribute "dunning_plan"
+     */
+    public function testPropertyDunningPlan()
+    {
+
+    }
+
+    /**
+     * Test attribute "renewal_reminder_email_days"
+     */
+    public function testPropertyRenewalReminderEmailDays()
+    {
+
+    }
+
+    /**
+     * Test attribute "trial_reminder_email_days"
+     */
+    public function testPropertyTrialReminderEmailDays()
+    {
+
+    }
+
+    /**
+     * Test attribute "partial_period_handling"
+     */
+    public function testPropertyPartialPeriodHandling()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount_incl_vat"
+     */
+    public function testPropertyAmountInclVat()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_count"
+     */
+    public function testPropertyFixedCount()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_life_time_unit"
+     */
+    public function testPropertyFixedLifeTimeUnit()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_life_time_length"
+     */
+    public function testPropertyFixedLifeTimeLength()
+    {
+
+    }
+
+    /**
+     * Test attribute "trial_interval_unit"
+     */
+    public function testPropertyTrialIntervalUnit()
+    {
+
+    }
+
+    /**
+     * Test attribute "trial_interval_length"
+     */
+    public function testPropertyTrialIntervalLength()
+    {
+
+    }
+
+    /**
+     * Test attribute "interval_length"
+     */
+    public function testPropertyIntervalLength()
+    {
+
+    }
+
+    /**
+     * Test attribute "schedule_type"
+     */
+    public function testPropertyScheduleType()
+    {
+
+    }
+
+    /**
+     * Test attribute "schedule_fixed_day"
+     */
+    public function testPropertyScheduleFixedDay()
+    {
+
+    }
+
+    /**
+     * Test attribute "base_month"
+     */
+    public function testPropertyBaseMonth()
+    {
+
+    }
+
+    /**
+     * Test attribute "notice_periods"
+     */
+    public function testPropertyNoticePeriods()
+    {
+
+    }
+
+    /**
+     * Test attribute "notice_periods_after_current"
+     */
+    public function testPropertyNoticePeriodsAfterCurrent()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixation_periods"
+     */
+    public function testPropertyFixationPeriods()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixation_periods_full"
+     */
+    public function testPropertyFixationPeriodsFull()
     {
 
     }

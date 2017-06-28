@@ -54,7 +54,7 @@ class Body46 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'webhooks' => 'string[]'
+        'password' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class Body46 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'webhooks' => 'webhooks'
+        'password' => 'password'
     ];
 
 
@@ -76,7 +76,7 @@ class Body46 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'webhooks' => 'setWebhooks'
+        'password' => 'setPassword'
     ];
 
 
@@ -85,7 +85,7 @@ class Body46 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'webhooks' => 'getWebhooks'
+        'password' => 'getPassword'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class Body46 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['webhooks'] = isset($data['webhooks']) ? $data['webhooks'] : null;
+        $this->container['password'] = isset($data['password']) ? $data['password'] : null;
     }
 
     /**
@@ -131,8 +131,8 @@ class Body46 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['webhooks'] === null) {
-            $invalid_properties[] = "'webhooks' can't be null";
+        if ($this->container['password'] === null) {
+            $invalid_properties[] = "'password' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +146,7 @@ class Body46 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['webhooks'] === null) {
+        if ($this->container['password'] === null) {
             return false;
         }
         return true;
@@ -154,22 +154,22 @@ class Body46 implements ArrayAccess
 
 
     /**
-     * Gets webhooks
-     * @return string[]
+     * Gets password
+     * @return string
      */
-    public function getWebhooks()
+    public function getPassword()
     {
-        return $this->container['webhooks'];
+        return $this->container['password'];
     }
 
     /**
-     * Sets webhooks
-     * @param string[] $webhooks List of ids for webhooks to resend. The ids can be either webhook ids or event ids. A maximum of 100 ids is allowed.
+     * Sets password
+     * @param string $password New password
      * @return $this
      */
-    public function setWebhooks($webhooks)
+    public function setPassword($password)
     {
-        $this->container['webhooks'] = $webhooks;
+        $this->container['password'] = $password;
 
         return $this;
     }

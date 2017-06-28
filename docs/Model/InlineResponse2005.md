@@ -3,18 +3,18 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**invoice** | **string** | Invoice id for the invoice the additional cost has been assigned to | [optional] 
-**state** | **string** | State of the additional cost, one of the following: &#x60;pending&#x60;, &#x60;transferred&#x60;, &#x60;cancelled&#x60;. A pending additonal cost has not yet been transferred to a invoice. Cancelled addtional costs have been cancelled manually. | 
-**subscription** | **string** | Subscription handle | 
-**handle** | **string** | Per account unique handle for the additional cost | 
-**ordertext** | **string** | Order text for the additional cost. Will be on affected invoices. | 
-**quantity** | **int** | Quantity for the additional cost. Default 1. | [optional] 
-**amount** | **int** | Additional cost total amount | 
-**vat** | **float** | Optional vat for additional cost. Account default is used if none given. | [optional] 
-**created** | [**\DateTime**](\DateTime.md) | Date when the additional cost was created. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | 
-**amount_incl_vat** | **bool** | Whether the amount is including VAT. Default true. | 
-**amount_vat** | **int** | Additional cost vat amount | 
-**amount_ex_vat** | **int** | Additional cost amount without vat | 
+**name** | **string** | Name of add-on. Will be used as order line text. | 
+**description** | **string** | Optional description of add-on | [optional] 
+**amount** | **int** | Add-on amount | 
+**vat** | **float** | Optional vat for add-on. Account default is used if none given. | [optional] 
+**handle** | **string** | Per account unique handle for the add-on | 
+**type** | **string** | Add-on type &#x60;on_off&#x60; or &#x60;quantity&#x60;. An &#x60;on_off&#x60; type cannot be given a quantity when attached to subscription. Fo &#x60;quantity&#x60; type it is possible. | 
+**state** | **string** | Add-on state &#x60;active&#x60; or &#x60;deleted&#x60;. | 
+**deleted** | [**\DateTime**](\DateTime.md) | Date when the add-on was deleted if deleted. In ISO-8601 extended offset date-time format. | [optional] 
+**created** | [**\DateTime**](\DateTime.md) | Date when the add-on was created. In ISO-8601 extended offset date-time format. | 
+**amount_incl_vat** | **bool** | Whether the amount is including VAT. Default true. | [optional] 
+**all_plans** | **bool** | Whether all plans are eligible for this add-on. Defaults to false. | [optional] 
+**eligible_plans** | **string[]** | If not &#x60;all_plans&#x60; are set to true, then the set of eligible plan handles must be defined. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -60,7 +60,7 @@ class SubscriptionSearch implements ArrayAccess
         'count' => 'int',
         'search' => 'string',
         'sort' => 'string',
-        'content' => '\Swagger\Client\Model\InlineResponse20023[]',
+        'content' => '\Swagger\Client\Model\InlineResponse20025[]',
         'total_elements' => 'int',
         'total_pages' => 'int'
     ];
@@ -376,7 +376,7 @@ class SubscriptionSearch implements ArrayAccess
 
     /**
      * Gets content
-     * @return \Swagger\Client\Model\InlineResponse20023[]
+     * @return \Swagger\Client\Model\InlineResponse20025[]
      */
     public function getContent()
     {
@@ -385,7 +385,7 @@ class SubscriptionSearch implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Swagger\Client\Model\InlineResponse20023[] $content List of subscriptions for current page
+     * @param \Swagger\Client\Model\InlineResponse20025[] $content List of subscriptions for current page
      * @return $this
      */
     public function setContent($content)

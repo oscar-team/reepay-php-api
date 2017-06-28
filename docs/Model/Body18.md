@@ -3,15 +3,20 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**handle** | **string** | Per account unique handle for the discount | 
-**name** | **string** | Name of discount. Will be used as order line text. | 
-**description** | **string** | Optional description of discount | [optional] 
-**amount** | **int** | Fixed amount discount deducted from order line amounts including VAT | [optional] 
-**percentage** | **int** | Percentage discount applied to each applicable order line | [optional] 
-**apply_to** | **string[]** | Which order lines the discount is applicable to: &#x60;all&#x60;, &#x60;setup_fee&#x60;, &#x60;plan&#x60;, &#x60;additional_cost&#x60;, &#x60;add_on&#x60; and &#x60;ondemand&#x60; | 
-**fixed_count** | **int** | Apply discount to a fixed number of invoices | [optional] 
-**fixed_period_unit** | **string** | Time unit use for fixed valid period either &#x60;days&#x60; or &#x60;months&#x60; | [optional] 
-**fixed_period** | **int** | Fixed period length e.g. 12 months or 14 days | [optional] 
+**email** | **string** | Customer email | [optional] 
+**address** | **string** | Customer address | [optional] 
+**address2** | **string** | Customer address2 | [optional] 
+**city** | **string** | Customer city | [optional] 
+**country** | **string** | Customer country in ISO 3166-1 alpha-2 | [optional] 
+**phone** | **string** | Customer phone number | [optional] 
+**company** | **string** | Customer company | [optional] 
+**vat** | **string** | Customer vat number | [optional] 
+**handle** | **string** | Per account unique handle for the customer. Max length 255 with allowable characters [a-zA-Z0-9_.-@]. Must be provided if generate_handle is not defined. | [optional] 
+**test** | **bool** | Test flag. If given it will be verified that the account state matches the intended create state. | [optional] 
+**first_name** | **string** | Customer first name | [optional] 
+**last_name** | **string** | Customer last name | [optional] 
+**postal_code** | **string** | Customer postal code | [optional] 
+**generate_handle** | **bool** | Auto generate handle on the form cust-[sequence_number] | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

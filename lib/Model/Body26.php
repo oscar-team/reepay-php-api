@@ -54,13 +54,12 @@ class Body26 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
-        'description' => 'string',
-        'vat' => 'float',
-        'dunning_plan' => 'string',
-        'renewal_reminder_email_days' => 'int',
-        'trial_reminder_email_days' => 'int',
-        'partial_period_handling' => 'string'
+        'invoice' => 'string',
+        'key' => 'string',
+        'amount' => 'int',
+        'text' => 'string',
+        'note_lines' => '\Swagger\Client\Model\V1refundNoteLines[]',
+        'manual_transfer' => '\Swagger\Client\Model\V1refundManualTransfer'
     ];
 
     public static function swaggerTypes()
@@ -73,13 +72,12 @@ class Body26 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'description' => 'description',
-        'vat' => 'vat',
-        'dunning_plan' => 'dunning_plan',
-        'renewal_reminder_email_days' => 'renewal_reminder_email_days',
-        'trial_reminder_email_days' => 'trial_reminder_email_days',
-        'partial_period_handling' => 'partial_period_handling'
+        'invoice' => 'invoice',
+        'key' => 'key',
+        'amount' => 'amount',
+        'text' => 'text',
+        'note_lines' => 'note_lines',
+        'manual_transfer' => 'manual_transfer'
     ];
 
 
@@ -88,13 +86,12 @@ class Body26 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'description' => 'setDescription',
-        'vat' => 'setVat',
-        'dunning_plan' => 'setDunningPlan',
-        'renewal_reminder_email_days' => 'setRenewalReminderEmailDays',
-        'trial_reminder_email_days' => 'setTrialReminderEmailDays',
-        'partial_period_handling' => 'setPartialPeriodHandling'
+        'invoice' => 'setInvoice',
+        'key' => 'setKey',
+        'amount' => 'setAmount',
+        'text' => 'setText',
+        'note_lines' => 'setNoteLines',
+        'manual_transfer' => 'setManualTransfer'
     ];
 
 
@@ -103,13 +100,12 @@ class Body26 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'description' => 'getDescription',
-        'vat' => 'getVat',
-        'dunning_plan' => 'getDunningPlan',
-        'renewal_reminder_email_days' => 'getRenewalReminderEmailDays',
-        'trial_reminder_email_days' => 'getTrialReminderEmailDays',
-        'partial_period_handling' => 'getPartialPeriodHandling'
+        'invoice' => 'getInvoice',
+        'key' => 'getKey',
+        'amount' => 'getAmount',
+        'text' => 'getText',
+        'note_lines' => 'getNoteLines',
+        'manual_transfer' => 'getManualTransfer'
     ];
 
     public static function attributeMap()
@@ -127,26 +123,8 @@ class Body26 implements ArrayAccess
         return self::$getters;
     }
 
-    const PARTIAL_PERIOD_HANDLING_BILL_FULL = 'bill_full';
-    const PARTIAL_PERIOD_HANDLING_BILL_PRORATED = 'bill_prorated';
-    const PARTIAL_PERIOD_HANDLING_BILL_ZERO_AMOUNT = 'bill_zero_amount';
-    const PARTIAL_PERIOD_HANDLING_NO_BILL = 'no_bill';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getPartialPeriodHandlingAllowableValues()
-    {
-        return [
-            self::PARTIAL_PERIOD_HANDLING_BILL_FULL,
-            self::PARTIAL_PERIOD_HANDLING_BILL_PRORATED,
-            self::PARTIAL_PERIOD_HANDLING_BILL_ZERO_AMOUNT,
-            self::PARTIAL_PERIOD_HANDLING_NO_BILL,
-        ];
-    }
     
 
     /**
@@ -161,13 +139,12 @@ class Body26 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
-        $this->container['dunning_plan'] = isset($data['dunning_plan']) ? $data['dunning_plan'] : null;
-        $this->container['renewal_reminder_email_days'] = isset($data['renewal_reminder_email_days']) ? $data['renewal_reminder_email_days'] : null;
-        $this->container['trial_reminder_email_days'] = isset($data['trial_reminder_email_days']) ? $data['trial_reminder_email_days'] : null;
-        $this->container['partial_period_handling'] = isset($data['partial_period_handling']) ? $data['partial_period_handling'] : null;
+        $this->container['invoice'] = isset($data['invoice']) ? $data['invoice'] : null;
+        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['text'] = isset($data['text']) ? $data['text'] : null;
+        $this->container['note_lines'] = isset($data['note_lines']) ? $data['note_lines'] : null;
+        $this->container['manual_transfer'] = isset($data['manual_transfer']) ? $data['manual_transfer'] : null;
     }
 
     /**
@@ -179,28 +156,11 @@ class Body26 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['name'] === null) {
-            $invalid_properties[] = "'name' can't be null";
+        if ($this->container['invoice'] === null) {
+            $invalid_properties[] = "'invoice' can't be null";
         }
-        if (!is_null($this->container['vat']) && ($this->container['vat'] > 1)) {
-            $invalid_properties[] = "invalid value for 'vat', must be smaller than or equal to 1.";
-        }
-
-        if (!is_null($this->container['vat']) && ($this->container['vat'] < 0)) {
-            $invalid_properties[] = "invalid value for 'vat', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['renewal_reminder_email_days']) && ($this->container['renewal_reminder_email_days'] < 1)) {
-            $invalid_properties[] = "invalid value for 'renewal_reminder_email_days', must be bigger than or equal to 1.";
-        }
-
-        if (!is_null($this->container['trial_reminder_email_days']) && ($this->container['trial_reminder_email_days'] < 1)) {
-            $invalid_properties[] = "invalid value for 'trial_reminder_email_days', must be bigger than or equal to 1.";
-        }
-
-        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
-        if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'.";
+        if (!is_null($this->container['amount']) && ($this->container['amount'] < 1)) {
+            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 1.";
         }
 
         return $invalid_properties;
@@ -215,23 +175,10 @@ class Body26 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['name'] === null) {
+        if ($this->container['invoice'] === null) {
             return false;
         }
-        if ($this->container['vat'] > 1) {
-            return false;
-        }
-        if ($this->container['vat'] < 0) {
-            return false;
-        }
-        if ($this->container['renewal_reminder_email_days'] < 1) {
-            return false;
-        }
-        if ($this->container['trial_reminder_email_days'] < 1) {
-            return false;
-        }
-        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
-        if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
+        if ($this->container['amount'] < 1) {
             return false;
         }
         return true;
@@ -239,170 +186,132 @@ class Body26 implements ArrayAccess
 
 
     /**
-     * Gets name
+     * Gets invoice
      * @return string
      */
-    public function getName()
+    public function getInvoice()
     {
-        return $this->container['name'];
+        return $this->container['invoice'];
     }
 
     /**
-     * Sets name
-     * @param string $name Name of the plan
+     * Sets invoice
+     * @param string $invoice Handle or id for invoice/charge to refund
      * @return $this
      */
-    public function setName($name)
+    public function setInvoice($invoice)
     {
-        $this->container['name'] = $name;
+        $this->container['invoice'] = $invoice;
 
         return $this;
     }
 
     /**
-     * Gets description
+     * Gets key
      * @return string
      */
-    public function getDescription()
+    public function getKey()
     {
-        return $this->container['description'];
+        return $this->container['key'];
     }
 
     /**
-     * Sets description
-     * @param string $description Description of the plan
+     * Sets key
+     * @param string $key Optional idempotency key. Only one refund can be performed for the same key. An idempotency key identifies uniquely the request and multiple requests with the same key and invoice will yield the same result. In case of networking errors the same request with same key can safely be retried.
      * @return $this
      */
-    public function setDescription($description)
+    public function setKey($key)
     {
-        $this->container['description'] = $description;
+        $this->container['key'] = $key;
 
         return $this;
     }
 
     /**
-     * Gets vat
-     * @return float
-     */
-    public function getVat()
-    {
-        return $this->container['vat'];
-    }
-
-    /**
-     * Sets vat
-     * @param float $vat Optional vat for this plan. Account default is used if none given.
-     * @return $this
-     */
-    public function setVat($vat)
-    {
-
-        if (!is_null($vat) && ($vat > 1)) {
-            throw new \InvalidArgumentException('invalid value for $vat when calling Body26., must be smaller than or equal to 1.');
-        }
-        if (!is_null($vat) && ($vat < 0)) {
-            throw new \InvalidArgumentException('invalid value for $vat when calling Body26., must be bigger than or equal to 0.');
-        }
-
-        $this->container['vat'] = $vat;
-
-        return $this;
-    }
-
-    /**
-     * Gets dunning_plan
-     * @return string
-     */
-    public function getDunningPlan()
-    {
-        return $this->container['dunning_plan'];
-    }
-
-    /**
-     * Sets dunning_plan
-     * @param string $dunning_plan Dunning plan handle
-     * @return $this
-     */
-    public function setDunningPlan($dunning_plan)
-    {
-        $this->container['dunning_plan'] = $dunning_plan;
-
-        return $this;
-    }
-
-    /**
-     * Gets renewal_reminder_email_days
+     * Gets amount
      * @return int
      */
-    public function getRenewalReminderEmailDays()
+    public function getAmount()
     {
-        return $this->container['renewal_reminder_email_days'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets renewal_reminder_email_days
-     * @param int $renewal_reminder_email_days Optional renewal reminder email settings. Number of days before next billing to send a reminder email.
+     * Sets amount
+     * @param int $amount Optional amount in the smallest unit for the account currency. Either `amount` or `note_lines` can be provided, if neither is provided the full refundable amount is refunded.
      * @return $this
      */
-    public function setRenewalReminderEmailDays($renewal_reminder_email_days)
+    public function setAmount($amount)
     {
 
-        if (!is_null($renewal_reminder_email_days) && ($renewal_reminder_email_days < 1)) {
-            throw new \InvalidArgumentException('invalid value for $renewal_reminder_email_days when calling Body26., must be bigger than or equal to 1.');
+        if (!is_null($amount) && ($amount < 1)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling Body26., must be bigger than or equal to 1.');
         }
 
-        $this->container['renewal_reminder_email_days'] = $renewal_reminder_email_days;
+        $this->container['amount'] = $amount;
 
         return $this;
     }
 
     /**
-     * Gets trial_reminder_email_days
-     * @return int
-     */
-    public function getTrialReminderEmailDays()
-    {
-        return $this->container['trial_reminder_email_days'];
-    }
-
-    /**
-     * Sets trial_reminder_email_days
-     * @param int $trial_reminder_email_days Optional end of trial reminder email settings. Number of days before end of trial to send a reminder email.
-     * @return $this
-     */
-    public function setTrialReminderEmailDays($trial_reminder_email_days)
-    {
-
-        if (!is_null($trial_reminder_email_days) && ($trial_reminder_email_days < 1)) {
-            throw new \InvalidArgumentException('invalid value for $trial_reminder_email_days when calling Body26., must be bigger than or equal to 1.');
-        }
-
-        $this->container['trial_reminder_email_days'] = $trial_reminder_email_days;
-
-        return $this;
-    }
-
-    /**
-     * Gets partial_period_handling
+     * Gets text
      * @return string
      */
-    public function getPartialPeriodHandling()
+    public function getText()
     {
-        return $this->container['partial_period_handling'];
+        return $this->container['text'];
     }
 
     /**
-     * Sets partial_period_handling
-     * @param string $partial_period_handling How to handle a potential initial partial billing period for fixed day scheduling. The options are to bill for a full period, bill prorated for the partial period, bill a zero amoumt, or not to consider the period before first fixed day a billing period. The default is to bill prorated. Options: `bill_full`, `bill_prorated`, `bill_zero_amount`, `no_bill`.
+     * Sets text
+     * @param string $text Optional refund text to use on credit note. Used in conjunction with `amount`. Ignored if `note_lines` is provided.
      * @return $this
      */
-    public function setPartialPeriodHandling($partial_period_handling)
+    public function setText($text)
     {
-        $allowed_values = array('bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill');
-        if (!is_null($partial_period_handling) && (!in_array($partial_period_handling, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'");
-        }
-        $this->container['partial_period_handling'] = $partial_period_handling;
+        $this->container['text'] = $text;
+
+        return $this;
+    }
+
+    /**
+     * Gets note_lines
+     * @return \Swagger\Client\Model\V1refundNoteLines[]
+     */
+    public function getNoteLines()
+    {
+        return $this->container['note_lines'];
+    }
+
+    /**
+     * Sets note_lines
+     * @param \Swagger\Client\Model\V1refundNoteLines[] $note_lines Refund credit note lines to give detailed information for credit note. Either this or `amount` must be provided.
+     * @return $this
+     */
+    public function setNoteLines($note_lines)
+    {
+        $this->container['note_lines'] = $note_lines;
+
+        return $this;
+    }
+
+    /**
+     * Gets manual_transfer
+     * @return \Swagger\Client\Model\V1refundManualTransfer
+     */
+    public function getManualTransfer()
+    {
+        return $this->container['manual_transfer'];
+    }
+
+    /**
+     * Sets manual_transfer
+     * @param \Swagger\Client\Model\V1refundManualTransfer $manual_transfer
+     * @return $this
+     */
+    public function setManualTransfer($manual_transfer)
+    {
+        $this->container['manual_transfer'] = $manual_transfer;
 
         return $this;
     }

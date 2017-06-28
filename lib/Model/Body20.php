@@ -54,10 +54,15 @@ class Body20 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'handle' => 'string',
         'name' => 'string',
-        'schedule' => 'int[]',
-        'default_plan' => 'bool',
-        'final_subscription_action' => 'string'
+        'description' => 'string',
+        'amount' => 'int',
+        'percentage' => 'int',
+        'apply_to' => 'string[]',
+        'fixed_count' => 'int',
+        'fixed_period_unit' => 'string',
+        'fixed_period' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -70,10 +75,15 @@ class Body20 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'handle' => 'handle',
         'name' => 'name',
-        'schedule' => 'schedule',
-        'default_plan' => 'default_plan',
-        'final_subscription_action' => 'final_subscription_action'
+        'description' => 'description',
+        'amount' => 'amount',
+        'percentage' => 'percentage',
+        'apply_to' => 'apply_to',
+        'fixed_count' => 'fixed_count',
+        'fixed_period_unit' => 'fixed_period_unit',
+        'fixed_period' => 'fixed_period'
     ];
 
 
@@ -82,10 +92,15 @@ class Body20 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'handle' => 'setHandle',
         'name' => 'setName',
-        'schedule' => 'setSchedule',
-        'default_plan' => 'setDefaultPlan',
-        'final_subscription_action' => 'setFinalSubscriptionAction'
+        'description' => 'setDescription',
+        'amount' => 'setAmount',
+        'percentage' => 'setPercentage',
+        'apply_to' => 'setApplyTo',
+        'fixed_count' => 'setFixedCount',
+        'fixed_period_unit' => 'setFixedPeriodUnit',
+        'fixed_period' => 'setFixedPeriod'
     ];
 
 
@@ -94,10 +109,15 @@ class Body20 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'handle' => 'getHandle',
         'name' => 'getName',
-        'schedule' => 'getSchedule',
-        'default_plan' => 'getDefaultPlan',
-        'final_subscription_action' => 'getFinalSubscriptionAction'
+        'description' => 'getDescription',
+        'amount' => 'getAmount',
+        'percentage' => 'getPercentage',
+        'apply_to' => 'getApplyTo',
+        'fixed_count' => 'getFixedCount',
+        'fixed_period_unit' => 'getFixedPeriodUnit',
+        'fixed_period' => 'getFixedPeriod'
     ];
 
     public static function attributeMap()
@@ -115,9 +135,8 @@ class Body20 implements ArrayAccess
         return self::$getters;
     }
 
-    const FINAL_SUBSCRIPTION_ACTION_EXPIRE = 'expire';
-    const FINAL_SUBSCRIPTION_ACTION_ON_HOLD = 'on_hold';
-    const FINAL_SUBSCRIPTION_ACTION_NONE = 'none';
+    const FIXED_PERIOD_UNIT_MONTHS = 'months';
+    const FIXED_PERIOD_UNIT_DAYS = 'days';
     
 
     
@@ -125,12 +144,11 @@ class Body20 implements ArrayAccess
      * Gets allowable values of the enum
      * @return string[]
      */
-    public function getFinalSubscriptionActionAllowableValues()
+    public function getFixedPeriodUnitAllowableValues()
     {
         return [
-            self::FINAL_SUBSCRIPTION_ACTION_EXPIRE,
-            self::FINAL_SUBSCRIPTION_ACTION_ON_HOLD,
-            self::FINAL_SUBSCRIPTION_ACTION_NONE,
+            self::FIXED_PERIOD_UNIT_MONTHS,
+            self::FIXED_PERIOD_UNIT_DAYS,
         ];
     }
     
@@ -147,10 +165,15 @@ class Body20 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['schedule'] = isset($data['schedule']) ? $data['schedule'] : null;
-        $this->container['default_plan'] = isset($data['default_plan']) ? $data['default_plan'] : null;
-        $this->container['final_subscription_action'] = isset($data['final_subscription_action']) ? $data['final_subscription_action'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['percentage'] = isset($data['percentage']) ? $data['percentage'] : null;
+        $this->container['apply_to'] = isset($data['apply_to']) ? $data['apply_to'] : null;
+        $this->container['fixed_count'] = isset($data['fixed_count']) ? $data['fixed_count'] : null;
+        $this->container['fixed_period_unit'] = isset($data['fixed_period_unit']) ? $data['fixed_period_unit'] : null;
+        $this->container['fixed_period'] = isset($data['fixed_period']) ? $data['fixed_period'] : null;
     }
 
     /**
@@ -162,21 +185,38 @@ class Body20 implements ArrayAccess
     {
         $invalid_properties = [];
 
+        if ($this->container['handle'] === null) {
+            $invalid_properties[] = "'handle' can't be null";
+        }
         if ($this->container['name'] === null) {
             $invalid_properties[] = "'name' can't be null";
         }
-        if ($this->container['schedule'] === null) {
-            $invalid_properties[] = "'schedule' can't be null";
+        if (!is_null($this->container['amount']) && ($this->container['amount'] < 0)) {
+            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
         }
-        if ($this->container['default_plan'] === null) {
-            $invalid_properties[] = "'default_plan' can't be null";
+
+        if (!is_null($this->container['percentage']) && ($this->container['percentage'] > 100)) {
+            $invalid_properties[] = "invalid value for 'percentage', must be smaller than or equal to 100.";
         }
-        if ($this->container['final_subscription_action'] === null) {
-            $invalid_properties[] = "'final_subscription_action' can't be null";
+
+        if (!is_null($this->container['percentage']) && ($this->container['percentage'] < 1)) {
+            $invalid_properties[] = "invalid value for 'percentage', must be bigger than or equal to 1.";
         }
-        $allowed_values = ["expire", "on_hold", "none"];
-        if (!in_array($this->container['final_subscription_action'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'final_subscription_action', must be one of 'expire', 'on_hold', 'none'.";
+
+        if ($this->container['apply_to'] === null) {
+            $invalid_properties[] = "'apply_to' can't be null";
+        }
+        if (!is_null($this->container['fixed_count']) && ($this->container['fixed_count'] < 1)) {
+            $invalid_properties[] = "invalid value for 'fixed_count', must be bigger than or equal to 1.";
+        }
+
+        $allowed_values = ["months", "days"];
+        if (!in_array($this->container['fixed_period_unit'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'fixed_period_unit', must be one of 'months', 'days'.";
+        }
+
+        if (!is_null($this->container['fixed_period']) && ($this->container['fixed_period'] < 1)) {
+            $invalid_properties[] = "invalid value for 'fixed_period', must be bigger than or equal to 1.";
         }
 
         return $invalid_properties;
@@ -191,25 +231,58 @@ class Body20 implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['handle'] === null) {
+            return false;
+        }
         if ($this->container['name'] === null) {
             return false;
         }
-        if ($this->container['schedule'] === null) {
+        if ($this->container['amount'] < 0) {
             return false;
         }
-        if ($this->container['default_plan'] === null) {
+        if ($this->container['percentage'] > 100) {
             return false;
         }
-        if ($this->container['final_subscription_action'] === null) {
+        if ($this->container['percentage'] < 1) {
             return false;
         }
-        $allowed_values = ["expire", "on_hold", "none"];
-        if (!in_array($this->container['final_subscription_action'], $allowed_values)) {
+        if ($this->container['apply_to'] === null) {
+            return false;
+        }
+        if ($this->container['fixed_count'] < 1) {
+            return false;
+        }
+        $allowed_values = ["months", "days"];
+        if (!in_array($this->container['fixed_period_unit'], $allowed_values)) {
+            return false;
+        }
+        if ($this->container['fixed_period'] < 1) {
             return false;
         }
         return true;
     }
 
+
+    /**
+     * Gets handle
+     * @return string
+     */
+    public function getHandle()
+    {
+        return $this->container['handle'];
+    }
+
+    /**
+     * Sets handle
+     * @param string $handle Per account unique handle for the discount
+     * @return $this
+     */
+    public function setHandle($handle)
+    {
+        $this->container['handle'] = $handle;
+
+        return $this;
+    }
 
     /**
      * Gets name
@@ -222,7 +295,7 @@ class Body20 implements ArrayAccess
 
     /**
      * Sets name
-     * @param string $name Dunning plan name
+     * @param string $name Name of discount. Will be used as order line text.
      * @return $this
      */
     public function setName($name)
@@ -233,68 +306,175 @@ class Body20 implements ArrayAccess
     }
 
     /**
-     * Gets schedule
-     * @return int[]
-     */
-    public function getSchedule()
-    {
-        return $this->container['schedule'];
-    }
-
-    /**
-     * Sets schedule
-     * @param int[] $schedule The schedule as list of intervals in days
-     * @return $this
-     */
-    public function setSchedule($schedule)
-    {
-        $this->container['schedule'] = $schedule;
-
-        return $this;
-    }
-
-    /**
-     * Gets default_plan
-     * @return bool
-     */
-    public function getDefaultPlan()
-    {
-        return $this->container['default_plan'];
-    }
-
-    /**
-     * Sets default_plan
-     * @param bool $default_plan If this is default plan
-     * @return $this
-     */
-    public function setDefaultPlan($default_plan)
-    {
-        $this->container['default_plan'] = $default_plan;
-
-        return $this;
-    }
-
-    /**
-     * Gets final_subscription_action
+     * Gets description
      * @return string
      */
-    public function getFinalSubscriptionAction()
+    public function getDescription()
     {
-        return $this->container['final_subscription_action'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets final_subscription_action
-     * @param string $final_subscription_action Action to take for subscription if dunning fails, one of the following: `expire`, `on_hold`, `none`
+     * Sets description
+     * @param string $description Optional description of discount
      * @return $this
      */
-    public function setFinalSubscriptionAction($final_subscription_action)
+    public function setDescription($description)
     {
-        $allowed_values = array('expire', 'on_hold', 'none');
-        if ((!in_array($final_subscription_action, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'final_subscription_action', must be one of 'expire', 'on_hold', 'none'");
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount
+     * @return int
+     */
+    public function getAmount()
+    {
+        return $this->container['amount'];
+    }
+
+    /**
+     * Sets amount
+     * @param int $amount Fixed amount discount deducted from order line amounts including VAT
+     * @return $this
+     */
+    public function setAmount($amount)
+    {
+
+        if (!is_null($amount) && ($amount < 0)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling Body20., must be bigger than or equal to 0.');
         }
-        $this->container['final_subscription_action'] = $final_subscription_action;
+
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets percentage
+     * @return int
+     */
+    public function getPercentage()
+    {
+        return $this->container['percentage'];
+    }
+
+    /**
+     * Sets percentage
+     * @param int $percentage Percentage discount applied to each applicable order line
+     * @return $this
+     */
+    public function setPercentage($percentage)
+    {
+
+        if (!is_null($percentage) && ($percentage > 100)) {
+            throw new \InvalidArgumentException('invalid value for $percentage when calling Body20., must be smaller than or equal to 100.');
+        }
+        if (!is_null($percentage) && ($percentage < 1)) {
+            throw new \InvalidArgumentException('invalid value for $percentage when calling Body20., must be bigger than or equal to 1.');
+        }
+
+        $this->container['percentage'] = $percentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets apply_to
+     * @return string[]
+     */
+    public function getApplyTo()
+    {
+        return $this->container['apply_to'];
+    }
+
+    /**
+     * Sets apply_to
+     * @param string[] $apply_to Which order lines the discount is applicable to: `all`, `setup_fee`, `plan`, `additional_cost`, `add_on` and `ondemand`
+     * @return $this
+     */
+    public function setApplyTo($apply_to)
+    {
+        $this->container['apply_to'] = $apply_to;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixed_count
+     * @return int
+     */
+    public function getFixedCount()
+    {
+        return $this->container['fixed_count'];
+    }
+
+    /**
+     * Sets fixed_count
+     * @param int $fixed_count Apply discount to a fixed number of invoices
+     * @return $this
+     */
+    public function setFixedCount($fixed_count)
+    {
+
+        if (!is_null($fixed_count) && ($fixed_count < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fixed_count when calling Body20., must be bigger than or equal to 1.');
+        }
+
+        $this->container['fixed_count'] = $fixed_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixed_period_unit
+     * @return string
+     */
+    public function getFixedPeriodUnit()
+    {
+        return $this->container['fixed_period_unit'];
+    }
+
+    /**
+     * Sets fixed_period_unit
+     * @param string $fixed_period_unit Time unit use for fixed valid period either `days` or `months`
+     * @return $this
+     */
+    public function setFixedPeriodUnit($fixed_period_unit)
+    {
+        $allowed_values = array('months', 'days');
+        if (!is_null($fixed_period_unit) && (!in_array($fixed_period_unit, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'fixed_period_unit', must be one of 'months', 'days'");
+        }
+        $this->container['fixed_period_unit'] = $fixed_period_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixed_period
+     * @return int
+     */
+    public function getFixedPeriod()
+    {
+        return $this->container['fixed_period'];
+    }
+
+    /**
+     * Sets fixed_period
+     * @param int $fixed_period Fixed period length e.g. 12 months or 14 days
+     * @return $this
+     */
+    public function setFixedPeriod($fixed_period)
+    {
+
+        if (!is_null($fixed_period) && ($fixed_period < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fixed_period when calling Body20., must be bigger than or equal to 1.');
+        }
+
+        $this->container['fixed_period'] = $fixed_period;
 
         return $this;
     }

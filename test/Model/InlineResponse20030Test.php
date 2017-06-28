@@ -83,113 +83,49 @@ class InlineResponse20030Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "date"
      */
-    public function testPropertyId()
+    public function testPropertyDate()
     {
 
     }
 
     /**
-     * Test attribute "event"
+     * Test attribute "invoice"
      */
-    public function testPropertyEvent()
+    public function testPropertyInvoice()
     {
 
     }
 
     /**
-     * Test attribute "state"
+     * Test attribute "paid"
      */
-    public function testPropertyState()
+    public function testPropertyPaid()
     {
 
     }
 
     /**
-     * Test attribute "url"
+     * Test attribute "consumed"
      */
-    public function testPropertyUrl()
+    public function testPropertyConsumed()
     {
 
     }
 
     /**
-     * Test attribute "username"
+     * Test attribute "remaining"
      */
-    public function testPropertyUsername()
+    public function testPropertyRemaining()
     {
 
     }
 
     /**
-     * Test attribute "password"
+     * Test attribute "online_refundable"
      */
-    public function testPropertyPassword()
-    {
-
-    }
-
-    /**
-     * Test attribute "content"
-     */
-    public function testPropertyContent()
-    {
-
-    }
-
-    /**
-     * Test attribute "created"
-     */
-    public function testPropertyCreated()
-    {
-
-    }
-
-    /**
-     * Test attribute "success"
-     */
-    public function testPropertySuccess()
-    {
-
-    }
-
-    /**
-     * Test attribute "count"
-     */
-    public function testPropertyCount()
-    {
-
-    }
-
-    /**
-     * Test attribute "last_fail"
-     */
-    public function testPropertyLastFail()
-    {
-
-    }
-
-    /**
-     * Test attribute "first_fail"
-     */
-    public function testPropertyFirstFail()
-    {
-
-    }
-
-    /**
-     * Test attribute "alert_count"
-     */
-    public function testPropertyAlertCount()
-    {
-
-    }
-
-    /**
-     * Test attribute "alert_sent"
-     */
-    public function testPropertyAlertSent()
+    public function testPropertyOnlineRefundable()
     {
 
     }

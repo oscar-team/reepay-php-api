@@ -83,9 +83,201 @@ class Body29Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "compensation_method"
+     * Test attribute "name"
      */
-    public function testPropertyCompensationMethod()
+    public function testPropertyName()
+    {
+
+    }
+
+    /**
+     * Test attribute "description"
+     */
+    public function testPropertyDescription()
+    {
+
+    }
+
+    /**
+     * Test attribute "vat"
+     */
+    public function testPropertyVat()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+
+    }
+
+    /**
+     * Test attribute "quantity"
+     */
+    public function testPropertyQuantity()
+    {
+
+    }
+
+    /**
+     * Test attribute "prepaid"
+     */
+    public function testPropertyPrepaid()
+    {
+
+    }
+
+    /**
+     * Test attribute "handle"
+     */
+    public function testPropertyHandle()
+    {
+
+    }
+
+    /**
+     * Test attribute "dunning_plan"
+     */
+    public function testPropertyDunningPlan()
+    {
+
+    }
+
+    /**
+     * Test attribute "renewal_reminder_email_days"
+     */
+    public function testPropertyRenewalReminderEmailDays()
+    {
+
+    }
+
+    /**
+     * Test attribute "trial_reminder_email_days"
+     */
+    public function testPropertyTrialReminderEmailDays()
+    {
+
+    }
+
+    /**
+     * Test attribute "partial_period_handling"
+     */
+    public function testPropertyPartialPeriodHandling()
+    {
+
+    }
+
+    /**
+     * Test attribute "amount_incl_vat"
+     */
+    public function testPropertyAmountInclVat()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_count"
+     */
+    public function testPropertyFixedCount()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_life_time_unit"
+     */
+    public function testPropertyFixedLifeTimeUnit()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_life_time_length"
+     */
+    public function testPropertyFixedLifeTimeLength()
+    {
+
+    }
+
+    /**
+     * Test attribute "trial_interval_unit"
+     */
+    public function testPropertyTrialIntervalUnit()
+    {
+
+    }
+
+    /**
+     * Test attribute "trial_interval_length"
+     */
+    public function testPropertyTrialIntervalLength()
+    {
+
+    }
+
+    /**
+     * Test attribute "interval_length"
+     */
+    public function testPropertyIntervalLength()
+    {
+
+    }
+
+    /**
+     * Test attribute "schedule_type"
+     */
+    public function testPropertyScheduleType()
+    {
+
+    }
+
+    /**
+     * Test attribute "schedule_fixed_day"
+     */
+    public function testPropertyScheduleFixedDay()
+    {
+
+    }
+
+    /**
+     * Test attribute "base_month"
+     */
+    public function testPropertyBaseMonth()
+    {
+
+    }
+
+    /**
+     * Test attribute "notice_periods"
+     */
+    public function testPropertyNoticePeriods()
+    {
+
+    }
+
+    /**
+     * Test attribute "notice_periods_after_current"
+     */
+    public function testPropertyNoticePeriodsAfterCurrent()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixation_periods"
+     */
+    public function testPropertyFixationPeriods()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixation_periods_full"
+     */
+    public function testPropertyFixationPeriodsFull()
     {
 
     }

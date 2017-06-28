@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **created** | [**\DateTime**](\DateTime.md) | When the invoice was created, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | 
 **transaction** | **string** | Transaction id assigned by Reepay | 
 **error** | **string** | Reepay error code if failed. See [transaction errors](https://docs.reepay.com/api/#transaction-errors). | [optional] 
-**source** | [**\Swagger\Client\Model\InlineResponse2009Source**](InlineResponse2009Source.md) |  | [optional] 
-**order_lines** | [**\Swagger\Client\Model\InlineResponse2009OrderLines[]**](InlineResponse2009OrderLines.md) | Order lines for charge | 
+**source** | [**\Swagger\Client\Model\InlineResponse20011Source**](InlineResponse20011Source.md) |  | [optional] 
+**order_lines** | [**\Swagger\Client\Model\InlineResponse20011OrderLines[]**](InlineResponse20011OrderLines.md) | Order lines for charge | 
 **refunded_amount** | **int** | Refunded amount | 
 **error_state** | **string** | Reepay error state if failed: &#x60;soft_declined&#x60;, &#x60;hard_declined&#x60; or &#x60;processing_error&#x60;. Soft and hard declines indicate a card decline. A soft decline is possibly recoverable and a subsequent request with the same card may succeed. E.g. insufficient funds. A processing error indicates an error processing the card either at Reepay, the acquirer, or between Reepay amd the acquirer. | [optional] 
 

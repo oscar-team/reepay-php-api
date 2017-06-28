@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **no_trial** | **bool** | Override plan trial settings and disable trial | [optional] 
 **subscription_discounts** | [**\Swagger\Client\Model\V1subscriptionSubscriptionDiscounts[]**](V1subscriptionSubscriptionDiscounts.md) | Discounts to attach to subscription | [optional] 
 **coupon_codes** | **string[]** | Coupon codes to redeem for subscription | [optional] 
+**add_ons** | [**\Swagger\Client\Model\V1subscriptionhandleAddOns[]**](V1subscriptionhandleAddOns.md) | Add-ons to attach to subscription | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -54,14 +54,12 @@ class InlineResponse2008 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'token' => 'string',
-        'user' => '\Swagger\Client\Model\InlineResponse2008User',
-        'account' => '\Swagger\Client\Model\InlineResponse2008Account',
-        'organisation' => '\Swagger\Client\Model\InlineResponse2008Organisation',
-        'organisations' => '\Swagger\Client\Model\InlineResponse2008Organisations[]',
-        'groups' => 'string[]',
-        'permissions' => 'string[]',
-        'token_ttl' => 'int'
+        'provider' => 'string',
+        'id' => 'string',
+        'state' => 'string',
+        'card_types' => 'string[]',
+        'provider_settings' => 'map[string,object]',
+        'gw_ref' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -74,14 +72,12 @@ class InlineResponse2008 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'token' => 'token',
-        'user' => 'user',
-        'account' => 'account',
-        'organisation' => 'organisation',
-        'organisations' => 'organisations',
-        'groups' => 'groups',
-        'permissions' => 'permissions',
-        'token_ttl' => 'token_ttl'
+        'provider' => 'provider',
+        'id' => 'id',
+        'state' => 'state',
+        'card_types' => 'card_types',
+        'provider_settings' => 'provider_settings',
+        'gw_ref' => 'gw_ref'
     ];
 
 
@@ -90,14 +86,12 @@ class InlineResponse2008 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'token' => 'setToken',
-        'user' => 'setUser',
-        'account' => 'setAccount',
-        'organisation' => 'setOrganisation',
-        'organisations' => 'setOrganisations',
-        'groups' => 'setGroups',
-        'permissions' => 'setPermissions',
-        'token_ttl' => 'setTokenTtl'
+        'provider' => 'setProvider',
+        'id' => 'setId',
+        'state' => 'setState',
+        'card_types' => 'setCardTypes',
+        'provider_settings' => 'setProviderSettings',
+        'gw_ref' => 'setGwRef'
     ];
 
 
@@ -106,14 +100,12 @@ class InlineResponse2008 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'token' => 'getToken',
-        'user' => 'getUser',
-        'account' => 'getAccount',
-        'organisation' => 'getOrganisation',
-        'organisations' => 'getOrganisations',
-        'groups' => 'getGroups',
-        'permissions' => 'getPermissions',
-        'token_ttl' => 'getTokenTtl'
+        'provider' => 'getProvider',
+        'id' => 'getId',
+        'state' => 'getState',
+        'card_types' => 'getCardTypes',
+        'provider_settings' => 'getProviderSettings',
+        'gw_ref' => 'getGwRef'
     ];
 
     public static function attributeMap()
@@ -131,8 +123,24 @@ class InlineResponse2008 implements ArrayAccess
         return self::$getters;
     }
 
+    const STATE_ACTIVE = 'active';
+    const STATE_DISABLED = 'disabled';
+    const STATE_DELETED = 'deleted';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getStateAllowableValues()
+    {
+        return [
+            self::STATE_ACTIVE,
+            self::STATE_DISABLED,
+            self::STATE_DELETED,
+        ];
+    }
     
 
     /**
@@ -147,14 +155,12 @@ class InlineResponse2008 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['token'] = isset($data['token']) ? $data['token'] : null;
-        $this->container['user'] = isset($data['user']) ? $data['user'] : null;
-        $this->container['account'] = isset($data['account']) ? $data['account'] : null;
-        $this->container['organisation'] = isset($data['organisation']) ? $data['organisation'] : null;
-        $this->container['organisations'] = isset($data['organisations']) ? $data['organisations'] : null;
-        $this->container['groups'] = isset($data['groups']) ? $data['groups'] : null;
-        $this->container['permissions'] = isset($data['permissions']) ? $data['permissions'] : null;
-        $this->container['token_ttl'] = isset($data['token_ttl']) ? $data['token_ttl'] : null;
+        $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
+        $this->container['card_types'] = isset($data['card_types']) ? $data['card_types'] : null;
+        $this->container['provider_settings'] = isset($data['provider_settings']) ? $data['provider_settings'] : null;
+        $this->container['gw_ref'] = isset($data['gw_ref']) ? $data['gw_ref'] : null;
     }
 
     /**
@@ -166,20 +172,25 @@ class InlineResponse2008 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['token'] === null) {
-            $invalid_properties[] = "'token' can't be null";
+        if ($this->container['provider'] === null) {
+            $invalid_properties[] = "'provider' can't be null";
         }
-        if ($this->container['organisations'] === null) {
-            $invalid_properties[] = "'organisations' can't be null";
+        if ($this->container['id'] === null) {
+            $invalid_properties[] = "'id' can't be null";
         }
-        if ($this->container['groups'] === null) {
-            $invalid_properties[] = "'groups' can't be null";
+        if ($this->container['state'] === null) {
+            $invalid_properties[] = "'state' can't be null";
         }
-        if ($this->container['permissions'] === null) {
-            $invalid_properties[] = "'permissions' can't be null";
+        $allowed_values = ["active", "disabled", "deleted"];
+        if (!in_array($this->container['state'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'disabled', 'deleted'.";
         }
-        if ($this->container['token_ttl'] === null) {
-            $invalid_properties[] = "'token_ttl' can't be null";
+
+        if ($this->container['card_types'] === null) {
+            $invalid_properties[] = "'card_types' can't be null";
+        }
+        if ($this->container['gw_ref'] === null) {
+            $invalid_properties[] = "'gw_ref' can't be null";
         }
         return $invalid_properties;
     }
@@ -193,19 +204,23 @@ class InlineResponse2008 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['token'] === null) {
+        if ($this->container['provider'] === null) {
             return false;
         }
-        if ($this->container['organisations'] === null) {
+        if ($this->container['id'] === null) {
             return false;
         }
-        if ($this->container['groups'] === null) {
+        if ($this->container['state'] === null) {
             return false;
         }
-        if ($this->container['permissions'] === null) {
+        $allowed_values = ["active", "disabled", "deleted"];
+        if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
-        if ($this->container['token_ttl'] === null) {
+        if ($this->container['card_types'] === null) {
+            return false;
+        }
+        if ($this->container['gw_ref'] === null) {
             return false;
         }
         return true;
@@ -213,169 +228,131 @@ class InlineResponse2008 implements ArrayAccess
 
 
     /**
-     * Gets token
+     * Gets provider
      * @return string
      */
-    public function getToken()
+    public function getProvider()
     {
-        return $this->container['token'];
+        return $this->container['provider'];
     }
 
     /**
-     * Sets token
-     * @param string $token Authentication token to use in X-Auth-Token
+     * Sets provider
+     * @param string $provider Card types supported by agreement
      * @return $this
      */
-    public function setToken($token)
+    public function setProvider($provider)
     {
-        $this->container['token'] = $token;
+        $this->container['provider'] = $provider;
 
         return $this;
     }
 
     /**
-     * Gets user
-     * @return \Swagger\Client\Model\InlineResponse2008User
+     * Gets id
+     * @return string
      */
-    public function getUser()
+    public function getId()
     {
-        return $this->container['user'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets user
-     * @param \Swagger\Client\Model\InlineResponse2008User $user
+     * Sets id
+     * @param string $id Card gateway agreement id
      * @return $this
      */
-    public function setUser($user)
+    public function setId($id)
     {
-        $this->container['user'] = $user;
+        $this->container['id'] = $id;
 
         return $this;
     }
 
     /**
-     * Gets account
-     * @return \Swagger\Client\Model\InlineResponse2008Account
+     * Gets state
+     * @return string
      */
-    public function getAccount()
+    public function getState()
     {
-        return $this->container['account'];
+        return $this->container['state'];
     }
 
     /**
-     * Sets account
-     * @param \Swagger\Client\Model\InlineResponse2008Account $account
+     * Sets state
+     * @param string $state Card gateway state:
      * @return $this
      */
-    public function setAccount($account)
+    public function setState($state)
     {
-        $this->container['account'] = $account;
+        $allowed_values = array('active', 'disabled', 'deleted');
+        if ((!in_array($state, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'disabled', 'deleted'");
+        }
+        $this->container['state'] = $state;
 
         return $this;
     }
 
     /**
-     * Gets organisation
-     * @return \Swagger\Client\Model\InlineResponse2008Organisation
-     */
-    public function getOrganisation()
-    {
-        return $this->container['organisation'];
-    }
-
-    /**
-     * Sets organisation
-     * @param \Swagger\Client\Model\InlineResponse2008Organisation $organisation
-     * @return $this
-     */
-    public function setOrganisation($organisation)
-    {
-        $this->container['organisation'] = $organisation;
-
-        return $this;
-    }
-
-    /**
-     * Gets organisations
-     * @return \Swagger\Client\Model\InlineResponse2008Organisations[]
-     */
-    public function getOrganisations()
-    {
-        return $this->container['organisations'];
-    }
-
-    /**
-     * Sets organisations
-     * @param \Swagger\Client\Model\InlineResponse2008Organisations[] $organisations List of organisations for user
-     * @return $this
-     */
-    public function setOrganisations($organisations)
-    {
-        $this->container['organisations'] = $organisations;
-
-        return $this;
-    }
-
-    /**
-     * Gets groups
+     * Gets card_types
      * @return string[]
      */
-    public function getGroups()
+    public function getCardTypes()
     {
-        return $this->container['groups'];
+        return $this->container['card_types'];
     }
 
     /**
-     * Sets groups
-     * @param string[] $groups List user groups
+     * Sets card_types
+     * @param string[] $card_types Card types supported by agreement
      * @return $this
      */
-    public function setGroups($groups)
+    public function setCardTypes($card_types)
     {
-        $this->container['groups'] = $groups;
+        $this->container['card_types'] = $card_types;
 
         return $this;
     }
 
     /**
-     * Gets permissions
-     * @return string[]
+     * Gets provider_settings
+     * @return map[string,object]
      */
-    public function getPermissions()
+    public function getProviderSettings()
     {
-        return $this->container['permissions'];
+        return $this->container['provider_settings'];
     }
 
     /**
-     * Sets permissions
-     * @param string[] $permissions List user permissions
+     * Sets provider_settings
+     * @param map[string,object] $provider_settings Key value map of provider settings
      * @return $this
      */
-    public function setPermissions($permissions)
+    public function setProviderSettings($provider_settings)
     {
-        $this->container['permissions'] = $permissions;
+        $this->container['provider_settings'] = $provider_settings;
 
         return $this;
     }
 
     /**
-     * Gets token_ttl
-     * @return int
+     * Gets gw_ref
+     * @return string
      */
-    public function getTokenTtl()
+    public function getGwRef()
     {
-        return $this->container['token_ttl'];
+        return $this->container['gw_ref'];
     }
 
     /**
-     * Sets token_ttl
-     * @param int $token_ttl Token time-to-live in minutes
+     * Sets gw_ref
+     * @param string $gw_ref Card gateway reference id
      * @return $this
      */
-    public function setTokenTtl($token_ttl)
+    public function setGwRef($gw_ref)
     {
-        $this->container['token_ttl'] = $token_ttl;
+        $this->container['gw_ref'] = $gw_ref;
 
         return $this;
     }

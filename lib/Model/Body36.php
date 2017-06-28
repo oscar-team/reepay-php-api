@@ -54,7 +54,7 @@ class Body36 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'code' => 'string'
+        'next_period_start' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +67,7 @@ class Body36 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code'
+        'next_period_start' => 'next_period_start'
     ];
 
 
@@ -76,7 +76,7 @@ class Body36 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode'
+        'next_period_start' => 'setNextPeriodStart'
     ];
 
 
@@ -85,7 +85,7 @@ class Body36 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode'
+        'next_period_start' => 'getNextPeriodStart'
     ];
 
     public static function attributeMap()
@@ -119,7 +119,7 @@ class Body36 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['next_period_start'] = isset($data['next_period_start']) ? $data['next_period_start'] : null;
     }
 
     /**
@@ -131,8 +131,8 @@ class Body36 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['code'] === null) {
-            $invalid_properties[] = "'code' can't be null";
+        if ($this->container['next_period_start'] === null) {
+            $invalid_properties[] = "'next_period_start' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +146,7 @@ class Body36 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['code'] === null) {
+        if ($this->container['next_period_start'] === null) {
             return false;
         }
         return true;
@@ -154,22 +154,22 @@ class Body36 implements ArrayAccess
 
 
     /**
-     * Gets code
+     * Gets next_period_start
      * @return string
      */
-    public function getCode()
+    public function getNextPeriodStart()
     {
-        return $this->container['code'];
+        return $this->container['next_period_start'];
     }
 
     /**
-     * Sets code
-     * @param string $code Coupon code
+     * Sets next_period_start
+     * @param string $next_period_start Date and time of requested next period start on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`. The date and time must be in the future.
      * @return $this
      */
-    public function setCode($code)
+    public function setNextPeriodStart($next_period_start)
     {
-        $this->container['code'] = $code;
+        $this->container['next_period_start'] = $next_period_start;
 
         return $this;
     }

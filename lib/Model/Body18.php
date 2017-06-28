@@ -54,15 +54,20 @@ class Body18 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'email' => 'string',
+        'address' => 'string',
+        'address2' => 'string',
+        'city' => 'string',
+        'country' => 'string',
+        'phone' => 'string',
+        'company' => 'string',
+        'vat' => 'string',
         'handle' => 'string',
-        'name' => 'string',
-        'description' => 'string',
-        'amount' => 'int',
-        'percentage' => 'int',
-        'apply_to' => 'string[]',
-        'fixed_count' => 'int',
-        'fixed_period_unit' => 'string',
-        'fixed_period' => 'int'
+        'test' => 'bool',
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'postal_code' => 'string',
+        'generate_handle' => 'bool'
     ];
 
     public static function swaggerTypes()
@@ -75,15 +80,20 @@ class Body18 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'email' => 'email',
+        'address' => 'address',
+        'address2' => 'address2',
+        'city' => 'city',
+        'country' => 'country',
+        'phone' => 'phone',
+        'company' => 'company',
+        'vat' => 'vat',
         'handle' => 'handle',
-        'name' => 'name',
-        'description' => 'description',
-        'amount' => 'amount',
-        'percentage' => 'percentage',
-        'apply_to' => 'apply_to',
-        'fixed_count' => 'fixed_count',
-        'fixed_period_unit' => 'fixed_period_unit',
-        'fixed_period' => 'fixed_period'
+        'test' => 'test',
+        'first_name' => 'first_name',
+        'last_name' => 'last_name',
+        'postal_code' => 'postal_code',
+        'generate_handle' => 'generate_handle'
     ];
 
 
@@ -92,15 +102,20 @@ class Body18 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'email' => 'setEmail',
+        'address' => 'setAddress',
+        'address2' => 'setAddress2',
+        'city' => 'setCity',
+        'country' => 'setCountry',
+        'phone' => 'setPhone',
+        'company' => 'setCompany',
+        'vat' => 'setVat',
         'handle' => 'setHandle',
-        'name' => 'setName',
-        'description' => 'setDescription',
-        'amount' => 'setAmount',
-        'percentage' => 'setPercentage',
-        'apply_to' => 'setApplyTo',
-        'fixed_count' => 'setFixedCount',
-        'fixed_period_unit' => 'setFixedPeriodUnit',
-        'fixed_period' => 'setFixedPeriod'
+        'test' => 'setTest',
+        'first_name' => 'setFirstName',
+        'last_name' => 'setLastName',
+        'postal_code' => 'setPostalCode',
+        'generate_handle' => 'setGenerateHandle'
     ];
 
 
@@ -109,15 +124,20 @@ class Body18 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'email' => 'getEmail',
+        'address' => 'getAddress',
+        'address2' => 'getAddress2',
+        'city' => 'getCity',
+        'country' => 'getCountry',
+        'phone' => 'getPhone',
+        'company' => 'getCompany',
+        'vat' => 'getVat',
         'handle' => 'getHandle',
-        'name' => 'getName',
-        'description' => 'getDescription',
-        'amount' => 'getAmount',
-        'percentage' => 'getPercentage',
-        'apply_to' => 'getApplyTo',
-        'fixed_count' => 'getFixedCount',
-        'fixed_period_unit' => 'getFixedPeriodUnit',
-        'fixed_period' => 'getFixedPeriod'
+        'test' => 'getTest',
+        'first_name' => 'getFirstName',
+        'last_name' => 'getLastName',
+        'postal_code' => 'getPostalCode',
+        'generate_handle' => 'getGenerateHandle'
     ];
 
     public static function attributeMap()
@@ -135,22 +155,8 @@ class Body18 implements ArrayAccess
         return self::$getters;
     }
 
-    const FIXED_PERIOD_UNIT_MONTHS = 'months';
-    const FIXED_PERIOD_UNIT_DAYS = 'days';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     * @return string[]
-     */
-    public function getFixedPeriodUnitAllowableValues()
-    {
-        return [
-            self::FIXED_PERIOD_UNIT_MONTHS,
-            self::FIXED_PERIOD_UNIT_DAYS,
-        ];
-    }
     
 
     /**
@@ -165,15 +171,20 @@ class Body18 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
+        $this->container['address2'] = isset($data['address2']) ? $data['address2'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['phone'] = isset($data['phone']) ? $data['phone'] : null;
+        $this->container['company'] = isset($data['company']) ? $data['company'] : null;
+        $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['percentage'] = isset($data['percentage']) ? $data['percentage'] : null;
-        $this->container['apply_to'] = isset($data['apply_to']) ? $data['apply_to'] : null;
-        $this->container['fixed_count'] = isset($data['fixed_count']) ? $data['fixed_count'] : null;
-        $this->container['fixed_period_unit'] = isset($data['fixed_period_unit']) ? $data['fixed_period_unit'] : null;
-        $this->container['fixed_period'] = isset($data['fixed_period']) ? $data['fixed_period'] : null;
+        $this->container['test'] = isset($data['test']) ? $data['test'] : null;
+        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
+        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
+        $this->container['generate_handle'] = isset($data['generate_handle']) ? $data['generate_handle'] : null;
     }
 
     /**
@@ -184,40 +195,6 @@ class Body18 implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
-
-        if ($this->container['handle'] === null) {
-            $invalid_properties[] = "'handle' can't be null";
-        }
-        if ($this->container['name'] === null) {
-            $invalid_properties[] = "'name' can't be null";
-        }
-        if (!is_null($this->container['amount']) && ($this->container['amount'] < 0)) {
-            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
-        }
-
-        if (!is_null($this->container['percentage']) && ($this->container['percentage'] > 100)) {
-            $invalid_properties[] = "invalid value for 'percentage', must be smaller than or equal to 100.";
-        }
-
-        if (!is_null($this->container['percentage']) && ($this->container['percentage'] < 1)) {
-            $invalid_properties[] = "invalid value for 'percentage', must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['apply_to'] === null) {
-            $invalid_properties[] = "'apply_to' can't be null";
-        }
-        if (!is_null($this->container['fixed_count']) && ($this->container['fixed_count'] < 1)) {
-            $invalid_properties[] = "invalid value for 'fixed_count', must be bigger than or equal to 1.";
-        }
-
-        $allowed_values = ["months", "days"];
-        if (!in_array($this->container['fixed_period_unit'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'fixed_period_unit', must be one of 'months', 'days'.";
-        }
-
-        if (!is_null($this->container['fixed_period']) && ($this->container['fixed_period'] < 1)) {
-            $invalid_properties[] = "invalid value for 'fixed_period', must be bigger than or equal to 1.";
-        }
 
         return $invalid_properties;
     }
@@ -231,37 +208,177 @@ class Body18 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['handle'] === null) {
-            return false;
-        }
-        if ($this->container['name'] === null) {
-            return false;
-        }
-        if ($this->container['amount'] < 0) {
-            return false;
-        }
-        if ($this->container['percentage'] > 100) {
-            return false;
-        }
-        if ($this->container['percentage'] < 1) {
-            return false;
-        }
-        if ($this->container['apply_to'] === null) {
-            return false;
-        }
-        if ($this->container['fixed_count'] < 1) {
-            return false;
-        }
-        $allowed_values = ["months", "days"];
-        if (!in_array($this->container['fixed_period_unit'], $allowed_values)) {
-            return false;
-        }
-        if ($this->container['fixed_period'] < 1) {
-            return false;
-        }
         return true;
     }
 
+
+    /**
+     * Gets email
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     * @param string $email Customer email
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets address
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->container['address'];
+    }
+
+    /**
+     * Sets address
+     * @param string $address Customer address
+     * @return $this
+     */
+    public function setAddress($address)
+    {
+        $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets address2
+     * @return string
+     */
+    public function getAddress2()
+    {
+        return $this->container['address2'];
+    }
+
+    /**
+     * Sets address2
+     * @param string $address2 Customer address2
+     * @return $this
+     */
+    public function setAddress2($address2)
+    {
+        $this->container['address2'] = $address2;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     * @param string $city Customer city
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     * @return string
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     * @param string $country Customer country in ISO 3166-1 alpha-2
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->container['phone'];
+    }
+
+    /**
+     * Sets phone
+     * @param string $phone Customer phone number
+     * @return $this
+     */
+    public function setPhone($phone)
+    {
+        $this->container['phone'] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets company
+     * @return string
+     */
+    public function getCompany()
+    {
+        return $this->container['company'];
+    }
+
+    /**
+     * Sets company
+     * @param string $company Customer company
+     * @return $this
+     */
+    public function setCompany($company)
+    {
+        $this->container['company'] = $company;
+
+        return $this;
+    }
+
+    /**
+     * Gets vat
+     * @return string
+     */
+    public function getVat()
+    {
+        return $this->container['vat'];
+    }
+
+    /**
+     * Sets vat
+     * @param string $vat Customer vat number
+     * @return $this
+     */
+    public function setVat($vat)
+    {
+        $this->container['vat'] = $vat;
+
+        return $this;
+    }
 
     /**
      * Gets handle
@@ -274,7 +391,7 @@ class Body18 implements ArrayAccess
 
     /**
      * Sets handle
-     * @param string $handle Per account unique handle for the discount
+     * @param string $handle Per account unique handle for the customer. Max length 255 with allowable characters [a-zA-Z0-9_.-@]. Must be provided if generate_handle is not defined.
      * @return $this
      */
     public function setHandle($handle)
@@ -285,196 +402,106 @@ class Body18 implements ArrayAccess
     }
 
     /**
-     * Gets name
+     * Gets test
+     * @return bool
+     */
+    public function getTest()
+    {
+        return $this->container['test'];
+    }
+
+    /**
+     * Sets test
+     * @param bool $test Test flag. If given it will be verified that the account state matches the intended create state.
+     * @return $this
+     */
+    public function setTest($test)
+    {
+        $this->container['test'] = $test;
+
+        return $this;
+    }
+
+    /**
+     * Gets first_name
      * @return string
      */
-    public function getName()
+    public function getFirstName()
     {
-        return $this->container['name'];
+        return $this->container['first_name'];
     }
 
     /**
-     * Sets name
-     * @param string $name Name of discount. Will be used as order line text.
+     * Sets first_name
+     * @param string $first_name Customer first name
      * @return $this
      */
-    public function setName($name)
+    public function setFirstName($first_name)
     {
-        $this->container['name'] = $name;
+        $this->container['first_name'] = $first_name;
 
         return $this;
     }
 
     /**
-     * Gets description
+     * Gets last_name
      * @return string
      */
-    public function getDescription()
+    public function getLastName()
     {
-        return $this->container['description'];
+        return $this->container['last_name'];
     }
 
     /**
-     * Sets description
-     * @param string $description Optional description of discount
+     * Sets last_name
+     * @param string $last_name Customer last name
      * @return $this
      */
-    public function setDescription($description)
+    public function setLastName($last_name)
     {
-        $this->container['description'] = $description;
+        $this->container['last_name'] = $last_name;
 
         return $this;
     }
 
     /**
-     * Gets amount
-     * @return int
-     */
-    public function getAmount()
-    {
-        return $this->container['amount'];
-    }
-
-    /**
-     * Sets amount
-     * @param int $amount Fixed amount discount deducted from order line amounts including VAT
-     * @return $this
-     */
-    public function setAmount($amount)
-    {
-
-        if (!is_null($amount) && ($amount < 0)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling Body18., must be bigger than or equal to 0.');
-        }
-
-        $this->container['amount'] = $amount;
-
-        return $this;
-    }
-
-    /**
-     * Gets percentage
-     * @return int
-     */
-    public function getPercentage()
-    {
-        return $this->container['percentage'];
-    }
-
-    /**
-     * Sets percentage
-     * @param int $percentage Percentage discount applied to each applicable order line
-     * @return $this
-     */
-    public function setPercentage($percentage)
-    {
-
-        if (!is_null($percentage) && ($percentage > 100)) {
-            throw new \InvalidArgumentException('invalid value for $percentage when calling Body18., must be smaller than or equal to 100.');
-        }
-        if (!is_null($percentage) && ($percentage < 1)) {
-            throw new \InvalidArgumentException('invalid value for $percentage when calling Body18., must be bigger than or equal to 1.');
-        }
-
-        $this->container['percentage'] = $percentage;
-
-        return $this;
-    }
-
-    /**
-     * Gets apply_to
-     * @return string[]
-     */
-    public function getApplyTo()
-    {
-        return $this->container['apply_to'];
-    }
-
-    /**
-     * Sets apply_to
-     * @param string[] $apply_to Which order lines the discount is applicable to: `all`, `setup_fee`, `plan`, `additional_cost`, `add_on` and `ondemand`
-     * @return $this
-     */
-    public function setApplyTo($apply_to)
-    {
-        $this->container['apply_to'] = $apply_to;
-
-        return $this;
-    }
-
-    /**
-     * Gets fixed_count
-     * @return int
-     */
-    public function getFixedCount()
-    {
-        return $this->container['fixed_count'];
-    }
-
-    /**
-     * Sets fixed_count
-     * @param int $fixed_count Apply discount to a fixed number of invoices
-     * @return $this
-     */
-    public function setFixedCount($fixed_count)
-    {
-
-        if (!is_null($fixed_count) && ($fixed_count < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fixed_count when calling Body18., must be bigger than or equal to 1.');
-        }
-
-        $this->container['fixed_count'] = $fixed_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets fixed_period_unit
+     * Gets postal_code
      * @return string
      */
-    public function getFixedPeriodUnit()
+    public function getPostalCode()
     {
-        return $this->container['fixed_period_unit'];
+        return $this->container['postal_code'];
     }
 
     /**
-     * Sets fixed_period_unit
-     * @param string $fixed_period_unit Time unit use for fixed valid period either `days` or `months`
+     * Sets postal_code
+     * @param string $postal_code Customer postal code
      * @return $this
      */
-    public function setFixedPeriodUnit($fixed_period_unit)
+    public function setPostalCode($postal_code)
     {
-        $allowed_values = array('months', 'days');
-        if (!is_null($fixed_period_unit) && (!in_array($fixed_period_unit, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'fixed_period_unit', must be one of 'months', 'days'");
-        }
-        $this->container['fixed_period_unit'] = $fixed_period_unit;
+        $this->container['postal_code'] = $postal_code;
 
         return $this;
     }
 
     /**
-     * Gets fixed_period
-     * @return int
+     * Gets generate_handle
+     * @return bool
      */
-    public function getFixedPeriod()
+    public function getGenerateHandle()
     {
-        return $this->container['fixed_period'];
+        return $this->container['generate_handle'];
     }
 
     /**
-     * Sets fixed_period
-     * @param int $fixed_period Fixed period length e.g. 12 months or 14 days
+     * Sets generate_handle
+     * @param bool $generate_handle Auto generate handle on the form cust-[sequence_number]
      * @return $this
      */
-    public function setFixedPeriod($fixed_period)
+    public function setGenerateHandle($generate_handle)
     {
-
-        if (!is_null($fixed_period) && ($fixed_period < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fixed_period when calling Body18., must be bigger than or equal to 1.');
-        }
-
-        $this->container['fixed_period'] = $fixed_period;
+        $this->container['generate_handle'] = $generate_handle;
 
         return $this;
     }

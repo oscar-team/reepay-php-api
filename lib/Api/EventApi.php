@@ -94,7 +94,7 @@ class EventApi
      *
      * @param string $id Event id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20018Content
+     * @return \Swagger\Client\Model\InlineResponse20020Content
      */
     public function getEvent($id)
     {
@@ -109,7 +109,7 @@ class EventApi
      *
      * @param string $id Event id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20018Content, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20020Content, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEventWithHttpInfo($id)
     {
@@ -164,15 +164,15 @@ class EventApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20018Content',
+                '\Swagger\Client\Model\InlineResponse20020Content',
                 '/v1/event/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20018Content', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20020Content', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20018Content', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20020Content', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -212,7 +212,7 @@ class EventApi
      * @param string $subscription Subscription handle (optional)
      * @param string $invoice Invoice id (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20018
+     * @return \Swagger\Client\Model\InlineResponse20020
      */
     public function getEvents($page = null, $size = null, $customer = null, $subscription = null, $invoice = null)
     {
@@ -231,7 +231,7 @@ class EventApi
      * @param string $subscription Subscription handle (optional)
      * @param string $invoice Invoice id (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20018, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20020, HTTP status code, HTTP response headers (array of strings)
      */
     public function getEventsWithHttpInfo($page = null, $size = null, $customer = null, $subscription = null, $invoice = null)
     {
@@ -305,15 +305,15 @@ class EventApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20018',
+                '\Swagger\Client\Model\InlineResponse20020',
                 '/v1/event'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20018', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20020', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20018', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20020', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

@@ -54,9 +54,9 @@ class InlineResponse2004 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'bcc' => 'string',
-        'default_from' => 'string',
-        'reply_to' => 'string'
+        'discount_apply_order' => 'string',
+        'discount_percentage_apply' => 'string',
+        'multiple_allowed' => 'bool'
     ];
 
     public static function swaggerTypes()
@@ -69,9 +69,9 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'bcc' => 'bcc',
-        'default_from' => 'default_from',
-        'reply_to' => 'reply_to'
+        'discount_apply_order' => 'discount_apply_order',
+        'discount_percentage_apply' => 'discount_percentage_apply',
+        'multiple_allowed' => 'multiple_allowed'
     ];
 
 
@@ -80,9 +80,9 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'bcc' => 'setBcc',
-        'default_from' => 'setDefaultFrom',
-        'reply_to' => 'setReplyTo'
+        'discount_apply_order' => 'setDiscountApplyOrder',
+        'discount_percentage_apply' => 'setDiscountPercentageApply',
+        'multiple_allowed' => 'setMultipleAllowed'
     ];
 
 
@@ -91,9 +91,9 @@ class InlineResponse2004 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'bcc' => 'getBcc',
-        'default_from' => 'getDefaultFrom',
-        'reply_to' => 'getReplyTo'
+        'discount_apply_order' => 'getDiscountApplyOrder',
+        'discount_percentage_apply' => 'getDiscountPercentageApply',
+        'multiple_allowed' => 'getMultipleAllowed'
     ];
 
     public static function attributeMap()
@@ -111,8 +111,36 @@ class InlineResponse2004 implements ArrayAccess
         return self::$getters;
     }
 
+    const DISCOUNT_APPLY_ORDER_PERCENTAGE_FIRST = 'percentage_first';
+    const DISCOUNT_APPLY_ORDER_AMOUNT_FIRST = 'amount_first';
+    const DISCOUNT_PERCENTAGE_APPLY_FULL = 'full';
+    const DISCOUNT_PERCENTAGE_APPLY_COMPOUND = 'compound';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getDiscountApplyOrderAllowableValues()
+    {
+        return [
+            self::DISCOUNT_APPLY_ORDER_PERCENTAGE_FIRST,
+            self::DISCOUNT_APPLY_ORDER_AMOUNT_FIRST,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getDiscountPercentageApplyAllowableValues()
+    {
+        return [
+            self::DISCOUNT_PERCENTAGE_APPLY_FULL,
+            self::DISCOUNT_PERCENTAGE_APPLY_COMPOUND,
+        ];
+    }
     
 
     /**
@@ -127,9 +155,9 @@ class InlineResponse2004 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['bcc'] = isset($data['bcc']) ? $data['bcc'] : null;
-        $this->container['default_from'] = isset($data['default_from']) ? $data['default_from'] : null;
-        $this->container['reply_to'] = isset($data['reply_to']) ? $data['reply_to'] : null;
+        $this->container['discount_apply_order'] = isset($data['discount_apply_order']) ? $data['discount_apply_order'] : null;
+        $this->container['discount_percentage_apply'] = isset($data['discount_percentage_apply']) ? $data['discount_percentage_apply'] : null;
+        $this->container['multiple_allowed'] = isset($data['multiple_allowed']) ? $data['multiple_allowed'] : null;
     }
 
     /**
@@ -141,8 +169,24 @@ class InlineResponse2004 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['default_from'] === null) {
-            $invalid_properties[] = "'default_from' can't be null";
+        if ($this->container['discount_apply_order'] === null) {
+            $invalid_properties[] = "'discount_apply_order' can't be null";
+        }
+        $allowed_values = ["percentage_first", "amount_first"];
+        if (!in_array($this->container['discount_apply_order'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'discount_apply_order', must be one of 'percentage_first', 'amount_first'.";
+        }
+
+        if ($this->container['discount_percentage_apply'] === null) {
+            $invalid_properties[] = "'discount_percentage_apply' can't be null";
+        }
+        $allowed_values = ["full", "compound"];
+        if (!in_array($this->container['discount_percentage_apply'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'discount_percentage_apply', must be one of 'full', 'compound'.";
+        }
+
+        if ($this->container['multiple_allowed'] === null) {
+            $invalid_properties[] = "'multiple_allowed' can't be null";
         }
         return $invalid_properties;
     }
@@ -156,7 +200,21 @@ class InlineResponse2004 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['default_from'] === null) {
+        if ($this->container['discount_apply_order'] === null) {
+            return false;
+        }
+        $allowed_values = ["percentage_first", "amount_first"];
+        if (!in_array($this->container['discount_apply_order'], $allowed_values)) {
+            return false;
+        }
+        if ($this->container['discount_percentage_apply'] === null) {
+            return false;
+        }
+        $allowed_values = ["full", "compound"];
+        if (!in_array($this->container['discount_percentage_apply'], $allowed_values)) {
+            return false;
+        }
+        if ($this->container['multiple_allowed'] === null) {
             return false;
         }
         return true;
@@ -164,64 +222,72 @@ class InlineResponse2004 implements ArrayAccess
 
 
     /**
-     * Gets bcc
+     * Gets discount_apply_order
      * @return string
      */
-    public function getBcc()
+    public function getDiscountApplyOrder()
     {
-        return $this->container['bcc'];
+        return $this->container['discount_apply_order'];
     }
 
     /**
-     * Sets bcc
-     * @param string $bcc Optional Bcc email address to use for all mails. Rfc 822 address.
+     * Sets discount_apply_order
+     * @param string $discount_apply_order The order to apply multiple discounts in, one of the following: `percentage_first`, `amount_first`
      * @return $this
      */
-    public function setBcc($bcc)
+    public function setDiscountApplyOrder($discount_apply_order)
     {
-        $this->container['bcc'] = $bcc;
+        $allowed_values = array('percentage_first', 'amount_first');
+        if ((!in_array($discount_apply_order, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'discount_apply_order', must be one of 'percentage_first', 'amount_first'");
+        }
+        $this->container['discount_apply_order'] = $discount_apply_order;
 
         return $this;
     }
 
     /**
-     * Gets default_from
+     * Gets discount_percentage_apply
      * @return string
      */
-    public function getDefaultFrom()
+    public function getDiscountPercentageApply()
     {
-        return $this->container['default_from'];
+        return $this->container['discount_percentage_apply'];
     }
 
     /**
-     * Sets default_from
-     * @param string $default_from Default email sender address. Rfc 822 address.
+     * Sets discount_percentage_apply
+     * @param string $discount_percentage_apply The rule for applying multiple percentage discounts, one of the following: `full`, `compound`
      * @return $this
      */
-    public function setDefaultFrom($default_from)
+    public function setDiscountPercentageApply($discount_percentage_apply)
     {
-        $this->container['default_from'] = $default_from;
+        $allowed_values = array('full', 'compound');
+        if ((!in_array($discount_percentage_apply, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'discount_percentage_apply', must be one of 'full', 'compound'");
+        }
+        $this->container['discount_percentage_apply'] = $discount_percentage_apply;
 
         return $this;
     }
 
     /**
-     * Gets reply_to
-     * @return string
+     * Gets multiple_allowed
+     * @return bool
      */
-    public function getReplyTo()
+    public function getMultipleAllowed()
     {
-        return $this->container['reply_to'];
+        return $this->container['multiple_allowed'];
     }
 
     /**
-     * Sets reply_to
-     * @param string $reply_to Optional Reply-To email address. Rfc 822 address.
+     * Sets multiple_allowed
+     * @param bool $multiple_allowed If multiple discounts per subscription is allowed
      * @return $this
      */
-    public function setReplyTo($reply_to)
+    public function setMultipleAllowed($multiple_allowed)
     {
-        $this->container['reply_to'] = $reply_to;
+        $this->container['multiple_allowed'] = $multiple_allowed;
 
         return $this;
     }

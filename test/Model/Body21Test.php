@@ -83,33 +83,41 @@ class Body21Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "comment"
+     * Test attribute "name"
      */
-    public function testPropertyComment()
+    public function testPropertyName()
     {
 
     }
 
     /**
-     * Test attribute "reference"
+     * Test attribute "schedule"
      */
-    public function testPropertyReference()
+    public function testPropertySchedule()
     {
 
     }
 
     /**
-     * Test attribute "method"
+     * Test attribute "handle"
      */
-    public function testPropertyMethod()
+    public function testPropertyHandle()
     {
 
     }
 
     /**
-     * Test attribute "payment_date"
+     * Test attribute "default_plan"
      */
-    public function testPropertyPaymentDate()
+    public function testPropertyDefaultPlan()
+    {
+
+    }
+
+    /**
+     * Test attribute "final_subscription_action"
+     */
+    public function testPropertyFinalSubscriptionAction()
     {
 
     }

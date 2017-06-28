@@ -83,49 +83,17 @@ class Body24Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "invoice"
+     * Test attribute "due"
      */
-    public function testPropertyInvoice()
+    public function testPropertyDue()
     {
 
     }
 
     /**
-     * Test attribute "key"
+     * Test attribute "payment_method"
      */
-    public function testPropertyKey()
-    {
-
-    }
-
-    /**
-     * Test attribute "amount"
-     */
-    public function testPropertyAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "text"
-     */
-    public function testPropertyText()
-    {
-
-    }
-
-    /**
-     * Test attribute "note_lines"
-     */
-    public function testPropertyNoteLines()
-    {
-
-    }
-
-    /**
-     * Test attribute "manual_transfer"
-     */
-    public function testPropertyManualTransfer()
+    public function testPropertyPaymentMethod()
     {
 
     }

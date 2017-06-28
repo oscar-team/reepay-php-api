@@ -54,8 +54,10 @@ class Body22 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'due' => 'string',
-        'payment_method' => 'string'
+        'name' => 'string',
+        'schedule' => 'int[]',
+        'default_plan' => 'bool',
+        'final_subscription_action' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -68,8 +70,10 @@ class Body22 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'due' => 'due',
-        'payment_method' => 'payment_method'
+        'name' => 'name',
+        'schedule' => 'schedule',
+        'default_plan' => 'default_plan',
+        'final_subscription_action' => 'final_subscription_action'
     ];
 
 
@@ -78,8 +82,10 @@ class Body22 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'due' => 'setDue',
-        'payment_method' => 'setPaymentMethod'
+        'name' => 'setName',
+        'schedule' => 'setSchedule',
+        'default_plan' => 'setDefaultPlan',
+        'final_subscription_action' => 'setFinalSubscriptionAction'
     ];
 
 
@@ -88,8 +94,10 @@ class Body22 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'due' => 'getDue',
-        'payment_method' => 'getPaymentMethod'
+        'name' => 'getName',
+        'schedule' => 'getSchedule',
+        'default_plan' => 'getDefaultPlan',
+        'final_subscription_action' => 'getFinalSubscriptionAction'
     ];
 
     public static function attributeMap()
@@ -107,8 +115,24 @@ class Body22 implements ArrayAccess
         return self::$getters;
     }
 
+    const FINAL_SUBSCRIPTION_ACTION_EXPIRE = 'expire';
+    const FINAL_SUBSCRIPTION_ACTION_ON_HOLD = 'on_hold';
+    const FINAL_SUBSCRIPTION_ACTION_NONE = 'none';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getFinalSubscriptionActionAllowableValues()
+    {
+        return [
+            self::FINAL_SUBSCRIPTION_ACTION_EXPIRE,
+            self::FINAL_SUBSCRIPTION_ACTION_ON_HOLD,
+            self::FINAL_SUBSCRIPTION_ACTION_NONE,
+        ];
+    }
     
 
     /**
@@ -123,8 +147,10 @@ class Body22 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['due'] = isset($data['due']) ? $data['due'] : null;
-        $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['schedule'] = isset($data['schedule']) ? $data['schedule'] : null;
+        $this->container['default_plan'] = isset($data['default_plan']) ? $data['default_plan'] : null;
+        $this->container['final_subscription_action'] = isset($data['final_subscription_action']) ? $data['final_subscription_action'] : null;
     }
 
     /**
@@ -135,6 +161,23 @@ class Body22 implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        if ($this->container['name'] === null) {
+            $invalid_properties[] = "'name' can't be null";
+        }
+        if ($this->container['schedule'] === null) {
+            $invalid_properties[] = "'schedule' can't be null";
+        }
+        if ($this->container['default_plan'] === null) {
+            $invalid_properties[] = "'default_plan' can't be null";
+        }
+        if ($this->container['final_subscription_action'] === null) {
+            $invalid_properties[] = "'final_subscription_action' can't be null";
+        }
+        $allowed_values = ["expire", "on_hold", "none"];
+        if (!in_array($this->container['final_subscription_action'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'final_subscription_action', must be one of 'expire', 'on_hold', 'none'.";
+        }
 
         return $invalid_properties;
     }
@@ -148,48 +191,110 @@ class Body22 implements ArrayAccess
     public function valid()
     {
 
+        if ($this->container['name'] === null) {
+            return false;
+        }
+        if ($this->container['schedule'] === null) {
+            return false;
+        }
+        if ($this->container['default_plan'] === null) {
+            return false;
+        }
+        if ($this->container['final_subscription_action'] === null) {
+            return false;
+        }
+        $allowed_values = ["expire", "on_hold", "none"];
+        if (!in_array($this->container['final_subscription_action'], $allowed_values)) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets due
+     * Gets name
      * @return string
      */
-    public function getDue()
+    public function getName()
     {
-        return $this->container['due'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets due
-     * @param string $due Optional due date and time on the form yyyy-MM-dd, yyyyMMdd, yyyy-MM-ddTHH:mm and yyyy-MM-ddTHH:mm:ss from which the invoice should be tried settled. Only allowed for one-time customer invoices.
+     * Sets name
+     * @param string $name Dunning plan name
      * @return $this
      */
-    public function setDue($due)
+    public function setName($name)
     {
-        $this->container['due'] = $due;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets payment_method
-     * @return string
+     * Gets schedule
+     * @return int[]
      */
-    public function getPaymentMethod()
+    public function getSchedule()
     {
-        return $this->container['payment_method'];
+        return $this->container['schedule'];
     }
 
     /**
-     * Sets payment_method
-     * @param string $payment_method Payment method id to use to settle invoice. Must be a payment method supporting instant settle, e.g. credit card. Is required for one-time invoices if the amount on the invoice is more than zero.
+     * Sets schedule
+     * @param int[] $schedule The schedule as list of intervals in days
      * @return $this
      */
-    public function setPaymentMethod($payment_method)
+    public function setSchedule($schedule)
     {
-        $this->container['payment_method'] = $payment_method;
+        $this->container['schedule'] = $schedule;
+
+        return $this;
+    }
+
+    /**
+     * Gets default_plan
+     * @return bool
+     */
+    public function getDefaultPlan()
+    {
+        return $this->container['default_plan'];
+    }
+
+    /**
+     * Sets default_plan
+     * @param bool $default_plan If this is default plan
+     * @return $this
+     */
+    public function setDefaultPlan($default_plan)
+    {
+        $this->container['default_plan'] = $default_plan;
+
+        return $this;
+    }
+
+    /**
+     * Gets final_subscription_action
+     * @return string
+     */
+    public function getFinalSubscriptionAction()
+    {
+        return $this->container['final_subscription_action'];
+    }
+
+    /**
+     * Sets final_subscription_action
+     * @param string $final_subscription_action Action to take for subscription if dunning fails, one of the following: `expire`, `on_hold`, `none`
+     * @return $this
+     */
+    public function setFinalSubscriptionAction($final_subscription_action)
+    {
+        $allowed_values = array('expire', 'on_hold', 'none');
+        if ((!in_array($final_subscription_action, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'final_subscription_action', must be one of 'expire', 'on_hold', 'none'");
+        }
+        $this->container['final_subscription_action'] = $final_subscription_action;
 
         return $this;
     }

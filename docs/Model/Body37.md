@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**next_period_start** | **string** | Date and time of requested next period start on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60; and &#x60;yyyy-MM-ddTHH:mm:ss&#x60;. The date and time must be in the future. | 
+**source** | **string** | The payment method source. Either an existing payment method for the customer, e.g. existing card id &#x60;ca_...&#x60; or a card token &#x60;ct_...&#x60; generated with token API, Reepay JS library or hosted page. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

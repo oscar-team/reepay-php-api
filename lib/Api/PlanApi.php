@@ -92,9 +92,9 @@ class PlanApi
      *
      * Create plan
      *
-     * @param \Swagger\Client\Model\Body25 $body  (optional)
+     * @param \Swagger\Client\Model\Body29 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20022
+     * @return \Swagger\Client\Model\InlineResponse20024
      */
     public function createPlanJson($body = null)
     {
@@ -107,9 +107,9 @@ class PlanApi
      *
      * Create plan
      *
-     * @param \Swagger\Client\Model\Body25 $body  (optional)
+     * @param \Swagger\Client\Model\Body29 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20022, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20024, HTTP status code, HTTP response headers (array of strings)
      */
     public function createPlanJsonWithHttpInfo($body = null)
     {
@@ -157,15 +157,15 @@ class PlanApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20022',
+                '\Swagger\Client\Model\InlineResponse20024',
                 '/v1/plan'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20022', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20024', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20022', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20024', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -201,7 +201,7 @@ class PlanApi
      *
      * @param string $handle Subscription plan handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20022
+     * @return \Swagger\Client\Model\InlineResponse20024
      */
     public function deletePlan($handle)
     {
@@ -216,7 +216,7 @@ class PlanApi
      *
      * @param string $handle Subscription plan handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20022, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20024, HTTP status code, HTTP response headers (array of strings)
      */
     public function deletePlanWithHttpInfo($handle)
     {
@@ -271,15 +271,15 @@ class PlanApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20022',
+                '\Swagger\Client\Model\InlineResponse20024',
                 '/v1/plan/{handle}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20022', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20024', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20022', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20024', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -315,7 +315,7 @@ class PlanApi
      *
      * @param string $handle Plan handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20022
+     * @return \Swagger\Client\Model\InlineResponse20024
      */
     public function getCurrentPlan($handle)
     {
@@ -330,7 +330,7 @@ class PlanApi
      *
      * @param string $handle Plan handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20022, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20024, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCurrentPlanWithHttpInfo($handle)
     {
@@ -385,15 +385,15 @@ class PlanApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20022',
+                '\Swagger\Client\Model\InlineResponse20024',
                 '/v1/plan/{handle}/current'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20022', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20024', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20022', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20024', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -430,7 +430,7 @@ class PlanApi
      * @param string $handle Plan handle (required)
      * @param int $version Plan version (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20022
+     * @return \Swagger\Client\Model\InlineResponse20024
      */
     public function getPlan($handle, $version)
     {
@@ -446,7 +446,7 @@ class PlanApi
      * @param string $handle Plan handle (required)
      * @param int $version Plan version (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20022, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20024, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPlanWithHttpInfo($handle, $version)
     {
@@ -513,15 +513,15 @@ class PlanApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20022',
+                '\Swagger\Client\Model\InlineResponse20024',
                 '/v1/plan/{handle}/{version}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20022', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20024', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20022', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20024', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -557,7 +557,7 @@ class PlanApi
      *
      * @param string $handle Plan handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20022[]
+     * @return \Swagger\Client\Model\InlineResponse20024[]
      */
     public function getPlans($handle)
     {
@@ -572,7 +572,7 @@ class PlanApi
      *
      * @param string $handle Plan handle (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20022[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20024[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getPlansWithHttpInfo($handle)
     {
@@ -627,15 +627,15 @@ class PlanApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20022[]',
+                '\Swagger\Client\Model\InlineResponse20024[]',
                 '/v1/plan/{handle}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20022[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20024[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20022[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20024[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -671,7 +671,7 @@ class PlanApi
      *
      * @param bool $only_active Get only active (optional, default to false)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20022[]
+     * @return \Swagger\Client\Model\InlineResponse20024[]
      */
     public function getPlansList($only_active = null)
     {
@@ -686,7 +686,7 @@ class PlanApi
      *
      * @param bool $only_active Get only active (optional, default to false)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20022[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20024[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getPlansListWithHttpInfo($only_active = null)
     {
@@ -733,15 +733,15 @@ class PlanApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20022[]',
+                '\Swagger\Client\Model\InlineResponse20024[]',
                 '/v1/plan'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20022[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20024[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20022[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20024[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -776,9 +776,9 @@ class PlanApi
      * Supersede plan
      *
      * @param string $handle Plan handle (required)
-     * @param \Swagger\Client\Model\Body27 $body  (optional)
+     * @param \Swagger\Client\Model\Body28 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20022
+     * @return \Swagger\Client\Model\InlineResponse20024
      */
     public function supersedePlanJson($handle, $body = null)
     {
@@ -792,9 +792,9 @@ class PlanApi
      * Supersede plan
      *
      * @param string $handle Plan handle (required)
-     * @param \Swagger\Client\Model\Body27 $body  (optional)
+     * @param \Swagger\Client\Model\Body28 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20022, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20024, HTTP status code, HTTP response headers (array of strings)
      */
     public function supersedePlanJsonWithHttpInfo($handle, $body = null)
     {
@@ -854,15 +854,15 @@ class PlanApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20022',
+                '\Swagger\Client\Model\InlineResponse20024',
                 '/v1/plan/{handle}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20022', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20024', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20022', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20024', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -897,9 +897,9 @@ class PlanApi
      * Update plan
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body26 $body  (optional)
+     * @param \Swagger\Client\Model\Body27 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20022
+     * @return \Swagger\Client\Model\InlineResponse20024
      */
     public function updatePlanJson($handle, $body = null)
     {
@@ -913,9 +913,9 @@ class PlanApi
      * Update plan
      *
      * @param string $handle Subscription handle (required)
-     * @param \Swagger\Client\Model\Body26 $body  (optional)
+     * @param \Swagger\Client\Model\Body27 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20022, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20024, HTTP status code, HTTP response headers (array of strings)
      */
     public function updatePlanJsonWithHttpInfo($handle, $body = null)
     {
@@ -975,15 +975,15 @@ class PlanApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20022',
+                '\Swagger\Client\Model\InlineResponse20024',
                 '/v1/plan/{handle}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20022', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20024', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20022', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20024', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

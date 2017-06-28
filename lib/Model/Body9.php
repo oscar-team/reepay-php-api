@@ -54,14 +54,15 @@ class Body9 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'name' => 'string',
         'handle' => 'string',
-        'code' => 'string',
-        'discount' => 'string',
-        'all_plans' => 'bool',
-        'eligible_plans' => 'string[]',
-        'max_redemptions' => 'int',
-        'valid_until' => 'string'
+        'key' => 'string',
+        'amount' => 'int',
+        'customer' => '\Swagger\Client\Model\V1chargeCustomer',
+        'source' => 'string',
+        'settle' => 'bool',
+        'ordertext' => 'string',
+        'order_lines' => '\Swagger\Client\Model\V1chargeOrderLines[]',
+        'customer_handle' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -74,14 +75,15 @@ class Body9 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
         'handle' => 'handle',
-        'code' => 'code',
-        'discount' => 'discount',
-        'all_plans' => 'all_plans',
-        'eligible_plans' => 'eligible_plans',
-        'max_redemptions' => 'max_redemptions',
-        'valid_until' => 'valid_until'
+        'key' => 'key',
+        'amount' => 'amount',
+        'customer' => 'customer',
+        'source' => 'source',
+        'settle' => 'settle',
+        'ordertext' => 'ordertext',
+        'order_lines' => 'order_lines',
+        'customer_handle' => 'customer_handle'
     ];
 
 
@@ -90,14 +92,15 @@ class Body9 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
         'handle' => 'setHandle',
-        'code' => 'setCode',
-        'discount' => 'setDiscount',
-        'all_plans' => 'setAllPlans',
-        'eligible_plans' => 'setEligiblePlans',
-        'max_redemptions' => 'setMaxRedemptions',
-        'valid_until' => 'setValidUntil'
+        'key' => 'setKey',
+        'amount' => 'setAmount',
+        'customer' => 'setCustomer',
+        'source' => 'setSource',
+        'settle' => 'setSettle',
+        'ordertext' => 'setOrdertext',
+        'order_lines' => 'setOrderLines',
+        'customer_handle' => 'setCustomerHandle'
     ];
 
 
@@ -106,14 +109,15 @@ class Body9 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
         'handle' => 'getHandle',
-        'code' => 'getCode',
-        'discount' => 'getDiscount',
-        'all_plans' => 'getAllPlans',
-        'eligible_plans' => 'getEligiblePlans',
-        'max_redemptions' => 'getMaxRedemptions',
-        'valid_until' => 'getValidUntil'
+        'key' => 'getKey',
+        'amount' => 'getAmount',
+        'customer' => 'getCustomer',
+        'source' => 'getSource',
+        'settle' => 'getSettle',
+        'ordertext' => 'getOrdertext',
+        'order_lines' => 'getOrderLines',
+        'customer_handle' => 'getCustomerHandle'
     ];
 
     public static function attributeMap()
@@ -147,14 +151,15 @@ class Body9 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
-        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
-        $this->container['discount'] = isset($data['discount']) ? $data['discount'] : null;
-        $this->container['all_plans'] = isset($data['all_plans']) ? $data['all_plans'] : null;
-        $this->container['eligible_plans'] = isset($data['eligible_plans']) ? $data['eligible_plans'] : null;
-        $this->container['max_redemptions'] = isset($data['max_redemptions']) ? $data['max_redemptions'] : null;
-        $this->container['valid_until'] = isset($data['valid_until']) ? $data['valid_until'] : null;
+        $this->container['key'] = isset($data['key']) ? $data['key'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
+        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
+        $this->container['settle'] = isset($data['settle']) ? $data['settle'] : null;
+        $this->container['ordertext'] = isset($data['ordertext']) ? $data['ordertext'] : null;
+        $this->container['order_lines'] = isset($data['order_lines']) ? $data['order_lines'] : null;
+        $this->container['customer_handle'] = isset($data['customer_handle']) ? $data['customer_handle'] : null;
     }
 
     /**
@@ -166,22 +171,16 @@ class Body9 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['name'] === null) {
-            $invalid_properties[] = "'name' can't be null";
-        }
         if ($this->container['handle'] === null) {
             $invalid_properties[] = "'handle' can't be null";
         }
-        if ($this->container['code'] === null) {
-            $invalid_properties[] = "'code' can't be null";
-        }
-        if ($this->container['discount'] === null) {
-            $invalid_properties[] = "'discount' can't be null";
-        }
-        if (!is_null($this->container['max_redemptions']) && ($this->container['max_redemptions'] < 1)) {
-            $invalid_properties[] = "invalid value for 'max_redemptions', must be bigger than or equal to 1.";
+        if (!is_null($this->container['amount']) && ($this->container['amount'] < 1)) {
+            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 1.";
         }
 
+        if ($this->container['source'] === null) {
+            $invalid_properties[] = "'source' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -194,45 +193,18 @@ class Body9 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['name'] === null) {
-            return false;
-        }
         if ($this->container['handle'] === null) {
             return false;
         }
-        if ($this->container['code'] === null) {
+        if ($this->container['amount'] < 1) {
             return false;
         }
-        if ($this->container['discount'] === null) {
-            return false;
-        }
-        if ($this->container['max_redemptions'] < 1) {
+        if ($this->container['source'] === null) {
             return false;
         }
         return true;
     }
 
-
-    /**
-     * Gets name
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     * @param string $name Internal name for the coupon.
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
 
     /**
      * Gets handle
@@ -245,7 +217,7 @@ class Body9 implements ArrayAccess
 
     /**
      * Sets handle
-     * @param string $handle Per account unique handle for the coupon
+     * @param string $handle Per account unique reference to charge/invoice. E.g. order id from own system. Multiple payments can be attempted for the same handle but only one authorized or settled charge can exist per handle. Max length 255 with allowable characters [a-zA-Z0-9_.-@].
      * @return $this
      */
     public function setHandle($handle)
@@ -256,132 +228,174 @@ class Body9 implements ArrayAccess
     }
 
     /**
-     * Gets code
+     * Gets key
      * @return string
      */
-    public function getCode()
+    public function getKey()
     {
-        return $this->container['code'];
+        return $this->container['key'];
     }
 
     /**
-     * Sets code
-     * @param string $code The coupon code. Maximum 100 characters.
+     * Sets key
+     * @param string $key Optional idempotency key. Only one authorization or settle can be performed for the same handle. If two create attempts are attempted and the first succeeds the second will fail because charge is already settled or authorized. An idempotency key identifies uniquely the request and multiple requests with the same key and handle will yield the same result. In case of networking errors the same request with same key can safely be retried.
      * @return $this
      */
-    public function setCode($code)
+    public function setKey($key)
     {
-        $this->container['code'] = $code;
+        $this->container['key'] = $key;
 
         return $this;
     }
 
     /**
-     * Gets discount
-     * @return string
-     */
-    public function getDiscount()
-    {
-        return $this->container['discount'];
-    }
-
-    /**
-     * Sets discount
-     * @param string $discount Discount to use for coupon
-     * @return $this
-     */
-    public function setDiscount($discount)
-    {
-        $this->container['discount'] = $discount;
-
-        return $this;
-    }
-
-    /**
-     * Gets all_plans
-     * @return bool
-     */
-    public function getAllPlans()
-    {
-        return $this->container['all_plans'];
-    }
-
-    /**
-     * Sets all_plans
-     * @param bool $all_plans Whether all plans are eligible for this coupon. Defaults to false.
-     * @return $this
-     */
-    public function setAllPlans($all_plans)
-    {
-        $this->container['all_plans'] = $all_plans;
-
-        return $this;
-    }
-
-    /**
-     * Gets eligible_plans
-     * @return string[]
-     */
-    public function getEligiblePlans()
-    {
-        return $this->container['eligible_plans'];
-    }
-
-    /**
-     * Sets eligible_plans
-     * @param string[] $eligible_plans If not all_plans are set to true, then the set of eligible plan handles must be defined.
-     * @return $this
-     */
-    public function setEligiblePlans($eligible_plans)
-    {
-        $this->container['eligible_plans'] = $eligible_plans;
-
-        return $this;
-    }
-
-    /**
-     * Gets max_redemptions
+     * Gets amount
      * @return int
      */
-    public function getMaxRedemptions()
+    public function getAmount()
     {
-        return $this->container['max_redemptions'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets max_redemptions
-     * @param int $max_redemptions Optional maximum number of times this coupon can be redeemed.
+     * Sets amount
+     * @param int $amount Amount in the smallest unit for the account currency. Either `amount` or `order_lines` must be provided if charge/invoice does not already exists.
      * @return $this
      */
-    public function setMaxRedemptions($max_redemptions)
+    public function setAmount($amount)
     {
 
-        if (!is_null($max_redemptions) && ($max_redemptions < 1)) {
-            throw new \InvalidArgumentException('invalid value for $max_redemptions when calling Body9., must be bigger than or equal to 1.');
+        if (!is_null($amount) && ($amount < 1)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling Body9., must be bigger than or equal to 1.');
         }
 
-        $this->container['max_redemptions'] = $max_redemptions;
+        $this->container['amount'] = $amount;
 
         return $this;
     }
 
     /**
-     * Gets valid_until
-     * @return string
+     * Gets customer
+     * @return \Swagger\Client\Model\V1chargeCustomer
      */
-    public function getValidUntil()
+    public function getCustomer()
     {
-        return $this->container['valid_until'];
+        return $this->container['customer'];
     }
 
     /**
-     * Sets valid_until
-     * @param string $valid_until Optional date and time until which the coupon is redeemable. Date and time on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`.
+     * Sets customer
+     * @param \Swagger\Client\Model\V1chargeCustomer $customer
      * @return $this
      */
-    public function setValidUntil($valid_until)
+    public function setCustomer($customer)
     {
-        $this->container['valid_until'] = $valid_until;
+        $this->container['customer'] = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Gets source
+     * @return string
+     */
+    public function getSource()
+    {
+        return $this->container['source'];
+    }
+
+    /**
+     * Sets source
+     * @param string $source The source for the payment. Either an existing payment method for the customer, e.g. `ca_...` or a card token `ct_...` generated with token API or Reepay JS library.
+     * @return $this
+     */
+    public function setSource($source)
+    {
+        $this->container['source'] = $source;
+
+        return $this;
+    }
+
+    /**
+     * Gets settle
+     * @return bool
+     */
+    public function getSettle()
+    {
+        return $this->container['settle'];
+    }
+
+    /**
+     * Sets settle
+     * @param bool $settle Whether or not to immediately settle the charge. Default is true. If not settled immediately the charge will be authorized and can later be settled. Normally this have to be done within 7 days.
+     * @return $this
+     */
+    public function setSettle($settle)
+    {
+        $this->container['settle'] = $settle;
+
+        return $this;
+    }
+
+    /**
+     * Gets ordertext
+     * @return string
+     */
+    public function getOrdertext()
+    {
+        return $this->container['ordertext'];
+    }
+
+    /**
+     * Sets ordertext
+     * @param string $ordertext Optional order text. Used in conjunction with `amount`. Ignored if `order_lines` is provided.
+     * @return $this
+     */
+    public function setOrdertext($ordertext)
+    {
+        $this->container['ordertext'] = $ordertext;
+
+        return $this;
+    }
+
+    /**
+     * Gets order_lines
+     * @return \Swagger\Client\Model\V1chargeOrderLines[]
+     */
+    public function getOrderLines()
+    {
+        return $this->container['order_lines'];
+    }
+
+    /**
+     * Sets order_lines
+     * @param \Swagger\Client\Model\V1chargeOrderLines[] $order_lines Order lines for the charge. The order lines controls the amount. Only required if charge/invoice does not already exist. If given for existing charge the order lines and amount are adjusted.
+     * @return $this
+     */
+    public function setOrderLines($order_lines)
+    {
+        $this->container['order_lines'] = $order_lines;
+
+        return $this;
+    }
+
+    /**
+     * Gets customer_handle
+     * @return string
+     */
+    public function getCustomerHandle()
+    {
+        return $this->container['customer_handle'];
+    }
+
+    /**
+     * Sets customer_handle
+     * @param string $customer_handle Customer reference. If charge does not already exist either this reference must be provided or a create customer object must be provided. .
+     * @return $this
+     */
+    public function setCustomerHandle($customer_handle)
+    {
+        $this->container['customer_handle'] = $customer_handle;
 
         return $this;
     }

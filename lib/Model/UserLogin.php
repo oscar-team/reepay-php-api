@@ -55,10 +55,10 @@ class UserLogin implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'token' => 'string',
-        'user' => '\Swagger\Client\Model\InlineResponse2008User',
-        'account' => '\Swagger\Client\Model\InlineResponse2008Account',
-        'organisation' => '\Swagger\Client\Model\InlineResponse2008Organisation',
-        'organisations' => '\Swagger\Client\Model\InlineResponse2008Organisations[]',
+        'user' => '\Swagger\Client\Model\InlineResponse2009User',
+        'account' => '\Swagger\Client\Model\InlineResponse2009Account',
+        'organisation' => '\Swagger\Client\Model\InlineResponse2009Organisation',
+        'organisations' => '\Swagger\Client\Model\InlineResponse2009Organisations[]',
         'groups' => 'string[]',
         'permissions' => 'string[]',
         'token_ttl' => 'int'
@@ -235,7 +235,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Gets user
-     * @return \Swagger\Client\Model\InlineResponse2008User
+     * @return \Swagger\Client\Model\InlineResponse2009User
      */
     public function getUser()
     {
@@ -244,7 +244,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Sets user
-     * @param \Swagger\Client\Model\InlineResponse2008User $user
+     * @param \Swagger\Client\Model\InlineResponse2009User $user
      * @return $this
      */
     public function setUser($user)
@@ -256,7 +256,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Gets account
-     * @return \Swagger\Client\Model\InlineResponse2008Account
+     * @return \Swagger\Client\Model\InlineResponse2009Account
      */
     public function getAccount()
     {
@@ -265,7 +265,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Sets account
-     * @param \Swagger\Client\Model\InlineResponse2008Account $account
+     * @param \Swagger\Client\Model\InlineResponse2009Account $account
      * @return $this
      */
     public function setAccount($account)
@@ -277,7 +277,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Gets organisation
-     * @return \Swagger\Client\Model\InlineResponse2008Organisation
+     * @return \Swagger\Client\Model\InlineResponse2009Organisation
      */
     public function getOrganisation()
     {
@@ -286,7 +286,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Sets organisation
-     * @param \Swagger\Client\Model\InlineResponse2008Organisation $organisation
+     * @param \Swagger\Client\Model\InlineResponse2009Organisation $organisation
      * @return $this
      */
     public function setOrganisation($organisation)
@@ -298,7 +298,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Gets organisations
-     * @return \Swagger\Client\Model\InlineResponse2008Organisations[]
+     * @return \Swagger\Client\Model\InlineResponse2009Organisations[]
      */
     public function getOrganisations()
     {
@@ -307,7 +307,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Sets organisations
-     * @param \Swagger\Client\Model\InlineResponse2008Organisations[] $organisations List of organisations for user
+     * @param \Swagger\Client\Model\InlineResponse2009Organisations[] $organisations List of organisations for user
      * @return $this
      */
     public function setOrganisations($organisations)

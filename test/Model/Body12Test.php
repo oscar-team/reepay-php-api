@@ -83,113 +83,41 @@ class Body12Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "name"
      */
-    public function testPropertyEmail()
+    public function testPropertyName()
     {
 
     }
 
     /**
-     * Test attribute "address"
+     * Test attribute "all_plans"
      */
-    public function testPropertyAddress()
+    public function testPropertyAllPlans()
     {
 
     }
 
     /**
-     * Test attribute "address2"
+     * Test attribute "eligible_plans"
      */
-    public function testPropertyAddress2()
+    public function testPropertyEligiblePlans()
     {
 
     }
 
     /**
-     * Test attribute "city"
+     * Test attribute "max_redemptions"
      */
-    public function testPropertyCity()
+    public function testPropertyMaxRedemptions()
     {
 
     }
 
     /**
-     * Test attribute "country"
+     * Test attribute "valid_until"
      */
-    public function testPropertyCountry()
-    {
-
-    }
-
-    /**
-     * Test attribute "phone"
-     */
-    public function testPropertyPhone()
-    {
-
-    }
-
-    /**
-     * Test attribute "company"
-     */
-    public function testPropertyCompany()
-    {
-
-    }
-
-    /**
-     * Test attribute "vat"
-     */
-    public function testPropertyVat()
-    {
-
-    }
-
-    /**
-     * Test attribute "handle"
-     */
-    public function testPropertyHandle()
-    {
-
-    }
-
-    /**
-     * Test attribute "test"
-     */
-    public function testPropertyTest()
-    {
-
-    }
-
-    /**
-     * Test attribute "first_name"
-     */
-    public function testPropertyFirstName()
-    {
-
-    }
-
-    /**
-     * Test attribute "last_name"
-     */
-    public function testPropertyLastName()
-    {
-
-    }
-
-    /**
-     * Test attribute "postal_code"
-     */
-    public function testPropertyPostalCode()
-    {
-
-    }
-
-    /**
-     * Test attribute "generate_handle"
-     */
-    public function testPropertyGenerateHandle()
+    public function testPropertyValidUntil()
     {
 
     }

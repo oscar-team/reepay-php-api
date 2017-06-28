@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**subscription** | **string** | Subscription handle | 
-**handle** | **string** | Per account unique handle for the additional cost | 
-**ordertext** | **string** | Order text for the additional cost. Will be on affected invoices. | 
-**quantity** | **int** | Quantity for the additional cost. Default 1. | [optional] 
-**amount** | **int** | Per quantity amount in the smallest unit for the account currency | 
-**vat** | **float** | Optional vat for additional cost. Account default is used if none given. | [optional] 
-**amount_incl_vat** | **bool** | Whether the per quantity amount is including VAT. Defaults to true. | [optional] 
+**name** | **string** | Name of add-on. Will be used as order line text. | 
+**description** | **string** | Optional description of add-on | [optional] 
+**amount** | **int** | Add-on amount | 
+**vat** | **float** | Optional vat for add-on. Account default is used if none given. | [optional] 
+**amount_incl_vat** | **bool** | Whether the amount is including VAT. Default true. | [optional] 
+**all_plans** | **bool** | Whether all plans are eligible for this add-on. Defaults to false. | [optional] 
+**eligible_plans** | **string[]** | If not &#x60;all_plans&#x60; are set to true, then the set of eligible plan handles must be defined. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

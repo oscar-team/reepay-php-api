@@ -55,23 +55,64 @@ class InlineResponse20025 implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'handle' => 'string',
-        'discount' => 'string',
+        'customer' => 'string',
+        'plan' => 'string',
         'state' => 'string',
-        'coupon' => 'string',
-        'deleted' => '\DateTime',
-        'created' => '\DateTime',
-        'name' => 'string',
-        'description' => 'string',
+        'test' => 'bool',
         'amount' => 'int',
-        'percentage' => 'int',
-        'count' => 'int',
-        'invoices' => 'string[]',
-        'apply_to' => 'string[]',
-        'fixed_count' => 'int',
-        'fixed_period_unit' => 'string',
-        'fixed_period' => 'int',
-        'fixed_usage_reached' => 'bool',
-        'fixed_period_passed' => 'bool'
+        'quantity' => 'int',
+        'expires' => '\DateTime',
+        'reactivated' => '\DateTime',
+        'timezone' => 'string',
+        'created' => '\DateTime',
+        'renewing' => 'bool',
+        'plan_version' => 'int',
+        'amount_incl_vat' => 'bool',
+        'start_date' => '\DateTime',
+        'end_date' => '\DateTime',
+        'grace_duration' => 'int',
+        'current_period_start' => '\DateTime',
+        'next_period_start' => '\DateTime',
+        'first_period_start' => '\DateTime',
+        'last_period_start' => '\DateTime',
+        'trial_start' => '\DateTime',
+        'trial_end' => '\DateTime',
+        'is_cancelled' => 'bool',
+        'in_trial' => 'bool',
+        'has_started' => 'bool',
+        'renewal_count' => 'int',
+        'cancelled_date' => '\DateTime',
+        'expired_date' => '\DateTime',
+        'expire_reason' => 'string',
+        'on_hold_date' => '\DateTime',
+        'on_hold_reason' => 'string',
+        'payment_method_added' => 'bool',
+        'scheduled_plan_change' => 'string',
+        'reminder_email_sent' => '\DateTime',
+        'failed_invoices' => 'int',
+        'failed_amount' => 'int',
+        'cancelled_invoices' => 'int',
+        'cancelled_amount' => 'int',
+        'pending_invoices' => 'int',
+        'pending_amount' => 'int',
+        'dunning_invoices' => 'int',
+        'dunning_amount' => 'int',
+        'settled_invoices' => 'int',
+        'settled_amount' => 'int',
+        'refunded_amount' => 'int',
+        'pending_additional_costs' => 'int',
+        'pending_additional_cost_amount' => 'int',
+        'transferred_additional_costs' => 'int',
+        'transferred_additional_cost_amount' => 'int',
+        'pending_credits' => 'int',
+        'pending_credit_amount' => 'int',
+        'transferred_credits' => 'int',
+        'transferred_credit_amount' => 'int',
+        'hosted_page_links' => '\Swagger\Client\Model\InlineResponse20025HostedPageLinks',
+        'subscription_discounts' => 'string[]',
+        'pending_change' => '\Swagger\Client\Model\InlineResponse20025PendingChange',
+        'subscription_changes' => '\Swagger\Client\Model\InlineResponse20025PendingChange[]',
+        'subscription_add_ons' => 'string[]'
     ];
 
     public static function swaggerTypes()
@@ -85,23 +126,64 @@ class InlineResponse20025 implements ArrayAccess
      */
     protected static $attributeMap = [
         'handle' => 'handle',
-        'discount' => 'discount',
+        'customer' => 'customer',
+        'plan' => 'plan',
         'state' => 'state',
-        'coupon' => 'coupon',
-        'deleted' => 'deleted',
-        'created' => 'created',
-        'name' => 'name',
-        'description' => 'description',
+        'test' => 'test',
         'amount' => 'amount',
-        'percentage' => 'percentage',
-        'count' => 'count',
-        'invoices' => 'invoices',
-        'apply_to' => 'apply_to',
-        'fixed_count' => 'fixed_count',
-        'fixed_period_unit' => 'fixed_period_unit',
-        'fixed_period' => 'fixed_period',
-        'fixed_usage_reached' => 'fixed_usage_reached',
-        'fixed_period_passed' => 'fixed_period_passed'
+        'quantity' => 'quantity',
+        'expires' => 'expires',
+        'reactivated' => 'reactivated',
+        'timezone' => 'timezone',
+        'created' => 'created',
+        'renewing' => 'renewing',
+        'plan_version' => 'plan_version',
+        'amount_incl_vat' => 'amount_incl_vat',
+        'start_date' => 'start_date',
+        'end_date' => 'end_date',
+        'grace_duration' => 'grace_duration',
+        'current_period_start' => 'current_period_start',
+        'next_period_start' => 'next_period_start',
+        'first_period_start' => 'first_period_start',
+        'last_period_start' => 'last_period_start',
+        'trial_start' => 'trial_start',
+        'trial_end' => 'trial_end',
+        'is_cancelled' => 'is_cancelled',
+        'in_trial' => 'in_trial',
+        'has_started' => 'has_started',
+        'renewal_count' => 'renewal_count',
+        'cancelled_date' => 'cancelled_date',
+        'expired_date' => 'expired_date',
+        'expire_reason' => 'expire_reason',
+        'on_hold_date' => 'on_hold_date',
+        'on_hold_reason' => 'on_hold_reason',
+        'payment_method_added' => 'payment_method_added',
+        'scheduled_plan_change' => 'scheduled_plan_change',
+        'reminder_email_sent' => 'reminder_email_sent',
+        'failed_invoices' => 'failed_invoices',
+        'failed_amount' => 'failed_amount',
+        'cancelled_invoices' => 'cancelled_invoices',
+        'cancelled_amount' => 'cancelled_amount',
+        'pending_invoices' => 'pending_invoices',
+        'pending_amount' => 'pending_amount',
+        'dunning_invoices' => 'dunning_invoices',
+        'dunning_amount' => 'dunning_amount',
+        'settled_invoices' => 'settled_invoices',
+        'settled_amount' => 'settled_amount',
+        'refunded_amount' => 'refunded_amount',
+        'pending_additional_costs' => 'pending_additional_costs',
+        'pending_additional_cost_amount' => 'pending_additional_cost_amount',
+        'transferred_additional_costs' => 'transferred_additional_costs',
+        'transferred_additional_cost_amount' => 'transferred_additional_cost_amount',
+        'pending_credits' => 'pending_credits',
+        'pending_credit_amount' => 'pending_credit_amount',
+        'transferred_credits' => 'transferred_credits',
+        'transferred_credit_amount' => 'transferred_credit_amount',
+        'hosted_page_links' => 'hosted_page_links',
+        'subscription_discounts' => 'subscription_discounts',
+        'pending_change' => 'pending_change',
+        'subscription_changes' => 'subscription_changes',
+        'subscription_add_ons' => 'subscription_add_ons'
     ];
 
 
@@ -111,23 +193,64 @@ class InlineResponse20025 implements ArrayAccess
      */
     protected static $setters = [
         'handle' => 'setHandle',
-        'discount' => 'setDiscount',
+        'customer' => 'setCustomer',
+        'plan' => 'setPlan',
         'state' => 'setState',
-        'coupon' => 'setCoupon',
-        'deleted' => 'setDeleted',
-        'created' => 'setCreated',
-        'name' => 'setName',
-        'description' => 'setDescription',
+        'test' => 'setTest',
         'amount' => 'setAmount',
-        'percentage' => 'setPercentage',
-        'count' => 'setCount',
-        'invoices' => 'setInvoices',
-        'apply_to' => 'setApplyTo',
-        'fixed_count' => 'setFixedCount',
-        'fixed_period_unit' => 'setFixedPeriodUnit',
-        'fixed_period' => 'setFixedPeriod',
-        'fixed_usage_reached' => 'setFixedUsageReached',
-        'fixed_period_passed' => 'setFixedPeriodPassed'
+        'quantity' => 'setQuantity',
+        'expires' => 'setExpires',
+        'reactivated' => 'setReactivated',
+        'timezone' => 'setTimezone',
+        'created' => 'setCreated',
+        'renewing' => 'setRenewing',
+        'plan_version' => 'setPlanVersion',
+        'amount_incl_vat' => 'setAmountInclVat',
+        'start_date' => 'setStartDate',
+        'end_date' => 'setEndDate',
+        'grace_duration' => 'setGraceDuration',
+        'current_period_start' => 'setCurrentPeriodStart',
+        'next_period_start' => 'setNextPeriodStart',
+        'first_period_start' => 'setFirstPeriodStart',
+        'last_period_start' => 'setLastPeriodStart',
+        'trial_start' => 'setTrialStart',
+        'trial_end' => 'setTrialEnd',
+        'is_cancelled' => 'setIsCancelled',
+        'in_trial' => 'setInTrial',
+        'has_started' => 'setHasStarted',
+        'renewal_count' => 'setRenewalCount',
+        'cancelled_date' => 'setCancelledDate',
+        'expired_date' => 'setExpiredDate',
+        'expire_reason' => 'setExpireReason',
+        'on_hold_date' => 'setOnHoldDate',
+        'on_hold_reason' => 'setOnHoldReason',
+        'payment_method_added' => 'setPaymentMethodAdded',
+        'scheduled_plan_change' => 'setScheduledPlanChange',
+        'reminder_email_sent' => 'setReminderEmailSent',
+        'failed_invoices' => 'setFailedInvoices',
+        'failed_amount' => 'setFailedAmount',
+        'cancelled_invoices' => 'setCancelledInvoices',
+        'cancelled_amount' => 'setCancelledAmount',
+        'pending_invoices' => 'setPendingInvoices',
+        'pending_amount' => 'setPendingAmount',
+        'dunning_invoices' => 'setDunningInvoices',
+        'dunning_amount' => 'setDunningAmount',
+        'settled_invoices' => 'setSettledInvoices',
+        'settled_amount' => 'setSettledAmount',
+        'refunded_amount' => 'setRefundedAmount',
+        'pending_additional_costs' => 'setPendingAdditionalCosts',
+        'pending_additional_cost_amount' => 'setPendingAdditionalCostAmount',
+        'transferred_additional_costs' => 'setTransferredAdditionalCosts',
+        'transferred_additional_cost_amount' => 'setTransferredAdditionalCostAmount',
+        'pending_credits' => 'setPendingCredits',
+        'pending_credit_amount' => 'setPendingCreditAmount',
+        'transferred_credits' => 'setTransferredCredits',
+        'transferred_credit_amount' => 'setTransferredCreditAmount',
+        'hosted_page_links' => 'setHostedPageLinks',
+        'subscription_discounts' => 'setSubscriptionDiscounts',
+        'pending_change' => 'setPendingChange',
+        'subscription_changes' => 'setSubscriptionChanges',
+        'subscription_add_ons' => 'setSubscriptionAddOns'
     ];
 
 
@@ -137,23 +260,64 @@ class InlineResponse20025 implements ArrayAccess
      */
     protected static $getters = [
         'handle' => 'getHandle',
-        'discount' => 'getDiscount',
+        'customer' => 'getCustomer',
+        'plan' => 'getPlan',
         'state' => 'getState',
-        'coupon' => 'getCoupon',
-        'deleted' => 'getDeleted',
-        'created' => 'getCreated',
-        'name' => 'getName',
-        'description' => 'getDescription',
+        'test' => 'getTest',
         'amount' => 'getAmount',
-        'percentage' => 'getPercentage',
-        'count' => 'getCount',
-        'invoices' => 'getInvoices',
-        'apply_to' => 'getApplyTo',
-        'fixed_count' => 'getFixedCount',
-        'fixed_period_unit' => 'getFixedPeriodUnit',
-        'fixed_period' => 'getFixedPeriod',
-        'fixed_usage_reached' => 'getFixedUsageReached',
-        'fixed_period_passed' => 'getFixedPeriodPassed'
+        'quantity' => 'getQuantity',
+        'expires' => 'getExpires',
+        'reactivated' => 'getReactivated',
+        'timezone' => 'getTimezone',
+        'created' => 'getCreated',
+        'renewing' => 'getRenewing',
+        'plan_version' => 'getPlanVersion',
+        'amount_incl_vat' => 'getAmountInclVat',
+        'start_date' => 'getStartDate',
+        'end_date' => 'getEndDate',
+        'grace_duration' => 'getGraceDuration',
+        'current_period_start' => 'getCurrentPeriodStart',
+        'next_period_start' => 'getNextPeriodStart',
+        'first_period_start' => 'getFirstPeriodStart',
+        'last_period_start' => 'getLastPeriodStart',
+        'trial_start' => 'getTrialStart',
+        'trial_end' => 'getTrialEnd',
+        'is_cancelled' => 'getIsCancelled',
+        'in_trial' => 'getInTrial',
+        'has_started' => 'getHasStarted',
+        'renewal_count' => 'getRenewalCount',
+        'cancelled_date' => 'getCancelledDate',
+        'expired_date' => 'getExpiredDate',
+        'expire_reason' => 'getExpireReason',
+        'on_hold_date' => 'getOnHoldDate',
+        'on_hold_reason' => 'getOnHoldReason',
+        'payment_method_added' => 'getPaymentMethodAdded',
+        'scheduled_plan_change' => 'getScheduledPlanChange',
+        'reminder_email_sent' => 'getReminderEmailSent',
+        'failed_invoices' => 'getFailedInvoices',
+        'failed_amount' => 'getFailedAmount',
+        'cancelled_invoices' => 'getCancelledInvoices',
+        'cancelled_amount' => 'getCancelledAmount',
+        'pending_invoices' => 'getPendingInvoices',
+        'pending_amount' => 'getPendingAmount',
+        'dunning_invoices' => 'getDunningInvoices',
+        'dunning_amount' => 'getDunningAmount',
+        'settled_invoices' => 'getSettledInvoices',
+        'settled_amount' => 'getSettledAmount',
+        'refunded_amount' => 'getRefundedAmount',
+        'pending_additional_costs' => 'getPendingAdditionalCosts',
+        'pending_additional_cost_amount' => 'getPendingAdditionalCostAmount',
+        'transferred_additional_costs' => 'getTransferredAdditionalCosts',
+        'transferred_additional_cost_amount' => 'getTransferredAdditionalCostAmount',
+        'pending_credits' => 'getPendingCredits',
+        'pending_credit_amount' => 'getPendingCreditAmount',
+        'transferred_credits' => 'getTransferredCredits',
+        'transferred_credit_amount' => 'getTransferredCreditAmount',
+        'hosted_page_links' => 'getHostedPageLinks',
+        'subscription_discounts' => 'getSubscriptionDiscounts',
+        'pending_change' => 'getPendingChange',
+        'subscription_changes' => 'getSubscriptionChanges',
+        'subscription_add_ons' => 'getSubscriptionAddOns'
     ];
 
     public static function attributeMap()
@@ -172,9 +336,14 @@ class InlineResponse20025 implements ArrayAccess
     }
 
     const STATE_ACTIVE = 'active';
-    const STATE_DISABLED = 'disabled';
-    const FIXED_PERIOD_UNIT_MONTHS = 'months';
-    const FIXED_PERIOD_UNIT_DAYS = 'days';
+    const STATE_EXPIRED = 'expired';
+    const STATE_ON_HOLD = 'on_hold';
+    const EXPIRE_REASON_DUNNING = 'dunning';
+    const EXPIRE_REASON_CANCELLED = 'cancelled';
+    const EXPIRE_REASON_ONDEMAND = 'ondemand';
+    const EXPIRE_REASON_FIXED = 'fixed';
+    const ON_HOLD_REASON_DUNNING = 'dunning';
+    const ON_HOLD_REASON_ONDEMAND = 'ondemand';
     
 
     
@@ -186,7 +355,8 @@ class InlineResponse20025 implements ArrayAccess
     {
         return [
             self::STATE_ACTIVE,
-            self::STATE_DISABLED,
+            self::STATE_EXPIRED,
+            self::STATE_ON_HOLD,
         ];
     }
     
@@ -194,11 +364,25 @@ class InlineResponse20025 implements ArrayAccess
      * Gets allowable values of the enum
      * @return string[]
      */
-    public function getFixedPeriodUnitAllowableValues()
+    public function getExpireReasonAllowableValues()
     {
         return [
-            self::FIXED_PERIOD_UNIT_MONTHS,
-            self::FIXED_PERIOD_UNIT_DAYS,
+            self::EXPIRE_REASON_DUNNING,
+            self::EXPIRE_REASON_CANCELLED,
+            self::EXPIRE_REASON_ONDEMAND,
+            self::EXPIRE_REASON_FIXED,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getOnHoldReasonAllowableValues()
+    {
+        return [
+            self::ON_HOLD_REASON_DUNNING,
+            self::ON_HOLD_REASON_ONDEMAND,
         ];
     }
     
@@ -216,23 +400,64 @@ class InlineResponse20025 implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
-        $this->container['discount'] = isset($data['discount']) ? $data['discount'] : null;
+        $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
+        $this->container['plan'] = isset($data['plan']) ? $data['plan'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
-        $this->container['coupon'] = isset($data['coupon']) ? $data['coupon'] : null;
-        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
-        $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['test'] = isset($data['test']) ? $data['test'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['percentage'] = isset($data['percentage']) ? $data['percentage'] : null;
-        $this->container['count'] = isset($data['count']) ? $data['count'] : null;
-        $this->container['invoices'] = isset($data['invoices']) ? $data['invoices'] : null;
-        $this->container['apply_to'] = isset($data['apply_to']) ? $data['apply_to'] : null;
-        $this->container['fixed_count'] = isset($data['fixed_count']) ? $data['fixed_count'] : null;
-        $this->container['fixed_period_unit'] = isset($data['fixed_period_unit']) ? $data['fixed_period_unit'] : null;
-        $this->container['fixed_period'] = isset($data['fixed_period']) ? $data['fixed_period'] : null;
-        $this->container['fixed_usage_reached'] = isset($data['fixed_usage_reached']) ? $data['fixed_usage_reached'] : null;
-        $this->container['fixed_period_passed'] = isset($data['fixed_period_passed']) ? $data['fixed_period_passed'] : null;
+        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
+        $this->container['expires'] = isset($data['expires']) ? $data['expires'] : null;
+        $this->container['reactivated'] = isset($data['reactivated']) ? $data['reactivated'] : null;
+        $this->container['timezone'] = isset($data['timezone']) ? $data['timezone'] : null;
+        $this->container['created'] = isset($data['created']) ? $data['created'] : null;
+        $this->container['renewing'] = isset($data['renewing']) ? $data['renewing'] : null;
+        $this->container['plan_version'] = isset($data['plan_version']) ? $data['plan_version'] : null;
+        $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
+        $this->container['start_date'] = isset($data['start_date']) ? $data['start_date'] : null;
+        $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
+        $this->container['grace_duration'] = isset($data['grace_duration']) ? $data['grace_duration'] : null;
+        $this->container['current_period_start'] = isset($data['current_period_start']) ? $data['current_period_start'] : null;
+        $this->container['next_period_start'] = isset($data['next_period_start']) ? $data['next_period_start'] : null;
+        $this->container['first_period_start'] = isset($data['first_period_start']) ? $data['first_period_start'] : null;
+        $this->container['last_period_start'] = isset($data['last_period_start']) ? $data['last_period_start'] : null;
+        $this->container['trial_start'] = isset($data['trial_start']) ? $data['trial_start'] : null;
+        $this->container['trial_end'] = isset($data['trial_end']) ? $data['trial_end'] : null;
+        $this->container['is_cancelled'] = isset($data['is_cancelled']) ? $data['is_cancelled'] : null;
+        $this->container['in_trial'] = isset($data['in_trial']) ? $data['in_trial'] : null;
+        $this->container['has_started'] = isset($data['has_started']) ? $data['has_started'] : null;
+        $this->container['renewal_count'] = isset($data['renewal_count']) ? $data['renewal_count'] : null;
+        $this->container['cancelled_date'] = isset($data['cancelled_date']) ? $data['cancelled_date'] : null;
+        $this->container['expired_date'] = isset($data['expired_date']) ? $data['expired_date'] : null;
+        $this->container['expire_reason'] = isset($data['expire_reason']) ? $data['expire_reason'] : null;
+        $this->container['on_hold_date'] = isset($data['on_hold_date']) ? $data['on_hold_date'] : null;
+        $this->container['on_hold_reason'] = isset($data['on_hold_reason']) ? $data['on_hold_reason'] : null;
+        $this->container['payment_method_added'] = isset($data['payment_method_added']) ? $data['payment_method_added'] : null;
+        $this->container['scheduled_plan_change'] = isset($data['scheduled_plan_change']) ? $data['scheduled_plan_change'] : null;
+        $this->container['reminder_email_sent'] = isset($data['reminder_email_sent']) ? $data['reminder_email_sent'] : null;
+        $this->container['failed_invoices'] = isset($data['failed_invoices']) ? $data['failed_invoices'] : null;
+        $this->container['failed_amount'] = isset($data['failed_amount']) ? $data['failed_amount'] : null;
+        $this->container['cancelled_invoices'] = isset($data['cancelled_invoices']) ? $data['cancelled_invoices'] : null;
+        $this->container['cancelled_amount'] = isset($data['cancelled_amount']) ? $data['cancelled_amount'] : null;
+        $this->container['pending_invoices'] = isset($data['pending_invoices']) ? $data['pending_invoices'] : null;
+        $this->container['pending_amount'] = isset($data['pending_amount']) ? $data['pending_amount'] : null;
+        $this->container['dunning_invoices'] = isset($data['dunning_invoices']) ? $data['dunning_invoices'] : null;
+        $this->container['dunning_amount'] = isset($data['dunning_amount']) ? $data['dunning_amount'] : null;
+        $this->container['settled_invoices'] = isset($data['settled_invoices']) ? $data['settled_invoices'] : null;
+        $this->container['settled_amount'] = isset($data['settled_amount']) ? $data['settled_amount'] : null;
+        $this->container['refunded_amount'] = isset($data['refunded_amount']) ? $data['refunded_amount'] : null;
+        $this->container['pending_additional_costs'] = isset($data['pending_additional_costs']) ? $data['pending_additional_costs'] : null;
+        $this->container['pending_additional_cost_amount'] = isset($data['pending_additional_cost_amount']) ? $data['pending_additional_cost_amount'] : null;
+        $this->container['transferred_additional_costs'] = isset($data['transferred_additional_costs']) ? $data['transferred_additional_costs'] : null;
+        $this->container['transferred_additional_cost_amount'] = isset($data['transferred_additional_cost_amount']) ? $data['transferred_additional_cost_amount'] : null;
+        $this->container['pending_credits'] = isset($data['pending_credits']) ? $data['pending_credits'] : null;
+        $this->container['pending_credit_amount'] = isset($data['pending_credit_amount']) ? $data['pending_credit_amount'] : null;
+        $this->container['transferred_credits'] = isset($data['transferred_credits']) ? $data['transferred_credits'] : null;
+        $this->container['transferred_credit_amount'] = isset($data['transferred_credit_amount']) ? $data['transferred_credit_amount'] : null;
+        $this->container['hosted_page_links'] = isset($data['hosted_page_links']) ? $data['hosted_page_links'] : null;
+        $this->container['subscription_discounts'] = isset($data['subscription_discounts']) ? $data['subscription_discounts'] : null;
+        $this->container['pending_change'] = isset($data['pending_change']) ? $data['pending_change'] : null;
+        $this->container['subscription_changes'] = isset($data['subscription_changes']) ? $data['subscription_changes'] : null;
+        $this->container['subscription_add_ons'] = isset($data['subscription_add_ons']) ? $data['subscription_add_ons'] : null;
     }
 
     /**
@@ -247,62 +472,129 @@ class InlineResponse20025 implements ArrayAccess
         if ($this->container['handle'] === null) {
             $invalid_properties[] = "'handle' can't be null";
         }
-        if ($this->container['discount'] === null) {
-            $invalid_properties[] = "'discount' can't be null";
+        if ($this->container['customer'] === null) {
+            $invalid_properties[] = "'customer' can't be null";
+        }
+        if ($this->container['plan'] === null) {
+            $invalid_properties[] = "'plan' can't be null";
         }
         if ($this->container['state'] === null) {
             $invalid_properties[] = "'state' can't be null";
         }
-        $allowed_values = ["active", "disabled"];
+        $allowed_values = ["active", "expired", "on_hold"];
         if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'disabled'.";
+            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'expired', 'on_hold'.";
         }
 
+        if ($this->container['test'] === null) {
+            $invalid_properties[] = "'test' can't be null";
+        }
+        if ($this->container['quantity'] === null) {
+            $invalid_properties[] = "'quantity' can't be null";
+        }
+        if ($this->container['timezone'] === null) {
+            $invalid_properties[] = "'timezone' can't be null";
+        }
         if ($this->container['created'] === null) {
             $invalid_properties[] = "'created' can't be null";
         }
-        if ($this->container['name'] === null) {
-            $invalid_properties[] = "'name' can't be null";
+        if ($this->container['renewing'] === null) {
+            $invalid_properties[] = "'renewing' can't be null";
         }
-        if (!is_null($this->container['amount']) && ($this->container['amount'] < 1)) {
-            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 1.";
+        if ($this->container['plan_version'] === null) {
+            $invalid_properties[] = "'plan_version' can't be null";
         }
-
-        if (!is_null($this->container['percentage']) && ($this->container['percentage'] > 100)) {
-            $invalid_properties[] = "invalid value for 'percentage', must be smaller than or equal to 100.";
+        if ($this->container['start_date'] === null) {
+            $invalid_properties[] = "'start_date' can't be null";
         }
-
-        if (!is_null($this->container['percentage']) && ($this->container['percentage'] < 1)) {
-            $invalid_properties[] = "invalid value for 'percentage', must be bigger than or equal to 1.";
+        if ($this->container['is_cancelled'] === null) {
+            $invalid_properties[] = "'is_cancelled' can't be null";
         }
-
-        if ($this->container['count'] === null) {
-            $invalid_properties[] = "'count' can't be null";
+        if ($this->container['in_trial'] === null) {
+            $invalid_properties[] = "'in_trial' can't be null";
         }
-        if ($this->container['invoices'] === null) {
-            $invalid_properties[] = "'invoices' can't be null";
+        if ($this->container['has_started'] === null) {
+            $invalid_properties[] = "'has_started' can't be null";
         }
-        if ($this->container['apply_to'] === null) {
-            $invalid_properties[] = "'apply_to' can't be null";
+        if ($this->container['renewal_count'] === null) {
+            $invalid_properties[] = "'renewal_count' can't be null";
         }
-        if (!is_null($this->container['fixed_count']) && ($this->container['fixed_count'] < 1)) {
-            $invalid_properties[] = "invalid value for 'fixed_count', must be bigger than or equal to 1.";
+        if (($this->container['renewal_count'] < 0)) {
+            $invalid_properties[] = "invalid value for 'renewal_count', must be bigger than or equal to 0.";
         }
 
-        $allowed_values = ["months", "days"];
-        if (!in_array($this->container['fixed_period_unit'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'fixed_period_unit', must be one of 'months', 'days'.";
+        $allowed_values = ["dunning", "cancelled", "ondemand", "fixed"];
+        if (!in_array($this->container['expire_reason'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'expire_reason', must be one of 'dunning', 'cancelled', 'ondemand', 'fixed'.";
         }
 
-        if (!is_null($this->container['fixed_period']) && ($this->container['fixed_period'] < 1)) {
-            $invalid_properties[] = "invalid value for 'fixed_period', must be bigger than or equal to 1.";
+        $allowed_values = ["dunning", "ondemand"];
+        if (!in_array($this->container['on_hold_reason'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'on_hold_reason', must be one of 'dunning', 'ondemand'.";
         }
 
-        if ($this->container['fixed_usage_reached'] === null) {
-            $invalid_properties[] = "'fixed_usage_reached' can't be null";
+        if ($this->container['payment_method_added'] === null) {
+            $invalid_properties[] = "'payment_method_added' can't be null";
         }
-        if ($this->container['fixed_period_passed'] === null) {
-            $invalid_properties[] = "'fixed_period_passed' can't be null";
+        if ($this->container['reminder_email_sent'] === null) {
+            $invalid_properties[] = "'reminder_email_sent' can't be null";
+        }
+        if ($this->container['failed_invoices'] === null) {
+            $invalid_properties[] = "'failed_invoices' can't be null";
+        }
+        if ($this->container['failed_amount'] === null) {
+            $invalid_properties[] = "'failed_amount' can't be null";
+        }
+        if ($this->container['cancelled_invoices'] === null) {
+            $invalid_properties[] = "'cancelled_invoices' can't be null";
+        }
+        if ($this->container['cancelled_amount'] === null) {
+            $invalid_properties[] = "'cancelled_amount' can't be null";
+        }
+        if ($this->container['pending_invoices'] === null) {
+            $invalid_properties[] = "'pending_invoices' can't be null";
+        }
+        if ($this->container['pending_amount'] === null) {
+            $invalid_properties[] = "'pending_amount' can't be null";
+        }
+        if ($this->container['dunning_invoices'] === null) {
+            $invalid_properties[] = "'dunning_invoices' can't be null";
+        }
+        if ($this->container['dunning_amount'] === null) {
+            $invalid_properties[] = "'dunning_amount' can't be null";
+        }
+        if ($this->container['settled_invoices'] === null) {
+            $invalid_properties[] = "'settled_invoices' can't be null";
+        }
+        if ($this->container['settled_amount'] === null) {
+            $invalid_properties[] = "'settled_amount' can't be null";
+        }
+        if ($this->container['refunded_amount'] === null) {
+            $invalid_properties[] = "'refunded_amount' can't be null";
+        }
+        if ($this->container['pending_additional_costs'] === null) {
+            $invalid_properties[] = "'pending_additional_costs' can't be null";
+        }
+        if ($this->container['pending_additional_cost_amount'] === null) {
+            $invalid_properties[] = "'pending_additional_cost_amount' can't be null";
+        }
+        if ($this->container['transferred_additional_costs'] === null) {
+            $invalid_properties[] = "'transferred_additional_costs' can't be null";
+        }
+        if ($this->container['transferred_additional_cost_amount'] === null) {
+            $invalid_properties[] = "'transferred_additional_cost_amount' can't be null";
+        }
+        if ($this->container['pending_credits'] === null) {
+            $invalid_properties[] = "'pending_credits' can't be null";
+        }
+        if ($this->container['pending_credit_amount'] === null) {
+            $invalid_properties[] = "'pending_credit_amount' can't be null";
+        }
+        if ($this->container['transferred_credits'] === null) {
+            $invalid_properties[] = "'transferred_credits' can't be null";
+        }
+        if ($this->container['transferred_credit_amount'] === null) {
+            $invalid_properties[] = "'transferred_credit_amount' can't be null";
         }
         return $invalid_properties;
     }
@@ -319,54 +611,124 @@ class InlineResponse20025 implements ArrayAccess
         if ($this->container['handle'] === null) {
             return false;
         }
-        if ($this->container['discount'] === null) {
+        if ($this->container['customer'] === null) {
+            return false;
+        }
+        if ($this->container['plan'] === null) {
             return false;
         }
         if ($this->container['state'] === null) {
             return false;
         }
-        $allowed_values = ["active", "disabled"];
+        $allowed_values = ["active", "expired", "on_hold"];
         if (!in_array($this->container['state'], $allowed_values)) {
+            return false;
+        }
+        if ($this->container['test'] === null) {
+            return false;
+        }
+        if ($this->container['quantity'] === null) {
+            return false;
+        }
+        if ($this->container['timezone'] === null) {
             return false;
         }
         if ($this->container['created'] === null) {
             return false;
         }
-        if ($this->container['name'] === null) {
+        if ($this->container['renewing'] === null) {
             return false;
         }
-        if ($this->container['amount'] < 1) {
+        if ($this->container['plan_version'] === null) {
             return false;
         }
-        if ($this->container['percentage'] > 100) {
+        if ($this->container['start_date'] === null) {
             return false;
         }
-        if ($this->container['percentage'] < 1) {
+        if ($this->container['is_cancelled'] === null) {
             return false;
         }
-        if ($this->container['count'] === null) {
+        if ($this->container['in_trial'] === null) {
             return false;
         }
-        if ($this->container['invoices'] === null) {
+        if ($this->container['has_started'] === null) {
             return false;
         }
-        if ($this->container['apply_to'] === null) {
+        if ($this->container['renewal_count'] === null) {
             return false;
         }
-        if ($this->container['fixed_count'] < 1) {
+        if ($this->container['renewal_count'] < 0) {
             return false;
         }
-        $allowed_values = ["months", "days"];
-        if (!in_array($this->container['fixed_period_unit'], $allowed_values)) {
+        $allowed_values = ["dunning", "cancelled", "ondemand", "fixed"];
+        if (!in_array($this->container['expire_reason'], $allowed_values)) {
             return false;
         }
-        if ($this->container['fixed_period'] < 1) {
+        $allowed_values = ["dunning", "ondemand"];
+        if (!in_array($this->container['on_hold_reason'], $allowed_values)) {
             return false;
         }
-        if ($this->container['fixed_usage_reached'] === null) {
+        if ($this->container['payment_method_added'] === null) {
             return false;
         }
-        if ($this->container['fixed_period_passed'] === null) {
+        if ($this->container['reminder_email_sent'] === null) {
+            return false;
+        }
+        if ($this->container['failed_invoices'] === null) {
+            return false;
+        }
+        if ($this->container['failed_amount'] === null) {
+            return false;
+        }
+        if ($this->container['cancelled_invoices'] === null) {
+            return false;
+        }
+        if ($this->container['cancelled_amount'] === null) {
+            return false;
+        }
+        if ($this->container['pending_invoices'] === null) {
+            return false;
+        }
+        if ($this->container['pending_amount'] === null) {
+            return false;
+        }
+        if ($this->container['dunning_invoices'] === null) {
+            return false;
+        }
+        if ($this->container['dunning_amount'] === null) {
+            return false;
+        }
+        if ($this->container['settled_invoices'] === null) {
+            return false;
+        }
+        if ($this->container['settled_amount'] === null) {
+            return false;
+        }
+        if ($this->container['refunded_amount'] === null) {
+            return false;
+        }
+        if ($this->container['pending_additional_costs'] === null) {
+            return false;
+        }
+        if ($this->container['pending_additional_cost_amount'] === null) {
+            return false;
+        }
+        if ($this->container['transferred_additional_costs'] === null) {
+            return false;
+        }
+        if ($this->container['transferred_additional_cost_amount'] === null) {
+            return false;
+        }
+        if ($this->container['pending_credits'] === null) {
+            return false;
+        }
+        if ($this->container['pending_credit_amount'] === null) {
+            return false;
+        }
+        if ($this->container['transferred_credits'] === null) {
+            return false;
+        }
+        if ($this->container['transferred_credit_amount'] === null) {
             return false;
         }
         return true;
@@ -384,7 +746,7 @@ class InlineResponse20025 implements ArrayAccess
 
     /**
      * Sets handle
-     * @param string $handle Per subscription unique handle for the subscription discount.
+     * @param string $handle Per account unique handle for subscription
      * @return $this
      */
     public function setHandle($handle)
@@ -395,22 +757,43 @@ class InlineResponse20025 implements ArrayAccess
     }
 
     /**
-     * Gets discount
+     * Gets customer
      * @return string
      */
-    public function getDiscount()
+    public function getCustomer()
     {
-        return $this->container['discount'];
+        return $this->container['customer'];
     }
 
     /**
-     * Sets discount
-     * @param string $discount Discount for subscription discount
+     * Sets customer
+     * @param string $customer Customer handle
      * @return $this
      */
-    public function setDiscount($discount)
+    public function setCustomer($customer)
     {
-        $this->container['discount'] = $discount;
+        $this->container['customer'] = $customer;
+
+        return $this;
+    }
+
+    /**
+     * Gets plan
+     * @return string
+     */
+    public function getPlan()
+    {
+        return $this->container['plan'];
+    }
+
+    /**
+     * Sets plan
+     * @param string $plan Subscription plan handle
+     * @return $this
+     */
+    public function setPlan($plan)
+    {
+        $this->container['plan'] = $plan;
 
         return $this;
     }
@@ -426,14 +809,14 @@ class InlineResponse20025 implements ArrayAccess
 
     /**
      * Sets state
-     * @param string $state Discount state `active` or `disabled`.
+     * @param string $state State of the subscription, one of the following: `active`, `expired` or `on_hold`. Active subscriptions can be cancelled and will expire at the end of the current billing period, or later depending on optional notice and fixation periods, this can be checked using the `is_cancelled` parameter and `expires`.
      * @return $this
      */
     public function setState($state)
     {
-        $allowed_values = array('active', 'disabled');
+        $allowed_values = array('active', 'expired', 'on_hold');
         if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'disabled'");
+            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'expired', 'on_hold'");
         }
         $this->container['state'] = $state;
 
@@ -441,106 +824,22 @@ class InlineResponse20025 implements ArrayAccess
     }
 
     /**
-     * Gets coupon
-     * @return string
+     * Gets test
+     * @return bool
      */
-    public function getCoupon()
+    public function getTest()
     {
-        return $this->container['coupon'];
+        return $this->container['test'];
     }
 
     /**
-     * Sets coupon
-     * @param string $coupon Coupon reference if this discount was released by a coupon code
+     * Sets test
+     * @param bool $test Test flag
      * @return $this
      */
-    public function setCoupon($coupon)
+    public function setTest($test)
     {
-        $this->container['coupon'] = $coupon;
-
-        return $this;
-    }
-
-    /**
-     * Gets deleted
-     * @return \DateTime
-     */
-    public function getDeleted()
-    {
-        return $this->container['deleted'];
-    }
-
-    /**
-     * Sets deleted
-     * @param \DateTime $deleted Date when the discount was deleted if deleted. In ISO-8601 extended offset date-time format.
-     * @return $this
-     */
-    public function setDeleted($deleted)
-    {
-        $this->container['deleted'] = $deleted;
-
-        return $this;
-    }
-
-    /**
-     * Gets created
-     * @return \DateTime
-     */
-    public function getCreated()
-    {
-        return $this->container['created'];
-    }
-
-    /**
-     * Sets created
-     * @param \DateTime $created Date when the discount was created. In ISO-8601 extended offset date-time format.
-     * @return $this
-     */
-    public function setCreated($created)
-    {
-        $this->container['created'] = $created;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     * @param string $name Name of discount. Will be used as order line text.
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     * @param string $description Optional description of discount
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
+        $this->container['test'] = $test;
 
         return $this;
     }
@@ -556,228 +855,1138 @@ class InlineResponse20025 implements ArrayAccess
 
     /**
      * Sets amount
-     * @param int $amount Fixed amount discount deducted from order line amounts including VAT
+     * @param int $amount Optional custom plan price. If defined the plan price billed for each billing period will be overridden by this price.
      * @return $this
      */
     public function setAmount($amount)
     {
-
-        if (!is_null($amount) && ($amount < 1)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling InlineResponse20025., must be bigger than or equal to 1.');
-        }
-
         $this->container['amount'] = $amount;
 
         return $this;
     }
 
     /**
-     * Gets percentage
+     * Gets quantity
      * @return int
      */
-    public function getPercentage()
+    public function getQuantity()
     {
-        return $this->container['percentage'];
+        return $this->container['quantity'];
     }
 
     /**
-     * Sets percentage
-     * @param int $percentage Percentage discount applied to each applicable order line
+     * Sets quantity
+     * @param int $quantity Quantity of the plan product for this subscription.
      * @return $this
      */
-    public function setPercentage($percentage)
+    public function setQuantity($quantity)
     {
-
-        if (!is_null($percentage) && ($percentage > 100)) {
-            throw new \InvalidArgumentException('invalid value for $percentage when calling InlineResponse20025., must be smaller than or equal to 100.');
-        }
-        if (!is_null($percentage) && ($percentage < 1)) {
-            throw new \InvalidArgumentException('invalid value for $percentage when calling InlineResponse20025., must be bigger than or equal to 1.');
-        }
-
-        $this->container['percentage'] = $percentage;
+        $this->container['quantity'] = $quantity;
 
         return $this;
     }
 
     /**
-     * Gets count
-     * @return int
+     * Gets expires
+     * @return \DateTime
      */
-    public function getCount()
+    public function getExpires()
     {
-        return $this->container['count'];
+        return $this->container['expires'];
     }
 
     /**
-     * Sets count
-     * @param int $count Number of invoices this subscription discount has been applied to
+     * Sets expires
+     * @param \DateTime $expires Fixed date when the subscription will expire because of cancellation. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      * @return $this
      */
-    public function setCount($count)
+    public function setExpires($expires)
     {
-        $this->container['count'] = $count;
+        $this->container['expires'] = $expires;
 
         return $this;
     }
 
     /**
-     * Gets invoices
-     * @return string[]
+     * Gets reactivated
+     * @return \DateTime
      */
-    public function getInvoices()
+    public function getReactivated()
     {
-        return $this->container['invoices'];
+        return $this->container['reactivated'];
     }
 
     /**
-     * Sets invoices
-     * @param string[] $invoices List of invoices this subscription discount has been applied to
+     * Sets reactivated
+     * @param \DateTime $reactivated Date when the subscription was reactivated from on hold. [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      * @return $this
      */
-    public function setInvoices($invoices)
+    public function setReactivated($reactivated)
     {
-        $this->container['invoices'] = $invoices;
+        $this->container['reactivated'] = $reactivated;
 
         return $this;
     }
 
     /**
-     * Gets apply_to
-     * @return string[]
-     */
-    public function getApplyTo()
-    {
-        return $this->container['apply_to'];
-    }
-
-    /**
-     * Sets apply_to
-     * @param string[] $apply_to Which order lines the discount is applicable to: `all`, `setup_fee`, `plan`, `additional_cost`, `add_on` and `ondemand`
-     * @return $this
-     */
-    public function setApplyTo($apply_to)
-    {
-        $this->container['apply_to'] = $apply_to;
-
-        return $this;
-    }
-
-    /**
-     * Gets fixed_count
-     * @return int
-     */
-    public function getFixedCount()
-    {
-        return $this->container['fixed_count'];
-    }
-
-    /**
-     * Sets fixed_count
-     * @param int $fixed_count Apply discount to a fixed number of invoices
-     * @return $this
-     */
-    public function setFixedCount($fixed_count)
-    {
-
-        if (!is_null($fixed_count) && ($fixed_count < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fixed_count when calling InlineResponse20025., must be bigger than or equal to 1.');
-        }
-
-        $this->container['fixed_count'] = $fixed_count;
-
-        return $this;
-    }
-
-    /**
-     * Gets fixed_period_unit
+     * Gets timezone
      * @return string
      */
-    public function getFixedPeriodUnit()
+    public function getTimezone()
     {
-        return $this->container['fixed_period_unit'];
+        return $this->container['timezone'];
     }
 
     /**
-     * Sets fixed_period_unit
-     * @param string $fixed_period_unit Time unit use for fixed valid period
+     * Sets timezone
+     * @param string $timezone Time zone for the subscription as standard time zone id. See [Wikipedia](http://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
      * @return $this
      */
-    public function setFixedPeriodUnit($fixed_period_unit)
+    public function setTimezone($timezone)
     {
-        $allowed_values = array('months', 'days');
-        if (!is_null($fixed_period_unit) && (!in_array($fixed_period_unit, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'fixed_period_unit', must be one of 'months', 'days'");
-        }
-        $this->container['fixed_period_unit'] = $fixed_period_unit;
+        $this->container['timezone'] = $timezone;
 
         return $this;
     }
 
     /**
-     * Gets fixed_period
+     * Gets created
+     * @return \DateTime
+     */
+    public function getCreated()
+    {
+        return $this->container['created'];
+    }
+
+    /**
+     * Sets created
+     * @param \DateTime $created Date when the subscription was created. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @return $this
+     */
+    public function setCreated($created)
+    {
+        $this->container['created'] = $created;
+
+        return $this;
+    }
+
+    /**
+     * Gets renewing
+     * @return bool
+     */
+    public function getRenewing()
+    {
+        return $this->container['renewing'];
+    }
+
+    /**
+     * Sets renewing
+     * @param bool $renewing If the subscription renews at current period end. Also true for subscriptions with manual scheduling.
+     * @return $this
+     */
+    public function setRenewing($renewing)
+    {
+        $this->container['renewing'] = $renewing;
+
+        return $this;
+    }
+
+    /**
+     * Gets plan_version
      * @return int
      */
-    public function getFixedPeriod()
+    public function getPlanVersion()
     {
-        return $this->container['fixed_period'];
+        return $this->container['plan_version'];
     }
 
     /**
-     * Sets fixed_period
-     * @param int $fixed_period Fixed period length e.g. 12 months or 14 days
+     * Sets plan_version
+     * @param int $plan_version Subscription plan version
      * @return $this
      */
-    public function setFixedPeriod($fixed_period)
+    public function setPlanVersion($plan_version)
+    {
+        $this->container['plan_version'] = $plan_version;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount_incl_vat
+     * @return bool
+     */
+    public function getAmountInclVat()
+    {
+        return $this->container['amount_incl_vat'];
+    }
+
+    /**
+     * Sets amount_incl_vat
+     * @param bool $amount_incl_vat If optional custom plan price this parameter tells whether the amount is including VAT
+     * @return $this
+     */
+    public function setAmountInclVat($amount_incl_vat)
+    {
+        $this->container['amount_incl_vat'] = $amount_incl_vat;
+
+        return $this;
+    }
+
+    /**
+     * Gets start_date
+     * @return \DateTime
+     */
+    public function getStartDate()
+    {
+        return $this->container['start_date'];
+    }
+
+    /**
+     * Sets start_date
+     * @param \DateTime $start_date Date and time from which the subscription is eligible to schedule invoices. Either from create or from the latest reactivate or subscription change. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @return $this
+     */
+    public function setStartDate($start_date)
+    {
+        $this->container['start_date'] = $start_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets end_date
+     * @return \DateTime
+     */
+    public function getEndDate()
+    {
+        return $this->container['end_date'];
+    }
+
+    /**
+     * Sets end_date
+     * @param \DateTime $end_date Fixed end date and time. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @return $this
+     */
+    public function setEndDate($end_date)
+    {
+        $this->container['end_date'] = $end_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets grace_duration
+     * @return int
+     */
+    public function getGraceDuration()
+    {
+        return $this->container['grace_duration'];
+    }
+
+    /**
+     * Sets grace_duration
+     * @param int $grace_duration Grace duration in seconds from the creation of a subscription where no dunning process is started for a failing invoice. This allows a certain amount of time for the customer to sign up with a payment method.
+     * @return $this
+     */
+    public function setGraceDuration($grace_duration)
+    {
+        $this->container['grace_duration'] = $grace_duration;
+
+        return $this;
+    }
+
+    /**
+     * Gets current_period_start
+     * @return \DateTime
+     */
+    public function getCurrentPeriodStart()
+    {
+        return $this->container['current_period_start'];
+    }
+
+    /**
+     * Sets current_period_start
+     * @param \DateTime $current_period_start Start date and time for the current billing period. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @return $this
+     */
+    public function setCurrentPeriodStart($current_period_start)
+    {
+        $this->container['current_period_start'] = $current_period_start;
+
+        return $this;
+    }
+
+    /**
+     * Gets next_period_start
+     * @return \DateTime
+     */
+    public function getNextPeriodStart()
+    {
+        return $this->container['next_period_start'];
+    }
+
+    /**
+     * Sets next_period_start
+     * @param \DateTime $next_period_start Start date and time for the next billing period, and also end date and time for the current billing period. Is also the date and time for next invoice if the subscription is renewing. In ISO-8601 extended offset date-time format.
+     * @return $this
+     */
+    public function setNextPeriodStart($next_period_start)
+    {
+        $this->container['next_period_start'] = $next_period_start;
+
+        return $this;
+    }
+
+    /**
+     * Gets first_period_start
+     * @return \DateTime
+     */
+    public function getFirstPeriodStart()
+    {
+        return $this->container['first_period_start'];
+    }
+
+    /**
+     * Sets first_period_start
+     * @param \DateTime $first_period_start Start date and time for the first ever billing period. In ISO-8601 extended offset date-time format.
+     * @return $this
+     */
+    public function setFirstPeriodStart($first_period_start)
+    {
+        $this->container['first_period_start'] = $first_period_start;
+
+        return $this;
+    }
+
+    /**
+     * Gets last_period_start
+     * @return \DateTime
+     */
+    public function getLastPeriodStart()
+    {
+        return $this->container['last_period_start'];
+    }
+
+    /**
+     * Sets last_period_start
+     * @param \DateTime $last_period_start Start date and time for the previous billing period. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @return $this
+     */
+    public function setLastPeriodStart($last_period_start)
+    {
+        $this->container['last_period_start'] = $last_period_start;
+
+        return $this;
+    }
+
+    /**
+     * Gets trial_start
+     * @return \DateTime
+     */
+    public function getTrialStart()
+    {
+        return $this->container['trial_start'];
+    }
+
+    /**
+     * Sets trial_start
+     * @param \DateTime $trial_start Start date and time of free trial period. In ISO-8601 extended offset date-time format.
+     * @return $this
+     */
+    public function setTrialStart($trial_start)
+    {
+        $this->container['trial_start'] = $trial_start;
+
+        return $this;
+    }
+
+    /**
+     * Gets trial_end
+     * @return \DateTime
+     */
+    public function getTrialEnd()
+    {
+        return $this->container['trial_end'];
+    }
+
+    /**
+     * Sets trial_end
+     * @param \DateTime $trial_end End date and time of free trial period. In ISO-8601 extended offset date-time format.
+     * @return $this
+     */
+    public function setTrialEnd($trial_end)
+    {
+        $this->container['trial_end'] = $trial_end;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_cancelled
+     * @return bool
+     */
+    public function getIsCancelled()
+    {
+        return $this->container['is_cancelled'];
+    }
+
+    /**
+     * Sets is_cancelled
+     * @param bool $is_cancelled Whether the subscription has been cancelled. Cancelled subscriptions will expire at the end of the current billing period.
+     * @return $this
+     */
+    public function setIsCancelled($is_cancelled)
+    {
+        $this->container['is_cancelled'] = $is_cancelled;
+
+        return $this;
+    }
+
+    /**
+     * Gets in_trial
+     * @return bool
+     */
+    public function getInTrial()
+    {
+        return $this->container['in_trial'];
+    }
+
+    /**
+     * Sets in_trial
+     * @param bool $in_trial Whether the susbcription is in its trial period. If subscription has not started (has_started), trial_start and trial_end can be used to determine if the subscription will have a trial period.
+     * @return $this
+     */
+    public function setInTrial($in_trial)
+    {
+        $this->container['in_trial'] = $in_trial;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_started
+     * @return bool
+     */
+    public function getHasStarted()
+    {
+        return $this->container['has_started'];
+    }
+
+    /**
+     * Sets has_started
+     * @param bool $has_started If subscription has a later start date, this parameter tells if the subscription has started. Use this in connection with state to determine if a subscription is active.
+     * @return $this
+     */
+    public function setHasStarted($has_started)
+    {
+        $this->container['has_started'] = $has_started;
+
+        return $this;
+    }
+
+    /**
+     * Gets renewal_count
+     * @return int
+     */
+    public function getRenewalCount()
+    {
+        return $this->container['renewal_count'];
+    }
+
+    /**
+     * Sets renewal_count
+     * @param int $renewal_count Number of renewals for the subscription (number of invoices)
+     * @return $this
+     */
+    public function setRenewalCount($renewal_count)
     {
 
-        if (!is_null($fixed_period) && ($fixed_period < 1)) {
-            throw new \InvalidArgumentException('invalid value for $fixed_period when calling InlineResponse20025., must be bigger than or equal to 1.');
+        if (($renewal_count < 0)) {
+            throw new \InvalidArgumentException('invalid value for $renewal_count when calling InlineResponse20025., must be bigger than or equal to 0.');
         }
 
-        $this->container['fixed_period'] = $fixed_period;
+        $this->container['renewal_count'] = $renewal_count;
 
         return $this;
     }
 
     /**
-     * Gets fixed_usage_reached
-     * @return bool
+     * Gets cancelled_date
+     * @return \DateTime
      */
-    public function getFixedUsageReached()
+    public function getCancelledDate()
     {
-        return $this->container['fixed_usage_reached'];
+        return $this->container['cancelled_date'];
     }
 
     /**
-     * Sets fixed_usage_reached
-     * @param bool $fixed_usage_reached Whether fixed usage for subscription discount has been reached
+     * Sets cancelled_date
+     * @param \DateTime $cancelled_date Date when the subscription was cancelled. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      * @return $this
      */
-    public function setFixedUsageReached($fixed_usage_reached)
+    public function setCancelledDate($cancelled_date)
     {
-        $this->container['fixed_usage_reached'] = $fixed_usage_reached;
+        $this->container['cancelled_date'] = $cancelled_date;
 
         return $this;
     }
 
     /**
-     * Gets fixed_period_passed
-     * @return bool
+     * Gets expired_date
+     * @return \DateTime
      */
-    public function getFixedPeriodPassed()
+    public function getExpiredDate()
     {
-        return $this->container['fixed_period_passed'];
+        return $this->container['expired_date'];
     }
 
     /**
-     * Sets fixed_period_passed
-     * @param bool $fixed_period_passed Whether fixed period for subscription discount has been passed
+     * Sets expired_date
+     * @param \DateTime $expired_date Date when the subscription expired. [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
      * @return $this
      */
-    public function setFixedPeriodPassed($fixed_period_passed)
+    public function setExpiredDate($expired_date)
     {
-        $this->container['fixed_period_passed'] = $fixed_period_passed;
+        $this->container['expired_date'] = $expired_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets expire_reason
+     * @return string
+     */
+    public function getExpireReason()
+    {
+        return $this->container['expire_reason'];
+    }
+
+    /**
+     * Sets expire_reason
+     * @param string $expire_reason Reason for expire. Can be `ondemand`, `cancelled`, `dunning` or `fixed`
+     * @return $this
+     */
+    public function setExpireReason($expire_reason)
+    {
+        $allowed_values = array('dunning', 'cancelled', 'ondemand', 'fixed');
+        if (!is_null($expire_reason) && (!in_array($expire_reason, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'expire_reason', must be one of 'dunning', 'cancelled', 'ondemand', 'fixed'");
+        }
+        $this->container['expire_reason'] = $expire_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets on_hold_date
+     * @return \DateTime
+     */
+    public function getOnHoldDate()
+    {
+        return $this->container['on_hold_date'];
+    }
+
+    /**
+     * Sets on_hold_date
+     * @param \DateTime $on_hold_date Date when the subscription was put on hold. [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @return $this
+     */
+    public function setOnHoldDate($on_hold_date)
+    {
+        $this->container['on_hold_date'] = $on_hold_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets on_hold_reason
+     * @return string
+     */
+    public function getOnHoldReason()
+    {
+        return $this->container['on_hold_reason'];
+    }
+
+    /**
+     * Sets on_hold_reason
+     * @param string $on_hold_reason Reason for on hold. Can be `ondemand` or `dunning`
+     * @return $this
+     */
+    public function setOnHoldReason($on_hold_reason)
+    {
+        $allowed_values = array('dunning', 'ondemand');
+        if (!is_null($on_hold_reason) && (!in_array($on_hold_reason, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'on_hold_reason', must be one of 'dunning', 'ondemand'");
+        }
+        $this->container['on_hold_reason'] = $on_hold_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_method_added
+     * @return bool
+     */
+    public function getPaymentMethodAdded()
+    {
+        return $this->container['payment_method_added'];
+    }
+
+    /**
+     * Sets payment_method_added
+     * @param bool $payment_method_added Whether the customer at some point has added payment information to the subscription
+     * @return $this
+     */
+    public function setPaymentMethodAdded($payment_method_added)
+    {
+        $this->container['payment_method_added'] = $payment_method_added;
+
+        return $this;
+    }
+
+    /**
+     * Gets scheduled_plan_change
+     * @return string
+     */
+    public function getScheduledPlanChange()
+    {
+        return $this->container['scheduled_plan_change'];
+    }
+
+    /**
+     * Sets scheduled_plan_change
+     * @param string $scheduled_plan_change Deprecated - see `pending_change`. If set, a subscription plan change has been scheduled to follow the next renewal. The value is the subscription plan handle to update to.
+     * @return $this
+     */
+    public function setScheduledPlanChange($scheduled_plan_change)
+    {
+        $this->container['scheduled_plan_change'] = $scheduled_plan_change;
+
+        return $this;
+    }
+
+    /**
+     * Gets reminder_email_sent
+     * @return \DateTime
+     */
+    public function getReminderEmailSent()
+    {
+        return $this->container['reminder_email_sent'];
+    }
+
+    /**
+     * Sets reminder_email_sent
+     * @param \DateTime $reminder_email_sent If defined the date a reminder email was sent for the current billing period. In [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @return $this
+     */
+    public function setReminderEmailSent($reminder_email_sent)
+    {
+        $this->container['reminder_email_sent'] = $reminder_email_sent;
+
+        return $this;
+    }
+
+    /**
+     * Gets failed_invoices
+     * @return int
+     */
+    public function getFailedInvoices()
+    {
+        return $this->container['failed_invoices'];
+    }
+
+    /**
+     * Sets failed_invoices
+     * @param int $failed_invoices Number of failed invoices for this subscription
+     * @return $this
+     */
+    public function setFailedInvoices($failed_invoices)
+    {
+        $this->container['failed_invoices'] = $failed_invoices;
+
+        return $this;
+    }
+
+    /**
+     * Gets failed_amount
+     * @return int
+     */
+    public function getFailedAmount()
+    {
+        return $this->container['failed_amount'];
+    }
+
+    /**
+     * Sets failed_amount
+     * @param int $failed_amount Summed amount for failed invoices
+     * @return $this
+     */
+    public function setFailedAmount($failed_amount)
+    {
+        $this->container['failed_amount'] = $failed_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets cancelled_invoices
+     * @return int
+     */
+    public function getCancelledInvoices()
+    {
+        return $this->container['cancelled_invoices'];
+    }
+
+    /**
+     * Sets cancelled_invoices
+     * @param int $cancelled_invoices Number of cancelled invoices for this subscription
+     * @return $this
+     */
+    public function setCancelledInvoices($cancelled_invoices)
+    {
+        $this->container['cancelled_invoices'] = $cancelled_invoices;
+
+        return $this;
+    }
+
+    /**
+     * Gets cancelled_amount
+     * @return int
+     */
+    public function getCancelledAmount()
+    {
+        return $this->container['cancelled_amount'];
+    }
+
+    /**
+     * Sets cancelled_amount
+     * @param int $cancelled_amount Summed amount for cancelled invoices
+     * @return $this
+     */
+    public function setCancelledAmount($cancelled_amount)
+    {
+        $this->container['cancelled_amount'] = $cancelled_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets pending_invoices
+     * @return int
+     */
+    public function getPendingInvoices()
+    {
+        return $this->container['pending_invoices'];
+    }
+
+    /**
+     * Sets pending_invoices
+     * @param int $pending_invoices Number of pending invoices for this subscription
+     * @return $this
+     */
+    public function setPendingInvoices($pending_invoices)
+    {
+        $this->container['pending_invoices'] = $pending_invoices;
+
+        return $this;
+    }
+
+    /**
+     * Gets pending_amount
+     * @return int
+     */
+    public function getPendingAmount()
+    {
+        return $this->container['pending_amount'];
+    }
+
+    /**
+     * Sets pending_amount
+     * @param int $pending_amount Summed amount for pending invoices
+     * @return $this
+     */
+    public function setPendingAmount($pending_amount)
+    {
+        $this->container['pending_amount'] = $pending_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets dunning_invoices
+     * @return int
+     */
+    public function getDunningInvoices()
+    {
+        return $this->container['dunning_invoices'];
+    }
+
+    /**
+     * Sets dunning_invoices
+     * @param int $dunning_invoices Number of dunning invoices for this subscription
+     * @return $this
+     */
+    public function setDunningInvoices($dunning_invoices)
+    {
+        $this->container['dunning_invoices'] = $dunning_invoices;
+
+        return $this;
+    }
+
+    /**
+     * Gets dunning_amount
+     * @return int
+     */
+    public function getDunningAmount()
+    {
+        return $this->container['dunning_amount'];
+    }
+
+    /**
+     * Sets dunning_amount
+     * @param int $dunning_amount Summed amount for dunning invoices
+     * @return $this
+     */
+    public function setDunningAmount($dunning_amount)
+    {
+        $this->container['dunning_amount'] = $dunning_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets settled_invoices
+     * @return int
+     */
+    public function getSettledInvoices()
+    {
+        return $this->container['settled_invoices'];
+    }
+
+    /**
+     * Sets settled_invoices
+     * @param int $settled_invoices Number of settled invoices for this subscription
+     * @return $this
+     */
+    public function setSettledInvoices($settled_invoices)
+    {
+        $this->container['settled_invoices'] = $settled_invoices;
+
+        return $this;
+    }
+
+    /**
+     * Gets settled_amount
+     * @return int
+     */
+    public function getSettledAmount()
+    {
+        return $this->container['settled_amount'];
+    }
+
+    /**
+     * Sets settled_amount
+     * @param int $settled_amount Summed settled amount
+     * @return $this
+     */
+    public function setSettledAmount($settled_amount)
+    {
+        $this->container['settled_amount'] = $settled_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets refunded_amount
+     * @return int
+     */
+    public function getRefundedAmount()
+    {
+        return $this->container['refunded_amount'];
+    }
+
+    /**
+     * Sets refunded_amount
+     * @param int $refunded_amount Summed refunded amount
+     * @return $this
+     */
+    public function setRefundedAmount($refunded_amount)
+    {
+        $this->container['refunded_amount'] = $refunded_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets pending_additional_costs
+     * @return int
+     */
+    public function getPendingAdditionalCosts()
+    {
+        return $this->container['pending_additional_costs'];
+    }
+
+    /**
+     * Sets pending_additional_costs
+     * @param int $pending_additional_costs Number of pending additional costs
+     * @return $this
+     */
+    public function setPendingAdditionalCosts($pending_additional_costs)
+    {
+        $this->container['pending_additional_costs'] = $pending_additional_costs;
+
+        return $this;
+    }
+
+    /**
+     * Gets pending_additional_cost_amount
+     * @return int
+     */
+    public function getPendingAdditionalCostAmount()
+    {
+        return $this->container['pending_additional_cost_amount'];
+    }
+
+    /**
+     * Sets pending_additional_cost_amount
+     * @param int $pending_additional_cost_amount Summed amount of pending additional costs incl vat
+     * @return $this
+     */
+    public function setPendingAdditionalCostAmount($pending_additional_cost_amount)
+    {
+        $this->container['pending_additional_cost_amount'] = $pending_additional_cost_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets transferred_additional_costs
+     * @return int
+     */
+    public function getTransferredAdditionalCosts()
+    {
+        return $this->container['transferred_additional_costs'];
+    }
+
+    /**
+     * Sets transferred_additional_costs
+     * @param int $transferred_additional_costs Number of additional costs that have been applied to invoices
+     * @return $this
+     */
+    public function setTransferredAdditionalCosts($transferred_additional_costs)
+    {
+        $this->container['transferred_additional_costs'] = $transferred_additional_costs;
+
+        return $this;
+    }
+
+    /**
+     * Gets transferred_additional_cost_amount
+     * @return int
+     */
+    public function getTransferredAdditionalCostAmount()
+    {
+        return $this->container['transferred_additional_cost_amount'];
+    }
+
+    /**
+     * Sets transferred_additional_cost_amount
+     * @param int $transferred_additional_cost_amount Summed amount of additional costs that have been applied to invoices
+     * @return $this
+     */
+    public function setTransferredAdditionalCostAmount($transferred_additional_cost_amount)
+    {
+        $this->container['transferred_additional_cost_amount'] = $transferred_additional_cost_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets pending_credits
+     * @return int
+     */
+    public function getPendingCredits()
+    {
+        return $this->container['pending_credits'];
+    }
+
+    /**
+     * Sets pending_credits
+     * @param int $pending_credits Number of credits that have not fully been applied to invoices
+     * @return $this
+     */
+    public function setPendingCredits($pending_credits)
+    {
+        $this->container['pending_credits'] = $pending_credits;
+
+        return $this;
+    }
+
+    /**
+     * Gets pending_credit_amount
+     * @return int
+     */
+    public function getPendingCreditAmount()
+    {
+        return $this->container['pending_credit_amount'];
+    }
+
+    /**
+     * Sets pending_credit_amount
+     * @param int $pending_credit_amount Summed credit amount not yet applied to invoices
+     * @return $this
+     */
+    public function setPendingCreditAmount($pending_credit_amount)
+    {
+        $this->container['pending_credit_amount'] = $pending_credit_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets transferred_credits
+     * @return int
+     */
+    public function getTransferredCredits()
+    {
+        return $this->container['transferred_credits'];
+    }
+
+    /**
+     * Sets transferred_credits
+     * @param int $transferred_credits Number of credits that have fully been applied to invoices
+     * @return $this
+     */
+    public function setTransferredCredits($transferred_credits)
+    {
+        $this->container['transferred_credits'] = $transferred_credits;
+
+        return $this;
+    }
+
+    /**
+     * Gets transferred_credit_amount
+     * @return int
+     */
+    public function getTransferredCreditAmount()
+    {
+        return $this->container['transferred_credit_amount'];
+    }
+
+    /**
+     * Sets transferred_credit_amount
+     * @param int $transferred_credit_amount Summed credit amount that have been applied to invoices
+     * @return $this
+     */
+    public function setTransferredCreditAmount($transferred_credit_amount)
+    {
+        $this->container['transferred_credit_amount'] = $transferred_credit_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets hosted_page_links
+     * @return \Swagger\Client\Model\InlineResponse20025HostedPageLinks
+     */
+    public function getHostedPageLinks()
+    {
+        return $this->container['hosted_page_links'];
+    }
+
+    /**
+     * Sets hosted_page_links
+     * @param \Swagger\Client\Model\InlineResponse20025HostedPageLinks $hosted_page_links
+     * @return $this
+     */
+    public function setHostedPageLinks($hosted_page_links)
+    {
+        $this->container['hosted_page_links'] = $hosted_page_links;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscription_discounts
+     * @return string[]
+     */
+    public function getSubscriptionDiscounts()
+    {
+        return $this->container['subscription_discounts'];
+    }
+
+    /**
+     * Sets subscription_discounts
+     * @param string[] $subscription_discounts List of subscription discounts handles attached to subscription
+     * @return $this
+     */
+    public function setSubscriptionDiscounts($subscription_discounts)
+    {
+        $this->container['subscription_discounts'] = $subscription_discounts;
+
+        return $this;
+    }
+
+    /**
+     * Gets pending_change
+     * @return \Swagger\Client\Model\InlineResponse20025PendingChange
+     */
+    public function getPendingChange()
+    {
+        return $this->container['pending_change'];
+    }
+
+    /**
+     * Sets pending_change
+     * @param \Swagger\Client\Model\InlineResponse20025PendingChange $pending_change
+     * @return $this
+     */
+    public function setPendingChange($pending_change)
+    {
+        $this->container['pending_change'] = $pending_change;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscription_changes
+     * @return \Swagger\Client\Model\InlineResponse20025PendingChange[]
+     */
+    public function getSubscriptionChanges()
+    {
+        return $this->container['subscription_changes'];
+    }
+
+    /**
+     * Sets subscription_changes
+     * @param \Swagger\Client\Model\InlineResponse20025PendingChange[] $subscription_changes List of subscription changes both at most one pending and previously applied
+     * @return $this
+     */
+    public function setSubscriptionChanges($subscription_changes)
+    {
+        $this->container['subscription_changes'] = $subscription_changes;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscription_add_ons
+     * @return string[]
+     */
+    public function getSubscriptionAddOns()
+    {
+        return $this->container['subscription_add_ons'];
+    }
+
+    /**
+     * Sets subscription_add_ons
+     * @param string[] $subscription_add_ons List of subscription add-on handles attached to subscription
+     * @return $this
+     */
+    public function setSubscriptionAddOns($subscription_add_ons)
+    {
+        $this->container['subscription_add_ons'] = $subscription_add_ons;
 
         return $this;
     }

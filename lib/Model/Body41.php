@@ -54,7 +54,8 @@ class Body41 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'groups' => 'string[]'
+        'email' => 'string',
+        'name' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +68,8 @@ class Body41 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'groups' => 'groups'
+        'email' => 'email',
+        'name' => 'name'
     ];
 
 
@@ -76,7 +78,8 @@ class Body41 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'groups' => 'setGroups'
+        'email' => 'setEmail',
+        'name' => 'setName'
     ];
 
 
@@ -85,7 +88,8 @@ class Body41 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'groups' => 'getGroups'
+        'email' => 'getEmail',
+        'name' => 'getName'
     ];
 
     public static function attributeMap()
@@ -119,7 +123,8 @@ class Body41 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['groups'] = isset($data['groups']) ? $data['groups'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
     }
 
     /**
@@ -131,8 +136,8 @@ class Body41 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['groups'] === null) {
-            $invalid_properties[] = "'groups' can't be null";
+        if ($this->container['email'] === null) {
+            $invalid_properties[] = "'email' can't be null";
         }
         return $invalid_properties;
     }
@@ -146,7 +151,7 @@ class Body41 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['groups'] === null) {
+        if ($this->container['email'] === null) {
             return false;
         }
         return true;
@@ -154,22 +159,43 @@ class Body41 implements ArrayAccess
 
 
     /**
-     * Gets groups
-     * @return string[]
+     * Gets email
+     * @return string
      */
-    public function getGroups()
+    public function getEmail()
     {
-        return $this->container['groups'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets groups
-     * @param string[] $groups User groups
+     * Sets email
+     * @param string $email User email
      * @return $this
      */
-    public function setGroups($groups)
+    public function setEmail($email)
     {
-        $this->container['groups'] = $groups;
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     * @param string $name User name
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
 
         return $this;
     }

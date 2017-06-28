@@ -3,12 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**provider** | **string** | Card types supported by agreement | 
-**id** | **string** | Card gateway agreement id | 
-**state** | **string** | Card gateway state: | 
-**card_types** | **string[]** | Card types supported by agreement | 
-**provider_settings** | **map[string,object]** | Key value map of provider settings | [optional] 
-**gw_ref** | **string** | Card gateway reference id | 
+**page** | **int** | Number of current page in paginated list | 
+**size** | **int** | Page size in paginated list | 
+**count** | **int** | Number of elements in current page | 
+**search** | **string** | Optional search expression used | [optional] 
+**sort** | **string** | Optional sort expression used | [optional] 
+**content** | [**\Swagger\Client\Model\InlineResponse2005[]**](InlineResponse2005.md) | List of add-ons for current page | 
+**total_elements** | **int** | Total number of elements in paginated list | 
+**total_pages** | **int** | Total number of pages in paginated list | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

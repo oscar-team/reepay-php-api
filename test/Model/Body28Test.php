@@ -83,17 +83,25 @@ class Body28Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "timing"
+     * Test attribute "name"
      */
-    public function testPropertyTiming()
+    public function testPropertyName()
     {
 
     }
 
     /**
-     * Test attribute "plan"
+     * Test attribute "description"
      */
-    public function testPropertyPlan()
+    public function testPropertyDescription()
+    {
+
+    }
+
+    /**
+     * Test attribute "vat"
+     */
+    public function testPropertyVat()
     {
 
     }
@@ -115,25 +123,33 @@ class Body28Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "billing"
+     * Test attribute "prepaid"
      */
-    public function testPropertyBilling()
+    public function testPropertyPrepaid()
     {
 
     }
 
     /**
-     * Test attribute "amount_incl_vat"
+     * Test attribute "dunning_plan"
      */
-    public function testPropertyAmountInclVat()
+    public function testPropertyDunningPlan()
     {
 
     }
 
     /**
-     * Test attribute "compensation_method"
+     * Test attribute "renewal_reminder_email_days"
      */
-    public function testPropertyCompensationMethod()
+    public function testPropertyRenewalReminderEmailDays()
+    {
+
+    }
+
+    /**
+     * Test attribute "trial_reminder_email_days"
+     */
+    public function testPropertyTrialReminderEmailDays()
     {
 
     }
@@ -147,17 +163,121 @@ class Body28Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "start_date"
+     * Test attribute "amount_incl_vat"
      */
-    public function testPropertyStartDate()
+    public function testPropertyAmountInclVat()
     {
 
     }
 
     /**
-     * Test attribute "cancel_change"
+     * Test attribute "fixed_count"
      */
-    public function testPropertyCancelChange()
+    public function testPropertyFixedCount()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_life_time_unit"
+     */
+    public function testPropertyFixedLifeTimeUnit()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixed_life_time_length"
+     */
+    public function testPropertyFixedLifeTimeLength()
+    {
+
+    }
+
+    /**
+     * Test attribute "trial_interval_unit"
+     */
+    public function testPropertyTrialIntervalUnit()
+    {
+
+    }
+
+    /**
+     * Test attribute "trial_interval_length"
+     */
+    public function testPropertyTrialIntervalLength()
+    {
+
+    }
+
+    /**
+     * Test attribute "interval_length"
+     */
+    public function testPropertyIntervalLength()
+    {
+
+    }
+
+    /**
+     * Test attribute "schedule_type"
+     */
+    public function testPropertyScheduleType()
+    {
+
+    }
+
+    /**
+     * Test attribute "schedule_fixed_day"
+     */
+    public function testPropertyScheduleFixedDay()
+    {
+
+    }
+
+    /**
+     * Test attribute "base_month"
+     */
+    public function testPropertyBaseMonth()
+    {
+
+    }
+
+    /**
+     * Test attribute "notice_periods"
+     */
+    public function testPropertyNoticePeriods()
+    {
+
+    }
+
+    /**
+     * Test attribute "notice_periods_after_current"
+     */
+    public function testPropertyNoticePeriodsAfterCurrent()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixation_periods"
+     */
+    public function testPropertyFixationPeriods()
+    {
+
+    }
+
+    /**
+     * Test attribute "fixation_periods_full"
+     */
+    public function testPropertyFixationPeriodsFull()
+    {
+
+    }
+
+    /**
+     * Test attribute "supersede_mode"
+     */
+    public function testPropertySupersedeMode()
     {
 
     }

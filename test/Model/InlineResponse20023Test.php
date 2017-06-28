@@ -83,25 +83,9 @@ class InlineResponse20023Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "handle"
+     * Test attribute "id"
      */
-    public function testPropertyHandle()
-    {
-
-    }
-
-    /**
-     * Test attribute "customer"
-     */
-    public function testPropertyCustomer()
-    {
-
-    }
-
-    /**
-     * Test attribute "plan"
-     */
-    public function testPropertyPlan()
+    public function testPropertyId()
     {
 
     }
@@ -115,9 +99,9 @@ class InlineResponse20023Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "test"
+     * Test attribute "invoice"
      */
-    public function testPropertyTest()
+    public function testPropertyInvoice()
     {
 
     }
@@ -131,33 +115,33 @@ class InlineResponse20023Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "quantity"
+     * Test attribute "currency"
      */
-    public function testPropertyQuantity()
+    public function testPropertyCurrency()
     {
 
     }
 
     /**
-     * Test attribute "expires"
+     * Test attribute "transaction"
      */
-    public function testPropertyExpires()
+    public function testPropertyTransaction()
     {
 
     }
 
     /**
-     * Test attribute "reactivated"
+     * Test attribute "error"
      */
-    public function testPropertyReactivated()
+    public function testPropertyError()
     {
 
     }
 
     /**
-     * Test attribute "timezone"
+     * Test attribute "type"
      */
-    public function testPropertyTimezone()
+    public function testPropertyType()
     {
 
     }
@@ -171,377 +155,25 @@ class InlineResponse20023Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "renewing"
+     * Test attribute "credit_note_id"
      */
-    public function testPropertyRenewing()
+    public function testPropertyCreditNoteId()
     {
 
     }
 
     /**
-     * Test attribute "plan_version"
+     * Test attribute "ref_transaction"
      */
-    public function testPropertyPlanVersion()
+    public function testPropertyRefTransaction()
     {
 
     }
 
     /**
-     * Test attribute "amount_incl_vat"
+     * Test attribute "error_state"
      */
-    public function testPropertyAmountInclVat()
-    {
-
-    }
-
-    /**
-     * Test attribute "start_date"
-     */
-    public function testPropertyStartDate()
-    {
-
-    }
-
-    /**
-     * Test attribute "end_date"
-     */
-    public function testPropertyEndDate()
-    {
-
-    }
-
-    /**
-     * Test attribute "grace_duration"
-     */
-    public function testPropertyGraceDuration()
-    {
-
-    }
-
-    /**
-     * Test attribute "current_period_start"
-     */
-    public function testPropertyCurrentPeriodStart()
-    {
-
-    }
-
-    /**
-     * Test attribute "next_period_start"
-     */
-    public function testPropertyNextPeriodStart()
-    {
-
-    }
-
-    /**
-     * Test attribute "first_period_start"
-     */
-    public function testPropertyFirstPeriodStart()
-    {
-
-    }
-
-    /**
-     * Test attribute "last_period_start"
-     */
-    public function testPropertyLastPeriodStart()
-    {
-
-    }
-
-    /**
-     * Test attribute "trial_start"
-     */
-    public function testPropertyTrialStart()
-    {
-
-    }
-
-    /**
-     * Test attribute "trial_end"
-     */
-    public function testPropertyTrialEnd()
-    {
-
-    }
-
-    /**
-     * Test attribute "is_cancelled"
-     */
-    public function testPropertyIsCancelled()
-    {
-
-    }
-
-    /**
-     * Test attribute "in_trial"
-     */
-    public function testPropertyInTrial()
-    {
-
-    }
-
-    /**
-     * Test attribute "has_started"
-     */
-    public function testPropertyHasStarted()
-    {
-
-    }
-
-    /**
-     * Test attribute "renewal_count"
-     */
-    public function testPropertyRenewalCount()
-    {
-
-    }
-
-    /**
-     * Test attribute "cancelled_date"
-     */
-    public function testPropertyCancelledDate()
-    {
-
-    }
-
-    /**
-     * Test attribute "expired_date"
-     */
-    public function testPropertyExpiredDate()
-    {
-
-    }
-
-    /**
-     * Test attribute "expire_reason"
-     */
-    public function testPropertyExpireReason()
-    {
-
-    }
-
-    /**
-     * Test attribute "on_hold_date"
-     */
-    public function testPropertyOnHoldDate()
-    {
-
-    }
-
-    /**
-     * Test attribute "on_hold_reason"
-     */
-    public function testPropertyOnHoldReason()
-    {
-
-    }
-
-    /**
-     * Test attribute "payment_method_added"
-     */
-    public function testPropertyPaymentMethodAdded()
-    {
-
-    }
-
-    /**
-     * Test attribute "scheduled_plan_change"
-     */
-    public function testPropertyScheduledPlanChange()
-    {
-
-    }
-
-    /**
-     * Test attribute "reminder_email_sent"
-     */
-    public function testPropertyReminderEmailSent()
-    {
-
-    }
-
-    /**
-     * Test attribute "failed_invoices"
-     */
-    public function testPropertyFailedInvoices()
-    {
-
-    }
-
-    /**
-     * Test attribute "failed_amount"
-     */
-    public function testPropertyFailedAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "cancelled_invoices"
-     */
-    public function testPropertyCancelledInvoices()
-    {
-
-    }
-
-    /**
-     * Test attribute "cancelled_amount"
-     */
-    public function testPropertyCancelledAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "pending_invoices"
-     */
-    public function testPropertyPendingInvoices()
-    {
-
-    }
-
-    /**
-     * Test attribute "pending_amount"
-     */
-    public function testPropertyPendingAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "dunning_invoices"
-     */
-    public function testPropertyDunningInvoices()
-    {
-
-    }
-
-    /**
-     * Test attribute "dunning_amount"
-     */
-    public function testPropertyDunningAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "settled_invoices"
-     */
-    public function testPropertySettledInvoices()
-    {
-
-    }
-
-    /**
-     * Test attribute "settled_amount"
-     */
-    public function testPropertySettledAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "refunded_amount"
-     */
-    public function testPropertyRefundedAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "pending_additional_costs"
-     */
-    public function testPropertyPendingAdditionalCosts()
-    {
-
-    }
-
-    /**
-     * Test attribute "pending_additional_cost_amount"
-     */
-    public function testPropertyPendingAdditionalCostAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "transferred_additional_costs"
-     */
-    public function testPropertyTransferredAdditionalCosts()
-    {
-
-    }
-
-    /**
-     * Test attribute "transferred_additional_cost_amount"
-     */
-    public function testPropertyTransferredAdditionalCostAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "pending_credits"
-     */
-    public function testPropertyPendingCredits()
-    {
-
-    }
-
-    /**
-     * Test attribute "pending_credit_amount"
-     */
-    public function testPropertyPendingCreditAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "transferred_credits"
-     */
-    public function testPropertyTransferredCredits()
-    {
-
-    }
-
-    /**
-     * Test attribute "transferred_credit_amount"
-     */
-    public function testPropertyTransferredCreditAmount()
-    {
-
-    }
-
-    /**
-     * Test attribute "hosted_page_links"
-     */
-    public function testPropertyHostedPageLinks()
-    {
-
-    }
-
-    /**
-     * Test attribute "subscription_discounts"
-     */
-    public function testPropertySubscriptionDiscounts()
-    {
-
-    }
-
-    /**
-     * Test attribute "pending_change"
-     */
-    public function testPropertyPendingChange()
-    {
-
-    }
-
-    /**
-     * Test attribute "subscription_changes"
-     */
-    public function testPropertySubscriptionChanges()
+    public function testPropertyErrorState()
     {
 
     }

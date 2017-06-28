@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * InlineResponse20017Test Class Doc Comment
  *
  * @category    Class */
-// * @description InlineResponse20017
+// * @description A page in a paginated customer search
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
@@ -83,57 +83,65 @@ class InlineResponse20017Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "page"
      */
-    public function testPropertyName()
+    public function testPropertyPage()
     {
 
     }
 
     /**
-     * Test attribute "schedule"
+     * Test attribute "size"
      */
-    public function testPropertySchedule()
+    public function testPropertySize()
     {
 
     }
 
     /**
-     * Test attribute "handle"
+     * Test attribute "count"
      */
-    public function testPropertyHandle()
+    public function testPropertyCount()
     {
 
     }
 
     /**
-     * Test attribute "state"
+     * Test attribute "search"
      */
-    public function testPropertyState()
+    public function testPropertySearch()
     {
 
     }
 
     /**
-     * Test attribute "created"
+     * Test attribute "sort"
      */
-    public function testPropertyCreated()
+    public function testPropertySort()
     {
 
     }
 
     /**
-     * Test attribute "default_plan"
+     * Test attribute "content"
      */
-    public function testPropertyDefaultPlan()
+    public function testPropertyContent()
     {
 
     }
 
     /**
-     * Test attribute "final_subscription_action"
+     * Test attribute "total_elements"
      */
-    public function testPropertyFinalSubscriptionAction()
+    public function testPropertyTotalElements()
+    {
+
+    }
+
+    /**
+     * Test attribute "total_pages"
+     */
+    public function testPropertyTotalPages()
     {
 
     }

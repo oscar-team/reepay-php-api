@@ -83,65 +83,17 @@ class InlineResponse20029Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "coupon"
      */
-    public function testPropertyId()
+    public function testPropertyCoupon()
     {
 
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "subscription_discount"
      */
-    public function testPropertyEmail()
-    {
-
-    }
-
-    /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-
-    }
-
-    /**
-     * Test attribute "state"
-     */
-    public function testPropertyState()
-    {
-
-    }
-
-    /**
-     * Test attribute "groups"
-     */
-    public function testPropertyGroups()
-    {
-
-    }
-
-    /**
-     * Test attribute "permissions"
-     */
-    public function testPropertyPermissions()
-    {
-
-    }
-
-    /**
-     * Test attribute "verified_email"
-     */
-    public function testPropertyVerifiedEmail()
-    {
-
-    }
-
-    /**
-     * Test attribute "invite_expires"
-     */
-    public function testPropertyInviteExpires()
+    public function testPropertySubscriptionDiscount()
     {
 
     }

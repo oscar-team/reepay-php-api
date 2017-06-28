@@ -54,13 +54,13 @@ class Body4 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'subscription' => 'string',
-        'handle' => 'string',
-        'ordertext' => 'string',
-        'quantity' => 'int',
+        'name' => 'string',
+        'description' => 'string',
         'amount' => 'int',
         'vat' => 'float',
-        'amount_incl_vat' => 'bool'
+        'amount_incl_vat' => 'bool',
+        'all_plans' => 'bool',
+        'eligible_plans' => 'string[]'
     ];
 
     public static function swaggerTypes()
@@ -73,13 +73,13 @@ class Body4 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'subscription' => 'subscription',
-        'handle' => 'handle',
-        'ordertext' => 'ordertext',
-        'quantity' => 'quantity',
+        'name' => 'name',
+        'description' => 'description',
         'amount' => 'amount',
         'vat' => 'vat',
-        'amount_incl_vat' => 'amount_incl_vat'
+        'amount_incl_vat' => 'amount_incl_vat',
+        'all_plans' => 'all_plans',
+        'eligible_plans' => 'eligible_plans'
     ];
 
 
@@ -88,13 +88,13 @@ class Body4 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'subscription' => 'setSubscription',
-        'handle' => 'setHandle',
-        'ordertext' => 'setOrdertext',
-        'quantity' => 'setQuantity',
+        'name' => 'setName',
+        'description' => 'setDescription',
         'amount' => 'setAmount',
         'vat' => 'setVat',
-        'amount_incl_vat' => 'setAmountInclVat'
+        'amount_incl_vat' => 'setAmountInclVat',
+        'all_plans' => 'setAllPlans',
+        'eligible_plans' => 'setEligiblePlans'
     ];
 
 
@@ -103,13 +103,13 @@ class Body4 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'subscription' => 'getSubscription',
-        'handle' => 'getHandle',
-        'ordertext' => 'getOrdertext',
-        'quantity' => 'getQuantity',
+        'name' => 'getName',
+        'description' => 'getDescription',
         'amount' => 'getAmount',
         'vat' => 'getVat',
-        'amount_incl_vat' => 'getAmountInclVat'
+        'amount_incl_vat' => 'getAmountInclVat',
+        'all_plans' => 'getAllPlans',
+        'eligible_plans' => 'getEligiblePlans'
     ];
 
     public static function attributeMap()
@@ -143,13 +143,13 @@ class Body4 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['subscription'] = isset($data['subscription']) ? $data['subscription'] : null;
-        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
-        $this->container['ordertext'] = isset($data['ordertext']) ? $data['ordertext'] : null;
-        $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
         $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
+        $this->container['all_plans'] = isset($data['all_plans']) ? $data['all_plans'] : null;
+        $this->container['eligible_plans'] = isset($data['eligible_plans']) ? $data['eligible_plans'] : null;
     }
 
     /**
@@ -161,19 +161,9 @@ class Body4 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['subscription'] === null) {
-            $invalid_properties[] = "'subscription' can't be null";
+        if ($this->container['name'] === null) {
+            $invalid_properties[] = "'name' can't be null";
         }
-        if ($this->container['handle'] === null) {
-            $invalid_properties[] = "'handle' can't be null";
-        }
-        if ($this->container['ordertext'] === null) {
-            $invalid_properties[] = "'ordertext' can't be null";
-        }
-        if (!is_null($this->container['quantity']) && ($this->container['quantity'] < 1)) {
-            $invalid_properties[] = "invalid value for 'quantity', must be bigger than or equal to 1.";
-        }
-
         if ($this->container['amount'] === null) {
             $invalid_properties[] = "'amount' can't be null";
         }
@@ -201,16 +191,7 @@ class Body4 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['subscription'] === null) {
-            return false;
-        }
-        if ($this->container['handle'] === null) {
-            return false;
-        }
-        if ($this->container['ordertext'] === null) {
-            return false;
-        }
-        if ($this->container['quantity'] < 1) {
+        if ($this->container['name'] === null) {
             return false;
         }
         if ($this->container['amount'] === null) {
@@ -230,90 +211,43 @@ class Body4 implements ArrayAccess
 
 
     /**
-     * Gets subscription
+     * Gets name
      * @return string
      */
-    public function getSubscription()
+    public function getName()
     {
-        return $this->container['subscription'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets subscription
-     * @param string $subscription Subscription handle
+     * Sets name
+     * @param string $name Name of add-on. Will be used as order line text.
      * @return $this
      */
-    public function setSubscription($subscription)
+    public function setName($name)
     {
-        $this->container['subscription'] = $subscription;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets handle
+     * Gets description
      * @return string
      */
-    public function getHandle()
+    public function getDescription()
     {
-        return $this->container['handle'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets handle
-     * @param string $handle Per account unique handle for the additional cost
+     * Sets description
+     * @param string $description Optional description of add-on
      * @return $this
      */
-    public function setHandle($handle)
+    public function setDescription($description)
     {
-        $this->container['handle'] = $handle;
-
-        return $this;
-    }
-
-    /**
-     * Gets ordertext
-     * @return string
-     */
-    public function getOrdertext()
-    {
-        return $this->container['ordertext'];
-    }
-
-    /**
-     * Sets ordertext
-     * @param string $ordertext Order text for the additional cost. Will be on affected invoices.
-     * @return $this
-     */
-    public function setOrdertext($ordertext)
-    {
-        $this->container['ordertext'] = $ordertext;
-
-        return $this;
-    }
-
-    /**
-     * Gets quantity
-     * @return int
-     */
-    public function getQuantity()
-    {
-        return $this->container['quantity'];
-    }
-
-    /**
-     * Sets quantity
-     * @param int $quantity Quantity for the additional cost. Default 1.
-     * @return $this
-     */
-    public function setQuantity($quantity)
-    {
-
-        if (!is_null($quantity) && ($quantity < 1)) {
-            throw new \InvalidArgumentException('invalid value for $quantity when calling Body4., must be bigger than or equal to 1.');
-        }
-
-        $this->container['quantity'] = $quantity;
+        $this->container['description'] = $description;
 
         return $this;
     }
@@ -329,7 +263,7 @@ class Body4 implements ArrayAccess
 
     /**
      * Sets amount
-     * @param int $amount Per quantity amount in the smallest unit for the account currency
+     * @param int $amount Add-on amount
      * @return $this
      */
     public function setAmount($amount)
@@ -355,7 +289,7 @@ class Body4 implements ArrayAccess
 
     /**
      * Sets vat
-     * @param float $vat Optional vat for additional cost. Account default is used if none given.
+     * @param float $vat Optional vat for add-on. Account default is used if none given.
      * @return $this
      */
     public function setVat($vat)
@@ -384,12 +318,54 @@ class Body4 implements ArrayAccess
 
     /**
      * Sets amount_incl_vat
-     * @param bool $amount_incl_vat Whether the per quantity amount is including VAT. Defaults to true.
+     * @param bool $amount_incl_vat Whether the amount is including VAT. Default true.
      * @return $this
      */
     public function setAmountInclVat($amount_incl_vat)
     {
         $this->container['amount_incl_vat'] = $amount_incl_vat;
+
+        return $this;
+    }
+
+    /**
+     * Gets all_plans
+     * @return bool
+     */
+    public function getAllPlans()
+    {
+        return $this->container['all_plans'];
+    }
+
+    /**
+     * Sets all_plans
+     * @param bool $all_plans Whether all plans are eligible for this add-on. Defaults to false.
+     * @return $this
+     */
+    public function setAllPlans($all_plans)
+    {
+        $this->container['all_plans'] = $all_plans;
+
+        return $this;
+    }
+
+    /**
+     * Gets eligible_plans
+     * @return string[]
+     */
+    public function getEligiblePlans()
+    {
+        return $this->container['eligible_plans'];
+    }
+
+    /**
+     * Sets eligible_plans
+     * @param string[] $eligible_plans If not `all_plans` are set to true, then the set of eligible plan handles must be defined.
+     * @return $this
+     */
+    public function setEligiblePlans($eligible_plans)
+    {
+        $this->container['eligible_plans'] = $eligible_plans;
 
         return $this;
     }

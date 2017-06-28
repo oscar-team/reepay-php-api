@@ -83,14 +83,6 @@ class Body9Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "name"
-     */
-    public function testPropertyName()
-    {
-
-    }
-
-    /**
      * Test attribute "handle"
      */
     public function testPropertyHandle()
@@ -99,49 +91,65 @@ class Body9Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "code"
+     * Test attribute "key"
      */
-    public function testPropertyCode()
+    public function testPropertyKey()
     {
 
     }
 
     /**
-     * Test attribute "discount"
+     * Test attribute "amount"
      */
-    public function testPropertyDiscount()
+    public function testPropertyAmount()
     {
 
     }
 
     /**
-     * Test attribute "all_plans"
+     * Test attribute "customer"
      */
-    public function testPropertyAllPlans()
+    public function testPropertyCustomer()
     {
 
     }
 
     /**
-     * Test attribute "eligible_plans"
+     * Test attribute "source"
      */
-    public function testPropertyEligiblePlans()
+    public function testPropertySource()
     {
 
     }
 
     /**
-     * Test attribute "max_redemptions"
+     * Test attribute "settle"
      */
-    public function testPropertyMaxRedemptions()
+    public function testPropertySettle()
     {
 
     }
 
     /**
-     * Test attribute "valid_until"
+     * Test attribute "ordertext"
      */
-    public function testPropertyValidUntil()
+    public function testPropertyOrdertext()
+    {
+
+    }
+
+    /**
+     * Test attribute "order_lines"
+     */
+    public function testPropertyOrderLines()
+    {
+
+    }
+
+    /**
+     * Test attribute "customer_handle"
+     */
+    public function testPropertyCustomerHandle()
     {
 
     }

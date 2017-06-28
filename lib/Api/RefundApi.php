@@ -92,9 +92,9 @@ class RefundApi
      *
      * Create refund
      *
-     * @param \Swagger\Client\Model\Body24 $body  (optional)
+     * @param \Swagger\Client\Model\Body26 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20021
+     * @return \Swagger\Client\Model\InlineResponse20023
      */
     public function createRefund($body = null)
     {
@@ -107,9 +107,9 @@ class RefundApi
      *
      * Create refund
      *
-     * @param \Swagger\Client\Model\Body24 $body  (optional)
+     * @param \Swagger\Client\Model\Body26 $body  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20021, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20023, HTTP status code, HTTP response headers (array of strings)
      */
     public function createRefundWithHttpInfo($body = null)
     {
@@ -157,15 +157,15 @@ class RefundApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20021',
+                '\Swagger\Client\Model\InlineResponse20023',
                 '/v1/refund'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20021', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20023', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20021', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20023', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:
@@ -201,7 +201,7 @@ class RefundApi
      *
      * @param string $id Refund id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\InlineResponse20021
+     * @return \Swagger\Client\Model\InlineResponse20023
      */
     public function getRefund($id)
     {
@@ -216,7 +216,7 @@ class RefundApi
      *
      * @param string $id Refund id (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\InlineResponse20021, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\InlineResponse20023, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRefundWithHttpInfo($id)
     {
@@ -271,15 +271,15 @@ class RefundApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\InlineResponse20021',
+                '\Swagger\Client\Model\InlineResponse20023',
                 '/v1/refund/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20021', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\InlineResponse20023', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20021', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\InlineResponse20023', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 400:

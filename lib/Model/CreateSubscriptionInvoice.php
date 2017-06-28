@@ -293,7 +293,7 @@ class CreateSubscriptionInvoice implements ArrayAccess
 
     /**
      * Sets plan_manual
-     * @param bool $plan_manual Create manually for plan by adding plan product as order line (default false)
+     * @param bool $plan_manual Create manually for plan by adding plan product and potential add-ons as order line (default false)
      * @return $this
      */
     public function setPlanManual($plan_manual)

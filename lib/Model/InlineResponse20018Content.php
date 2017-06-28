@@ -54,12 +54,18 @@ class InlineResponse20018Content implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'id' => 'string',
-        'customer' => 'string',
-        'subscription' => 'string',
-        'invoice' => 'string',
+        'handle' => 'string',
+        'name' => 'string',
+        'description' => 'string',
+        'amount' => 'int',
+        'percentage' => 'int',
+        'state' => 'string',
+        'deleted' => '\DateTime',
         'created' => '\DateTime',
-        'event_type' => 'string'
+        'apply_to' => 'string[]',
+        'fixed_count' => 'int',
+        'fixed_period_unit' => 'string',
+        'fixed_period' => 'int'
     ];
 
     public static function swaggerTypes()
@@ -72,12 +78,18 @@ class InlineResponse20018Content implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'customer' => 'customer',
-        'subscription' => 'subscription',
-        'invoice' => 'invoice',
+        'handle' => 'handle',
+        'name' => 'name',
+        'description' => 'description',
+        'amount' => 'amount',
+        'percentage' => 'percentage',
+        'state' => 'state',
+        'deleted' => 'deleted',
         'created' => 'created',
-        'event_type' => 'event_type'
+        'apply_to' => 'apply_to',
+        'fixed_count' => 'fixed_count',
+        'fixed_period_unit' => 'fixed_period_unit',
+        'fixed_period' => 'fixed_period'
     ];
 
 
@@ -86,12 +98,18 @@ class InlineResponse20018Content implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'customer' => 'setCustomer',
-        'subscription' => 'setSubscription',
-        'invoice' => 'setInvoice',
+        'handle' => 'setHandle',
+        'name' => 'setName',
+        'description' => 'setDescription',
+        'amount' => 'setAmount',
+        'percentage' => 'setPercentage',
+        'state' => 'setState',
+        'deleted' => 'setDeleted',
         'created' => 'setCreated',
-        'event_type' => 'setEventType'
+        'apply_to' => 'setApplyTo',
+        'fixed_count' => 'setFixedCount',
+        'fixed_period_unit' => 'setFixedPeriodUnit',
+        'fixed_period' => 'setFixedPeriod'
     ];
 
 
@@ -100,12 +118,18 @@ class InlineResponse20018Content implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'customer' => 'getCustomer',
-        'subscription' => 'getSubscription',
-        'invoice' => 'getInvoice',
+        'handle' => 'getHandle',
+        'name' => 'getName',
+        'description' => 'getDescription',
+        'amount' => 'getAmount',
+        'percentage' => 'getPercentage',
+        'state' => 'getState',
+        'deleted' => 'getDeleted',
         'created' => 'getCreated',
-        'event_type' => 'getEventType'
+        'apply_to' => 'getApplyTo',
+        'fixed_count' => 'getFixedCount',
+        'fixed_period_unit' => 'getFixedPeriodUnit',
+        'fixed_period' => 'getFixedPeriod'
     ];
 
     public static function attributeMap()
@@ -123,8 +147,36 @@ class InlineResponse20018Content implements ArrayAccess
         return self::$getters;
     }
 
+    const STATE_ACTIVE = 'active';
+    const STATE_DELETED = 'deleted';
+    const FIXED_PERIOD_UNIT_MONTHS = 'months';
+    const FIXED_PERIOD_UNIT_DAYS = 'days';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getStateAllowableValues()
+    {
+        return [
+            self::STATE_ACTIVE,
+            self::STATE_DELETED,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getFixedPeriodUnitAllowableValues()
+    {
+        return [
+            self::FIXED_PERIOD_UNIT_MONTHS,
+            self::FIXED_PERIOD_UNIT_DAYS,
+        ];
+    }
     
 
     /**
@@ -139,12 +191,18 @@ class InlineResponse20018Content implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
-        $this->container['subscription'] = isset($data['subscription']) ? $data['subscription'] : null;
-        $this->container['invoice'] = isset($data['invoice']) ? $data['invoice'] : null;
+        $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
+        $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['percentage'] = isset($data['percentage']) ? $data['percentage'] : null;
+        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
+        $this->container['deleted'] = isset($data['deleted']) ? $data['deleted'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
-        $this->container['event_type'] = isset($data['event_type']) ? $data['event_type'] : null;
+        $this->container['apply_to'] = isset($data['apply_to']) ? $data['apply_to'] : null;
+        $this->container['fixed_count'] = isset($data['fixed_count']) ? $data['fixed_count'] : null;
+        $this->container['fixed_period_unit'] = isset($data['fixed_period_unit']) ? $data['fixed_period_unit'] : null;
+        $this->container['fixed_period'] = isset($data['fixed_period']) ? $data['fixed_period'] : null;
     }
 
     /**
@@ -156,15 +214,51 @@ class InlineResponse20018Content implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['id'] === null) {
-            $invalid_properties[] = "'id' can't be null";
+        if ($this->container['handle'] === null) {
+            $invalid_properties[] = "'handle' can't be null";
         }
+        if ($this->container['name'] === null) {
+            $invalid_properties[] = "'name' can't be null";
+        }
+        if (!is_null($this->container['amount']) && ($this->container['amount'] < 0)) {
+            $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
+        }
+
+        if (!is_null($this->container['percentage']) && ($this->container['percentage'] > 100)) {
+            $invalid_properties[] = "invalid value for 'percentage', must be smaller than or equal to 100.";
+        }
+
+        if (!is_null($this->container['percentage']) && ($this->container['percentage'] < 1)) {
+            $invalid_properties[] = "invalid value for 'percentage', must be bigger than or equal to 1.";
+        }
+
+        if ($this->container['state'] === null) {
+            $invalid_properties[] = "'state' can't be null";
+        }
+        $allowed_values = ["active", "deleted"];
+        if (!in_array($this->container['state'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'deleted'.";
+        }
+
         if ($this->container['created'] === null) {
             $invalid_properties[] = "'created' can't be null";
         }
-        if ($this->container['event_type'] === null) {
-            $invalid_properties[] = "'event_type' can't be null";
+        if ($this->container['apply_to'] === null) {
+            $invalid_properties[] = "'apply_to' can't be null";
         }
+        if (!is_null($this->container['fixed_count']) && ($this->container['fixed_count'] < 1)) {
+            $invalid_properties[] = "invalid value for 'fixed_count', must be bigger than or equal to 1.";
+        }
+
+        $allowed_values = ["months", "days"];
+        if (!in_array($this->container['fixed_period_unit'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'fixed_period_unit', must be one of 'months', 'days'.";
+        }
+
+        if (!is_null($this->container['fixed_period']) && ($this->container['fixed_period'] < 1)) {
+            $invalid_properties[] = "invalid value for 'fixed_period', must be bigger than or equal to 1.";
+        }
+
         return $invalid_properties;
     }
 
@@ -177,13 +271,42 @@ class InlineResponse20018Content implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['id'] === null) {
+        if ($this->container['handle'] === null) {
+            return false;
+        }
+        if ($this->container['name'] === null) {
+            return false;
+        }
+        if ($this->container['amount'] < 0) {
+            return false;
+        }
+        if ($this->container['percentage'] > 100) {
+            return false;
+        }
+        if ($this->container['percentage'] < 1) {
+            return false;
+        }
+        if ($this->container['state'] === null) {
+            return false;
+        }
+        $allowed_values = ["active", "deleted"];
+        if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
         if ($this->container['created'] === null) {
             return false;
         }
-        if ($this->container['event_type'] === null) {
+        if ($this->container['apply_to'] === null) {
+            return false;
+        }
+        if ($this->container['fixed_count'] < 1) {
+            return false;
+        }
+        $allowed_values = ["months", "days"];
+        if (!in_array($this->container['fixed_period_unit'], $allowed_values)) {
+            return false;
+        }
+        if ($this->container['fixed_period'] < 1) {
             return false;
         }
         return true;
@@ -191,85 +314,165 @@ class InlineResponse20018Content implements ArrayAccess
 
 
     /**
-     * Gets id
+     * Gets handle
      * @return string
      */
-    public function getId()
+    public function getHandle()
     {
-        return $this->container['id'];
+        return $this->container['handle'];
     }
 
     /**
-     * Sets id
-     * @param string $id Unique event id assigned by Reepay
+     * Sets handle
+     * @param string $handle Per account unique handle for the discount
      * @return $this
      */
-    public function setId($id)
+    public function setHandle($handle)
     {
-        $this->container['id'] = $id;
+        $this->container['handle'] = $handle;
 
         return $this;
     }
 
     /**
-     * Gets customer
+     * Gets name
      * @return string
      */
-    public function getCustomer()
+    public function getName()
     {
-        return $this->container['customer'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets customer
-     * @param string $customer Customer handle
+     * Sets name
+     * @param string $name Name of discount. Will be used as order line text.
      * @return $this
      */
-    public function setCustomer($customer)
+    public function setName($name)
     {
-        $this->container['customer'] = $customer;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets subscription
+     * Gets description
      * @return string
      */
-    public function getSubscription()
+    public function getDescription()
     {
-        return $this->container['subscription'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets subscription
-     * @param string $subscription Subscription handle
+     * Sets description
+     * @param string $description Optional description of discount
      * @return $this
      */
-    public function setSubscription($subscription)
+    public function setDescription($description)
     {
-        $this->container['subscription'] = $subscription;
+        $this->container['description'] = $description;
 
         return $this;
     }
 
     /**
-     * Gets invoice
-     * @return string
+     * Gets amount
+     * @return int
      */
-    public function getInvoice()
+    public function getAmount()
     {
-        return $this->container['invoice'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets invoice
-     * @param string $invoice Invoice id
+     * Sets amount
+     * @param int $amount Fixed amount discount deducted from order line amounts including VAT
      * @return $this
      */
-    public function setInvoice($invoice)
+    public function setAmount($amount)
     {
-        $this->container['invoice'] = $invoice;
+
+        if (!is_null($amount) && ($amount < 0)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling InlineResponse20018Content., must be bigger than or equal to 0.');
+        }
+
+        $this->container['amount'] = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets percentage
+     * @return int
+     */
+    public function getPercentage()
+    {
+        return $this->container['percentage'];
+    }
+
+    /**
+     * Sets percentage
+     * @param int $percentage Percentage discount applied to each applicable order line
+     * @return $this
+     */
+    public function setPercentage($percentage)
+    {
+
+        if (!is_null($percentage) && ($percentage > 100)) {
+            throw new \InvalidArgumentException('invalid value for $percentage when calling InlineResponse20018Content., must be smaller than or equal to 100.');
+        }
+        if (!is_null($percentage) && ($percentage < 1)) {
+            throw new \InvalidArgumentException('invalid value for $percentage when calling InlineResponse20018Content., must be bigger than or equal to 1.');
+        }
+
+        $this->container['percentage'] = $percentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     * @return string
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     * @param string $state Discount state `active` or `deleted`.
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $allowed_values = array('active', 'deleted');
+        if ((!in_array($state, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'deleted'");
+        }
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets deleted
+     * @return \DateTime
+     */
+    public function getDeleted()
+    {
+        return $this->container['deleted'];
+    }
+
+    /**
+     * Sets deleted
+     * @param \DateTime $deleted Date when the discount was deleted if deleted. In ISO-8601 extended offset date-time format.
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->container['deleted'] = $deleted;
 
         return $this;
     }
@@ -285,7 +488,7 @@ class InlineResponse20018Content implements ArrayAccess
 
     /**
      * Sets created
-     * @param \DateTime $created When the event happened, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format.
+     * @param \DateTime $created Date when the discount was created. In ISO-8601 extended offset date-time format.
      * @return $this
      */
     public function setCreated($created)
@@ -296,22 +499,99 @@ class InlineResponse20018Content implements ArrayAccess
     }
 
     /**
-     * Gets event_type
-     * @return string
+     * Gets apply_to
+     * @return string[]
      */
-    public function getEventType()
+    public function getApplyTo()
     {
-        return $this->container['event_type'];
+        return $this->container['apply_to'];
     }
 
     /**
-     * Sets event_type
-     * @param string $event_type The event type (see documentation)
+     * Sets apply_to
+     * @param string[] $apply_to Which order lines the discount is applicable to: `all`, `setup_fee`, `plan`, `additional_cost`, `add_on` and `ondemand`
      * @return $this
      */
-    public function setEventType($event_type)
+    public function setApplyTo($apply_to)
     {
-        $this->container['event_type'] = $event_type;
+        $this->container['apply_to'] = $apply_to;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixed_count
+     * @return int
+     */
+    public function getFixedCount()
+    {
+        return $this->container['fixed_count'];
+    }
+
+    /**
+     * Sets fixed_count
+     * @param int $fixed_count Apply discount to a fixed number of invoices
+     * @return $this
+     */
+    public function setFixedCount($fixed_count)
+    {
+
+        if (!is_null($fixed_count) && ($fixed_count < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fixed_count when calling InlineResponse20018Content., must be bigger than or equal to 1.');
+        }
+
+        $this->container['fixed_count'] = $fixed_count;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixed_period_unit
+     * @return string
+     */
+    public function getFixedPeriodUnit()
+    {
+        return $this->container['fixed_period_unit'];
+    }
+
+    /**
+     * Sets fixed_period_unit
+     * @param string $fixed_period_unit Time unit use for fixed valid period either `days` or `months`
+     * @return $this
+     */
+    public function setFixedPeriodUnit($fixed_period_unit)
+    {
+        $allowed_values = array('months', 'days');
+        if (!is_null($fixed_period_unit) && (!in_array($fixed_period_unit, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'fixed_period_unit', must be one of 'months', 'days'");
+        }
+        $this->container['fixed_period_unit'] = $fixed_period_unit;
+
+        return $this;
+    }
+
+    /**
+     * Gets fixed_period
+     * @return int
+     */
+    public function getFixedPeriod()
+    {
+        return $this->container['fixed_period'];
+    }
+
+    /**
+     * Sets fixed_period
+     * @param int $fixed_period Fixed period length e.g. 12 months or 14 days
+     * @return $this
+     */
+    public function setFixedPeriod($fixed_period)
+    {
+
+        if (!is_null($fixed_period) && ($fixed_period < 1)) {
+            throw new \InvalidArgumentException('invalid value for $fixed_period when calling InlineResponse20018Content., must be bigger than or equal to 1.');
+        }
+
+        $this->container['fixed_period'] = $fixed_period;
 
         return $this;
     }

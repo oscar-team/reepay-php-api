@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createDiscount**
-> \Swagger\Client\Model\InlineResponse20016Content createDiscount($body)
+> \Swagger\Client\Model\InlineResponse20018Content createDiscount($body)
 
 Create discount
 
@@ -32,7 +32,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\DiscountApi();
-$body = new \Swagger\Client\Model\Body18(); // \Swagger\Client\Model\Body18 | 
+$body = new \Swagger\Client\Model\Body20(); // \Swagger\Client\Model\Body20 | 
 
 try {
     $result = $api_instance->createDiscount($body);
@@ -47,11 +47,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body18**](../Model/\Swagger\Client\Model\Body18.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\Body20**](../Model/\Swagger\Client\Model\Body20.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20016Content**](../Model/InlineResponse20016Content.md)
+[**\Swagger\Client\Model\InlineResponse20018Content**](../Model/InlineResponse20018Content.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteDiscount**
-> \Swagger\Client\Model\InlineResponse20016Content deleteDiscount($handle)
+> \Swagger\Client\Model\InlineResponse20018Content deleteDiscount($handle)
 
 Delete discount
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20016Content**](../Model/InlineResponse20016Content.md)
+[**\Swagger\Client\Model\InlineResponse20018Content**](../Model/InlineResponse20018Content.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDiscount**
-> \Swagger\Client\Model\InlineResponse20016Content getDiscount($handle)
+> \Swagger\Client\Model\InlineResponse20018Content getDiscount($handle)
 
 Get discount
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20016Content**](../Model/InlineResponse20016Content.md)
+[**\Swagger\Client\Model\InlineResponse20018Content**](../Model/InlineResponse20018Content.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDiscounts**
-> \Swagger\Client\Model\InlineResponse20016 getDiscounts($page, $size, $search, $sort)
+> \Swagger\Client\Model\InlineResponse20018 getDiscounts($page, $size, $search, $sort)
 
 Get list of discounts
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\Swagger\Client\Model\InlineResponse20018**](../Model/InlineResponse20018.md)
 
 ### Authorization
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **undeleteDiscount**
-> \Swagger\Client\Model\InlineResponse20016Content undeleteDiscount($handle)
+> \Swagger\Client\Model\InlineResponse20018Content undeleteDiscount($handle)
 
 Undelete discount
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20016Content**](../Model/InlineResponse20016Content.md)
+[**\Swagger\Client\Model\InlineResponse20018Content**](../Model/InlineResponse20018Content.md)
 
 ### Authorization
 

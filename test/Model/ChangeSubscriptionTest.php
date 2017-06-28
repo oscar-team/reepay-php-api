@@ -162,4 +162,20 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     * Test attribute "add_ons"
+     */
+    public function testPropertyAddOns()
+    {
+
+    }
+
+    /**
+     * Test attribute "remove_add_ons"
+     */
+    public function testPropertyRemoveAddOns()
+    {
+
+    }
+
 }

@@ -55,7 +55,7 @@ class SubscriptionPeriodBalance implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'date' => '\DateTime',
-        'invoice' => '\Swagger\Client\Model\InlineResponse20015',
+        'invoice' => '\Swagger\Client\Model\InlineResponse20016',
         'paid' => 'int',
         'consumed' => 'int',
         'remaining' => 'int',
@@ -195,7 +195,7 @@ class SubscriptionPeriodBalance implements ArrayAccess
 
     /**
      * Gets invoice
-     * @return \Swagger\Client\Model\InlineResponse20015
+     * @return \Swagger\Client\Model\InlineResponse20016
      */
     public function getInvoice()
     {
@@ -204,7 +204,7 @@ class SubscriptionPeriodBalance implements ArrayAccess
 
     /**
      * Sets invoice
-     * @param \Swagger\Client\Model\InlineResponse20015 $invoice
+     * @param \Swagger\Client\Model\InlineResponse20016 $invoice
      * @return $this
      */
     public function setInvoice($invoice)

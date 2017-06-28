@@ -83,49 +83,17 @@ class InlineResponse2005Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "invoice"
+     * Test attribute "name"
      */
-    public function testPropertyInvoice()
+    public function testPropertyName()
     {
 
     }
 
     /**
-     * Test attribute "state"
+     * Test attribute "description"
      */
-    public function testPropertyState()
-    {
-
-    }
-
-    /**
-     * Test attribute "subscription"
-     */
-    public function testPropertySubscription()
-    {
-
-    }
-
-    /**
-     * Test attribute "handle"
-     */
-    public function testPropertyHandle()
-    {
-
-    }
-
-    /**
-     * Test attribute "ordertext"
-     */
-    public function testPropertyOrdertext()
-    {
-
-    }
-
-    /**
-     * Test attribute "quantity"
-     */
-    public function testPropertyQuantity()
+    public function testPropertyDescription()
     {
 
     }
@@ -147,6 +115,38 @@ class InlineResponse2005Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "handle"
+     */
+    public function testPropertyHandle()
+    {
+
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+
+    }
+
+    /**
+     * Test attribute "state"
+     */
+    public function testPropertyState()
+    {
+
+    }
+
+    /**
+     * Test attribute "deleted"
+     */
+    public function testPropertyDeleted()
+    {
+
+    }
+
+    /**
      * Test attribute "created"
      */
     public function testPropertyCreated()
@@ -163,17 +163,17 @@ class InlineResponse2005Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "amount_vat"
+     * Test attribute "all_plans"
      */
-    public function testPropertyAmountVat()
+    public function testPropertyAllPlans()
     {
 
     }
 
     /**
-     * Test attribute "amount_ex_vat"
+     * Test attribute "eligible_plans"
      */
-    public function testPropertyAmountExVat()
+    public function testPropertyEligiblePlans()
     {
 
     }

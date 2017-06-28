@@ -33,7 +33,7 @@ namespace Swagger\Client;
  * InlineResponse20021Test Class Doc Comment
  *
  * @category    Class */
-// * @description InlineResponse20021
+// * @description A page in a paginated invoice search
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
@@ -83,97 +83,65 @@ class InlineResponse20021Test extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "page"
      */
-    public function testPropertyId()
+    public function testPropertyPage()
     {
 
     }
 
     /**
-     * Test attribute "state"
+     * Test attribute "size"
      */
-    public function testPropertyState()
+    public function testPropertySize()
     {
 
     }
 
     /**
-     * Test attribute "invoice"
+     * Test attribute "count"
      */
-    public function testPropertyInvoice()
+    public function testPropertyCount()
     {
 
     }
 
     /**
-     * Test attribute "amount"
+     * Test attribute "search"
      */
-    public function testPropertyAmount()
+    public function testPropertySearch()
     {
 
     }
 
     /**
-     * Test attribute "currency"
+     * Test attribute "sort"
      */
-    public function testPropertyCurrency()
+    public function testPropertySort()
     {
 
     }
 
     /**
-     * Test attribute "transaction"
+     * Test attribute "content"
      */
-    public function testPropertyTransaction()
+    public function testPropertyContent()
     {
 
     }
 
     /**
-     * Test attribute "error"
+     * Test attribute "total_elements"
      */
-    public function testPropertyError()
+    public function testPropertyTotalElements()
     {
 
     }
 
     /**
-     * Test attribute "type"
+     * Test attribute "total_pages"
      */
-    public function testPropertyType()
-    {
-
-    }
-
-    /**
-     * Test attribute "created"
-     */
-    public function testPropertyCreated()
-    {
-
-    }
-
-    /**
-     * Test attribute "credit_note_id"
-     */
-    public function testPropertyCreditNoteId()
-    {
-
-    }
-
-    /**
-     * Test attribute "ref_transaction"
-     */
-    public function testPropertyRefTransaction()
-    {
-
-    }
-
-    /**
-     * Test attribute "error_state"
-     */
-    public function testPropertyErrorState()
+    public function testPropertyTotalPages()
     {
 
     }
