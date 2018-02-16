@@ -58,12 +58,28 @@ class EventList implements ArrayAccess
         'page' => 'int',
         'size' => 'int',
         'count' => 'int',
-        'content' => '\Swagger\Client\Model\InlineResponse20020Content[]'
+        'content' => '\Swagger\Client\Model\Event[]'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'page' => 'int32',
+        'size' => 'int32',
+        'count' => 'int32',
+        'content' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -288,7 +304,7 @@ class EventList implements ArrayAccess
 
     /**
      * Gets content
-     * @return \Swagger\Client\Model\InlineResponse20020Content[]
+     * @return \Swagger\Client\Model\Event[]
      */
     public function getContent()
     {
@@ -297,7 +313,7 @@ class EventList implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Swagger\Client\Model\InlineResponse20020Content[] $content List of events for current slice
+     * @param \Swagger\Client\Model\Event[] $content List of events for current slice
      * @return $this
      */
     public function setContent($content)

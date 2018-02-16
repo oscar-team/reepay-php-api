@@ -1,6 +1,6 @@
 # Swagger\Client\ChargeApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **cancelCharge**
-> \Swagger\Client\Model\InlineResponse20011Content cancelCharge($handle)
+> \Swagger\Client\Model\Charge cancelCharge($handle)
 
 Cancel charge
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20011Content**](../Model/InlineResponse20011Content.md)
+[**\Swagger\Client\Model\Charge**](../Model/Charge.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCharge**
-> \Swagger\Client\Model\InlineResponse20011Content createCharge($body)
+> \Swagger\Client\Model\Charge createCharge($body)
 
 Create charge
 
@@ -85,7 +85,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\ChargeApi();
-$body = new \Swagger\Client\Model\Body9(); // \Swagger\Client\Model\Body9 | 
+$body = new \Swagger\Client\Model\CreateCharge(); // \Swagger\Client\Model\CreateCharge | 
 
 try {
     $result = $api_instance->createCharge($body);
@@ -100,11 +100,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body9**](../Model/\Swagger\Client\Model\Body9.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\CreateCharge**](../Model/CreateCharge.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20011Content**](../Model/InlineResponse20011Content.md)
+[**\Swagger\Client\Model\Charge**](../Model/Charge.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharge**
-> \Swagger\Client\Model\InlineResponse20011Content getCharge($handle)
+> \Swagger\Client\Model\Charge getCharge($handle)
 
 Get charge
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20011Content**](../Model/InlineResponse20011Content.md)
+[**\Swagger\Client\Model\Charge**](../Model/Charge.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharges**
-> \Swagger\Client\Model\InlineResponse20011 getCharges($page, $size, $search, $sort)
+> \Swagger\Client\Model\ChargeSearch getCharges($page, $size, $search, $sort)
 
 Get charges
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20011**](../Model/InlineResponse20011.md)
+[**\Swagger\Client\Model\ChargeSearch**](../Model/ChargeSearch.md)
 
 ### Authorization
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **settleCharge**
-> \Swagger\Client\Model\InlineResponse20011Content settleCharge($handle, $body)
+> \Swagger\Client\Model\Charge settleCharge($handle, $body)
 
 Settle charge
 
@@ -251,7 +251,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\ChargeApi();
 $handle = "handle_example"; // string | Charge handle
-$body = new \Swagger\Client\Model\Body10(); // \Swagger\Client\Model\Body10 | 
+$body = new \Swagger\Client\Model\SettleCharge(); // \Swagger\Client\Model\SettleCharge | 
 
 try {
     $result = $api_instance->settleCharge($handle, $body);
@@ -267,11 +267,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Charge handle |
- **body** | [**\Swagger\Client\Model\Body10**](../Model/\Swagger\Client\Model\Body10.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\SettleCharge**](../Model/SettleCharge.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20011Content**](../Model/InlineResponse20011Content.md)
+[**\Swagger\Client\Model\Charge**](../Model/Charge.md)
 
 ### Authorization
 

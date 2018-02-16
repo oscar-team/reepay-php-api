@@ -49,7 +49,6 @@ class CouponApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class CouponApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class CouponApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class CouponApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class CouponApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateCoupon()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class CouponApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDeleteCoupon()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class CouponApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testExpireCoupon()
     {
-
     }
 
     /**
@@ -117,7 +110,6 @@ class CouponApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetCoupon()
     {
-
     }
 
     /**
@@ -128,7 +120,6 @@ class CouponApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetCoupons()
     {
-
     }
 
     /**
@@ -139,7 +130,6 @@ class CouponApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testUpdateCoupon()
     {
-
     }
 
     /**
@@ -150,7 +140,5 @@ class CouponApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testValidateCode()
     {
-
     }
-
 }

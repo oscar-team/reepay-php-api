@@ -65,15 +65,42 @@ class Charge implements ArrayAccess
         'created' => '\DateTime',
         'transaction' => 'string',
         'error' => 'string',
-        'source' => '\Swagger\Client\Model\InlineResponse20011Source',
-        'order_lines' => '\Swagger\Client\Model\InlineResponse20011OrderLines[]',
+        'source' => '\Swagger\Client\Model\ChargeSource',
+        'order_lines' => '\Swagger\Client\Model\OrderLine[]',
         'refunded_amount' => 'int',
         'error_state' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'handle' => null,
+        'state' => null,
+        'customer' => null,
+        'amount' => 'int32',
+        'currency' => null,
+        'authorized' => 'date-time',
+        'settled' => 'date-time',
+        'cancelled' => 'date-time',
+        'created' => 'date-time',
+        'transaction' => null,
+        'error' => null,
+        'source' => null,
+        'order_lines' => null,
+        'refunded_amount' => 'int32',
+        'error_state' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -241,9 +268,12 @@ class Charge implements ArrayAccess
         if ($this->container['state'] === null) {
             $invalid_properties[] = "'state' can't be null";
         }
-        $allowed_values = ["authorized", "settled", "failed", "cancelled"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'authorized', 'settled', 'failed', 'cancelled'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['customer'] === null) {
@@ -265,15 +295,21 @@ class Charge implements ArrayAccess
         if ($this->container['transaction'] === null) {
             $invalid_properties[] = "'transaction' can't be null";
         }
+        if ($this->container['source'] === null) {
+            $invalid_properties[] = "'source' can't be null";
+        }
         if ($this->container['order_lines'] === null) {
             $invalid_properties[] = "'order_lines' can't be null";
         }
         if ($this->container['refunded_amount'] === null) {
             $invalid_properties[] = "'refunded_amount' can't be null";
         }
-        $allowed_values = ["soft_declined", "hard_declined", "processing_error"];
+        $allowed_values = $this->getErrorStateAllowableValues();
         if (!in_array($this->container['error_state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'error_state', must be one of 'soft_declined', 'hard_declined', 'processing_error'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'error_state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         return $invalid_properties;
@@ -294,7 +330,7 @@ class Charge implements ArrayAccess
         if ($this->container['state'] === null) {
             return false;
         }
-        $allowed_values = ["authorized", "settled", "failed", "cancelled"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
@@ -316,13 +352,16 @@ class Charge implements ArrayAccess
         if ($this->container['transaction'] === null) {
             return false;
         }
+        if ($this->container['source'] === null) {
+            return false;
+        }
         if ($this->container['order_lines'] === null) {
             return false;
         }
         if ($this->container['refunded_amount'] === null) {
             return false;
         }
-        $allowed_values = ["soft_declined", "hard_declined", "processing_error"];
+        $allowed_values = $this->getErrorStateAllowableValues();
         if (!in_array($this->container['error_state'], $allowed_values)) {
             return false;
         }
@@ -367,9 +406,14 @@ class Charge implements ArrayAccess
      */
     public function setState($state)
     {
-        $allowed_values = array('authorized', 'settled', 'failed', 'cancelled');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'authorized', 'settled', 'failed', 'cancelled'");
+        $allowed_values = $this->getStateAllowableValues();
+        if (!in_array($state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['state'] = $state;
 
@@ -572,7 +616,7 @@ class Charge implements ArrayAccess
 
     /**
      * Gets source
-     * @return \Swagger\Client\Model\InlineResponse20011Source
+     * @return \Swagger\Client\Model\ChargeSource
      */
     public function getSource()
     {
@@ -581,7 +625,7 @@ class Charge implements ArrayAccess
 
     /**
      * Sets source
-     * @param \Swagger\Client\Model\InlineResponse20011Source $source
+     * @param \Swagger\Client\Model\ChargeSource $source Object describing the source for the charge. E.g. credit card.
      * @return $this
      */
     public function setSource($source)
@@ -593,7 +637,7 @@ class Charge implements ArrayAccess
 
     /**
      * Gets order_lines
-     * @return \Swagger\Client\Model\InlineResponse20011OrderLines[]
+     * @return \Swagger\Client\Model\OrderLine[]
      */
     public function getOrderLines()
     {
@@ -602,7 +646,7 @@ class Charge implements ArrayAccess
 
     /**
      * Sets order_lines
-     * @param \Swagger\Client\Model\InlineResponse20011OrderLines[] $order_lines Order lines for charge
+     * @param \Swagger\Client\Model\OrderLine[] $order_lines Order lines for charge
      * @return $this
      */
     public function setOrderLines($order_lines)
@@ -649,9 +693,14 @@ class Charge implements ArrayAccess
      */
     public function setErrorState($error_state)
     {
-        $allowed_values = array('soft_declined', 'hard_declined', 'processing_error');
-        if (!is_null($error_state) && (!in_array($error_state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'error_state', must be one of 'soft_declined', 'hard_declined', 'processing_error'");
+        $allowed_values = $this->getErrorStateAllowableValues();
+        if (!is_null($error_state) && !in_array($error_state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'error_state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['error_state'] = $error_state;
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * ReactivateSubscriptionTest
+ * CreateSubscriptionAdditionalCostTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * ReactivateSubscriptionTest Class Doc Comment
+ * CreateSubscriptionAdditionalCostTest Class Doc Comment
  *
  * @category    Class */
-// * @description ReactivateSubscription
+// * @description CreateSubscriptionAdditionalCost
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ReactivateSubscriptionTest extends \PHPUnit_Framework_TestCase
+class CreateSubscriptionAdditionalCostTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,23 +71,51 @@ class ReactivateSubscriptionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ReactivateSubscription"
+     * Test "CreateSubscriptionAdditionalCost"
      */
-    public function testReactivateSubscription()
+    public function testCreateSubscriptionAdditionalCost()
     {
     }
 
     /**
-     * Test attribute "start_date"
+     * Test attribute "handle"
      */
-    public function testPropertyStartDate()
+    public function testPropertyHandle()
     {
     }
 
     /**
-     * Test attribute "partial_period_handling"
+     * Test attribute "ordertext"
      */
-    public function testPropertyPartialPeriodHandling()
+    public function testPropertyOrdertext()
+    {
+    }
+
+    /**
+     * Test attribute "quantity"
+     */
+    public function testPropertyQuantity()
+    {
+    }
+
+    /**
+     * Test attribute "amount"
+     */
+    public function testPropertyAmount()
+    {
+    }
+
+    /**
+     * Test attribute "vat"
+     */
+    public function testPropertyVat()
+    {
+    }
+
+    /**
+     * Test attribute "amount_incl_vat"
+     */
+    public function testPropertyAmountInclVat()
     {
     }
 }

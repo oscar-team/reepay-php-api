@@ -47,7 +47,6 @@ class UserLoginTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class UserLoginTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class UserLoginTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class UserLoginTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class UserLoginTest extends \PHPUnit_Framework_TestCase
      */
     public function testUserLogin()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class UserLoginTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyToken()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class UserLoginTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyUser()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class UserLoginTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAccount()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class UserLoginTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOrganisation()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class UserLoginTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOrganisations()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class UserLoginTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyGroups()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class UserLoginTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPermissions()
     {
-
     }
 
     /**
@@ -143,7 +131,5 @@ class UserLoginTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTokenTtl()
     {
-
     }
-
 }

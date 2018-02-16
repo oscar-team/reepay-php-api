@@ -47,7 +47,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testChangeSubscription()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTiming()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPlan()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyQuantity()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyBilling()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmountInclVat()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCompensationMethod()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPartialPeriodHandling()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyStartDate()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCancelChange()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAddOns()
     {
-
     }
 
     /**
@@ -175,7 +159,5 @@ class ChangeSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRemoveAddOns()
     {
-
     }
-
 }

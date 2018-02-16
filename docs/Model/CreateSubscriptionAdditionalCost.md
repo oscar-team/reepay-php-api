@@ -1,4 +1,4 @@
-# CreateAdditionalCost
+# CreateSubscriptionAdditionalCost
 
 ## Properties
 Name | Type | Description | Notes
@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **quantity** | **int** | Quantity for the additional cost. Default 1. | [optional] 
 **amount** | **int** | Per quantity amount in the smallest unit for the account currency | 
 **vat** | **float** | Optional vat for additional cost. Account default is used if none given. | [optional] 
-**subscription** | **string** | Subscription handle | 
 **amount_incl_vat** | **bool** | Whether the per quantity amount is including VAT. Defaults to true. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

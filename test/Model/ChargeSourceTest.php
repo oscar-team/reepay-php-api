@@ -47,7 +47,6 @@ class ChargeSourceTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class ChargeSourceTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class ChargeSourceTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class ChargeSourceTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class ChargeSourceTest extends \PHPUnit_Framework_TestCase
      */
     public function testChargeSource()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class ChargeSourceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyType()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class ChargeSourceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCard()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class ChargeSourceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFingerprint()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class ChargeSourceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAuthTransaction()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class ChargeSourceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCardType()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class ChargeSourceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyExpDate()
     {
-
     }
 
     /**
@@ -135,7 +124,5 @@ class ChargeSourceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyMaskedCard()
     {
-
     }
-
 }

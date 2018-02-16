@@ -60,14 +60,34 @@ class SubscriptionSearch implements ArrayAccess
         'count' => 'int',
         'search' => 'string',
         'sort' => 'string',
-        'content' => '\Swagger\Client\Model\InlineResponse20025[]',
+        'content' => '\Swagger\Client\Model\Subscription[]',
         'total_elements' => 'int',
         'total_pages' => 'int'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'page' => 'int32',
+        'size' => 'int32',
+        'count' => 'int32',
+        'search' => null,
+        'sort' => null,
+        'content' => null,
+        'total_elements' => 'int64',
+        'total_pages' => 'int32'
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -376,7 +396,7 @@ class SubscriptionSearch implements ArrayAccess
 
     /**
      * Gets content
-     * @return \Swagger\Client\Model\InlineResponse20025[]
+     * @return \Swagger\Client\Model\Subscription[]
      */
     public function getContent()
     {
@@ -385,7 +405,7 @@ class SubscriptionSearch implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Swagger\Client\Model\InlineResponse20025[] $content List of subscriptions for current page
+     * @param \Swagger\Client\Model\Subscription[] $content List of subscriptions for current page
      * @return $this
      */
     public function setContent($content)

@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **date** | [**\DateTime**](\DateTime.md) | Date in period for this period balance | [optional] 
-**invoice** | [**\Swagger\Client\Model\InlineResponse20016**](InlineResponse20016.md) |  | [optional] 
+**invoice** | [**\Swagger\Client\Model\Invoice**](Invoice.md) | Invoice for period, if it exists. See &#x60;period_from&#x60; and &#x60;period_to&#x60; for period start and end. | [optional] 
 **paid** | **int** | The plan amount paid and settled for this period | [optional] 
 **consumed** | **int** | The partial plan amount consumed up to date for this period | [optional] 
 **remaining** | **int** | The partial plan amount remaining for this period. This amount can be refunded in the case the subscription is expired or put on hold and the amount has been paid. | [optional] 

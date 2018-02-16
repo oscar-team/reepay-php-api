@@ -63,7 +63,7 @@ class CreateSubscription implements ArrayAccess
         'source' => 'string',
         'signup_method' => 'string',
         'conditional_create' => 'bool',
-        'create_customer' => '\Swagger\Client\Model\V1chargeCustomer',
+        'create_customer' => '\Swagger\Client\Model\CreateCustomer',
         'plan_version' => 'int',
         'amount_incl_vat' => 'bool',
         'generate_handle' => 'bool',
@@ -71,14 +71,50 @@ class CreateSubscription implements ArrayAccess
         'end_date' => 'string',
         'grace_duration' => 'int',
         'no_trial' => 'bool',
-        'subscription_discounts' => '\Swagger\Client\Model\V1subscriptionSubscriptionDiscounts[]',
+        'no_setup_fee' => 'bool',
+        'subscription_discounts' => '\Swagger\Client\Model\CreateSubscriptionDiscount[]',
         'coupon_codes' => 'string[]',
-        'add_ons' => '\Swagger\Client\Model\V1subscriptionhandleAddOns[]'
+        'add_ons' => '\Swagger\Client\Model\CreateSubscriptionAddOn[]',
+        'additional_costs' => '\Swagger\Client\Model\CreateSubscriptionAdditionalCost[]'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'customer' => null,
+        'plan' => null,
+        'amount' => 'int32',
+        'quantity' => 'int32',
+        'test' => null,
+        'handle' => null,
+        'source' => null,
+        'signup_method' => null,
+        'conditional_create' => null,
+        'create_customer' => null,
+        'plan_version' => 'int32',
+        'amount_incl_vat' => null,
+        'generate_handle' => null,
+        'start_date' => null,
+        'end_date' => null,
+        'grace_duration' => 'int64',
+        'no_trial' => null,
+        'no_setup_fee' => null,
+        'subscription_discounts' => null,
+        'coupon_codes' => null,
+        'add_ons' => null,
+        'additional_costs' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -103,9 +139,11 @@ class CreateSubscription implements ArrayAccess
         'end_date' => 'end_date',
         'grace_duration' => 'grace_duration',
         'no_trial' => 'no_trial',
+        'no_setup_fee' => 'no_setup_fee',
         'subscription_discounts' => 'subscription_discounts',
         'coupon_codes' => 'coupon_codes',
-        'add_ons' => 'add_ons'
+        'add_ons' => 'add_ons',
+        'additional_costs' => 'additional_costs'
     ];
 
 
@@ -131,9 +169,11 @@ class CreateSubscription implements ArrayAccess
         'end_date' => 'setEndDate',
         'grace_duration' => 'setGraceDuration',
         'no_trial' => 'setNoTrial',
+        'no_setup_fee' => 'setNoSetupFee',
         'subscription_discounts' => 'setSubscriptionDiscounts',
         'coupon_codes' => 'setCouponCodes',
-        'add_ons' => 'setAddOns'
+        'add_ons' => 'setAddOns',
+        'additional_costs' => 'setAdditionalCosts'
     ];
 
 
@@ -159,9 +199,11 @@ class CreateSubscription implements ArrayAccess
         'end_date' => 'getEndDate',
         'grace_duration' => 'getGraceDuration',
         'no_trial' => 'getNoTrial',
+        'no_setup_fee' => 'getNoSetupFee',
         'subscription_discounts' => 'getSubscriptionDiscounts',
         'coupon_codes' => 'getCouponCodes',
-        'add_ons' => 'getAddOns'
+        'add_ons' => 'getAddOns',
+        'additional_costs' => 'getAdditionalCosts'
     ];
 
     public static function attributeMap()
@@ -212,9 +254,11 @@ class CreateSubscription implements ArrayAccess
         $this->container['end_date'] = isset($data['end_date']) ? $data['end_date'] : null;
         $this->container['grace_duration'] = isset($data['grace_duration']) ? $data['grace_duration'] : null;
         $this->container['no_trial'] = isset($data['no_trial']) ? $data['no_trial'] : null;
+        $this->container['no_setup_fee'] = isset($data['no_setup_fee']) ? $data['no_setup_fee'] : null;
         $this->container['subscription_discounts'] = isset($data['subscription_discounts']) ? $data['subscription_discounts'] : null;
         $this->container['coupon_codes'] = isset($data['coupon_codes']) ? $data['coupon_codes'] : null;
         $this->container['add_ons'] = isset($data['add_ons']) ? $data['add_ons'] : null;
+        $this->container['additional_costs'] = isset($data['additional_costs']) ? $data['additional_costs'] : null;
     }
 
     /**
@@ -429,7 +473,7 @@ class CreateSubscription implements ArrayAccess
 
     /**
      * Sets source
-     * @param string $source The payment method source if signup method `source`. Either an existing payment method for the customer, e.g. existing card id `ca_...` or a card token `ct_...` generated with token API, Reepay JS library or hosted page.
+     * @param string $source The payment method source if signup method `source`. Either an existing payment method for the customer, e.g. existing card id `ca_...` or a card token `ct_...` generated with [Reepay Token](https://docs.reepay.com/token/) or [Reepay JS Library](https://docs.reepay.com/js/).
      * @return $this
      */
     public function setSource($source)
@@ -483,7 +527,7 @@ class CreateSubscription implements ArrayAccess
 
     /**
      * Gets create_customer
-     * @return \Swagger\Client\Model\V1chargeCustomer
+     * @return \Swagger\Client\Model\CreateCustomer
      */
     public function getCreateCustomer()
     {
@@ -492,7 +536,7 @@ class CreateSubscription implements ArrayAccess
 
     /**
      * Sets create_customer
-     * @param \Swagger\Client\Model\V1chargeCustomer $create_customer
+     * @param \Swagger\Client\Model\CreateCustomer $create_customer Create customer and subscription in an atomic operation
      * @return $this
      */
     public function setCreateCustomer($create_customer)
@@ -660,8 +704,29 @@ class CreateSubscription implements ArrayAccess
     }
 
     /**
+     * Gets no_setup_fee
+     * @return bool
+     */
+    public function getNoSetupFee()
+    {
+        return $this->container['no_setup_fee'];
+    }
+
+    /**
+     * Sets no_setup_fee
+     * @param bool $no_setup_fee Override plan setup fee settings and disable fee
+     * @return $this
+     */
+    public function setNoSetupFee($no_setup_fee)
+    {
+        $this->container['no_setup_fee'] = $no_setup_fee;
+
+        return $this;
+    }
+
+    /**
      * Gets subscription_discounts
-     * @return \Swagger\Client\Model\V1subscriptionSubscriptionDiscounts[]
+     * @return \Swagger\Client\Model\CreateSubscriptionDiscount[]
      */
     public function getSubscriptionDiscounts()
     {
@@ -670,7 +735,7 @@ class CreateSubscription implements ArrayAccess
 
     /**
      * Sets subscription_discounts
-     * @param \Swagger\Client\Model\V1subscriptionSubscriptionDiscounts[] $subscription_discounts Discounts to attach to subscription
+     * @param \Swagger\Client\Model\CreateSubscriptionDiscount[] $subscription_discounts Discounts to attach to subscription
      * @return $this
      */
     public function setSubscriptionDiscounts($subscription_discounts)
@@ -703,7 +768,7 @@ class CreateSubscription implements ArrayAccess
 
     /**
      * Gets add_ons
-     * @return \Swagger\Client\Model\V1subscriptionhandleAddOns[]
+     * @return \Swagger\Client\Model\CreateSubscriptionAddOn[]
      */
     public function getAddOns()
     {
@@ -712,12 +777,33 @@ class CreateSubscription implements ArrayAccess
 
     /**
      * Sets add_ons
-     * @param \Swagger\Client\Model\V1subscriptionhandleAddOns[] $add_ons Add-ons to attach to subscription
+     * @param \Swagger\Client\Model\CreateSubscriptionAddOn[] $add_ons Add-ons to attach to subscription. The same add-on can only be attached to subscription once unless unique handles are supplied for the subscription add-on.
      * @return $this
      */
     public function setAddOns($add_ons)
     {
         $this->container['add_ons'] = $add_ons;
+
+        return $this;
+    }
+
+    /**
+     * Gets additional_costs
+     * @return \Swagger\Client\Model\CreateSubscriptionAdditionalCost[]
+     */
+    public function getAdditionalCosts()
+    {
+        return $this->container['additional_costs'];
+    }
+
+    /**
+     * Sets additional_costs
+     * @param \Swagger\Client\Model\CreateSubscriptionAdditionalCost[] $additional_costs Additional costs to add to subscription at creation time
+     * @return $this
+     */
+    public function setAdditionalCosts($additional_costs)
+    {
+        $this->container['additional_costs'] = $additional_costs;
 
         return $this;
     }

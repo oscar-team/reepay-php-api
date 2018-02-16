@@ -47,7 +47,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function testRefund()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyState()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyInvoice()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCurrency()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTransaction()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyError()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyType()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreated()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreditNoteId()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRefTransaction()
     {
-
     }
 
     /**
@@ -175,7 +159,5 @@ class RefundTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyErrorState()
     {
-
     }
-
 }

@@ -47,7 +47,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrderLine()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOrdertext()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVat()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyQuantity()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOrigin()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTimestamp()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDiscountedAmount()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmountVat()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmountExVat()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyUnitAmount()
     {
-
     }
 
     /**
@@ -175,7 +159,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyUnitAmountVat()
     {
-
     }
 
     /**
@@ -183,7 +166,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyUnitAmountExVat()
     {
-
     }
 
     /**
@@ -191,7 +173,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmountDefinedInclVat()
     {
-
     }
 
     /**
@@ -199,7 +180,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOriginHandle()
     {
-
     }
 
     /**
@@ -207,7 +187,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPeriodFrom()
     {
-
     }
 
     /**
@@ -215,7 +194,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPeriodTo()
     {
-
     }
 
     /**
@@ -223,7 +201,6 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDiscountPercentage()
     {
-
     }
 
     /**
@@ -231,7 +208,5 @@ class OrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDiscountedOrderLine()
     {
-
     }
-
 }

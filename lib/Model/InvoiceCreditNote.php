@@ -58,12 +58,29 @@ class InvoiceCreditNote implements ArrayAccess
         'transaction' => 'string',
         'amount' => 'int',
         'created' => '\DateTime',
-        'credit_note_lines' => '\Swagger\Client\Model\InlineResponse20016CreditNoteLines[]'
+        'credit_note_lines' => '\Swagger\Client\Model\CreditNoteLine[]'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'transaction' => null,
+        'amount' => 'int32',
+        'created' => 'date-time',
+        'credit_note_lines' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -283,7 +300,7 @@ class InvoiceCreditNote implements ArrayAccess
 
     /**
      * Gets credit_note_lines
-     * @return \Swagger\Client\Model\InlineResponse20016CreditNoteLines[]
+     * @return \Swagger\Client\Model\CreditNoteLine[]
      */
     public function getCreditNoteLines()
     {
@@ -292,7 +309,7 @@ class InvoiceCreditNote implements ArrayAccess
 
     /**
      * Sets credit_note_lines
-     * @param \Swagger\Client\Model\InlineResponse20016CreditNoteLines[] $credit_note_lines Credit note lines
+     * @param \Swagger\Client\Model\CreditNoteLine[] $credit_note_lines Credit note lines
      * @return $this
      */
     public function setCreditNoteLines($credit_note_lines)

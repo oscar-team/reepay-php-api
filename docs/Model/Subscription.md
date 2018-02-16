@@ -57,10 +57,10 @@ Name | Type | Description | Notes
 **pending_credit_amount** | **int** | Summed credit amount not yet applied to invoices | 
 **transferred_credits** | **int** | Number of credits that have fully been applied to invoices | 
 **transferred_credit_amount** | **int** | Summed credit amount that have been applied to invoices | 
-**hosted_page_links** | [**\Swagger\Client\Model\InlineResponse20025HostedPageLinks**](InlineResponse20025HostedPageLinks.md) |  | [optional] 
+**hosted_page_links** | [**\Swagger\Client\Model\SubscriptionLinks**](SubscriptionLinks.md) | Links to hosted pages relating to subscription | 
 **subscription_discounts** | **string[]** | List of subscription discounts handles attached to subscription | [optional] 
-**pending_change** | [**\Swagger\Client\Model\InlineResponse20025PendingChange**](InlineResponse20025PendingChange.md) |  | [optional] 
-**subscription_changes** | [**\Swagger\Client\Model\InlineResponse20025PendingChange[]**](InlineResponse20025PendingChange.md) | List of subscription changes both at most one pending and previously applied | [optional] 
+**pending_change** | [**\Swagger\Client\Model\SubscriptionChange**](SubscriptionChange.md) | Pending subscription change to be applied at next renewal | [optional] 
+**subscription_changes** | [**\Swagger\Client\Model\SubscriptionChange[]**](SubscriptionChange.md) | List of subscription changes both at most one pending and previously applied | [optional] 
 **subscription_add_ons** | **string[]** | List of subscription add-on handles attached to subscription | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

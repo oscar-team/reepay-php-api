@@ -47,7 +47,6 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionChange()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPlan()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyQuantity()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPending()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyApplied()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyUpdated()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreated()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmountInclVat()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySubscriptionAddOns()
     {
-
     }
 
     /**
@@ -159,7 +145,5 @@ class SubscriptionChangeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRemoveAddOns()
     {
-
     }
-
 }

@@ -1,6 +1,6 @@
 # Swagger\Client\AuthenticateApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **login**
-> \Swagger\Client\Model\InlineResponse2009 login($email, $password, $organisation, $account)
+> \Swagger\Client\Model\UserLogin login($email, $password, $organisation, $account)
 
 User login
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2009**](../Model/InlineResponse2009.md)
+[**\Swagger\Client\Model\UserLogin**](../Model/UserLogin.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **renew**
-> \Swagger\Client\Model\InlineResponse20010 renew()
+> \Swagger\Client\Model\UserRenew renew()
 
 Renew user login
 
@@ -88,7 +88,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20010**](../Model/InlineResponse20010.md)
+[**\Swagger\Client\Model\UserRenew**](../Model/UserRenew.md)
 
 ### Authorization
 

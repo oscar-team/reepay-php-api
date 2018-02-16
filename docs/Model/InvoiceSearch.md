@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **count** | **int** | Number of elements in current page | 
 **search** | **string** | Optional search expression used | [optional] 
 **sort** | **string** | Optional sort expression used | [optional] 
-**content** | [**\Swagger\Client\Model\InlineResponse20016[]**](InlineResponse20016.md) | List of invoices for current page | 
+**content** | [**\Swagger\Client\Model\Invoice[]**](Invoice.md) | List of invoices for current page | 
 **total_elements** | **int** | Total number of elements in paginated list | 
 **total_pages** | **int** | Total number of pages in paginated list | 
 

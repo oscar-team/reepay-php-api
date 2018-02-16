@@ -57,17 +57,40 @@ class CreateCharge implements ArrayAccess
         'handle' => 'string',
         'key' => 'string',
         'amount' => 'int',
-        'customer' => '\Swagger\Client\Model\V1chargeCustomer',
+        'currency' => 'string',
+        'customer' => '\Swagger\Client\Model\CreateCustomer',
         'source' => 'string',
         'settle' => 'bool',
         'ordertext' => 'string',
-        'order_lines' => '\Swagger\Client\Model\V1chargeOrderLines[]',
+        'order_lines' => '\Swagger\Client\Model\CreateOrderLine[]',
         'customer_handle' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'handle' => null,
+        'key' => null,
+        'amount' => 'int32',
+        'currency' => null,
+        'customer' => null,
+        'source' => null,
+        'settle' => null,
+        'ordertext' => null,
+        'order_lines' => null,
+        'customer_handle' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -78,6 +101,7 @@ class CreateCharge implements ArrayAccess
         'handle' => 'handle',
         'key' => 'key',
         'amount' => 'amount',
+        'currency' => 'currency',
         'customer' => 'customer',
         'source' => 'source',
         'settle' => 'settle',
@@ -95,6 +119,7 @@ class CreateCharge implements ArrayAccess
         'handle' => 'setHandle',
         'key' => 'setKey',
         'amount' => 'setAmount',
+        'currency' => 'setCurrency',
         'customer' => 'setCustomer',
         'source' => 'setSource',
         'settle' => 'setSettle',
@@ -112,6 +137,7 @@ class CreateCharge implements ArrayAccess
         'handle' => 'getHandle',
         'key' => 'getKey',
         'amount' => 'getAmount',
+        'currency' => 'getCurrency',
         'customer' => 'getCustomer',
         'source' => 'getSource',
         'settle' => 'getSettle',
@@ -154,6 +180,7 @@ class CreateCharge implements ArrayAccess
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
         $this->container['key'] = isset($data['key']) ? $data['key'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
+        $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
         $this->container['settle'] = isset($data['settle']) ? $data['settle'] : null;
@@ -275,8 +302,29 @@ class CreateCharge implements ArrayAccess
     }
 
     /**
+     * Gets currency
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->container['currency'];
+    }
+
+    /**
+     * Sets currency
+     * @param string $currency Optional currency in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code. If not provided the account default currency will be used. The currency of an existing charge or invoice cannot be changed.
+     * @return $this
+     */
+    public function setCurrency($currency)
+    {
+        $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
      * Gets customer
-     * @return \Swagger\Client\Model\V1chargeCustomer
+     * @return \Swagger\Client\Model\CreateCustomer
      */
     public function getCustomer()
     {
@@ -285,7 +333,7 @@ class CreateCharge implements ArrayAccess
 
     /**
      * Sets customer
-     * @param \Swagger\Client\Model\V1chargeCustomer $customer
+     * @param \Swagger\Client\Model\CreateCustomer $customer Optional create customer object. An alternative to using a reference to an already created customer. If this object is provided and the customer already exists, the customer will be updated with the information provided in this object. Notice that customer cannot be changed for existing charge/invoice so if handle is given it must match the customer handle for existing customer.
      * @return $this
      */
     public function setCustomer($customer)
@@ -306,7 +354,7 @@ class CreateCharge implements ArrayAccess
 
     /**
      * Sets source
-     * @param string $source The source for the payment. Either an existing payment method for the customer, e.g. `ca_...` or a card token `ct_...` generated with token API or Reepay JS library.
+     * @param string $source The source for the payment. Either an existing payment method for the customer, e.g. `ca_...` or a card token `ct_...` generated with [Reepay Token](https://docs.reepay.com/token/) or [Reepay JS Library](https://docs.reepay.com/js/).
      * @return $this
      */
     public function setSource($source)
@@ -360,7 +408,7 @@ class CreateCharge implements ArrayAccess
 
     /**
      * Gets order_lines
-     * @return \Swagger\Client\Model\V1chargeOrderLines[]
+     * @return \Swagger\Client\Model\CreateOrderLine[]
      */
     public function getOrderLines()
     {
@@ -369,7 +417,7 @@ class CreateCharge implements ArrayAccess
 
     /**
      * Sets order_lines
-     * @param \Swagger\Client\Model\V1chargeOrderLines[] $order_lines Order lines for the charge. The order lines controls the amount. Only required if charge/invoice does not already exist. If given for existing charge the order lines and amount are adjusted.
+     * @param \Swagger\Client\Model\CreateOrderLine[] $order_lines Order lines for the charge. The order lines controls the amount. Only required if charge/invoice does not already exist. If given for existing charge the order lines and amount are adjusted.
      * @return $this
      */
     public function setOrderLines($order_lines)

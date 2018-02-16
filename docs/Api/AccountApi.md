@@ -1,6 +1,6 @@
 # Swagger\Client\AccountApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **createPrivateKey**
-> \Swagger\Client\Model\InlineResponse2001 createPrivateKey()
+> \Swagger\Client\Model\Key createPrivateKey()
 
 Create private key
 
@@ -57,7 +57,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Swagger\Client\Model\Key**](../Model/Key.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPublicKey**
-> \Swagger\Client\Model\InlineResponse2001 createPublicKey()
+> \Swagger\Client\Model\Key createPublicKey()
 
 Create public key
 
@@ -106,7 +106,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Swagger\Client\Model\Key**](../Model/Key.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **generateWebhookSecret**
-> \Swagger\Client\Model\InlineResponse2002 generateWebhookSecret()
+> \Swagger\Client\Model\WebhookSettings generateWebhookSecret()
 
 Generate new webhook secret
 
@@ -259,7 +259,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Swagger\Client\Model\WebhookSettings**](../Model/WebhookSettings.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCurrentAccount**
-> \Swagger\Client\Model\InlineResponse200 getCurrentAccount()
+> \Swagger\Client\Model\Account getCurrentAccount()
 
 Get account
 
@@ -308,7 +308,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Swagger\Client\Model\Account**](../Model/Account.md)
 
 ### Authorization
 
@@ -322,7 +322,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDiscountSettings**
-> \Swagger\Client\Model\InlineResponse2004 getDiscountSettings()
+> \Swagger\Client\Model\DiscountSettings getDiscountSettings()
 
 Get discount settings
 
@@ -357,7 +357,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\Swagger\Client\Model\DiscountSettings**](../Model/DiscountSettings.md)
 
 ### Authorization
 
@@ -371,7 +371,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getMailSettings**
-> \Swagger\Client\Model\InlineResponse2003 getMailSettings()
+> \Swagger\Client\Model\MailSettings getMailSettings()
 
 Get mail settings
 
@@ -406,7 +406,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\Swagger\Client\Model\MailSettings**](../Model/MailSettings.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPrivateKeys**
-> \Swagger\Client\Model\InlineResponse2001[] getPrivateKeys()
+> \Swagger\Client\Model\Key[] getPrivateKeys()
 
 Get list of private keys
 
@@ -455,7 +455,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2001[]**](../Model/InlineResponse2001.md)
+[**\Swagger\Client\Model\Key[]**](../Model/Key.md)
 
 ### Authorization
 
@@ -469,7 +469,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPublicKeys**
-> \Swagger\Client\Model\InlineResponse2001[] getPublicKeys()
+> \Swagger\Client\Model\Key[] getPublicKeys()
 
 Get list of public keys
 
@@ -504,7 +504,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2001[]**](../Model/InlineResponse2001.md)
+[**\Swagger\Client\Model\Key[]**](../Model/Key.md)
 
 ### Authorization
 
@@ -518,7 +518,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookSettings**
-> \Swagger\Client\Model\InlineResponse2002 getWebhookSettings()
+> \Swagger\Client\Model\WebhookSettings getWebhookSettings()
 
 Get webhook settings
 
@@ -553,7 +553,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Swagger\Client\Model\WebhookSettings**](../Model/WebhookSettings.md)
 
 ### Authorization
 
@@ -567,7 +567,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAccountJson**
-> \Swagger\Client\Model\InlineResponse200 updateAccountJson($body)
+> \Swagger\Client\Model\Account updateAccountJson($body)
 
 Update account
 
@@ -587,7 +587,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\AccountApi();
-$body = new \Swagger\Client\Model\Body(); // \Swagger\Client\Model\Body | 
+$body = new \Swagger\Client\Model\UpdateAccount(); // \Swagger\Client\Model\UpdateAccount | 
 
 try {
     $result = $api_instance->updateAccountJson($body);
@@ -602,11 +602,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body**](../Model/\Swagger\Client\Model\Body.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\UpdateAccount**](../Model/UpdateAccount.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Swagger\Client\Model\Account**](../Model/Account.md)
 
 ### Authorization
 
@@ -620,7 +620,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateDiscountSettings**
-> \Swagger\Client\Model\InlineResponse2004 updateDiscountSettings($body)
+> \Swagger\Client\Model\DiscountSettings updateDiscountSettings($body)
 
 Update discount settings
 
@@ -640,7 +640,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\AccountApi();
-$body = new \Swagger\Client\Model\Body3(); // \Swagger\Client\Model\Body3 | 
+$body = new \Swagger\Client\Model\DiscountSettings(); // \Swagger\Client\Model\DiscountSettings | 
 
 try {
     $result = $api_instance->updateDiscountSettings($body);
@@ -655,11 +655,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body3**](../Model/\Swagger\Client\Model\Body3.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\DiscountSettings**](../Model/DiscountSettings.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\Swagger\Client\Model\DiscountSettings**](../Model/DiscountSettings.md)
 
 ### Authorization
 
@@ -673,7 +673,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateMailSettingsJson**
-> \Swagger\Client\Model\InlineResponse2003 updateMailSettingsJson($body)
+> \Swagger\Client\Model\MailSettings updateMailSettingsJson($body)
 
 Update mail settings
 
@@ -693,7 +693,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\AccountApi();
-$body = new \Swagger\Client\Model\Body2(); // \Swagger\Client\Model\Body2 | 
+$body = new \Swagger\Client\Model\MailSettings(); // \Swagger\Client\Model\MailSettings | 
 
 try {
     $result = $api_instance->updateMailSettingsJson($body);
@@ -708,11 +708,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body2**](../Model/\Swagger\Client\Model\Body2.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\MailSettings**](../Model/MailSettings.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\Swagger\Client\Model\MailSettings**](../Model/MailSettings.md)
 
 ### Authorization
 
@@ -726,7 +726,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateWebhookSettingsJson**
-> \Swagger\Client\Model\InlineResponse2002 updateWebhookSettingsJson($body)
+> \Swagger\Client\Model\WebhookSettings updateWebhookSettingsJson($body)
 
 Update webhook settings
 
@@ -746,7 +746,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\AccountApi();
-$body = new \Swagger\Client\Model\Body1(); // \Swagger\Client\Model\Body1 | 
+$body = new \Swagger\Client\Model\UpdateWebhookSettings(); // \Swagger\Client\Model\UpdateWebhookSettings | 
 
 try {
     $result = $api_instance->updateWebhookSettingsJson($body);
@@ -761,11 +761,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body1**](../Model/\Swagger\Client\Model\Body1.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\UpdateWebhookSettings**](../Model/UpdateWebhookSettings.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Swagger\Client\Model\WebhookSettings**](../Model/WebhookSettings.md)
 
 ### Authorization
 

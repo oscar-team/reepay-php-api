@@ -54,7 +54,7 @@ class CardTransaction implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'card' => '\Swagger\Client\Model\InlineResponse20015Cards',
+        'card' => '\Swagger\Client\Model\Card',
         'error' => 'string',
         'fingerprint' => 'string',
         'ref_transaction' => 'string',
@@ -67,9 +67,32 @@ class CardTransaction implements ArrayAccess
         'masked_card' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'card' => null,
+        'error' => null,
+        'fingerprint' => null,
+        'ref_transaction' => null,
+        'gw_id' => null,
+        'last_failed' => 'date-time',
+        'first_failed' => 'date-time',
+        'error_state' => null,
+        'card_type' => null,
+        'exp_date' => null,
+        'masked_card' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -233,17 +256,26 @@ class CardTransaction implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = ["pending", "soft_declined", "hard_declined", "processing_error"];
+        if ($this->container['card'] === null) {
+            $invalid_properties[] = "'card' can't be null";
+        }
+        $allowed_values = $this->getErrorStateAllowableValues();
         if (!in_array($this->container['error_state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'error_state', must be one of 'pending', 'soft_declined', 'hard_declined', 'processing_error'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'error_state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['card_type'] === null) {
             $invalid_properties[] = "'card_type' can't be null";
         }
-        $allowed_values = ["unknown", "visa", "mc", "dankort", "visa_dk", "visa_elec", "maestro", "laser", "amex", "diners", "discover", "jcb"];
+        $allowed_values = $this->getCardTypeAllowableValues();
         if (!in_array($this->container['card_type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'card_type', must be one of 'unknown', 'visa', 'mc', 'dankort', 'visa_dk', 'visa_elec', 'maestro', 'laser', 'amex', 'diners', 'discover', 'jcb'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'card_type', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         return $invalid_properties;
@@ -258,14 +290,17 @@ class CardTransaction implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = ["pending", "soft_declined", "hard_declined", "processing_error"];
+        if ($this->container['card'] === null) {
+            return false;
+        }
+        $allowed_values = $this->getErrorStateAllowableValues();
         if (!in_array($this->container['error_state'], $allowed_values)) {
             return false;
         }
         if ($this->container['card_type'] === null) {
             return false;
         }
-        $allowed_values = ["unknown", "visa", "mc", "dankort", "visa_dk", "visa_elec", "maestro", "laser", "amex", "diners", "discover", "jcb"];
+        $allowed_values = $this->getCardTypeAllowableValues();
         if (!in_array($this->container['card_type'], $allowed_values)) {
             return false;
         }
@@ -275,7 +310,7 @@ class CardTransaction implements ArrayAccess
 
     /**
      * Gets card
-     * @return \Swagger\Client\Model\InlineResponse20015Cards
+     * @return \Swagger\Client\Model\Card
      */
     public function getCard()
     {
@@ -284,7 +319,7 @@ class CardTransaction implements ArrayAccess
 
     /**
      * Sets card
-     * @param \Swagger\Client\Model\InlineResponse20015Cards $card
+     * @param \Swagger\Client\Model\Card $card Card used for transaction
      * @return $this
      */
     public function setCard($card)
@@ -436,9 +471,14 @@ class CardTransaction implements ArrayAccess
      */
     public function setErrorState($error_state)
     {
-        $allowed_values = array('pending', 'soft_declined', 'hard_declined', 'processing_error');
-        if (!is_null($error_state) && (!in_array($error_state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'error_state', must be one of 'pending', 'soft_declined', 'hard_declined', 'processing_error'");
+        $allowed_values = $this->getErrorStateAllowableValues();
+        if (!is_null($error_state) && !in_array($error_state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'error_state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['error_state'] = $error_state;
 
@@ -461,9 +501,14 @@ class CardTransaction implements ArrayAccess
      */
     public function setCardType($card_type)
     {
-        $allowed_values = array('unknown', 'visa', 'mc', 'dankort', 'visa_dk', 'visa_elec', 'maestro', 'laser', 'amex', 'diners', 'discover', 'jcb');
-        if ((!in_array($card_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'card_type', must be one of 'unknown', 'visa', 'mc', 'dankort', 'visa_dk', 'visa_elec', 'maestro', 'laser', 'amex', 'diners', 'discover', 'jcb'");
+        $allowed_values = $this->getCardTypeAllowableValues();
+        if (!in_array($card_type, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'card_type', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['card_type'] = $card_type;
 

@@ -49,7 +49,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreatePrivateKey()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreatePublicKey()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testExpirePrivateKey()
     {
-
     }
 
     /**
@@ -117,7 +110,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testExpirePublicKey()
     {
-
     }
 
     /**
@@ -128,7 +120,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGenerateWebhookSecret()
     {
-
     }
 
     /**
@@ -139,7 +130,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetCurrentAccount()
     {
-
     }
 
     /**
@@ -150,7 +140,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetDiscountSettings()
     {
-
     }
 
     /**
@@ -161,7 +150,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetMailSettings()
     {
-
     }
 
     /**
@@ -172,7 +160,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetPrivateKeys()
     {
-
     }
 
     /**
@@ -183,7 +170,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetPublicKeys()
     {
-
     }
 
     /**
@@ -194,7 +180,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetWebhookSettings()
     {
-
     }
 
     /**
@@ -205,7 +190,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testUpdateAccountJson()
     {
-
     }
 
     /**
@@ -216,7 +200,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testUpdateDiscountSettings()
     {
-
     }
 
     /**
@@ -227,7 +210,6 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testUpdateMailSettingsJson()
     {
-
     }
 
     /**
@@ -238,7 +220,5 @@ class AccountApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testUpdateWebhookSettingsJson()
     {
-
     }
-
 }

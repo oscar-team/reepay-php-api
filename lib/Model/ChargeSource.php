@@ -63,9 +63,28 @@ class ChargeSource implements ArrayAccess
         'masked_card' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'type' => null,
+        'card' => null,
+        'fingerprint' => null,
+        'auth_transaction' => null,
+        'card_type' => null,
+        'exp_date' => null,
+        'masked_card' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -212,14 +231,20 @@ class ChargeSource implements ArrayAccess
         if ($this->container['type'] === null) {
             $invalid_properties[] = "'type' can't be null";
         }
-        $allowed_values = ["card", "card_token"];
+        $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'type', must be one of 'card', 'card_token'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'type', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
-        $allowed_values = ["unknown", "visa", "mc", "dankort", "visa_dk", "visa_elec", "maestro", "laser", "amex", "diners", "discover", "jcb"];
+        $allowed_values = $this->getCardTypeAllowableValues();
         if (!in_array($this->container['card_type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'card_type', must be one of 'unknown', 'visa', 'mc', 'dankort', 'visa_dk', 'visa_elec', 'maestro', 'laser', 'amex', 'diners', 'discover', 'jcb'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'card_type', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         return $invalid_properties;
@@ -237,11 +262,11 @@ class ChargeSource implements ArrayAccess
         if ($this->container['type'] === null) {
             return false;
         }
-        $allowed_values = ["card", "card_token"];
+        $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
-        $allowed_values = ["unknown", "visa", "mc", "dankort", "visa_dk", "visa_elec", "maestro", "laser", "amex", "diners", "discover", "jcb"];
+        $allowed_values = $this->getCardTypeAllowableValues();
         if (!in_array($this->container['card_type'], $allowed_values)) {
             return false;
         }
@@ -265,9 +290,14 @@ class ChargeSource implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('card', 'card_token');
-        if ((!in_array($type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'card', 'card_token'");
+        $allowed_values = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'type', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['type'] = $type;
 
@@ -353,9 +383,14 @@ class ChargeSource implements ArrayAccess
      */
     public function setCardType($card_type)
     {
-        $allowed_values = array('unknown', 'visa', 'mc', 'dankort', 'visa_dk', 'visa_elec', 'maestro', 'laser', 'amex', 'diners', 'discover', 'jcb');
-        if (!is_null($card_type) && (!in_array($card_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'card_type', must be one of 'unknown', 'visa', 'mc', 'dankort', 'visa_dk', 'visa_elec', 'maestro', 'laser', 'amex', 'diners', 'discover', 'jcb'");
+        $allowed_values = $this->getCardTypeAllowableValues();
+        if (!is_null($card_type) && !in_array($card_type, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'card_type', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['card_type'] = $card_type;
 

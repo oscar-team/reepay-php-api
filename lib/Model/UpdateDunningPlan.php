@@ -60,9 +60,25 @@ class UpdateDunningPlan implements ArrayAccess
         'final_subscription_action' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'name' => null,
+        'schedule' => 'int32',
+        'default_plan' => null,
+        'final_subscription_action' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -174,9 +190,12 @@ class UpdateDunningPlan implements ArrayAccess
         if ($this->container['final_subscription_action'] === null) {
             $invalid_properties[] = "'final_subscription_action' can't be null";
         }
-        $allowed_values = ["expire", "on_hold", "none"];
+        $allowed_values = $this->getFinalSubscriptionActionAllowableValues();
         if (!in_array($this->container['final_subscription_action'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'final_subscription_action', must be one of 'expire', 'on_hold', 'none'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'final_subscription_action', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         return $invalid_properties;
@@ -203,7 +222,7 @@ class UpdateDunningPlan implements ArrayAccess
         if ($this->container['final_subscription_action'] === null) {
             return false;
         }
-        $allowed_values = ["expire", "on_hold", "none"];
+        $allowed_values = $this->getFinalSubscriptionActionAllowableValues();
         if (!in_array($this->container['final_subscription_action'], $allowed_values)) {
             return false;
         }
@@ -290,9 +309,14 @@ class UpdateDunningPlan implements ArrayAccess
      */
     public function setFinalSubscriptionAction($final_subscription_action)
     {
-        $allowed_values = array('expire', 'on_hold', 'none');
-        if ((!in_array($final_subscription_action, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'final_subscription_action', must be one of 'expire', 'on_hold', 'none'");
+        $allowed_values = $this->getFinalSubscriptionActionAllowableValues();
+        if (!in_array($final_subscription_action, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'final_subscription_action', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['final_subscription_action'] = $final_subscription_action;
 

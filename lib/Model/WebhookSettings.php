@@ -63,9 +63,28 @@ class WebhookSettings implements ArrayAccess
         'alert_count' => 'int'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'urls' => null,
+        'username' => null,
+        'password' => null,
+        'disabled' => null,
+        'secret' => null,
+        'alert_emails' => null,
+        'alert_count' => 'int32'
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

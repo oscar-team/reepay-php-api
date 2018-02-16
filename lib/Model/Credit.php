@@ -61,13 +61,34 @@ class Credit implements ArrayAccess
         'state' => 'string',
         'created' => '\DateTime',
         'valid_from' => 'string',
-        'credit_invoices' => '\Swagger\Client\Model\InlineResponse20013CreditInvoices[]',
+        'credit_invoices' => '\Swagger\Client\Model\CreditInvoice[]',
         'pending_amount' => 'int'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'subscription' => null,
+        'handle' => null,
+        'amount' => 'int32',
+        'text' => null,
+        'state' => null,
+        'created' => 'date-time',
+        'valid_from' => null,
+        'credit_invoices' => null,
+        'pending_amount' => 'int32'
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -206,9 +227,12 @@ class Credit implements ArrayAccess
         if ($this->container['state'] === null) {
             $invalid_properties[] = "'state' can't be null";
         }
-        $allowed_values = ["pending", "transferred", "cancelled"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'pending', 'transferred', 'cancelled'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['created'] === null) {
@@ -251,7 +275,7 @@ class Credit implements ArrayAccess
         if ($this->container['state'] === null) {
             return false;
         }
-        $allowed_values = ["pending", "transferred", "cancelled"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
@@ -373,9 +397,14 @@ class Credit implements ArrayAccess
      */
     public function setState($state)
     {
-        $allowed_values = array('pending', 'transferred', 'cancelled');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'pending', 'transferred', 'cancelled'");
+        $allowed_values = $this->getStateAllowableValues();
+        if (!in_array($state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['state'] = $state;
 
@@ -426,7 +455,7 @@ class Credit implements ArrayAccess
 
     /**
      * Gets credit_invoices
-     * @return \Swagger\Client\Model\InlineResponse20013CreditInvoices[]
+     * @return \Swagger\Client\Model\CreditInvoice[]
      */
     public function getCreditInvoices()
     {
@@ -435,7 +464,7 @@ class Credit implements ArrayAccess
 
     /**
      * Sets credit_invoices
-     * @param \Swagger\Client\Model\InlineResponse20013CreditInvoices[] $credit_invoices List of invoices where the credit is applied
+     * @param \Swagger\Client\Model\CreditInvoice[] $credit_invoices List of invoices where the credit is applied
      * @return $this
      */
     public function setCreditInvoices($credit_invoices)

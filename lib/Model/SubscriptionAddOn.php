@@ -58,13 +58,31 @@ class SubscriptionAddOn implements ArrayAccess
         'quantity' => 'int',
         'amount' => 'int',
         'created' => '\DateTime',
-        'add_on' => '\Swagger\Client\Model\InlineResponse2005',
+        'add_on' => '\Swagger\Client\Model\AddOn',
         'amount_incl_vat' => 'bool'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'handle' => null,
+        'quantity' => 'int32',
+        'amount' => 'int32',
+        'created' => 'date-time',
+        'add_on' => null,
+        'amount_incl_vat' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -166,6 +184,9 @@ class SubscriptionAddOn implements ArrayAccess
         if ($this->container['created'] === null) {
             $invalid_properties[] = "'created' can't be null";
         }
+        if ($this->container['add_on'] === null) {
+            $invalid_properties[] = "'add_on' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -185,6 +206,9 @@ class SubscriptionAddOn implements ArrayAccess
             return false;
         }
         if ($this->container['created'] === null) {
+            return false;
+        }
+        if ($this->container['add_on'] === null) {
             return false;
         }
         return true;
@@ -282,7 +306,7 @@ class SubscriptionAddOn implements ArrayAccess
 
     /**
      * Gets add_on
-     * @return \Swagger\Client\Model\InlineResponse2005
+     * @return \Swagger\Client\Model\AddOn
      */
     public function getAddOn()
     {
@@ -291,7 +315,7 @@ class SubscriptionAddOn implements ArrayAccess
 
     /**
      * Sets add_on
-     * @param \Swagger\Client\Model\InlineResponse2005 $add_on
+     * @param \Swagger\Client\Model\AddOn $add_on Add-on for subscription add-on
      * @return $this
      */
     public function setAddOn($add_on)

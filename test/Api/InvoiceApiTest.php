@@ -49,7 +49,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCancelAllDunningPending()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCancelInvoice()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCancelSettleLater()
     {
-
     }
 
     /**
@@ -117,7 +110,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCancelTransaction()
     {
-
     }
 
     /**
@@ -128,7 +120,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDetachFromSubscription()
     {
-
     }
 
     /**
@@ -139,7 +130,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetInvoice()
     {
-
     }
 
     /**
@@ -150,7 +140,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetInvoices()
     {
-
     }
 
     /**
@@ -161,7 +150,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testManualSettle()
     {
-
     }
 
     /**
@@ -172,7 +160,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testReactivateInvoice()
     {
-
     }
 
     /**
@@ -183,7 +170,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSettle()
     {
-
     }
 
     /**
@@ -194,7 +180,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testTransaction()
     {
-
     }
 
     /**
@@ -205,7 +190,6 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testTransactionDetails()
     {
-
     }
 
     /**
@@ -216,7 +200,5 @@ class InvoiceApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testTransactionList()
     {
-
     }
-
 }

@@ -49,7 +49,6 @@ class PlanApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class PlanApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class PlanApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class PlanApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class PlanApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreatePlanJson()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class PlanApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDeletePlan()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class PlanApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetCurrentPlan()
     {
-
     }
 
     /**
@@ -117,7 +110,6 @@ class PlanApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetPlan()
     {
-
     }
 
     /**
@@ -128,7 +120,6 @@ class PlanApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetPlans()
     {
-
     }
 
     /**
@@ -139,7 +130,6 @@ class PlanApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetPlansList()
     {
-
     }
 
     /**
@@ -150,7 +140,6 @@ class PlanApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSupersedePlanJson()
     {
-
     }
 
     /**
@@ -161,7 +150,5 @@ class PlanApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testUpdatePlanJson()
     {
-
     }
-
 }

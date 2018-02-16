@@ -47,7 +47,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testCard()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyState()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCustomer()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFailed()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreated()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFingerprint()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyReactivated()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyGwRef()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCardType()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyExpDate()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyMaskedCard()
     {
-
     }
 
     /**
@@ -175,7 +159,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyLastSuccess()
     {
-
     }
 
     /**
@@ -183,7 +166,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyLastFailed()
     {
-
     }
 
     /**
@@ -191,7 +173,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFirstFail()
     {
-
     }
 
     /**
@@ -199,7 +180,6 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyErrorCode()
     {
-
     }
 
     /**
@@ -207,7 +187,5 @@ class CardTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyErrorState()
     {
-
     }
-
 }

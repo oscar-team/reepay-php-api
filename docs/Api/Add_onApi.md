@@ -1,6 +1,6 @@
 # Swagger\Client\Add_onApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **createAddOn**
-> \Swagger\Client\Model\InlineResponse2005 createAddOn($body)
+> \Swagger\Client\Model\AddOn createAddOn($body)
 
 Create add-on
 
@@ -33,7 +33,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\Add_onApi();
-$body = new \Swagger\Client\Model\Body5(); // \Swagger\Client\Model\Body5 | 
+$body = new \Swagger\Client\Model\CreateAddOn(); // \Swagger\Client\Model\CreateAddOn | 
 
 try {
     $result = $api_instance->createAddOn($body);
@@ -48,11 +48,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body5**](../Model/\Swagger\Client\Model\Body5.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\CreateAddOn**](../Model/CreateAddOn.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Swagger\Client\Model\AddOn**](../Model/AddOn.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteAddOn**
-> \Swagger\Client\Model\InlineResponse2005 deleteAddOn($handle)
+> \Swagger\Client\Model\AddOn deleteAddOn($handle)
 
 Delete add-on
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Swagger\Client\Model\AddOn**](../Model/AddOn.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAddOn**
-> \Swagger\Client\Model\InlineResponse2005 getAddOn($handle)
+> \Swagger\Client\Model\AddOn getAddOn($handle)
 
 Get add-on
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Swagger\Client\Model\AddOn**](../Model/AddOn.md)
 
 ### Authorization
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAddOns**
-> \Swagger\Client\Model\InlineResponse2006 getAddOns($page, $size, $search, $sort)
+> \Swagger\Client\Model\AddOnSearch getAddOns($page, $size, $search, $sort)
 
 Get list of add-ons
 
@@ -210,14 +210,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| Page number to get | [default to 1]
- **size** | **int**| Page size to use | [default to 20]
- **search** | **string**| Optional search expression |
- **sort** | **string**| Optional sorting expression |
+ **page** | **int**| Page number to get | [optional] [default to 1]
+ **size** | **int**| Page size to use | [optional] [default to 20]
+ **search** | **string**| Optional search expression | [optional]
+ **sort** | **string**| Optional sorting expression | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2006**](../Model/InlineResponse2006.md)
+[**\Swagger\Client\Model\AddOnSearch**](../Model/AddOnSearch.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **undeleteAddOn**
-> \Swagger\Client\Model\InlineResponse2005 undeleteAddOn($handle)
+> \Swagger\Client\Model\AddOn undeleteAddOn($handle)
 
 Un-delete add-on
 
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Swagger\Client\Model\AddOn**](../Model/AddOn.md)
 
 ### Authorization
 
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAddOn**
-> \Swagger\Client\Model\InlineResponse2005 updateAddOn($handle, $body)
+> \Swagger\Client\Model\AddOn updateAddOn($handle, $body)
 
 Update add-on
 
@@ -305,7 +305,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\Add_onApi();
 $handle = "handle_example"; // string | Add-on handle
-$body = new \Swagger\Client\Model\Body4(); // \Swagger\Client\Model\Body4 | 
+$body = new \Swagger\Client\Model\UpdateAddOn(); // \Swagger\Client\Model\UpdateAddOn | 
 
 try {
     $result = $api_instance->updateAddOn($handle, $body);
@@ -321,11 +321,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Add-on handle |
- **body** | [**\Swagger\Client\Model\Body4**](../Model/\Swagger\Client\Model\Body4.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\UpdateAddOn**](../Model/UpdateAddOn.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2005**](../Model/InlineResponse2005.md)
+[**\Swagger\Client\Model\AddOn**](../Model/AddOn.md)
 
 ### Authorization
 

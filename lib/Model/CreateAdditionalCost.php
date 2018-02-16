@@ -54,13 +54,27 @@ class CreateAdditionalCost implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'subscription' => 'string',
         'handle' => 'string',
         'ordertext' => 'string',
         'quantity' => 'int',
         'amount' => 'int',
         'vat' => 'float',
+        'subscription' => 'string',
         'amount_incl_vat' => 'bool'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'handle' => null,
+        'ordertext' => null,
+        'quantity' => 'int32',
+        'amount' => 'int32',
+        'vat' => 'float',
+        'subscription' => null,
+        'amount_incl_vat' => null
     ];
 
     public static function swaggerTypes()
@@ -68,17 +82,22 @@ class CreateAdditionalCost implements ArrayAccess
         return self::$swaggerTypes;
     }
 
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
+    }
+
     /**
      * Array of attributes where the key is the local name, and the value is the original name
      * @var string[]
      */
     protected static $attributeMap = [
-        'subscription' => 'subscription',
         'handle' => 'handle',
         'ordertext' => 'ordertext',
         'quantity' => 'quantity',
         'amount' => 'amount',
         'vat' => 'vat',
+        'subscription' => 'subscription',
         'amount_incl_vat' => 'amount_incl_vat'
     ];
 
@@ -88,12 +107,12 @@ class CreateAdditionalCost implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'subscription' => 'setSubscription',
         'handle' => 'setHandle',
         'ordertext' => 'setOrdertext',
         'quantity' => 'setQuantity',
         'amount' => 'setAmount',
         'vat' => 'setVat',
+        'subscription' => 'setSubscription',
         'amount_incl_vat' => 'setAmountInclVat'
     ];
 
@@ -103,12 +122,12 @@ class CreateAdditionalCost implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'subscription' => 'getSubscription',
         'handle' => 'getHandle',
         'ordertext' => 'getOrdertext',
         'quantity' => 'getQuantity',
         'amount' => 'getAmount',
         'vat' => 'getVat',
+        'subscription' => 'getSubscription',
         'amount_incl_vat' => 'getAmountInclVat'
     ];
 
@@ -143,12 +162,12 @@ class CreateAdditionalCost implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['subscription'] = isset($data['subscription']) ? $data['subscription'] : null;
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
         $this->container['ordertext'] = isset($data['ordertext']) ? $data['ordertext'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
+        $this->container['subscription'] = isset($data['subscription']) ? $data['subscription'] : null;
         $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
     }
 
@@ -161,9 +180,6 @@ class CreateAdditionalCost implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['subscription'] === null) {
-            $invalid_properties[] = "'subscription' can't be null";
-        }
         if ($this->container['handle'] === null) {
             $invalid_properties[] = "'handle' can't be null";
         }
@@ -189,6 +205,9 @@ class CreateAdditionalCost implements ArrayAccess
             $invalid_properties[] = "invalid value for 'vat', must be bigger than or equal to 0.";
         }
 
+        if ($this->container['subscription'] === null) {
+            $invalid_properties[] = "'subscription' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -201,9 +220,6 @@ class CreateAdditionalCost implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['subscription'] === null) {
-            return false;
-        }
         if ($this->container['handle'] === null) {
             return false;
         }
@@ -225,30 +241,12 @@ class CreateAdditionalCost implements ArrayAccess
         if ($this->container['vat'] < 0) {
             return false;
         }
+        if ($this->container['subscription'] === null) {
+            return false;
+        }
         return true;
     }
 
-
-    /**
-     * Gets subscription
-     * @return string
-     */
-    public function getSubscription()
-    {
-        return $this->container['subscription'];
-    }
-
-    /**
-     * Sets subscription
-     * @param string $subscription Subscription handle
-     * @return $this
-     */
-    public function setSubscription($subscription)
-    {
-        $this->container['subscription'] = $subscription;
-
-        return $this;
-    }
 
     /**
      * Gets handle
@@ -369,6 +367,27 @@ class CreateAdditionalCost implements ArrayAccess
         }
 
         $this->container['vat'] = $vat;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscription
+     * @return string
+     */
+    public function getSubscription()
+    {
+        return $this->container['subscription'];
+    }
+
+    /**
+     * Sets subscription
+     * @param string $subscription Subscription handle
+     * @return $this
+     */
+    public function setSubscription($subscription)
+    {
+        $this->container['subscription'] = $subscription;
 
         return $this;
     }

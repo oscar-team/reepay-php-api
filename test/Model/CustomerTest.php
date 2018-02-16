@@ -47,7 +47,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testCustomer()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyEmail()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAddress()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAddress2()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCity()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCountry()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPhone()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCompany()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVat()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHandle()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTest()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySubscriptions()
     {
-
     }
 
     /**
@@ -175,7 +159,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreated()
     {
-
     }
 
     /**
@@ -183,7 +166,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDeleted()
     {
-
     }
 
     /**
@@ -191,7 +173,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFirstName()
     {
-
     }
 
     /**
@@ -199,7 +180,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyLastName()
     {
-
     }
 
     /**
@@ -207,7 +187,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPostalCode()
     {
-
     }
 
     /**
@@ -215,7 +194,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyActiveSubscriptions()
     {
-
     }
 
     /**
@@ -223,7 +201,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTrialActiveSubscriptions()
     {
-
     }
 
     /**
@@ -231,7 +208,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTrialCancelledSubscriptions()
     {
-
     }
 
     /**
@@ -239,7 +215,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyExpiredSubscriptions()
     {
-
     }
 
     /**
@@ -247,7 +222,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOnHoldSubscriptions()
     {
-
     }
 
     /**
@@ -255,7 +229,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCancelledSubscriptions()
     {
-
     }
 
     /**
@@ -263,7 +236,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNonRenewingSubscriptions()
     {
-
     }
 
     /**
@@ -271,7 +243,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFailedInvoices()
     {
-
     }
 
     /**
@@ -279,7 +250,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFailedAmount()
     {
-
     }
 
     /**
@@ -287,7 +257,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCancelledInvoices()
     {
-
     }
 
     /**
@@ -295,7 +264,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCancelledAmount()
     {
-
     }
 
     /**
@@ -303,7 +271,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPendingInvoices()
     {
-
     }
 
     /**
@@ -311,7 +278,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPendingAmount()
     {
-
     }
 
     /**
@@ -319,7 +285,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDunningInvoices()
     {
-
     }
 
     /**
@@ -327,7 +292,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDunningAmount()
     {
-
     }
 
     /**
@@ -335,7 +299,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySettledInvoices()
     {
-
     }
 
     /**
@@ -343,7 +306,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySettledAmount()
     {
-
     }
 
     /**
@@ -351,7 +313,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRefundedAmount()
     {
-
     }
 
     /**
@@ -359,7 +320,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPendingAdditionalCosts()
     {
-
     }
 
     /**
@@ -367,7 +327,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPendingAdditionalCostAmount()
     {
-
     }
 
     /**
@@ -375,7 +334,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTransferredAdditionalCosts()
     {
-
     }
 
     /**
@@ -383,7 +341,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTransferredAdditionalCostAmount()
     {
-
     }
 
     /**
@@ -391,7 +348,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPendingCredits()
     {
-
     }
 
     /**
@@ -399,7 +355,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPendingCreditAmount()
     {
-
     }
 
     /**
@@ -407,7 +362,6 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTransferredCredits()
     {
-
     }
 
     /**
@@ -415,7 +369,5 @@ class CustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTransferredCreditAmount()
     {
-
     }
-
 }

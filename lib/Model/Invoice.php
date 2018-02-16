@@ -69,7 +69,7 @@ class Invoice implements ArrayAccess
         'settled' => '\DateTime',
         'cancelled' => '\DateTime',
         'authorized' => '\DateTime',
-        'credits' => '\Swagger\Client\Model\InlineResponse20013CreditInvoices[]',
+        'credits' => '\Swagger\Client\Model\CreditInvoice[]',
         'created' => '\DateTime',
         'plan_version' => 'int',
         'dunning_plan' => 'string',
@@ -81,10 +81,10 @@ class Invoice implements ArrayAccess
         'refunded_amount' => 'int',
         'authorized_amount' => 'int',
         'period_number' => 'int',
-        'order_lines' => '\Swagger\Client\Model\InlineResponse20011OrderLines[]',
+        'order_lines' => '\Swagger\Client\Model\OrderLine[]',
         'additional_costs' => 'string[]',
-        'transactions' => '\Swagger\Client\Model\InlineResponse20016Transactions[]',
-        'credit_notes' => '\Swagger\Client\Model\InlineResponse20016CreditNotes[]',
+        'transactions' => '\Swagger\Client\Model\Transaction[]',
+        'credit_notes' => '\Swagger\Client\Model\InvoiceCreditNote[]',
         'dunning_start' => '\DateTime',
         'dunning_count' => 'int',
         'dunning_expired' => '\DateTime',
@@ -94,9 +94,59 @@ class Invoice implements ArrayAccess
         'settle_later_payment_method' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'handle' => null,
+        'customer' => null,
+        'subscription' => null,
+        'plan' => null,
+        'state' => null,
+        'type' => null,
+        'amount' => 'int32',
+        'number' => 'int32',
+        'currency' => null,
+        'due' => 'date-time',
+        'failed' => 'date-time',
+        'settled' => 'date-time',
+        'cancelled' => 'date-time',
+        'authorized' => 'date-time',
+        'credits' => null,
+        'created' => 'date-time',
+        'plan_version' => 'int32',
+        'dunning_plan' => null,
+        'discount_amount' => 'int32',
+        'org_amount' => 'int32',
+        'amount_vat' => 'int32',
+        'amount_ex_vat' => 'int32',
+        'settled_amount' => 'int32',
+        'refunded_amount' => 'int32',
+        'authorized_amount' => 'int32',
+        'period_number' => 'int32',
+        'order_lines' => null,
+        'additional_costs' => null,
+        'transactions' => null,
+        'credit_notes' => null,
+        'dunning_start' => 'date-time',
+        'dunning_count' => 'int32',
+        'dunning_expired' => 'date-time',
+        'period_from' => 'date-time',
+        'period_to' => 'date-time',
+        'settle_later' => null,
+        'settle_later_payment_method' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -367,17 +417,23 @@ class Invoice implements ArrayAccess
         if ($this->container['state'] === null) {
             $invalid_properties[] = "'state' can't be null";
         }
-        $allowed_values = ["pending", "dunning", "settled", "authorized", "cancelled", "failed"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'pending', 'dunning', 'settled', 'authorized', 'cancelled', 'failed'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['type'] === null) {
             $invalid_properties[] = "'type' can't be null";
         }
-        $allowed_values = ["s", "so", "soi", "co", "ch"];
+        $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'type', must be one of 's', 'so', 'soi', 'co', 'ch'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'type', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['amount'] === null) {
@@ -462,14 +518,14 @@ class Invoice implements ArrayAccess
         if ($this->container['state'] === null) {
             return false;
         }
-        $allowed_values = ["pending", "dunning", "settled", "authorized", "cancelled", "failed"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
         if ($this->container['type'] === null) {
             return false;
         }
-        $allowed_values = ["s", "so", "soi", "co", "ch"];
+        $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
@@ -655,9 +711,14 @@ class Invoice implements ArrayAccess
      */
     public function setState($state)
     {
-        $allowed_values = array('pending', 'dunning', 'settled', 'authorized', 'cancelled', 'failed');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'pending', 'dunning', 'settled', 'authorized', 'cancelled', 'failed'");
+        $allowed_values = $this->getStateAllowableValues();
+        if (!in_array($state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['state'] = $state;
 
@@ -680,9 +741,14 @@ class Invoice implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('s', 'so', 'soi', 'co', 'ch');
-        if ((!in_array($type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 's', 'so', 'soi', 'co', 'ch'");
+        $allowed_values = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'type', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['type'] = $type;
 
@@ -869,7 +935,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Gets credits
-     * @return \Swagger\Client\Model\InlineResponse20013CreditInvoices[]
+     * @return \Swagger\Client\Model\CreditInvoice[]
      */
     public function getCredits()
     {
@@ -878,7 +944,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Sets credits
-     * @param \Swagger\Client\Model\InlineResponse20013CreditInvoices[] $credits Credits applied to invoice
+     * @param \Swagger\Client\Model\CreditInvoice[] $credits Credits applied to invoice
      * @return $this
      */
     public function setCredits($credits)
@@ -1131,7 +1197,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Gets order_lines
-     * @return \Swagger\Client\Model\InlineResponse20011OrderLines[]
+     * @return \Swagger\Client\Model\OrderLine[]
      */
     public function getOrderLines()
     {
@@ -1140,7 +1206,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Sets order_lines
-     * @param \Swagger\Client\Model\InlineResponse20011OrderLines[] $order_lines Order lines for invoice sorted by descending timestamp
+     * @param \Swagger\Client\Model\OrderLine[] $order_lines Order lines for invoice sorted by descending timestamp
      * @return $this
      */
     public function setOrderLines($order_lines)
@@ -1173,7 +1239,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Gets transactions
-     * @return \Swagger\Client\Model\InlineResponse20016Transactions[]
+     * @return \Swagger\Client\Model\Transaction[]
      */
     public function getTransactions()
     {
@@ -1182,7 +1248,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Sets transactions
-     * @param \Swagger\Client\Model\InlineResponse20016Transactions[] $transactions Invoice transactions
+     * @param \Swagger\Client\Model\Transaction[] $transactions Invoice transactions
      * @return $this
      */
     public function setTransactions($transactions)
@@ -1194,7 +1260,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Gets credit_notes
-     * @return \Swagger\Client\Model\InlineResponse20016CreditNotes[]
+     * @return \Swagger\Client\Model\InvoiceCreditNote[]
      */
     public function getCreditNotes()
     {
@@ -1203,7 +1269,7 @@ class Invoice implements ArrayAccess
 
     /**
      * Sets credit_notes
-     * @param \Swagger\Client\Model\InlineResponse20016CreditNotes[] $credit_notes Invoice credit notes
+     * @param \Swagger\Client\Model\InvoiceCreditNote[] $credit_notes Invoice credit notes
      * @return $this
      */
     public function setCreditNotes($credit_notes)

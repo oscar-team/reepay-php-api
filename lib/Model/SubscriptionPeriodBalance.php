@@ -55,16 +55,34 @@ class SubscriptionPeriodBalance implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'date' => '\DateTime',
-        'invoice' => '\Swagger\Client\Model\InlineResponse20016',
+        'invoice' => '\Swagger\Client\Model\Invoice',
         'paid' => 'int',
         'consumed' => 'int',
         'remaining' => 'int',
         'online_refundable' => 'int'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'date' => 'date-time',
+        'invoice' => null,
+        'paid' => 'int32',
+        'consumed' => 'int32',
+        'remaining' => 'int32',
+        'online_refundable' => 'int32'
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -195,7 +213,7 @@ class SubscriptionPeriodBalance implements ArrayAccess
 
     /**
      * Gets invoice
-     * @return \Swagger\Client\Model\InlineResponse20016
+     * @return \Swagger\Client\Model\Invoice
      */
     public function getInvoice()
     {
@@ -204,7 +222,7 @@ class SubscriptionPeriodBalance implements ArrayAccess
 
     /**
      * Sets invoice
-     * @param \Swagger\Client\Model\InlineResponse20016 $invoice
+     * @param \Swagger\Client\Model\Invoice $invoice Invoice for period, if it exists. See `period_from` and `period_to` for period start and end.
      * @return $this
      */
     public function setInvoice($invoice)

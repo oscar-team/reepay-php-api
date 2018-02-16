@@ -47,7 +47,6 @@ class CreateAdditionalCostTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CreateAdditionalCostTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CreateAdditionalCostTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CreateAdditionalCostTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,15 +75,6 @@ class CreateAdditionalCostTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateAdditionalCost()
     {
-
-    }
-
-    /**
-     * Test attribute "subscription"
-     */
-    public function testPropertySubscription()
-    {
-
     }
 
     /**
@@ -95,7 +82,6 @@ class CreateAdditionalCostTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHandle()
     {
-
     }
 
     /**
@@ -103,7 +89,6 @@ class CreateAdditionalCostTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOrdertext()
     {
-
     }
 
     /**
@@ -111,7 +96,6 @@ class CreateAdditionalCostTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyQuantity()
     {
-
     }
 
     /**
@@ -119,7 +103,6 @@ class CreateAdditionalCostTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -127,7 +110,13 @@ class CreateAdditionalCostTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVat()
     {
+    }
 
+    /**
+     * Test attribute "subscription"
+     */
+    public function testPropertySubscription()
+    {
     }
 
     /**
@@ -135,7 +124,5 @@ class CreateAdditionalCostTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmountInclVat()
     {
-
     }
-
 }

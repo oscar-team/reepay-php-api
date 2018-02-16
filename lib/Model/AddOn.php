@@ -68,9 +68,33 @@ class AddOn implements ArrayAccess
         'eligible_plans' => 'string[]'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'name' => null,
+        'description' => null,
+        'amount' => 'int32',
+        'vat' => 'float',
+        'handle' => null,
+        'type' => null,
+        'state' => null,
+        'deleted' => 'date-time',
+        'created' => 'date-time',
+        'amount_incl_vat' => null,
+        'all_plans' => null,
+        'eligible_plans' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -238,17 +262,23 @@ class AddOn implements ArrayAccess
         if ($this->container['type'] === null) {
             $invalid_properties[] = "'type' can't be null";
         }
-        $allowed_values = ["on_off", "quantity"];
+        $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'type', must be one of 'on_off', 'quantity'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'type', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['state'] === null) {
             $invalid_properties[] = "'state' can't be null";
         }
-        $allowed_values = ["active", "deleted"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'deleted'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['created'] === null) {
@@ -287,14 +317,14 @@ class AddOn implements ArrayAccess
         if ($this->container['type'] === null) {
             return false;
         }
-        $allowed_values = ["on_off", "quantity"];
+        $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         if ($this->container['state'] === null) {
             return false;
         }
-        $allowed_values = ["active", "deleted"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
@@ -439,9 +469,14 @@ class AddOn implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('on_off', 'quantity');
-        if ((!in_array($type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'on_off', 'quantity'");
+        $allowed_values = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'type', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['type'] = $type;
 
@@ -464,9 +499,14 @@ class AddOn implements ArrayAccess
      */
     public function setState($state)
     {
-        $allowed_values = array('active', 'deleted');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'deleted'");
+        $allowed_values = $this->getStateAllowableValues();
+        if (!in_array($state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['state'] = $state;
 

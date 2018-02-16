@@ -55,14 +55,30 @@ class CreateCustomerInvoice implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'handle' => 'string',
-        'settle' => '\Swagger\Client\Model\V1customerhandleinvoiceSettle',
-        'order_lines' => '\Swagger\Client\Model\V1chargeOrderLines[]',
-        'manual_transfer' => '\Swagger\Client\Model\V1customerhandleinvoiceManualTransfer'
+        'settle' => '\Swagger\Client\Model\Settle',
+        'order_lines' => '\Swagger\Client\Model\CreateOrderLine[]',
+        'manual_transfer' => '\Swagger\Client\Model\ManualSettleTransfer'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'handle' => null,
+        'settle' => null,
+        'order_lines' => null,
+        'manual_transfer' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -197,7 +213,7 @@ class CreateCustomerInvoice implements ArrayAccess
 
     /**
      * Gets settle
-     * @return \Swagger\Client\Model\V1customerhandleinvoiceSettle
+     * @return \Swagger\Client\Model\Settle
      */
     public function getSettle()
     {
@@ -206,7 +222,7 @@ class CreateCustomerInvoice implements ArrayAccess
 
     /**
      * Sets settle
-     * @param \Swagger\Client\Model\V1customerhandleinvoiceSettle $settle
+     * @param \Swagger\Client\Model\Settle $settle Optional settle to perform after creation
      * @return $this
      */
     public function setSettle($settle)
@@ -218,7 +234,7 @@ class CreateCustomerInvoice implements ArrayAccess
 
     /**
      * Gets order_lines
-     * @return \Swagger\Client\Model\V1chargeOrderLines[]
+     * @return \Swagger\Client\Model\CreateOrderLine[]
      */
     public function getOrderLines()
     {
@@ -227,7 +243,7 @@ class CreateCustomerInvoice implements ArrayAccess
 
     /**
      * Sets order_lines
-     * @param \Swagger\Client\Model\V1chargeOrderLines[] $order_lines Order lines for the invoice
+     * @param \Swagger\Client\Model\CreateOrderLine[] $order_lines Order lines for the invoice
      * @return $this
      */
     public function setOrderLines($order_lines)
@@ -239,7 +255,7 @@ class CreateCustomerInvoice implements ArrayAccess
 
     /**
      * Gets manual_transfer
-     * @return \Swagger\Client\Model\V1customerhandleinvoiceManualTransfer
+     * @return \Swagger\Client\Model\ManualSettleTransfer
      */
     public function getManualTransfer()
     {
@@ -248,7 +264,7 @@ class CreateCustomerInvoice implements ArrayAccess
 
     /**
      * Sets manual_transfer
-     * @param \Swagger\Client\Model\V1customerhandleinvoiceManualTransfer $manual_transfer
+     * @param \Swagger\Client\Model\ManualSettleTransfer $manual_transfer Optional manual transfer to settle invoice with after creation.
      * @return $this
      */
     public function setManualTransfer($manual_transfer)

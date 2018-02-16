@@ -68,9 +68,33 @@ class Refund implements ArrayAccess
         'error_state' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'state' => null,
+        'invoice' => null,
+        'amount' => 'int32',
+        'currency' => null,
+        'transaction' => null,
+        'error' => null,
+        'type' => null,
+        'created' => 'date-time',
+        'credit_note_id' => null,
+        'ref_transaction' => null,
+        'error_state' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -234,9 +258,12 @@ class Refund implements ArrayAccess
         if ($this->container['state'] === null) {
             $invalid_properties[] = "'state' can't be null";
         }
-        $allowed_values = ["refunded", "failed"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'refunded', 'failed'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['invoice'] === null) {
@@ -258,17 +285,23 @@ class Refund implements ArrayAccess
         if ($this->container['type'] === null) {
             $invalid_properties[] = "'type' can't be null";
         }
-        $allowed_values = ["card", "manual"];
+        $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'type', must be one of 'card', 'manual'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'type', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['created'] === null) {
             $invalid_properties[] = "'created' can't be null";
         }
-        $allowed_values = ["hard_declined", "processing_error"];
+        $allowed_values = $this->getErrorStateAllowableValues();
         if (!in_array($this->container['error_state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'error_state', must be one of 'hard_declined', 'processing_error'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'error_state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         return $invalid_properties;
@@ -289,7 +322,7 @@ class Refund implements ArrayAccess
         if ($this->container['state'] === null) {
             return false;
         }
-        $allowed_values = ["refunded", "failed"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
@@ -311,14 +344,14 @@ class Refund implements ArrayAccess
         if ($this->container['type'] === null) {
             return false;
         }
-        $allowed_values = ["card", "manual"];
+        $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
         if ($this->container['created'] === null) {
             return false;
         }
-        $allowed_values = ["hard_declined", "processing_error"];
+        $allowed_values = $this->getErrorStateAllowableValues();
         if (!in_array($this->container['error_state'], $allowed_values)) {
             return false;
         }
@@ -363,9 +396,14 @@ class Refund implements ArrayAccess
      */
     public function setState($state)
     {
-        $allowed_values = array('refunded', 'failed');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'refunded', 'failed'");
+        $allowed_values = $this->getStateAllowableValues();
+        if (!in_array($state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['state'] = $state;
 
@@ -498,9 +536,14 @@ class Refund implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('card', 'manual');
-        if ((!in_array($type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'card', 'manual'");
+        $allowed_values = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'type', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['type'] = $type;
 
@@ -586,9 +629,14 @@ class Refund implements ArrayAccess
      */
     public function setErrorState($error_state)
     {
-        $allowed_values = array('hard_declined', 'processing_error');
-        if (!is_null($error_state) && (!in_array($error_state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'error_state', must be one of 'hard_declined', 'processing_error'");
+        $allowed_values = $this->getErrorStateAllowableValues();
+        if (!is_null($error_state) && !in_array($error_state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'error_state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['error_state'] = $error_state;
 

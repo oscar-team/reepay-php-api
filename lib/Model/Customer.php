@@ -98,9 +98,63 @@ class Customer implements ArrayAccess
         'transferred_credit_amount' => 'int'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'email' => null,
+        'address' => null,
+        'address2' => null,
+        'city' => null,
+        'country' => null,
+        'phone' => null,
+        'company' => null,
+        'vat' => null,
+        'handle' => null,
+        'test' => null,
+        'subscriptions' => 'int32',
+        'created' => 'date-time',
+        'deleted' => 'date-time',
+        'first_name' => null,
+        'last_name' => null,
+        'postal_code' => null,
+        'active_subscriptions' => 'int32',
+        'trial_active_subscriptions' => 'int32',
+        'trial_cancelled_subscriptions' => 'int32',
+        'expired_subscriptions' => 'int32',
+        'on_hold_subscriptions' => 'int32',
+        'cancelled_subscriptions' => 'int32',
+        'non_renewing_subscriptions' => 'int32',
+        'failed_invoices' => 'int32',
+        'failed_amount' => 'int32',
+        'cancelled_invoices' => 'int32',
+        'cancelled_amount' => 'int32',
+        'pending_invoices' => 'int32',
+        'pending_amount' => 'int32',
+        'dunning_invoices' => 'int32',
+        'dunning_amount' => 'int32',
+        'settled_invoices' => 'int32',
+        'settled_amount' => 'int32',
+        'refunded_amount' => 'int32',
+        'pending_additional_costs' => 'int32',
+        'pending_additional_cost_amount' => 'int32',
+        'transferred_additional_costs' => 'int32',
+        'transferred_additional_cost_amount' => 'int32',
+        'pending_credits' => 'int32',
+        'pending_credit_amount' => 'int32',
+        'transferred_credits' => 'int32',
+        'transferred_credit_amount' => 'int32'
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -1020,7 +1074,7 @@ class Customer implements ArrayAccess
 
     /**
      * Sets failed_invoices
-     * @param int $failed_invoices Number of failed invoices for this customer
+     * @param int $failed_invoices Number of failed subscription invoices for this customer
      * @return $this
      */
     public function setFailedInvoices($failed_invoices)
@@ -1041,7 +1095,7 @@ class Customer implements ArrayAccess
 
     /**
      * Sets failed_amount
-     * @param int $failed_amount Summed amount for failed invoices
+     * @param int $failed_amount Summed amount for failed subscription invoices
      * @return $this
      */
     public function setFailedAmount($failed_amount)
@@ -1062,7 +1116,7 @@ class Customer implements ArrayAccess
 
     /**
      * Sets cancelled_invoices
-     * @param int $cancelled_invoices Number of cancelled invoices for this customer
+     * @param int $cancelled_invoices Number of cancelled subscription invoices for this customer
      * @return $this
      */
     public function setCancelledInvoices($cancelled_invoices)
@@ -1083,7 +1137,7 @@ class Customer implements ArrayAccess
 
     /**
      * Sets cancelled_amount
-     * @param int $cancelled_amount Summed amount for cancelled invoices
+     * @param int $cancelled_amount Summed amount for cancelled subscription invoices
      * @return $this
      */
     public function setCancelledAmount($cancelled_amount)
@@ -1104,7 +1158,7 @@ class Customer implements ArrayAccess
 
     /**
      * Sets pending_invoices
-     * @param int $pending_invoices Number of pending invoices for this customer
+     * @param int $pending_invoices Number of pending subscription invoices for this customer
      * @return $this
      */
     public function setPendingInvoices($pending_invoices)
@@ -1125,7 +1179,7 @@ class Customer implements ArrayAccess
 
     /**
      * Sets pending_amount
-     * @param int $pending_amount Summed amount for pending invoices
+     * @param int $pending_amount Summed amount for pending subscription invoices
      * @return $this
      */
     public function setPendingAmount($pending_amount)
@@ -1146,7 +1200,7 @@ class Customer implements ArrayAccess
 
     /**
      * Sets dunning_invoices
-     * @param int $dunning_invoices Number of dunning invoices for this customer
+     * @param int $dunning_invoices Number of dunning subscription invoices for this customer
      * @return $this
      */
     public function setDunningInvoices($dunning_invoices)
@@ -1167,7 +1221,7 @@ class Customer implements ArrayAccess
 
     /**
      * Sets dunning_amount
-     * @param int $dunning_amount Summed amount for dunning invoices
+     * @param int $dunning_amount Summed amount for dunning subscription invoices
      * @return $this
      */
     public function setDunningAmount($dunning_amount)
@@ -1188,7 +1242,7 @@ class Customer implements ArrayAccess
 
     /**
      * Sets settled_invoices
-     * @param int $settled_invoices Number of settled invoices for this customer
+     * @param int $settled_invoices Number of settled subscription invoices for this customer
      * @return $this
      */
     public function setSettledInvoices($settled_invoices)
@@ -1209,7 +1263,7 @@ class Customer implements ArrayAccess
 
     /**
      * Sets settled_amount
-     * @param int $settled_amount Summed settled amount
+     * @param int $settled_amount Summed settled subscription amount
      * @return $this
      */
     public function setSettledAmount($settled_amount)
@@ -1230,7 +1284,7 @@ class Customer implements ArrayAccess
 
     /**
      * Sets refunded_amount
-     * @param int $refunded_amount Summed refunded amount
+     * @param int $refunded_amount Summed refunded subscription amount
      * @return $this
      */
     public function setRefundedAmount($refunded_amount)

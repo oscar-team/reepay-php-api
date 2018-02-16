@@ -57,18 +57,40 @@ class CreateSubscriptionInvoice implements ArrayAccess
         'handle' => 'string',
         'instant' => 'bool',
         'due' => 'string',
-        'settle' => '\Swagger\Client\Model\V1customerhandleinvoiceSettle',
+        'settle' => '\Swagger\Client\Model\Settle',
         'plan_manual' => 'bool',
         'collect_additional_costs' => 'bool',
         'collect_credit' => 'bool',
         'apply_discounts' => 'bool',
-        'order_lines' => '\Swagger\Client\Model\V1chargeOrderLines[]',
-        'manual_transfer' => '\Swagger\Client\Model\V1customerhandleinvoiceManualTransfer'
+        'order_lines' => '\Swagger\Client\Model\CreateOrderLine[]',
+        'manual_transfer' => '\Swagger\Client\Model\ManualSettleTransfer'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'handle' => null,
+        'instant' => null,
+        'due' => null,
+        'settle' => null,
+        'plan_manual' => null,
+        'collect_additional_costs' => null,
+        'collect_credit' => null,
+        'apply_discounts' => null,
+        'order_lines' => null,
+        'manual_transfer' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -263,7 +285,7 @@ class CreateSubscriptionInvoice implements ArrayAccess
 
     /**
      * Gets settle
-     * @return \Swagger\Client\Model\V1customerhandleinvoiceSettle
+     * @return \Swagger\Client\Model\Settle
      */
     public function getSettle()
     {
@@ -272,7 +294,7 @@ class CreateSubscriptionInvoice implements ArrayAccess
 
     /**
      * Sets settle
-     * @param \Swagger\Client\Model\V1customerhandleinvoiceSettle $settle
+     * @param \Swagger\Client\Model\Settle $settle Optional settle to perform after creation using a different payment method. If the settle fails the status will be `failed` if instant or `pending` if not instant. The `due` date will be ignored for subscription invoice create.
      * @return $this
      */
     public function setSettle($settle)
@@ -368,7 +390,7 @@ class CreateSubscriptionInvoice implements ArrayAccess
 
     /**
      * Gets order_lines
-     * @return \Swagger\Client\Model\V1chargeOrderLines[]
+     * @return \Swagger\Client\Model\CreateOrderLine[]
      */
     public function getOrderLines()
     {
@@ -377,7 +399,7 @@ class CreateSubscriptionInvoice implements ArrayAccess
 
     /**
      * Sets order_lines
-     * @param \Swagger\Client\Model\V1chargeOrderLines[] $order_lines Optional additional order lines for the invoice
+     * @param \Swagger\Client\Model\CreateOrderLine[] $order_lines Optional additional order lines for the invoice
      * @return $this
      */
     public function setOrderLines($order_lines)
@@ -389,7 +411,7 @@ class CreateSubscriptionInvoice implements ArrayAccess
 
     /**
      * Gets manual_transfer
-     * @return \Swagger\Client\Model\V1customerhandleinvoiceManualTransfer
+     * @return \Swagger\Client\Model\ManualSettleTransfer
      */
     public function getManualTransfer()
     {
@@ -398,7 +420,7 @@ class CreateSubscriptionInvoice implements ArrayAccess
 
     /**
      * Sets manual_transfer
-     * @param \Swagger\Client\Model\V1customerhandleinvoiceManualTransfer $manual_transfer
+     * @param \Swagger\Client\Model\ManualSettleTransfer $manual_transfer Optional manual transfer. If given the invoice will be settled using the manual transfer transaction.
      * @return $this
      */
     public function setManualTransfer($manual_transfer)

@@ -60,9 +60,25 @@ class ManualSettleTransfer implements ArrayAccess
         'payment_date' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'comment' => null,
+        'reference' => null,
+        'method' => null,
+        'payment_date' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -167,9 +183,12 @@ class ManualSettleTransfer implements ArrayAccess
         if ($this->container['method'] === null) {
             $invalid_properties[] = "'method' can't be null";
         }
-        $allowed_values = ["cash", "bank_transfer", "check", "other"];
+        $allowed_values = $this->getMethodAllowableValues();
         if (!in_array($this->container['method'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'method', must be one of 'cash', 'bank_transfer', 'check', 'other'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'method', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['payment_date'] === null) {
@@ -190,7 +209,7 @@ class ManualSettleTransfer implements ArrayAccess
         if ($this->container['method'] === null) {
             return false;
         }
-        $allowed_values = ["cash", "bank_transfer", "check", "other"];
+        $allowed_values = $this->getMethodAllowableValues();
         if (!in_array($this->container['method'], $allowed_values)) {
             return false;
         }
@@ -259,9 +278,14 @@ class ManualSettleTransfer implements ArrayAccess
      */
     public function setMethod($method)
     {
-        $allowed_values = array('cash', 'bank_transfer', 'check', 'other');
-        if ((!in_array($method, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'method', must be one of 'cash', 'bank_transfer', 'check', 'other'");
+        $allowed_values = $this->getMethodAllowableValues();
+        if (!in_array($method, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'method', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['method'] = $method;
 

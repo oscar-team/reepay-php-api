@@ -54,12 +54,25 @@ class PaymentMethods implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'cards' => '\Swagger\Client\Model\InlineResponse20015Cards[]'
+        'cards' => '\Swagger\Client\Model\Card[]'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'cards' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -149,7 +162,7 @@ class PaymentMethods implements ArrayAccess
 
     /**
      * Gets cards
-     * @return \Swagger\Client\Model\InlineResponse20015Cards[]
+     * @return \Swagger\Client\Model\Card[]
      */
     public function getCards()
     {
@@ -158,7 +171,7 @@ class PaymentMethods implements ArrayAccess
 
     /**
      * Sets cards
-     * @param \Swagger\Client\Model\InlineResponse20015Cards[] $cards List of cards
+     * @param \Swagger\Client\Model\Card[] $cards List of cards
      * @return $this
      */
     public function setCards($cards)

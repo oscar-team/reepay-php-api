@@ -47,7 +47,6 @@ class CreateChargeTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CreateChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CreateChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CreateChargeTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class CreateChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateCharge()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class CreateChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHandle()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class CreateChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyKey()
     {
-
     }
 
     /**
@@ -103,7 +96,13 @@ class CreateChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
+    }
 
+    /**
+     * Test attribute "currency"
+     */
+    public function testPropertyCurrency()
+    {
     }
 
     /**
@@ -111,7 +110,6 @@ class CreateChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCustomer()
     {
-
     }
 
     /**
@@ -119,7 +117,6 @@ class CreateChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySource()
     {
-
     }
 
     /**
@@ -127,7 +124,6 @@ class CreateChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySettle()
     {
-
     }
 
     /**
@@ -135,7 +131,6 @@ class CreateChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOrdertext()
     {
-
     }
 
     /**
@@ -143,7 +138,6 @@ class CreateChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOrderLines()
     {
-
     }
 
     /**
@@ -151,7 +145,5 @@ class CreateChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCustomerHandle()
     {
-
     }
-
 }

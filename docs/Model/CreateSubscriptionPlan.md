@@ -6,14 +6,18 @@ Name | Type | Description | Notes
 **name** | **string** | Name of the plan | 
 **description** | **string** | Description of the plan | [optional] 
 **vat** | **float** | Optional vat for this plan. Account default is used if none given. | [optional] 
-**amount** | **int** | Amount for the plan in the smallest unit for the account currency including VAT | 
+**amount** | **int** | Amount for the plan in the smallest unit for the account currency | 
 **quantity** | **int** | Optional default quantity of the subscription plan product for new subscriptions. Default is 1. | [optional] 
-**prepaid** | **bool** | Subscriptions can either be prepaid where an amount is paid in advance, or the opposite. This setting only relates to handling of pause scenarios. | 
+**prepaid** | **bool** | Subscriptions can either be prepaid where an amount is paid in advance, or the opposite. This setting only relates to handling of pause scenarios. | [optional] 
 **handle** | **string** | Per account unique handle for the subscription plan. Max length 255 with allowable characters [a-zA-Z0-9_.-@]. | 
 **dunning_plan** | **string** | Dunning plan handle | [optional] 
 **renewal_reminder_email_days** | **int** | Optional renewal reminder email settings. Number of days before next billing to send a reminder email. | [optional] 
 **trial_reminder_email_days** | **int** | Optional end of trial reminder email settings. Number of days before end of trial to send a reminder email. | [optional] 
 **partial_period_handling** | **string** | How to handle a potential initial partial billing period for fixed day scheduling. The options are to bill for a full period, bill prorated for the partial period, bill a zero amoumt, or not to consider the period before first fixed day a billing period. The default is to bill prorated. Options: &#x60;bill_full&#x60;, &#x60;bill_prorated&#x60;, &#x60;bill_zero_amount&#x60;, &#x60;no_bill&#x60;. | [optional] 
+**include_zero_amount** | **bool** | Whether to add a zero amount order line to subscription invoices if plan amount is zero or the subscription overrides to zero amount. The default is to not include the line. If no other order lines are present the plan order line will be added. | [optional] 
+**setup_fee** | **int** | Optional one-time setup fee billed with the first invoice or as a separate invoice depending on the setting &#x60;setup_fee_invoice&#x60;. | [optional] 
+**setup_fee_text** | **string** | Optional invoice order text for the setup fee that | [optional] 
+**setup_fee_handling** | **string** | How the billing of the setup fee should be done. The options are: &#x60;first&#x60; - include setup fee as order line on the first scheduled invoice. &#x60;separate&#x60; - create a separate invoice for the setup fee, is appropriate if first invoice is not in conjunction with creation. &#x60;separate_conditional&#x60; - create a separate invoice for setup fee if the first invoice is not created in conjunction with the creation. Default is &#x60;first&#x60;. | [optional] 
 **amount_incl_vat** | **bool** | Whether the amount is including VAT. Default true. | [optional] 
 **fixed_count** | **int** | Fixed number of renewals for subscriptions using this plan. Equals the number of scheduled invoices. | [optional] 
 **fixed_life_time_unit** | **string** | Time unit use for fixed life time | [optional] 

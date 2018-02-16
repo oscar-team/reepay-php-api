@@ -47,7 +47,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscription()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHandle()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCustomer()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPlan()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyState()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTest()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyQuantity()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyExpires()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyReactivated()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTimezone()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreated()
     {
-
     }
 
     /**
@@ -175,7 +159,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRenewing()
     {
-
     }
 
     /**
@@ -183,7 +166,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPlanVersion()
     {
-
     }
 
     /**
@@ -191,7 +173,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmountInclVat()
     {
-
     }
 
     /**
@@ -199,7 +180,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyStartDate()
     {
-
     }
 
     /**
@@ -207,7 +187,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyEndDate()
     {
-
     }
 
     /**
@@ -215,7 +194,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyGraceDuration()
     {
-
     }
 
     /**
@@ -223,7 +201,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCurrentPeriodStart()
     {
-
     }
 
     /**
@@ -231,7 +208,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNextPeriodStart()
     {
-
     }
 
     /**
@@ -239,7 +215,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFirstPeriodStart()
     {
-
     }
 
     /**
@@ -247,7 +222,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyLastPeriodStart()
     {
-
     }
 
     /**
@@ -255,7 +229,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTrialStart()
     {
-
     }
 
     /**
@@ -263,7 +236,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTrialEnd()
     {
-
     }
 
     /**
@@ -271,7 +243,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyIsCancelled()
     {
-
     }
 
     /**
@@ -279,7 +250,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyInTrial()
     {
-
     }
 
     /**
@@ -287,7 +257,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHasStarted()
     {
-
     }
 
     /**
@@ -295,7 +264,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRenewalCount()
     {
-
     }
 
     /**
@@ -303,7 +271,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCancelledDate()
     {
-
     }
 
     /**
@@ -311,7 +278,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyExpiredDate()
     {
-
     }
 
     /**
@@ -319,7 +285,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyExpireReason()
     {
-
     }
 
     /**
@@ -327,7 +292,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOnHoldDate()
     {
-
     }
 
     /**
@@ -335,7 +299,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOnHoldReason()
     {
-
     }
 
     /**
@@ -343,7 +306,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPaymentMethodAdded()
     {
-
     }
 
     /**
@@ -351,7 +313,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyScheduledPlanChange()
     {
-
     }
 
     /**
@@ -359,7 +320,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyReminderEmailSent()
     {
-
     }
 
     /**
@@ -367,7 +327,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFailedInvoices()
     {
-
     }
 
     /**
@@ -375,7 +334,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFailedAmount()
     {
-
     }
 
     /**
@@ -383,7 +341,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCancelledInvoices()
     {
-
     }
 
     /**
@@ -391,7 +348,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCancelledAmount()
     {
-
     }
 
     /**
@@ -399,7 +355,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPendingInvoices()
     {
-
     }
 
     /**
@@ -407,7 +362,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPendingAmount()
     {
-
     }
 
     /**
@@ -415,7 +369,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDunningInvoices()
     {
-
     }
 
     /**
@@ -423,7 +376,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDunningAmount()
     {
-
     }
 
     /**
@@ -431,7 +383,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySettledInvoices()
     {
-
     }
 
     /**
@@ -439,7 +390,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySettledAmount()
     {
-
     }
 
     /**
@@ -447,7 +397,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRefundedAmount()
     {
-
     }
 
     /**
@@ -455,7 +404,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPendingAdditionalCosts()
     {
-
     }
 
     /**
@@ -463,7 +411,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPendingAdditionalCostAmount()
     {
-
     }
 
     /**
@@ -471,7 +418,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTransferredAdditionalCosts()
     {
-
     }
 
     /**
@@ -479,7 +425,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTransferredAdditionalCostAmount()
     {
-
     }
 
     /**
@@ -487,7 +432,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPendingCredits()
     {
-
     }
 
     /**
@@ -495,7 +439,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPendingCreditAmount()
     {
-
     }
 
     /**
@@ -503,7 +446,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTransferredCredits()
     {
-
     }
 
     /**
@@ -511,7 +453,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTransferredCreditAmount()
     {
-
     }
 
     /**
@@ -519,7 +460,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHostedPageLinks()
     {
-
     }
 
     /**
@@ -527,7 +467,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySubscriptionDiscounts()
     {
-
     }
 
     /**
@@ -535,7 +474,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPendingChange()
     {
-
     }
 
     /**
@@ -543,7 +481,6 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySubscriptionChanges()
     {
-
     }
 
     /**
@@ -551,7 +488,5 @@ class SubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySubscriptionAddOns()
     {
-
     }
-
 }

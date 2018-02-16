@@ -59,9 +59,24 @@ class CreateCardGatewayAgreement implements ArrayAccess
         'provider_settings' => 'map[string,object]'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'provider' => null,
+        'card_types' => null,
+        'provider_settings' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

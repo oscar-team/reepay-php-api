@@ -60,9 +60,25 @@ class IntervalAmount implements ArrayAccess
         'currency' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'from' => null,
+        'to' => null,
+        'amount' => 'int32',
+        'currency' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

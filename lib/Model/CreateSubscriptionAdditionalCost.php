@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateSubscriptionAddOn
+ * CreateSubscriptionAdditionalCost
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * CreateSubscriptionAddOn Class Doc Comment
+ * CreateSubscriptionAdditionalCost Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CreateSubscriptionAddOn implements ArrayAccess
+class CreateSubscriptionAdditionalCost implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,7 +47,7 @@ class CreateSubscriptionAddOn implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'CreateSubscriptionAddOn';
+    protected static $swaggerModelName = 'CreateSubscriptionAdditionalCost';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -55,10 +55,10 @@ class CreateSubscriptionAddOn implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'handle' => 'string',
+        'ordertext' => 'string',
         'quantity' => 'int',
         'amount' => 'int',
-        'add_on' => 'string',
-        'fixed_amount' => 'bool',
+        'vat' => 'float',
         'amount_incl_vat' => 'bool'
     ];
 
@@ -68,10 +68,10 @@ class CreateSubscriptionAddOn implements ArrayAccess
       */
     protected static $swaggerFormats = [
         'handle' => null,
+        'ordertext' => null,
         'quantity' => 'int32',
         'amount' => 'int32',
-        'add_on' => null,
-        'fixed_amount' => null,
+        'vat' => 'float',
         'amount_incl_vat' => null
     ];
 
@@ -91,10 +91,10 @@ class CreateSubscriptionAddOn implements ArrayAccess
      */
     protected static $attributeMap = [
         'handle' => 'handle',
+        'ordertext' => 'ordertext',
         'quantity' => 'quantity',
         'amount' => 'amount',
-        'add_on' => 'add_on',
-        'fixed_amount' => 'fixed_amount',
+        'vat' => 'vat',
         'amount_incl_vat' => 'amount_incl_vat'
     ];
 
@@ -105,10 +105,10 @@ class CreateSubscriptionAddOn implements ArrayAccess
      */
     protected static $setters = [
         'handle' => 'setHandle',
+        'ordertext' => 'setOrdertext',
         'quantity' => 'setQuantity',
         'amount' => 'setAmount',
-        'add_on' => 'setAddOn',
-        'fixed_amount' => 'setFixedAmount',
+        'vat' => 'setVat',
         'amount_incl_vat' => 'setAmountInclVat'
     ];
 
@@ -119,10 +119,10 @@ class CreateSubscriptionAddOn implements ArrayAccess
      */
     protected static $getters = [
         'handle' => 'getHandle',
+        'ordertext' => 'getOrdertext',
         'quantity' => 'getQuantity',
         'amount' => 'getAmount',
-        'add_on' => 'getAddOn',
-        'fixed_amount' => 'getFixedAmount',
+        'vat' => 'getVat',
         'amount_incl_vat' => 'getAmountInclVat'
     ];
 
@@ -158,10 +158,10 @@ class CreateSubscriptionAddOn implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
+        $this->container['ordertext'] = isset($data['ordertext']) ? $data['ordertext'] : null;
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
-        $this->container['add_on'] = isset($data['add_on']) ? $data['add_on'] : null;
-        $this->container['fixed_amount'] = isset($data['fixed_amount']) ? $data['fixed_amount'] : null;
+        $this->container['vat'] = isset($data['vat']) ? $data['vat'] : null;
         $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
     }
 
@@ -177,17 +177,28 @@ class CreateSubscriptionAddOn implements ArrayAccess
         if ($this->container['handle'] === null) {
             $invalid_properties[] = "'handle' can't be null";
         }
+        if ($this->container['ordertext'] === null) {
+            $invalid_properties[] = "'ordertext' can't be null";
+        }
         if (!is_null($this->container['quantity']) && ($this->container['quantity'] < 1)) {
             $invalid_properties[] = "invalid value for 'quantity', must be bigger than or equal to 1.";
         }
 
-        if (!is_null($this->container['amount']) && ($this->container['amount'] < 0)) {
+        if ($this->container['amount'] === null) {
+            $invalid_properties[] = "'amount' can't be null";
+        }
+        if (($this->container['amount'] < 0)) {
             $invalid_properties[] = "invalid value for 'amount', must be bigger than or equal to 0.";
         }
 
-        if ($this->container['add_on'] === null) {
-            $invalid_properties[] = "'add_on' can't be null";
+        if (!is_null($this->container['vat']) && ($this->container['vat'] > 1)) {
+            $invalid_properties[] = "invalid value for 'vat', must be smaller than or equal to 1.";
         }
+
+        if (!is_null($this->container['vat']) && ($this->container['vat'] < 0)) {
+            $invalid_properties[] = "invalid value for 'vat', must be bigger than or equal to 0.";
+        }
+
         return $invalid_properties;
     }
 
@@ -203,13 +214,22 @@ class CreateSubscriptionAddOn implements ArrayAccess
         if ($this->container['handle'] === null) {
             return false;
         }
+        if ($this->container['ordertext'] === null) {
+            return false;
+        }
         if ($this->container['quantity'] < 1) {
+            return false;
+        }
+        if ($this->container['amount'] === null) {
             return false;
         }
         if ($this->container['amount'] < 0) {
             return false;
         }
-        if ($this->container['add_on'] === null) {
+        if ($this->container['vat'] > 1) {
+            return false;
+        }
+        if ($this->container['vat'] < 0) {
             return false;
         }
         return true;
@@ -227,12 +247,33 @@ class CreateSubscriptionAddOn implements ArrayAccess
 
     /**
      * Sets handle
-     * @param string $handle Optional per subscription unique handle for the subscription add-on. If not defined the handle will default to the add-on handle, this means that by default an add-on can only be attached once to each subscription. The handle can be used to link the subscription add-on to an entity like computer serial number or vehicle license plate.
+     * @param string $handle Per account unique handle for the additional cost
      * @return $this
      */
     public function setHandle($handle)
     {
         $this->container['handle'] = $handle;
+
+        return $this;
+    }
+
+    /**
+     * Gets ordertext
+     * @return string
+     */
+    public function getOrdertext()
+    {
+        return $this->container['ordertext'];
+    }
+
+    /**
+     * Sets ordertext
+     * @param string $ordertext Order text for the additional cost. Will be on affected invoices.
+     * @return $this
+     */
+    public function setOrdertext($ordertext)
+    {
+        $this->container['ordertext'] = $ordertext;
 
         return $this;
     }
@@ -248,14 +289,14 @@ class CreateSubscriptionAddOn implements ArrayAccess
 
     /**
      * Sets quantity
-     * @param int $quantity Optional quantity of the of the add-on for this subscription. Defaults to 1. May only be provided for add-on with type `quantity`.
+     * @param int $quantity Quantity for the additional cost. Default 1.
      * @return $this
      */
     public function setQuantity($quantity)
     {
 
         if (!is_null($quantity) && ($quantity < 1)) {
-            throw new \InvalidArgumentException('invalid value for $quantity when calling CreateSubscriptionAddOn., must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for $quantity when calling CreateSubscriptionAdditionalCost., must be bigger than or equal to 1.');
         }
 
         $this->container['quantity'] = $quantity;
@@ -274,14 +315,14 @@ class CreateSubscriptionAddOn implements ArrayAccess
 
     /**
      * Sets amount
-     * @param int $amount Optional custom fixed per quantity add-on price. If provided the add-on price billed for each billing period will be overridden by this price. Implicitly defines `fixed_amount` as true. Cannot be provided with `fixed_amount` false.
+     * @param int $amount Per quantity amount in the smallest unit for the account currency
      * @return $this
      */
     public function setAmount($amount)
     {
 
-        if (!is_null($amount) && ($amount < 0)) {
-            throw new \InvalidArgumentException('invalid value for $amount when calling CreateSubscriptionAddOn., must be bigger than or equal to 0.');
+        if (($amount < 0)) {
+            throw new \InvalidArgumentException('invalid value for $amount when calling CreateSubscriptionAdditionalCost., must be bigger than or equal to 0.');
         }
 
         $this->container['amount'] = $amount;
@@ -290,43 +331,30 @@ class CreateSubscriptionAddOn implements ArrayAccess
     }
 
     /**
-     * Gets add_on
-     * @return string
+     * Gets vat
+     * @return float
      */
-    public function getAddOn()
+    public function getVat()
     {
-        return $this->container['add_on'];
+        return $this->container['vat'];
     }
 
     /**
-     * Sets add_on
-     * @param string $add_on Add-on for subscription add-on
+     * Sets vat
+     * @param float $vat Optional vat for additional cost. Account default is used if none given.
      * @return $this
      */
-    public function setAddOn($add_on)
+    public function setVat($vat)
     {
-        $this->container['add_on'] = $add_on;
 
-        return $this;
-    }
+        if (!is_null($vat) && ($vat > 1)) {
+            throw new \InvalidArgumentException('invalid value for $vat when calling CreateSubscriptionAdditionalCost., must be smaller than or equal to 1.');
+        }
+        if (!is_null($vat) && ($vat < 0)) {
+            throw new \InvalidArgumentException('invalid value for $vat when calling CreateSubscriptionAdditionalCost., must be bigger than or equal to 0.');
+        }
 
-    /**
-     * Gets fixed_amount
-     * @return bool
-     */
-    public function getFixedAmount()
-    {
-        return $this->container['fixed_amount'];
-    }
-
-    /**
-     * Sets fixed_amount
-     * @param bool $fixed_amount Whether the price of the subscription add-on should be fixed to the current price of add-on, or the price should follow the add-on price. Defaults to true. If set to false the price of the add-on will be determined by the add-on price at the time of subscription billing.
-     * @return $this
-     */
-    public function setFixedAmount($fixed_amount)
-    {
-        $this->container['fixed_amount'] = $fixed_amount;
+        $this->container['vat'] = $vat;
 
         return $this;
     }
@@ -342,7 +370,7 @@ class CreateSubscriptionAddOn implements ArrayAccess
 
     /**
      * Sets amount_incl_vat
-     * @param bool $amount_incl_vat Whether the optional amount is including VAT. Defaults to true.
+     * @param bool $amount_incl_vat Whether the per quantity amount is including VAT. Defaults to true.
      * @return $this
      */
     public function setAmountInclVat($amount_incl_vat)

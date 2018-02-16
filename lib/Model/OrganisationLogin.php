@@ -57,12 +57,28 @@ class OrganisationLogin implements ArrayAccess
         'id' => 'string',
         'subdomain' => 'string',
         'name' => 'string',
-        'accounts' => '\Swagger\Client\Model\InlineResponse2009Account[]'
+        'accounts' => '\Swagger\Client\Model\AccountLogin[]'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'subdomain' => null,
+        'name' => null,
+        'accounts' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -251,7 +267,7 @@ class OrganisationLogin implements ArrayAccess
 
     /**
      * Gets accounts
-     * @return \Swagger\Client\Model\InlineResponse2009Account[]
+     * @return \Swagger\Client\Model\AccountLogin[]
      */
     public function getAccounts()
     {
@@ -260,7 +276,7 @@ class OrganisationLogin implements ArrayAccess
 
     /**
      * Sets accounts
-     * @param \Swagger\Client\Model\InlineResponse2009Account[] $accounts Organisation accounts
+     * @param \Swagger\Client\Model\AccountLogin[] $accounts Organisation accounts
      * @return $this
      */
     public function setAccounts($accounts)

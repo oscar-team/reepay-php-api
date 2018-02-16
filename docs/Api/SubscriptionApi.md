@@ -1,6 +1,6 @@
 # Swagger\Client\SubscriptionApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,7 +31,7 @@ Method | HTTP request | Description
 
 
 # **cancelSubscription**
-> \Swagger\Client\Model\InlineResponse20025 cancelSubscription($handle, $body)
+> \Swagger\Client\Model\Subscription cancelSubscription($handle, $body)
 
 Cancel subscription
 
@@ -52,7 +52,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\Body33(); // \Swagger\Client\Model\Body33 | 
+$body = new \Swagger\Client\Model\CancelSubscription(); // \Swagger\Client\Model\CancelSubscription | 
 
 try {
     $result = $api_instance->cancelSubscription($handle, $body);
@@ -68,11 +68,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\Body33**](../Model/\Swagger\Client\Model\Body33.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\CancelSubscription**](../Model/CancelSubscription.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
+[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **changeNextPeriodStartJson**
-> \Swagger\Client\Model\InlineResponse20025 changeNextPeriodStartJson($handle, $body)
+> \Swagger\Client\Model\Subscription changeNextPeriodStartJson($handle, $body)
 
 Change next renewal date
 
@@ -107,7 +107,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\Body36(); // \Swagger\Client\Model\Body36 | 
+$body = new \Swagger\Client\Model\ChangeNextPeriodStart(); // \Swagger\Client\Model\ChangeNextPeriodStart | 
 
 try {
     $result = $api_instance->changeNextPeriodStartJson($handle, $body);
@@ -123,11 +123,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\Body36**](../Model/\Swagger\Client\Model\Body36.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\ChangeNextPeriodStart**](../Model/ChangeNextPeriodStart.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
+[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **changeSubscription**
-> \Swagger\Client\Model\InlineResponse20025 changeSubscription($handle, $body)
+> \Swagger\Client\Model\Subscription changeSubscription($handle, $body)
 
 Change subscription
 
@@ -162,7 +162,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\Body30(); // \Swagger\Client\Model\Body30 | 
+$body = new \Swagger\Client\Model\ChangeSubscription(); // \Swagger\Client\Model\ChangeSubscription | 
 
 try {
     $result = $api_instance->changeSubscription($handle, $body);
@@ -178,11 +178,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\Body30**](../Model/\Swagger\Client\Model\Body30.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\ChangeSubscription**](../Model/ChangeSubscription.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
+[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSubscriptionDiscount**
-> \Swagger\Client\Model\InlineResponse20028 createSubscriptionDiscount($handle, $body)
+> \Swagger\Client\Model\SubscriptionDiscount createSubscriptionDiscount($handle, $body)
 
 Add subscription discount
 
@@ -217,7 +217,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\Body39(); // \Swagger\Client\Model\Body39 | 
+$body = new \Swagger\Client\Model\CreateSubscriptionDiscount(); // \Swagger\Client\Model\CreateSubscriptionDiscount | 
 
 try {
     $result = $api_instance->createSubscriptionDiscount($handle, $body);
@@ -233,11 +233,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\Body39**](../Model/\Swagger\Client\Model\Body39.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\CreateSubscriptionDiscount**](../Model/CreateSubscriptionDiscount.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20028**](../Model/InlineResponse20028.md)
+[**\Swagger\Client\Model\SubscriptionDiscount**](../Model/SubscriptionDiscount.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSubscriptionInvoice**
-> \Swagger\Client\Model\InlineResponse20016 createSubscriptionInvoice($handle, $body)
+> \Swagger\Client\Model\Invoice createSubscriptionInvoice($handle, $body)
 
 Create invoice ondemand for subscription
 
@@ -272,7 +272,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\Body38(); // \Swagger\Client\Model\Body38 | 
+$body = new \Swagger\Client\Model\CreateSubscriptionInvoice(); // \Swagger\Client\Model\CreateSubscriptionInvoice | 
 
 try {
     $result = $api_instance->createSubscriptionInvoice($handle, $body);
@@ -288,11 +288,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\Body38**](../Model/\Swagger\Client\Model\Body38.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\CreateSubscriptionInvoice**](../Model/CreateSubscriptionInvoice.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\Swagger\Client\Model\Invoice**](../Model/Invoice.md)
 
 ### Authorization
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSubscriptionJson**
-> \Swagger\Client\Model\InlineResponse20025 createSubscriptionJson($body)
+> \Swagger\Client\Model\Subscription createSubscriptionJson($body)
 
 Create subscription
 
@@ -326,7 +326,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\SubscriptionApi();
-$body = new \Swagger\Client\Model\Body32(); // \Swagger\Client\Model\Body32 | 
+$body = new \Swagger\Client\Model\CreateSubscription(); // \Swagger\Client\Model\CreateSubscription | 
 
 try {
     $result = $api_instance->createSubscriptionJson($body);
@@ -341,11 +341,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body32**](../Model/\Swagger\Client\Model\Body32.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\CreateSubscription**](../Model/CreateSubscription.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
+[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteSubscriptionDiscount**
-> \Swagger\Client\Model\InlineResponse20028 deleteSubscriptionDiscount($handle, $sd_handle)
+> \Swagger\Client\Model\SubscriptionDiscount deleteSubscriptionDiscount($handle, $sd_handle)
 
 Delete subscription discount
 
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20028**](../Model/InlineResponse20028.md)
+[**\Swagger\Client\Model\SubscriptionDiscount**](../Model/SubscriptionDiscount.md)
 
 ### Authorization
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **expire**
-> \Swagger\Client\Model\InlineResponse20025 expire($handle, $body)
+> \Swagger\Client\Model\Subscription expire($handle, $body)
 
 Expire subscription
 
@@ -435,7 +435,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\Body31(); // \Swagger\Client\Model\Body31 | 
+$body = new \Swagger\Client\Model\ExpireSubscription(); // \Swagger\Client\Model\ExpireSubscription | 
 
 try {
     $result = $api_instance->expire($handle, $body);
@@ -451,11 +451,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\Body31**](../Model/\Swagger\Client\Model\Body31.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\ExpireSubscription**](../Model/ExpireSubscription.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
+[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscription**
-> \Swagger\Client\Model\InlineResponse20025 getSubscription($handle)
+> \Swagger\Client\Model\Subscription getSubscription($handle)
 
 Get subscription
 
@@ -508,7 +508,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
+[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -522,7 +522,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionAddOn**
-> \Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns getSubscriptionAddOn($handle, $sa_handle)
+> \Swagger\Client\Model\SubscriptionAddOn getSubscriptionAddOn($handle, $sa_handle)
 
 Get subscription add-on
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns**](../Model/InlineResponse20025PendingChangeSubscriptionAddOns.md)
+[**\Swagger\Client\Model\SubscriptionAddOn**](../Model/SubscriptionAddOn.md)
 
 ### Authorization
 
@@ -577,7 +577,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionAddOns**
-> \Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns[] getSubscriptionAddOns($handle)
+> \Swagger\Client\Model\SubscriptionAddOn[] getSubscriptionAddOns($handle)
 
 Get subscription add-ons
 
@@ -616,7 +616,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns[]**](../Model/InlineResponse20025PendingChangeSubscriptionAddOns.md)
+[**\Swagger\Client\Model\SubscriptionAddOn[]**](../Model/SubscriptionAddOn.md)
 
 ### Authorization
 
@@ -630,7 +630,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionDiscount**
-> \Swagger\Client\Model\InlineResponse20028 getSubscriptionDiscount($handle, $sd_handle)
+> \Swagger\Client\Model\SubscriptionDiscount getSubscriptionDiscount($handle, $sd_handle)
 
 Get subscription discount
 
@@ -671,7 +671,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20028**](../Model/InlineResponse20028.md)
+[**\Swagger\Client\Model\SubscriptionDiscount**](../Model/SubscriptionDiscount.md)
 
 ### Authorization
 
@@ -685,7 +685,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionDiscounts**
-> \Swagger\Client\Model\InlineResponse20028[] getSubscriptionDiscounts($handle)
+> \Swagger\Client\Model\SubscriptionDiscount[] getSubscriptionDiscounts($handle)
 
 Get subscription discounts
 
@@ -724,7 +724,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20028[]**](../Model/InlineResponse20028.md)
+[**\Swagger\Client\Model\SubscriptionDiscount[]**](../Model/SubscriptionDiscount.md)
 
 ### Authorization
 
@@ -738,7 +738,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionPaymentMethods**
-> \Swagger\Client\Model\InlineResponse20015 getSubscriptionPaymentMethods($handle)
+> \Swagger\Client\Model\PaymentMethods getSubscriptionPaymentMethods($handle)
 
 Get payment methods
 
@@ -777,7 +777,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\PaymentMethods**](../Model/PaymentMethods.md)
 
 ### Authorization
 
@@ -791,7 +791,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionPeriodBalance**
-> \Swagger\Client\Model\InlineResponse20030 getSubscriptionPeriodBalance($handle, $date)
+> \Swagger\Client\Model\SubscriptionPeriodBalance getSubscriptionPeriodBalance($handle, $date)
 
 Get the period balance for subscription
 
@@ -832,7 +832,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20030**](../Model/InlineResponse20030.md)
+[**\Swagger\Client\Model\SubscriptionPeriodBalance**](../Model/SubscriptionPeriodBalance.md)
 
 ### Authorization
 
@@ -846,7 +846,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptions**
-> \Swagger\Client\Model\InlineResponse20026 getSubscriptions($page, $size, $search, $sort)
+> \Swagger\Client\Model\SubscriptionSearch getSubscriptions($page, $size, $search, $sort)
 
 Get list of subscriptions
 
@@ -891,7 +891,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20026**](../Model/InlineResponse20026.md)
+[**\Swagger\Client\Model\SubscriptionSearch**](../Model/SubscriptionSearch.md)
 
 ### Authorization
 
@@ -905,7 +905,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **intervalAmount**
-> \Swagger\Client\Model\InlineResponse20027 intervalAmount($handle, $from, $to)
+> \Swagger\Client\Model\IntervalAmount intervalAmount($handle, $from, $to)
 
 Calculate interval amount
 
@@ -948,7 +948,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20027**](../Model/InlineResponse20027.md)
+[**\Swagger\Client\Model\IntervalAmount**](../Model/IntervalAmount.md)
 
 ### Authorization
 
@@ -962,7 +962,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **onHold**
-> \Swagger\Client\Model\InlineResponse20025 onHold($handle, $body)
+> \Swagger\Client\Model\Subscription onHold($handle, $body)
 
 Subscription on hold
 
@@ -983,7 +983,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\Body34(); // \Swagger\Client\Model\Body34 | 
+$body = new \Swagger\Client\Model\OnHoldSubscription(); // \Swagger\Client\Model\OnHoldSubscription | 
 
 try {
     $result = $api_instance->onHold($handle, $body);
@@ -999,11 +999,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\Body34**](../Model/\Swagger\Client\Model\Body34.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\OnHoldSubscription**](../Model/OnHoldSubscription.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
+[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -1017,7 +1017,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **reactivateSubscription**
-> \Swagger\Client\Model\InlineResponse20025 reactivateSubscription($handle, $body)
+> \Swagger\Client\Model\Subscription reactivateSubscription($handle, $body)
 
 Reactivate subscription on hold
 
@@ -1038,7 +1038,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\Body35(); // \Swagger\Client\Model\Body35 | 
+$body = new \Swagger\Client\Model\ReactivateSubscription(); // \Swagger\Client\Model\ReactivateSubscription | 
 
 try {
     $result = $api_instance->reactivateSubscription($handle, $body);
@@ -1054,11 +1054,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\Body35**](../Model/\Swagger\Client\Model\Body35.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\ReactivateSubscription**](../Model/ReactivateSubscription.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
+[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -1072,7 +1072,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **redeemCouponCode**
-> \Swagger\Client\Model\InlineResponse20029 redeemCouponCode($handle, $body)
+> \Swagger\Client\Model\CouponRedemption redeemCouponCode($handle, $body)
 
 Redeem coupon code for subscription
 
@@ -1093,7 +1093,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\Body40(); // \Swagger\Client\Model\Body40 | 
+$body = new \Swagger\Client\Model\RedeemCouponCode(); // \Swagger\Client\Model\RedeemCouponCode | 
 
 try {
     $result = $api_instance->redeemCouponCode($handle, $body);
@@ -1109,11 +1109,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\Body40**](../Model/\Swagger\Client\Model\Body40.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\RedeemCouponCode**](../Model/RedeemCouponCode.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20029**](../Model/InlineResponse20029.md)
+[**\Swagger\Client\Model\CouponRedemption**](../Model/CouponRedemption.md)
 
 ### Authorization
 
@@ -1127,7 +1127,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeAllPaymentMethods**
-> \Swagger\Client\Model\InlineResponse20015 removeAllPaymentMethods($handle)
+> \Swagger\Client\Model\PaymentMethods removeAllPaymentMethods($handle)
 
 Remove all payment methods
 
@@ -1166,7 +1166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\PaymentMethods**](../Model/PaymentMethods.md)
 
 ### Authorization
 
@@ -1180,7 +1180,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removePaymentMethod**
-> \Swagger\Client\Model\InlineResponse20015 removePaymentMethod($handle, $method_id)
+> \Swagger\Client\Model\PaymentMethods removePaymentMethod($handle, $method_id)
 
 Remove payment method
 
@@ -1221,7 +1221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\PaymentMethods**](../Model/PaymentMethods.md)
 
 ### Authorization
 
@@ -1235,7 +1235,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **setPaymentMethod**
-> \Swagger\Client\Model\InlineResponse20015 setPaymentMethod($handle, $body)
+> \Swagger\Client\Model\PaymentMethods setPaymentMethod($handle, $body)
 
 Set payment method
 
@@ -1256,7 +1256,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\Body37(); // \Swagger\Client\Model\Body37 | 
+$body = new \Swagger\Client\Model\SetPaymentMethod(); // \Swagger\Client\Model\SetPaymentMethod | 
 
 try {
     $result = $api_instance->setPaymentMethod($handle, $body);
@@ -1272,11 +1272,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\Body37**](../Model/\Swagger\Client\Model\Body37.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\SetPaymentMethod**](../Model/SetPaymentMethod.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\PaymentMethods**](../Model/PaymentMethods.md)
 
 ### Authorization
 
@@ -1290,7 +1290,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **uncancel**
-> \Swagger\Client\Model\InlineResponse20025 uncancel($handle)
+> \Swagger\Client\Model\Subscription uncancel($handle)
 
 Uncancel subscription
 
@@ -1329,7 +1329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20025**](../Model/InlineResponse20025.md)
+[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 

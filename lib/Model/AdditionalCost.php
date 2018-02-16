@@ -68,9 +68,33 @@ class AdditionalCost implements ArrayAccess
         'amount_ex_vat' => 'int'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'invoice' => null,
+        'state' => null,
+        'subscription' => null,
+        'handle' => null,
+        'ordertext' => null,
+        'quantity' => 'int32',
+        'amount' => 'int32',
+        'vat' => 'float',
+        'created' => 'date-time',
+        'amount_incl_vat' => null,
+        'amount_vat' => 'int32',
+        'amount_ex_vat' => 'int32'
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -205,9 +229,12 @@ class AdditionalCost implements ArrayAccess
         if ($this->container['state'] === null) {
             $invalid_properties[] = "'state' can't be null";
         }
-        $allowed_values = ["pending", "transferred", "cancelled"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'pending', 'transferred', 'cancelled'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['subscription'] === null) {
@@ -265,7 +292,7 @@ class AdditionalCost implements ArrayAccess
         if ($this->container['state'] === null) {
             return false;
         }
-        $allowed_values = ["pending", "transferred", "cancelled"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
@@ -346,9 +373,14 @@ class AdditionalCost implements ArrayAccess
      */
     public function setState($state)
     {
-        $allowed_values = array('pending', 'transferred', 'cancelled');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'pending', 'transferred', 'cancelled'");
+        $allowed_values = $this->getStateAllowableValues();
+        if (!in_array($state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['state'] = $state;
 

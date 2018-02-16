@@ -47,7 +47,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateSubscription()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCustomer()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPlan()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyQuantity()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTest()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHandle()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySource()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySignupMethod()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyConditionalCreate()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreateCustomer()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPlanVersion()
     {
-
     }
 
     /**
@@ -175,7 +159,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmountInclVat()
     {
-
     }
 
     /**
@@ -183,7 +166,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyGenerateHandle()
     {
-
     }
 
     /**
@@ -191,7 +173,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyStartDate()
     {
-
     }
 
     /**
@@ -199,7 +180,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyEndDate()
     {
-
     }
 
     /**
@@ -207,7 +187,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyGraceDuration()
     {
-
     }
 
     /**
@@ -215,7 +194,13 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNoTrial()
     {
+    }
 
+    /**
+     * Test attribute "no_setup_fee"
+     */
+    public function testPropertyNoSetupFee()
+    {
     }
 
     /**
@@ -223,7 +208,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySubscriptionDiscounts()
     {
-
     }
 
     /**
@@ -231,7 +215,6 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCouponCodes()
     {
-
     }
 
     /**
@@ -239,7 +222,12 @@ class CreateSubscriptionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAddOns()
     {
-
     }
 
+    /**
+     * Test attribute "additional_costs"
+     */
+    public function testPropertyAdditionalCosts()
+    {
+    }
 }

@@ -47,7 +47,6 @@ class ManualTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class ManualTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class ManualTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class ManualTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class ManualTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testManualTransaction()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class ManualTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyMethod()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class ManualTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyComment()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class ManualTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyReference()
     {
-
     }
 
     /**
@@ -111,7 +103,5 @@ class ManualTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPaymentDate()
     {
-
     }
-
 }

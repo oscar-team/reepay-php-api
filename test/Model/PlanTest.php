@@ -47,7 +47,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPlan()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDescription()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVat()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyQuantity()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPrepaid()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHandle()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVersion()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyState()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCurrency()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreated()
     {
-
     }
 
     /**
@@ -175,7 +159,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDunningPlan()
     {
-
     }
 
     /**
@@ -183,7 +166,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRenewalReminderEmailDays()
     {
-
     }
 
     /**
@@ -191,7 +173,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTrialReminderEmailDays()
     {
-
     }
 
     /**
@@ -199,7 +180,34 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPartialPeriodHandling()
     {
+    }
 
+    /**
+     * Test attribute "include_zero_amount"
+     */
+    public function testPropertyIncludeZeroAmount()
+    {
+    }
+
+    /**
+     * Test attribute "setup_fee"
+     */
+    public function testPropertySetupFee()
+    {
+    }
+
+    /**
+     * Test attribute "setup_fee_text"
+     */
+    public function testPropertySetupFeeText()
+    {
+    }
+
+    /**
+     * Test attribute "setup_fee_handling"
+     */
+    public function testPropertySetupFeeHandling()
+    {
     }
 
     /**
@@ -207,7 +215,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmountInclVat()
     {
-
     }
 
     /**
@@ -215,7 +222,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixedCount()
     {
-
     }
 
     /**
@@ -223,7 +229,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixedLifeTimeUnit()
     {
-
     }
 
     /**
@@ -231,7 +236,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixedLifeTimeLength()
     {
-
     }
 
     /**
@@ -239,7 +243,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTrialIntervalUnit()
     {
-
     }
 
     /**
@@ -247,7 +250,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTrialIntervalLength()
     {
-
     }
 
     /**
@@ -255,7 +257,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyIntervalLength()
     {
-
     }
 
     /**
@@ -263,7 +264,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyScheduleType()
     {
-
     }
 
     /**
@@ -271,7 +271,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyScheduleFixedDay()
     {
-
     }
 
     /**
@@ -279,7 +278,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyBaseMonth()
     {
-
     }
 
     /**
@@ -287,7 +285,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNoticePeriods()
     {
-
     }
 
     /**
@@ -295,7 +292,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNoticePeriodsAfterCurrent()
     {
-
     }
 
     /**
@@ -303,7 +299,6 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixationPeriods()
     {
-
     }
 
     /**
@@ -311,7 +306,5 @@ class PlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixationPeriodsFull()
     {
-
     }
-
 }

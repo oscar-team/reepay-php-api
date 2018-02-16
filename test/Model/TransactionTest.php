@@ -47,7 +47,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testTransaction()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyState()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyInvoice()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyType()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySettled()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAuthorized()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFailed()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRefunded()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreated()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCardTransaction()
     {
-
     }
 
     /**
@@ -175,7 +159,5 @@ class TransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyManualTransaction()
     {
-
     }
-
 }

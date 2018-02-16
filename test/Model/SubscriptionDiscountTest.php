@@ -47,7 +47,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionDiscount()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHandle()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDiscount()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyState()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCoupon()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDeleted()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreated()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDescription()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPercentage()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCount()
     {
-
     }
 
     /**
@@ -175,7 +159,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyInvoices()
     {
-
     }
 
     /**
@@ -183,7 +166,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyApplyTo()
     {
-
     }
 
     /**
@@ -191,7 +173,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixedCount()
     {
-
     }
 
     /**
@@ -199,7 +180,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixedPeriodUnit()
     {
-
     }
 
     /**
@@ -207,7 +187,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixedPeriod()
     {
-
     }
 
     /**
@@ -215,7 +194,6 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixedUsageReached()
     {
-
     }
 
     /**
@@ -223,7 +201,5 @@ class SubscriptionDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixedPeriodPassed()
     {
-
     }
-
 }

@@ -62,9 +62,27 @@ class Event implements ArrayAccess
         'event_type' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'customer' => null,
+        'subscription' => null,
+        'invoice' => null,
+        'created' => 'date-time',
+        'event_type' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

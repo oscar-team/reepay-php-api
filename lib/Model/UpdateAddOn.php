@@ -63,9 +63,28 @@ class UpdateAddOn implements ArrayAccess
         'eligible_plans' => 'string[]'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'name' => null,
+        'description' => null,
+        'amount' => 'int32',
+        'vat' => 'float',
+        'amount_incl_vat' => null,
+        'all_plans' => null,
+        'eligible_plans' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

@@ -1,6 +1,6 @@
 # Swagger\Client\UserApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -72,7 +72,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUser**
-> \Swagger\Client\Model\InlineResponse20031 getUser($id)
+> \Swagger\Client\Model\UserAccount getUser($id)
 
 Get user
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
+[**\Swagger\Client\Model\UserAccount**](../Model/UserAccount.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUsers**
-> \Swagger\Client\Model\InlineResponse20031[] getUsers()
+> \Swagger\Client\Model\UserAccount[] getUsers()
 
 Get users
 
@@ -160,7 +160,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20031[]**](../Model/InlineResponse20031.md)
+[**\Swagger\Client\Model\UserAccount[]**](../Model/UserAccount.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **inviteUser**
-> \Swagger\Client\Model\InlineResponse20031 inviteUser($body)
+> \Swagger\Client\Model\UserAccount inviteUser($body)
 
 Invite user
 
@@ -194,7 +194,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\UserApi();
-$body = new \Swagger\Client\Model\Body43(); // \Swagger\Client\Model\Body43 | 
+$body = new \Swagger\Client\Model\InviteUser(); // \Swagger\Client\Model\InviteUser | 
 
 try {
     $result = $api_instance->inviteUser($body);
@@ -209,11 +209,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body43**](../Model/\Swagger\Client\Model\Body43.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\InviteUser**](../Model/InviteUser.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
+[**\Swagger\Client\Model\UserAccount**](../Model/UserAccount.md)
 
 ### Authorization
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **inviteUserAccept**
-> \Swagger\Client\Model\InlineResponse20031 inviteUserAccept($token, $body)
+> \Swagger\Client\Model\UserAccount inviteUserAccept($token, $body)
 
 Accept invite
 
@@ -240,7 +240,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\UserApi();
 $token = "token_example"; // string | Invite token
-$body = new \Swagger\Client\Model\Body44(); // \Swagger\Client\Model\Body44 | 
+$body = new \Swagger\Client\Model\InviteUserAccept(); // \Swagger\Client\Model\InviteUserAccept | 
 
 try {
     $result = $api_instance->inviteUserAccept($token, $body);
@@ -256,11 +256,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**| Invite token |
- **body** | [**\Swagger\Client\Model\Body44**](../Model/\Swagger\Client\Model\Body44.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\InviteUserAccept**](../Model/InviteUserAccept.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
+[**\Swagger\Client\Model\UserAccount**](../Model/UserAccount.md)
 
 ### Authorization
 
@@ -274,7 +274,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **inviteUserGet**
-> \Swagger\Client\Model\InlineResponse20031 inviteUserGet($token)
+> \Swagger\Client\Model\UserAccount inviteUserGet($token)
 
 Get invite
 
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
+[**\Swagger\Client\Model\UserAccount**](../Model/UserAccount.md)
 
 ### Authorization
 
@@ -331,7 +331,7 @@ Reset password request
 require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\UserApi();
-$body = new \Swagger\Client\Model\Body45(); // \Swagger\Client\Model\Body45 | 
+$body = new \Swagger\Client\Model\UserResetRequestPassword(); // \Swagger\Client\Model\UserResetRequestPassword | 
 
 try {
     $api_instance->resetPassword($body);
@@ -345,7 +345,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body45**](../Model/\Swagger\Client\Model\Body45.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\UserResetRequestPassword**](../Model/UserResetRequestPassword.md)|  | [optional]
 
 ### Return type
 
@@ -363,7 +363,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **resetPasswordWithToken**
-> \Swagger\Client\Model\InlineResponse2009User resetPasswordWithToken($token, $body)
+> \Swagger\Client\Model\User resetPasswordWithToken($token, $body)
 
 Reset password
 
@@ -376,7 +376,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 $api_instance = new Swagger\Client\Api\UserApi();
 $token = "token_example"; // string | Reset password token
-$body = new \Swagger\Client\Model\Body46(); // \Swagger\Client\Model\Body46 | 
+$body = new \Swagger\Client\Model\UpdateUserPassword(); // \Swagger\Client\Model\UpdateUserPassword | 
 
 try {
     $result = $api_instance->resetPasswordWithToken($token, $body);
@@ -392,11 +392,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **string**| Reset password token |
- **body** | [**\Swagger\Client\Model\Body46**](../Model/\Swagger\Client\Model\Body46.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\UpdateUserPassword**](../Model/UpdateUserPassword.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2009User**](../Model/InlineResponse2009User.md)
+[**\Swagger\Client\Model\User**](../Model/User.md)
 
 ### Authorization
 
@@ -410,7 +410,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAuth**
-> \Swagger\Client\Model\InlineResponse20031 updateAuth($id, $body)
+> \Swagger\Client\Model\UserAccount updateAuth($id, $body)
 
 Update user groups
 
@@ -431,7 +431,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\UserApi();
 $id = "id_example"; // string | User id
-$body = new \Swagger\Client\Model\Body42(); // \Swagger\Client\Model\Body42 | 
+$body = new \Swagger\Client\Model\UpdateUserGroups(); // \Swagger\Client\Model\UpdateUserGroups | 
 
 try {
     $result = $api_instance->updateAuth($id, $body);
@@ -447,11 +447,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| User id |
- **body** | [**\Swagger\Client\Model\Body42**](../Model/\Swagger\Client\Model\Body42.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\UpdateUserGroups**](../Model/UpdateUserGroups.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
+[**\Swagger\Client\Model\UserAccount**](../Model/UserAccount.md)
 
 ### Authorization
 
@@ -465,7 +465,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePassword**
-> \Swagger\Client\Model\InlineResponse20031 updatePassword($id, $body)
+> \Swagger\Client\Model\UserAccount updatePassword($id, $body)
 
 Change password
 
@@ -486,7 +486,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\UserApi();
 $id = "id_example"; // string | User id
-$body = new \Swagger\Client\Model\Body47(); // \Swagger\Client\Model\Body47 | 
+$body = new \Swagger\Client\Model\UpdateUserPassword(); // \Swagger\Client\Model\UpdateUserPassword | 
 
 try {
     $result = $api_instance->updatePassword($id, $body);
@@ -502,11 +502,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| User id |
- **body** | [**\Swagger\Client\Model\Body47**](../Model/\Swagger\Client\Model\Body47.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\UpdateUserPassword**](../Model/UpdateUserPassword.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
+[**\Swagger\Client\Model\UserAccount**](../Model/UserAccount.md)
 
 ### Authorization
 
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateUser**
-> \Swagger\Client\Model\InlineResponse20031 updateUser($id, $body)
+> \Swagger\Client\Model\UserAccount updateUser($id, $body)
 
 Update user
 
@@ -541,7 +541,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\UserApi();
 $id = "id_example"; // string | User id
-$body = new \Swagger\Client\Model\Body41(); // \Swagger\Client\Model\Body41 | 
+$body = new \Swagger\Client\Model\UpdateUser(); // \Swagger\Client\Model\UpdateUser | 
 
 try {
     $result = $api_instance->updateUser($id, $body);
@@ -557,11 +557,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| User id |
- **body** | [**\Swagger\Client\Model\Body41**](../Model/\Swagger\Client\Model\Body41.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\UpdateUser**](../Model/UpdateUser.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20031**](../Model/InlineResponse20031.md)
+[**\Swagger\Client\Model\UserAccount**](../Model/UserAccount.md)
 
 ### Authorization
 
@@ -575,7 +575,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **verifyEmail**
-> \Swagger\Client\Model\InlineResponse2009User verifyEmail($token)
+> \Swagger\Client\Model\User verifyEmail($token)
 
 Verify email
 
@@ -606,7 +606,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse2009User**](../Model/InlineResponse2009User.md)
+[**\Swagger\Client\Model\User**](../Model/User.md)
 
 ### Authorization
 

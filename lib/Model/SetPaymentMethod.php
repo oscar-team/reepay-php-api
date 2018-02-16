@@ -57,9 +57,22 @@ class SetPaymentMethod implements ArrayAccess
         'source' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'source' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -158,7 +171,7 @@ class SetPaymentMethod implements ArrayAccess
 
     /**
      * Sets source
-     * @param string $source The payment method source. Either an existing payment method for the customer, e.g. existing card id `ca_...` or a card token `ct_...` generated with token API, Reepay JS library or hosted page.
+     * @param string $source The payment method source. Either an existing payment method for the customer, e.g. existing card id `ca_...` or a card token `ct_...` generated with [Reepay Token](https://docs.reepay.com/token/) or [Reepay JS Library](https://docs.reepay.com/js/).
      * @return $this
      */
     public function setSource($source)

@@ -60,12 +60,39 @@ class UpdateSubscriptionPlan implements ArrayAccess
         'dunning_plan' => 'string',
         'renewal_reminder_email_days' => 'int',
         'trial_reminder_email_days' => 'int',
-        'partial_period_handling' => 'string'
+        'partial_period_handling' => 'string',
+        'include_zero_amount' => 'bool',
+        'setup_fee' => 'int',
+        'setup_fee_text' => 'string',
+        'setup_fee_handling' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'name' => null,
+        'description' => null,
+        'vat' => 'float',
+        'dunning_plan' => null,
+        'renewal_reminder_email_days' => 'int32',
+        'trial_reminder_email_days' => 'int32',
+        'partial_period_handling' => null,
+        'include_zero_amount' => null,
+        'setup_fee' => 'int32',
+        'setup_fee_text' => null,
+        'setup_fee_handling' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -79,7 +106,11 @@ class UpdateSubscriptionPlan implements ArrayAccess
         'dunning_plan' => 'dunning_plan',
         'renewal_reminder_email_days' => 'renewal_reminder_email_days',
         'trial_reminder_email_days' => 'trial_reminder_email_days',
-        'partial_period_handling' => 'partial_period_handling'
+        'partial_period_handling' => 'partial_period_handling',
+        'include_zero_amount' => 'include_zero_amount',
+        'setup_fee' => 'setup_fee',
+        'setup_fee_text' => 'setup_fee_text',
+        'setup_fee_handling' => 'setup_fee_handling'
     ];
 
 
@@ -94,7 +125,11 @@ class UpdateSubscriptionPlan implements ArrayAccess
         'dunning_plan' => 'setDunningPlan',
         'renewal_reminder_email_days' => 'setRenewalReminderEmailDays',
         'trial_reminder_email_days' => 'setTrialReminderEmailDays',
-        'partial_period_handling' => 'setPartialPeriodHandling'
+        'partial_period_handling' => 'setPartialPeriodHandling',
+        'include_zero_amount' => 'setIncludeZeroAmount',
+        'setup_fee' => 'setSetupFee',
+        'setup_fee_text' => 'setSetupFeeText',
+        'setup_fee_handling' => 'setSetupFeeHandling'
     ];
 
 
@@ -109,7 +144,11 @@ class UpdateSubscriptionPlan implements ArrayAccess
         'dunning_plan' => 'getDunningPlan',
         'renewal_reminder_email_days' => 'getRenewalReminderEmailDays',
         'trial_reminder_email_days' => 'getTrialReminderEmailDays',
-        'partial_period_handling' => 'getPartialPeriodHandling'
+        'partial_period_handling' => 'getPartialPeriodHandling',
+        'include_zero_amount' => 'getIncludeZeroAmount',
+        'setup_fee' => 'getSetupFee',
+        'setup_fee_text' => 'getSetupFeeText',
+        'setup_fee_handling' => 'getSetupFeeHandling'
     ];
 
     public static function attributeMap()
@@ -168,6 +207,10 @@ class UpdateSubscriptionPlan implements ArrayAccess
         $this->container['renewal_reminder_email_days'] = isset($data['renewal_reminder_email_days']) ? $data['renewal_reminder_email_days'] : null;
         $this->container['trial_reminder_email_days'] = isset($data['trial_reminder_email_days']) ? $data['trial_reminder_email_days'] : null;
         $this->container['partial_period_handling'] = isset($data['partial_period_handling']) ? $data['partial_period_handling'] : null;
+        $this->container['include_zero_amount'] = isset($data['include_zero_amount']) ? $data['include_zero_amount'] : null;
+        $this->container['setup_fee'] = isset($data['setup_fee']) ? $data['setup_fee'] : null;
+        $this->container['setup_fee_text'] = isset($data['setup_fee_text']) ? $data['setup_fee_text'] : null;
+        $this->container['setup_fee_handling'] = isset($data['setup_fee_handling']) ? $data['setup_fee_handling'] : null;
     }
 
     /**
@@ -198,9 +241,16 @@ class UpdateSubscriptionPlan implements ArrayAccess
             $invalid_properties[] = "invalid value for 'trial_reminder_email_days', must be bigger than or equal to 1.";
         }
 
-        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
+        $allowed_values = $this->getPartialPeriodHandlingAllowableValues();
         if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'partial_period_handling', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
+        }
+
+        if (!is_null($this->container['setup_fee']) && ($this->container['setup_fee'] < 0)) {
+            $invalid_properties[] = "invalid value for 'setup_fee', must be bigger than or equal to 0.";
         }
 
         return $invalid_properties;
@@ -230,8 +280,11 @@ class UpdateSubscriptionPlan implements ArrayAccess
         if ($this->container['trial_reminder_email_days'] < 1) {
             return false;
         }
-        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
+        $allowed_values = $this->getPartialPeriodHandlingAllowableValues();
         if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
+            return false;
+        }
+        if ($this->container['setup_fee'] < 0) {
             return false;
         }
         return true;
@@ -398,11 +451,105 @@ class UpdateSubscriptionPlan implements ArrayAccess
      */
     public function setPartialPeriodHandling($partial_period_handling)
     {
-        $allowed_values = array('bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill');
-        if (!is_null($partial_period_handling) && (!in_array($partial_period_handling, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'");
+        $allowed_values = $this->getPartialPeriodHandlingAllowableValues();
+        if (!is_null($partial_period_handling) && !in_array($partial_period_handling, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'partial_period_handling', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['partial_period_handling'] = $partial_period_handling;
+
+        return $this;
+    }
+
+    /**
+     * Gets include_zero_amount
+     * @return bool
+     */
+    public function getIncludeZeroAmount()
+    {
+        return $this->container['include_zero_amount'];
+    }
+
+    /**
+     * Sets include_zero_amount
+     * @param bool $include_zero_amount Whether to add a zero amount order line to subscription invoices if plan amount is zero or the subscription overrides to zero amount. The default is to not include the line. If no other order lines are present the plan order line will be added.
+     * @return $this
+     */
+    public function setIncludeZeroAmount($include_zero_amount)
+    {
+        $this->container['include_zero_amount'] = $include_zero_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets setup_fee
+     * @return int
+     */
+    public function getSetupFee()
+    {
+        return $this->container['setup_fee'];
+    }
+
+    /**
+     * Sets setup_fee
+     * @param int $setup_fee Optional one-time setup fee billed with the first invoice or as a separate invoice depending on the setting `setup_fee_invoice`.
+     * @return $this
+     */
+    public function setSetupFee($setup_fee)
+    {
+
+        if (!is_null($setup_fee) && ($setup_fee < 0)) {
+            throw new \InvalidArgumentException('invalid value for $setup_fee when calling UpdateSubscriptionPlan., must be bigger than or equal to 0.');
+        }
+
+        $this->container['setup_fee'] = $setup_fee;
+
+        return $this;
+    }
+
+    /**
+     * Gets setup_fee_text
+     * @return string
+     */
+    public function getSetupFeeText()
+    {
+        return $this->container['setup_fee_text'];
+    }
+
+    /**
+     * Sets setup_fee_text
+     * @param string $setup_fee_text Optional invoice order text for the setup fee that
+     * @return $this
+     */
+    public function setSetupFeeText($setup_fee_text)
+    {
+        $this->container['setup_fee_text'] = $setup_fee_text;
+
+        return $this;
+    }
+
+    /**
+     * Gets setup_fee_handling
+     * @return string
+     */
+    public function getSetupFeeHandling()
+    {
+        return $this->container['setup_fee_handling'];
+    }
+
+    /**
+     * Sets setup_fee_handling
+     * @param string $setup_fee_handling How the billing of the setup fee should be done. The options are: `first` - include setup fee as order line on the first scheduled invoice. `separate` - create a separate invoice for the setup fee, is appropriate if first invoice is not in conjunction with creation. `separate_conditional` - create a separate invoice for setup fee if the first invoice is not created in conjunction with the creation. Default is `first`.
+     * @return $this
+     */
+    public function setSetupFeeHandling($setup_fee_handling)
+    {
+        $this->container['setup_fee_handling'] = $setup_fee_handling;
 
         return $this;
     }

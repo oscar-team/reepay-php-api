@@ -57,9 +57,22 @@ class ExpireSubscription implements ArrayAccess
         'compensation_method' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'compensation_method' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -147,9 +160,12 @@ class ExpireSubscription implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = ["full_refund", "prorated_refund", "none"];
+        $allowed_values = $this->getCompensationMethodAllowableValues();
         if (!in_array($this->container['compensation_method'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'compensation_method', must be one of 'full_refund', 'prorated_refund', 'none'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'compensation_method', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         return $invalid_properties;
@@ -164,7 +180,7 @@ class ExpireSubscription implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = ["full_refund", "prorated_refund", "none"];
+        $allowed_values = $this->getCompensationMethodAllowableValues();
         if (!in_array($this->container['compensation_method'], $allowed_values)) {
             return false;
         }
@@ -188,9 +204,14 @@ class ExpireSubscription implements ArrayAccess
      */
     public function setCompensationMethod($compensation_method)
     {
-        $allowed_values = array('full_refund', 'prorated_refund', 'none');
-        if (!is_null($compensation_method) && (!in_array($compensation_method, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'compensation_method', must be one of 'full_refund', 'prorated_refund', 'none'");
+        $allowed_values = $this->getCompensationMethodAllowableValues();
+        if (!is_null($compensation_method) && !in_array($compensation_method, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'compensation_method', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['compensation_method'] = $compensation_method;
 

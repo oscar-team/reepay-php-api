@@ -1,6 +1,6 @@
 # Swagger\Client\WebhookApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **disableWebhooks**
-> \Swagger\Client\Model\InlineResponse20032[] disableWebhooks($body)
+> \Swagger\Client\Model\Webhook[] disableWebhooks($body)
 
 Disable webhooks
 
@@ -33,7 +33,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\WebhookApi();
-$body = new \Swagger\Client\Model\Body49(); // \Swagger\Client\Model\Body49 | 
+$body = new \Swagger\Client\Model\WebhookDisableRequest(); // \Swagger\Client\Model\WebhookDisableRequest | 
 
 try {
     $result = $api_instance->disableWebhooks($body);
@@ -48,11 +48,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body49**](../Model/\Swagger\Client\Model\Body49.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\WebhookDisableRequest**](../Model/WebhookDisableRequest.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20032[]**](../Model/InlineResponse20032.md)
+[**\Swagger\Client\Model\Webhook[]**](../Model/Webhook.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhook**
-> \Swagger\Client\Model\InlineResponse20032[] getWebhook($id)
+> \Swagger\Client\Model\Webhook[] getWebhook($id)
 
 Get webhooks
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20032[]**](../Model/InlineResponse20032.md)
+[**\Swagger\Client\Model\Webhook[]**](../Model/Webhook.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookRequests**
-> \Swagger\Client\Model\InlineResponse20033[] getWebhookRequests($id)
+> \Swagger\Client\Model\WebhookRequest[] getWebhookRequests($id)
 
 Get webhook requests
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20033[]**](../Model/InlineResponse20033.md)
+[**\Swagger\Client\Model\WebhookRequest[]**](../Model/WebhookRequest.md)
 
 ### Authorization
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhooks**
-> \Swagger\Client\Model\InlineResponse20032[] getWebhooks($created_before, $size, $state)
+> \Swagger\Client\Model\Webhook[] getWebhooks($created_before, $size, $state)
 
 Get list of webhooks
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20032[]**](../Model/InlineResponse20032.md)
+[**\Swagger\Client\Model\Webhook[]**](../Model/Webhook.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **resendJson**
-> \Swagger\Client\Model\InlineResponse20032[] resendJson($body)
+> \Swagger\Client\Model\Webhook[] resendJson($body)
 
 Re-send webhooks
 
@@ -249,7 +249,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\WebhookApi();
-$body = new \Swagger\Client\Model\Body48(); // \Swagger\Client\Model\Body48 | 
+$body = new \Swagger\Client\Model\WebhookResendRequest(); // \Swagger\Client\Model\WebhookResendRequest | 
 
 try {
     $result = $api_instance->resendJson($body);
@@ -264,11 +264,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body48**](../Model/\Swagger\Client\Model\Body48.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\WebhookResendRequest**](../Model/WebhookResendRequest.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20032[]**](../Model/InlineResponse20032.md)
+[**\Swagger\Client\Model\Webhook[]**](../Model/Webhook.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateWebhooks**
-> \Swagger\Client\Model\InlineResponse20032[] updateWebhooks($body)
+> \Swagger\Client\Model\Webhook[] updateWebhooks($body)
 
 Update and resend webhooks
 
@@ -302,7 +302,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\WebhookApi();
-$body = new \Swagger\Client\Model\Body50(); // \Swagger\Client\Model\Body50 | 
+$body = new \Swagger\Client\Model\WebhookUpdateRequest(); // \Swagger\Client\Model\WebhookUpdateRequest | 
 
 try {
     $result = $api_instance->updateWebhooks($body);
@@ -317,11 +317,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body50**](../Model/\Swagger\Client\Model\Body50.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\WebhookUpdateRequest**](../Model/WebhookUpdateRequest.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20032[]**](../Model/InlineResponse20032.md)
+[**\Swagger\Client\Model\Webhook[]**](../Model/Webhook.md)
 
 ### Authorization
 

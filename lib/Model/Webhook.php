@@ -70,9 +70,35 @@ class Webhook implements ArrayAccess
         'alert_sent' => '\DateTime'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'event' => null,
+        'state' => null,
+        'url' => null,
+        'username' => null,
+        'password' => null,
+        'content' => null,
+        'created' => 'date-time',
+        'success' => 'date-time',
+        'count' => 'int32',
+        'last_fail' => 'date-time',
+        'first_fail' => 'date-time',
+        'alert_count' => 'int32',
+        'alert_sent' => 'date-time'
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -223,9 +249,12 @@ class Webhook implements ArrayAccess
         if ($this->container['state'] === null) {
             $invalid_properties[] = "'state' can't be null";
         }
-        $allowed_values = ["pending", "disabled", "failed", "completed"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'pending', 'disabled', 'failed', 'completed'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['url'] === null) {
@@ -261,7 +290,7 @@ class Webhook implements ArrayAccess
         if ($this->container['state'] === null) {
             return false;
         }
-        $allowed_values = ["pending", "disabled", "failed", "completed"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
@@ -339,9 +368,14 @@ class Webhook implements ArrayAccess
      */
     public function setState($state)
     {
-        $allowed_values = array('pending', 'disabled', 'failed', 'completed');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'pending', 'disabled', 'failed', 'completed'");
+        $allowed_values = $this->getStateAllowableValues();
+        if (!in_array($state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['state'] = $state;
 

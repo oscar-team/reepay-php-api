@@ -64,13 +64,37 @@ class ChangeSubscription implements ArrayAccess
         'partial_period_handling' => 'string',
         'start_date' => 'string',
         'cancel_change' => 'bool',
-        'add_ons' => '\Swagger\Client\Model\V1subscriptionhandleAddOns[]',
+        'add_ons' => '\Swagger\Client\Model\CreateSubscriptionAddOn[]',
         'remove_add_ons' => 'string[]'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'timing' => null,
+        'plan' => null,
+        'amount' => 'int32',
+        'quantity' => 'int32',
+        'billing' => null,
+        'amount_incl_vat' => null,
+        'compensation_method' => null,
+        'partial_period_handling' => null,
+        'start_date' => null,
+        'cancel_change' => null,
+        'add_ons' => null,
+        'remove_add_ons' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -255,9 +279,12 @@ class ChangeSubscription implements ArrayAccess
         if ($this->container['timing'] === null) {
             $invalid_properties[] = "'timing' can't be null";
         }
-        $allowed_values = ["immediate", "renewal"];
+        $allowed_values = $this->getTimingAllowableValues();
         if (!in_array($this->container['timing'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'timing', must be one of 'immediate', 'renewal'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'timing', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if (!is_null($this->container['amount']) && ($this->container['amount'] < 0)) {
@@ -268,19 +295,28 @@ class ChangeSubscription implements ArrayAccess
             $invalid_properties[] = "invalid value for 'quantity', must be bigger than or equal to 1.";
         }
 
-        $allowed_values = ["prorated", "full", "zero_amount", "none"];
+        $allowed_values = $this->getBillingAllowableValues();
         if (!in_array($this->container['billing'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'billing', must be one of 'prorated', 'full', 'zero_amount', 'none'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'billing', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
-        $allowed_values = ["full_refund", "prorated_refund", "none"];
+        $allowed_values = $this->getCompensationMethodAllowableValues();
         if (!in_array($this->container['compensation_method'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'compensation_method', must be one of 'full_refund', 'prorated_refund', 'none'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'compensation_method', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
-        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
+        $allowed_values = $this->getPartialPeriodHandlingAllowableValues();
         if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'partial_period_handling', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         return $invalid_properties;
@@ -298,7 +334,7 @@ class ChangeSubscription implements ArrayAccess
         if ($this->container['timing'] === null) {
             return false;
         }
-        $allowed_values = ["immediate", "renewal"];
+        $allowed_values = $this->getTimingAllowableValues();
         if (!in_array($this->container['timing'], $allowed_values)) {
             return false;
         }
@@ -308,15 +344,15 @@ class ChangeSubscription implements ArrayAccess
         if ($this->container['quantity'] < 1) {
             return false;
         }
-        $allowed_values = ["prorated", "full", "zero_amount", "none"];
+        $allowed_values = $this->getBillingAllowableValues();
         if (!in_array($this->container['billing'], $allowed_values)) {
             return false;
         }
-        $allowed_values = ["full_refund", "prorated_refund", "none"];
+        $allowed_values = $this->getCompensationMethodAllowableValues();
         if (!in_array($this->container['compensation_method'], $allowed_values)) {
             return false;
         }
-        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
+        $allowed_values = $this->getPartialPeriodHandlingAllowableValues();
         if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
             return false;
         }
@@ -340,9 +376,14 @@ class ChangeSubscription implements ArrayAccess
      */
     public function setTiming($timing)
     {
-        $allowed_values = array('immediate', 'renewal');
-        if ((!in_array($timing, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'timing', must be one of 'immediate', 'renewal'");
+        $allowed_values = $this->getTimingAllowableValues();
+        if (!in_array($timing, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'timing', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['timing'] = $timing;
 
@@ -438,9 +479,14 @@ class ChangeSubscription implements ArrayAccess
      */
     public function setBilling($billing)
     {
-        $allowed_values = array('prorated', 'full', 'zero_amount', 'none');
-        if (!is_null($billing) && (!in_array($billing, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'billing', must be one of 'prorated', 'full', 'zero_amount', 'none'");
+        $allowed_values = $this->getBillingAllowableValues();
+        if (!is_null($billing) && !in_array($billing, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'billing', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['billing'] = $billing;
 
@@ -484,9 +530,14 @@ class ChangeSubscription implements ArrayAccess
      */
     public function setCompensationMethod($compensation_method)
     {
-        $allowed_values = array('full_refund', 'prorated_refund', 'none');
-        if (!is_null($compensation_method) && (!in_array($compensation_method, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'compensation_method', must be one of 'full_refund', 'prorated_refund', 'none'");
+        $allowed_values = $this->getCompensationMethodAllowableValues();
+        if (!is_null($compensation_method) && !in_array($compensation_method, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'compensation_method', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['compensation_method'] = $compensation_method;
 
@@ -509,9 +560,14 @@ class ChangeSubscription implements ArrayAccess
      */
     public function setPartialPeriodHandling($partial_period_handling)
     {
-        $allowed_values = array('bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill');
-        if (!is_null($partial_period_handling) && (!in_array($partial_period_handling, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'");
+        $allowed_values = $this->getPartialPeriodHandlingAllowableValues();
+        if (!is_null($partial_period_handling) && !in_array($partial_period_handling, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'partial_period_handling', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['partial_period_handling'] = $partial_period_handling;
 
@@ -562,7 +618,7 @@ class ChangeSubscription implements ArrayAccess
 
     /**
      * Gets add_ons
-     * @return \Swagger\Client\Model\V1subscriptionhandleAddOns[]
+     * @return \Swagger\Client\Model\CreateSubscriptionAddOn[]
      */
     public function getAddOns()
     {
@@ -571,7 +627,7 @@ class ChangeSubscription implements ArrayAccess
 
     /**
      * Sets add_ons
-     * @param \Swagger\Client\Model\V1subscriptionhandleAddOns[] $add_ons Add-ons to attach to subscription
+     * @param \Swagger\Client\Model\CreateSubscriptionAddOn[] $add_ons Add-ons to attach to subscription. The same add-on can only be attached to subscription once unless unique handles are supplied for the subscription add-on.
      * @return $this
      */
     public function setAddOns($add_ons)

@@ -1,6 +1,6 @@
 # Swagger\Client\RefundApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **createRefund**
-> \Swagger\Client\Model\InlineResponse20023 createRefund($body)
+> \Swagger\Client\Model\Refund createRefund($body)
 
 Create refund
 
@@ -29,7 +29,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\RefundApi();
-$body = new \Swagger\Client\Model\Body26(); // \Swagger\Client\Model\Body26 | 
+$body = new \Swagger\Client\Model\CreateRefund(); // \Swagger\Client\Model\CreateRefund | 
 
 try {
     $result = $api_instance->createRefund($body);
@@ -44,11 +44,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body26**](../Model/\Swagger\Client\Model\Body26.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\CreateRefund**](../Model/CreateRefund.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20023**](../Model/InlineResponse20023.md)
+[**\Swagger\Client\Model\Refund**](../Model/Refund.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRefund**
-> \Swagger\Client\Model\InlineResponse20023 getRefund($id)
+> \Swagger\Client\Model\Refund getRefund($id)
 
 Get refund
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20023**](../Model/InlineResponse20023.md)
+[**\Swagger\Client\Model\Refund**](../Model/Refund.md)
 
 ### Authorization
 

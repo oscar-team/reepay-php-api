@@ -62,12 +62,34 @@ class ErrorResponse implements ArrayAccess
         'timestamp' => '\DateTime',
         'http_status' => 'int',
         'http_reason' => 'string',
-        'request_id' => 'string'
+        'request_id' => 'string',
+        'transaction_error' => 'string'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'code' => 'int32',
+        'error' => null,
+        'message' => null,
+        'path' => null,
+        'timestamp' => 'date-time',
+        'http_status' => 'int32',
+        'http_reason' => null,
+        'request_id' => null,
+        'transaction_error' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -82,7 +104,8 @@ class ErrorResponse implements ArrayAccess
         'timestamp' => 'timestamp',
         'http_status' => 'http_status',
         'http_reason' => 'http_reason',
-        'request_id' => 'request_id'
+        'request_id' => 'request_id',
+        'transaction_error' => 'transaction_error'
     ];
 
 
@@ -98,7 +121,8 @@ class ErrorResponse implements ArrayAccess
         'timestamp' => 'setTimestamp',
         'http_status' => 'setHttpStatus',
         'http_reason' => 'setHttpReason',
-        'request_id' => 'setRequestId'
+        'request_id' => 'setRequestId',
+        'transaction_error' => 'setTransactionError'
     ];
 
 
@@ -114,7 +138,8 @@ class ErrorResponse implements ArrayAccess
         'timestamp' => 'getTimestamp',
         'http_status' => 'getHttpStatus',
         'http_reason' => 'getHttpReason',
-        'request_id' => 'getRequestId'
+        'request_id' => 'getRequestId',
+        'transaction_error' => 'getTransactionError'
     ];
 
     public static function attributeMap()
@@ -156,6 +181,7 @@ class ErrorResponse implements ArrayAccess
         $this->container['http_status'] = isset($data['http_status']) ? $data['http_status'] : null;
         $this->container['http_reason'] = isset($data['http_reason']) ? $data['http_reason'] : null;
         $this->container['request_id'] = isset($data['request_id']) ? $data['request_id'] : null;
+        $this->container['transaction_error'] = isset($data['transaction_error']) ? $data['transaction_error'] : null;
     }
 
     /**
@@ -411,6 +437,27 @@ class ErrorResponse implements ArrayAccess
     public function setRequestId($request_id)
     {
         $this->container['request_id'] = $request_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets transaction_error
+     * @return string
+     */
+    public function getTransactionError()
+    {
+        return $this->container['transaction_error'];
+    }
+
+    /**
+     * Sets transaction_error
+     * @param string $transaction_error Optional transaction error in the case the request involved a transaction processing. See [transaction errors](https://docs.reepay.com/api/#transaction-errors).
+     * @return $this
+     */
+    public function setTransactionError($transaction_error)
+    {
+        $this->container['transaction_error'] = $transaction_error;
 
         return $this;
     }

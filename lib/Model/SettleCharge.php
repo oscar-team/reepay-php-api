@@ -57,12 +57,28 @@ class SettleCharge implements ArrayAccess
         'key' => 'string',
         'amount' => 'int',
         'ordertext' => 'string',
-        'order_lines' => '\Swagger\Client\Model\V1chargeOrderLines[]'
+        'order_lines' => '\Swagger\Client\Model\CreateOrderLine[]'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'key' => null,
+        'amount' => 'int32',
+        'ordertext' => null,
+        'order_lines' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -239,7 +255,7 @@ class SettleCharge implements ArrayAccess
 
     /**
      * Gets order_lines
-     * @return \Swagger\Client\Model\V1chargeOrderLines[]
+     * @return \Swagger\Client\Model\CreateOrderLine[]
      */
     public function getOrderLines()
     {
@@ -248,7 +264,7 @@ class SettleCharge implements ArrayAccess
 
     /**
      * Sets order_lines
-     * @param \Swagger\Client\Model\V1chargeOrderLines[] $order_lines Optional new order lines to replace old order lines for the charge. The order lines controls the amount. The new amount must be less than or equal to the authorized amount.
+     * @param \Swagger\Client\Model\CreateOrderLine[] $order_lines Optional new order lines to replace old order lines for the charge. The order lines controls the amount. The new amount must be less than or equal to the authorized amount.
      * @return $this
      */
     public function setOrderLines($order_lines)

@@ -108,16 +108,87 @@ class Subscription implements ArrayAccess
         'pending_credit_amount' => 'int',
         'transferred_credits' => 'int',
         'transferred_credit_amount' => 'int',
-        'hosted_page_links' => '\Swagger\Client\Model\InlineResponse20025HostedPageLinks',
+        'hosted_page_links' => '\Swagger\Client\Model\SubscriptionLinks',
         'subscription_discounts' => 'string[]',
-        'pending_change' => '\Swagger\Client\Model\InlineResponse20025PendingChange',
-        'subscription_changes' => '\Swagger\Client\Model\InlineResponse20025PendingChange[]',
+        'pending_change' => '\Swagger\Client\Model\SubscriptionChange',
+        'subscription_changes' => '\Swagger\Client\Model\SubscriptionChange[]',
         'subscription_add_ons' => 'string[]'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'handle' => null,
+        'customer' => null,
+        'plan' => null,
+        'state' => null,
+        'test' => null,
+        'amount' => 'int32',
+        'quantity' => 'int32',
+        'expires' => 'date-time',
+        'reactivated' => 'date-time',
+        'timezone' => null,
+        'created' => 'date-time',
+        'renewing' => null,
+        'plan_version' => 'int32',
+        'amount_incl_vat' => null,
+        'start_date' => 'date-time',
+        'end_date' => 'date-time',
+        'grace_duration' => 'int64',
+        'current_period_start' => 'date-time',
+        'next_period_start' => 'date-time',
+        'first_period_start' => 'date-time',
+        'last_period_start' => 'date-time',
+        'trial_start' => 'date-time',
+        'trial_end' => 'date-time',
+        'is_cancelled' => null,
+        'in_trial' => null,
+        'has_started' => null,
+        'renewal_count' => 'int32',
+        'cancelled_date' => 'date-time',
+        'expired_date' => 'date-time',
+        'expire_reason' => null,
+        'on_hold_date' => 'date-time',
+        'on_hold_reason' => null,
+        'payment_method_added' => null,
+        'scheduled_plan_change' => null,
+        'reminder_email_sent' => 'date-time',
+        'failed_invoices' => 'int32',
+        'failed_amount' => 'int32',
+        'cancelled_invoices' => 'int32',
+        'cancelled_amount' => 'int32',
+        'pending_invoices' => 'int32',
+        'pending_amount' => 'int32',
+        'dunning_invoices' => 'int32',
+        'dunning_amount' => 'int32',
+        'settled_invoices' => 'int32',
+        'settled_amount' => 'int32',
+        'refunded_amount' => 'int32',
+        'pending_additional_costs' => 'int32',
+        'pending_additional_cost_amount' => 'int32',
+        'transferred_additional_costs' => 'int32',
+        'transferred_additional_cost_amount' => 'int32',
+        'pending_credits' => 'int32',
+        'pending_credit_amount' => 'int32',
+        'transferred_credits' => 'int32',
+        'transferred_credit_amount' => 'int32',
+        'hosted_page_links' => null,
+        'subscription_discounts' => null,
+        'pending_change' => null,
+        'subscription_changes' => null,
+        'subscription_add_ons' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -481,9 +552,12 @@ class Subscription implements ArrayAccess
         if ($this->container['state'] === null) {
             $invalid_properties[] = "'state' can't be null";
         }
-        $allowed_values = ["active", "expired", "on_hold"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'expired', 'on_hold'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['test'] === null) {
@@ -523,14 +597,20 @@ class Subscription implements ArrayAccess
             $invalid_properties[] = "invalid value for 'renewal_count', must be bigger than or equal to 0.";
         }
 
-        $allowed_values = ["dunning", "cancelled", "ondemand", "fixed"];
+        $allowed_values = $this->getExpireReasonAllowableValues();
         if (!in_array($this->container['expire_reason'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'expire_reason', must be one of 'dunning', 'cancelled', 'ondemand', 'fixed'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'expire_reason', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
-        $allowed_values = ["dunning", "ondemand"];
+        $allowed_values = $this->getOnHoldReasonAllowableValues();
         if (!in_array($this->container['on_hold_reason'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'on_hold_reason', must be one of 'dunning', 'ondemand'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'on_hold_reason', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['payment_method_added'] === null) {
@@ -596,6 +676,9 @@ class Subscription implements ArrayAccess
         if ($this->container['transferred_credit_amount'] === null) {
             $invalid_properties[] = "'transferred_credit_amount' can't be null";
         }
+        if ($this->container['hosted_page_links'] === null) {
+            $invalid_properties[] = "'hosted_page_links' can't be null";
+        }
         return $invalid_properties;
     }
 
@@ -620,7 +703,7 @@ class Subscription implements ArrayAccess
         if ($this->container['state'] === null) {
             return false;
         }
-        $allowed_values = ["active", "expired", "on_hold"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
@@ -660,11 +743,11 @@ class Subscription implements ArrayAccess
         if ($this->container['renewal_count'] < 0) {
             return false;
         }
-        $allowed_values = ["dunning", "cancelled", "ondemand", "fixed"];
+        $allowed_values = $this->getExpireReasonAllowableValues();
         if (!in_array($this->container['expire_reason'], $allowed_values)) {
             return false;
         }
-        $allowed_values = ["dunning", "ondemand"];
+        $allowed_values = $this->getOnHoldReasonAllowableValues();
         if (!in_array($this->container['on_hold_reason'], $allowed_values)) {
             return false;
         }
@@ -729,6 +812,9 @@ class Subscription implements ArrayAccess
             return false;
         }
         if ($this->container['transferred_credit_amount'] === null) {
+            return false;
+        }
+        if ($this->container['hosted_page_links'] === null) {
             return false;
         }
         return true;
@@ -814,9 +900,14 @@ class Subscription implements ArrayAccess
      */
     public function setState($state)
     {
-        $allowed_values = array('active', 'expired', 'on_hold');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'expired', 'on_hold'");
+        $allowed_values = $this->getStateAllowableValues();
+        if (!in_array($state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['state'] = $state;
 
@@ -1369,9 +1460,14 @@ class Subscription implements ArrayAccess
      */
     public function setExpireReason($expire_reason)
     {
-        $allowed_values = array('dunning', 'cancelled', 'ondemand', 'fixed');
-        if (!is_null($expire_reason) && (!in_array($expire_reason, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'expire_reason', must be one of 'dunning', 'cancelled', 'ondemand', 'fixed'");
+        $allowed_values = $this->getExpireReasonAllowableValues();
+        if (!is_null($expire_reason) && !in_array($expire_reason, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'expire_reason', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['expire_reason'] = $expire_reason;
 
@@ -1415,9 +1511,14 @@ class Subscription implements ArrayAccess
      */
     public function setOnHoldReason($on_hold_reason)
     {
-        $allowed_values = array('dunning', 'ondemand');
-        if (!is_null($on_hold_reason) && (!in_array($on_hold_reason, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'on_hold_reason', must be one of 'dunning', 'ondemand'");
+        $allowed_values = $this->getOnHoldReasonAllowableValues();
+        if (!is_null($on_hold_reason) && !in_array($on_hold_reason, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'on_hold_reason', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['on_hold_reason'] = $on_hold_reason;
 
@@ -1888,7 +1989,7 @@ class Subscription implements ArrayAccess
 
     /**
      * Gets hosted_page_links
-     * @return \Swagger\Client\Model\InlineResponse20025HostedPageLinks
+     * @return \Swagger\Client\Model\SubscriptionLinks
      */
     public function getHostedPageLinks()
     {
@@ -1897,7 +1998,7 @@ class Subscription implements ArrayAccess
 
     /**
      * Sets hosted_page_links
-     * @param \Swagger\Client\Model\InlineResponse20025HostedPageLinks $hosted_page_links
+     * @param \Swagger\Client\Model\SubscriptionLinks $hosted_page_links Links to hosted pages relating to subscription
      * @return $this
      */
     public function setHostedPageLinks($hosted_page_links)
@@ -1930,7 +2031,7 @@ class Subscription implements ArrayAccess
 
     /**
      * Gets pending_change
-     * @return \Swagger\Client\Model\InlineResponse20025PendingChange
+     * @return \Swagger\Client\Model\SubscriptionChange
      */
     public function getPendingChange()
     {
@@ -1939,7 +2040,7 @@ class Subscription implements ArrayAccess
 
     /**
      * Sets pending_change
-     * @param \Swagger\Client\Model\InlineResponse20025PendingChange $pending_change
+     * @param \Swagger\Client\Model\SubscriptionChange $pending_change Pending subscription change to be applied at next renewal
      * @return $this
      */
     public function setPendingChange($pending_change)
@@ -1951,7 +2052,7 @@ class Subscription implements ArrayAccess
 
     /**
      * Gets subscription_changes
-     * @return \Swagger\Client\Model\InlineResponse20025PendingChange[]
+     * @return \Swagger\Client\Model\SubscriptionChange[]
      */
     public function getSubscriptionChanges()
     {
@@ -1960,7 +2061,7 @@ class Subscription implements ArrayAccess
 
     /**
      * Sets subscription_changes
-     * @param \Swagger\Client\Model\InlineResponse20025PendingChange[] $subscription_changes List of subscription changes both at most one pending and previously applied
+     * @param \Swagger\Client\Model\SubscriptionChange[] $subscription_changes List of subscription changes both at most one pending and previously applied
      * @return $this
      */
     public function setSubscriptionChanges($subscription_changes)

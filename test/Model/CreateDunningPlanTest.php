@@ -47,7 +47,6 @@ class CreateDunningPlanTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CreateDunningPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CreateDunningPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CreateDunningPlanTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class CreateDunningPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateDunningPlan()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class CreateDunningPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class CreateDunningPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySchedule()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class CreateDunningPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHandle()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class CreateDunningPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDefaultPlan()
     {
-
     }
 
     /**
@@ -119,7 +110,5 @@ class CreateDunningPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFinalSubscriptionAction()
     {
-
     }
-
 }

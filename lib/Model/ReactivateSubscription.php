@@ -58,9 +58,23 @@ class ReactivateSubscription implements ArrayAccess
         'partial_period_handling' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'start_date' => null,
+        'partial_period_handling' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -154,9 +168,12 @@ class ReactivateSubscription implements ArrayAccess
     {
         $invalid_properties = [];
 
-        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
+        $allowed_values = $this->getPartialPeriodHandlingAllowableValues();
         if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'partial_period_handling', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         return $invalid_properties;
@@ -171,7 +188,7 @@ class ReactivateSubscription implements ArrayAccess
     public function valid()
     {
 
-        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
+        $allowed_values = $this->getPartialPeriodHandlingAllowableValues();
         if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
             return false;
         }
@@ -216,9 +233,14 @@ class ReactivateSubscription implements ArrayAccess
      */
     public function setPartialPeriodHandling($partial_period_handling)
     {
-        $allowed_values = array('bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill');
-        if (!is_null($partial_period_handling) && (!in_array($partial_period_handling, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'");
+        $allowed_values = $this->getPartialPeriodHandlingAllowableValues();
+        if (!is_null($partial_period_handling) && !in_array($partial_period_handling, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'partial_period_handling', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['partial_period_handling'] = $partial_period_handling;
 

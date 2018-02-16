@@ -59,9 +59,24 @@ class CancelSubscription implements ArrayAccess
         'expire_at' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'notice_periods' => 'int32',
+        'notice_periods_after_current' => null,
+        'expire_at' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

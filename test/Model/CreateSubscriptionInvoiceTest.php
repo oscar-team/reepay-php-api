@@ -47,7 +47,6 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateSubscriptionInvoice()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHandle()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyInstant()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDue()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySettle()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPlanManual()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCollectAdditionalCosts()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCollectCredit()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyApplyDiscounts()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOrderLines()
     {
-
     }
 
     /**
@@ -159,7 +145,5 @@ class CreateSubscriptionInvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyManualTransfer()
     {
-
     }
-
 }

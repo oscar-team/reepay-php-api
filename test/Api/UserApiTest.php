@@ -49,7 +49,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDeleteUser()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetUser()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetUsers()
     {
-
     }
 
     /**
@@ -117,7 +110,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testInviteUser()
     {
-
     }
 
     /**
@@ -128,7 +120,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testInviteUserAccept()
     {
-
     }
 
     /**
@@ -139,7 +130,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testInviteUserGet()
     {
-
     }
 
     /**
@@ -150,7 +140,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testResetPassword()
     {
-
     }
 
     /**
@@ -161,7 +150,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testResetPasswordWithToken()
     {
-
     }
 
     /**
@@ -172,7 +160,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testUpdateAuth()
     {
-
     }
 
     /**
@@ -183,7 +170,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testUpdatePassword()
     {
-
     }
 
     /**
@@ -194,7 +180,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testUpdateUser()
     {
-
     }
 
     /**
@@ -205,7 +190,6 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testVerifyEmail()
     {
-
     }
 
     /**
@@ -216,7 +200,5 @@ class UserApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testVerifyEmailRequest()
     {
-
     }
-
 }

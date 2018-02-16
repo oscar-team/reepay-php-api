@@ -47,7 +47,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testUpdateAccount()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHandle()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCurrency()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAddress()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAddress2()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCity()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyLocale()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTimezone()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCountry()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyEmail()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPhone()
     {
-
     }
 
     /**
@@ -175,7 +159,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVat()
     {
-
     }
 
     /**
@@ -183,7 +166,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyWebsite()
     {
-
     }
 
     /**
@@ -191,7 +173,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyLogo()
     {
-
     }
 
     /**
@@ -199,7 +180,6 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPostalCode()
     {
-
     }
 
     /**
@@ -207,7 +187,5 @@ class UpdateAccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDefaultVat()
     {
-
     }
-
 }

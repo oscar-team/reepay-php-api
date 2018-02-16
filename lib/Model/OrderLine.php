@@ -75,9 +75,40 @@ class OrderLine implements ArrayAccess
         'discounted_order_line' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'ordertext' => null,
+        'amount' => 'int32',
+        'vat' => 'float',
+        'quantity' => 'int32',
+        'origin' => null,
+        'timestamp' => 'date-time',
+        'discounted_amount' => 'int32',
+        'amount_vat' => 'int32',
+        'amount_ex_vat' => 'int32',
+        'unit_amount' => 'int32',
+        'unit_amount_vat' => 'int32',
+        'unit_amount_ex_vat' => 'int32',
+        'amount_defined_incl_vat' => null,
+        'origin_handle' => null,
+        'period_from' => 'date-time',
+        'period_to' => 'date-time',
+        'discount_percentage' => 'int32',
+        'discounted_order_line' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -265,9 +296,12 @@ class OrderLine implements ArrayAccess
         if ($this->container['origin'] === null) {
             $invalid_properties[] = "'origin' can't be null";
         }
-        $allowed_values = ["plan", "add_on", "ondemand", "additional_cost", "credit", "discount"];
+        $allowed_values = $this->getOriginAllowableValues();
         if (!in_array($this->container['origin'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'origin', must be one of 'plan', 'add_on', 'ondemand', 'additional_cost', 'credit', 'discount'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'origin', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['timestamp'] === null) {
@@ -324,7 +358,7 @@ class OrderLine implements ArrayAccess
         if ($this->container['origin'] === null) {
             return false;
         }
-        $allowed_values = ["plan", "add_on", "ondemand", "additional_cost", "credit", "discount"];
+        $allowed_values = $this->getOriginAllowableValues();
         if (!in_array($this->container['origin'], $allowed_values)) {
             return false;
         }
@@ -479,9 +513,14 @@ class OrderLine implements ArrayAccess
      */
     public function setOrigin($origin)
     {
-        $allowed_values = array('plan', 'add_on', 'ondemand', 'additional_cost', 'credit', 'discount');
-        if ((!in_array($origin, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'origin', must be one of 'plan', 'add_on', 'ondemand', 'additional_cost', 'credit', 'discount'");
+        $allowed_values = $this->getOriginAllowableValues();
+        if (!in_array($origin, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'origin', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['origin'] = $origin;
 

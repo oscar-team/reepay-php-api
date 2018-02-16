@@ -67,9 +67,32 @@ class UpdateCustomer implements ArrayAccess
         'postal_code' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'email' => null,
+        'address' => null,
+        'address2' => null,
+        'city' => null,
+        'country' => null,
+        'phone' => null,
+        'company' => null,
+        'vat' => null,
+        'first_name' => null,
+        'last_name' => null,
+        'postal_code' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

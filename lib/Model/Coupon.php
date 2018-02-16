@@ -70,9 +70,35 @@ class Coupon implements ArrayAccess
         'expire_reason' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'handle' => null,
+        'code' => null,
+        'discount' => null,
+        'name' => null,
+        'state' => null,
+        'type' => null,
+        'redemptions' => 'int32',
+        'expired' => 'date-time',
+        'created' => 'date-time',
+        'all_plans' => null,
+        'eligible_plans' => null,
+        'max_redemptions' => 'int32',
+        'valid_until' => 'date-time',
+        'expire_reason' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -259,17 +285,23 @@ class Coupon implements ArrayAccess
         if ($this->container['state'] === null) {
             $invalid_properties[] = "'state' can't be null";
         }
-        $allowed_values = ["active", "deleted", "expired", "generating"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'deleted', 'expired', 'generating'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['type'] === null) {
             $invalid_properties[] = "'type' can't be null";
         }
-        $allowed_values = ["single", "set"];
+        $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'type', must be one of 'single', 'set'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'type', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['redemptions'] === null) {
@@ -282,9 +314,12 @@ class Coupon implements ArrayAccess
             $invalid_properties[] = "invalid value for 'max_redemptions', must be bigger than or equal to 0.";
         }
 
-        $allowed_values = ["early", "valid_until", "max"];
+        $allowed_values = $this->getExpireReasonAllowableValues();
         if (!in_array($this->container['expire_reason'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'expire_reason', must be one of 'early', 'valid_until', 'max'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'expire_reason', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         return $invalid_properties;
@@ -314,14 +349,14 @@ class Coupon implements ArrayAccess
         if ($this->container['state'] === null) {
             return false;
         }
-        $allowed_values = ["active", "deleted", "expired", "generating"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
         if ($this->container['type'] === null) {
             return false;
         }
-        $allowed_values = ["single", "set"];
+        $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
@@ -334,7 +369,7 @@ class Coupon implements ArrayAccess
         if ($this->container['max_redemptions'] < 0) {
             return false;
         }
-        $allowed_values = ["early", "valid_until", "max"];
+        $allowed_values = $this->getExpireReasonAllowableValues();
         if (!in_array($this->container['expire_reason'], $allowed_values)) {
             return false;
         }
@@ -442,9 +477,14 @@ class Coupon implements ArrayAccess
      */
     public function setState($state)
     {
-        $allowed_values = array('active', 'deleted', 'expired', 'generating');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'deleted', 'expired', 'generating'");
+        $allowed_values = $this->getStateAllowableValues();
+        if (!in_array($state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['state'] = $state;
 
@@ -467,9 +507,14 @@ class Coupon implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('single', 'set');
-        if ((!in_array($type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'single', 'set'");
+        $allowed_values = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'type', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['type'] = $type;
 
@@ -644,9 +689,14 @@ class Coupon implements ArrayAccess
      */
     public function setExpireReason($expire_reason)
     {
-        $allowed_values = array('early', 'valid_until', 'max');
-        if (!is_null($expire_reason) && (!in_array($expire_reason, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'expire_reason', must be one of 'early', 'valid_until', 'max'");
+        $allowed_values = $this->getExpireReasonAllowableValues();
+        if (!is_null($expire_reason) && !in_array($expire_reason, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'expire_reason', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['expire_reason'] = $expire_reason;
 

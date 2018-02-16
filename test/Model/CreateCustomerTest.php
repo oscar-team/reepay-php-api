@@ -47,7 +47,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateCustomer()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyEmail()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAddress()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAddress2()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCity()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCountry()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPhone()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCompany()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVat()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHandle()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTest()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFirstName()
     {
-
     }
 
     /**
@@ -175,7 +159,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyLastName()
     {
-
     }
 
     /**
@@ -183,7 +166,6 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPostalCode()
     {
-
     }
 
     /**
@@ -191,7 +173,5 @@ class CreateCustomerTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyGenerateHandle()
     {
-
     }
-
 }

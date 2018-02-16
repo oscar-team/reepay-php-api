@@ -47,7 +47,6 @@ class CreateOrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CreateOrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CreateOrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CreateOrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class CreateOrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateOrderLine()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class CreateOrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOrdertext()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class CreateOrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class CreateOrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVat()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class CreateOrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyQuantity()
     {
-
     }
 
     /**
@@ -119,7 +110,5 @@ class CreateOrderLineTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmountInclVat()
     {
-
     }
-
 }

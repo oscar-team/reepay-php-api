@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **token** | **string** | Authentication token to use in X-Auth-Token | 
-**user** | [**\Swagger\Client\Model\InlineResponse2009User**](InlineResponse2009User.md) |  | [optional] 
-**account** | [**\Swagger\Client\Model\InlineResponse2009Account**](InlineResponse2009Account.md) |  | [optional] 
-**organisation** | [**\Swagger\Client\Model\InlineResponse2009Organisation**](InlineResponse2009Organisation.md) |  | [optional] 
-**organisations** | [**\Swagger\Client\Model\InlineResponse2009Organisations[]**](InlineResponse2009Organisations.md) | List of organisations for user | 
+**user** | [**\Swagger\Client\Model\User**](User.md) | Logged in user | 
+**account** | [**\Swagger\Client\Model\AccountLogin**](AccountLogin.md) | Account logged into | 
+**organisation** | [**\Swagger\Client\Model\Organisation**](Organisation.md) | Organisation for account logged into | 
+**organisations** | [**\Swagger\Client\Model\OrganisationLogin[]**](OrganisationLogin.md) | List of organisations for user | 
 **groups** | **string[]** | List user groups | 
 **permissions** | **string[]** | List user permissions | 
 **token_ttl** | **int** | Token time-to-live in minutes | 

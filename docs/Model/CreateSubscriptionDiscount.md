@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **handle** | **string** | Per subscription unique handle for the subscription discount. | 
 **discount** | **string** | Discount for subscription discount | 
-**name** | **string** | Optional name overrding discount name | [optional] 
+**name** | **string** | Optional name overriding discount name | [optional] 
 **description** | **string** | Optional description overriding discount description | [optional] 
 **amount** | **int** | Optional overriding fixed amount from discount | [optional] 
 **percentage** | **int** | Optional percentage overriding percentage from discount | [optional] 

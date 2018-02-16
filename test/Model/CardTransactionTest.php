@@ -47,7 +47,6 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testCardTransaction()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCard()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyError()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFingerprint()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRefTransaction()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyGwId()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyLastFailed()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFirstFailed()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyErrorState()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCardType()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyExpDate()
     {
-
     }
 
     /**
@@ -167,7 +152,5 @@ class CardTransactionTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyMaskedCard()
     {
-
     }
-
 }

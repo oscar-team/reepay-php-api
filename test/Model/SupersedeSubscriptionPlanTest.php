@@ -47,7 +47,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testSupersedeSubscriptionPlan()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDescription()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVat()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyQuantity()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPrepaid()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDunningPlan()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRenewalReminderEmailDays()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTrialReminderEmailDays()
     {
-
     }
 
     /**
@@ -159,7 +145,34 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPartialPeriodHandling()
     {
+    }
 
+    /**
+     * Test attribute "include_zero_amount"
+     */
+    public function testPropertyIncludeZeroAmount()
+    {
+    }
+
+    /**
+     * Test attribute "setup_fee"
+     */
+    public function testPropertySetupFee()
+    {
+    }
+
+    /**
+     * Test attribute "setup_fee_text"
+     */
+    public function testPropertySetupFeeText()
+    {
+    }
+
+    /**
+     * Test attribute "setup_fee_handling"
+     */
+    public function testPropertySetupFeeHandling()
+    {
     }
 
     /**
@@ -167,7 +180,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmountInclVat()
     {
-
     }
 
     /**
@@ -175,7 +187,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixedCount()
     {
-
     }
 
     /**
@@ -183,7 +194,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixedLifeTimeUnit()
     {
-
     }
 
     /**
@@ -191,7 +201,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixedLifeTimeLength()
     {
-
     }
 
     /**
@@ -199,7 +208,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTrialIntervalUnit()
     {
-
     }
 
     /**
@@ -207,7 +215,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTrialIntervalLength()
     {
-
     }
 
     /**
@@ -215,7 +222,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyIntervalLength()
     {
-
     }
 
     /**
@@ -223,7 +229,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyScheduleType()
     {
-
     }
 
     /**
@@ -231,7 +236,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyScheduleFixedDay()
     {
-
     }
 
     /**
@@ -239,7 +243,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyBaseMonth()
     {
-
     }
 
     /**
@@ -247,7 +250,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNoticePeriods()
     {
-
     }
 
     /**
@@ -255,7 +257,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNoticePeriodsAfterCurrent()
     {
-
     }
 
     /**
@@ -263,7 +264,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixationPeriods()
     {
-
     }
 
     /**
@@ -271,7 +271,6 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixationPeriodsFull()
     {
-
     }
 
     /**
@@ -279,7 +278,5 @@ class SupersedeSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySupersedeMode()
     {
-
     }
-
 }

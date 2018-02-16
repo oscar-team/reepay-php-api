@@ -58,13 +58,31 @@ class CreateRefund implements ArrayAccess
         'key' => 'string',
         'amount' => 'int',
         'text' => 'string',
-        'note_lines' => '\Swagger\Client\Model\V1refundNoteLines[]',
-        'manual_transfer' => '\Swagger\Client\Model\V1refundManualTransfer'
+        'note_lines' => '\Swagger\Client\Model\CreateCreditNoteLine[]',
+        'manual_transfer' => '\Swagger\Client\Model\ManualRefundTransfer'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'invoice' => null,
+        'key' => null,
+        'amount' => 'int32',
+        'text' => null,
+        'note_lines' => null,
+        'manual_transfer' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -276,7 +294,7 @@ class CreateRefund implements ArrayAccess
 
     /**
      * Gets note_lines
-     * @return \Swagger\Client\Model\V1refundNoteLines[]
+     * @return \Swagger\Client\Model\CreateCreditNoteLine[]
      */
     public function getNoteLines()
     {
@@ -285,7 +303,7 @@ class CreateRefund implements ArrayAccess
 
     /**
      * Sets note_lines
-     * @param \Swagger\Client\Model\V1refundNoteLines[] $note_lines Refund credit note lines to give detailed information for credit note. Either this or `amount` must be provided.
+     * @param \Swagger\Client\Model\CreateCreditNoteLine[] $note_lines Refund credit note lines to give detailed information for credit note. Either this or `amount` must be provided.
      * @return $this
      */
     public function setNoteLines($note_lines)
@@ -297,7 +315,7 @@ class CreateRefund implements ArrayAccess
 
     /**
      * Gets manual_transfer
-     * @return \Swagger\Client\Model\V1refundManualTransfer
+     * @return \Swagger\Client\Model\ManualRefundTransfer
      */
     public function getManualTransfer()
     {
@@ -306,7 +324,7 @@ class CreateRefund implements ArrayAccess
 
     /**
      * Sets manual_transfer
-     * @param \Swagger\Client\Model\V1refundManualTransfer $manual_transfer
+     * @param \Swagger\Client\Model\ManualRefundTransfer $manual_transfer Optional manual transfer. If given no refund will be performed on potential online settled transaction like card transaction.
      * @return $this
      */
     public function setManualTransfer($manual_transfer)

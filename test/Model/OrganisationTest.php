@@ -47,7 +47,6 @@ class OrganisationTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class OrganisationTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class OrganisationTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class OrganisationTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class OrganisationTest extends \PHPUnit_Framework_TestCase
      */
     public function testOrganisation()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class OrganisationTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySubdomain()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class OrganisationTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class OrganisationTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class OrganisationTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyState()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class OrganisationTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreated()
     {
-
     }
 
     /**
@@ -127,7 +117,5 @@ class OrganisationTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyLiveDate()
     {
-
     }
-
 }

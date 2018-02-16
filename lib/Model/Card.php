@@ -72,9 +72,37 @@ class Card implements ArrayAccess
         'error_state' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'state' => null,
+        'customer' => null,
+        'failed' => 'date-time',
+        'created' => 'date-time',
+        'fingerprint' => null,
+        'reactivated' => 'date-time',
+        'gw_ref' => null,
+        'card_type' => null,
+        'exp_date' => null,
+        'masked_card' => null,
+        'last_success' => 'date-time',
+        'last_failed' => 'date-time',
+        'first_fail' => 'date-time',
+        'error_code' => null,
+        'error_state' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -280,9 +308,12 @@ class Card implements ArrayAccess
         if ($this->container['state'] === null) {
             $invalid_properties[] = "'state' can't be null";
         }
-        $allowed_values = ["active", "inactivated", "failed"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'inactivated', 'failed'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['customer'] === null) {
@@ -297,14 +328,20 @@ class Card implements ArrayAccess
         if ($this->container['card_type'] === null) {
             $invalid_properties[] = "'card_type' can't be null";
         }
-        $allowed_values = ["unknown", "visa", "mc", "dankort", "visa_dk", "visa_elec", "maestro", "laser", "amex", "diners", "discover", "jcb"];
+        $allowed_values = $this->getCardTypeAllowableValues();
         if (!in_array($this->container['card_type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'card_type', must be one of 'unknown', 'visa', 'mc', 'dankort', 'visa_dk', 'visa_elec', 'maestro', 'laser', 'amex', 'diners', 'discover', 'jcb'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'card_type', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
-        $allowed_values = ["pending", "soft_declined", "hard_declined", "processing_error"];
+        $allowed_values = $this->getErrorStateAllowableValues();
         if (!in_array($this->container['error_state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'error_state', must be one of 'pending', 'soft_declined', 'hard_declined', 'processing_error'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'error_state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         return $invalid_properties;
@@ -325,7 +362,7 @@ class Card implements ArrayAccess
         if ($this->container['state'] === null) {
             return false;
         }
-        $allowed_values = ["active", "inactivated", "failed"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
@@ -341,11 +378,11 @@ class Card implements ArrayAccess
         if ($this->container['card_type'] === null) {
             return false;
         }
-        $allowed_values = ["unknown", "visa", "mc", "dankort", "visa_dk", "visa_elec", "maestro", "laser", "amex", "diners", "discover", "jcb"];
+        $allowed_values = $this->getCardTypeAllowableValues();
         if (!in_array($this->container['card_type'], $allowed_values)) {
             return false;
         }
-        $allowed_values = ["pending", "soft_declined", "hard_declined", "processing_error"];
+        $allowed_values = $this->getErrorStateAllowableValues();
         if (!in_array($this->container['error_state'], $allowed_values)) {
             return false;
         }
@@ -390,9 +427,14 @@ class Card implements ArrayAccess
      */
     public function setState($state)
     {
-        $allowed_values = array('active', 'inactivated', 'failed');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'inactivated', 'failed'");
+        $allowed_values = $this->getStateAllowableValues();
+        if (!in_array($state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['state'] = $state;
 
@@ -541,9 +583,14 @@ class Card implements ArrayAccess
      */
     public function setCardType($card_type)
     {
-        $allowed_values = array('unknown', 'visa', 'mc', 'dankort', 'visa_dk', 'visa_elec', 'maestro', 'laser', 'amex', 'diners', 'discover', 'jcb');
-        if ((!in_array($card_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'card_type', must be one of 'unknown', 'visa', 'mc', 'dankort', 'visa_dk', 'visa_elec', 'maestro', 'laser', 'amex', 'diners', 'discover', 'jcb'");
+        $allowed_values = $this->getCardTypeAllowableValues();
+        if (!in_array($card_type, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'card_type', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['card_type'] = $card_type;
 
@@ -692,9 +739,14 @@ class Card implements ArrayAccess
      */
     public function setErrorState($error_state)
     {
-        $allowed_values = array('pending', 'soft_declined', 'hard_declined', 'processing_error');
-        if (!is_null($error_state) && (!in_array($error_state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'error_state', must be one of 'pending', 'soft_declined', 'hard_declined', 'processing_error'");
+        $allowed_values = $this->getErrorStateAllowableValues();
+        if (!is_null($error_state) && !in_array($error_state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'error_state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['error_state'] = $error_state;
 

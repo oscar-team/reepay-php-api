@@ -60,9 +60,25 @@ class CreateCreditNoteLine implements ArrayAccess
         'order_line_id' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'amount' => 'int32',
+        'text' => null,
+        'quantity' => 'int32',
+        'order_line_id' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

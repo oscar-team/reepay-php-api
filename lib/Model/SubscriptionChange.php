@@ -62,13 +62,35 @@ class SubscriptionChange implements ArrayAccess
         'updated' => '\DateTime',
         'created' => '\DateTime',
         'amount_incl_vat' => 'bool',
-        'subscription_add_ons' => '\Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns[]',
+        'subscription_add_ons' => '\Swagger\Client\Model\SubscriptionAddOn[]',
         'remove_add_ons' => 'string[]'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'plan' => null,
+        'amount' => 'int32',
+        'quantity' => 'int32',
+        'pending' => null,
+        'applied' => 'date-time',
+        'updated' => 'date-time',
+        'created' => 'date-time',
+        'amount_incl_vat' => null,
+        'subscription_add_ons' => null,
+        'remove_add_ons' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -398,7 +420,7 @@ class SubscriptionChange implements ArrayAccess
 
     /**
      * Gets subscription_add_ons
-     * @return \Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns[]
+     * @return \Swagger\Client\Model\SubscriptionAddOn[]
      */
     public function getSubscriptionAddOns()
     {
@@ -407,7 +429,7 @@ class SubscriptionChange implements ArrayAccess
 
     /**
      * Sets subscription_add_ons
-     * @param \Swagger\Client\Model\InlineResponse20025PendingChangeSubscriptionAddOns[] $subscription_add_ons List of subscription add-ons to create in change
+     * @param \Swagger\Client\Model\SubscriptionAddOn[] $subscription_add_ons List of subscription add-ons to create in change
      * @return $this
      */
     public function setSubscriptionAddOns($subscription_add_ons)

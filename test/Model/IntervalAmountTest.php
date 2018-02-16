@@ -47,7 +47,6 @@ class IntervalAmountTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class IntervalAmountTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class IntervalAmountTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class IntervalAmountTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class IntervalAmountTest extends \PHPUnit_Framework_TestCase
      */
     public function testIntervalAmount()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class IntervalAmountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFrom()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class IntervalAmountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTo()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class IntervalAmountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -111,7 +103,5 @@ class IntervalAmountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCurrency()
     {
-
     }
-
 }

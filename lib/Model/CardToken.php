@@ -57,9 +57,22 @@ class CardToken implements ArrayAccess
         'card_token' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'card_token' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -164,7 +177,7 @@ class CardToken implements ArrayAccess
 
     /**
      * Sets card_token
-     * @param string $card_token Add card to customer by card token
+     * @param string $card_token Add card to customer by card token (`ct_...`). A card token can be generated with [Reepay Token](https://docs.reepay.com/token/) or [Reepay JS Library](https://docs.reepay.com/js/).
      * @return $this
      */
     public function setCardToken($card_token)

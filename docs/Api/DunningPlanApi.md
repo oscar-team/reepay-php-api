@@ -1,6 +1,6 @@
 # Swagger\Client\DunningPlanApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createDunningPlanJson**
-> \Swagger\Client\Model\InlineResponse20019 createDunningPlanJson($body)
+> \Swagger\Client\Model\DunningPlan createDunningPlanJson($body)
 
 Create dunning plan
 
@@ -32,7 +32,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\DunningPlanApi();
-$body = new \Swagger\Client\Model\Body21(); // \Swagger\Client\Model\Body21 | 
+$body = new \Swagger\Client\Model\CreateDunningPlan(); // \Swagger\Client\Model\CreateDunningPlan | 
 
 try {
     $result = $api_instance->createDunningPlanJson($body);
@@ -47,11 +47,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body21**](../Model/\Swagger\Client\Model\Body21.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\CreateDunningPlan**](../Model/CreateDunningPlan.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
+[**\Swagger\Client\Model\DunningPlan**](../Model/DunningPlan.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteDunningPlan**
-> \Swagger\Client\Model\InlineResponse20019 deleteDunningPlan($handle)
+> \Swagger\Client\Model\DunningPlan deleteDunningPlan($handle)
 
 Delete dunning plan
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
+[**\Swagger\Client\Model\DunningPlan**](../Model/DunningPlan.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDunningPlan**
-> \Swagger\Client\Model\InlineResponse20019 getDunningPlan($handle)
+> \Swagger\Client\Model\DunningPlan getDunningPlan($handle)
 
 Get dunning plan
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
+[**\Swagger\Client\Model\DunningPlan**](../Model/DunningPlan.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDunningPlans**
-> \Swagger\Client\Model\InlineResponse20019[] getDunningPlans()
+> \Swagger\Client\Model\DunningPlan[] getDunningPlans()
 
 Get list of dunning plans
 
@@ -206,7 +206,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20019[]**](../Model/InlineResponse20019.md)
+[**\Swagger\Client\Model\DunningPlan[]**](../Model/DunningPlan.md)
 
 ### Authorization
 
@@ -220,7 +220,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateJson**
-> \Swagger\Client\Model\InlineResponse20019 updateJson($handle, $body)
+> \Swagger\Client\Model\DunningPlan updateJson($handle, $body)
 
 Update dunning plan
 
@@ -241,7 +241,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\DunningPlanApi();
 $handle = "handle_example"; // string | Dunning plan handle
-$body = new \Swagger\Client\Model\Body22(); // \Swagger\Client\Model\Body22 | 
+$body = new \Swagger\Client\Model\UpdateDunningPlan(); // \Swagger\Client\Model\UpdateDunningPlan | 
 
 try {
     $result = $api_instance->updateJson($handle, $body);
@@ -257,11 +257,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Dunning plan handle |
- **body** | [**\Swagger\Client\Model\Body22**](../Model/\Swagger\Client\Model\Body22.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\UpdateDunningPlan**](../Model/UpdateDunningPlan.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20019**](../Model/InlineResponse20019.md)
+[**\Swagger\Client\Model\DunningPlan**](../Model/DunningPlan.md)
 
 ### Authorization
 

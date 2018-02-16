@@ -65,6 +65,10 @@ class CreateSubscriptionPlan implements ArrayAccess
         'renewal_reminder_email_days' => 'int',
         'trial_reminder_email_days' => 'int',
         'partial_period_handling' => 'string',
+        'include_zero_amount' => 'bool',
+        'setup_fee' => 'int',
+        'setup_fee_text' => 'string',
+        'setup_fee_handling' => 'string',
         'amount_incl_vat' => 'bool',
         'fixed_count' => 'int',
         'fixed_life_time_unit' => 'string',
@@ -81,9 +85,50 @@ class CreateSubscriptionPlan implements ArrayAccess
         'fixation_periods_full' => 'bool'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'name' => null,
+        'description' => null,
+        'vat' => 'float',
+        'amount' => 'int32',
+        'quantity' => 'int32',
+        'prepaid' => null,
+        'handle' => null,
+        'dunning_plan' => null,
+        'renewal_reminder_email_days' => 'int32',
+        'trial_reminder_email_days' => 'int32',
+        'partial_period_handling' => null,
+        'include_zero_amount' => null,
+        'setup_fee' => 'int32',
+        'setup_fee_text' => null,
+        'setup_fee_handling' => null,
+        'amount_incl_vat' => null,
+        'fixed_count' => 'int32',
+        'fixed_life_time_unit' => null,
+        'fixed_life_time_length' => 'int32',
+        'trial_interval_unit' => null,
+        'trial_interval_length' => 'int32',
+        'interval_length' => 'int32',
+        'schedule_type' => null,
+        'schedule_fixed_day' => 'int32',
+        'base_month' => 'int32',
+        'notice_periods' => 'int32',
+        'notice_periods_after_current' => null,
+        'fixation_periods' => 'int32',
+        'fixation_periods_full' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -102,6 +147,10 @@ class CreateSubscriptionPlan implements ArrayAccess
         'renewal_reminder_email_days' => 'renewal_reminder_email_days',
         'trial_reminder_email_days' => 'trial_reminder_email_days',
         'partial_period_handling' => 'partial_period_handling',
+        'include_zero_amount' => 'include_zero_amount',
+        'setup_fee' => 'setup_fee',
+        'setup_fee_text' => 'setup_fee_text',
+        'setup_fee_handling' => 'setup_fee_handling',
         'amount_incl_vat' => 'amount_incl_vat',
         'fixed_count' => 'fixed_count',
         'fixed_life_time_unit' => 'fixed_life_time_unit',
@@ -135,6 +184,10 @@ class CreateSubscriptionPlan implements ArrayAccess
         'renewal_reminder_email_days' => 'setRenewalReminderEmailDays',
         'trial_reminder_email_days' => 'setTrialReminderEmailDays',
         'partial_period_handling' => 'setPartialPeriodHandling',
+        'include_zero_amount' => 'setIncludeZeroAmount',
+        'setup_fee' => 'setSetupFee',
+        'setup_fee_text' => 'setSetupFeeText',
+        'setup_fee_handling' => 'setSetupFeeHandling',
         'amount_incl_vat' => 'setAmountInclVat',
         'fixed_count' => 'setFixedCount',
         'fixed_life_time_unit' => 'setFixedLifeTimeUnit',
@@ -168,6 +221,10 @@ class CreateSubscriptionPlan implements ArrayAccess
         'renewal_reminder_email_days' => 'getRenewalReminderEmailDays',
         'trial_reminder_email_days' => 'getTrialReminderEmailDays',
         'partial_period_handling' => 'getPartialPeriodHandling',
+        'include_zero_amount' => 'getIncludeZeroAmount',
+        'setup_fee' => 'getSetupFee',
+        'setup_fee_text' => 'getSetupFeeText',
+        'setup_fee_handling' => 'getSetupFeeHandling',
         'amount_incl_vat' => 'getAmountInclVat',
         'fixed_count' => 'getFixedCount',
         'fixed_life_time_unit' => 'getFixedLifeTimeUnit',
@@ -294,6 +351,10 @@ class CreateSubscriptionPlan implements ArrayAccess
         $this->container['renewal_reminder_email_days'] = isset($data['renewal_reminder_email_days']) ? $data['renewal_reminder_email_days'] : null;
         $this->container['trial_reminder_email_days'] = isset($data['trial_reminder_email_days']) ? $data['trial_reminder_email_days'] : null;
         $this->container['partial_period_handling'] = isset($data['partial_period_handling']) ? $data['partial_period_handling'] : null;
+        $this->container['include_zero_amount'] = isset($data['include_zero_amount']) ? $data['include_zero_amount'] : null;
+        $this->container['setup_fee'] = isset($data['setup_fee']) ? $data['setup_fee'] : null;
+        $this->container['setup_fee_text'] = isset($data['setup_fee_text']) ? $data['setup_fee_text'] : null;
+        $this->container['setup_fee_handling'] = isset($data['setup_fee_handling']) ? $data['setup_fee_handling'] : null;
         $this->container['amount_incl_vat'] = isset($data['amount_incl_vat']) ? $data['amount_incl_vat'] : null;
         $this->container['fixed_count'] = isset($data['fixed_count']) ? $data['fixed_count'] : null;
         $this->container['fixed_life_time_unit'] = isset($data['fixed_life_time_unit']) ? $data['fixed_life_time_unit'] : null;
@@ -341,9 +402,6 @@ class CreateSubscriptionPlan implements ArrayAccess
             $invalid_properties[] = "invalid value for 'quantity', must be bigger than or equal to 1.";
         }
 
-        if ($this->container['prepaid'] === null) {
-            $invalid_properties[] = "'prepaid' can't be null";
-        }
         if ($this->container['handle'] === null) {
             $invalid_properties[] = "'handle' can't be null";
         }
@@ -355,27 +413,40 @@ class CreateSubscriptionPlan implements ArrayAccess
             $invalid_properties[] = "invalid value for 'trial_reminder_email_days', must be bigger than or equal to 1.";
         }
 
-        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
+        $allowed_values = $this->getPartialPeriodHandlingAllowableValues();
         if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'partial_period_handling', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
+        }
+
+        if (!is_null($this->container['setup_fee']) && ($this->container['setup_fee'] < 0)) {
+            $invalid_properties[] = "invalid value for 'setup_fee', must be bigger than or equal to 0.";
         }
 
         if (!is_null($this->container['fixed_count']) && ($this->container['fixed_count'] < 1)) {
             $invalid_properties[] = "invalid value for 'fixed_count', must be bigger than or equal to 1.";
         }
 
-        $allowed_values = ["months", "days"];
+        $allowed_values = $this->getFixedLifeTimeUnitAllowableValues();
         if (!in_array($this->container['fixed_life_time_unit'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'fixed_life_time_unit', must be one of 'months', 'days'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'fixed_life_time_unit', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if (!is_null($this->container['fixed_life_time_length']) && ($this->container['fixed_life_time_length'] < 1)) {
             $invalid_properties[] = "invalid value for 'fixed_life_time_length', must be bigger than or equal to 1.";
         }
 
-        $allowed_values = ["months", "days"];
+        $allowed_values = $this->getTrialIntervalUnitAllowableValues();
         if (!in_array($this->container['trial_interval_unit'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'trial_interval_unit', must be one of 'months', 'days'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'trial_interval_unit', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if (!is_null($this->container['trial_interval_length']) && ($this->container['trial_interval_length'] < 1)) {
@@ -392,9 +463,12 @@ class CreateSubscriptionPlan implements ArrayAccess
         if ($this->container['schedule_type'] === null) {
             $invalid_properties[] = "'schedule_type' can't be null";
         }
-        $allowed_values = ["manual", "daily", "weekly_fixedday", "month_startdate", "month_fixedday", "month_lastday"];
+        $allowed_values = $this->getScheduleTypeAllowableValues();
         if (!in_array($this->container['schedule_type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'schedule_type', must be one of 'manual', 'daily', 'weekly_fixedday', 'month_startdate', 'month_fixedday', 'month_lastday'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'schedule_type', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if (!is_null($this->container['schedule_fixed_day']) && ($this->container['schedule_fixed_day'] > 28)) {
@@ -451,9 +525,6 @@ class CreateSubscriptionPlan implements ArrayAccess
         if ($this->container['quantity'] < 1) {
             return false;
         }
-        if ($this->container['prepaid'] === null) {
-            return false;
-        }
         if ($this->container['handle'] === null) {
             return false;
         }
@@ -463,21 +534,24 @@ class CreateSubscriptionPlan implements ArrayAccess
         if ($this->container['trial_reminder_email_days'] < 1) {
             return false;
         }
-        $allowed_values = ["bill_full", "bill_prorated", "bill_zero_amount", "no_bill"];
+        $allowed_values = $this->getPartialPeriodHandlingAllowableValues();
         if (!in_array($this->container['partial_period_handling'], $allowed_values)) {
+            return false;
+        }
+        if ($this->container['setup_fee'] < 0) {
             return false;
         }
         if ($this->container['fixed_count'] < 1) {
             return false;
         }
-        $allowed_values = ["months", "days"];
+        $allowed_values = $this->getFixedLifeTimeUnitAllowableValues();
         if (!in_array($this->container['fixed_life_time_unit'], $allowed_values)) {
             return false;
         }
         if ($this->container['fixed_life_time_length'] < 1) {
             return false;
         }
-        $allowed_values = ["months", "days"];
+        $allowed_values = $this->getTrialIntervalUnitAllowableValues();
         if (!in_array($this->container['trial_interval_unit'], $allowed_values)) {
             return false;
         }
@@ -493,7 +567,7 @@ class CreateSubscriptionPlan implements ArrayAccess
         if ($this->container['schedule_type'] === null) {
             return false;
         }
-        $allowed_values = ["manual", "daily", "weekly_fixedday", "month_startdate", "month_fixedday", "month_lastday"];
+        $allowed_values = $this->getScheduleTypeAllowableValues();
         if (!in_array($this->container['schedule_type'], $allowed_values)) {
             return false;
         }
@@ -601,7 +675,7 @@ class CreateSubscriptionPlan implements ArrayAccess
 
     /**
      * Sets amount
-     * @param int $amount Amount for the plan in the smallest unit for the account currency including VAT
+     * @param int $amount Amount for the plan in the smallest unit for the account currency
      * @return $this
      */
     public function setAmount($amount)
@@ -773,11 +847,105 @@ class CreateSubscriptionPlan implements ArrayAccess
      */
     public function setPartialPeriodHandling($partial_period_handling)
     {
-        $allowed_values = array('bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill');
-        if (!is_null($partial_period_handling) && (!in_array($partial_period_handling, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'partial_period_handling', must be one of 'bill_full', 'bill_prorated', 'bill_zero_amount', 'no_bill'");
+        $allowed_values = $this->getPartialPeriodHandlingAllowableValues();
+        if (!is_null($partial_period_handling) && !in_array($partial_period_handling, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'partial_period_handling', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['partial_period_handling'] = $partial_period_handling;
+
+        return $this;
+    }
+
+    /**
+     * Gets include_zero_amount
+     * @return bool
+     */
+    public function getIncludeZeroAmount()
+    {
+        return $this->container['include_zero_amount'];
+    }
+
+    /**
+     * Sets include_zero_amount
+     * @param bool $include_zero_amount Whether to add a zero amount order line to subscription invoices if plan amount is zero or the subscription overrides to zero amount. The default is to not include the line. If no other order lines are present the plan order line will be added.
+     * @return $this
+     */
+    public function setIncludeZeroAmount($include_zero_amount)
+    {
+        $this->container['include_zero_amount'] = $include_zero_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets setup_fee
+     * @return int
+     */
+    public function getSetupFee()
+    {
+        return $this->container['setup_fee'];
+    }
+
+    /**
+     * Sets setup_fee
+     * @param int $setup_fee Optional one-time setup fee billed with the first invoice or as a separate invoice depending on the setting `setup_fee_invoice`.
+     * @return $this
+     */
+    public function setSetupFee($setup_fee)
+    {
+
+        if (!is_null($setup_fee) && ($setup_fee < 0)) {
+            throw new \InvalidArgumentException('invalid value for $setup_fee when calling CreateSubscriptionPlan., must be bigger than or equal to 0.');
+        }
+
+        $this->container['setup_fee'] = $setup_fee;
+
+        return $this;
+    }
+
+    /**
+     * Gets setup_fee_text
+     * @return string
+     */
+    public function getSetupFeeText()
+    {
+        return $this->container['setup_fee_text'];
+    }
+
+    /**
+     * Sets setup_fee_text
+     * @param string $setup_fee_text Optional invoice order text for the setup fee that
+     * @return $this
+     */
+    public function setSetupFeeText($setup_fee_text)
+    {
+        $this->container['setup_fee_text'] = $setup_fee_text;
+
+        return $this;
+    }
+
+    /**
+     * Gets setup_fee_handling
+     * @return string
+     */
+    public function getSetupFeeHandling()
+    {
+        return $this->container['setup_fee_handling'];
+    }
+
+    /**
+     * Sets setup_fee_handling
+     * @param string $setup_fee_handling How the billing of the setup fee should be done. The options are: `first` - include setup fee as order line on the first scheduled invoice. `separate` - create a separate invoice for the setup fee, is appropriate if first invoice is not in conjunction with creation. `separate_conditional` - create a separate invoice for setup fee if the first invoice is not created in conjunction with the creation. Default is `first`.
+     * @return $this
+     */
+    public function setSetupFeeHandling($setup_fee_handling)
+    {
+        $this->container['setup_fee_handling'] = $setup_fee_handling;
 
         return $this;
     }
@@ -845,9 +1013,14 @@ class CreateSubscriptionPlan implements ArrayAccess
      */
     public function setFixedLifeTimeUnit($fixed_life_time_unit)
     {
-        $allowed_values = array('months', 'days');
-        if (!is_null($fixed_life_time_unit) && (!in_array($fixed_life_time_unit, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'fixed_life_time_unit', must be one of 'months', 'days'");
+        $allowed_values = $this->getFixedLifeTimeUnitAllowableValues();
+        if (!is_null($fixed_life_time_unit) && !in_array($fixed_life_time_unit, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'fixed_life_time_unit', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['fixed_life_time_unit'] = $fixed_life_time_unit;
 
@@ -896,9 +1069,14 @@ class CreateSubscriptionPlan implements ArrayAccess
      */
     public function setTrialIntervalUnit($trial_interval_unit)
     {
-        $allowed_values = array('months', 'days');
-        if (!is_null($trial_interval_unit) && (!in_array($trial_interval_unit, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'trial_interval_unit', must be one of 'months', 'days'");
+        $allowed_values = $this->getTrialIntervalUnitAllowableValues();
+        if (!is_null($trial_interval_unit) && !in_array($trial_interval_unit, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'trial_interval_unit', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['trial_interval_unit'] = $trial_interval_unit;
 
@@ -973,9 +1151,14 @@ class CreateSubscriptionPlan implements ArrayAccess
      */
     public function setScheduleType($schedule_type)
     {
-        $allowed_values = array('manual', 'daily', 'weekly_fixedday', 'month_startdate', 'month_fixedday', 'month_lastday');
-        if ((!in_array($schedule_type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'schedule_type', must be one of 'manual', 'daily', 'weekly_fixedday', 'month_startdate', 'month_fixedday', 'month_lastday'");
+        $allowed_values = $this->getScheduleTypeAllowableValues();
+        if (!in_array($schedule_type, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'schedule_type', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['schedule_type'] = $schedule_type;
 

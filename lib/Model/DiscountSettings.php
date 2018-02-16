@@ -59,9 +59,24 @@ class DiscountSettings implements ArrayAccess
         'multiple_allowed' => 'bool'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'discount_apply_order' => null,
+        'discount_percentage_apply' => null,
+        'multiple_allowed' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -172,17 +187,23 @@ class DiscountSettings implements ArrayAccess
         if ($this->container['discount_apply_order'] === null) {
             $invalid_properties[] = "'discount_apply_order' can't be null";
         }
-        $allowed_values = ["percentage_first", "amount_first"];
+        $allowed_values = $this->getDiscountApplyOrderAllowableValues();
         if (!in_array($this->container['discount_apply_order'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'discount_apply_order', must be one of 'percentage_first', 'amount_first'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'discount_apply_order', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['discount_percentage_apply'] === null) {
             $invalid_properties[] = "'discount_percentage_apply' can't be null";
         }
-        $allowed_values = ["full", "compound"];
+        $allowed_values = $this->getDiscountPercentageApplyAllowableValues();
         if (!in_array($this->container['discount_percentage_apply'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'discount_percentage_apply', must be one of 'full', 'compound'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'discount_percentage_apply', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['multiple_allowed'] === null) {
@@ -203,14 +224,14 @@ class DiscountSettings implements ArrayAccess
         if ($this->container['discount_apply_order'] === null) {
             return false;
         }
-        $allowed_values = ["percentage_first", "amount_first"];
+        $allowed_values = $this->getDiscountApplyOrderAllowableValues();
         if (!in_array($this->container['discount_apply_order'], $allowed_values)) {
             return false;
         }
         if ($this->container['discount_percentage_apply'] === null) {
             return false;
         }
-        $allowed_values = ["full", "compound"];
+        $allowed_values = $this->getDiscountPercentageApplyAllowableValues();
         if (!in_array($this->container['discount_percentage_apply'], $allowed_values)) {
             return false;
         }
@@ -237,9 +258,14 @@ class DiscountSettings implements ArrayAccess
      */
     public function setDiscountApplyOrder($discount_apply_order)
     {
-        $allowed_values = array('percentage_first', 'amount_first');
-        if ((!in_array($discount_apply_order, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'discount_apply_order', must be one of 'percentage_first', 'amount_first'");
+        $allowed_values = $this->getDiscountApplyOrderAllowableValues();
+        if (!in_array($discount_apply_order, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'discount_apply_order', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['discount_apply_order'] = $discount_apply_order;
 
@@ -262,9 +288,14 @@ class DiscountSettings implements ArrayAccess
      */
     public function setDiscountPercentageApply($discount_percentage_apply)
     {
-        $allowed_values = array('full', 'compound');
-        if ((!in_array($discount_percentage_apply, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'discount_percentage_apply', must be one of 'full', 'compound'");
+        $allowed_values = $this->getDiscountPercentageApplyAllowableValues();
+        if (!in_array($discount_percentage_apply, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'discount_percentage_apply', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['discount_percentage_apply'] = $discount_percentage_apply;
 

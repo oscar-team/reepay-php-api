@@ -60,9 +60,24 @@ class CreditInvoice implements ArrayAccess
         'created' => '\DateTime'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'credit' => null,
+        'amount' => 'int32',
+        'created' => 'date-time'
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

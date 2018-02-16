@@ -47,7 +47,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testCharge()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHandle()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyState()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCustomer()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCurrency()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAuthorized()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySettled()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCancelled()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreated()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTransaction()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyError()
     {
-
     }
 
     /**
@@ -175,7 +159,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySource()
     {
-
     }
 
     /**
@@ -183,7 +166,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOrderLines()
     {
-
     }
 
     /**
@@ -191,7 +173,6 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRefundedAmount()
     {
-
     }
 
     /**
@@ -199,7 +180,5 @@ class ChargeTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyErrorState()
     {
-
     }
-
 }

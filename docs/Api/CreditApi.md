@@ -1,6 +1,6 @@
 # Swagger\Client\CreditApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **cancelCredit**
-> \Swagger\Client\Model\InlineResponse20013 cancelCredit($handle)
+> \Swagger\Client\Model\Credit cancelCredit($handle)
 
 Cancel credit
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\Swagger\Client\Model\Credit**](../Model/Credit.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCreditJson**
-> \Swagger\Client\Model\InlineResponse20013 createCreditJson($body)
+> \Swagger\Client\Model\Credit createCreditJson($body)
 
 Create credit
 
@@ -84,7 +84,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\CreditApi();
-$body = new \Swagger\Client\Model\Body13(); // \Swagger\Client\Model\Body13 | 
+$body = new \Swagger\Client\Model\CreateCredit(); // \Swagger\Client\Model\CreateCredit | 
 
 try {
     $result = $api_instance->createCreditJson($body);
@@ -99,11 +99,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body13**](../Model/\Swagger\Client\Model\Body13.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\CreateCredit**](../Model/CreateCredit.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\Swagger\Client\Model\Credit**](../Model/Credit.md)
 
 ### Authorization
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCredit**
-> \Swagger\Client\Model\InlineResponse20013 getCredit($handle)
+> \Swagger\Client\Model\Credit getCredit($handle)
 
 Get credit
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20013**](../Model/InlineResponse20013.md)
+[**\Swagger\Client\Model\Credit**](../Model/Credit.md)
 
 ### Authorization
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCredits**
-> \Swagger\Client\Model\InlineResponse20013[] getCredits($handle)
+> \Swagger\Client\Model\Credit[] getCredits($handle)
 
 Get credits for subscription
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20013[]**](../Model/InlineResponse20013.md)
+[**\Swagger\Client\Model\Credit[]**](../Model/Credit.md)
 
 ### Authorization
 

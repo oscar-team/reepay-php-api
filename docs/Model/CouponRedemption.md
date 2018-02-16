@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**coupon** | [**\Swagger\Client\Model\InlineResponse20012Content**](InlineResponse20012Content.md) |  | [optional] 
-**subscription_discount** | [**\Swagger\Client\Model\InlineResponse20028**](InlineResponse20028.md) |  | [optional] 
+**coupon** | [**\Swagger\Client\Model\Coupon**](Coupon.md) | Coupon redeemed | 
+**subscription_discount** | [**\Swagger\Client\Model\SubscriptionDiscount**](SubscriptionDiscount.md) | Subscription discount released by coupon | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

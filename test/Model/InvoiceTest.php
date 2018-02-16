@@ -47,7 +47,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvoice()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyId()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHandle()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCustomer()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySubscription()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPlan()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyState()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyType()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyNumber()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCurrency()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDue()
     {
-
     }
 
     /**
@@ -175,7 +159,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFailed()
     {
-
     }
 
     /**
@@ -183,7 +166,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySettled()
     {
-
     }
 
     /**
@@ -191,7 +173,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCancelled()
     {
-
     }
 
     /**
@@ -199,7 +180,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAuthorized()
     {
-
     }
 
     /**
@@ -207,7 +187,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCredits()
     {
-
     }
 
     /**
@@ -215,7 +194,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreated()
     {
-
     }
 
     /**
@@ -223,7 +201,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPlanVersion()
     {
-
     }
 
     /**
@@ -231,7 +208,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDunningPlan()
     {
-
     }
 
     /**
@@ -239,7 +215,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDiscountAmount()
     {
-
     }
 
     /**
@@ -247,7 +222,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOrgAmount()
     {
-
     }
 
     /**
@@ -255,7 +229,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmountVat()
     {
-
     }
 
     /**
@@ -263,7 +236,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmountExVat()
     {
-
     }
 
     /**
@@ -271,7 +243,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySettledAmount()
     {
-
     }
 
     /**
@@ -279,7 +250,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRefundedAmount()
     {
-
     }
 
     /**
@@ -287,7 +257,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAuthorizedAmount()
     {
-
     }
 
     /**
@@ -295,7 +264,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPeriodNumber()
     {
-
     }
 
     /**
@@ -303,7 +271,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOrderLines()
     {
-
     }
 
     /**
@@ -311,7 +278,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAdditionalCosts()
     {
-
     }
 
     /**
@@ -319,7 +285,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTransactions()
     {
-
     }
 
     /**
@@ -327,7 +292,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreditNotes()
     {
-
     }
 
     /**
@@ -335,7 +299,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDunningStart()
     {
-
     }
 
     /**
@@ -343,7 +306,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDunningCount()
     {
-
     }
 
     /**
@@ -351,7 +313,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDunningExpired()
     {
-
     }
 
     /**
@@ -359,7 +320,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPeriodFrom()
     {
-
     }
 
     /**
@@ -367,7 +327,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPeriodTo()
     {
-
     }
 
     /**
@@ -375,7 +334,6 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySettleLater()
     {
-
     }
 
     /**
@@ -383,7 +341,5 @@ class InvoiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySettleLaterPaymentMethod()
     {
-
     }
-
 }

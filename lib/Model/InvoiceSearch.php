@@ -60,14 +60,34 @@ class InvoiceSearch implements ArrayAccess
         'count' => 'int',
         'search' => 'string',
         'sort' => 'string',
-        'content' => '\Swagger\Client\Model\InlineResponse20016[]',
+        'content' => '\Swagger\Client\Model\Invoice[]',
         'total_elements' => 'int',
         'total_pages' => 'int'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'page' => 'int32',
+        'size' => 'int32',
+        'count' => 'int32',
+        'search' => null,
+        'sort' => null,
+        'content' => null,
+        'total_elements' => 'int64',
+        'total_pages' => 'int32'
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -376,7 +396,7 @@ class InvoiceSearch implements ArrayAccess
 
     /**
      * Gets content
-     * @return \Swagger\Client\Model\InlineResponse20016[]
+     * @return \Swagger\Client\Model\Invoice[]
      */
     public function getContent()
     {
@@ -385,7 +405,7 @@ class InvoiceSearch implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Swagger\Client\Model\InlineResponse20016[] $content List of invoices for current page
+     * @param \Swagger\Client\Model\Invoice[] $content List of invoices for current page
      * @return $this
      */
     public function setContent($content)

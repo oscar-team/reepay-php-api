@@ -61,9 +61,26 @@ class UpdateCoupon implements ArrayAccess
         'valid_until' => 'string'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'name' => null,
+        'all_plans' => null,
+        'eligible_plans' => null,
+        'max_redemptions' => 'int32',
+        'valid_until' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

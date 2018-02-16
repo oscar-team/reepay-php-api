@@ -47,7 +47,6 @@ class CreateDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CreateDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CreateDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CreateDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class CreateDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateDiscount()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class CreateDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHandle()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class CreateDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class CreateDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDescription()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class CreateDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAmount()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class CreateDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPercentage()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class CreateDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyApplyTo()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class CreateDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixedCount()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class CreateDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixedPeriodUnit()
     {
-
     }
 
     /**
@@ -151,7 +138,5 @@ class CreateDiscountTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyFixedPeriod()
     {
-
     }
-
 }

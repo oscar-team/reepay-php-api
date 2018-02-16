@@ -47,7 +47,6 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testErrorResponse()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCode()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyError()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyMessage()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPath()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTimestamp()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHttpStatus()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHttpReason()
     {
-
     }
 
     /**
@@ -143,7 +131,12 @@ class ErrorResponseTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRequestId()
     {
-
     }
 
+    /**
+     * Test attribute "transaction_error"
+     */
+    public function testPropertyTransactionError()
+    {
+    }
 }

@@ -1,6 +1,6 @@
 # Swagger\Client\CustomerApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **activatePaymentMethod**
-> \Swagger\Client\Model\InlineResponse20015 activatePaymentMethod($handle, $method_id)
+> \Swagger\Client\Model\PaymentMethods activatePaymentMethod($handle, $method_id)
 
 Activate payment method
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\PaymentMethods**](../Model/PaymentMethods.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **addCardJson**
-> \Swagger\Client\Model\InlineResponse20015Cards addCardJson($handle, $body)
+> \Swagger\Client\Model\Card addCardJson($handle, $body)
 
 Add card payment method
 
@@ -99,7 +99,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\CustomerApi();
 $handle = "handle_example"; // string | Customer handle
-$body = new \Swagger\Client\Model\Body15(); // \Swagger\Client\Model\Body15 | 
+$body = new \Swagger\Client\Model\CardToken(); // \Swagger\Client\Model\CardToken | 
 
 try {
     $result = $api_instance->addCardJson($handle, $body);
@@ -115,11 +115,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Customer handle |
- **body** | [**\Swagger\Client\Model\Body15**](../Model/\Swagger\Client\Model\Body15.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\CardToken**](../Model/CardToken.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015Cards**](../Model/InlineResponse20015Cards.md)
+[**\Swagger\Client\Model\Card**](../Model/Card.md)
 
 ### Authorization
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCustomerInvoice**
-> \Swagger\Client\Model\InlineResponse20016 createCustomerInvoice($handle, $body)
+> \Swagger\Client\Model\Invoice createCustomerInvoice($handle, $body)
 
 Create invoice for customer
 
@@ -154,7 +154,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\CustomerApi();
 $handle = "handle_example"; // string | Customer handle
-$body = new \Swagger\Client\Model\Body17(); // \Swagger\Client\Model\Body17 | 
+$body = new \Swagger\Client\Model\CreateCustomerInvoice(); // \Swagger\Client\Model\CreateCustomerInvoice | 
 
 try {
     $result = $api_instance->createCustomerInvoice($handle, $body);
@@ -170,11 +170,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Customer handle |
- **body** | [**\Swagger\Client\Model\Body17**](../Model/\Swagger\Client\Model\Body17.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\CreateCustomerInvoice**](../Model/CreateCustomerInvoice.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20016**](../Model/InlineResponse20016.md)
+[**\Swagger\Client\Model\Invoice**](../Model/Invoice.md)
 
 ### Authorization
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCustomerJson**
-> \Swagger\Client\Model\InlineResponse20017Content createCustomerJson($body)
+> \Swagger\Client\Model\Customer createCustomerJson($body)
 
 Create customer
 
@@ -208,7 +208,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\CustomerApi();
-$body = new \Swagger\Client\Model\Body18(); // \Swagger\Client\Model\Body18 | 
+$body = new \Swagger\Client\Model\CreateCustomer(); // \Swagger\Client\Model\CreateCustomer | 
 
 try {
     $result = $api_instance->createCustomerJson($body);
@@ -223,11 +223,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body18**](../Model/\Swagger\Client\Model\Body18.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\CreateCustomer**](../Model/CreateCustomer.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20017Content**](../Model/InlineResponse20017Content.md)
+[**\Swagger\Client\Model\Customer**](../Model/Customer.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCustomerNoteJson**
-> \Swagger\Client\Model\InlineResponse20014 createCustomerNoteJson($handle, $body)
+> \Swagger\Client\Model\CustomerNote createCustomerNoteJson($handle, $body)
 
 Create customer note
 
@@ -262,7 +262,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\CustomerApi();
 $handle = "handle_example"; // string | 
-$body = new \Swagger\Client\Model\Body14(); // \Swagger\Client\Model\Body14 | 
+$body = new \Swagger\Client\Model\CreateCustomerNote(); // \Swagger\Client\Model\CreateCustomerNote | 
 
 try {
     $result = $api_instance->createCustomerNoteJson($handle, $body);
@@ -278,11 +278,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**|  |
- **body** | [**\Swagger\Client\Model\Body14**](../Model/\Swagger\Client\Model\Body14.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\CreateCustomerNote**](../Model/CreateCustomerNote.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20014**](../Model/InlineResponse20014.md)
+[**\Swagger\Client\Model\CustomerNote**](../Model/CustomerNote.md)
 
 ### Authorization
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteCustomer**
-> \Swagger\Client\Model\InlineResponse20017Content deleteCustomer($handle)
+> \Swagger\Client\Model\Customer deleteCustomer($handle)
 
 Delete customer
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20017Content**](../Model/InlineResponse20017Content.md)
+[**\Swagger\Client\Model\Customer**](../Model/Customer.md)
 
 ### Authorization
 
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCard**
-> \Swagger\Client\Model\InlineResponse20015Cards getCard($handle, $id)
+> \Swagger\Client\Model\Card getCard($handle, $id)
 
 Get card
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015Cards**](../Model/InlineResponse20015Cards.md)
+[**\Swagger\Client\Model\Card**](../Model/Card.md)
 
 ### Authorization
 
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomer**
-> \Swagger\Client\Model\InlineResponse20017Content getCustomer($handle)
+> \Swagger\Client\Model\Customer getCustomer($handle)
 
 Get customer
 
@@ -498,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20017Content**](../Model/InlineResponse20017Content.md)
+[**\Swagger\Client\Model\Customer**](../Model/Customer.md)
 
 ### Authorization
 
@@ -512,7 +512,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomerNotes**
-> \Swagger\Client\Model\InlineResponse20014[] getCustomerNotes($handle)
+> \Swagger\Client\Model\CustomerNote[] getCustomerNotes($handle)
 
 Get customer notes
 
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20014[]**](../Model/InlineResponse20014.md)
+[**\Swagger\Client\Model\CustomerNote[]**](../Model/CustomerNote.md)
 
 ### Authorization
 
@@ -565,7 +565,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomerPaymentMethods**
-> \Swagger\Client\Model\InlineResponse20015 getCustomerPaymentMethods($handle, $only_active)
+> \Swagger\Client\Model\PaymentMethods getCustomerPaymentMethods($handle, $only_active)
 
 Get payment methods
 
@@ -606,7 +606,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\PaymentMethods**](../Model/PaymentMethods.md)
 
 ### Authorization
 
@@ -620,7 +620,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCustomers**
-> \Swagger\Client\Model\InlineResponse20017 getCustomers($page, $size, $search, $sort)
+> \Swagger\Client\Model\CustomerSearch getCustomers($page, $size, $search, $sort)
 
 Get list of customers
 
@@ -665,7 +665,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20017**](../Model/InlineResponse20017.md)
+[**\Swagger\Client\Model\CustomerSearch**](../Model/CustomerSearch.md)
 
 ### Authorization
 
@@ -679,7 +679,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **importCardJson**
-> \Swagger\Client\Model\InlineResponse20015Cards importCardJson($handle, $body)
+> \Swagger\Client\Model\Card importCardJson($handle, $body)
 
 Import card payment method
 
@@ -700,7 +700,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\CustomerApi();
 $handle = "handle_example"; // string | Customer handle
-$body = new \Swagger\Client\Model\Body16(); // \Swagger\Client\Model\Body16 | 
+$body = new \Swagger\Client\Model\CardImport(); // \Swagger\Client\Model\CardImport | 
 
 try {
     $result = $api_instance->importCardJson($handle, $body);
@@ -716,11 +716,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Customer handle |
- **body** | [**\Swagger\Client\Model\Body16**](../Model/\Swagger\Client\Model\Body16.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\CardImport**](../Model/CardImport.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015Cards**](../Model/InlineResponse20015Cards.md)
+[**\Swagger\Client\Model\Card**](../Model/Card.md)
 
 ### Authorization
 
@@ -734,7 +734,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **inactivatePaymentMethod**
-> \Swagger\Client\Model\InlineResponse20015 inactivatePaymentMethod($handle, $method_id)
+> \Swagger\Client\Model\PaymentMethods inactivatePaymentMethod($handle, $method_id)
 
 Inactivate payment method
 
@@ -775,7 +775,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015**](../Model/InlineResponse20015.md)
+[**\Swagger\Client\Model\PaymentMethods**](../Model/PaymentMethods.md)
 
 ### Authorization
 
@@ -789,7 +789,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **reactivateCard**
-> \Swagger\Client\Model\InlineResponse20015Cards reactivateCard($handle, $card_id)
+> \Swagger\Client\Model\Card reactivateCard($handle, $card_id)
 
 Reactivate failed card
 
@@ -830,7 +830,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20015Cards**](../Model/InlineResponse20015Cards.md)
+[**\Swagger\Client\Model\Card**](../Model/Card.md)
 
 ### Authorization
 
@@ -844,7 +844,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCustomerJson**
-> \Swagger\Client\Model\InlineResponse20017Content updateCustomerJson($handle, $body)
+> \Swagger\Client\Model\Customer updateCustomerJson($handle, $body)
 
 Update customer
 
@@ -865,7 +865,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\CustomerApi();
 $handle = "handle_example"; // string | Customer handle
-$body = new \Swagger\Client\Model\Body19(); // \Swagger\Client\Model\Body19 | 
+$body = new \Swagger\Client\Model\UpdateCustomer(); // \Swagger\Client\Model\UpdateCustomer | 
 
 try {
     $result = $api_instance->updateCustomerJson($handle, $body);
@@ -881,11 +881,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Customer handle |
- **body** | [**\Swagger\Client\Model\Body19**](../Model/\Swagger\Client\Model\Body19.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\UpdateCustomer**](../Model/UpdateCustomer.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20017Content**](../Model/InlineResponse20017Content.md)
+[**\Swagger\Client\Model\Customer**](../Model/Customer.md)
 
 ### Authorization
 

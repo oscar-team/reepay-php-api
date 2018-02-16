@@ -47,7 +47,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function testCoupon()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyHandle()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCode()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDiscount()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyState()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyType()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRedemptions()
     {
-
     }
 
     /**
@@ -143,7 +131,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyExpired()
     {
-
     }
 
     /**
@@ -151,7 +138,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCreated()
     {
-
     }
 
     /**
@@ -159,7 +145,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyAllPlans()
     {
-
     }
 
     /**
@@ -167,7 +152,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyEligiblePlans()
     {
-
     }
 
     /**
@@ -175,7 +159,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyMaxRedemptions()
     {
-
     }
 
     /**
@@ -183,7 +166,6 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyValidUntil()
     {
-
     }
 
     /**
@@ -191,7 +173,5 @@ class CouponTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyExpireReason()
     {
-
     }
-
 }

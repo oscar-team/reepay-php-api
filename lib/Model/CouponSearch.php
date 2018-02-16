@@ -60,14 +60,34 @@ class CouponSearch implements ArrayAccess
         'count' => 'int',
         'search' => 'string',
         'sort' => 'string',
-        'content' => '\Swagger\Client\Model\InlineResponse20012Content[]',
+        'content' => '\Swagger\Client\Model\Coupon[]',
         'total_elements' => 'int',
         'total_pages' => 'int'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'page' => 'int32',
+        'size' => 'int32',
+        'count' => 'int32',
+        'search' => null,
+        'sort' => null,
+        'content' => null,
+        'total_elements' => 'int64',
+        'total_pages' => 'int32'
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -376,7 +396,7 @@ class CouponSearch implements ArrayAccess
 
     /**
      * Gets content
-     * @return \Swagger\Client\Model\InlineResponse20012Content[]
+     * @return \Swagger\Client\Model\Coupon[]
      */
     public function getContent()
     {
@@ -385,7 +405,7 @@ class CouponSearch implements ArrayAccess
 
     /**
      * Sets content
-     * @param \Swagger\Client\Model\InlineResponse20012Content[] $content List of coupon for current page
+     * @param \Swagger\Client\Model\Coupon[] $content List of coupon for current page
      * @return $this
      */
     public function setContent($content)

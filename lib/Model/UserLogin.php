@@ -55,18 +55,38 @@ class UserLogin implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'token' => 'string',
-        'user' => '\Swagger\Client\Model\InlineResponse2009User',
-        'account' => '\Swagger\Client\Model\InlineResponse2009Account',
-        'organisation' => '\Swagger\Client\Model\InlineResponse2009Organisation',
-        'organisations' => '\Swagger\Client\Model\InlineResponse2009Organisations[]',
+        'user' => '\Swagger\Client\Model\User',
+        'account' => '\Swagger\Client\Model\AccountLogin',
+        'organisation' => '\Swagger\Client\Model\Organisation',
+        'organisations' => '\Swagger\Client\Model\OrganisationLogin[]',
         'groups' => 'string[]',
         'permissions' => 'string[]',
         'token_ttl' => 'int'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'token' => null,
+        'user' => null,
+        'account' => null,
+        'organisation' => null,
+        'organisations' => null,
+        'groups' => null,
+        'permissions' => null,
+        'token_ttl' => 'int32'
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -169,6 +189,15 @@ class UserLogin implements ArrayAccess
         if ($this->container['token'] === null) {
             $invalid_properties[] = "'token' can't be null";
         }
+        if ($this->container['user'] === null) {
+            $invalid_properties[] = "'user' can't be null";
+        }
+        if ($this->container['account'] === null) {
+            $invalid_properties[] = "'account' can't be null";
+        }
+        if ($this->container['organisation'] === null) {
+            $invalid_properties[] = "'organisation' can't be null";
+        }
         if ($this->container['organisations'] === null) {
             $invalid_properties[] = "'organisations' can't be null";
         }
@@ -194,6 +223,15 @@ class UserLogin implements ArrayAccess
     {
 
         if ($this->container['token'] === null) {
+            return false;
+        }
+        if ($this->container['user'] === null) {
+            return false;
+        }
+        if ($this->container['account'] === null) {
+            return false;
+        }
+        if ($this->container['organisation'] === null) {
             return false;
         }
         if ($this->container['organisations'] === null) {
@@ -235,7 +273,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Gets user
-     * @return \Swagger\Client\Model\InlineResponse2009User
+     * @return \Swagger\Client\Model\User
      */
     public function getUser()
     {
@@ -244,7 +282,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Sets user
-     * @param \Swagger\Client\Model\InlineResponse2009User $user
+     * @param \Swagger\Client\Model\User $user Logged in user
      * @return $this
      */
     public function setUser($user)
@@ -256,7 +294,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Gets account
-     * @return \Swagger\Client\Model\InlineResponse2009Account
+     * @return \Swagger\Client\Model\AccountLogin
      */
     public function getAccount()
     {
@@ -265,7 +303,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Sets account
-     * @param \Swagger\Client\Model\InlineResponse2009Account $account
+     * @param \Swagger\Client\Model\AccountLogin $account Account logged into
      * @return $this
      */
     public function setAccount($account)
@@ -277,7 +315,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Gets organisation
-     * @return \Swagger\Client\Model\InlineResponse2009Organisation
+     * @return \Swagger\Client\Model\Organisation
      */
     public function getOrganisation()
     {
@@ -286,7 +324,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Sets organisation
-     * @param \Swagger\Client\Model\InlineResponse2009Organisation $organisation
+     * @param \Swagger\Client\Model\Organisation $organisation Organisation for account logged into
      * @return $this
      */
     public function setOrganisation($organisation)
@@ -298,7 +336,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Gets organisations
-     * @return \Swagger\Client\Model\InlineResponse2009Organisations[]
+     * @return \Swagger\Client\Model\OrganisationLogin[]
      */
     public function getOrganisations()
     {
@@ -307,7 +345,7 @@ class UserLogin implements ArrayAccess
 
     /**
      * Sets organisations
-     * @param \Swagger\Client\Model\InlineResponse2009Organisations[] $organisations List of organisations for user
+     * @param \Swagger\Client\Model\OrganisationLogin[] $organisations List of organisations for user
      * @return $this
      */
     public function setOrganisations($organisations)

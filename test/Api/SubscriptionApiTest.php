@@ -49,7 +49,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCancelSubscription()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testChangeNextPeriodStartJson()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testChangeSubscription()
     {
-
     }
 
     /**
@@ -117,7 +110,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateSubscriptionDiscount()
     {
-
     }
 
     /**
@@ -128,7 +120,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateSubscriptionInvoice()
     {
-
     }
 
     /**
@@ -139,7 +130,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateSubscriptionJson()
     {
-
     }
 
     /**
@@ -150,7 +140,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDeleteSubscriptionDiscount()
     {
-
     }
 
     /**
@@ -161,7 +150,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testExpire()
     {
-
     }
 
     /**
@@ -172,7 +160,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetSubscription()
     {
-
     }
 
     /**
@@ -183,7 +170,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetSubscriptionAddOn()
     {
-
     }
 
     /**
@@ -194,7 +180,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetSubscriptionAddOns()
     {
-
     }
 
     /**
@@ -205,7 +190,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetSubscriptionDiscount()
     {
-
     }
 
     /**
@@ -216,7 +200,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetSubscriptionDiscounts()
     {
-
     }
 
     /**
@@ -227,7 +210,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetSubscriptionPaymentMethods()
     {
-
     }
 
     /**
@@ -238,7 +220,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetSubscriptionPeriodBalance()
     {
-
     }
 
     /**
@@ -249,7 +230,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetSubscriptions()
     {
-
     }
 
     /**
@@ -260,7 +240,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testIntervalAmount()
     {
-
     }
 
     /**
@@ -271,7 +250,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testOnHold()
     {
-
     }
 
     /**
@@ -282,7 +260,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testReactivateSubscription()
     {
-
     }
 
     /**
@@ -293,7 +270,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testRedeemCouponCode()
     {
-
     }
 
     /**
@@ -304,7 +280,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testRemoveAllPaymentMethods()
     {
-
     }
 
     /**
@@ -315,7 +290,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testRemovePaymentMethod()
     {
-
     }
 
     /**
@@ -326,7 +300,6 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testSetPaymentMethod()
     {
-
     }
 
     /**
@@ -337,7 +310,5 @@ class SubscriptionApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testUncancel()
     {
-
     }
-
 }

@@ -68,9 +68,33 @@ class Discount implements ArrayAccess
         'fixed_period' => 'int'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'handle' => null,
+        'name' => null,
+        'description' => null,
+        'amount' => 'int32',
+        'percentage' => 'int32',
+        'state' => null,
+        'deleted' => 'date-time',
+        'created' => 'date-time',
+        'apply_to' => null,
+        'fixed_count' => 'int32',
+        'fixed_period_unit' => null,
+        'fixed_period' => 'int32'
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -235,9 +259,12 @@ class Discount implements ArrayAccess
         if ($this->container['state'] === null) {
             $invalid_properties[] = "'state' can't be null";
         }
-        $allowed_values = ["active", "deleted"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'active', 'deleted'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['created'] === null) {
@@ -250,9 +277,12 @@ class Discount implements ArrayAccess
             $invalid_properties[] = "invalid value for 'fixed_count', must be bigger than or equal to 1.";
         }
 
-        $allowed_values = ["months", "days"];
+        $allowed_values = $this->getFixedPeriodUnitAllowableValues();
         if (!in_array($this->container['fixed_period_unit'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'fixed_period_unit', must be one of 'months', 'days'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'fixed_period_unit', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if (!is_null($this->container['fixed_period']) && ($this->container['fixed_period'] < 1)) {
@@ -289,7 +319,7 @@ class Discount implements ArrayAccess
         if ($this->container['state'] === null) {
             return false;
         }
-        $allowed_values = ["active", "deleted"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
@@ -302,7 +332,7 @@ class Discount implements ArrayAccess
         if ($this->container['fixed_count'] < 1) {
             return false;
         }
-        $allowed_values = ["months", "days"];
+        $allowed_values = $this->getFixedPeriodUnitAllowableValues();
         if (!in_array($this->container['fixed_period_unit'], $allowed_values)) {
             return false;
         }
@@ -447,9 +477,14 @@ class Discount implements ArrayAccess
      */
     public function setState($state)
     {
-        $allowed_values = array('active', 'deleted');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'active', 'deleted'");
+        $allowed_values = $this->getStateAllowableValues();
+        if (!in_array($state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['state'] = $state;
 
@@ -561,9 +596,14 @@ class Discount implements ArrayAccess
      */
     public function setFixedPeriodUnit($fixed_period_unit)
     {
-        $allowed_values = array('months', 'days');
-        if (!is_null($fixed_period_unit) && (!in_array($fixed_period_unit, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'fixed_period_unit', must be one of 'months', 'days'");
+        $allowed_values = $this->getFixedPeriodUnitAllowableValues();
+        if (!is_null($fixed_period_unit) && !in_array($fixed_period_unit, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'fixed_period_unit', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['fixed_period_unit'] = $fixed_period_unit;
 

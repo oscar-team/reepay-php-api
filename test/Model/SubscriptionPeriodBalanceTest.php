@@ -47,7 +47,6 @@ class SubscriptionPeriodBalanceTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class SubscriptionPeriodBalanceTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class SubscriptionPeriodBalanceTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class SubscriptionPeriodBalanceTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class SubscriptionPeriodBalanceTest extends \PHPUnit_Framework_TestCase
      */
     public function testSubscriptionPeriodBalance()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class SubscriptionPeriodBalanceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDate()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class SubscriptionPeriodBalanceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyInvoice()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class SubscriptionPeriodBalanceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPaid()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class SubscriptionPeriodBalanceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyConsumed()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class SubscriptionPeriodBalanceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRemaining()
     {
-
     }
 
     /**
@@ -127,7 +117,5 @@ class SubscriptionPeriodBalanceTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyOnlineRefundable()
     {
-
     }
-
 }

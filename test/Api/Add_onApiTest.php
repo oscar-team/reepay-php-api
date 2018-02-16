@@ -49,7 +49,6 @@ class Add_onApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class Add_onApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class Add_onApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class Add_onApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class Add_onApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateAddOn()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class Add_onApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDeleteAddOn()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class Add_onApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetAddOn()
     {
-
     }
 
     /**
@@ -117,7 +110,6 @@ class Add_onApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetAddOns()
     {
-
     }
 
     /**
@@ -128,7 +120,6 @@ class Add_onApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testUndeleteAddOn()
     {
-
     }
 
     /**
@@ -139,7 +130,5 @@ class Add_onApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testUpdateAddOn()
     {
-
     }
-
 }

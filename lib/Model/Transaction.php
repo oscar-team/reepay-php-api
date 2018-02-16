@@ -64,13 +64,37 @@ class Transaction implements ArrayAccess
         'failed' => '\DateTime',
         'refunded' => '\DateTime',
         'created' => '\DateTime',
-        'card_transaction' => '\Swagger\Client\Model\InlineResponse20016CardTransaction',
-        'manual_transaction' => '\Swagger\Client\Model\InlineResponse20016ManualTransaction'
+        'card_transaction' => '\Swagger\Client\Model\CardTransaction',
+        'manual_transaction' => '\Swagger\Client\Model\ManualTransaction'
+    ];
+
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'id' => null,
+        'state' => null,
+        'invoice' => null,
+        'type' => null,
+        'amount' => 'int32',
+        'settled' => 'date-time',
+        'authorized' => 'date-time',
+        'failed' => 'date-time',
+        'refunded' => 'date-time',
+        'created' => 'date-time',
+        'card_transaction' => null,
+        'manual_transaction' => null
     ];
 
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
@@ -232,9 +256,12 @@ class Transaction implements ArrayAccess
         if ($this->container['state'] === null) {
             $invalid_properties[] = "'state' can't be null";
         }
-        $allowed_values = ["pending", "processing", "authorized", "settled", "refunded", "failed", "cancelled"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'state', must be one of 'pending', 'processing', 'authorized', 'settled', 'refunded', 'failed', 'cancelled'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'state', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['invoice'] === null) {
@@ -243,9 +270,12 @@ class Transaction implements ArrayAccess
         if ($this->container['type'] === null) {
             $invalid_properties[] = "'type' can't be null";
         }
-        $allowed_values = ["settle", "refund", "authorization"];
+        $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'type', must be one of 'settle', 'refund', 'authorization'.";
+            $invalid_properties[] = sprintf(
+                "invalid value for 'type', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
         }
 
         if ($this->container['amount'] === null) {
@@ -285,7 +315,7 @@ class Transaction implements ArrayAccess
         if ($this->container['state'] === null) {
             return false;
         }
-        $allowed_values = ["pending", "processing", "authorized", "settled", "refunded", "failed", "cancelled"];
+        $allowed_values = $this->getStateAllowableValues();
         if (!in_array($this->container['state'], $allowed_values)) {
             return false;
         }
@@ -295,7 +325,7 @@ class Transaction implements ArrayAccess
         if ($this->container['type'] === null) {
             return false;
         }
-        $allowed_values = ["settle", "refund", "authorization"];
+        $allowed_values = $this->getTypeAllowableValues();
         if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
@@ -358,9 +388,14 @@ class Transaction implements ArrayAccess
      */
     public function setState($state)
     {
-        $allowed_values = array('pending', 'processing', 'authorized', 'settled', 'refunded', 'failed', 'cancelled');
-        if ((!in_array($state, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'state', must be one of 'pending', 'processing', 'authorized', 'settled', 'refunded', 'failed', 'cancelled'");
+        $allowed_values = $this->getStateAllowableValues();
+        if (!in_array($state, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'state', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['state'] = $state;
 
@@ -404,9 +439,14 @@ class Transaction implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = array('settle', 'refund', 'authorization');
-        if ((!in_array($type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'settle', 'refund', 'authorization'");
+        $allowed_values = $this->getTypeAllowableValues();
+        if (!in_array($type, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'type', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
         }
         $this->container['type'] = $type;
 
@@ -546,7 +586,7 @@ class Transaction implements ArrayAccess
 
     /**
      * Gets card_transaction
-     * @return \Swagger\Client\Model\InlineResponse20016CardTransaction
+     * @return \Swagger\Client\Model\CardTransaction
      */
     public function getCardTransaction()
     {
@@ -555,7 +595,7 @@ class Transaction implements ArrayAccess
 
     /**
      * Sets card_transaction
-     * @param \Swagger\Client\Model\InlineResponse20016CardTransaction $card_transaction
+     * @param \Swagger\Client\Model\CardTransaction $card_transaction Specifics in case of card transaction
      * @return $this
      */
     public function setCardTransaction($card_transaction)
@@ -567,7 +607,7 @@ class Transaction implements ArrayAccess
 
     /**
      * Gets manual_transaction
-     * @return \Swagger\Client\Model\InlineResponse20016ManualTransaction
+     * @return \Swagger\Client\Model\ManualTransaction
      */
     public function getManualTransaction()
     {
@@ -576,7 +616,7 @@ class Transaction implements ArrayAccess
 
     /**
      * Sets manual_transaction
-     * @param \Swagger\Client\Model\InlineResponse20016ManualTransaction $manual_transaction
+     * @param \Swagger\Client\Model\ManualTransaction $manual_transaction Specifics in case of manual transaction
      * @return $this
      */
     public function setManualTransaction($manual_transaction)

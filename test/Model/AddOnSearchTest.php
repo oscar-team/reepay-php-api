@@ -47,7 +47,6 @@ class AddOnSearchTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class AddOnSearchTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class AddOnSearchTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class AddOnSearchTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class AddOnSearchTest extends \PHPUnit_Framework_TestCase
      */
     public function testAddOnSearch()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class AddOnSearchTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPage()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class AddOnSearchTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySize()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class AddOnSearchTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyCount()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class AddOnSearchTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySearch()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class AddOnSearchTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertySort()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class AddOnSearchTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyContent()
     {
-
     }
 
     /**
@@ -135,7 +124,6 @@ class AddOnSearchTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTotalElements()
     {
-
     }
 
     /**
@@ -143,7 +131,5 @@ class AddOnSearchTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTotalPages()
     {
-
     }
-
 }

@@ -72,9 +72,37 @@ class UpdateAccount implements ArrayAccess
         'default_vat' => 'float'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'handle' => null,
+        'currency' => null,
+        'name' => null,
+        'address' => null,
+        'address2' => null,
+        'city' => null,
+        'locale' => null,
+        'timezone' => null,
+        'country' => null,
+        'email' => null,
+        'phone' => null,
+        'vat' => null,
+        'website' => null,
+        'logo' => null,
+        'postal_code' => null,
+        'default_vat' => 'float'
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**

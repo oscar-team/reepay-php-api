@@ -1,6 +1,6 @@
 # Swagger\Client\CouponApi
 
-All URIs are relative to *https://api.reepay.com/*
+All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **createCoupon**
-> \Swagger\Client\Model\InlineResponse20012Content createCoupon($body)
+> \Swagger\Client\Model\Coupon createCoupon($body)
 
 Create coupon
 
@@ -34,7 +34,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERN
 Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
 $api_instance = new Swagger\Client\Api\CouponApi();
-$body = new \Swagger\Client\Model\Body11(); // \Swagger\Client\Model\Body11 | 
+$body = new \Swagger\Client\Model\CreateCoupon(); // \Swagger\Client\Model\CreateCoupon | 
 
 try {
     $result = $api_instance->createCoupon($body);
@@ -49,11 +49,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\Body11**](../Model/\Swagger\Client\Model\Body11.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\CreateCoupon**](../Model/CreateCoupon.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20012Content**](../Model/InlineResponse20012Content.md)
+[**\Swagger\Client\Model\Coupon**](../Model/Coupon.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteCoupon**
-> \Swagger\Client\Model\InlineResponse20012Content deleteCoupon($handle)
+> \Swagger\Client\Model\Coupon deleteCoupon($handle)
 
 Delete coupon
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20012Content**](../Model/InlineResponse20012Content.md)
+[**\Swagger\Client\Model\Coupon**](../Model/Coupon.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **expireCoupon**
-> \Swagger\Client\Model\InlineResponse20012Content expireCoupon($handle)
+> \Swagger\Client\Model\Coupon expireCoupon($handle)
 
 Expire coupon
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20012Content**](../Model/InlineResponse20012Content.md)
+[**\Swagger\Client\Model\Coupon**](../Model/Coupon.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCoupon**
-> \Swagger\Client\Model\InlineResponse20012Content getCoupon($handle)
+> \Swagger\Client\Model\Coupon getCoupon($handle)
 
 Get coupon
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20012Content**](../Model/InlineResponse20012Content.md)
+[**\Swagger\Client\Model\Coupon**](../Model/Coupon.md)
 
 ### Authorization
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCoupons**
-> \Swagger\Client\Model\InlineResponse20012 getCoupons($page, $size, $search, $sort)
+> \Swagger\Client\Model\CouponSearch getCoupons($page, $size, $search, $sort)
 
 Get list of coupons
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20012**](../Model/InlineResponse20012.md)
+[**\Swagger\Client\Model\CouponSearch**](../Model/CouponSearch.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCoupon**
-> \Swagger\Client\Model\InlineResponse20012Content updateCoupon($handle, $body)
+> \Swagger\Client\Model\Coupon updateCoupon($handle, $body)
 
 Update coupon
 
@@ -306,7 +306,7 @@ Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSW
 
 $api_instance = new Swagger\Client\Api\CouponApi();
 $handle = "handle_example"; // string | Coupon handle
-$body = new \Swagger\Client\Model\Body12(); // \Swagger\Client\Model\Body12 | 
+$body = new \Swagger\Client\Model\UpdateCoupon(); // \Swagger\Client\Model\UpdateCoupon | 
 
 try {
     $result = $api_instance->updateCoupon($handle, $body);
@@ -322,11 +322,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Coupon handle |
- **body** | [**\Swagger\Client\Model\Body12**](../Model/\Swagger\Client\Model\Body12.md)|  | [optional]
+ **body** | [**\Swagger\Client\Model\UpdateCoupon**](../Model/UpdateCoupon.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20012Content**](../Model/InlineResponse20012Content.md)
+[**\Swagger\Client\Model\Coupon**](../Model/Coupon.md)
 
 ### Authorization
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **validateCode**
-> \Swagger\Client\Model\InlineResponse20012Content validateCode($code, $plan, $customer)
+> \Swagger\Client\Model\Coupon validateCode($code, $plan, $customer)
 
 Validate coupon
 
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InlineResponse20012Content**](../Model/InlineResponse20012Content.md)
+[**\Swagger\Client\Model\Coupon**](../Model/Coupon.md)
 
 ### Authorization
 

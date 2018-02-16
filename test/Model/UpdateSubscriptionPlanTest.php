@@ -47,7 +47,6 @@ class UpdateSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -55,7 +54,6 @@ class UpdateSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -63,7 +61,6 @@ class UpdateSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -71,7 +68,6 @@ class UpdateSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -79,7 +75,6 @@ class UpdateSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testUpdateSubscriptionPlan()
     {
-
     }
 
     /**
@@ -87,7 +82,6 @@ class UpdateSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyName()
     {
-
     }
 
     /**
@@ -95,7 +89,6 @@ class UpdateSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDescription()
     {
-
     }
 
     /**
@@ -103,7 +96,6 @@ class UpdateSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyVat()
     {
-
     }
 
     /**
@@ -111,7 +103,6 @@ class UpdateSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyDunningPlan()
     {
-
     }
 
     /**
@@ -119,7 +110,6 @@ class UpdateSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyRenewalReminderEmailDays()
     {
-
     }
 
     /**
@@ -127,7 +117,6 @@ class UpdateSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyTrialReminderEmailDays()
     {
-
     }
 
     /**
@@ -135,7 +124,33 @@ class UpdateSubscriptionPlanTest extends \PHPUnit_Framework_TestCase
      */
     public function testPropertyPartialPeriodHandling()
     {
-
     }
 
+    /**
+     * Test attribute "include_zero_amount"
+     */
+    public function testPropertyIncludeZeroAmount()
+    {
+    }
+
+    /**
+     * Test attribute "setup_fee"
+     */
+    public function testPropertySetupFee()
+    {
+    }
+
+    /**
+     * Test attribute "setup_fee_text"
+     */
+    public function testPropertySetupFeeText()
+    {
+    }
+
+    /**
+     * Test attribute "setup_fee_handling"
+     */
+    public function testPropertySetupFeeHandling()
+    {
+    }
 }

@@ -49,7 +49,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function setUpBeforeClass()
     {
-
     }
 
     /**
@@ -57,7 +56,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-
     }
 
     /**
@@ -65,7 +63,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-
     }
 
     /**
@@ -73,7 +70,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
     }
 
     /**
@@ -84,7 +80,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testActivatePaymentMethod()
     {
-
     }
 
     /**
@@ -95,7 +90,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testAddCardJson()
     {
-
     }
 
     /**
@@ -106,7 +100,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateCustomerInvoice()
     {
-
     }
 
     /**
@@ -117,7 +110,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateCustomerJson()
     {
-
     }
 
     /**
@@ -128,7 +120,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testCreateCustomerNoteJson()
     {
-
     }
 
     /**
@@ -139,7 +130,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testDeleteCustomer()
     {
-
     }
 
     /**
@@ -150,7 +140,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetCard()
     {
-
     }
 
     /**
@@ -161,7 +150,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetCardDetails()
     {
-
     }
 
     /**
@@ -172,7 +160,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetCustomer()
     {
-
     }
 
     /**
@@ -183,7 +170,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetCustomerNotes()
     {
-
     }
 
     /**
@@ -194,7 +180,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetCustomerPaymentMethods()
     {
-
     }
 
     /**
@@ -205,7 +190,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetCustomers()
     {
-
     }
 
     /**
@@ -216,7 +200,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testImportCardJson()
     {
-
     }
 
     /**
@@ -227,7 +210,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testInactivatePaymentMethod()
     {
-
     }
 
     /**
@@ -238,7 +220,6 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testReactivateCard()
     {
-
     }
 
     /**
@@ -249,7 +230,5 @@ class CustomerApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testUpdateCustomerJson()
     {
-
     }
-
 }

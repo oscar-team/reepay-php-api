@@ -26,17 +26,17 @@ Name | Type | Description | Notes
 **on_hold_subscriptions** | **int** | Number of subscription on hold for this customer | 
 **cancelled_subscriptions** | **int** | Number of cancelled subscription for this customer | 
 **non_renewing_subscriptions** | **int** | Number of non renewing (active subscriptions not renewing at billing period end) subscriptions for this customer | 
-**failed_invoices** | **int** | Number of failed invoices for this customer | 
-**failed_amount** | **int** | Summed amount for failed invoices | 
-**cancelled_invoices** | **int** | Number of cancelled invoices for this customer | 
-**cancelled_amount** | **int** | Summed amount for cancelled invoices | 
-**pending_invoices** | **int** | Number of pending invoices for this customer | 
-**pending_amount** | **int** | Summed amount for pending invoices | 
-**dunning_invoices** | **int** | Number of dunning invoices for this customer | 
-**dunning_amount** | **int** | Summed amount for dunning invoices | 
-**settled_invoices** | **int** | Number of settled invoices for this customer | 
-**settled_amount** | **int** | Summed settled amount | 
-**refunded_amount** | **int** | Summed refunded amount | 
+**failed_invoices** | **int** | Number of failed subscription invoices for this customer | 
+**failed_amount** | **int** | Summed amount for failed subscription invoices | 
+**cancelled_invoices** | **int** | Number of cancelled subscription invoices for this customer | 
+**cancelled_amount** | **int** | Summed amount for cancelled subscription invoices | 
+**pending_invoices** | **int** | Number of pending subscription invoices for this customer | 
+**pending_amount** | **int** | Summed amount for pending subscription invoices | 
+**dunning_invoices** | **int** | Number of dunning subscription invoices for this customer | 
+**dunning_amount** | **int** | Summed amount for dunning subscription invoices | 
+**settled_invoices** | **int** | Number of settled subscription invoices for this customer | 
+**settled_amount** | **int** | Summed settled subscription amount | 
+**refunded_amount** | **int** | Summed refunded subscription amount | 
 **pending_additional_costs** | **int** | Number of pending additional costs | 
 **pending_additional_cost_amount** | **int** | Summed amount of pending additional costs incl vat | 
 **transferred_additional_costs** | **int** | Number of additional costs that have been applied to invoices | 
