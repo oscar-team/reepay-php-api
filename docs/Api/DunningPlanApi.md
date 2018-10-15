@@ -1,4 +1,4 @@
-# Swagger\Client\DunningPlanApi
+# Reepay\DunningPlanApi
 
 All URIs are relative to *https://api.reepay.com*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **createDunningPlanJson**
-> \Swagger\Client\Model\DunningPlan createDunningPlanJson($body)
+> \Reepay\Model\DunningPlan createDunningPlanJson($body)
 
 Create dunning plan
 
@@ -24,18 +24,18 @@ Create dunning plan
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\DunningPlanApi();
-$body = new \Swagger\Client\Model\CreateDunningPlan(); // \Swagger\Client\Model\CreateDunningPlan | 
+$apiInstance = new Reepay\Api\DunningPlanApi();
+$body = new \Reepay\Model\CreateDunningPlan(); // \Reepay\Model\CreateDunningPlan |
 
 try {
-    $result = $api_instance->createDunningPlanJson($body);
+    $result = $apiInstance->createDunningPlanJson($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DunningPlanApi->createDunningPlanJson: ', $e->getMessage(), PHP_EOL;
@@ -47,11 +47,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\CreateDunningPlan**](../Model/CreateDunningPlan.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateDunningPlan**](../Model/CreateDunningPlan.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\DunningPlan**](../Model/DunningPlan.md)
+[**\Reepay\Model\DunningPlan**](../Model/DunningPlan.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteDunningPlan**
-> \Swagger\Client\Model\DunningPlan deleteDunningPlan($handle)
+> \Reepay\Model\DunningPlan deleteDunningPlan($handle)
 
 Delete dunning plan
 
@@ -77,18 +77,18 @@ Delete dunning plan
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\DunningPlanApi();
+$apiInstance = new Reepay\Api\DunningPlanApi();
 $handle = "handle_example"; // string | Dunning plan handle
 
 try {
-    $result = $api_instance->deleteDunningPlan($handle);
+    $result = $apiInstance->deleteDunningPlan($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DunningPlanApi->deleteDunningPlan: ', $e->getMessage(), PHP_EOL;
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\DunningPlan**](../Model/DunningPlan.md)
+[**\Reepay\Model\DunningPlan**](../Model/DunningPlan.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDunningPlan**
-> \Swagger\Client\Model\DunningPlan getDunningPlan($handle)
+> \Reepay\Model\DunningPlan getDunningPlan($handle)
 
 Get dunning plan
 
@@ -130,18 +130,18 @@ Get dunning plan
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\DunningPlanApi();
+$apiInstance = new Reepay\Api\DunningPlanApi();
 $handle = "handle_example"; // string | Dunning plan handle
 
 try {
-    $result = $api_instance->getDunningPlan($handle);
+    $result = $apiInstance->getDunningPlan($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DunningPlanApi->getDunningPlan: ', $e->getMessage(), PHP_EOL;
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\DunningPlan**](../Model/DunningPlan.md)
+[**\Reepay\Model\DunningPlan**](../Model/DunningPlan.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDunningPlans**
-> \Swagger\Client\Model\DunningPlan[] getDunningPlans()
+> \Reepay\Model\DunningPlan[] getDunningPlans()
 
 Get list of dunning plans
 
@@ -183,17 +183,17 @@ Get list of dunning plans
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\DunningPlanApi();
+$apiInstance = new Reepay\Api\DunningPlanApi();
 
 try {
-    $result = $api_instance->getDunningPlans();
+    $result = $apiInstance->getDunningPlans();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DunningPlanApi->getDunningPlans: ', $e->getMessage(), PHP_EOL;
@@ -206,7 +206,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\DunningPlan[]**](../Model/DunningPlan.md)
+[**\Reepay\Model\DunningPlan[]**](../Model/DunningPlan.md)
 
 ### Authorization
 
@@ -220,7 +220,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateJson**
-> \Swagger\Client\Model\DunningPlan updateJson($handle, $body)
+> \Reepay\Model\DunningPlan updateJson($handle, $body)
 
 Update dunning plan
 
@@ -232,19 +232,19 @@ Update dunning plan
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\DunningPlanApi();
+$apiInstance = new Reepay\Api\DunningPlanApi();
 $handle = "handle_example"; // string | Dunning plan handle
-$body = new \Swagger\Client\Model\UpdateDunningPlan(); // \Swagger\Client\Model\UpdateDunningPlan | 
+$body = new \Reepay\Model\UpdateDunningPlan(); // \Reepay\Model\UpdateDunningPlan |
 
 try {
-    $result = $api_instance->updateJson($handle, $body);
+    $result = $apiInstance->updateJson($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DunningPlanApi->updateJson: ', $e->getMessage(), PHP_EOL;
@@ -257,11 +257,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Dunning plan handle |
- **body** | [**\Swagger\Client\Model\UpdateDunningPlan**](../Model/UpdateDunningPlan.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateDunningPlan**](../Model/UpdateDunningPlan.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\DunningPlan**](../Model/DunningPlan.md)
+[**\Reepay\Model\DunningPlan**](../Model/DunningPlan.md)
 
 ### Authorization
 

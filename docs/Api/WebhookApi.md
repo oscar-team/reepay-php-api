@@ -1,4 +1,4 @@
-# Swagger\Client\WebhookApi
+# Reepay\WebhookApi
 
 All URIs are relative to *https://api.reepay.com*
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **disableWebhooks**
-> \Swagger\Client\Model\Webhook[] disableWebhooks($body)
+> \Reepay\Model\Webhook[] disableWebhooks($body)
 
 Disable webhooks
 
@@ -25,18 +25,18 @@ Disable webhooks
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\WebhookApi();
-$body = new \Swagger\Client\Model\WebhookDisableRequest(); // \Swagger\Client\Model\WebhookDisableRequest | 
+$apiInstance = new Reepay\Api\WebhookApi();
+$body = new \Reepay\Model\WebhookDisableRequest(); // \Reepay\Model\WebhookDisableRequest |
 
 try {
-    $result = $api_instance->disableWebhooks($body);
+    $result = $apiInstance->disableWebhooks($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->disableWebhooks: ', $e->getMessage(), PHP_EOL;
@@ -48,11 +48,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\WebhookDisableRequest**](../Model/WebhookDisableRequest.md)|  | [optional]
+ **body** | [**\Reepay\Model\WebhookDisableRequest**](../Model/WebhookDisableRequest.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Webhook[]**](../Model/Webhook.md)
+[**\Reepay\Model\Webhook[]**](../Model/Webhook.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhook**
-> \Swagger\Client\Model\Webhook[] getWebhook($id)
+> \Reepay\Model\Webhook[] getWebhook($id)
 
 Get webhooks
 
@@ -78,18 +78,18 @@ Get webhooks
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\WebhookApi();
+$apiInstance = new Reepay\Api\WebhookApi();
 $id = "id_example"; // string | Webhook id or event id
 
 try {
-    $result = $api_instance->getWebhook($id);
+    $result = $apiInstance->getWebhook($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->getWebhook: ', $e->getMessage(), PHP_EOL;
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Webhook[]**](../Model/Webhook.md)
+[**\Reepay\Model\Webhook[]**](../Model/Webhook.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookRequests**
-> \Swagger\Client\Model\WebhookRequest[] getWebhookRequests($id)
+> \Reepay\Model\WebhookRequest[] getWebhookRequests($id)
 
 Get webhook requests
 
@@ -131,18 +131,18 @@ Get webhook requests
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\WebhookApi();
+$apiInstance = new Reepay\Api\WebhookApi();
 $id = "id_example"; // string | Webhook id
 
 try {
-    $result = $api_instance->getWebhookRequests($id);
+    $result = $apiInstance->getWebhookRequests($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->getWebhookRequests: ', $e->getMessage(), PHP_EOL;
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\WebhookRequest[]**](../Model/WebhookRequest.md)
+[**\Reepay\Model\WebhookRequest[]**](../Model/WebhookRequest.md)
 
 ### Authorization
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhooks**
-> \Swagger\Client\Model\Webhook[] getWebhooks($created_before, $size, $state)
+> \Reepay\Model\Webhook[] getWebhooks($created_before, $size, $state)
 
 Get list of webhooks
 
@@ -184,20 +184,20 @@ Get list of webhooks
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\WebhookApi();
+$apiInstance = new Reepay\Api\WebhookApi();
 $created_before = "created_before_example"; // string | Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page.
 $size = 100; // int | Page size. A maximum of 100 is allowed.
 $state = "state_example"; // string | Optional state to filter on, one of the following: `pending`, `disabled`, `failed`, `completed`
 
 try {
-    $result = $api_instance->getWebhooks($created_before, $size, $state);
+    $result = $apiInstance->getWebhooks($created_before, $size, $state);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->getWebhooks: ', $e->getMessage(), PHP_EOL;
@@ -211,11 +211,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **created_before** | **string**| Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. |
  **size** | **int**| Page size. A maximum of 100 is allowed. | [optional] [default to 100]
- **state** | **string**| Optional state to filter on, one of the following: &#x60;pending&#x60;, &#x60;disabled&#x60;, &#x60;failed&#x60;, &#x60;completed&#x60; | [optional]
+ **state** | **string**| Optional state to filter on, one of the following: `pending`, `disabled`, `failed`, `completed` | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Webhook[]**](../Model/Webhook.md)
+[**\Reepay\Model\Webhook[]**](../Model/Webhook.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **resendJson**
-> \Swagger\Client\Model\Webhook[] resendJson($body)
+> \Reepay\Model\Webhook[] resendJson($body)
 
 Re-send webhooks
 
@@ -241,18 +241,18 @@ Re-send webhooks
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\WebhookApi();
-$body = new \Swagger\Client\Model\WebhookResendRequest(); // \Swagger\Client\Model\WebhookResendRequest | 
+$apiInstance = new Reepay\Api\WebhookApi();
+$body = new \Reepay\Model\WebhookResendRequest(); // \Reepay\Model\WebhookResendRequest |
 
 try {
-    $result = $api_instance->resendJson($body);
+    $result = $apiInstance->resendJson($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->resendJson: ', $e->getMessage(), PHP_EOL;
@@ -264,11 +264,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\WebhookResendRequest**](../Model/WebhookResendRequest.md)|  | [optional]
+ **body** | [**\Reepay\Model\WebhookResendRequest**](../Model/WebhookResendRequest.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Webhook[]**](../Model/Webhook.md)
+[**\Reepay\Model\Webhook[]**](../Model/Webhook.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateWebhooks**
-> \Swagger\Client\Model\Webhook[] updateWebhooks($body)
+> \Reepay\Model\Webhook[] updateWebhooks($body)
 
 Update and resend webhooks
 
@@ -294,18 +294,18 @@ Update and resend webhooks
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\WebhookApi();
-$body = new \Swagger\Client\Model\WebhookUpdateRequest(); // \Swagger\Client\Model\WebhookUpdateRequest | 
+$apiInstance = new Reepay\Api\WebhookApi();
+$body = new \Reepay\Model\WebhookUpdateRequest(); // \Reepay\Model\WebhookUpdateRequest |
 
 try {
-    $result = $api_instance->updateWebhooks($body);
+    $result = $apiInstance->updateWebhooks($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->updateWebhooks: ', $e->getMessage(), PHP_EOL;
@@ -317,11 +317,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\WebhookUpdateRequest**](../Model/WebhookUpdateRequest.md)|  | [optional]
+ **body** | [**\Reepay\Model\WebhookUpdateRequest**](../Model/WebhookUpdateRequest.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Webhook[]**](../Model/Webhook.md)
+[**\Reepay\Model\Webhook[]**](../Model/Webhook.md)
 
 ### Authorization
 

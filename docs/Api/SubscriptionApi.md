@@ -1,4 +1,4 @@
-# Swagger\Client\SubscriptionApi
+# Reepay\SubscriptionApi
 
 All URIs are relative to *https://api.reepay.com*
 
@@ -31,7 +31,7 @@ Method | HTTP request | Description
 
 
 # **cancelSubscription**
-> \Swagger\Client\Model\Subscription cancelSubscription($handle, $body)
+> \Reepay\Model\Subscription cancelSubscription($handle, $body)
 
 Cancel subscription
 
@@ -43,19 +43,19 @@ Cancel subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\CancelSubscription(); // \Swagger\Client\Model\CancelSubscription | 
+$body = new \Reepay\Model\CancelSubscription(); // \Reepay\Model\CancelSubscription |
 
 try {
-    $result = $api_instance->cancelSubscription($handle, $body);
+    $result = $apiInstance->cancelSubscription($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->cancelSubscription: ', $e->getMessage(), PHP_EOL;
@@ -68,11 +68,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\CancelSubscription**](../Model/CancelSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\CancelSubscription**](../Model/CancelSubscription.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
+[**\Reepay\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **changeNextPeriodStartJson**
-> \Swagger\Client\Model\Subscription changeNextPeriodStartJson($handle, $body)
+> \Reepay\Model\Subscription changeNextPeriodStartJson($handle, $body)
 
 Change next renewal date
 
@@ -98,19 +98,19 @@ Change next renewal date
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\ChangeNextPeriodStart(); // \Swagger\Client\Model\ChangeNextPeriodStart | 
+$body = new \Reepay\Model\ChangeNextPeriodStart(); // \Reepay\Model\ChangeNextPeriodStart |
 
 try {
-    $result = $api_instance->changeNextPeriodStartJson($handle, $body);
+    $result = $apiInstance->changeNextPeriodStartJson($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->changeNextPeriodStartJson: ', $e->getMessage(), PHP_EOL;
@@ -123,11 +123,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\ChangeNextPeriodStart**](../Model/ChangeNextPeriodStart.md)|  | [optional]
+ **body** | [**\Reepay\Model\ChangeNextPeriodStart**](../Model/ChangeNextPeriodStart.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
+[**\Reepay\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **changeSubscription**
-> \Swagger\Client\Model\Subscription changeSubscription($handle, $body)
+> \Reepay\Model\Subscription changeSubscription($handle, $body)
 
 Change subscription
 
@@ -153,19 +153,19 @@ Change subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\ChangeSubscription(); // \Swagger\Client\Model\ChangeSubscription | 
+$body = new \Reepay\Model\ChangeSubscription(); // \Reepay\Model\ChangeSubscription |
 
 try {
-    $result = $api_instance->changeSubscription($handle, $body);
+    $result = $apiInstance->changeSubscription($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->changeSubscription: ', $e->getMessage(), PHP_EOL;
@@ -178,11 +178,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\ChangeSubscription**](../Model/ChangeSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\ChangeSubscription**](../Model/ChangeSubscription.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
+[**\Reepay\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSubscriptionDiscount**
-> \Swagger\Client\Model\SubscriptionDiscount createSubscriptionDiscount($handle, $body)
+> \Reepay\Model\SubscriptionDiscount createSubscriptionDiscount($handle, $body)
 
 Add subscription discount
 
@@ -208,19 +208,19 @@ Add subscription discount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\CreateSubscriptionDiscount(); // \Swagger\Client\Model\CreateSubscriptionDiscount | 
+$body = new \Reepay\Model\CreateSubscriptionDiscount(); // \Reepay\Model\CreateSubscriptionDiscount |
 
 try {
-    $result = $api_instance->createSubscriptionDiscount($handle, $body);
+    $result = $apiInstance->createSubscriptionDiscount($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->createSubscriptionDiscount: ', $e->getMessage(), PHP_EOL;
@@ -233,11 +233,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\CreateSubscriptionDiscount**](../Model/CreateSubscriptionDiscount.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateSubscriptionDiscount**](../Model/CreateSubscriptionDiscount.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\SubscriptionDiscount**](../Model/SubscriptionDiscount.md)
+[**\Reepay\Model\SubscriptionDiscount**](../Model/SubscriptionDiscount.md)
 
 ### Authorization
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSubscriptionInvoice**
-> \Swagger\Client\Model\Invoice createSubscriptionInvoice($handle, $body)
+> \Reepay\Model\Invoice createSubscriptionInvoice($handle, $body)
 
 Create invoice ondemand for subscription
 
@@ -263,19 +263,19 @@ Create invoice ondemand for subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\CreateSubscriptionInvoice(); // \Swagger\Client\Model\CreateSubscriptionInvoice | 
+$body = new \Reepay\Model\CreateSubscriptionInvoice(); // \Reepay\Model\CreateSubscriptionInvoice |
 
 try {
-    $result = $api_instance->createSubscriptionInvoice($handle, $body);
+    $result = $apiInstance->createSubscriptionInvoice($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->createSubscriptionInvoice: ', $e->getMessage(), PHP_EOL;
@@ -288,11 +288,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\CreateSubscriptionInvoice**](../Model/CreateSubscriptionInvoice.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateSubscriptionInvoice**](../Model/CreateSubscriptionInvoice.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Invoice**](../Model/Invoice.md)
+[**\Reepay\Model\Invoice**](../Model/Invoice.md)
 
 ### Authorization
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createSubscriptionJson**
-> \Swagger\Client\Model\Subscription createSubscriptionJson($body)
+> \Reepay\Model\Subscription createSubscriptionJson($body)
 
 Create subscription
 
@@ -318,18 +318,18 @@ Create subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
-$body = new \Swagger\Client\Model\CreateSubscription(); // \Swagger\Client\Model\CreateSubscription | 
+$apiInstance = new Reepay\Api\SubscriptionApi();
+$body = new \Reepay\Model\CreateSubscription(); // \Reepay\Model\CreateSubscription |
 
 try {
-    $result = $api_instance->createSubscriptionJson($body);
+    $result = $apiInstance->createSubscriptionJson($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->createSubscriptionJson: ', $e->getMessage(), PHP_EOL;
@@ -341,11 +341,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\CreateSubscription**](../Model/CreateSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateSubscription**](../Model/CreateSubscription.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
+[**\Reepay\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteSubscriptionDiscount**
-> \Swagger\Client\Model\SubscriptionDiscount deleteSubscriptionDiscount($handle, $sd_handle)
+> \Reepay\Model\SubscriptionDiscount deleteSubscriptionDiscount($handle, $sd_handle)
 
 Delete subscription discount
 
@@ -371,19 +371,19 @@ Delete subscription discount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
 $sd_handle = "sd_handle_example"; // string | Subscription discount handle
 
 try {
-    $result = $api_instance->deleteSubscriptionDiscount($handle, $sd_handle);
+    $result = $apiInstance->deleteSubscriptionDiscount($handle, $sd_handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->deleteSubscriptionDiscount: ', $e->getMessage(), PHP_EOL;
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\SubscriptionDiscount**](../Model/SubscriptionDiscount.md)
+[**\Reepay\Model\SubscriptionDiscount**](../Model/SubscriptionDiscount.md)
 
 ### Authorization
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **expire**
-> \Swagger\Client\Model\Subscription expire($handle, $body)
+> \Reepay\Model\Subscription expire($handle, $body)
 
 Expire subscription
 
@@ -426,19 +426,19 @@ Expire subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\ExpireSubscription(); // \Swagger\Client\Model\ExpireSubscription | 
+$body = new \Reepay\Model\ExpireSubscription(); // \Reepay\Model\ExpireSubscription |
 
 try {
-    $result = $api_instance->expire($handle, $body);
+    $result = $apiInstance->expire($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->expire: ', $e->getMessage(), PHP_EOL;
@@ -451,11 +451,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\ExpireSubscription**](../Model/ExpireSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\ExpireSubscription**](../Model/ExpireSubscription.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
+[**\Reepay\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscription**
-> \Swagger\Client\Model\Subscription getSubscription($handle)
+> \Reepay\Model\Subscription getSubscription($handle)
 
 Get subscription
 
@@ -481,18 +481,18 @@ Get subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->getSubscription($handle);
+    $result = $apiInstance->getSubscription($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscription: ', $e->getMessage(), PHP_EOL;
@@ -508,7 +508,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
+[**\Reepay\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -522,7 +522,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionAddOn**
-> \Swagger\Client\Model\SubscriptionAddOn getSubscriptionAddOn($handle, $sa_handle)
+> \Reepay\Model\SubscriptionAddOn getSubscriptionAddOn($handle, $sa_handle)
 
 Get subscription add-on
 
@@ -534,19 +534,19 @@ Get subscription add-on
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
 $sa_handle = "sa_handle_example"; // string | Subscription add-on handle
 
 try {
-    $result = $api_instance->getSubscriptionAddOn($handle, $sa_handle);
+    $result = $apiInstance->getSubscriptionAddOn($handle, $sa_handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscriptionAddOn: ', $e->getMessage(), PHP_EOL;
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\SubscriptionAddOn**](../Model/SubscriptionAddOn.md)
+[**\Reepay\Model\SubscriptionAddOn**](../Model/SubscriptionAddOn.md)
 
 ### Authorization
 
@@ -577,7 +577,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionAddOns**
-> \Swagger\Client\Model\SubscriptionAddOn[] getSubscriptionAddOns($handle)
+> \Reepay\Model\SubscriptionAddOn[] getSubscriptionAddOns($handle)
 
 Get subscription add-ons
 
@@ -589,18 +589,18 @@ Get subscription add-ons
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->getSubscriptionAddOns($handle);
+    $result = $apiInstance->getSubscriptionAddOns($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscriptionAddOns: ', $e->getMessage(), PHP_EOL;
@@ -616,7 +616,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\SubscriptionAddOn[]**](../Model/SubscriptionAddOn.md)
+[**\Reepay\Model\SubscriptionAddOn[]**](../Model/SubscriptionAddOn.md)
 
 ### Authorization
 
@@ -630,7 +630,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionDiscount**
-> \Swagger\Client\Model\SubscriptionDiscount getSubscriptionDiscount($handle, $sd_handle)
+> \Reepay\Model\SubscriptionDiscount getSubscriptionDiscount($handle, $sd_handle)
 
 Get subscription discount
 
@@ -642,19 +642,19 @@ Get subscription discount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
 $sd_handle = "sd_handle_example"; // string | Subscription discount handle
 
 try {
-    $result = $api_instance->getSubscriptionDiscount($handle, $sd_handle);
+    $result = $apiInstance->getSubscriptionDiscount($handle, $sd_handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscriptionDiscount: ', $e->getMessage(), PHP_EOL;
@@ -671,7 +671,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\SubscriptionDiscount**](../Model/SubscriptionDiscount.md)
+[**\Reepay\Model\SubscriptionDiscount**](../Model/SubscriptionDiscount.md)
 
 ### Authorization
 
@@ -685,7 +685,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionDiscounts**
-> \Swagger\Client\Model\SubscriptionDiscount[] getSubscriptionDiscounts($handle)
+> \Reepay\Model\SubscriptionDiscount[] getSubscriptionDiscounts($handle)
 
 Get subscription discounts
 
@@ -697,18 +697,18 @@ Get subscription discounts
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->getSubscriptionDiscounts($handle);
+    $result = $apiInstance->getSubscriptionDiscounts($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscriptionDiscounts: ', $e->getMessage(), PHP_EOL;
@@ -724,7 +724,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\SubscriptionDiscount[]**](../Model/SubscriptionDiscount.md)
+[**\Reepay\Model\SubscriptionDiscount[]**](../Model/SubscriptionDiscount.md)
 
 ### Authorization
 
@@ -738,7 +738,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionPaymentMethods**
-> \Swagger\Client\Model\PaymentMethods getSubscriptionPaymentMethods($handle)
+> \Reepay\Model\PaymentMethods getSubscriptionPaymentMethods($handle)
 
 Get payment methods
 
@@ -750,18 +750,18 @@ Get payment methods
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->getSubscriptionPaymentMethods($handle);
+    $result = $apiInstance->getSubscriptionPaymentMethods($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscriptionPaymentMethods: ', $e->getMessage(), PHP_EOL;
@@ -777,7 +777,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaymentMethods**](../Model/PaymentMethods.md)
+[**\Reepay\Model\PaymentMethods**](../Model/PaymentMethods.md)
 
 ### Authorization
 
@@ -791,7 +791,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptionPeriodBalance**
-> \Swagger\Client\Model\SubscriptionPeriodBalance getSubscriptionPeriodBalance($handle, $date)
+> \Reepay\Model\SubscriptionPeriodBalance getSubscriptionPeriodBalance($handle, $date)
 
 Get the period balance for subscription
 
@@ -803,19 +803,19 @@ Get the period balance for subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
 $date = "date_example"; // string | Optional period date (default now) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`
 
 try {
-    $result = $api_instance->getSubscriptionPeriodBalance($handle, $date);
+    $result = $apiInstance->getSubscriptionPeriodBalance($handle, $date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscriptionPeriodBalance: ', $e->getMessage(), PHP_EOL;
@@ -828,11 +828,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **date** | **string**| Optional period date (default now) on the form &#x60;yyyy-MM-dd&#x60;, &#x60;yyyyMMdd&#x60;, &#x60;yyyy-MM-ddTHH:mm&#x60; and &#x60;yyyy-MM-ddTHH:mm:ss&#x60; | [optional]
+ **date** | **string**| Optional period date (default now) on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss` | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\SubscriptionPeriodBalance**](../Model/SubscriptionPeriodBalance.md)
+[**\Reepay\Model\SubscriptionPeriodBalance**](../Model/SubscriptionPeriodBalance.md)
 
 ### Authorization
 
@@ -846,7 +846,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSubscriptions**
-> \Swagger\Client\Model\SubscriptionSearch getSubscriptions($page, $size, $search, $sort)
+> \Reepay\Model\SubscriptionSearch getSubscriptions($page, $size, $search, $sort)
 
 Get list of subscriptions
 
@@ -858,21 +858,21 @@ Get list of subscriptions
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $page = 1; // int | Page number to get
 $size = 20; // int | Page size to use
 $search = "search_example"; // string | Optional search expression
 $sort = "sort_example"; // string | Optional sorting expression
 
 try {
-    $result = $api_instance->getSubscriptions($page, $size, $search, $sort);
+    $result = $apiInstance->getSubscriptions($page, $size, $search, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->getSubscriptions: ', $e->getMessage(), PHP_EOL;
@@ -891,7 +891,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\SubscriptionSearch**](../Model/SubscriptionSearch.md)
+[**\Reepay\Model\SubscriptionSearch**](../Model/SubscriptionSearch.md)
 
 ### Authorization
 
@@ -905,7 +905,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **intervalAmount**
-> \Swagger\Client\Model\IntervalAmount intervalAmount($handle, $from, $to)
+> \Reepay\Model\IntervalAmount intervalAmount($handle, $from, $to)
 
 Calculate interval amount
 
@@ -917,20 +917,20 @@ Calculate interval amount
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
 $from = "from_example"; // string | From date on the form yyyy-MM-dd
 $to = "to_example"; // string | To date on the form yyyy-MM-dd
 
 try {
-    $result = $api_instance->intervalAmount($handle, $from, $to);
+    $result = $apiInstance->intervalAmount($handle, $from, $to);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->intervalAmount: ', $e->getMessage(), PHP_EOL;
@@ -948,7 +948,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\IntervalAmount**](../Model/IntervalAmount.md)
+[**\Reepay\Model\IntervalAmount**](../Model/IntervalAmount.md)
 
 ### Authorization
 
@@ -962,7 +962,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **onHold**
-> \Swagger\Client\Model\Subscription onHold($handle, $body)
+> \Reepay\Model\Subscription onHold($handle, $body)
 
 Subscription on hold
 
@@ -974,19 +974,19 @@ Subscription on hold
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\OnHoldSubscription(); // \Swagger\Client\Model\OnHoldSubscription | 
+$body = new \Reepay\Model\OnHoldSubscription(); // \Reepay\Model\OnHoldSubscription |
 
 try {
-    $result = $api_instance->onHold($handle, $body);
+    $result = $apiInstance->onHold($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->onHold: ', $e->getMessage(), PHP_EOL;
@@ -999,11 +999,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\OnHoldSubscription**](../Model/OnHoldSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\OnHoldSubscription**](../Model/OnHoldSubscription.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
+[**\Reepay\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -1017,7 +1017,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **reactivateSubscription**
-> \Swagger\Client\Model\Subscription reactivateSubscription($handle, $body)
+> \Reepay\Model\Subscription reactivateSubscription($handle, $body)
 
 Reactivate subscription on hold
 
@@ -1029,19 +1029,19 @@ Reactivate subscription on hold
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\ReactivateSubscription(); // \Swagger\Client\Model\ReactivateSubscription | 
+$body = new \Reepay\Model\ReactivateSubscription(); // \Reepay\Model\ReactivateSubscription |
 
 try {
-    $result = $api_instance->reactivateSubscription($handle, $body);
+    $result = $apiInstance->reactivateSubscription($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->reactivateSubscription: ', $e->getMessage(), PHP_EOL;
@@ -1054,11 +1054,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\ReactivateSubscription**](../Model/ReactivateSubscription.md)|  | [optional]
+ **body** | [**\Reepay\Model\ReactivateSubscription**](../Model/ReactivateSubscription.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
+[**\Reepay\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 
@@ -1072,7 +1072,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **redeemCouponCode**
-> \Swagger\Client\Model\CouponRedemption redeemCouponCode($handle, $body)
+> \Reepay\Model\CouponRedemption redeemCouponCode($handle, $body)
 
 Redeem coupon code for subscription
 
@@ -1084,19 +1084,19 @@ Redeem coupon code for subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\RedeemCouponCode(); // \Swagger\Client\Model\RedeemCouponCode | 
+$body = new \Reepay\Model\RedeemCouponCode(); // \Reepay\Model\RedeemCouponCode |
 
 try {
-    $result = $api_instance->redeemCouponCode($handle, $body);
+    $result = $apiInstance->redeemCouponCode($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->redeemCouponCode: ', $e->getMessage(), PHP_EOL;
@@ -1109,11 +1109,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\RedeemCouponCode**](../Model/RedeemCouponCode.md)|  | [optional]
+ **body** | [**\Reepay\Model\RedeemCouponCode**](../Model/RedeemCouponCode.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\CouponRedemption**](../Model/CouponRedemption.md)
+[**\Reepay\Model\CouponRedemption**](../Model/CouponRedemption.md)
 
 ### Authorization
 
@@ -1127,7 +1127,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removeAllPaymentMethods**
-> \Swagger\Client\Model\PaymentMethods removeAllPaymentMethods($handle)
+> \Reepay\Model\PaymentMethods removeAllPaymentMethods($handle)
 
 Remove all payment methods
 
@@ -1139,18 +1139,18 @@ Remove all payment methods
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->removeAllPaymentMethods($handle);
+    $result = $apiInstance->removeAllPaymentMethods($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->removeAllPaymentMethods: ', $e->getMessage(), PHP_EOL;
@@ -1166,7 +1166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaymentMethods**](../Model/PaymentMethods.md)
+[**\Reepay\Model\PaymentMethods**](../Model/PaymentMethods.md)
 
 ### Authorization
 
@@ -1180,7 +1180,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **removePaymentMethod**
-> \Swagger\Client\Model\PaymentMethods removePaymentMethod($handle, $method_id)
+> \Reepay\Model\PaymentMethods removePaymentMethod($handle, $method_id)
 
 Remove payment method
 
@@ -1192,19 +1192,19 @@ Remove payment method
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
 $method_id = "method_id_example"; // string | Payment method id
 
 try {
-    $result = $api_instance->removePaymentMethod($handle, $method_id);
+    $result = $apiInstance->removePaymentMethod($handle, $method_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->removePaymentMethod: ', $e->getMessage(), PHP_EOL;
@@ -1221,7 +1221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\PaymentMethods**](../Model/PaymentMethods.md)
+[**\Reepay\Model\PaymentMethods**](../Model/PaymentMethods.md)
 
 ### Authorization
 
@@ -1235,7 +1235,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **setPaymentMethod**
-> \Swagger\Client\Model\PaymentMethods setPaymentMethod($handle, $body)
+> \Reepay\Model\PaymentMethods setPaymentMethod($handle, $body)
 
 Set payment method
 
@@ -1247,19 +1247,19 @@ Set payment method
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\SetPaymentMethod(); // \Swagger\Client\Model\SetPaymentMethod | 
+$body = new \Reepay\Model\SetPaymentMethod(); // \Reepay\Model\SetPaymentMethod |
 
 try {
-    $result = $api_instance->setPaymentMethod($handle, $body);
+    $result = $apiInstance->setPaymentMethod($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->setPaymentMethod: ', $e->getMessage(), PHP_EOL;
@@ -1272,11 +1272,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\SetPaymentMethod**](../Model/SetPaymentMethod.md)|  | [optional]
+ **body** | [**\Reepay\Model\SetPaymentMethod**](../Model/SetPaymentMethod.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\PaymentMethods**](../Model/PaymentMethods.md)
+[**\Reepay\Model\PaymentMethods**](../Model/PaymentMethods.md)
 
 ### Authorization
 
@@ -1290,7 +1290,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **uncancel**
-> \Swagger\Client\Model\Subscription uncancel($handle)
+> \Reepay\Model\Subscription uncancel($handle)
 
 Uncancel subscription
 
@@ -1302,18 +1302,18 @@ Uncancel subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\SubscriptionApi();
+$apiInstance = new Reepay\Api\SubscriptionApi();
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->uncancel($handle);
+    $result = $apiInstance->uncancel($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling SubscriptionApi->uncancel: ', $e->getMessage(), PHP_EOL;
@@ -1329,7 +1329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Subscription**](../Model/Subscription.md)
+[**\Reepay\Model\Subscription**](../Model/Subscription.md)
 
 ### Authorization
 

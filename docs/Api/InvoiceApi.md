@@ -1,4 +1,4 @@
-# Swagger\Client\InvoiceApi
+# Reepay\InvoiceApi
 
 All URIs are relative to *https://api.reepay.com*
 
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **cancelAllDunningPending**
-> \Swagger\Client\Model\Invoice[] cancelAllDunningPending($handle)
+> \Reepay\Model\Invoice[] cancelAllDunningPending($handle)
 
 Cancel all dunning and pending
 
@@ -32,18 +32,18 @@ Cancel all dunning and pending
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\InvoiceApi();
+$apiInstance = new Reepay\Api\InvoiceApi();
 $handle = "handle_example"; // string | Subscriptiom handle
 
 try {
-    $result = $api_instance->cancelAllDunningPending($handle);
+    $result = $apiInstance->cancelAllDunningPending($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->cancelAllDunningPending: ', $e->getMessage(), PHP_EOL;
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Invoice[]**](../Model/Invoice.md)
+[**\Reepay\Model\Invoice[]**](../Model/Invoice.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cancelInvoice**
-> \Swagger\Client\Model\Invoice cancelInvoice($id)
+> \Reepay\Model\Invoice cancelInvoice($id)
 
 Cancel invoice
 
@@ -85,18 +85,18 @@ Cancel invoice
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\InvoiceApi();
+$apiInstance = new Reepay\Api\InvoiceApi();
 $id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $api_instance->cancelInvoice($id);
+    $result = $apiInstance->cancelInvoice($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->cancelInvoice: ', $e->getMessage(), PHP_EOL;
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Invoice**](../Model/Invoice.md)
+[**\Reepay\Model\Invoice**](../Model/Invoice.md)
 
 ### Authorization
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cancelSettleLater**
-> \Swagger\Client\Model\Invoice cancelSettleLater($id)
+> \Reepay\Model\Invoice cancelSettleLater($id)
 
 Cancel settle later
 
@@ -138,18 +138,18 @@ Cancel settle later
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\InvoiceApi();
+$apiInstance = new Reepay\Api\InvoiceApi();
 $id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $api_instance->cancelSettleLater($id);
+    $result = $apiInstance->cancelSettleLater($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->cancelSettleLater: ', $e->getMessage(), PHP_EOL;
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Invoice**](../Model/Invoice.md)
+[**\Reepay\Model\Invoice**](../Model/Invoice.md)
 
 ### Authorization
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **cancelTransaction**
-> \Swagger\Client\Model\Transaction cancelTransaction($id, $transaction)
+> \Reepay\Model\Transaction cancelTransaction($id, $transaction)
 
 Cancel transaction
 
@@ -191,19 +191,19 @@ Cancel transaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\InvoiceApi();
+$apiInstance = new Reepay\Api\InvoiceApi();
 $id = "id_example"; // string | Invoice id or handle
 $transaction = "transaction_example"; // string | Transaction id
 
 try {
-    $result = $api_instance->cancelTransaction($id, $transaction);
+    $result = $apiInstance->cancelTransaction($id, $transaction);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->cancelTransaction: ', $e->getMessage(), PHP_EOL;
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Transaction**](../Model/Transaction.md)
+[**\Reepay\Model\Transaction**](../Model/Transaction.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **detachFromSubscription**
-> \Swagger\Client\Model\Invoice detachFromSubscription($id)
+> \Reepay\Model\Invoice detachFromSubscription($id)
 
 Detach from subscription
 
@@ -246,18 +246,18 @@ Detach from subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\InvoiceApi();
+$apiInstance = new Reepay\Api\InvoiceApi();
 $id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $api_instance->detachFromSubscription($id);
+    $result = $apiInstance->detachFromSubscription($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->detachFromSubscription: ', $e->getMessage(), PHP_EOL;
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Invoice**](../Model/Invoice.md)
+[**\Reepay\Model\Invoice**](../Model/Invoice.md)
 
 ### Authorization
 
@@ -287,7 +287,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInvoice**
-> \Swagger\Client\Model\Invoice getInvoice($id)
+> \Reepay\Model\Invoice getInvoice($id)
 
 Get invoice
 
@@ -299,18 +299,18 @@ Get invoice
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\InvoiceApi();
+$apiInstance = new Reepay\Api\InvoiceApi();
 $id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $api_instance->getInvoice($id);
+    $result = $apiInstance->getInvoice($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->getInvoice: ', $e->getMessage(), PHP_EOL;
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Invoice**](../Model/Invoice.md)
+[**\Reepay\Model\Invoice**](../Model/Invoice.md)
 
 ### Authorization
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getInvoices**
-> \Swagger\Client\Model\InvoiceSearch getInvoices($page, $size, $search, $sort)
+> \Reepay\Model\InvoiceSearch getInvoices($page, $size, $search, $sort)
 
 Get list of invoices
 
@@ -352,21 +352,21 @@ Get list of invoices
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\InvoiceApi();
+$apiInstance = new Reepay\Api\InvoiceApi();
 $page = 1; // int | Page number to get
 $size = 20; // int | Page size to use
 $search = "search_example"; // string | Optional search expression
 $sort = "sort_example"; // string | Optional sorting expression
 
 try {
-    $result = $api_instance->getInvoices($page, $size, $search, $sort);
+    $result = $apiInstance->getInvoices($page, $size, $search, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->getInvoices: ', $e->getMessage(), PHP_EOL;
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\InvoiceSearch**](../Model/InvoiceSearch.md)
+[**\Reepay\Model\InvoiceSearch**](../Model/InvoiceSearch.md)
 
 ### Authorization
 
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **manualSettle**
-> \Swagger\Client\Model\Invoice manualSettle($id, $body)
+> \Reepay\Model\Invoice manualSettle($id, $body)
 
 Manual settle
 
@@ -411,19 +411,19 @@ Manual settle
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\InvoiceApi();
+$apiInstance = new Reepay\Api\InvoiceApi();
 $id = "id_example"; // string | Invoice id or handle
-$body = new \Swagger\Client\Model\ManualSettleTransfer(); // \Swagger\Client\Model\ManualSettleTransfer | 
+$body = new \Reepay\Model\ManualSettleTransfer(); // \Reepay\Model\ManualSettleTransfer |
 
 try {
-    $result = $api_instance->manualSettle($id, $body);
+    $result = $apiInstance->manualSettle($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->manualSettle: ', $e->getMessage(), PHP_EOL;
@@ -436,11 +436,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Invoice id or handle |
- **body** | [**\Swagger\Client\Model\ManualSettleTransfer**](../Model/ManualSettleTransfer.md)|  | [optional]
+ **body** | [**\Reepay\Model\ManualSettleTransfer**](../Model/ManualSettleTransfer.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Invoice**](../Model/Invoice.md)
+[**\Reepay\Model\Invoice**](../Model/Invoice.md)
 
 ### Authorization
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **reactivateInvoice**
-> \Swagger\Client\Model\Invoice reactivateInvoice($id)
+> \Reepay\Model\Invoice reactivateInvoice($id)
 
 Reactivate invoice
 
@@ -466,18 +466,18 @@ Reactivate invoice
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\InvoiceApi();
+$apiInstance = new Reepay\Api\InvoiceApi();
 $id = "id_example"; // string | Invoice id or handle
 
 try {
-    $result = $api_instance->reactivateInvoice($id);
+    $result = $apiInstance->reactivateInvoice($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->reactivateInvoice: ', $e->getMessage(), PHP_EOL;
@@ -493,7 +493,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Invoice**](../Model/Invoice.md)
+[**\Reepay\Model\Invoice**](../Model/Invoice.md)
 
 ### Authorization
 
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **settle**
-> \Swagger\Client\Model\Invoice settle($id, $body)
+> \Reepay\Model\Invoice settle($id, $body)
 
 Settle
 
@@ -519,19 +519,19 @@ Settle
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\InvoiceApi();
+$apiInstance = new Reepay\Api\InvoiceApi();
 $id = "id_example"; // string | Invoice id or handle
-$body = new \Swagger\Client\Model\Settle(); // \Swagger\Client\Model\Settle | 
+$body = new \Reepay\Model\Settle(); // \Reepay\Model\Settle |
 
 try {
-    $result = $api_instance->settle($id, $body);
+    $result = $apiInstance->settle($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->settle: ', $e->getMessage(), PHP_EOL;
@@ -544,11 +544,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Invoice id or handle |
- **body** | [**\Swagger\Client\Model\Settle**](../Model/Settle.md)|  | [optional]
+ **body** | [**\Reepay\Model\Settle**](../Model/Settle.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Invoice**](../Model/Invoice.md)
+[**\Reepay\Model\Invoice**](../Model/Invoice.md)
 
 ### Authorization
 
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **transaction**
-> \Swagger\Client\Model\Transaction transaction($id, $transaction)
+> \Reepay\Model\Transaction transaction($id, $transaction)
 
 Get transaction
 
@@ -574,19 +574,19 @@ Get transaction
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\InvoiceApi();
+$apiInstance = new Reepay\Api\InvoiceApi();
 $id = "id_example"; // string | Invoice id or handle
 $transaction = "transaction_example"; // string | Transaction id
 
 try {
-    $result = $api_instance->transaction($id, $transaction);
+    $result = $apiInstance->transaction($id, $transaction);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->transaction: ', $e->getMessage(), PHP_EOL;
@@ -603,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Transaction**](../Model/Transaction.md)
+[**\Reepay\Model\Transaction**](../Model/Transaction.md)
 
 ### Authorization
 
@@ -629,19 +629,19 @@ Get transaction details
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\InvoiceApi();
+$apiInstance = new Reepay\Api\InvoiceApi();
 $id = "id_example"; // string | Invoice id or handle
 $transaction = "transaction_example"; // string | Transaction id
 
 try {
-    $result = $api_instance->transactionDetails($id, $transaction);
+    $result = $apiInstance->transactionDetails($id, $transaction);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->transactionDetails: ', $e->getMessage(), PHP_EOL;
@@ -672,7 +672,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **transactionList**
-> \Swagger\Client\Model\TransactionSearch transactionList($id, $page, $size, $search, $sort)
+> \Reepay\Model\TransactionSearch transactionList($id, $page, $size, $search, $sort)
 
 Get transaction list
 
@@ -684,14 +684,14 @@ Get transaction list
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\InvoiceApi();
+$apiInstance = new Reepay\Api\InvoiceApi();
 $id = "id_example"; // string | Invoice id or handle
 $page = 1; // int | Page number to get
 $size = 20; // int | Page size to use
@@ -699,7 +699,7 @@ $search = "search_example"; // string | Optional search expression
 $sort = "sort_example"; // string | Optional sorting expression
 
 try {
-    $result = $api_instance->transactionList($id, $page, $size, $search, $sort);
+    $result = $apiInstance->transactionList($id, $page, $size, $search, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling InvoiceApi->transactionList: ', $e->getMessage(), PHP_EOL;
@@ -719,7 +719,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\TransactionSearch**](../Model/TransactionSearch.md)
+[**\Reepay\Model\TransactionSearch**](../Model/TransactionSearch.md)
 
 ### Authorization
 

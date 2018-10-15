@@ -1,4 +1,4 @@
-# Swagger\Client\RefundApi
+# Reepay\RefundApi
 
 All URIs are relative to *https://api.reepay.com*
 
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **createRefund**
-> \Swagger\Client\Model\Refund createRefund($body)
+> \Reepay\Model\Refund createRefund($body)
 
 Create refund
 
@@ -21,18 +21,18 @@ Create refund
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\RefundApi();
-$body = new \Swagger\Client\Model\CreateRefund(); // \Swagger\Client\Model\CreateRefund | 
+$apiInstance = new Reepay\Api\RefundApi();
+$body = new \Reepay\Model\CreateRefund(); // \Reepay\Model\CreateRefund |
 
 try {
-    $result = $api_instance->createRefund($body);
+    $result = $apiInstance->createRefund($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->createRefund: ', $e->getMessage(), PHP_EOL;
@@ -44,11 +44,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\CreateRefund**](../Model/CreateRefund.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateRefund**](../Model/CreateRefund.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Refund**](../Model/Refund.md)
+[**\Reepay\Model\Refund**](../Model/Refund.md)
 
 ### Authorization
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRefund**
-> \Swagger\Client\Model\Refund getRefund($id)
+> \Reepay\Model\Refund getRefund($id)
 
 Get refund
 
@@ -74,18 +74,18 @@ Get refund
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\RefundApi();
+$apiInstance = new Reepay\Api\RefundApi();
 $id = "id_example"; // string | Refund id
 
 try {
-    $result = $api_instance->getRefund($id);
+    $result = $apiInstance->getRefund($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundApi->getRefund: ', $e->getMessage(), PHP_EOL;
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Refund**](../Model/Refund.md)
+[**\Reepay\Model\Refund**](../Model/Refund.md)
 
 ### Authorization
 

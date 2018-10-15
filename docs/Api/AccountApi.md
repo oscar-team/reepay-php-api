@@ -1,4 +1,4 @@
-# Swagger\Client\AccountApi
+# Reepay\AccountApi
 
 All URIs are relative to *https://api.reepay.com*
 
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **createPrivateKey**
-> \Swagger\Client\Model\Key createPrivateKey()
+> \Reepay\Model\Key createPrivateKey()
 
 Create private key
 
@@ -34,17 +34,17 @@ Create private key
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
+$apiInstance = new Reepay\Api\AccountApi();
 
 try {
-    $result = $api_instance->createPrivateKey();
+    $result = $apiInstance->createPrivateKey();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->createPrivateKey: ', $e->getMessage(), PHP_EOL;
@@ -57,7 +57,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\Key**](../Model/Key.md)
+[**\Reepay\Model\Key**](../Model/Key.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createPublicKey**
-> \Swagger\Client\Model\Key createPublicKey()
+> \Reepay\Model\Key createPublicKey()
 
 Create public key
 
@@ -83,17 +83,17 @@ Create public key
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
+$apiInstance = new Reepay\Api\AccountApi();
 
 try {
-    $result = $api_instance->createPublicKey();
+    $result = $apiInstance->createPublicKey();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->createPublicKey: ', $e->getMessage(), PHP_EOL;
@@ -106,7 +106,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\Key**](../Model/Key.md)
+[**\Reepay\Model\Key**](../Model/Key.md)
 
 ### Authorization
 
@@ -132,18 +132,18 @@ Expire private key
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
+$apiInstance = new Reepay\Api\AccountApi();
 $key = "key_example"; // string | Private key
 
 try {
-    $api_instance->expirePrivateKey($key);
+    $apiInstance->expirePrivateKey($key);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->expirePrivateKey: ', $e->getMessage(), PHP_EOL;
 }
@@ -184,18 +184,18 @@ Expire public key
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
+$apiInstance = new Reepay\Api\AccountApi();
 $key = "key_example"; // string | Public key
 
 try {
-    $api_instance->expirePublicKey($key);
+    $apiInstance->expirePublicKey($key);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->expirePublicKey: ', $e->getMessage(), PHP_EOL;
 }
@@ -224,7 +224,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **generateWebhookSecret**
-> \Swagger\Client\Model\WebhookSettings generateWebhookSecret()
+> \Reepay\Model\WebhookSettings generateWebhookSecret()
 
 Generate new webhook secret
 
@@ -236,17 +236,17 @@ Generate new webhook secret
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
+$apiInstance = new Reepay\Api\AccountApi();
 
 try {
-    $result = $api_instance->generateWebhookSecret();
+    $result = $apiInstance->generateWebhookSecret();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->generateWebhookSecret: ', $e->getMessage(), PHP_EOL;
@@ -259,7 +259,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\WebhookSettings**](../Model/WebhookSettings.md)
+[**\Reepay\Model\WebhookSettings**](../Model/WebhookSettings.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCurrentAccount**
-> \Swagger\Client\Model\Account getCurrentAccount()
+> \Reepay\Model\Account getCurrentAccount()
 
 Get account
 
@@ -285,17 +285,17 @@ Get account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
+$apiInstance = new Reepay\Api\AccountApi();
 
 try {
-    $result = $api_instance->getCurrentAccount();
+    $result = $apiInstance->getCurrentAccount();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->getCurrentAccount: ', $e->getMessage(), PHP_EOL;
@@ -308,7 +308,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\Account**](../Model/Account.md)
+[**\Reepay\Model\Account**](../Model/Account.md)
 
 ### Authorization
 
@@ -322,7 +322,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDiscountSettings**
-> \Swagger\Client\Model\DiscountSettings getDiscountSettings()
+> \Reepay\Model\DiscountSettings getDiscountSettings()
 
 Get discount settings
 
@@ -334,17 +334,17 @@ Get discount settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
+$apiInstance = new Reepay\Api\AccountApi();
 
 try {
-    $result = $api_instance->getDiscountSettings();
+    $result = $apiInstance->getDiscountSettings();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->getDiscountSettings: ', $e->getMessage(), PHP_EOL;
@@ -357,7 +357,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\DiscountSettings**](../Model/DiscountSettings.md)
+[**\Reepay\Model\DiscountSettings**](../Model/DiscountSettings.md)
 
 ### Authorization
 
@@ -371,7 +371,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getMailSettings**
-> \Swagger\Client\Model\MailSettings getMailSettings()
+> \Reepay\Model\MailSettings getMailSettings()
 
 Get mail settings
 
@@ -383,17 +383,17 @@ Get mail settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
+$apiInstance = new Reepay\Api\AccountApi();
 
 try {
-    $result = $api_instance->getMailSettings();
+    $result = $apiInstance->getMailSettings();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->getMailSettings: ', $e->getMessage(), PHP_EOL;
@@ -406,7 +406,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\MailSettings**](../Model/MailSettings.md)
+[**\Reepay\Model\MailSettings**](../Model/MailSettings.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPrivateKeys**
-> \Swagger\Client\Model\Key[] getPrivateKeys()
+> \Reepay\Model\Key[] getPrivateKeys()
 
 Get list of private keys
 
@@ -432,17 +432,17 @@ Get list of private keys
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
+$apiInstance = new Reepay\Api\AccountApi();
 
 try {
-    $result = $api_instance->getPrivateKeys();
+    $result = $apiInstance->getPrivateKeys();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->getPrivateKeys: ', $e->getMessage(), PHP_EOL;
@@ -455,7 +455,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\Key[]**](../Model/Key.md)
+[**\Reepay\Model\Key[]**](../Model/Key.md)
 
 ### Authorization
 
@@ -469,7 +469,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPublicKeys**
-> \Swagger\Client\Model\Key[] getPublicKeys()
+> \Reepay\Model\Key[] getPublicKeys()
 
 Get list of public keys
 
@@ -481,17 +481,17 @@ Get list of public keys
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
+$apiInstance = new Reepay\Api\AccountApi();
 
 try {
-    $result = $api_instance->getPublicKeys();
+    $result = $apiInstance->getPublicKeys();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->getPublicKeys: ', $e->getMessage(), PHP_EOL;
@@ -504,7 +504,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\Key[]**](../Model/Key.md)
+[**\Reepay\Model\Key[]**](../Model/Key.md)
 
 ### Authorization
 
@@ -518,7 +518,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhookSettings**
-> \Swagger\Client\Model\WebhookSettings getWebhookSettings()
+> \Reepay\Model\WebhookSettings getWebhookSettings()
 
 Get webhook settings
 
@@ -530,17 +530,17 @@ Get webhook settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
+$apiInstance = new Reepay\Api\AccountApi();
 
 try {
-    $result = $api_instance->getWebhookSettings();
+    $result = $apiInstance->getWebhookSettings();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->getWebhookSettings: ', $e->getMessage(), PHP_EOL;
@@ -553,7 +553,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Swagger\Client\Model\WebhookSettings**](../Model/WebhookSettings.md)
+[**\Reepay\Model\WebhookSettings**](../Model/WebhookSettings.md)
 
 ### Authorization
 
@@ -567,7 +567,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAccountJson**
-> \Swagger\Client\Model\Account updateAccountJson($body)
+> \Reepay\Model\Account updateAccountJson($body)
 
 Update account
 
@@ -579,18 +579,18 @@ Update account
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
-$body = new \Swagger\Client\Model\UpdateAccount(); // \Swagger\Client\Model\UpdateAccount | 
+$apiInstance = new Reepay\Api\AccountApi();
+$body = new \Reepay\Model\UpdateAccount(); // \Reepay\Model\UpdateAccount |
 
 try {
-    $result = $api_instance->updateAccountJson($body);
+    $result = $apiInstance->updateAccountJson($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->updateAccountJson: ', $e->getMessage(), PHP_EOL;
@@ -602,11 +602,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\UpdateAccount**](../Model/UpdateAccount.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateAccount**](../Model/UpdateAccount.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Account**](../Model/Account.md)
+[**\Reepay\Model\Account**](../Model/Account.md)
 
 ### Authorization
 
@@ -620,7 +620,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateDiscountSettings**
-> \Swagger\Client\Model\DiscountSettings updateDiscountSettings($body)
+> \Reepay\Model\DiscountSettings updateDiscountSettings($body)
 
 Update discount settings
 
@@ -632,18 +632,18 @@ Update discount settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
-$body = new \Swagger\Client\Model\DiscountSettings(); // \Swagger\Client\Model\DiscountSettings | 
+$apiInstance = new Reepay\Api\AccountApi();
+$body = new \Reepay\Model\DiscountSettings(); // \Reepay\Model\DiscountSettings |
 
 try {
-    $result = $api_instance->updateDiscountSettings($body);
+    $result = $apiInstance->updateDiscountSettings($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->updateDiscountSettings: ', $e->getMessage(), PHP_EOL;
@@ -655,11 +655,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\DiscountSettings**](../Model/DiscountSettings.md)|  | [optional]
+ **body** | [**\Reepay\Model\DiscountSettings**](../Model/DiscountSettings.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\DiscountSettings**](../Model/DiscountSettings.md)
+[**\Reepay\Model\DiscountSettings**](../Model/DiscountSettings.md)
 
 ### Authorization
 
@@ -673,7 +673,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateMailSettingsJson**
-> \Swagger\Client\Model\MailSettings updateMailSettingsJson($body)
+> \Reepay\Model\MailSettings updateMailSettingsJson($body)
 
 Update mail settings
 
@@ -685,18 +685,18 @@ Update mail settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
-$body = new \Swagger\Client\Model\MailSettings(); // \Swagger\Client\Model\MailSettings | 
+$apiInstance = new Reepay\Api\AccountApi();
+$body = new \Reepay\Model\MailSettings(); // \Reepay\Model\MailSettings |
 
 try {
-    $result = $api_instance->updateMailSettingsJson($body);
+    $result = $apiInstance->updateMailSettingsJson($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->updateMailSettingsJson: ', $e->getMessage(), PHP_EOL;
@@ -708,11 +708,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\MailSettings**](../Model/MailSettings.md)|  | [optional]
+ **body** | [**\Reepay\Model\MailSettings**](../Model/MailSettings.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\MailSettings**](../Model/MailSettings.md)
+[**\Reepay\Model\MailSettings**](../Model/MailSettings.md)
 
 ### Authorization
 
@@ -726,7 +726,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateWebhookSettingsJson**
-> \Swagger\Client\Model\WebhookSettings updateWebhookSettingsJson($body)
+> \Reepay\Model\WebhookSettings updateWebhookSettingsJson($body)
 
 Update webhook settings
 
@@ -738,18 +738,18 @@ Update webhook settings
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AccountApi();
-$body = new \Swagger\Client\Model\UpdateWebhookSettings(); // \Swagger\Client\Model\UpdateWebhookSettings | 
+$apiInstance = new Reepay\Api\AccountApi();
+$body = new \Reepay\Model\UpdateWebhookSettings(); // \Reepay\Model\UpdateWebhookSettings |
 
 try {
-    $result = $api_instance->updateWebhookSettingsJson($body);
+    $result = $apiInstance->updateWebhookSettingsJson($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AccountApi->updateWebhookSettingsJson: ', $e->getMessage(), PHP_EOL;
@@ -761,11 +761,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\UpdateWebhookSettings**](../Model/UpdateWebhookSettings.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateWebhookSettings**](../Model/UpdateWebhookSettings.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\WebhookSettings**](../Model/WebhookSettings.md)
+[**\Reepay\Model\WebhookSettings**](../Model/WebhookSettings.md)
 
 ### Authorization
 

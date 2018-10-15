@@ -1,4 +1,4 @@
-# Swagger\Client\PlanApi
+# Reepay\PlanApi
 
 All URIs are relative to *https://api.reepay.com*
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **createPlanJson**
-> \Swagger\Client\Model\Plan createPlanJson($body)
+> \Reepay\Model\Plan createPlanJson($body)
 
 Create plan
 
@@ -27,18 +27,18 @@ Create plan
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PlanApi();
-$body = new \Swagger\Client\Model\CreateSubscriptionPlan(); // \Swagger\Client\Model\CreateSubscriptionPlan | 
+$apiInstance = new Reepay\Api\PlanApi();
+$body = new \Reepay\Model\CreateSubscriptionPlan(); // \Reepay\Model\CreateSubscriptionPlan |
 
 try {
-    $result = $api_instance->createPlanJson($body);
+    $result = $apiInstance->createPlanJson($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->createPlanJson: ', $e->getMessage(), PHP_EOL;
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\CreateSubscriptionPlan**](../Model/CreateSubscriptionPlan.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateSubscriptionPlan**](../Model/CreateSubscriptionPlan.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Plan**](../Model/Plan.md)
+[**\Reepay\Model\Plan**](../Model/Plan.md)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deletePlan**
-> \Swagger\Client\Model\Plan deletePlan($handle)
+> \Reepay\Model\Plan deletePlan($handle)
 
 Delete plan
 
@@ -80,18 +80,18 @@ Delete plan
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PlanApi();
+$apiInstance = new Reepay\Api\PlanApi();
 $handle = "handle_example"; // string | Subscription plan handle
 
 try {
-    $result = $api_instance->deletePlan($handle);
+    $result = $apiInstance->deletePlan($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->deletePlan: ', $e->getMessage(), PHP_EOL;
@@ -107,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Plan**](../Model/Plan.md)
+[**\Reepay\Model\Plan**](../Model/Plan.md)
 
 ### Authorization
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCurrentPlan**
-> \Swagger\Client\Model\Plan getCurrentPlan($handle)
+> \Reepay\Model\Plan getCurrentPlan($handle)
 
 Get plan
 
@@ -133,18 +133,18 @@ Get plan
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PlanApi();
+$apiInstance = new Reepay\Api\PlanApi();
 $handle = "handle_example"; // string | Plan handle
 
 try {
-    $result = $api_instance->getCurrentPlan($handle);
+    $result = $apiInstance->getCurrentPlan($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->getCurrentPlan: ', $e->getMessage(), PHP_EOL;
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Plan**](../Model/Plan.md)
+[**\Reepay\Model\Plan**](../Model/Plan.md)
 
 ### Authorization
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPlan**
-> \Swagger\Client\Model\Plan getPlan($handle, $version)
+> \Reepay\Model\Plan getPlan($handle, $version)
 
 Get plan version
 
@@ -186,19 +186,19 @@ Get plan version
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PlanApi();
+$apiInstance = new Reepay\Api\PlanApi();
 $handle = "handle_example"; // string | Plan handle
 $version = 56; // int | Plan version
 
 try {
-    $result = $api_instance->getPlan($handle, $version);
+    $result = $apiInstance->getPlan($handle, $version);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->getPlan: ', $e->getMessage(), PHP_EOL;
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Plan**](../Model/Plan.md)
+[**\Reepay\Model\Plan**](../Model/Plan.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPlans**
-> \Swagger\Client\Model\Plan[] getPlans($handle)
+> \Reepay\Model\Plan[] getPlans($handle)
 
 Get list of plan versions
 
@@ -241,18 +241,18 @@ Get list of plan versions
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PlanApi();
+$apiInstance = new Reepay\Api\PlanApi();
 $handle = "handle_example"; // string | Plan handle
 
 try {
-    $result = $api_instance->getPlans($handle);
+    $result = $apiInstance->getPlans($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->getPlans: ', $e->getMessage(), PHP_EOL;
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Plan[]**](../Model/Plan.md)
+[**\Reepay\Model\Plan[]**](../Model/Plan.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPlansList**
-> \Swagger\Client\Model\Plan[] getPlansList($only_active)
+> \Reepay\Model\Plan[] getPlansList($only_active)
 
 Get list of plans
 
@@ -294,18 +294,18 @@ Get list of plans
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PlanApi();
+$apiInstance = new Reepay\Api\PlanApi();
 $only_active = false; // bool | Get only active
 
 try {
-    $result = $api_instance->getPlansList($only_active);
+    $result = $apiInstance->getPlansList($only_active);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->getPlansList: ', $e->getMessage(), PHP_EOL;
@@ -321,7 +321,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Plan[]**](../Model/Plan.md)
+[**\Reepay\Model\Plan[]**](../Model/Plan.md)
 
 ### Authorization
 
@@ -335,7 +335,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **supersedePlanJson**
-> \Swagger\Client\Model\Plan supersedePlanJson($handle, $body)
+> \Reepay\Model\Plan supersedePlanJson($handle, $body)
 
 Supersede plan
 
@@ -347,19 +347,19 @@ Supersede plan
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PlanApi();
+$apiInstance = new Reepay\Api\PlanApi();
 $handle = "handle_example"; // string | Plan handle
-$body = new \Swagger\Client\Model\SupersedeSubscriptionPlan(); // \Swagger\Client\Model\SupersedeSubscriptionPlan | 
+$body = new \Reepay\Model\SupersedeSubscriptionPlan(); // \Reepay\Model\SupersedeSubscriptionPlan |
 
 try {
-    $result = $api_instance->supersedePlanJson($handle, $body);
+    $result = $apiInstance->supersedePlanJson($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->supersedePlanJson: ', $e->getMessage(), PHP_EOL;
@@ -372,11 +372,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Plan handle |
- **body** | [**\Swagger\Client\Model\SupersedeSubscriptionPlan**](../Model/SupersedeSubscriptionPlan.md)|  | [optional]
+ **body** | [**\Reepay\Model\SupersedeSubscriptionPlan**](../Model/SupersedeSubscriptionPlan.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Plan**](../Model/Plan.md)
+[**\Reepay\Model\Plan**](../Model/Plan.md)
 
 ### Authorization
 
@@ -390,7 +390,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updatePlanJson**
-> \Swagger\Client\Model\Plan updatePlanJson($handle, $body)
+> \Reepay\Model\Plan updatePlanJson($handle, $body)
 
 Update plan
 
@@ -402,19 +402,19 @@ Update plan
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\PlanApi();
+$apiInstance = new Reepay\Api\PlanApi();
 $handle = "handle_example"; // string | Subscription handle
-$body = new \Swagger\Client\Model\UpdateSubscriptionPlan(); // \Swagger\Client\Model\UpdateSubscriptionPlan | 
+$body = new \Reepay\Model\UpdateSubscriptionPlan(); // \Reepay\Model\UpdateSubscriptionPlan |
 
 try {
-    $result = $api_instance->updatePlanJson($handle, $body);
+    $result = $apiInstance->updatePlanJson($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->updatePlanJson: ', $e->getMessage(), PHP_EOL;
@@ -427,11 +427,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Subscription handle |
- **body** | [**\Swagger\Client\Model\UpdateSubscriptionPlan**](../Model/UpdateSubscriptionPlan.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateSubscriptionPlan**](../Model/UpdateSubscriptionPlan.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Plan**](../Model/Plan.md)
+[**\Reepay\Model\Plan**](../Model/Plan.md)
 
 ### Authorization
 

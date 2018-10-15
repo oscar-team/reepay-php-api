@@ -1,4 +1,4 @@
-# Swagger\Client\AgreementApi
+# Reepay\AgreementApi
 
 All URIs are relative to *https://api.reepay.com*
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **createCardGatewayAgreement**
-> \Swagger\Client\Model\CardGatewayAgreement createCardGatewayAgreement($body)
+> \Reepay\Model\CardGatewayAgreement createCardGatewayAgreement($body)
 
 Create card gateway agreement
 
@@ -26,18 +26,18 @@ Create card gateway agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AgreementApi();
-$body = new \Swagger\Client\Model\CreateCardGatewayAgreement(); // \Swagger\Client\Model\CreateCardGatewayAgreement | 
+$apiInstance = new Reepay\Api\AgreementApi();
+$body = new \Reepay\Model\CreateCardGatewayAgreement(); // \Reepay\Model\CreateCardGatewayAgreement |
 
 try {
-    $result = $api_instance->createCardGatewayAgreement($body);
+    $result = $apiInstance->createCardGatewayAgreement($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->createCardGatewayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -49,11 +49,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\CreateCardGatewayAgreement**](../Model/CreateCardGatewayAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateCardGatewayAgreement**](../Model/CreateCardGatewayAgreement.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\CardGatewayAgreement**](../Model/CardGatewayAgreement.md)
+[**\Reepay\Model\CardGatewayAgreement**](../Model/CardGatewayAgreement.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteCardGatewayAgreement**
-> \Swagger\Client\Model\CardGatewayAgreement deleteCardGatewayAgreement($id)
+> \Reepay\Model\CardGatewayAgreement deleteCardGatewayAgreement($id)
 
 Delete card gateway agreement
 
@@ -79,18 +79,18 @@ Delete card gateway agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AgreementApi();
+$apiInstance = new Reepay\Api\AgreementApi();
 $id = "id_example"; // string | Agreement id
 
 try {
-    $result = $api_instance->deleteCardGatewayAgreement($id);
+    $result = $apiInstance->deleteCardGatewayAgreement($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->deleteCardGatewayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\CardGatewayAgreement**](../Model/CardGatewayAgreement.md)
+[**\Reepay\Model\CardGatewayAgreement**](../Model/CardGatewayAgreement.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **disableCardGatewayAgreement**
-> \Swagger\Client\Model\CardGatewayAgreement disableCardGatewayAgreement($id)
+> \Reepay\Model\CardGatewayAgreement disableCardGatewayAgreement($id)
 
 Disable card gateway agreement
 
@@ -132,18 +132,18 @@ Disable card gateway agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AgreementApi();
+$apiInstance = new Reepay\Api\AgreementApi();
 $id = "id_example"; // string | Agreement id
 
 try {
-    $result = $api_instance->disableCardGatewayAgreement($id);
+    $result = $apiInstance->disableCardGatewayAgreement($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->disableCardGatewayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\CardGatewayAgreement**](../Model/CardGatewayAgreement.md)
+[**\Reepay\Model\CardGatewayAgreement**](../Model/CardGatewayAgreement.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **enableCardGatewayAgreement**
-> \Swagger\Client\Model\CardGatewayAgreement enableCardGatewayAgreement($id)
+> \Reepay\Model\CardGatewayAgreement enableCardGatewayAgreement($id)
 
 Enable card gateway agreement
 
@@ -185,18 +185,18 @@ Enable card gateway agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AgreementApi();
+$apiInstance = new Reepay\Api\AgreementApi();
 $id = "id_example"; // string | Agreement id
 
 try {
-    $result = $api_instance->enableCardGatewayAgreement($id);
+    $result = $apiInstance->enableCardGatewayAgreement($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->enableCardGatewayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\CardGatewayAgreement**](../Model/CardGatewayAgreement.md)
+[**\Reepay\Model\CardGatewayAgreement**](../Model/CardGatewayAgreement.md)
 
 ### Authorization
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCardGatewayAgreement**
-> \Swagger\Client\Model\CardGatewayAgreement getCardGatewayAgreement($id)
+> \Reepay\Model\CardGatewayAgreement getCardGatewayAgreement($id)
 
 Get card gateway agreement
 
@@ -238,18 +238,18 @@ Get card gateway agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AgreementApi();
+$apiInstance = new Reepay\Api\AgreementApi();
 $id = "id_example"; // string | Agreement id
 
 try {
-    $result = $api_instance->getCardGatewayAgreement($id);
+    $result = $apiInstance->getCardGatewayAgreement($id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->getCardGatewayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\CardGatewayAgreement**](../Model/CardGatewayAgreement.md)
+[**\Reepay\Model\CardGatewayAgreement**](../Model/CardGatewayAgreement.md)
 
 ### Authorization
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCardGatewayAgreements**
-> \Swagger\Client\Model\CardGatewayAgreement[] getCardGatewayAgreements($only_active, $non_deleted)
+> \Reepay\Model\CardGatewayAgreement[] getCardGatewayAgreements($only_active, $non_deleted)
 
 Get all card gateway agreements
 
@@ -291,19 +291,19 @@ Get all card gateway agreements
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AgreementApi();
+$apiInstance = new Reepay\Api\AgreementApi();
 $only_active = false; // bool | Get only active
 $non_deleted = false; // bool | Get only non-deleted
 
 try {
-    $result = $api_instance->getCardGatewayAgreements($only_active, $non_deleted);
+    $result = $apiInstance->getCardGatewayAgreements($only_active, $non_deleted);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->getCardGatewayAgreements: ', $e->getMessage(), PHP_EOL;
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\CardGatewayAgreement[]**](../Model/CardGatewayAgreement.md)
+[**\Reepay\Model\CardGatewayAgreement[]**](../Model/CardGatewayAgreement.md)
 
 ### Authorization
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCardGatewayAgreement**
-> \Swagger\Client\Model\CardGatewayAgreement updateCardGatewayAgreement($id, $body)
+> \Reepay\Model\CardGatewayAgreement updateCardGatewayAgreement($id, $body)
 
 Update card gateway agreement
 
@@ -346,19 +346,19 @@ Update card gateway agreement
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AgreementApi();
+$apiInstance = new Reepay\Api\AgreementApi();
 $id = "id_example"; // string | Agreement id
-$body = new \Swagger\Client\Model\UpdateCardGatewayAgreement(); // \Swagger\Client\Model\UpdateCardGatewayAgreement | 
+$body = new \Reepay\Model\UpdateCardGatewayAgreement(); // \Reepay\Model\UpdateCardGatewayAgreement |
 
 try {
-    $result = $api_instance->updateCardGatewayAgreement($id, $body);
+    $result = $apiInstance->updateCardGatewayAgreement($id, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AgreementApi->updateCardGatewayAgreement: ', $e->getMessage(), PHP_EOL;
@@ -371,11 +371,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| Agreement id |
- **body** | [**\Swagger\Client\Model\UpdateCardGatewayAgreement**](../Model/UpdateCardGatewayAgreement.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateCardGatewayAgreement**](../Model/UpdateCardGatewayAgreement.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\CardGatewayAgreement**](../Model/CardGatewayAgreement.md)
+[**\Reepay\Model\CardGatewayAgreement**](../Model/CardGatewayAgreement.md)
 
 ### Authorization
 

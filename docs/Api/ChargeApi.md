@@ -1,4 +1,4 @@
-# Swagger\Client\ChargeApi
+# Reepay\ChargeApi
 
 All URIs are relative to *https://api.reepay.com*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **cancelCharge**
-> \Swagger\Client\Model\Charge cancelCharge($handle)
+> \Reepay\Model\Charge cancelCharge($handle)
 
 Cancel charge
 
@@ -24,18 +24,18 @@ Cancel charge
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\ChargeApi();
+$apiInstance = new Reepay\Api\ChargeApi();
 $handle = "handle_example"; // string | Charge handle
 
 try {
-    $result = $api_instance->cancelCharge($handle);
+    $result = $apiInstance->cancelCharge($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChargeApi->cancelCharge: ', $e->getMessage(), PHP_EOL;
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Charge**](../Model/Charge.md)
+[**\Reepay\Model\Charge**](../Model/Charge.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCharge**
-> \Swagger\Client\Model\Charge createCharge($body)
+> \Reepay\Model\Charge createCharge($body)
 
 Create charge
 
@@ -77,18 +77,18 @@ Create charge
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\ChargeApi();
-$body = new \Swagger\Client\Model\CreateCharge(); // \Swagger\Client\Model\CreateCharge | 
+$apiInstance = new Reepay\Api\ChargeApi();
+$body = new \Reepay\Model\CreateCharge(); // \Reepay\Model\CreateCharge |
 
 try {
-    $result = $api_instance->createCharge($body);
+    $result = $apiInstance->createCharge($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChargeApi->createCharge: ', $e->getMessage(), PHP_EOL;
@@ -100,11 +100,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\CreateCharge**](../Model/CreateCharge.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateCharge**](../Model/CreateCharge.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Charge**](../Model/Charge.md)
+[**\Reepay\Model\Charge**](../Model/Charge.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharge**
-> \Swagger\Client\Model\Charge getCharge($handle)
+> \Reepay\Model\Charge getCharge($handle)
 
 Get charge
 
@@ -130,18 +130,18 @@ Get charge
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\ChargeApi();
+$apiInstance = new Reepay\Api\ChargeApi();
 $handle = "handle_example"; // string | Charge handle
 
 try {
-    $result = $api_instance->getCharge($handle);
+    $result = $apiInstance->getCharge($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChargeApi->getCharge: ', $e->getMessage(), PHP_EOL;
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Charge**](../Model/Charge.md)
+[**\Reepay\Model\Charge**](../Model/Charge.md)
 
 ### Authorization
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCharges**
-> \Swagger\Client\Model\ChargeSearch getCharges($page, $size, $search, $sort)
+> \Reepay\Model\ChargeSearch getCharges($page, $size, $search, $sort)
 
 Get charges
 
@@ -183,21 +183,21 @@ Get charges
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\ChargeApi();
+$apiInstance = new Reepay\Api\ChargeApi();
 $page = 1; // int | Page number to get
 $size = 20; // int | Page size to use
 $search = "search_example"; // string | Optional search expression
 $sort = "sort_example"; // string | Optional sorting expression
 
 try {
-    $result = $api_instance->getCharges($page, $size, $search, $sort);
+    $result = $apiInstance->getCharges($page, $size, $search, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChargeApi->getCharges: ', $e->getMessage(), PHP_EOL;
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ChargeSearch**](../Model/ChargeSearch.md)
+[**\Reepay\Model\ChargeSearch**](../Model/ChargeSearch.md)
 
 ### Authorization
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **settleCharge**
-> \Swagger\Client\Model\Charge settleCharge($handle, $body)
+> \Reepay\Model\Charge settleCharge($handle, $body)
 
 Settle charge
 
@@ -242,19 +242,19 @@ Settle charge
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\ChargeApi();
+$apiInstance = new Reepay\Api\ChargeApi();
 $handle = "handle_example"; // string | Charge handle
-$body = new \Swagger\Client\Model\SettleCharge(); // \Swagger\Client\Model\SettleCharge | 
+$body = new \Reepay\Model\SettleCharge(); // \Reepay\Model\SettleCharge |
 
 try {
-    $result = $api_instance->settleCharge($handle, $body);
+    $result = $apiInstance->settleCharge($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ChargeApi->settleCharge: ', $e->getMessage(), PHP_EOL;
@@ -267,11 +267,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Charge handle |
- **body** | [**\Swagger\Client\Model\SettleCharge**](../Model/SettleCharge.md)|  | [optional]
+ **body** | [**\Reepay\Model\SettleCharge**](../Model/SettleCharge.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Charge**](../Model/Charge.md)
+[**\Reepay\Model\Charge**](../Model/Charge.md)
 
 ### Authorization
 

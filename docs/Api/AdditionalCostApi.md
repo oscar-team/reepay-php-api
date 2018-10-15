@@ -1,4 +1,4 @@
-# Swagger\Client\AdditionalCostApi
+# Reepay\AdditionalCostApi
 
 All URIs are relative to *https://api.reepay.com*
 
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **cancelAdditionalCost**
-> \Swagger\Client\Model\AdditionalCost cancelAdditionalCost($handle)
+> \Reepay\Model\AdditionalCost cancelAdditionalCost($handle)
 
 Cancel pending additional cost
 
@@ -23,18 +23,18 @@ Cancel pending additional cost
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AdditionalCostApi();
+$apiInstance = new Reepay\Api\AdditionalCostApi();
 $handle = "handle_example"; // string | Additonal cost handle
 
 try {
-    $result = $api_instance->cancelAdditionalCost($handle);
+    $result = $apiInstance->cancelAdditionalCost($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AdditionalCostApi->cancelAdditionalCost: ', $e->getMessage(), PHP_EOL;
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\AdditionalCost**](../Model/AdditionalCost.md)
+[**\Reepay\Model\AdditionalCost**](../Model/AdditionalCost.md)
 
 ### Authorization
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createAdditionalCostJson**
-> \Swagger\Client\Model\AdditionalCost createAdditionalCostJson($body)
+> \Reepay\Model\AdditionalCost createAdditionalCostJson($body)
 
 Create additional cost
 
@@ -76,18 +76,18 @@ Create additional cost
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AdditionalCostApi();
-$body = new \Swagger\Client\Model\CreateAdditionalCost(); // \Swagger\Client\Model\CreateAdditionalCost | 
+$apiInstance = new Reepay\Api\AdditionalCostApi();
+$body = new \Reepay\Model\CreateAdditionalCost(); // \Reepay\Model\CreateAdditionalCost |
 
 try {
-    $result = $api_instance->createAdditionalCostJson($body);
+    $result = $apiInstance->createAdditionalCostJson($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AdditionalCostApi->createAdditionalCostJson: ', $e->getMessage(), PHP_EOL;
@@ -99,11 +99,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\CreateAdditionalCost**](../Model/CreateAdditionalCost.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateAdditionalCost**](../Model/CreateAdditionalCost.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\AdditionalCost**](../Model/AdditionalCost.md)
+[**\Reepay\Model\AdditionalCost**](../Model/AdditionalCost.md)
 
 ### Authorization
 
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAdditionalCost**
-> \Swagger\Client\Model\AdditionalCost getAdditionalCost($handle)
+> \Reepay\Model\AdditionalCost getAdditionalCost($handle)
 
 Get additional cost
 
@@ -129,18 +129,18 @@ Get additional cost
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AdditionalCostApi();
+$apiInstance = new Reepay\Api\AdditionalCostApi();
 $handle = "handle_example"; // string | Additonal cost handle
 
 try {
-    $result = $api_instance->getAdditionalCost($handle);
+    $result = $apiInstance->getAdditionalCost($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AdditionalCostApi->getAdditionalCost: ', $e->getMessage(), PHP_EOL;
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\AdditionalCost**](../Model/AdditionalCost.md)
+[**\Reepay\Model\AdditionalCost**](../Model/AdditionalCost.md)
 
 ### Authorization
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAdditionalCosts**
-> \Swagger\Client\Model\AdditionalCost[] getAdditionalCosts($handle)
+> \Reepay\Model\AdditionalCost[] getAdditionalCosts($handle)
 
 Get additional costs for subscription
 
@@ -182,18 +182,18 @@ Get additional costs for subscription
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\AdditionalCostApi();
+$apiInstance = new Reepay\Api\AdditionalCostApi();
 $handle = "handle_example"; // string | Subscription handle
 
 try {
-    $result = $api_instance->getAdditionalCosts($handle);
+    $result = $apiInstance->getAdditionalCosts($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AdditionalCostApi->getAdditionalCosts: ', $e->getMessage(), PHP_EOL;
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\AdditionalCost[]**](../Model/AdditionalCost.md)
+[**\Reepay\Model\AdditionalCost[]**](../Model/AdditionalCost.md)
 
 ### Authorization
 

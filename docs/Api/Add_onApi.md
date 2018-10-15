@@ -1,4 +1,4 @@
-# Swagger\Client\Add_onApi
+# Reepay\Add_onApi
 
 All URIs are relative to *https://api.reepay.com*
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **createAddOn**
-> \Swagger\Client\Model\AddOn createAddOn($body)
+> \Reepay\Model\AddOn createAddOn($body)
 
 Create add-on
 
@@ -25,18 +25,18 @@ Create add-on
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\Add_onApi();
-$body = new \Swagger\Client\Model\CreateAddOn(); // \Swagger\Client\Model\CreateAddOn | 
+$apiInstance = new Reepay\Api\Add_onApi();
+$body = new \Reepay\Model\CreateAddOn(); // \Reepay\Model\CreateAddOn |
 
 try {
-    $result = $api_instance->createAddOn($body);
+    $result = $apiInstance->createAddOn($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling Add_onApi->createAddOn: ', $e->getMessage(), PHP_EOL;
@@ -48,11 +48,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\CreateAddOn**](../Model/CreateAddOn.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateAddOn**](../Model/CreateAddOn.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\AddOn**](../Model/AddOn.md)
+[**\Reepay\Model\AddOn**](../Model/AddOn.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteAddOn**
-> \Swagger\Client\Model\AddOn deleteAddOn($handle)
+> \Reepay\Model\AddOn deleteAddOn($handle)
 
 Delete add-on
 
@@ -78,18 +78,18 @@ Delete add-on
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\Add_onApi();
+$apiInstance = new Reepay\Api\Add_onApi();
 $handle = "handle_example"; // string | Add-on handle
 
 try {
-    $result = $api_instance->deleteAddOn($handle);
+    $result = $apiInstance->deleteAddOn($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling Add_onApi->deleteAddOn: ', $e->getMessage(), PHP_EOL;
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\AddOn**](../Model/AddOn.md)
+[**\Reepay\Model\AddOn**](../Model/AddOn.md)
 
 ### Authorization
 
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAddOn**
-> \Swagger\Client\Model\AddOn getAddOn($handle)
+> \Reepay\Model\AddOn getAddOn($handle)
 
 Get add-on
 
@@ -131,18 +131,18 @@ Get add-on
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\Add_onApi();
+$apiInstance = new Reepay\Api\Add_onApi();
 $handle = "handle_example"; // string | Add-on handle
 
 try {
-    $result = $api_instance->getAddOn($handle);
+    $result = $apiInstance->getAddOn($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling Add_onApi->getAddOn: ', $e->getMessage(), PHP_EOL;
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\AddOn**](../Model/AddOn.md)
+[**\Reepay\Model\AddOn**](../Model/AddOn.md)
 
 ### Authorization
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAddOns**
-> \Swagger\Client\Model\AddOnSearch getAddOns($page, $size, $search, $sort)
+> \Reepay\Model\AddOnSearch getAddOns($page, $size, $search, $sort)
 
 Get list of add-ons
 
@@ -184,21 +184,21 @@ Get list of add-ons
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\Add_onApi();
+$apiInstance = new Reepay\Api\Add_onApi();
 $page = 1; // int | Page number to get
 $size = 20; // int | Page size to use
 $search = "search_example"; // string | Optional search expression
 $sort = "sort_example"; // string | Optional sorting expression
 
 try {
-    $result = $api_instance->getAddOns($page, $size, $search, $sort);
+    $result = $apiInstance->getAddOns($page, $size, $search, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling Add_onApi->getAddOns: ', $e->getMessage(), PHP_EOL;
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\AddOnSearch**](../Model/AddOnSearch.md)
+[**\Reepay\Model\AddOnSearch**](../Model/AddOnSearch.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **undeleteAddOn**
-> \Swagger\Client\Model\AddOn undeleteAddOn($handle)
+> \Reepay\Model\AddOn undeleteAddOn($handle)
 
 Un-delete add-on
 
@@ -243,18 +243,18 @@ Un-delete add-on
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\Add_onApi();
+$apiInstance = new Reepay\Api\Add_onApi();
 $handle = "handle_example"; // string | Add-on handle
 
 try {
-    $result = $api_instance->undeleteAddOn($handle);
+    $result = $apiInstance->undeleteAddOn($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling Add_onApi->undeleteAddOn: ', $e->getMessage(), PHP_EOL;
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\AddOn**](../Model/AddOn.md)
+[**\Reepay\Model\AddOn**](../Model/AddOn.md)
 
 ### Authorization
 
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateAddOn**
-> \Swagger\Client\Model\AddOn updateAddOn($handle, $body)
+> \Reepay\Model\AddOn updateAddOn($handle, $body)
 
 Update add-on
 
@@ -296,19 +296,19 @@ Update add-on
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\Add_onApi();
+$apiInstance = new Reepay\Api\Add_onApi();
 $handle = "handle_example"; // string | Add-on handle
-$body = new \Swagger\Client\Model\UpdateAddOn(); // \Swagger\Client\Model\UpdateAddOn | 
+$body = new \Reepay\Model\UpdateAddOn(); // \Reepay\Model\UpdateAddOn |
 
 try {
-    $result = $api_instance->updateAddOn($handle, $body);
+    $result = $apiInstance->updateAddOn($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling Add_onApi->updateAddOn: ', $e->getMessage(), PHP_EOL;
@@ -321,11 +321,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Add-on handle |
- **body** | [**\Swagger\Client\Model\UpdateAddOn**](../Model/UpdateAddOn.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateAddOn**](../Model/UpdateAddOn.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\AddOn**](../Model/AddOn.md)
+[**\Reepay\Model\AddOn**](../Model/AddOn.md)
 
 ### Authorization
 

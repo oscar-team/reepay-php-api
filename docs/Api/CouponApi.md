@@ -1,4 +1,4 @@
-# Swagger\Client\CouponApi
+# Reepay\CouponApi
 
 All URIs are relative to *https://api.reepay.com*
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **createCoupon**
-> \Swagger\Client\Model\Coupon createCoupon($body)
+> \Reepay\Model\Coupon createCoupon($body)
 
 Create coupon
 
@@ -26,18 +26,18 @@ Create coupon
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\CouponApi();
-$body = new \Swagger\Client\Model\CreateCoupon(); // \Swagger\Client\Model\CreateCoupon | 
+$apiInstance = new Reepay\Api\CouponApi();
+$body = new \Reepay\Model\CreateCoupon(); // \Reepay\Model\CreateCoupon |
 
 try {
-    $result = $api_instance->createCoupon($body);
+    $result = $apiInstance->createCoupon($body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CouponApi->createCoupon: ', $e->getMessage(), PHP_EOL;
@@ -49,11 +49,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Swagger\Client\Model\CreateCoupon**](../Model/CreateCoupon.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateCoupon**](../Model/CreateCoupon.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Coupon**](../Model/Coupon.md)
+[**\Reepay\Model\Coupon**](../Model/Coupon.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteCoupon**
-> \Swagger\Client\Model\Coupon deleteCoupon($handle)
+> \Reepay\Model\Coupon deleteCoupon($handle)
 
 Delete coupon
 
@@ -79,18 +79,18 @@ Delete coupon
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\CouponApi();
+$apiInstance = new Reepay\Api\CouponApi();
 $handle = "handle_example"; // string | Coupon handle
 
 try {
-    $result = $api_instance->deleteCoupon($handle);
+    $result = $apiInstance->deleteCoupon($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CouponApi->deleteCoupon: ', $e->getMessage(), PHP_EOL;
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Coupon**](../Model/Coupon.md)
+[**\Reepay\Model\Coupon**](../Model/Coupon.md)
 
 ### Authorization
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **expireCoupon**
-> \Swagger\Client\Model\Coupon expireCoupon($handle)
+> \Reepay\Model\Coupon expireCoupon($handle)
 
 Expire coupon
 
@@ -132,18 +132,18 @@ Expire coupon
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\CouponApi();
+$apiInstance = new Reepay\Api\CouponApi();
 $handle = "handle_example"; // string | Coupon handle
 
 try {
-    $result = $api_instance->expireCoupon($handle);
+    $result = $apiInstance->expireCoupon($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CouponApi->expireCoupon: ', $e->getMessage(), PHP_EOL;
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Coupon**](../Model/Coupon.md)
+[**\Reepay\Model\Coupon**](../Model/Coupon.md)
 
 ### Authorization
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCoupon**
-> \Swagger\Client\Model\Coupon getCoupon($handle)
+> \Reepay\Model\Coupon getCoupon($handle)
 
 Get coupon
 
@@ -185,18 +185,18 @@ Get coupon
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\CouponApi();
+$apiInstance = new Reepay\Api\CouponApi();
 $handle = "handle_example"; // string | Coupon handle
 
 try {
-    $result = $api_instance->getCoupon($handle);
+    $result = $apiInstance->getCoupon($handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CouponApi->getCoupon: ', $e->getMessage(), PHP_EOL;
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Coupon**](../Model/Coupon.md)
+[**\Reepay\Model\Coupon**](../Model/Coupon.md)
 
 ### Authorization
 
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCoupons**
-> \Swagger\Client\Model\CouponSearch getCoupons($page, $size, $search, $sort)
+> \Reepay\Model\CouponSearch getCoupons($page, $size, $search, $sort)
 
 Get list of coupons
 
@@ -238,21 +238,21 @@ Get list of coupons
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\CouponApi();
+$apiInstance = new Reepay\Api\CouponApi();
 $page = 1; // int | Page number to get
 $size = 20; // int | Page size to use
 $search = "search_example"; // string | Optional search expression
 $sort = "sort_example"; // string | Optional sorting expression
 
 try {
-    $result = $api_instance->getCoupons($page, $size, $search, $sort);
+    $result = $apiInstance->getCoupons($page, $size, $search, $sort);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CouponApi->getCoupons: ', $e->getMessage(), PHP_EOL;
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\CouponSearch**](../Model/CouponSearch.md)
+[**\Reepay\Model\CouponSearch**](../Model/CouponSearch.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCoupon**
-> \Swagger\Client\Model\Coupon updateCoupon($handle, $body)
+> \Reepay\Model\Coupon updateCoupon($handle, $body)
 
 Update coupon
 
@@ -297,19 +297,19 @@ Update coupon
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\CouponApi();
+$apiInstance = new Reepay\Api\CouponApi();
 $handle = "handle_example"; // string | Coupon handle
-$body = new \Swagger\Client\Model\UpdateCoupon(); // \Swagger\Client\Model\UpdateCoupon | 
+$body = new \Reepay\Model\UpdateCoupon(); // \Reepay\Model\UpdateCoupon |
 
 try {
-    $result = $api_instance->updateCoupon($handle, $body);
+    $result = $apiInstance->updateCoupon($handle, $body);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CouponApi->updateCoupon: ', $e->getMessage(), PHP_EOL;
@@ -322,11 +322,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Coupon handle |
- **body** | [**\Swagger\Client\Model\UpdateCoupon**](../Model/UpdateCoupon.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateCoupon**](../Model/UpdateCoupon.md)|  | [optional]
 
 ### Return type
 
-[**\Swagger\Client\Model\Coupon**](../Model/Coupon.md)
+[**\Reepay\Model\Coupon**](../Model/Coupon.md)
 
 ### Authorization
 
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **validateCode**
-> \Swagger\Client\Model\Coupon validateCode($code, $plan, $customer)
+> \Reepay\Model\Coupon validateCode($code, $plan, $customer)
 
 Validate coupon
 
@@ -352,20 +352,20 @@ Validate coupon
 require_once(__DIR__ . '/vendor/autoload.php');
 
 // Configure API key authorization: apiKey
-Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
+Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Swagger\Client\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Swagger\Client\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
+Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$api_instance = new Swagger\Client\Api\CouponApi();
+$apiInstance = new Reepay\Api\CouponApi();
 $code = "code_example"; // string | Coupon code
 $plan = "plan_example"; // string | Optional plan to validate against
 $customer = "customer_example"; // string | Optional customer to validate against
 
 try {
-    $result = $api_instance->validateCode($code, $plan, $customer);
+    $result = $apiInstance->validateCode($code, $plan, $customer);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CouponApi->validateCode: ', $e->getMessage(), PHP_EOL;
@@ -383,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\Coupon**](../Model/Coupon.md)
+[**\Reepay\Model\Coupon**](../Model/Coupon.md)
 
 ### Authorization
 

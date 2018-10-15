@@ -1,5 +1,5 @@
 {
-    "name": "mchicherin/reepay-php-api",
+    "name": "adnedelcu/reepay-php-api",
     "description": "",
     "keywords": [
         "swagger",
@@ -28,9 +28,9 @@
         "friendsofphp/php-cs-fixer": "~1.12"
     },
     "autoload": {
-        "psr-4": { "Swagger\\Client\\" : "lib/" }
+        "psr-4": { "Reepay\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "Swagger\\Client\\" : "test/" }
+        "psr-4": { "Reepay\\" : "test/" }
     }
 }
