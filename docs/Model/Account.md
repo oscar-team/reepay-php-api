@@ -24,6 +24,6 @@ Name | Type | Description | Notes
 **postal_code** | **string** | Account postal code | [optional]
 **default_vat** | **float** | Default vat for account |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

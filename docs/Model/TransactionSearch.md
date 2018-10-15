@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **total_elements** | **int** | Total number of elements in paginated list |
 **total_pages** | **int** | Total number of pages in paginated list |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

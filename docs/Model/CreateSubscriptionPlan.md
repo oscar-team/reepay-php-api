@@ -33,6 +33,6 @@ Name | Type | Description | Notes
 **fixation_periods** | **int** | Optional number of fixation periods. Fixation periods will guarantee that a subscription will have this number of paid full periods before expiring after a cancel. Default is to have no requirement (0). | [optional]
 **fixation_periods_full** | **bool** | If fixation periods are defined, and the subscription can have a partial prorated first period, this parameter controls if the the last period should be full, or partial to give exactly `fixation_periods` paid periods. Default is false. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

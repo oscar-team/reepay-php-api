@@ -33,6 +33,6 @@ Name | Type | Description | Notes
 **fixation_periods_full** | **bool** | If fixation periods are defined, and the subscription can have a partial prorated first period, this parameter controls if the the last period should be full, or partial to give exactly `fixation_periods` paid periods. Default is false. | [optional]
 **supersede_mode** | **string** | Action to take after a subscription plan is superseded, one of the following: `no_sub_update`, `scheduled_sub_update`, `instant_sub_update`. Default is `no_sub_update`. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

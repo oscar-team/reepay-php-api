@@ -15,6 +15,6 @@ Name | Type | Description | Notes
 **setup_fee_text** | **string** | Optional invoice order text for the setup fee that | [optional]
 **setup_fee_handling** | **string** | How the billing of the setup fee should be done. The options are: `first` - include setup fee as order line on the first scheduled invoice. `separate` - create a separate invoice for the setup fee, is appropriate if first invoice is not in conjunction with creation. `separate_conditional` - create a separate invoice for setup fee if the first invoice is not created in conjunction with the creation. Default is `first`. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **add_on** | [**\Reepay\Model\AddOn**](AddOn.md) | Add-on for subscription add-on |
 **amount_incl_vat** | **bool** | If fixed price this parameter tells whether the amount is including VAT | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

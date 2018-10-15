@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **order_lines** | [**\Reepay\Model\CreateOrderLine[]**](CreateOrderLine.md) | Optional additional order lines for the invoice | [optional]
 **manual_transfer** | [**\Reepay\Model\ManualSettleTransfer**](ManualSettleTransfer.md) | Optional manual transfer. If given the invoice will be settled using the manual transfer transaction. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

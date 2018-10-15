@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **max_redemptions** | **int** | Optional maximum number of times this coupon can be redeemed. | [optional]
 **valid_until** | **string** | Optional date and time until which the coupon is redeemable. Date and time on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss`. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

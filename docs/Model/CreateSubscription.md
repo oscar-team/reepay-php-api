@@ -26,6 +26,6 @@ Name | Type | Description | Notes
 **add_ons** | [**\Reepay\Model\CreateSubscriptionAddOn[]**](CreateSubscriptionAddOn.md) | Add-ons to attach to subscription. The same add-on can only be attached to subscription once unless unique handles are supplied for the subscription add-on. | [optional]
 **additional_costs** | [**\Reepay\Model\CreateSubscriptionAdditionalCost[]**](CreateSubscriptionAdditionalCost.md) | Additional costs to add to subscription at creation time | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

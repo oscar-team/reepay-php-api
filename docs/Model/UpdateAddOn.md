@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **all_plans** | **bool** | Whether all plans are eligible for this add-on. Defaults to false. | [optional]
 **eligible_plans** | **string[]** | If not `all_plans` are set to true, then the set of eligible plan handles must be defined. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

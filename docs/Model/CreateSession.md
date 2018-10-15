@@ -13,4 +13,4 @@ If set a recurring payment method is stored for the customer and a reference ret
 **accept_url** | **string** | If checkout is opened in separate window the customer will be directed to this page after success
 **cancel_url** | **string** | If checkout is opened in separate window the customer will be directed to this page if the customer cancels
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

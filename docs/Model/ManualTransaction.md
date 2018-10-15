@@ -8,6 +8,6 @@ Name | Type | Description | Notes
 **reference** | **string** | Optional reference for the manual transaction | [optional]
 **payment_date** | [**\DateTime**](\DateTime.md) | When the manual transaction was performed on the form `yyyy-MM-dd`, `yyyyMMdd`, `yyyy-MM-ddTHH:mm` and `yyyy-MM-ddTHH:mm:ss` |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

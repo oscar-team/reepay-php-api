@@ -16,6 +16,6 @@ Name | Type | Description | Notes
 **card_transaction** | [**\Reepay\Model\CardTransaction**](CardTransaction.md) | Specifics in case of card transaction | [optional]
 **manual_transaction** | [**\Reepay\Model\ManualTransaction**](ManualTransaction.md) | Specifics in case of manual transaction | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

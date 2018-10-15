@@ -42,6 +42,6 @@ Name | Type | Description | Notes
 **settle_later** | **bool** | Whether this is a customer one-time invoice that will be settled later | [optional]
 **settle_later_payment_method** | **string** | The payment method to use for a later settle of a one-time customer invoice | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

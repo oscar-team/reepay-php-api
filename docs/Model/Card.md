@@ -20,6 +20,6 @@ Name | Type | Description | Notes
 **error_code** | **string** | An error code from the last failed use of the card. See [transaction errors](https://docs.reepay.com/api/#transaction-errors). | [optional]
 **error_state** | **string** | Error state from last failed use of the card: `pending`, `soft_declined`, `hard_declined` or `processing_error` | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

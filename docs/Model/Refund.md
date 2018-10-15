@@ -16,6 +16,6 @@ Name | Type | Description | Notes
 **ref_transaction** | **string** | Id of a possible settled transaction that has been refunded | [optional]
 **error_state** | **string** | Reepay error state if failed: `hard_declined` or `processing_error`. A hard decline indicates a refund decline by acquirer. A processing error indicates an error processing the refund either at Reepay, the acquirer, or between Reepay amd the acquirer. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

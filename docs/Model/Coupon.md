@@ -18,6 +18,6 @@ Name | Type | Description | Notes
 **valid_until** | [**\DateTime**](\DateTime.md) | Optional date and time until which the coupon is redeemable. In ISO-8601 extended offset date-time format. | [optional]
 **expire_reason** | **string** | The expire reason if expired. One of `early`, `valid_until` or `max`. Respectively on demand early expire, valid until has passed or max redemptions has been reached. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

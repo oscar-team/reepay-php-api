@@ -16,6 +16,6 @@ Name | Type | Description | Notes
 **amount_vat** | **int** | Additional cost vat amount |
 **amount_ex_vat** | **int** | Additional cost amount without vat |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

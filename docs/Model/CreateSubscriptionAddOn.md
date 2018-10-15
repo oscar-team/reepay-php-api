@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **fixed_amount** | **bool** | Whether the price of the subscription add-on should be fixed to the current price of add-on, or the price should follow the add-on price. Defaults to true. If set to false the price of the add-on will be determined by the add-on price at the time of subscription billing. | [optional]
 **amount_incl_vat** | **bool** | Whether the optional amount is including VAT. Defaults to true. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

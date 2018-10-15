@@ -18,6 +18,6 @@ Name | Type | Description | Notes
 **alert_count** | **int** | Number of failed invocations before an alert email is sent | [optional]
 **alert_sent** | [**\DateTime**](\DateTime.md) | Date when an optional alert email sending was requested in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

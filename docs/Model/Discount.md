@@ -16,6 +16,6 @@ Name | Type | Description | Notes
 **fixed_period_unit** | **string** | Time unit use for fixed valid period either `days` or `months` | [optional]
 **fixed_period** | **int** | Fixed period length e.g. 12 months or 14 days | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

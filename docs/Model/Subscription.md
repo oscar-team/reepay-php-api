@@ -63,6 +63,6 @@ Name | Type | Description | Notes
 **subscription_changes** | [**\Reepay\Model\SubscriptionChange[]**](SubscriptionChange.md) | List of subscription changes both at most one pending and previously applied | [optional]
 **subscription_add_ons** | **string[]** | List of subscription add-on handles attached to subscription | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

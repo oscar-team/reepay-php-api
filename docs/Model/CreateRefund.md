@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **note_lines** | [**\Reepay\Model\CreateCreditNoteLine[]**](CreateCreditNoteLine.md) | Refund credit note lines to give detailed information for credit note. Either this or `amount` must be provided. | [optional]
 **manual_transfer** | [**\Reepay\Model\ManualRefundTransfer**](ManualRefundTransfer.md) | Optional manual transfer. If given no refund will be performed on potential online settled transaction like card transaction. | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

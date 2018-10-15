@@ -23,6 +23,6 @@ Name | Type | Description | Notes
 **discount_percentage** | **int** | The discount percentage for discount order lines that has a percentage discount | [optional]
 **discounted_order_line** | **string** | For discount order lines a reference to the order line for which the order line is a discount | [optional]
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 

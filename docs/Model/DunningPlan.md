@@ -11,6 +11,6 @@ Name | Type | Description | Notes
 **default_plan** | **bool** | If this is default plan |
 **final_subscription_action** | **string** | Action to take for subscription if dunning fails, one of the following: `expire`, `on_hold`, `none` |
 
-[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
 
