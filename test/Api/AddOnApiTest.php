@@ -1,6 +1,6 @@
 <?php
 /**
- * Add_onApiTest
+ * AddOnApiTest
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Reepay\ApiException;
 use \Reepay\ObjectSerializer;
 
 /**
- * Add_onApiTest Class Doc Comment
+ * AddOnApiTest Class Doc Comment
  *
  * @category Class
  * @package  Reepay
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Add_onApiTest extends \PHPUnit_Framework_TestCase
+class AddOnApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**

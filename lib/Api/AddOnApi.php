@@ -1,6 +1,6 @@
 <?php
 /**
- * Add_onApi
+ * AddOnApi
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Reepay\Configuration;
 use \Reepay\ObjectSerializer;
 
 /**
- * Add_onApi Class Doc Comment
+ * AddOnApi Class Doc Comment
  *
  * @category Class
  * @package  Reepay
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class Add_onApi
+class AddOnApi
 {
     /**
      * API Client
@@ -79,7 +79,7 @@ class Add_onApi
      *
      * @param \Reepay\ApiClient $apiClient set the API client
      *
-     * @return Add_onApi
+     * @return AddOnApi
      */
     public function setApiClient(\Reepay\ApiClient $apiClient)
     {
@@ -446,17 +446,17 @@ class Add_onApi
     public function getAddOnsWithHttpInfo($page = '1', $size = '20', $search = null, $sort = null)
     {
         if (!is_null($page) && ($page > 10000000)) {
-            throw new \InvalidArgumentException('invalid value for "$page" when calling Add_onApi.getAddOns, must be smaller than or equal to 10000000.');
+            throw new \InvalidArgumentException('invalid value for "$page" when calling AddOnApi.getAddOns, must be smaller than or equal to 10000000.');
         }
         if (!is_null($page) && ($page < 1)) {
-            throw new \InvalidArgumentException('invalid value for "$page" when calling Add_onApi.getAddOns, must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for "$page" when calling AddOnApi.getAddOns, must be bigger than or equal to 1.');
         }
 
         if (!is_null($size) && ($size > 100)) {
-            throw new \InvalidArgumentException('invalid value for "$size" when calling Add_onApi.getAddOns, must be smaller than or equal to 100.');
+            throw new \InvalidArgumentException('invalid value for "$size" when calling AddOnApi.getAddOns, must be smaller than or equal to 100.');
         }
         if (!is_null($size) && ($size < 1)) {
-            throw new \InvalidArgumentException('invalid value for "$size" when calling Add_onApi.getAddOns, must be bigger than or equal to 1.');
+            throw new \InvalidArgumentException('invalid value for "$size" when calling AddOnApi.getAddOns, must be bigger than or equal to 1.');
         }
 
         // parse inputs

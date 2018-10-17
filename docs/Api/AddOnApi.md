@@ -1,15 +1,15 @@
-# Reepay\Add_onApi
+# Reepay\AddOnApi
 
 All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAddOn**](Add_onApi.md#createAddOn) | **POST** /v1/add_on | Create add-on
-[**deleteAddOn**](Add_onApi.md#deleteAddOn) | **DELETE** /v1/add_on/{handle} | Delete add-on
-[**getAddOn**](Add_onApi.md#getAddOn) | **GET** /v1/add_on/{handle} | Get add-on
-[**getAddOns**](Add_onApi.md#getAddOns) | **GET** /v1/add_on | Get list of add-ons
-[**undeleteAddOn**](Add_onApi.md#undeleteAddOn) | **POST** /v1/add_on/{handle}/undelete | Un-delete add-on
-[**updateAddOn**](Add_onApi.md#updateAddOn) | **PUT** /v1/add_on/{handle} | Update add-on
+[**createAddOn**](AddOnApi.md#createAddOn) | **POST** /v1/add_on | Create add-on
+[**deleteAddOn**](AddOnApi.md#deleteAddOn) | **DELETE** /v1/add_on/{handle} | Delete add-on
+[**getAddOn**](AddOnApi.md#getAddOn) | **GET** /v1/add_on/{handle} | Get add-on
+[**getAddOns**](AddOnApi.md#getAddOns) | **GET** /v1/add_on | Get list of add-ons
+[**undeleteAddOn**](AddOnApi.md#undeleteAddOn) | **POST** /v1/add_on/{handle}/undelete | Un-delete add-on
+[**updateAddOn**](AddOnApi.md#updateAddOn) | **PUT** /v1/add_on/{handle} | Update add-on
 
 
 # **createAddOn**
@@ -32,14 +32,14 @@ Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR
 Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
 Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\Add_onApi();
+$apiInstance = new Reepay\Api\AddOnApi();
 $body = new \Reepay\Model\CreateAddOn(); // \Reepay\Model\CreateAddOn |
 
 try {
     $result = $apiInstance->createAddOn($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling Add_onApi->createAddOn: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AddOnApi->createAddOn: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -85,14 +85,14 @@ Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR
 Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
 Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\Add_onApi();
+$apiInstance = new Reepay\Api\AddOnApi();
 $handle = "handle_example"; // string | Add-on handle
 
 try {
     $result = $apiInstance->deleteAddOn($handle);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling Add_onApi->deleteAddOn: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AddOnApi->deleteAddOn: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -138,14 +138,14 @@ Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR
 Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
 Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\Add_onApi();
+$apiInstance = new Reepay\Api\AddOnApi();
 $handle = "handle_example"; // string | Add-on handle
 
 try {
     $result = $apiInstance->getAddOn($handle);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling Add_onApi->getAddOn: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AddOnApi->getAddOn: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -191,7 +191,7 @@ Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR
 Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
 Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\Add_onApi();
+$apiInstance = new Reepay\Api\AddOnApi();
 $page = 1; // int | Page number to get
 $size = 20; // int | Page size to use
 $search = "search_example"; // string | Optional search expression
@@ -201,7 +201,7 @@ try {
     $result = $apiInstance->getAddOns($page, $size, $search, $sort);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling Add_onApi->getAddOns: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AddOnApi->getAddOns: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -250,14 +250,14 @@ Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR
 Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
 Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\Add_onApi();
+$apiInstance = new Reepay\Api\AddOnApi();
 $handle = "handle_example"; // string | Add-on handle
 
 try {
     $result = $apiInstance->undeleteAddOn($handle);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling Add_onApi->undeleteAddOn: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AddOnApi->undeleteAddOn: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -303,7 +303,7 @@ Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR
 Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
 Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\Add_onApi();
+$apiInstance = new Reepay\Api\AddOnApi();
 $handle = "handle_example"; // string | Add-on handle
 $body = new \Reepay\Model\UpdateAddOn(); // \Reepay\Model\UpdateAddOn |
 
@@ -311,7 +311,7 @@ try {
     $result = $apiInstance->updateAddOn($handle, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling Add_onApi->updateAddOn: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AddOnApi->updateAddOn: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
