@@ -48,8 +48,9 @@ class SessionApi
     public function __construct(\Reepay\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
-            Configuration::getDefaultConfiguration()->setHost($this->host);
-            $apiClient = new ApiClient();
+            $config = clone Configuration::getDefaultConfiguration();
+            $config->setHost($this->host);
+            $apiClient = new ApiClient($config);
         }
 
         $this->apiClient = $apiClient;
