@@ -196,13 +196,6 @@ class ErrorResponse implements ArrayAccess
         if ($this->container['code'] === null) {
             $invalid_properties[] = "'code' can't be null";
         }
-        if (($this->container['code'] > 64)) {
-            $invalid_properties[] = "invalid value for 'code', must be smaller than or equal to 64.";
-        }
-
-        if (($this->container['code'] < 1)) {
-            $invalid_properties[] = "invalid value for 'code', must be bigger than or equal to 1.";
-        }
 
         if ($this->container['error'] === null) {
             $invalid_properties[] = "'error' can't be null";
@@ -235,12 +228,6 @@ class ErrorResponse implements ArrayAccess
     {
 
         if ($this->container['code'] === null) {
-            return false;
-        }
-        if ($this->container['code'] > 64) {
-            return false;
-        }
-        if ($this->container['code'] < 1) {
             return false;
         }
         if ($this->container['error'] === null) {
@@ -281,14 +268,6 @@ class ErrorResponse implements ArrayAccess
      */
     public function setCode($code)
     {
-
-        if (($code > 64)) {
-            throw new \InvalidArgumentException('invalid value for $code when calling ErrorResponse., must be smaller than or equal to 64.');
-        }
-        if (($code < 1)) {
-            throw new \InvalidArgumentException('invalid value for $code when calling ErrorResponse., must be bigger than or equal to 1.');
-        }
-
         $this->container['code'] = $code;
 
         return $this;
