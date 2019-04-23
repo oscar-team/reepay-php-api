@@ -174,6 +174,8 @@ class ObjectSerializer
     {
         if ($value instanceof \DateTime) { // datetime in ISO8601 format
             return $value->format(\DateTime::ATOM);
+        } elseif (is_bool($value)) {
+            return true === $value? 'true': 'false';
         } else {
             return $value;
         }
