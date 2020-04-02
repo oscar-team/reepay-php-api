@@ -355,3 +355,8 @@ Class | Method | HTTP request | Description
 
 
 ## Author
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/adnedelcu/reepay-php-api/badge.svg?style=beer-square)](https://beerpay.io/adnedelcu/reepay-php-api)  [![Beerpay](https://beerpay.io/adnedelcu/reepay-php-api/make-wish.svg?style=flat-square)](https://beerpay.io/adnedelcu/reepay-php-api?focus=wish)
