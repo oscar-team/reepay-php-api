@@ -65,7 +65,8 @@ class Refund implements ArrayAccess
         'created' => '\DateTime',
         'credit_note_id' => 'string',
         'ref_transaction' => 'string',
-        'error_state' => 'string'
+        'error_state' => 'string',
+        'acquirer_message' => 'string'
     ];
 
     /**
@@ -84,7 +85,8 @@ class Refund implements ArrayAccess
         'created' => 'date-time',
         'credit_note_id' => null,
         'ref_transaction' => null,
-        'error_state' => null
+        'error_state' => null,
+        'acquirer_message' => null
     ];
 
     public static function swaggerTypes()
@@ -113,7 +115,8 @@ class Refund implements ArrayAccess
         'created' => 'created',
         'credit_note_id' => 'credit_note_id',
         'ref_transaction' => 'ref_transaction',
-        'error_state' => 'error_state'
+        'error_state' => 'error_state',
+        'acquirer_message' => 'acquirer_message'
     ];
 
 
@@ -133,7 +136,8 @@ class Refund implements ArrayAccess
         'created' => 'setCreated',
         'credit_note_id' => 'setCreditNoteId',
         'ref_transaction' => 'setRefTransaction',
-        'error_state' => 'setErrorState'
+        'error_state' => 'setErrorState',
+        'acquirer_message' => 'setAcquirerMessage'
     ];
 
 
@@ -153,7 +157,8 @@ class Refund implements ArrayAccess
         'created' => 'getCreated',
         'credit_note_id' => 'getCreditNoteId',
         'ref_transaction' => 'getRefTransaction',
-        'error_state' => 'getErrorState'
+        'error_state' => 'getErrorState',
+        'acquirer_message' => 'getAcquirerMessage'
     ];
 
     public static function attributeMap()
@@ -241,6 +246,7 @@ class Refund implements ArrayAccess
         $this->container['credit_note_id'] = isset($data['credit_note_id']) ? $data['credit_note_id'] : null;
         $this->container['ref_transaction'] = isset($data['ref_transaction']) ? $data['ref_transaction'] : null;
         $this->container['error_state'] = isset($data['error_state']) ? $data['error_state'] : null;
+        $this->container['acquirer_message'] = isset($data['acquirer_message']) ? $data['acquirer_message'] : null;
     }
 
     /**
@@ -639,6 +645,27 @@ class Refund implements ArrayAccess
             );
         }
         $this->container['error_state'] = $error_state;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirer_message
+     * @return string
+     */
+    public function getAcquirerMessage()
+    {
+        return $this->container['acquirer_message'];
+    }
+
+    /**
+     * Sets acquirer_message
+     * @param string $acquirer_message Acquirer message in case of error
+     * @return $this
+     */
+    public function setAcquirerMessage($acquirer_message)
+    {
+        $this->container['acquirer_message'] = $acquirer_message;
 
         return $this;
     }
