@@ -212,6 +212,8 @@ class OrderLine implements ArrayAccess
     const ORIGIN_ADDITIONAL_COST = 'additional_cost';
     const ORIGIN_CREDIT = 'credit';
     const ORIGIN_DISCOUNT = 'discount';
+    const ORIGIN_SETUP_FEE = 'setup_fee';
+    const ORIGIN_SURCHARGE_FEE = 'surcharge_fee';
 
 
 
@@ -228,6 +230,8 @@ class OrderLine implements ArrayAccess
             self::ORIGIN_ADDITIONAL_COST,
             self::ORIGIN_CREDIT,
             self::ORIGIN_DISCOUNT,
+            self::ORIGIN_SETUP_FEE,
+            self::ORIGIN_SURCHARGE_FEE,
         ];
     }
 
