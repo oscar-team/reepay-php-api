@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | Unique id for payment method |
-**state** | **string** | State of the payment method: `active`, `inactivated` or `failed` |
+**state** | **string** | State of the payment method: `active`, `inactivated`, `failed` or `deleted` |
 **customer** | **string** | Customer by handle |
 **failed** | [**\DateTime**](\DateTime.md) | Date when the payment method failed. In ISO-8601 extended offset date-time format. | [optional]
 **created** | [**\DateTime**](\DateTime.md) | Date when the payment method was created. In ISO-8601 extended offset date-time format. |
