@@ -194,7 +194,7 @@ class Card implements ArrayAccess
     const STATE_ACTIVE = 'active';
     const STATE_INACTIVATED = 'inactivated';
     const STATE_FAILED = 'failed';
-    const STATE_DELETED = 'deleted;
+    const STATE_DELETED = 'deleted';
     const CARD_TYPE_UNKNOWN = 'unknown';
     const CARD_TYPE_VISA = 'visa';
     const CARD_TYPE_MC = 'mc';
