@@ -54,7 +54,8 @@ class PaymentMethods implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'cards' => '\Reepay\Model\Card[]'
+        'cards' => '\Reepay\Model\Card[]',
+        'mps_subscriptions' => '\Reepay\Model\MpsSubscription[]'
     ];
 
     /**
@@ -80,7 +81,8 @@ class PaymentMethods implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'cards' => 'cards'
+        'cards' => 'cards',
+        'mps_subscriptions' => 'mps_subscriptions'
     ];
 
 
@@ -89,7 +91,8 @@ class PaymentMethods implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'cards' => 'setCards'
+        'cards' => 'setCards',
+        'mps_subscriptions' => 'setMpsSubscriptions'
     ];
 
 
@@ -98,7 +101,8 @@ class PaymentMethods implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'cards' => 'getCards'
+        'cards' => 'getCards',
+        'mps_subscriptions' => 'getMpsSubscriptions',
     ];
 
     public static function attributeMap()
@@ -116,10 +120,6 @@ class PaymentMethods implements ArrayAccess
         return self::$getters;
     }
 
-
-
-
-
     /**
      * Associative array for storing property values
      * @var mixed[]
@@ -133,6 +133,7 @@ class PaymentMethods implements ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['cards'] = isset($data['cards']) ? $data['cards'] : null;
+        $this->container['mps_subscriptions'] = isset($data['mps_subscriptions']) ? $data['mps_subscriptions'] : null;
     }
 
     /**
@@ -180,6 +181,19 @@ class PaymentMethods implements ArrayAccess
 
         return $this;
     }
+
+    public function setMpsSubscriptions($mps_subscriptions)
+    {
+        $this->container['mps_subscriptions'] = $mps_subscriptions;
+
+        return $this;
+    }
+
+    public function getMpsSubscriptions()
+    {
+        return $this->container['mps_subscriptions'];
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
