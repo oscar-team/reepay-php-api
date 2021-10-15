@@ -293,6 +293,7 @@ Class | Method | HTTP request | Description
 - [ManualRefundTransfer](docs/Model/ManualRefundTransfer.md)
 - [ManualSettleTransfer](docs/Model/ManualSettleTransfer.md)
 - [ManualTransaction](docs/Model/ManualTransaction.md)
+- [MpsSubscription](docs/Model/MpsSubscription.md)
 - [OnHoldSubscription](docs/Model/OnHoldSubscription.md)
 - [OrderLine](docs/Model/OrderLine.md)
 - [Organisation](docs/Model/Organisation.md)
