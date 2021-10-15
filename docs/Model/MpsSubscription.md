@@ -1,4 +1,4 @@
-# Card
+# MpsSubscription
 
 ## Properties
 Name | Type | Description | Notes
