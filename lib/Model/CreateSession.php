@@ -40,6 +40,7 @@ class CreateSession implements ArrayAccess
         'invoice' => 'string',
         'settle' => 'bool',
         'order' => '\Reepay\Model\CreateOrder',
+        'payment_methods' => 'string[]',
         'recurring' => 'bool',
         'accept_url' => 'string',
         'cancel_url' => 'string',
@@ -56,6 +57,7 @@ class CreateSession implements ArrayAccess
         'invoice' => null,
         'settle' => null,
         'order' => null,
+        'payment_methods' => null,
         'recurring' => null,
         'accept_url' => null,
         'cancel_url' => null,
@@ -73,6 +75,7 @@ class CreateSession implements ArrayAccess
         'invoice' => 'invoice',
         'settle' => 'settle',
         'order' => 'order',
+        'payment_methods' => 'payment_methods',
         'recurring' => 'recurring',
         'accept_url' => 'accept_url',
         'cancel_url' => 'cancel_url',
@@ -89,6 +92,7 @@ class CreateSession implements ArrayAccess
         'invoice' => 'setInvoice',
         'settle' => 'setSettle',
         'order' => 'setOrder',
+        'payment_methods' => 'setPaymentMethods',
         'recurring' => 'setRecurring',
         'accept_url' => 'setAcceptUrl',
         'cancel_url' => 'setCancelUrl',
@@ -105,6 +109,7 @@ class CreateSession implements ArrayAccess
         'invoice' => 'getInvoice',
         'settle' => 'getSettle',
         'order' => 'getOrder',
+        'payment_methods' => 'getPaymentMethods',
         'recurring' => 'getRecurring',
         'accept_url' => 'getAcceptUrl',
         'cancel_url' => 'getCancelUrl',
@@ -124,6 +129,7 @@ class CreateSession implements ArrayAccess
         $this->container['invoice'] = isset($data['invoice']) ? $data['invoice'] : null;
         $this->container['settle'] = isset($data['settle']) ? $data['settle'] : null;
         $this->container['order'] = isset($data['order']) ? $data['order'] : null;
+        $this->container['payment_methods'] = isset($data['payment_methods']) ? $data['payment_methods'] : null;
         $this->container['recurring'] = isset($data['recurring']) ? $data['recurring'] : null;
         $this->container['accept_url'] = isset($data['accept_url']) ? $data['accept_url'] : null;
         $this->container['cancel_url'] = isset($data['cancel_url']) ? $data['cancel_url'] : null;
@@ -293,6 +299,30 @@ class CreateSession implements ArrayAccess
     public function setOrder($order)
     {
         $this->container['order'] = $order;
+
+        return $this;
+    }
+
+    /**
+     * Get payment_methods
+     *
+     * @return array
+     */
+    public function getPaymentMethods()
+    {
+        return $this->container['payment_methods'];
+    }
+
+    /**
+     * Set payment_methods
+     *
+     * @param array $payment_methods
+     *
+     * @return $this
+     */
+    public function setPaymentMethods($payment_methods)
+    {
+        $this->container['payment_methods'] = $payment_methods;
 
         return $this;
     }

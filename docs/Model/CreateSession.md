@@ -8,6 +8,13 @@ Name | Type | Description | Notes
 **invoice** | **string** | Handle for existing invoice to charge. Either this argument must be provided or order.
 **settle** | **bool** | If invoice reference provided this is whether or not to immediately settle the invoice. Default is true. If not settled immediately the invoice will be authorized and can later be settled. Normally this have to be done within 7 days.
 **order** | [**\Reepay\Model\CreateOrder**](CreateOrder.md) | Order object. Either this argument must be provided or invoice. |
+**payment_methods** | **string[]** | Optional list of payment methods to use for the checkout session. Format:
+```
+<payment_methods> = list of <payment_method>
+<payment_method> = [sca-|scafallback-|nosca-|]<payment_name>
+<payment_name> = The id of payment method, e.g. dankort
+```
+See [https://docs.reepay.com/reference/checkout-payment-methods](https://docs.reepay.com/reference/checkout-payment-methods) for full documentation
 **recurring** | **bool** | recurring
 If set a recurring payment method is stored for the customer and a reference returned. This parameter if set to true will limit payment methods to those that are reusable.
 **accept_url** | **string** | If checkout is opened in separate window the customer will be directed to this page after success
