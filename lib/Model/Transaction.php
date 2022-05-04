@@ -64,6 +64,7 @@ class Transaction implements ArrayAccess
         'failed' => '\DateTime',
         'refunded' => '\DateTime',
         'created' => '\DateTime',
+        'payment_type' => 'string',
         'card_transaction' => '\Reepay\Model\CardTransaction',
         'manual_transaction' => '\Reepay\Model\ManualTransaction'
     ];
@@ -83,6 +84,7 @@ class Transaction implements ArrayAccess
         'failed' => 'date-time',
         'refunded' => 'date-time',
         'created' => 'date-time',
+        'payment_type' => null,
         'card_transaction' => null,
         'manual_transaction' => null
     ];
@@ -112,6 +114,7 @@ class Transaction implements ArrayAccess
         'failed' => 'failed',
         'refunded' => 'refunded',
         'created' => 'created',
+        'payment_type' => 'payment_type',
         'card_transaction' => 'card_transaction',
         'manual_transaction' => 'manual_transaction'
     ];
@@ -132,6 +135,7 @@ class Transaction implements ArrayAccess
         'failed' => 'setFailed',
         'refunded' => 'setRefunded',
         'created' => 'setCreated',
+        'payment_type' => 'setPaymentType',
         'card_transaction' => 'setCardTransaction',
         'manual_transaction' => 'setManualTransaction'
     ];
@@ -152,6 +156,7 @@ class Transaction implements ArrayAccess
         'failed' => 'getFailed',
         'refunded' => 'getRefunded',
         'created' => 'getCreated',
+        'payment_type' => 'getPaymentType',
         'card_transaction' => 'getCardTransaction',
         'manual_transaction' => 'getManualTransaction'
     ];
@@ -181,6 +186,22 @@ class Transaction implements ArrayAccess
     const TYPE_SETTLE = 'settle';
     const TYPE_REFUND = 'refund';
     const TYPE_AUTHORIZATION = 'authorization';
+    const PAYMENT_TYPE_CARD = 'card';
+    const PAYMENT_TYPE_MOBILEPAY = 'mobilepay';
+    const PAYMENT_TYPE_VIPPS = 'vipps';
+    const PAYMENT_TYPE_SWISH = 'swish';
+    const PAYMENT_TYPE_VIABILL = 'viabill';
+    const PAYMENT_TYPE_MANUAL = 'manual';
+    const PAYMENT_TYPE_APPLEPAY = 'applepay';
+    const PAYMENT_TYPE_GOOGLEPAY = 'googlepay';
+    const PAYMENT_TYPE_PAYPAL = 'paypal';
+    const PAYMENT_TYPE_KLARNA_PAY_NOW = 'klarna_pay_now';
+    const PAYMENT_TYPE_KLARNA_PAY_LATER = 'klarna_pay_later';
+    const PAYMENT_TYPE_KLARNA_SLICE_IT = 'klarna_slice_it';
+    const PAYMENT_TYPE_KLARNA_DIRECT_BANK_TRANSFER = 'klarna_direct_bank_transfer';
+    const PAYMENT_TYPE_KLARNA_DIRECT_DEBIT = 'klarna_direct_debit';
+    const PAYMENT_TYPE_RESURS = 'resurs';
+    const PAYMENT_TYPE_MOBILEPAY_SUBSCRIPTIONS = 'mobilepay_subscriptions';
 
 
 
@@ -216,6 +237,33 @@ class Transaction implements ArrayAccess
 
 
     /**
+     * Gets allowable values for the enum
+     * @return string[]
+     */
+    public function getPaymentTypeAllowableValues()
+    {
+        return [
+            self::PAYMENT_TYPE_CARD,
+            self::PAYMENT_TYPE_MOBILEPAY,
+            self::PAYMENT_TYPE_VIPPS,
+            self::PAYMENT_TYPE_SWISH,
+            self::PAYMENT_TYPE_VIABILL,
+            self::PAYMENT_TYPE_MANUAL,
+            self::PAYMENT_TYPE_APPLEPAY,
+            self::PAYMENT_TYPE_GOOGLEPAY,
+            self::PAYMENT_TYPE_PAYPAL,
+            self::PAYMENT_TYPE_KLARNA_PAY_NOW,
+            self::PAYMENT_TYPE_KLARNA_PAY_LATER,
+            self::PAYMENT_TYPE_KLARNA_SLICE_IT,
+            self::PAYMENT_TYPE_KLARNA_DIRECT_BANK_TRANSFER,
+            self::PAYMENT_TYPE_KLARNA_DIRECT_DEBIT,
+            self::PAYMENT_TYPE_RESURS,
+            self::PAYMENT_TYPE_MOBILEPAY_SUBSCRIPTIONS,
+        ];
+    }
+
+
+    /**
      * Associative array for storing property values
      * @var mixed[]
      */
@@ -237,6 +285,7 @@ class Transaction implements ArrayAccess
         $this->container['failed'] = isset($data['failed']) ? $data['failed'] : null;
         $this->container['refunded'] = isset($data['refunded']) ? $data['refunded'] : null;
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
+        $this->container['payment_type'] = isset($data['payment_type']) ? $data['payment_type'] : null;
         $this->container['card_transaction'] = isset($data['card_transaction']) ? $data['card_transaction'] : null;
         $this->container['manual_transaction'] = isset($data['manual_transaction']) ? $data['manual_transaction'] : null;
     }
@@ -297,6 +346,13 @@ class Transaction implements ArrayAccess
         if ($this->container['created'] === null) {
             $invalid_properties[] = "'created' can't be null";
         }
+        $allowed_values = $this->getPaymentTypeAllowableValues();
+        if (!in_array($this->container['payment_type'], $allowed_values)) {
+            $invalid_properties[] = sprintf(
+                "invalid value for 'payment_type', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
+        }
         return $invalid_properties;
     }
 
@@ -345,6 +401,10 @@ class Transaction implements ArrayAccess
             return false;
         }
         if ($this->container['created'] === null) {
+            return false;
+        }
+        $allowed_values = $this->getPaymentTypeAllowableValues();
+        if (!in_array($this->container['payment_type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -580,6 +640,36 @@ class Transaction implements ArrayAccess
     public function setCreated($created)
     {
         $this->container['created'] = $created;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_type
+     * @return string
+     */
+    public function getPaymentType()
+    {
+        return $this->container['payment_type'];
+    }
+
+    /**
+     * Sets payment_type
+     * @param string $payment_type Payment type for transaction, either: card, mobilepay, vipps, swish, viabill, manual, applepay, googlepay, paypal, klarna_pay_now, klarna_pay_later, klarna_slice_it, klarna_direct_bank_transfer, klarna_direct_debit, resurs or mobilepay_subscriptions
+     * @return $this
+     */
+    public function setPaymentType($payment_type)
+    {
+        $allowed_values = $this->getPaymentTypeAllowableValues();
+        if (!in_array($payment_type, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'payment_type', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
+        }
+        $this->container['payment_type'] = $payment_type;
 
         return $this;
     }
