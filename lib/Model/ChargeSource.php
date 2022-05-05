@@ -148,6 +148,7 @@ class ChargeSource implements ArrayAccess
 
     const TYPE_CARD = 'card';
     const TYPE_CARD_TOKEN = 'card_token';
+    const TYPE_IDEAL = 'ideal';
     const CARD_TYPE_UNKNOWN = 'unknown';
     const CARD_TYPE_VISA = 'visa';
     const CARD_TYPE_MC = 'mc';
@@ -172,6 +173,7 @@ class ChargeSource implements ArrayAccess
         return [
             self::TYPE_CARD,
             self::TYPE_CARD_TOKEN,
+            self::TYPE_IDEAL,
         ];
     }
 
