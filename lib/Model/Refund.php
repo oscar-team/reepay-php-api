@@ -180,6 +180,7 @@ class Refund implements ArrayAccess
     const STATE_FAILED = 'failed';
     const TYPE_CARD = 'card';
     const TYPE_MANUAL = 'manual';
+    const TYPE_IDEAL = 'ideal';
     const ERROR_STATE_HARD_DECLINED = 'hard_declined';
     const ERROR_STATE_PROCESSING_ERROR = 'processing_error';
 
