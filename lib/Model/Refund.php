@@ -207,6 +207,7 @@ class Refund implements ArrayAccess
         return [
             self::TYPE_CARD,
             self::TYPE_MANUAL,
+            self::TYPE_IDEAL,
         ];
     }
 
