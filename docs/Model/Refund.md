@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **currency** | **string** | Currency for the account in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code |
 **transaction** | **string** | Transaction id assigned by Reepay |
 **error** | **string** | Reepay error code if failed. See [transaction errors](https://docs.reepay.com/api/#transaction-errors). | [optional]
-**type** | **string** | Type of refund, either `card` or `manual` |
+**type** | **string** | Type of refund, either `card`, `manual` or `ideal`|
 **created** | [**\DateTime**](\DateTime.md) | When the refund was created, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. |
 **credit_note_id** | **string** | Credit note id for successful refund | [optional]
 **ref_transaction** | **string** | Id of a possible settled transaction that has been refunded | [optional]
