@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Type of charge source: `card` or `card_token` |
+**type** | **string** | Type of charge source: `card`, `card_token` or `ideal` |
 **card** | **string** | Reference to customer card if source type `card` | [optional]
 **fingerprint** | **string** | Uniquely identifies this particular card number | [optional]
 **auth_transaction** | **string** | Reference to authorization transaction if charge is settled after authorization | [optional]
