@@ -202,6 +202,7 @@ class Transaction implements ArrayAccess
     const PAYMENT_TYPE_KLARNA_DIRECT_DEBIT = 'klarna_direct_debit';
     const PAYMENT_TYPE_RESURS = 'resurs';
     const PAYMENT_TYPE_MOBILEPAY_SUBSCRIPTIONS = 'mobilepay_subscriptions';
+    const PAYMENT_TYPE_IDEAL = 'ideal';
 
 
 
@@ -259,6 +260,7 @@ class Transaction implements ArrayAccess
             self::PAYMENT_TYPE_KLARNA_DIRECT_DEBIT,
             self::PAYMENT_TYPE_RESURS,
             self::PAYMENT_TYPE_MOBILEPAY_SUBSCRIPTIONS,
+            self::PAYMENT_TYPE_IDEAL,
         ];
     }
 
