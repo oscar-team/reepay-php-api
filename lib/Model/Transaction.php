@@ -202,6 +202,7 @@ class Transaction implements ArrayAccess
     const PAYMENT_TYPE_KLARNA_DIRECT_DEBIT = 'klarna_direct_debit';
     const PAYMENT_TYPE_RESURS = 'resurs';
     const PAYMENT_TYPE_MOBILEPAY_SUBSCRIPTIONS = 'mobilepay_subscriptions';
+    const PAYMENT_TYPE_IDEAL= 'ideal';
 
 
 
@@ -259,6 +260,7 @@ class Transaction implements ArrayAccess
             self::PAYMENT_TYPE_KLARNA_DIRECT_DEBIT,
             self::PAYMENT_TYPE_RESURS,
             self::PAYMENT_TYPE_MOBILEPAY_SUBSCRIPTIONS,
+            self::PAYMENT_TYPE_IDEAL,
         ];
     }
 
@@ -655,7 +657,7 @@ class Transaction implements ArrayAccess
 
     /**
      * Sets payment_type
-     * @param string $payment_type Payment type for transaction, either: card, mobilepay, vipps, swish, viabill, manual, applepay, googlepay, paypal, klarna_pay_now, klarna_pay_later, klarna_slice_it, klarna_direct_bank_transfer, klarna_direct_debit, resurs or mobilepay_subscriptions
+     * @param string $payment_type Payment type for transaction, either: card, mobilepay, vipps, swish, viabill, manual, applepay, googlepay, paypal, klarna_pay_now, klarna_pay_later, klarna_slice_it, klarna_direct_bank_transfer, klarna_direct_debit, resurs, mobilepay_subscriptions or ideal
      * @return $this
      */
     public function setPaymentType($payment_type)
