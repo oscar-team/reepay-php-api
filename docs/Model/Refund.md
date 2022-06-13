@@ -4,17 +4,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** | Refund id assigned by Reepay |
-**state** | **string** | The refund state either `refunded` or `failed` |
+**state** | **string** | The refund state either `refunded`, `processing` or `failed` |
 **invoice** | **string** | Invoice/charge handle |
 **amount** | **int** | Refunded amount |
 **currency** | **string** | Currency for the account in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code |
 **transaction** | **string** | Transaction id assigned by Reepay |
 **error** | **string** | Reepay error code if failed. See [transaction errors](https://docs.reepay.com/api/#transaction-errors). | [optional]
-**type** | **string** | Type of refund, either `card`, `manual` or `ideal`|
+**type** | **string** | Type of refund, either `card`, `mobilepay`, `vipps`, `swish`, `viabill`, `manual`, `applepay`, `googlepay`, `paypal`, `klarna_pay_now`, `klarna_pay_later`, `klarna_slice_it`, `klarna_direct_bank_transfer`, `klarna_direct_debit`, `resurs`, `mobilepay_subscriptions` or `ideal`|
 **created** | [**\DateTime**](\DateTime.md) | When the refund was created, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. |
 **credit_note_id** | **string** | Credit note id for successful refund | [optional]
 **ref_transaction** | **string** | Id of a possible settled transaction that has been refunded | [optional]
-**error_state** | **string** | Reepay error state if failed: `hard_declined` or `processing_error`. A hard decline indicates a refund decline by acquirer. A processing error indicates an error processing the refund either at Reepay, the acquirer, or between Reepay amd the acquirer. | [optional]
+**error_state** | **string** | Reepay error state if failed: `hard_declined`, `soft_declined` or `processing_error`. A hard decline indicates a refund decline by acquirer. A soft decline indicates a temporary problem and should be tried again. A processing error indicates an error processing the refund either at Reepay, the acquirer, or between Reepay amd the acquirer. | [optional]
 **acquirer_message** | **string** | Acquirer message in case of error | [optional]
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
