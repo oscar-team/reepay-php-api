@@ -60,6 +60,7 @@ class CreateSubscription implements ArrayAccess
         'quantity' => 'int',
         'test' => 'bool',
         'handle' => 'string',
+        'metadata' => 'map[string,object]',
         'source' => 'string',
         'signup_method' => 'string',
         'conditional_create' => 'bool',
@@ -89,6 +90,7 @@ class CreateSubscription implements ArrayAccess
         'quantity' => 'int32',
         'test' => null,
         'handle' => null,
+        'metadata' => null,
         'source' => null,
         'signup_method' => null,
         'conditional_create' => null,
@@ -128,6 +130,7 @@ class CreateSubscription implements ArrayAccess
         'quantity' => 'quantity',
         'test' => 'test',
         'handle' => 'handle',
+        'metadata' => 'metadata',
         'source' => 'source',
         'signup_method' => 'signup_method',
         'conditional_create' => 'conditional_create',
@@ -158,6 +161,7 @@ class CreateSubscription implements ArrayAccess
         'quantity' => 'setQuantity',
         'test' => 'setTest',
         'handle' => 'setHandle',
+        'metadata' => 'setMetadata',
         'source' => 'setSource',
         'signup_method' => 'setSignupMethod',
         'conditional_create' => 'setConditionalCreate',
@@ -188,6 +192,7 @@ class CreateSubscription implements ArrayAccess
         'quantity' => 'getQuantity',
         'test' => 'getTest',
         'handle' => 'getHandle',
+        'metadata' => 'getMetadata',
         'source' => 'getSource',
         'signup_method' => 'getSignupMethod',
         'conditional_create' => 'getConditionalCreate',
@@ -243,6 +248,7 @@ class CreateSubscription implements ArrayAccess
         $this->container['quantity'] = isset($data['quantity']) ? $data['quantity'] : null;
         $this->container['test'] = isset($data['test']) ? $data['test'] : null;
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
+        $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
         $this->container['signup_method'] = isset($data['signup_method']) ? $data['signup_method'] : null;
         $this->container['conditional_create'] = isset($data['conditional_create']) ? $data['conditional_create'] : null;
@@ -458,6 +464,30 @@ class CreateSubscription implements ArrayAccess
     public function setHandle($handle)
     {
         $this->container['handle'] = $handle;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     *
+     * @return map[string,object]
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param map[string,object] $metadata Custom metadata.
+     *
+     * @return $this
+     */
+    public function setMetadata($metadata)
+    {
+        $this->container['metadata'] = $metadata;
 
         return $this;
     }
