@@ -659,7 +659,7 @@ class Transaction implements ArrayAccess
 
     /**
      * Sets payment_type
-     * @param string $payment_type Payment type for transaction, either: card, mobilepay, vipps, swish, viabill, manual, applepay, googlepay, paypal, klarna_pay_now, klarna_pay_later, klarna_slice_it, klarna_direct_bank_transfer, klarna_direct_debit, resurs or mobilepay_subscriptions
+     * @param string $payment_type Payment type for transaction, either: card, mobilepay, vipps, swish, viabill, manual, applepay, googlepay, paypal, klarna_pay_now, klarna_pay_later, klarna_slice_it, klarna_direct_bank_transfer, klarna_direct_debit, resurs, mobilepay_subscriptions, bancontact or ideal
      * @return $this
      */
     public function setPaymentType($payment_type)
