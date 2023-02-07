@@ -196,6 +196,7 @@ class Refund implements ArrayAccess
     const TYPE_RESURS = 'resurs';
     const TYPE_MOBILEPAY_SUBSCRIPTIONS = 'mobilepay_subscriptions';
     const TYPE_IDEAL = 'ideal';
+    const TYPE_BANCONTACT = 'bancontact';
     const ERROR_STATE_HARD_DECLINED = 'hard_declined';
     const ERROR_STATE_SOFT_DECLINED = 'soft_declined';
     const ERROR_STATE_PROCESSING_ERROR = 'processing_error';
