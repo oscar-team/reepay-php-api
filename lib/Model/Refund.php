@@ -181,6 +181,7 @@ class Refund implements ArrayAccess
     const TYPE_CARD = 'card';
     const TYPE_MANUAL = 'manual';
     const TYPE_IDEAL = 'ideal';
+    const TYPE_BANCONTACT = 'bancontact';
     const ERROR_STATE_HARD_DECLINED = 'hard_declined';
     const ERROR_STATE_PROCESSING_ERROR = 'processing_error';
 

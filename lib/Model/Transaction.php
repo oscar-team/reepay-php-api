@@ -203,6 +203,7 @@ class Transaction implements ArrayAccess
     const PAYMENT_TYPE_RESURS = 'resurs';
     const PAYMENT_TYPE_MOBILEPAY_SUBSCRIPTIONS = 'mobilepay_subscriptions';
     const PAYMENT_TYPE_IDEAL = 'ideal';
+    const PAYMENT_TYPE_BANCONTACT = 'bancontact';
 
 
 
@@ -261,6 +262,7 @@ class Transaction implements ArrayAccess
             self::PAYMENT_TYPE_RESURS,
             self::PAYMENT_TYPE_MOBILEPAY_SUBSCRIPTIONS,
             self::PAYMENT_TYPE_IDEAL,
+            self::PAYMENT_TYPE_BANCONTACT,
         ];
     }
 
