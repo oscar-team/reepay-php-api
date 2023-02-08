@@ -174,6 +174,7 @@ class ChargeSource implements ArrayAccess
         return [
             self::TYPE_CARD,
             self::TYPE_CARD_TOKEN,
+            self::TYPE_IDEAL,
             self::TYPE_BANCONTACT,
         ];
     }
