@@ -187,10 +187,14 @@ class Transaction implements ArrayAccess
     const TYPE_REFUND = 'refund';
     const TYPE_AUTHORIZATION = 'authorization';
     const PAYMENT_TYPE_CARD = 'card';
+    const PAYMENT_TYPE_CARD_TOKEN = 'card_token';
     const PAYMENT_TYPE_MOBILEPAY = 'mobilepay';
+    const PAYMENT_TYPE_MPO = 'mpo';
     const PAYMENT_TYPE_VIPPS = 'vipps';
+    const PAYMENT_TYPE_VIPPS_RECURRING = 'vipps_recurring';
     const PAYMENT_TYPE_SWISH = 'swish';
     const PAYMENT_TYPE_VIABILL = 'viabill';
+    const PAYMENT_TYPE_ANYDAY = 'anyday';
     const PAYMENT_TYPE_MANUAL = 'manual';
     const PAYMENT_TYPE_APPLEPAY = 'applepay';
     const PAYMENT_TYPE_GOOGLEPAY = 'googlepay';
@@ -201,9 +205,15 @@ class Transaction implements ArrayAccess
     const PAYMENT_TYPE_KLARNA_DIRECT_BANK_TRANSFER = 'klarna_direct_bank_transfer';
     const PAYMENT_TYPE_KLARNA_DIRECT_DEBIT = 'klarna_direct_debit';
     const PAYMENT_TYPE_RESURS = 'resurs';
-    const PAYMENT_TYPE_MOBILEPAY_SUBSCRIPTIONS = 'mobilepay_subscriptions';
-    const PAYMENT_TYPE_IDEAL = 'ideal';
     const PAYMENT_TYPE_BANCONTACT = 'bancontact';
+    const PAYMENT_TYPE_BCMC = 'bcmc';
+    const PAYMENT_TYPE_BLIK = 'blik';
+    const PAYMENT_TYPE_GIROPAY = 'giropay';
+    const PAYMENT_TYPE_IDEAL = 'ideal';
+    const PAYMENT_TYPE_P24 = 'p24';
+    const PAYMENT_TYPE_SEPA = 'sepa';
+    const PAYMENT_TYPE_VERKKOPANKKI = 'verkkopankki';
+    const PAYMENT_TYPE_MOBILEPAY_SUBSCRIPTIONS = 'mobilepay_subscriptions';
 
 
 
@@ -246,10 +256,14 @@ class Transaction implements ArrayAccess
     {
         return [
             self::PAYMENT_TYPE_CARD,
+            self::PAYMENT_TYPE_CARD_TOKEN,
             self::PAYMENT_TYPE_MOBILEPAY,
+            self::PAYMENT_TYPE_MPO,
             self::PAYMENT_TYPE_VIPPS,
+            self::PAYMENT_TYPE_VIPPS_RECURRING,
             self::PAYMENT_TYPE_SWISH,
             self::PAYMENT_TYPE_VIABILL,
+            self::PAYMENT_TYPE_ANYDAY,
             self::PAYMENT_TYPE_MANUAL,
             self::PAYMENT_TYPE_APPLEPAY,
             self::PAYMENT_TYPE_GOOGLEPAY,
@@ -260,9 +274,15 @@ class Transaction implements ArrayAccess
             self::PAYMENT_TYPE_KLARNA_DIRECT_BANK_TRANSFER,
             self::PAYMENT_TYPE_KLARNA_DIRECT_DEBIT,
             self::PAYMENT_TYPE_RESURS,
-            self::PAYMENT_TYPE_MOBILEPAY_SUBSCRIPTIONS,
-            self::PAYMENT_TYPE_IDEAL,
             self::PAYMENT_TYPE_BANCONTACT,
+            self::PAYMENT_TYPE_BCMC,
+            self::PAYMENT_TYPE_BLIK,
+            self::PAYMENT_TYPE_GIROPAY,
+            self::PAYMENT_TYPE_IDEAL,
+            self::PAYMENT_TYPE_P24,
+            self::PAYMENT_TYPE_SEPA,
+            self::PAYMENT_TYPE_VERKKOPANKKI,
+            self::PAYMENT_TYPE_MOBILEPAY_SUBSCRIPTIONS,
         ];
     }
 

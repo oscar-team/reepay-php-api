@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description                                                                                                                                            | Notes
 ------------ | ------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------| -------------
-**type** | **string** | Type of charge source: `card`, `card_token`, `bancontact` or `ideal`                                                                                   |
+**type** | **string** | Type of charge source: `card` - existing customer card, `card_token` - card token, `mpo` - MobilePay Online, `vipps`, `vipps_recurring`, `swish`, `viabill`, `anyday`, `manual`, `applepay`, `googlepay`, `paypal`, `klarna_pay_now`, `klarna_pay_later`, `klarna_slice_it`, `klarna_direct_bank_transfer`, `klarna_direct_debit`, `resurs`, `bancontact`, `bcmc`, `blik`, `giropay`, `ideal`, `p24`, `sepa`, `verkkopankki` or `mobilepay_subscriptions`                                                                                   |
 **card** | **string** | Reference to customer card if source type `card`                                                                                                       | [optional]
 **fingerprint** | **string** | Uniquely identifies this particular card number                                                                                                        | [optional]
 **auth_transaction** | **string** | Reference to authorization transaction if charge is settled after authorization                                                                        | [optional]

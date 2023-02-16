@@ -148,8 +148,32 @@ class ChargeSource implements ArrayAccess
 
     const TYPE_CARD = 'card';
     const TYPE_CARD_TOKEN = 'card_token';
-    const TYPE_IDEAL = 'ideal';
+    const TYPE_MOBILEPAY = 'mobilepay';
+    const TYPE_MPO = 'mpo';
+    const TYPE_VIPPS = 'vipps';
+    const TYPE_VIPPS_RECURRING = 'vipps_recurring';
+    const TYPE_SWISH = 'swish';
+    const TYPE_VIABILL = 'viabill';
+    const TYPE_ANYDAY = 'anyday';
+    const TYPE_MANUAL = 'manual';
+    const TYPE_APPLEPAY = 'applepay';
+    const TYPE_GOOGLEPAY = 'googlepay';
+    const TYPE_PAYPAL = 'paypal';
+    const TYPE_KLARNA_PAY_NOW = 'klarna_pay_now';
+    const TYPE_KLARNA_PAY_LATER = 'klarna_pay_later';
+    const TYPE_KLARNA_SLICE_IT = 'klarna_slice_it';
+    const TYPE_KLARNA_DIRECT_BANK_TRANSFER = 'klarna_direct_bank_transfer';
+    const TYPE_KLARNA_DIRECT_DEBIT = 'klarna_direct_debit';
+    const TYPE_RESURS = 'resurs';
     const TYPE_BANCONTACT = 'bancontact';
+    const TYPE_BCMC = 'bcmc';
+    const TYPE_BLIK = 'blik';
+    const TYPE_GIROPAY = 'giropay';
+    const TYPE_IDEAL = 'ideal';
+    const TYPE_P24 = 'p24';
+    const TYPE_SEPA = 'sepa';
+    const TYPE_VERKKOPANKKI = 'verkkopankki';
+    const TYPE_MOBILEPAY_SUBSCRIPTIONS = 'mobilepay_subscriptions';
     const CARD_TYPE_UNKNOWN = 'unknown';
     const CARD_TYPE_VISA = 'visa';
     const CARD_TYPE_MC = 'mc';
@@ -174,8 +198,32 @@ class ChargeSource implements ArrayAccess
         return [
             self::TYPE_CARD,
             self::TYPE_CARD_TOKEN,
-            self::TYPE_IDEAL,
+            self::TYPE_MOBILEPAY,
+            self::TYPE_MPO,
+            self::TYPE_VIPPS,
+            self::TYPE_VIPPS_RECURRING,
+            self::TYPE_SWISH,
+            self::TYPE_VIABILL,
+            self::TYPE_ANYDAY,
+            self::TYPE_MANUAL,
+            self::TYPE_APPLEPAY,
+            self::TYPE_GOOGLEPAY,
+            self::TYPE_PAYPAL,
+            self::TYPE_KLARNA_PAY_NOW,
+            self::TYPE_KLARNA_PAY_LATER,
+            self::TYPE_KLARNA_SLICE_IT,
+            self::TYPE_KLARNA_DIRECT_BANK_TRANSFER,
+            self::TYPE_KLARNA_DIRECT_DEBIT,
+            self::TYPE_RESURS,
             self::TYPE_BANCONTACT,
+            self::TYPE_BCMC,
+            self::TYPE_BLIK,
+            self::TYPE_GIROPAY,
+            self::TYPE_IDEAL,
+            self::TYPE_P24,
+            self::TYPE_SEPA,
+            self::TYPE_VERKKOPANKKI,
+            self::TYPE_MOBILEPAY_SUBSCRIPTIONS,
         ];
     }
 
