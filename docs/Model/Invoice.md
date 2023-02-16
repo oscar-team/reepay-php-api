@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **customer** | **string** | Customer handle |
 **subscription** | **string** | Subscription handle, will be null for a one-time customer invoice | [optional]
 **plan** | **string** | Subscription plan handle for the plan used to automatically create the invoice or the case that an on-demand subscription invoice has been created that should include a plan order line | [optional]
-**state** | **string** | The invoice state one of the following: `pending`, `dunning`, `settled`, `cancelled`, `authorized`, `failed` |
+**state** | **string** | The invoice state one of the following: `created`, `pending`, `dunning`, `settled`, `cancelled`, `authorized`, `failed` |
 **type** | **string** | The type of invoice: `s` - subscription recurring, `so` - subscription one-time, `soi` - subscription one-time instant, `co` - customer one-time, `ch` - charge |
 **amount** | **int** | The invoice amount including VAT |
 **number** | **int** | Sequential invoice number |
