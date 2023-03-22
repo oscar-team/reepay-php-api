@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **period_to** | [**\DateTime**](\DateTime.md) | The end of billing period if the invoice is for a specific billing period, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional]
 **settle_later** | **bool** | Whether this is a customer one-time invoice that will be settled later | [optional]
 **settle_later_payment_method** | **string** | The payment method to use for a later settle of a one-time customer invoice | [optional]
+**recurring_payment_method** | **string** | This holds the user card Id from Reepay for recurring payment | [optional]
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

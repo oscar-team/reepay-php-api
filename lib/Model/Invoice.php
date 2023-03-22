@@ -91,7 +91,8 @@ class Invoice implements ArrayAccess
         'period_from' => '\DateTime',
         'period_to' => '\DateTime',
         'settle_later' => 'bool',
-        'settle_later_payment_method' => 'string'
+        'settle_later_payment_method' => 'string',
+        'recurring_payment_method' => 'string'
     ];
 
     /**
@@ -136,7 +137,8 @@ class Invoice implements ArrayAccess
         'period_from' => 'date-time',
         'period_to' => 'date-time',
         'settle_later' => null,
-        'settle_later_payment_method' => null
+        'settle_later_payment_method' => null,
+        'recurring_payment_method' => null
     ];
 
     public static function swaggerTypes()
@@ -191,7 +193,8 @@ class Invoice implements ArrayAccess
         'period_from' => 'period_from',
         'period_to' => 'period_to',
         'settle_later' => 'settle_later',
-        'settle_later_payment_method' => 'settle_later_payment_method'
+        'settle_later_payment_method' => 'settle_later_payment_method',
+        'recurring_payment_method' => 'recurring_payment_method'
     ];
 
 
@@ -237,7 +240,8 @@ class Invoice implements ArrayAccess
         'period_from' => 'setPeriodFrom',
         'period_to' => 'setPeriodTo',
         'settle_later' => 'setSettleLater',
-        'settle_later_payment_method' => 'setSettleLaterPaymentMethod'
+        'settle_later_payment_method' => 'setSettleLaterPaymentMethod',
+        'recurring_payment_method' => 'setRecurringPaymentMethod'
     ];
 
 
@@ -283,7 +287,8 @@ class Invoice implements ArrayAccess
         'period_from' => 'getPeriodFrom',
         'period_to' => 'getPeriodTo',
         'settle_later' => 'getSettleLater',
-        'settle_later_payment_method' => 'getSettleLaterPaymentMethod'
+        'settle_later_payment_method' => 'getSettleLaterPaymentMethod',
+        'recurring_payment_method' => 'getRecurringPaymentMethod'
     ];
 
     public static function attributeMap()
@@ -399,6 +404,7 @@ class Invoice implements ArrayAccess
         $this->container['period_to'] = isset($data['period_to']) ? $data['period_to'] : null;
         $this->container['settle_later'] = isset($data['settle_later']) ? $data['settle_later'] : null;
         $this->container['settle_later_payment_method'] = isset($data['settle_later_payment_method']) ? $data['settle_later_payment_method'] : null;
+        $this->container['recurring_payment_method'] = isset($data['recurring_payment_method']) ? $data['recurring_payment_method'] : null;
     }
 
     /**
@@ -1427,6 +1433,28 @@ class Invoice implements ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets recurring_payment_method
+     * @return string
+     */
+    public function getRecurringPaymentMethod()
+    {
+        return $this->container['recurring_payment_method'];
+    }
+
+    /**
+     * Sets recurring_payment_method
+     * @param string $settle_later_payment_method The payment method to use for a later settle of a one-time customer invoice
+     * @return $this
+     */
+    public function setRecurringPaymentMethod($recurring_payment_method)
+    {
+        $this->container['recurring_payment_method'] = $recurring_payment_method;
+
+        return $this;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
@@ -1485,5 +1513,3 @@ class Invoice implements ArrayAccess
         return json_encode(\Reepay\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-
