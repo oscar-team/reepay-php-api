@@ -1513,5 +1513,3 @@ class Invoice implements ArrayAccess
         return json_encode(\Reepay\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-
