@@ -23,7 +23,7 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
 ```
 {
   "require": {
-    "adnedelcu/reepay-php-api": "dev-master"
+    "oscar-team/reepay-php-api": "dev-master"
   }
 }
 ```
@@ -354,10 +354,3 @@ Class | Method | HTTP request | Description
 
 - **Type**: HTTP basic authentication
 
-
-## Author
-
-## Support on Beerpay
-Hey dude! Help me out for a couple of :beers:!
-
-[![Beerpay](https://beerpay.io/adnedelcu/reepay-php-api/badge.svg?style=beer-square)](https://beerpay.io/adnedelcu/reepay-php-api)  [![Beerpay](https://beerpay.io/adnedelcu/reepay-php-api/make-wish.svg?style=flat-square)](https://beerpay.io/adnedelcu/reepay-php-api?focus=wish)
