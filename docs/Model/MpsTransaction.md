@@ -1,0 +1,16 @@
+# MpsTransaction
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**error** | **string** | Error code if failed. See [transaction errors](https://docs.reepay.com/api/#transaction-errors). | [optional]
+**ref_transaction** | **string** | Id of a possible referenced transaction | [optional]
+**error_state** | **string** | Error state if failed: `pending`, `soft_declined`, `hard_declined` or `processing_error` | [optional]
+**acquirer_message** | **string** | Acquirer message in case of error | [optional]
+**mps_id** | **string** | MobilePay Subscriptions id |
+**mps_subscription** | [**\Reepay\Model\MpsSubscription**](MpsSubscription.md) | MobilePay Subscriptions agreement |
+**mps_payment_type** | **string** | MobilePay Subscriptions payment type: `regular`, `one_off_cit` (customer initiated), `one_off_mit` (merchant initiated auto reserve) |
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+
+

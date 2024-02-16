@@ -60,6 +60,7 @@ class Invoice implements ArrayAccess
         'subscription' => 'string',
         'plan' => 'string',
         'state' => 'string',
+        'processing' => 'bool',
         'type' => 'string',
         'amount' => 'int',
         'number' => 'int',
@@ -80,7 +81,9 @@ class Invoice implements ArrayAccess
         'settled_amount' => 'int',
         'refunded_amount' => 'int',
         'authorized_amount' => 'int',
+        'credited_amount' => 'int',
         'period_number' => 'int',
+        'recurring_payment_method' => 'string',
         'order_lines' => '\Reepay\Model\OrderLine[]',
         'additional_costs' => 'string[]',
         'transactions' => '\Reepay\Model\Transaction[]',
@@ -92,7 +95,9 @@ class Invoice implements ArrayAccess
         'period_to' => '\DateTime',
         'settle_later' => 'bool',
         'settle_later_payment_method' => 'string',
-        'recurring_payment_method' => 'string'
+        'billing_address' => '\Reepay\Model\InvoiceBillingAddress',
+        'shipping_address' => '\Reepay\Model\InvoiceShippingAddress',
+        'accounting_number' => 'string',
     ];
 
     /**
@@ -106,6 +111,7 @@ class Invoice implements ArrayAccess
         'subscription' => null,
         'plan' => null,
         'state' => null,
+        'processing' => null,
         'type' => null,
         'amount' => 'int32',
         'number' => 'int32',
@@ -126,7 +132,9 @@ class Invoice implements ArrayAccess
         'settled_amount' => 'int32',
         'refunded_amount' => 'int32',
         'authorized_amount' => 'int32',
+        'credited_amount' => 'int32',
         'period_number' => 'int32',
+        'recurring_payment_method' => null,
         'order_lines' => null,
         'additional_costs' => null,
         'transactions' => null,
@@ -138,7 +146,9 @@ class Invoice implements ArrayAccess
         'period_to' => 'date-time',
         'settle_later' => null,
         'settle_later_payment_method' => null,
-        'recurring_payment_method' => null
+        'billing_address' => null,
+        'shipping_address' => null,
+        'accounting_number' => null,
     ];
 
     public static function swaggerTypes()
@@ -162,6 +172,7 @@ class Invoice implements ArrayAccess
         'subscription' => 'subscription',
         'plan' => 'plan',
         'state' => 'state',
+        'processing' => 'processing',
         'type' => 'type',
         'amount' => 'amount',
         'number' => 'number',
@@ -182,7 +193,9 @@ class Invoice implements ArrayAccess
         'settled_amount' => 'settled_amount',
         'refunded_amount' => 'refunded_amount',
         'authorized_amount' => 'authorized_amount',
+        'credited_amount' => 'credited_amount',
         'period_number' => 'period_number',
+        'recurring_payment_method' => 'recurring_payment_method',
         'order_lines' => 'order_lines',
         'additional_costs' => 'additional_costs',
         'transactions' => 'transactions',
@@ -194,7 +207,9 @@ class Invoice implements ArrayAccess
         'period_to' => 'period_to',
         'settle_later' => 'settle_later',
         'settle_later_payment_method' => 'settle_later_payment_method',
-        'recurring_payment_method' => 'recurring_payment_method'
+        'billing_address' => 'billing_address',
+        'shipping_address' => 'shipping_address',
+        'accounting_number' => 'accounting_number',
     ];
 
 
@@ -209,6 +224,7 @@ class Invoice implements ArrayAccess
         'subscription' => 'setSubscription',
         'plan' => 'setPlan',
         'state' => 'setState',
+        'processing' => 'setProcessing',
         'type' => 'setType',
         'amount' => 'setAmount',
         'number' => 'setNumber',
@@ -229,7 +245,9 @@ class Invoice implements ArrayAccess
         'settled_amount' => 'setSettledAmount',
         'refunded_amount' => 'setRefundedAmount',
         'authorized_amount' => 'setAuthorizedAmount',
+        'credited_amount' => 'setCreditedAmount',
         'period_number' => 'setPeriodNumber',
+        'recurring_payment_method' => 'setRecurringPaymentMethod',
         'order_lines' => 'setOrderLines',
         'additional_costs' => 'setAdditionalCosts',
         'transactions' => 'setTransactions',
@@ -241,7 +259,10 @@ class Invoice implements ArrayAccess
         'period_to' => 'setPeriodTo',
         'settle_later' => 'setSettleLater',
         'settle_later_payment_method' => 'setSettleLaterPaymentMethod',
-        'recurring_payment_method' => 'setRecurringPaymentMethod'
+        'billing_address' => 'setBillingAddress',
+        'shipping_address' => 'setShippingAddress',
+        'accounting_number' => 'setAccountingNumber',
+
     ];
 
 
@@ -256,6 +277,7 @@ class Invoice implements ArrayAccess
         'subscription' => 'getSubscription',
         'plan' => 'getPlan',
         'state' => 'getState',
+        'processing' => 'getProcessing',
         'type' => 'getType',
         'amount' => 'getAmount',
         'number' => 'getNumber',
@@ -276,7 +298,9 @@ class Invoice implements ArrayAccess
         'settled_amount' => 'getSettledAmount',
         'refunded_amount' => 'getRefundedAmount',
         'authorized_amount' => 'getAuthorizedAmount',
+        'credited_amount' => 'getCreditedAmount',
         'period_number' => 'getPeriodNumber',
+        'recurring_payment_method' => 'getRecurringPaymentMethod',
         'order_lines' => 'getOrderLines',
         'additional_costs' => 'getAdditionalCosts',
         'transactions' => 'getTransactions',
@@ -288,7 +312,9 @@ class Invoice implements ArrayAccess
         'period_to' => 'getPeriodTo',
         'settle_later' => 'getSettleLater',
         'settle_later_payment_method' => 'getSettleLaterPaymentMethod',
-        'recurring_payment_method' => 'getRecurringPaymentMethod'
+        'billing_address' => 'getBillingAddress',
+        'shipping_address' => 'getShippingAddress',
+        'accounting_number' => 'getAccountingNumber',
     ];
 
     public static function attributeMap()
@@ -372,6 +398,7 @@ class Invoice implements ArrayAccess
         $this->container['subscription'] = isset($data['subscription']) ? $data['subscription'] : null;
         $this->container['plan'] = isset($data['plan']) ? $data['plan'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
+        $this->container['processing'] = isset($data['processing']) ? $data['processing'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['number'] = isset($data['number']) ? $data['number'] : null;
@@ -392,7 +419,9 @@ class Invoice implements ArrayAccess
         $this->container['settled_amount'] = isset($data['settled_amount']) ? $data['settled_amount'] : null;
         $this->container['refunded_amount'] = isset($data['refunded_amount']) ? $data['refunded_amount'] : null;
         $this->container['authorized_amount'] = isset($data['authorized_amount']) ? $data['authorized_amount'] : null;
+        $this->container['credited_amount'] = isset($data['credited_amount']) ? $data['credited_amount'] : null;
         $this->container['period_number'] = isset($data['period_number']) ? $data['period_number'] : null;
+        $this->container['recurring_payment_method'] = isset($data['recurring_payment_method']) ? $data['recurring_payment_method'] : null;
         $this->container['order_lines'] = isset($data['order_lines']) ? $data['order_lines'] : null;
         $this->container['additional_costs'] = isset($data['additional_costs']) ? $data['additional_costs'] : null;
         $this->container['transactions'] = isset($data['transactions']) ? $data['transactions'] : null;
@@ -404,7 +433,9 @@ class Invoice implements ArrayAccess
         $this->container['period_to'] = isset($data['period_to']) ? $data['period_to'] : null;
         $this->container['settle_later'] = isset($data['settle_later']) ? $data['settle_later'] : null;
         $this->container['settle_later_payment_method'] = isset($data['settle_later_payment_method']) ? $data['settle_later_payment_method'] : null;
-        $this->container['recurring_payment_method'] = isset($data['recurring_payment_method']) ? $data['recurring_payment_method'] : null;
+        $this->container['billing_address'] = isset($data['billing_address']) ? $data['billing_address'] : null;
+        $this->container['shipping_address'] = isset($data['shipping_address']) ? $data['shipping_address'] : null;
+        $this->container['accounting_number'] = isset($data['accounting_number']) ? $data['accounting_number'] : null;
     }
 
     /**
@@ -729,6 +760,27 @@ class Invoice implements ArrayAccess
             );
         }
         $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets processing
+     * @return string
+     */
+    public function getProcessing()
+    {
+        return $this->container['processing'];
+    }
+
+    /**
+     * Sets processing
+     * @param string $processing For asynchronous payment methods, e.g. MobilePay subscriptions, this flag indicates that an invoice transaction is in state processing and is awaiting result.
+     * @return $this
+     */
+    public function setProcessing($processing)
+    {
+        $this->container['processing'] = $processing;
 
         return $this;
     }
@@ -1183,6 +1235,27 @@ class Invoice implements ArrayAccess
     }
 
     /**
+     * Gets credited_amount
+     * @return int
+     */
+    public function getCreditedAmount()
+    {
+        return $this->container['credited_amount'];
+    }
+
+    /**
+     * Sets credited_amount
+     * @param int $credited_amount Credited amount
+     * @return $this
+     */
+    public function setCreditedAmount($credited_amount)
+    {
+        $this->container['credited_amount'] = $credited_amount;
+
+        return $this;
+    }
+
+    /**
      * Gets period_number
      * @return int
      */
@@ -1199,6 +1272,27 @@ class Invoice implements ArrayAccess
     public function setPeriodNumber($period_number)
     {
         $this->container['period_number'] = $period_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets recurring_payment_method
+     * @return string
+     */
+    public function getRecurringPaymentMethod()
+    {
+        return $this->container['recurring_payment_method'];
+    }
+
+    /**
+     * Sets recurring_payment_method
+     * @param string $settle_later_payment_method The payment method to use for a later settle of a one-time customer invoice
+     * @return $this
+     */
+    public function setRecurringPaymentMethod($recurring_payment_method)
+    {
+        $this->container['recurring_payment_method'] = $recurring_payment_method;
 
         return $this;
     }
@@ -1435,22 +1529,73 @@ class Invoice implements ArrayAccess
     }
 
     /**
-     * Gets recurring_payment_method
-     * @return string
+     * Get billing_address
+     *
+     * @return \Reepay\Model\InvoiceBillingAddress
      */
-    public function getRecurringPaymentMethod()
+    public function getBillingAddress()
     {
-        return $this->container['recurring_payment_method'];
+        return $this->container['billing_address'];
     }
 
     /**
-     * Sets recurring_payment_method
-     * @param string $settle_later_payment_method The payment method to use for a later settle of a one-time customer invoice
+     * Set billing_address
+     *
+     * @param \Reepay\Model\InvoiceBillingAddress $billing_address
+     *
      * @return $this
      */
-    public function setRecurringPaymentMethod($recurring_payment_method)
+    public function setBillingAddress($billing_address)
     {
-        $this->container['recurring_payment_method'] = $recurring_payment_method;
+        $this->container['billing_address'] = $billing_address;
+
+        return $this;
+    }
+
+    /**
+     * Get shipping_address
+     *
+     * @return \Reepay\Model\InvoiceShippingAddress
+     */
+    public function getShippingAddress()
+    {
+        return $this->container['shipping_address'];
+    }
+
+    /**
+     * Set shipping_address
+     *
+     * @param \Reepay\Model\InvoiceShippingAddress $shipping_address
+     *
+     * @return $this
+     */
+    public function setShippingAddress($shipping_address)
+    {
+        $this->container['shipping_address'] = $shipping_address;
+
+        return $this;
+    }
+
+    /**
+     * Get accounting_number
+     *
+     * @return string
+     */
+    public function getAccountingNumber()
+    {
+        return $this->container['accounting_number'];
+    }
+
+    /**
+     * Set accounting_number
+     *
+     * @param string $accounting_number
+     *
+     * @return $this
+     */
+    public function setAccountingNumber($accounting_number)
+    {
+        $this->container['accounting_number'] = $accounting_number;
 
         return $this;
     }

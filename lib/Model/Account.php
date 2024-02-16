@@ -73,7 +73,8 @@ class Account implements ArrayAccess
         'created' => '\DateTime',
         'state' => 'string',
         'postal_code' => 'string',
-        'default_vat' => 'float'
+        'default_vat' => 'float',
+        'subscription_invoice_prefix' => 'string',
     ];
 
     /**
@@ -100,7 +101,8 @@ class Account implements ArrayAccess
         'created' => 'date-time',
         'state' => null,
         'postal_code' => null,
-        'default_vat' => 'float'
+        'default_vat' => 'float',
+        'subscription_invoice_prefix' => null,
     ];
 
     public static function swaggerTypes()
@@ -137,7 +139,8 @@ class Account implements ArrayAccess
         'created' => 'created',
         'state' => 'state',
         'postal_code' => 'postal_code',
-        'default_vat' => 'default_vat'
+        'default_vat' => 'default_vat',
+        'subscription_invoice_prefix' => 'subscription_invoice_prefix',
     ];
 
 
@@ -165,7 +168,8 @@ class Account implements ArrayAccess
         'created' => 'setCreated',
         'state' => 'setState',
         'postal_code' => 'setPostalCode',
-        'default_vat' => 'setDefaultVat'
+        'default_vat' => 'setDefaultVat',
+        'subscription_invoice_prefix' => 'setSubscriptionInvoicePrefix',
     ];
 
 
@@ -193,7 +197,8 @@ class Account implements ArrayAccess
         'created' => 'getCreated',
         'state' => 'getState',
         'postal_code' => 'getPostalCode',
-        'default_vat' => 'getDefaultVat'
+        'default_vat' => 'getDefaultVat',
+        'subscription_invoice_prefix' => 'getSubscriptionInvoicePrefix',
     ];
 
     public static function attributeMap()
@@ -265,6 +270,7 @@ class Account implements ArrayAccess
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
         $this->container['default_vat'] = isset($data['default_vat']) ? $data['default_vat'] : null;
+        $this->container['subscription_invoice_prefix'] = isset($data['subscription_invoice_prefix']) ? $data['subscription_invoice_prefix'] : null;
     }
 
     /**
@@ -820,6 +826,31 @@ class Account implements ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Get subscription_invoice_prefix
+     *
+     * @return string
+     */
+    public function getSubscriptionInvoicePrefix()
+    {
+        return $this->container['subscription_invoice_prefix'];
+    }
+
+    /**
+     * Set subscription_invoice_prefix
+     *
+     * @param string $subscription_invoice_prefix
+     *
+     * @return $this
+     */
+    public function setSubscriptionInvoicePrefix($subscription_invoice_prefix)
+    {
+        $this->container['subscription_invoice_prefix'] = $subscription_invoice_prefix;
+
+        return $this;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset

@@ -56,11 +56,27 @@ class ChargeSource implements ArrayAccess
     protected static $swaggerTypes = [
         'type' => 'string',
         'card' => 'string',
+        'mps' => 'string',
+        'iban' => 'string',
         'fingerprint' => 'string',
+        'provider' => 'string',
+        'frictionless' => 'bool',
+        'vipps_recurring' => 'string',
+        'sepa_mandate' => 'string',
         'auth_transaction' => 'string',
         'card_type' => 'string',
+        'transaction_card_type' => 'string',
         'exp_date' => 'string',
-        'masked_card' => 'string'
+        'masked_card' => 'string',
+        'card_country' => 'string',
+        'strong_authentication_status' => 'string',
+        'three_d_secure_status' => 'string',
+        'risk_rule' => 'string',
+        'acquirer_code' => 'string',
+        'acquirer_message' => 'string',
+        'acquirer_reference' => 'string',
+        'text_on_statement' => 'string',
+        'surcharge_fee' => 'string',
     ];
 
     /**
@@ -70,11 +86,27 @@ class ChargeSource implements ArrayAccess
     protected static $swaggerFormats = [
         'type' => null,
         'card' => null,
+        'mps' => null,
+        'iban' => null,
         'fingerprint' => null,
+        'provider' => null,
+        'frictionless' => null,
+        'vipps_recurring' => null,
+        'sepa_mandate' => null,
         'auth_transaction' => null,
         'card_type' => null,
+        'transaction_card_type' => null,
         'exp_date' => null,
-        'masked_card' => null
+        'masked_card' => null,
+        'card_country' => null,
+        'strong_authentication_status' => null,
+        'three_d_secure_status' => null,
+        'risk_rule' => null,
+        'acquirer_code' => null,
+        'acquirer_message' => null,
+        'acquirer_reference' => null,
+        'text_on_statement' => null,
+        'surcharge_fee' => null,
     ];
 
     public static function swaggerTypes()
@@ -94,11 +126,27 @@ class ChargeSource implements ArrayAccess
     protected static $attributeMap = [
         'type' => 'type',
         'card' => 'card',
+        'mps' => 'mps',
+        'iban' => 'iban',
         'fingerprint' => 'fingerprint',
+        'provider' => 'provider',
+        'frictionless' => 'frictionless',
+        'vipps_recurring' => 'vipps_recurring',
+        'sepa_mandate' => 'sepa_mandate',
         'auth_transaction' => 'auth_transaction',
         'card_type' => 'card_type',
+        'transaction_card_type' => 'transaction_card_type',
         'exp_date' => 'exp_date',
-        'masked_card' => 'masked_card'
+        'masked_card' => 'masked_card',
+        'card_country' => 'card_country',
+        'strong_authentication_status' => 'strong_authentication_status',
+        'three_d_secure_status' => 'three_d_secure_status',
+        'risk_rule' => 'risk_rule',
+        'acquirer_code' => 'acquirer_code',
+        'acquirer_message' => 'acquirer_message',
+        'acquirer_reference' => 'acquirer_reference',
+        'text_on_statement' => 'text_on_statement',
+        'surcharge_fee' => 'surcharge_fee',
     ];
 
 
@@ -109,11 +157,27 @@ class ChargeSource implements ArrayAccess
     protected static $setters = [
         'type' => 'setType',
         'card' => 'setCard',
+        'mps' => 'setMps',
+        'iban' => 'setIban',
         'fingerprint' => 'setFingerprint',
+        'provider' => 'setProvider',
+        'frictionless' => 'setFrictionless',
+        'vipps_recurring' => 'setVippsRecurring',
+        'sepa_mandate' => 'setSepaMandate',
         'auth_transaction' => 'setAuthTransaction',
         'card_type' => 'setCardType',
+        'transaction_card_type' => 'setTransactionCardType',
         'exp_date' => 'setExpDate',
-        'masked_card' => 'setMaskedCard'
+        'masked_card' => 'setMaskedCard',
+        'card_country' => 'setCardCountry',
+        'strong_authentication_status' => 'setStrongAuthenticationStatus',
+        'three_d_secure_status' => 'setThreeDSecureStatus',
+        'risk_rule' => 'setRiskRule',
+        'acquirer_code' => 'setAcquirerCode',
+        'acquirer_message' => 'setAcquirerMessage',
+        'acquirer_reference' => 'setAcquirerReference',
+        'text_on_statement' => 'setTextOnStatement',
+        'surcharge_fee' => 'setSurchargeFee',
     ];
 
 
@@ -124,11 +188,27 @@ class ChargeSource implements ArrayAccess
     protected static $getters = [
         'type' => 'getType',
         'card' => 'getCard',
+        'mps' => 'getMps',
+        'iban' => 'getIban',
         'fingerprint' => 'getFingerprint',
+        'provider' => 'getProvider',
+        'frictionless' => 'getFrictionless',
+        'vipps_recurring' => 'getVippsRecurring',
+        'sepa_mandate' => 'getSepaMandate',
         'auth_transaction' => 'getAuthTransaction',
         'card_type' => 'getCardType',
+        'transaction_card_type' => 'getTransactionCardType',
         'exp_date' => 'getExpDate',
-        'masked_card' => 'getMaskedCard'
+        'masked_card' => 'getMaskedCard',
+        'card_country' => 'getCardCountry',
+        'strong_authentication_status' => 'getStrongAuthenticationStatus',
+        'three_d_secure_status' => 'getThreeDSecureStatus',
+        'risk_rule' => 'getRiskRule',
+        'acquirer_code' => 'getAcquirerCode',
+        'acquirer_message' => 'getAcquirerMessage',
+        'acquirer_reference' => 'getAcquirerReference',
+        'text_on_statement' => 'getTextOnStatement',
+        'surcharge_fee' => 'getSurchargeFee',
     ];
 
     public static function attributeMap()
@@ -165,20 +245,50 @@ class ChargeSource implements ArrayAccess
     const TYPE_KLARNA_DIRECT_BANK_TRANSFER = 'klarna_direct_bank_transfer';
     const TYPE_KLARNA_DIRECT_DEBIT = 'klarna_direct_debit';
     const TYPE_RESURS = 'resurs';
+    const TYPE_MOBILEPAY_SUBSCRIPTIONS = 'mobilepay_subscriptions';
+    const TYPE_EMV_TOKEN = 'emv_token';
     const TYPE_BANCONTACT = 'bancontact';
     const TYPE_BCMC = 'bcmc';
     const TYPE_BLIK = 'blik';
+    const TYPE_PP_BLIK_OC = 'pp_blik_oc';
     const TYPE_GIROPAY = 'giropay';
     const TYPE_IDEAL = 'ideal';
     const TYPE_P24 = 'p24';
     const TYPE_SEPA = 'sepa';
+    const TYPE_TRUSTLY = 'trustly';
+    const TYPE_EPS = 'eps';
+    const TYPE_ESTONIA_BANKS = 'estonia_banks';
+    const TYPE_LATVIA_BANKS = 'latvia_banks';
+    const TYPE_LITHUANIA_BANKS = 'lithuania_banks';
+    const TYPE_MB_WAY = 'mb_way';
+    const TYPE_MULTIBANCO = 'multibanco';
+    const TYPE_MYBANK = 'mybank';
+    const TYPE_PAYCONIQ = 'payconiq';
+    const TYPE_PAYSAFECARD = 'paysafecard';
+    const TYPE_PAYSERA = 'paysera';
+    const TYPE_POSTFINANCE = 'postfinance';
+    const TYPE_SATISPAY = 'satispay';
+    const TYPE_WECHATPAY = 'wechatpay';
+    const TYPE_SANTANDER = 'santander';
     const TYPE_VERKKOPANKKI = 'verkkopankki';
-    const TYPE_MOBILEPAY_SUBSCRIPTIONS = 'mobilepay_subscriptions';
+    const PROVIDER_REEPAY = 'reepay';
+    const PROVIDER_CLEARHAUS = 'clearhaus';
+    const PROVIDER_NETS = 'nets';
+    const PROVIDER_SWEDBANK = 'swedbank';
+    const PROVIDER_HANDELSBANKEN = 'handelsbanken';
+    const PROVIDER_ELAVON = 'elavon';
+    const PROVIDER_BAMBORA = 'bambora';
+    const PROVIDER_VALITOR = 'valitor';
+    const PROVIDER_DIBS = 'dibs';
+    const PROVIDER_STRIPE = 'stripe';
+    const PROVIDER_EPAY = 'epay';
+    const PROVIDER_TEST = 'test';
     const CARD_TYPE_UNKNOWN = 'unknown';
     const CARD_TYPE_VISA = 'visa';
     const CARD_TYPE_MC = 'mc';
     const CARD_TYPE_DANKORT = 'dankort';
     const CARD_TYPE_VISA_DK = 'visa_dk';
+    const CARD_TYPE_FFK = 'ffk';
     const CARD_TYPE_VISA_ELEC = 'visa_elec';
     const CARD_TYPE_MAESTRO = 'maestro';
     const CARD_TYPE_LASER = 'laser';
@@ -186,7 +296,19 @@ class ChargeSource implements ArrayAccess
     const CARD_TYPE_DINERS = 'diners';
     const CARD_TYPE_DISCOVER = 'discover';
     const CARD_TYPE_JCB = 'jcb';
-
+    const TRANSACTION_CARD_TYPE_UNKNOWN = 'unknown';
+    const TRANSACTION_CARD_TYPE_VISA = 'visa';
+    const TRANSACTION_CARD_TYPE_MC = 'mc';
+    const TRANSACTION_CARD_TYPE_DANKORT = 'dankort';
+    const TRANSACTION_CARD_TYPE_VISA_DK = 'visa_dk';
+    const TRANSACTION_CARD_TYPE_FFK = 'ffk';
+    const TRANSACTION_CARD_TYPE_VISA_ELEC = 'visa_elec';
+    const TRANSACTION_CARD_TYPE_MAESTRO = 'maestro';
+    const TRANSACTION_CARD_TYPE_LASER = 'laser';
+    const TRANSACTION_CARD_TYPE_AMEX = 'amex';
+    const TRANSACTION_CARD_TYPE_DINERS = 'diners';
+    const TRANSACTION_CARD_TYPE_DISCOVER = 'discover';
+    const TRANSACTION_CARD_TYPE_JCB = 'jcb';
 
 
     /**
@@ -215,15 +337,54 @@ class ChargeSource implements ArrayAccess
             self::TYPE_KLARNA_DIRECT_BANK_TRANSFER,
             self::TYPE_KLARNA_DIRECT_DEBIT,
             self::TYPE_RESURS,
+            self::TYPE_MOBILEPAY_SUBSCRIPTIONS,
+            self::TYPE_EMV_TOKEN,
             self::TYPE_BANCONTACT,
             self::TYPE_BCMC,
             self::TYPE_BLIK,
+            self::TYPE_PP_BLIK_OC,
             self::TYPE_GIROPAY,
             self::TYPE_IDEAL,
             self::TYPE_P24,
             self::TYPE_SEPA,
+            self::TYPE_TRUSTLY,
+            self::TYPE_EPS,
+            self::TYPE_ESTONIA_BANKS,
+            self::TYPE_LATVIA_BANKS,
+            self::TYPE_LITHUANIA_BANKS,
+            self::TYPE_MB_WAY,
+            self::TYPE_MULTIBANCO,
+            self::TYPE_MYBANK,
+            self::TYPE_PAYCONIQ,
+            self::TYPE_PAYSAFECARD,
+            self::TYPE_PAYSERA,
+            self::TYPE_POSTFINANCE,
+            self::TYPE_SATISPAY,
+            self::TYPE_WECHATPAY,
+            self::TYPE_SANTANDER,
             self::TYPE_VERKKOPANKKI,
-            self::TYPE_MOBILEPAY_SUBSCRIPTIONS,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getProviderAllowableValues()
+    {
+        return [
+            self::PROVIDER_REEPAY,
+            self::PROVIDER_CLEARHAUS,
+            self::PROVIDER_NETS,
+            self::PROVIDER_SWEDBANK,
+            self::PROVIDER_HANDELSBANKEN,
+            self::PROVIDER_ELAVON,
+            self::PROVIDER_BAMBORA,
+            self::PROVIDER_VALITOR,
+            self::PROVIDER_DIBS,
+            self::PROVIDER_STRIPE,
+            self::PROVIDER_EPAY,
+            self::PROVIDER_TEST,
         ];
     }
 
@@ -239,6 +400,7 @@ class ChargeSource implements ArrayAccess
             self::CARD_TYPE_MC,
             self::CARD_TYPE_DANKORT,
             self::CARD_TYPE_VISA_DK,
+            self::CARD_TYPE_FFK,
             self::CARD_TYPE_VISA_ELEC,
             self::CARD_TYPE_MAESTRO,
             self::CARD_TYPE_LASER,
@@ -246,6 +408,29 @@ class ChargeSource implements ArrayAccess
             self::CARD_TYPE_DINERS,
             self::CARD_TYPE_DISCOVER,
             self::CARD_TYPE_JCB,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getTransactionCardTypeAllowableValues()
+    {
+        return [
+            self::TRANSACTION_CARD_TYPE_UNKNOWN,
+            self::TRANSACTION_CARD_TYPE_VISA,
+            self::TRANSACTION_CARD_TYPE_MC,
+            self::TRANSACTION_CARD_TYPE_DANKORT,
+            self::TRANSACTION_CARD_TYPE_VISA_DK,
+            self::TRANSACTION_CARD_TYPE_FFK,
+            self::TRANSACTION_CARD_TYPE_VISA_ELEC,
+            self::TRANSACTION_CARD_TYPE_MAESTRO,
+            self::TRANSACTION_CARD_TYPE_LASER,
+            self::TRANSACTION_CARD_TYPE_AMEX,
+            self::TRANSACTION_CARD_TYPE_DINERS,
+            self::TRANSACTION_CARD_TYPE_DISCOVER,
+            self::TRANSACTION_CARD_TYPE_JCB,
         ];
     }
 
@@ -264,11 +449,27 @@ class ChargeSource implements ArrayAccess
     {
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['card'] = isset($data['card']) ? $data['card'] : null;
+        $this->container['mps'] = isset($data['mps']) ? $data['mps'] : null;
+        $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['fingerprint'] = isset($data['fingerprint']) ? $data['fingerprint'] : null;
+        $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
+        $this->container['frictionless'] = isset($data['frictionless']) ? $data['frictionless'] : null;
+        $this->container['vipps_recurring'] = isset($data['vipps_recurring']) ? $data['vipps_recurring'] : null;
+        $this->container['sepa_mandate'] = isset($data['sepa_mandate']) ? $data['sepa_mandate'] : null;
         $this->container['auth_transaction'] = isset($data['auth_transaction']) ? $data['auth_transaction'] : null;
         $this->container['card_type'] = isset($data['card_type']) ? $data['card_type'] : null;
+        $this->container['transaction_card_type'] = isset($data['transaction_card_type']) ? $data['transaction_card_type'] : null;
         $this->container['exp_date'] = isset($data['exp_date']) ? $data['exp_date'] : null;
         $this->container['masked_card'] = isset($data['masked_card']) ? $data['masked_card'] : null;
+        $this->container['card_country'] = isset($data['card_country']) ? $data['card_country'] : null;
+        $this->container['strong_authentication_status'] = isset($data['strong_authentication_status']) ? $data['strong_authentication_status'] : null;
+        $this->container['three_d_secure_status'] = isset($data['three_d_secure_status']) ? $data['three_d_secure_status'] : null;
+        $this->container['risk_rule'] = isset($data['risk_rule']) ? $data['risk_rule'] : null;
+        $this->container['acquirer_code'] = isset($data['acquirer_code']) ? $data['acquirer_code'] : null;
+        $this->container['acquirer_message'] = isset($data['acquirer_message']) ? $data['acquirer_message'] : null;
+        $this->container['acquirer_reference'] = isset($data['acquirer_reference']) ? $data['acquirer_reference'] : null;
+        $this->container['text_on_statement'] = isset($data['text_on_statement']) ? $data['text_on_statement'] : null;
+        $this->container['surcharge_fee'] = isset($data['surcharge_fee']) ? $data['surcharge_fee'] : null;
     }
 
     /**
@@ -291,10 +492,26 @@ class ChargeSource implements ArrayAccess
             );
         }
 
+        $allowed_values = $this->getProviderAllowableValues();
+        if (!in_array($this->container['provider'], $allowed_values)) {
+            $invalid_properties[] = sprintf(
+                "invalid value for 'provider', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
+        }
+
         $allowed_values = $this->getCardTypeAllowableValues();
         if (!in_array($this->container['card_type'], $allowed_values)) {
             $invalid_properties[] = sprintf(
                 "invalid value for 'card_type', must be one of '%s'",
+                implode("', '", $allowed_values)
+            );
+        }
+
+        $allowed_values = $this->getTransactionCardTypeAllowableValues();
+        if (!in_array($this->container['transaction_card_type'], $allowed_values)) {
+            $invalid_properties[] = sprintf(
+                "invalid value for 'transaction_card_type', must be one of '%s'",
                 implode("', '", $allowed_values)
             );
         }
@@ -318,8 +535,16 @@ class ChargeSource implements ArrayAccess
         if (!in_array($this->container['type'], $allowed_values)) {
             return false;
         }
+        $allowed_values = $this->getProviderAllowableValues();
+        if (!in_array($this->container['provider'], $allowed_values)) {
+            return false;
+        }
         $allowed_values = $this->getCardTypeAllowableValues();
         if (!in_array($this->container['card_type'], $allowed_values)) {
+            return false;
+        }
+        $allowed_values = $this->getTransactionCardTypeAllowableValues();
+        if (!in_array($this->container['transaction_card_type'], $allowed_values)) {
             return false;
         }
         return true;
@@ -378,6 +603,48 @@ class ChargeSource implements ArrayAccess
     }
 
     /**
+     * Gets mps
+     * @return string
+     */
+    public function getMps()
+    {
+        return $this->container['mps'];
+    }
+
+    /**
+     * Sets mps
+     * @param string $mps Reference to customer mps if source type `mps`
+     * @return $this
+     */
+    public function setMps($mps)
+    {
+        $this->container['mps'] = $mps;
+
+        return $this;
+    }
+
+    /**
+     * Gets iban
+     * @return string
+     */
+    public function getIban()
+    {
+        return $this->container['iban'];
+    }
+
+    /**
+     * Sets iban
+     * @param string $iban Reference to customer iban if source type `iban`
+     * @return $this
+     */
+    public function setIban($iban)
+    {
+        $this->container['iban'] = $iban;
+
+        return $this;
+    }
+
+    /**
      * Gets fingerprint
      * @return string
      */
@@ -394,6 +661,99 @@ class ChargeSource implements ArrayAccess
     public function setFingerprint($fingerprint)
     {
         $this->container['fingerprint'] = $fingerprint;
+
+        return $this;
+    }
+
+    /**
+     * Gets provider
+     * @return string
+     */
+    public function getProvider()
+    {
+        return $this->container['provider'];
+    }
+
+    /**
+     * Sets provider
+     * @param string $provider
+     * @return $this
+     */
+    public function setProvider($provider)
+    {
+        $allowed_values = $this->getProviderAllowableValues();
+        if (!in_array($provider, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'provider', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
+        }
+        $this->container['provider'] = $provider;
+
+        return $this;
+    }
+
+    /**
+     * Gets frictionless
+     * @return bool
+     */
+    public function getFrictionless()
+    {
+        return $this->container['frictionless'];
+    }
+
+    /**
+     * Sets frictionless
+     * @param bool $frictionless
+     * @return $this
+     */
+    public function setFrictionless($frictionless)
+    {
+        $this->container['frictionless'] = $frictionless;
+
+        return $this;
+    }
+
+    /**
+     * Gets vipps_recurring
+     * @return string
+     */
+    public function getVippsRecurring()
+    {
+        return $this->container['vipps_recurring'];
+    }
+
+    /**
+     * Sets vipps_recurring
+     * @param string $vipps_recurring
+     * @return $this
+     */
+    public function setVippsRecurring($vipps_recurring)
+    {
+        $this->container['vipps_recurring'] = $vipps_recurring;
+
+        return $this;
+    }
+
+    /**
+     * Gets sepa_mandate
+     * @return string
+     */
+    public function getSepaMandate()
+    {
+        return $this->container['sepa_mandate'];
+    }
+
+    /**
+     * Sets sepa_mandate
+     * @param string $sepa_mandate
+     * @return $this
+     */
+    public function setSepaMandate($sepa_mandate)
+    {
+        $this->container['sepa_mandate'] = $sepa_mandate;
 
         return $this;
     }
@@ -450,6 +810,36 @@ class ChargeSource implements ArrayAccess
     }
 
     /**
+     * Gets transaction_card_type
+     * @return string
+     */
+    public function getTransactionCardType()
+    {
+        return $this->container['transaction_card_type'];
+    }
+
+    /**
+     * Sets transaction_card_type
+     * @param string $transaction_card_type Card type if credit card source: `unknown`, `visa`, `mc`, `dankort`, `visa_dk`, `visa_elec`, `maestro`, `laser`, `amex`, `diners`, `discover` or `jcb`
+     * @return $this
+     */
+    public function setTransactionCardType($transaction_card_type)
+    {
+        $allowed_values = $this->getTransactionCardTypeAllowableValues();
+        if (!is_null($transaction_card_type) && !in_array($transaction_card_type, $allowed_values)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'transaction_card_type', must be one of '%s'",
+                    implode("', '", $allowed_values)
+                )
+            );
+        }
+        $this->container['transaction_card_type'] = $transaction_card_type;
+
+        return $this;
+    }
+
+    /**
      * Gets exp_date
      * @return string
      */
@@ -490,6 +880,196 @@ class ChargeSource implements ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets card_country
+     * @return string
+     */
+    public function getCardCountry()
+    {
+        return $this->container['card_country'];
+    }
+
+    /**
+     * Sets card_country
+     * @param string $card_country Masked card number if card source
+     * @return $this
+     */
+    public function setCardCountry($card_country)
+    {
+        $this->container['card_country'] = $card_country;
+
+        return $this;
+    }
+
+    /**
+     * Gets strong_authentication_status
+     * @return string
+     */
+    public function getStrongAuthenticationStatus()
+    {
+        return $this->container['strong_authentication_status'];
+    }
+
+    /**
+     * Sets strong_authentication_status
+     * @param string $strong_authentication_status Masked card number if card source
+     * @return $this
+     */
+    public function setStrongAuthenticationStatus($strong_authentication_status)
+    {
+        $this->container['strong_authentication_status'] = $strong_authentication_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets three_d_secure_status
+     * @return string
+     */
+    public function getThreeDSecureStatus()
+    {
+        return $this->container['three_d_secure_status'];
+    }
+
+    /**
+     * Sets three_d_secure_status
+     * @param string $three_d_secure_status Masked card number if card source
+     * @return $this
+     */
+    public function setThreeDSecureStatus($three_d_secure_status)
+    {
+        $this->container['three_d_secure_status'] = $three_d_secure_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets risk_rule
+     * @return string
+     */
+    public function getRiskRule()
+    {
+        return $this->container['risk_rule'];
+    }
+
+    /**
+     * Sets risk_rule
+     * @param string $risk_rule Masked card number if card source
+     * @return $this
+     */
+    public function setRiskRule($risk_rule)
+    {
+        $this->container['risk_rule'] = $risk_rule;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirer_code
+     * @return string
+     */
+    public function getAcquirerCode()
+    {
+        return $this->container['acquirer_code'];
+    }
+
+    /**
+     * Sets acquirer_code
+     * @param string $acquirer_code Masked card number if card source
+     * @return $this
+     */
+    public function setAcquirerCode($acquirer_code)
+    {
+        $this->container['acquirer_code'] = $acquirer_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirer_message
+     * @return string
+     */
+    public function getAcquirerMessage()
+    {
+        return $this->container['acquirer_message'];
+    }
+
+    /**
+     * Sets acquirer_message
+     * @param string $acquirer_message Masked card number if card source
+     * @return $this
+     */
+    public function setAcquirerMessage($acquirer_message)
+    {
+        $this->container['acquirer_message'] = $acquirer_message;
+
+        return $this;
+    }
+
+    /**
+     * Gets acquirer_reference
+     * @return string
+     */
+    public function getAcquirerReference()
+    {
+        return $this->container['acquirer_reference'];
+    }
+
+    /**
+     * Sets acquirer_reference
+     * @param string $acquirer_reference Masked card number if card source
+     * @return $this
+     */
+    public function setAcquirerReference($acquirer_reference)
+    {
+        $this->container['acquirer_reference'] = $acquirer_reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets text_on_statement
+     * @return string
+     */
+    public function getTextOnStatement()
+    {
+        return $this->container['text_on_statement'];
+    }
+
+    /**
+     * Sets text_on_statement
+     * @param string $text_on_statement Masked card number if card source
+     * @return $this
+     */
+    public function setTextOnStatement($text_on_statement)
+    {
+        $this->container['text_on_statement'] = $text_on_statement;
+
+        return $this;
+    }
+
+    /**
+     * Gets surcharge_fee
+     * @return string
+     */
+    public function getSurchargeFee()
+    {
+        return $this->container['surcharge_fee'];
+    }
+
+    /**
+     * Sets surcharge_fee
+     * @param string $surcharge_fee Masked card number if card source
+     * @return $this
+     */
+    public function setSurchargeFee($surcharge_fee)
+    {
+        $this->container['surcharge_fee'] = $surcharge_fee;
+
+        return $this;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset

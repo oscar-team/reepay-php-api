@@ -9,9 +9,10 @@ Name | Type | Description | Notes
 **subscription** | **string** | Subscription handle, will be null for a one-time customer invoice | [optional]
 **plan** | **string** | Subscription plan handle for the plan used to automatically create the invoice or the case that an on-demand subscription invoice has been created that should include a plan order line | [optional]
 **state** | **string** | The invoice state one of the following: `created`, `pending`, `dunning`, `settled`, `cancelled`, `authorized`, `failed` |
+**processing** | **bool** | For asynchronous payment methods, e.g. MobilePay subscriptions, this flag indicates that an invoice transaction is in state processing and is awaiting result. | [optional]
 **type** | **string** | The type of invoice: `s` - subscription recurring, `so` - subscription one-time, `soi` - subscription one-time instant, `co` - customer one-time, `ch` - charge |
 **amount** | **int** | The invoice amount including VAT |
-**number** | **int** | Sequential invoice number |
+**number** | **int** | Sequential invoice number. Only present for subscription and customer invoices. | [optional]
 **currency** | **string** | Currency for the account in [ISO 4217](http://da.wikipedia.org/wiki/ISO_4217) three letter alpha code |
 **due** | [**\DateTime**](\DateTime.md) | When is the invoice due, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. |
 **failed** | [**\DateTime**](\DateTime.md) | When the invoice failed, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional]
@@ -29,7 +30,9 @@ Name | Type | Description | Notes
 **settled_amount** | **int** | Settled amount |
 **refunded_amount** | **int** | Refunded amount |
 **authorized_amount** | **int** | Authorized amount | [optional]
+**credited_amount** | **int** | Credited amount | [optional]
 **period_number** | **int** | The subscription period this invoice is for | [optional]
+**recurring_payment_method** | **string** | Optional reference to recurring payment method created in conjunction with charging | [optional]
 **order_lines** | [**\Reepay\Model\OrderLine[]**](OrderLine.md) | Order lines for invoice sorted by descending timestamp |
 **additional_costs** | **string[]** | Additional costs for invoice |
 **transactions** | [**\Reepay\Model\Transaction[]**](Transaction.md) | Invoice transactions |
@@ -41,7 +44,9 @@ Name | Type | Description | Notes
 **period_to** | [**\DateTime**](\DateTime.md) | The end of billing period if the invoice is for a specific billing period, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. | [optional]
 **settle_later** | **bool** | Whether this is a customer one-time invoice that will be settled later | [optional]
 **settle_later_payment_method** | **string** | The payment method to use for a later settle of a one-time customer invoice | [optional]
-**recurring_payment_method** | **string** | This holds the user card Id from Reepay for recurring payment | [optional]
+**billing_address** | [**\Reepay\Model\InvoiceBillingAddress**](InvoiceBillingAddress.md) | Optional billing address | [optional]
+**shipping_address** | [**\Reepay\Model\InvoiceShippingAddress**](InvoiceShippingAddress.md) | Optional shipping address | [optional]
+**accounting_number** | **string** | Invoice accounting number | [optional]
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
