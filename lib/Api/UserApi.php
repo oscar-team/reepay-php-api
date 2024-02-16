@@ -146,7 +146,7 @@ class UserApi
         }
         // this endpoint requires API key authentication
         $apiKey = $this->apiClient->getApiKeyWithPrefix('X-Auth-Token');
-        if (strlen($apiKey) !== 0) {
+        if (!empty($apiKey)) {
             $headerParams['X-Auth-Token'] = $apiKey;
         }
         // this endpoint requires HTTP basic authentication
@@ -253,7 +253,7 @@ class UserApi
         }
         // this endpoint requires API key authentication
         $apiKey = $this->apiClient->getApiKeyWithPrefix('X-Auth-Token');
-        if (strlen($apiKey) !== 0) {
+        if (!empty($apiKey)) {
             $headerParams['X-Auth-Token'] = $apiKey;
         }
         // this endpoint requires HTTP basic authentication
@@ -350,7 +350,7 @@ class UserApi
         }
         // this endpoint requires API key authentication
         $apiKey = $this->apiClient->getApiKeyWithPrefix('X-Auth-Token');
-        if (strlen($apiKey) !== 0) {
+        if (!empty($apiKey)) {
             $headerParams['X-Auth-Token'] = $apiKey;
         }
         // this endpoint requires HTTP basic authentication
@@ -454,7 +454,7 @@ class UserApi
         }
         // this endpoint requires API key authentication
         $apiKey = $this->apiClient->getApiKeyWithPrefix('X-Auth-Token');
-        if (strlen($apiKey) !== 0) {
+        if (!empty($apiKey)) {
             $headerParams['X-Auth-Token'] = $apiKey;
         }
         // this endpoint requires HTTP basic authentication
@@ -983,7 +983,7 @@ class UserApi
         }
         // this endpoint requires API key authentication
         $apiKey = $this->apiClient->getApiKeyWithPrefix('X-Auth-Token');
-        if (strlen($apiKey) !== 0) {
+        if (!empty($apiKey)) {
             $headerParams['X-Auth-Token'] = $apiKey;
         }
         // this endpoint requires HTTP basic authentication
@@ -1101,7 +1101,7 @@ class UserApi
         }
         // this endpoint requires API key authentication
         $apiKey = $this->apiClient->getApiKeyWithPrefix('X-Auth-Token');
-        if (strlen($apiKey) !== 0) {
+        if (!empty($apiKey)) {
             $headerParams['X-Auth-Token'] = $apiKey;
         }
         // this endpoint requires HTTP basic authentication
@@ -1219,7 +1219,7 @@ class UserApi
         }
         // this endpoint requires API key authentication
         $apiKey = $this->apiClient->getApiKeyWithPrefix('X-Auth-Token');
-        if (strlen($apiKey) !== 0) {
+        if (!empty($apiKey)) {
             $headerParams['X-Auth-Token'] = $apiKey;
         }
         // this endpoint requires HTTP basic authentication
@@ -1432,7 +1432,7 @@ class UserApi
         }
         // this endpoint requires API key authentication
         $apiKey = $this->apiClient->getApiKeyWithPrefix('X-Auth-Token');
-        if (strlen($apiKey) !== 0) {
+        if (!empty($apiKey)) {
             $headerParams['X-Auth-Token'] = $apiKey;
         }
         // this endpoint requires HTTP basic authentication
