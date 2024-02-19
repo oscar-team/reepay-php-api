@@ -228,7 +228,7 @@ class MpsTransaction implements ArrayAccess
             $invalid_properties[] = "'mps_payment_type' can't be null";
         }
         $allowed_values = $this->getMpsPaymentTypeAllowableValues();
-        if ($this->container['mps_payment_type'], $allowed_values) {
+        if (!in_array($this->container['mps_payment_type'], $allowed_values)) {
             $invalid_properties[] = sprintf(
                 "invalid value for 'mps_payment_type', must be one of '%s'",
                 implode("', '", $allowed_values)
