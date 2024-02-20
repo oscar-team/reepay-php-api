@@ -298,15 +298,6 @@ class PayconiqTransaction implements ArrayAccess
      */
     public function setAcquirerMessage($acquirer_message)
     {
-        $allowed_values = $this->getAcquirerMessageAllowableValues();
-        if (!in_array($acquirer_message, $allowed_values)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'acquirer_message', must be one of '%s'",
-                    implode("', '", $allowed_values)
-                )
-            );
-        }
         $this->container['acquirer_message'] = $acquirer_message;
 
         return $this;
