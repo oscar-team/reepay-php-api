@@ -65,10 +65,16 @@ class Charge implements ArrayAccess
         'created' => '\DateTime',
         'transaction' => 'string',
         'error' => 'string',
+        'processing' => 'bool',
         'source' => '\Reepay\Model\ChargeSource',
         'order_lines' => '\Reepay\Model\OrderLine[]',
         'refunded_amount' => 'int',
-        'error_state' => 'string'
+        'authorized_amount' => 'int',
+        'error_state' => 'string',
+        'recurring_payment_method' => 'string',
+        'billing_address' => '\Reepay\Model\InvoiceBillingAddress',
+        'shipping_address' => '\Reepay\Model\InvoiceShippingAddress',
+        'payment_context' => 'string',
     ];
 
     /**
@@ -87,10 +93,16 @@ class Charge implements ArrayAccess
         'created' => 'date-time',
         'transaction' => null,
         'error' => null,
+        'processing' => null,
         'source' => null,
         'order_lines' => null,
         'refunded_amount' => 'int32',
-        'error_state' => null
+        'authorized_amount' => 'int32',
+        'error_state' => null,
+        'recurring_payment_method' => null,
+        'billing_address' => null,
+        'shipping_address' => null,
+        'payment_context' => null,
     ];
 
     public static function swaggerTypes()
@@ -119,10 +131,16 @@ class Charge implements ArrayAccess
         'created' => 'created',
         'transaction' => 'transaction',
         'error' => 'error',
+        'processing' => 'processing',
         'source' => 'source',
         'order_lines' => 'order_lines',
         'refunded_amount' => 'refunded_amount',
-        'error_state' => 'error_state'
+        'authorized_amount' => 'authorized_amount',
+        'error_state' => 'error_state',
+        'recurring_payment_method' => 'recurring_payment_method',
+        'billing_address' => 'billing_address',
+        'shipping_address' => 'shipping_address',
+        'payment_context' => 'payment_context',
     ];
 
 
@@ -142,10 +160,16 @@ class Charge implements ArrayAccess
         'created' => 'setCreated',
         'transaction' => 'setTransaction',
         'error' => 'setError',
+        'processing' => 'setProcessing',
         'source' => 'setSource',
         'order_lines' => 'setOrderLines',
         'refunded_amount' => 'setRefundedAmount',
-        'error_state' => 'setErrorState'
+        'authorized_amount' => 'setAuthorizedAmount',
+        'error_state' => 'setErrorState',
+        'recurring_payment_method' => 'setRecurringPaymentMethod',
+        'billing_address' => 'setBillingAddress',
+        'shipping_address' => 'setShippingAddress',
+        'payment_context' => 'setPaymentContext',
     ];
 
 
@@ -165,10 +189,16 @@ class Charge implements ArrayAccess
         'created' => 'getCreated',
         'transaction' => 'getTransaction',
         'error' => 'getError',
+        'processing' => 'getProcessing',
         'source' => 'getSource',
         'order_lines' => 'getOrderLines',
         'refunded_amount' => 'getRefundedAmount',
-        'error_state' => 'getErrorState'
+        'authorized_amount' => 'getAuthorizedAmount',
+        'error_state' => 'getErrorState',
+        'recurring_payment_method' => 'getRecurringPaymentMethod',
+        'billing_address' => 'getBillingAddress',
+        'shipping_address' => 'getShippingAddress',
+        'payment_context' => 'getPaymentContext',
     ];
 
     public static function attributeMap()
@@ -186,10 +216,12 @@ class Charge implements ArrayAccess
         return self::$getters;
     }
 
+    const STATE_CREATED = 'created';
     const STATE_AUTHORIZED = 'authorized';
     const STATE_SETTLED = 'settled';
     const STATE_FAILED = 'failed';
     const STATE_CANCELLED = 'cancelled';
+    const STATE_PENDING = 'pending';
     const ERROR_STATE_SOFT_DECLINED = 'soft_declined';
     const ERROR_STATE_HARD_DECLINED = 'hard_declined';
     const ERROR_STATE_PROCESSING_ERROR = 'processing_error';
@@ -203,10 +235,12 @@ class Charge implements ArrayAccess
     public function getStateAllowableValues()
     {
         return [
+            self::STATE_CREATED,
             self::STATE_AUTHORIZED,
             self::STATE_SETTLED,
             self::STATE_FAILED,
             self::STATE_CANCELLED,
+            self::STATE_PENDING,
         ];
     }
 
@@ -247,10 +281,16 @@ class Charge implements ArrayAccess
         $this->container['created'] = isset($data['created']) ? $data['created'] : null;
         $this->container['transaction'] = isset($data['transaction']) ? $data['transaction'] : null;
         $this->container['error'] = isset($data['error']) ? $data['error'] : null;
+        $this->container['processing'] = isset($data['processing']) ? $data['processing'] : null;
         $this->container['source'] = isset($data['source']) ? $data['source'] : null;
         $this->container['order_lines'] = isset($data['order_lines']) ? $data['order_lines'] : null;
         $this->container['refunded_amount'] = isset($data['refunded_amount']) ? $data['refunded_amount'] : null;
+        $this->container['authorized_amount'] = isset($data['authorized_amount']) ? $data['authorized_amount'] : null;
         $this->container['error_state'] = isset($data['error_state']) ? $data['error_state'] : null;
+        $this->container['recurring_payment_method'] = isset($data['recurring_payment_method']) ? $data['recurring_payment_method'] : null;
+        $this->container['billing_address'] = isset($data['billing_address']) ? $data['billing_address'] : null;
+        $this->container['shipping_address'] = isset($data['shipping_address']) ? $data['shipping_address'] : null;
+        $this->container['payment_context'] = isset($data['payment_context']) ? $data['payment_context'] : null;
     }
 
     /**
@@ -615,6 +655,27 @@ class Charge implements ArrayAccess
     }
 
     /**
+     * Gets processing
+     * @return bool
+     */
+    public function getProcessing()
+    {
+        return $this->container['processing'];
+    }
+
+    /**
+     * Sets processing
+     * @param bool $processing
+     * @return $this
+     */
+    public function setProcessing($processing)
+    {
+        $this->container['processing'] = $processing;
+
+        return $this;
+    }
+
+    /**
      * Gets source
      * @return \Reepay\Model\ChargeSource
      */
@@ -678,6 +739,27 @@ class Charge implements ArrayAccess
     }
 
     /**
+     * Gets authorized_amount
+     * @return int
+     */
+    public function getAuthorizedAmount()
+    {
+        return $this->container['authorized_amount'];
+    }
+
+    /**
+     * Sets authorized_amount
+     * @param int $authorized_amount Refunded amount
+     * @return $this
+     */
+    public function setAuthorizedAmount($authorized_amount)
+    {
+        $this->container['authorized_amount'] = $authorized_amount;
+
+        return $this;
+    }
+
+    /**
      * Gets error_state
      * @return string
      */
@@ -706,6 +788,91 @@ class Charge implements ArrayAccess
 
         return $this;
     }
+
+    /**
+     * Gets recurring_payment_method
+     * @return string
+     */
+    public function getRecurringPaymentMethod()
+    {
+        return $this->container['recurring_payment_method'];
+    }
+
+    /**
+     * Sets recurring_payment_method
+     * @param string $recurring_payment_method
+     * @return $this
+     */
+    public function setRecurringPaymentMethod($recurring_payment_method)
+    {
+        $this->container['recurring_payment_method'] = $recurring_payment_method;
+
+        return $this;
+    }
+
+    /**
+     * Gets billing_address
+     * @return \Reepay\Model\InvoiceBillingAddress
+     */
+    public function getBillingAddress()
+    {
+        return $this->container['billing_address'];
+    }
+
+    /**
+     * Sets billing_address
+     * @param \Reepay\Model\InvoiceBillingAddress $billing_address
+     * @return $this
+     */
+    public function setBillingAddress($billing_address)
+    {
+        $this->container['billing_address'] = $billing_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipping_address
+     * @return \Reepay\Model\InvoiceShippingAddress
+     */
+    public function getShippingAddress()
+    {
+        return $this->container['shipping_address'];
+    }
+
+    /**
+     * Sets shipping_address
+     * @param \Reepay\Model\InvoiceShippingAddress $shipping_address
+     * @return $this
+     */
+    public function setShippingAddress($shipping_address)
+    {
+        $this->container['shipping_address'] = $shipping_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_context
+     * @return string
+     */
+    public function getPaymentContext()
+    {
+        return $this->container['payment_context'];
+    }
+
+    /**
+     * Sets payment_context
+     * @param string $payment_context
+     * @return $this
+     */
+    public function setPaymentContext($payment_context)
+    {
+        $this->container['payment_context'] = $payment_context;
+
+        return $this;
+    }
+
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset
