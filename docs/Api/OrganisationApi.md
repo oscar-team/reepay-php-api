@@ -4,31 +4,30 @@ All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getOrganisation**](OrganisationApi.md#getOrganisation) | **GET** /v1/organisation | Get organisation
+[**getOrganisation**](OrganisationApi.md#getorganisation) | **GET** /v1/organisation | Get organisation
 [**update**](OrganisationApi.md#update) | **PUT** /v1/organisation | Update organisation
-
 
 # **getOrganisation**
 > \Reepay\Model\Organisation getOrganisation()
 
 Get organisation
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\OrganisationApi();
+
+$apiInstance = new Reepay\Api\OrganisationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
     $result = $apiInstance->getOrganisation();
@@ -48,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -62,23 +61,23 @@ This endpoint does not need any parameter.
 
 Update organisation
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\OrganisationApi();
-$body = new \Reepay\Model\UpdateOrganisation(); // \Reepay\Model\UpdateOrganisation |
+
+$apiInstance = new Reepay\Api\OrganisationApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\UpdateOrganisation(); // \Reepay\Model\UpdateOrganisation | 
 
 try {
     $result = $apiInstance->update($body);
@@ -93,7 +92,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\UpdateOrganisation**](../Model/UpdateOrganisation.md)|  | [optional]
+ **body** | [**\Reepay\Model\UpdateOrganisation**](../Model/UpdateOrganisation.md)|  |
 
 ### Return type
 
@@ -101,11 +100,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: */*
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

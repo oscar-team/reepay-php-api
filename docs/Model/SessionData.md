@@ -1,0 +1,46 @@
+# SessionData
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**ssn** | **string** | Social security number, e.g. for Klarna Sweden | [optional] 
+**account_holder_name** | **string** | Account Holder name, e.g. for IDEAL | [optional] 
+**mps_amount** | **int** | Optional value to define MobilePay Subscriptions fixed recurring amount in minor unit. For subscription sessions this will default to plan amount. | [optional] 
+**mps_plan** | **string** | Optional MobilePay Subscriptions plan text shown when signing up. Maximum 64 characters. For subscription sessions this will default to plan name. For other session types default will be shop name. | [optional] 
+**mps_description** | **string** | Optional MobilePay Subscriptions additional description displayed to the customer. Maximum 60 characters. For subscription sessions this will default to plan description. | [optional] 
+**mps_frequency** | **string** | Optional MobilePay Subscriptions frequency. Allowed values &#x60;flexible&#x60;, &#x60;yearly&#x60;, &#x60;biyearly&#x60;, &#x60;quarterly&#x60;, &#x60;monthly&#x60;, &#x60;biweekly&#x60;, &#x60;weekly&#x60; or &#x60;daily&#x60;. For subscription sessions this will default to plan frequency. | [optional] 
+**mps_external_id** | **string** | Optional MobilePay Subscriptions id for subscription. Maximum 64 characters. For subscription sessions this will default to subscription handle. | [optional] 
+**mps_payment_description** | **string** | Optional MobilePay Subscriptions description for payment created in conjunction with subscription signup. Maximum 60 characters. Defaults to shop name. | [optional] 
+**mps_cancel_redirect_url** | **string** | Optional MobilePay Subscriptions merchant cancel redirect URL. If present user will not be able to cancel within app, but instead will be redirected to this url. | [optional] 
+**mpo_flow** | **string** | Optional MobilePay Online parameter to control if MobilePay should have a forced dual or single flow. IMPORTANT: MobilePay is deprecating this flag and will ignore it in future versions. FI: from January 2024, DK: from March 2024 | [optional] 
+**alternative_return_url** | **string** | Alternative return url for MobilePay Online and Vipss wallet payments. Using this parameter the customer will be redirected from wallet payment directly to this URL, bypassing Reepay Checkout. Notice that the result of the payment is not part of the return url from the wallet providers, so the result of the charge must be fetched from Reepay API operation get charge. Using this option can give a smoother experience for app integrations. Notice that the return url can be an app scheme url. | [optional] 
+**applepay_recurring_payment_start_date** | **string** | Optional Apple Pay recurring payment start date in format &#x60;yyyy-MM-dd&#x60; to be displayed to the user. | [optional] 
+**applepay_recurring_payment_end_date** | **string** | Optional Apple Pay recurring payment end date in format &#x60;yyyy-MM-dd&#x60; to be displayed to the user. | [optional] 
+**applepay_recurring_payment_interval_unit** | **string** | Optional ApplePay recurring payment interval unit to be displayed to the user. One of the following values: &#x60;year&#x60;, &#x60;month&#x60;, or &#x60;day&#x60;. If not set, the value defaults to &#x60;month&#x60; in ApplePay. | [optional] 
+**applepay_recurring_payment_interval_count** | **int** | Optional Apple Pay recurring payment interval count to be displayed to the user. | [optional] 
+**applepay_recurring_label** | **string** | Optional Apple Pay label to be displayed to the customer. Maximum 64 characters. | [optional] 
+**applepay_recurring_amount** | **int** | Optional value to define Apple Pay fixed recurring amount. | [optional] 
+**sepa_debtor_name** | **string** | Optional SEPA debtor name. | [optional] 
+**sepa_debtor_address** | **string** | Optional SEPA debtor address. | [optional] 
+**sepa_debtor_postal_code** | **string** | Optional SEPA debtor postal code. | [optional] 
+**sepa_debtor_city** | **string** | Optional SEPA debtor city. | [optional] 
+**sepa_debtor_country** | **string** | Optional SEPA debtor country in [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) | [optional] 
+**sepa_debtor_iban** | **string** | Optional SEPA debtor IBAN. | [optional] 
+**sepa_mandate_amount** | **int** | Optional value to define SEPA fixed recurring amount. | [optional] 
+**vipps_recurring_amount** | **int** | Optional value to define Vipps Recurring fixed recurring amount in minor unit. For subscription sessions this will default to plan amount. | [optional] 
+**vipps_recurring_product_name** | **string** | Optional Vipps Recurring product name displayed to the customer. Maximum 45 characters. For subscription sessions this will default to plan name. | [optional] 
+**vipps_recurring_pricing_type** | **string** | Optional Vipps Recurring subscription pricing type. One of the following values: &#x60;legacy&#x60;, &#x60;variable&#x60;. Defaults to &#x60;legacy&#x60;. | [optional] 
+**vipps_recurring_product_description** | **string** | Optional Vipps Recurring additional product description displayed to the customer. Maximum 100 characters. For subscription sessions this will default to plan description. | [optional] 
+**vipps_recurring_interval_count** | **int** | Optional Vipps Recurring payment interval count to be displayed to the customer. For subscription sessions this will default to plan interval length | [optional] 
+**vipps_recurring_interval_unit** | **string** | Optional Vipps Recurring payment interval unit to be displayed to the customer. One of the following values: &#x60;year&#x60;, &#x60;month&#x60;, or &#x60;day&#x60;. For subscription sessions this will default to plan schedule type | [optional] 
+**vipps_recurring_initial_payment_description** | **string** | Optional Vipps Recurring description for initial payment created in conjunction with subscription signup. | [optional] 
+**vipps_recurring_merchant_cancel_url** | **string** | Optional Vipps Recurring agreement cancel URL. If present this URL will override the URL set on the agreement. | [optional] 
+**vipps_recurring_campaign_amount** | **int** | Optional amount for Vipps Recurring campaign in minor unit. For subscription sessions this will default to discount amount. | [optional] 
+**vipps_recurring_campaign_interval_count** | **int** | Conditional Vipps Recurring campaign interval count to be displayed to the customer. | [optional] 
+**vipps_recurring_campaign_interval_unit** | **string** | Conditional Vipps Recurring campaign interval unit to be displayed to the customer. One of the following values: &#x60;year&#x60;, &#x60;month&#x60;, &#x60;week&#x60; or &#x60;day&#x60;. | [optional] 
+**vipps_recurring_campaign_end_date** | [**\DateTime**](\DateTime.md) | Conditional Vipps Recurring campaign end date to be displayed to the user. | [optional] 
+**anyday_webshop_url** | **string** | Optional parameter for Anyday. Recommended to set if webshop has many domains. | [optional] 
+**mpo_minimum_user_age** | **int** | Require MobilePay user age to be this age or above | [optional] 
+
+[[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
+

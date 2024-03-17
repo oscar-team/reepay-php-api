@@ -4,30 +4,29 @@ All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getSample**](MailTemplateApi.md#getSample) | **GET** /v1/mail_template/sample | Get sample data
-
+[**getSample**](MailTemplateApi.md#getsample) | **GET** /v1/mail_template/sample | Get sample data
 
 # **getSample**
-> map[string,object] getSample()
+> \Reepay\Model\InlineResponse200 getSample()
 
 Get sample data
-
-
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\MailTemplateApi();
+
+$apiInstance = new Reepay\Api\MailTemplateApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
     $result = $apiInstance->getSample();
@@ -43,11 +42,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**map[string,object]**](../Model/map.md)
+[**\Reepay\Model\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 

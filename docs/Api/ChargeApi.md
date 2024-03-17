@@ -4,34 +4,35 @@ All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancelCharge**](ChargeApi.md#cancelCharge) | **POST** /v1/charge/{handle}/cancel | Cancel charge
-[**createCharge**](ChargeApi.md#createCharge) | **POST** /v1/charge | Create charge
-[**getCharge**](ChargeApi.md#getCharge) | **GET** /v1/charge/{handle} | Get charge
-[**getCharges**](ChargeApi.md#getCharges) | **GET** /v1/charge | Get charges
-[**settleCharge**](ChargeApi.md#settleCharge) | **POST** /v1/charge/{handle}/settle | Settle charge
-
+[**cancelCharge**](ChargeApi.md#cancelcharge) | **POST** /v1/charge/{handle}/cancel | Cancel charge
+[**createCharge**](ChargeApi.md#createcharge) | **POST** /v1/charge | Create charge
+[**deleteCreatedInvoice**](ChargeApi.md#deletecreatedinvoice) | **DELETE** /v1/charge/{id} | Delete created charge
+[**getCharge**](ChargeApi.md#getcharge) | **GET** /v1/charge/{handle} | Get charge
+[**offlineSettle**](ChargeApi.md#offlinesettle) | **POST** /v1/charge/{id}/transaction/{transaction}/offline_settle | Settle offline transaction
+[**prepareCharge**](ChargeApi.md#preparecharge) | **POST** /v1/charge/prepare | Prepare charge
+[**settleCharge**](ChargeApi.md#settlecharge) | **POST** /v1/charge/{handle}/settle | Settle charge
 
 # **cancelCharge**
 > \Reepay\Model\Charge cancelCharge($handle)
 
 Cancel charge
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\ChargeApi();
+
+$apiInstance = new Reepay\Api\ChargeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Charge handle
 
 try {
@@ -55,11 +56,11 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -69,23 +70,23 @@ Name | Type | Description  | Notes
 
 Create charge
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\ChargeApi();
-$body = new \Reepay\Model\CreateCharge(); // \Reepay\Model\CreateCharge |
+
+$apiInstance = new Reepay\Api\ChargeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\CreateCharge(); // \Reepay\Model\CreateCharge | 
 
 try {
     $result = $apiInstance->createCharge($body);
@@ -100,7 +101,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateCharge**](../Model/CreateCharge.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateCharge**](../Model/CreateCharge.md)|  |
 
 ### Return type
 
@@ -108,11 +109,63 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **deleteCreatedInvoice**
+> deleteCreatedInvoice($id)
+
+Delete created charge
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\ChargeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Invoice id or handle
+
+try {
+    $apiInstance->deleteCreatedInvoice($id);
+} catch (Exception $e) {
+    echo 'Exception when calling ChargeApi->deleteCreatedInvoice: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| Invoice id or handle |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -122,22 +175,22 @@ Name | Type | Description  | Notes
 
 Get charge
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\ChargeApi();
+
+$apiInstance = new Reepay\Api\ChargeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Charge handle
 
 try {
@@ -161,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -170,37 +223,35 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getCharges**
-> \Reepay\Model\ChargeSearch getCharges($page, $size, $search, $sort)
+# **offlineSettle**
+> \Reepay\Model\Charge offlineSettle($id, $transaction)
 
-Get charges
-
-
+Settle offline transaction
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\ChargeApi();
-$page = 1; // int | Page number to get
-$size = 20; // int | Page size to use
-$search = "search_example"; // string | Optional search expression
-$sort = "sort_example"; // string | Optional sorting expression
+
+$apiInstance = new Reepay\Api\ChargeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$id = "id_example"; // string | Invoice id or handle
+$transaction = "transaction_example"; // string | Transaction id
 
 try {
-    $result = $apiInstance->getCharges($page, $size, $search, $sort);
+    $result = $apiInstance->offlineSettle($id, $transaction);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ChargeApi->getCharges: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ChargeApi->offlineSettle: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -209,22 +260,73 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int**| Page number to get | [optional] [default to 1]
- **size** | **int**| Page size to use | [optional] [default to 20]
- **search** | **string**| Optional search expression | [optional]
- **sort** | **string**| Optional sorting expression | [optional]
+ **id** | **string**| Invoice id or handle |
+ **transaction** | **string**| Transaction id |
 
 ### Return type
 
-[**\Reepay\Model\ChargeSearch**](../Model/ChargeSearch.md)
+[**\Reepay\Model\Charge**](../Model/Charge.md)
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **prepareCharge**
+> \Reepay\Model\Charge prepareCharge($body)
+
+Prepare charge
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\ChargeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\PrepareChargeDto(); // \Reepay\Model\PrepareChargeDto | 
+
+try {
+    $result = $apiInstance->prepareCharge($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ChargeApi->prepareCharge: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\PrepareChargeDto**](../Model/PrepareChargeDto.md)|  |
+
+### Return type
+
+[**\Reepay\Model\Charge**](../Model/Charge.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -234,24 +336,24 @@ Name | Type | Description  | Notes
 
 Settle charge
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\ChargeApi();
+
+$apiInstance = new Reepay\Api\ChargeApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Charge handle
-$body = new \Reepay\Model\SettleCharge(); // \Reepay\Model\SettleCharge |
+$body = new \Reepay\Model\SettleCharge(); // \Reepay\Model\SettleCharge | 
 
 try {
     $result = $apiInstance->settleCharge($handle, $body);
@@ -275,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 

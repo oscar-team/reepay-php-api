@@ -1,57 +1,42 @@
-# Reepay\Client\SessionApi
+# Reepay\SessionApi
 
 All URIs are relative to *https://checkout-api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createSession**](SessionApi.md#createSession) | **POST** /v1/session/charge | Create charge session
-[**deleteSession**](SessionApi.md#deleteSession) | **DELETE** /v1/session/{id} | Delete session
+[**createChargeSession**](SessionApi.md#createchargesession) | **POST** /v1/session/charge | Create charge session
+[**createRecurringSession**](SessionApi.md#createrecurringsession) | **POST** /v1/session/recurring | Create recurring session
+[**createSubscriptionSession**](SessionApi.md#createsubscriptionsession) | **POST** /v1/session/subscription | Create subscription session
+[**deleteSession**](SessionApi.md#deletesession) | **DELETE** /v1/session/{id} | Delete session
 
-# **createSession**
-> \Reepay\Client\Model\Session createSession($body)
+# **createChargeSession**
+> \Reepay\Model\Session createChargeSession($body)
 
-Create charge
+Create charge session
 
 ### Example
 ```php
 <?php
-
-require_once __DIR__ . '/vendor/autoload.php';
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
+require_once(__DIR__ . '/vendor/autoload.php');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$params = [
-    'order' => [
-        'handle' => 'order-12345',
-        'amount' => 100, // amount in the smallest unit for the account currency, e.g. cents for USD
-        'currency' => USD,
-        'customer' => [
-            'email' => 'johndoe@somedomain.com',
-            // Use this line to identify the customer in Reepay
-            'handle' => 'cust-001',
-            // Use this line if you want for Reepay to generate an unique handle for the customer
-            // 'generate_handle' => true,
-            'first_name' => 'John',
-            'last_name' => 'Doe',
-        ],
-    ],
-    'accept_url' => 'https://webshop.com/accept/order-12345',
-    'cancel_url' => 'https://webshop.com/decline/order-12345',
-];
-$apiInstance = new Reepay\Api\SessionApi();
-$body = new \Reepay\Model\CreateSession($params); // \Reepay\Model\Session |
+
+$apiInstance = new Reepay\Api\SessionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\CreateChargeSession(); // \Reepay\Model\CreateChargeSession | 
 
 try {
-    $result = $apiInstance->createSession($body);
+    $result = $apiInstance->createChargeSession($body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling SessionApi->createSession: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling SessionApi->createChargeSession: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -60,7 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateSession**](../Model/CreateSession.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateChargeSession**](../Model/CreateChargeSession.md)|  |
 
 ### Return type
 
@@ -68,7 +53,113 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **createRecurringSession**
+> \Reepay\Model\Session createRecurringSession($body)
+
+Create recurring session
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\SessionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\CreateRecurringSession(); // \Reepay\Model\CreateRecurringSession | 
+
+try {
+    $result = $apiInstance->createRecurringSession($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SessionApi->createRecurringSession: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\CreateRecurringSession**](../Model/CreateRecurringSession.md)|  |
+
+### Return type
+
+[**\Reepay\Model\Session**](../Model/Session.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **createSubscriptionSession**
+> \Reepay\Model\Session createSubscriptionSession($body)
+
+Create subscription session
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\SessionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\CreateSubscriptionSession(); // \Reepay\Model\CreateSubscriptionSession | 
+
+try {
+    $result = $apiInstance->createSubscriptionSession($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling SessionApi->createSubscriptionSession: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\CreateSubscriptionSession**](../Model/CreateSubscriptionSession.md)|  |
+
+### Return type
+
+[**\Reepay\Model\Session**](../Model/Session.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -78,31 +169,30 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteSession**
-> \Reepay\Model\Session deleteSession($id)
+> deleteSession($id)
 
 Delete session
-
-
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\SessionApi();
+
+$apiInstance = new Reepay\Api\SessionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Session id
 
 try {
-    $result = $apiInstance->deleteSession($id);
-    print_r($result);
+    $apiInstance->deleteSession($id);
 } catch (Exception $e) {
     echo 'Exception when calling SessionApi->deleteSession: ', $e->getMessage(), PHP_EOL;
 }
@@ -117,11 +207,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Reepay\Model\Session**](../Model/Session.md)
+void (empty response body)
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -129,3 +219,4 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+

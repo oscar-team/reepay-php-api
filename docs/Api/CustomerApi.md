@@ -4,160 +4,43 @@ All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**activatePaymentMethod**](CustomerApi.md#activatePaymentMethod) | **POST** /v1/customer/{handle}/payment_method/{method_id}/activate | Activate payment method
-[**addCardJson**](CustomerApi.md#addCardJson) | **POST** /v1/customer/{handle}/payment_method/card | Add card payment method
-[**createCustomerInvoice**](CustomerApi.md#createCustomerInvoice) | **POST** /v1/customer/{handle}/invoice | Create invoice for customer
-[**createCustomerJson**](CustomerApi.md#createCustomerJson) | **POST** /v1/customer | Create customer
-[**createCustomerNoteJson**](CustomerApi.md#createCustomerNoteJson) | **POST** /v1/customer/{handle}/note | Create customer note
-[**deleteCustomer**](CustomerApi.md#deleteCustomer) | **DELETE** /v1/customer/{handle} | Delete customer
-[**getCard**](CustomerApi.md#getCard) | **GET** /v1/customer/{handle}/payment_method/card/{id} | Get card
-[**getCardDetails**](CustomerApi.md#getCardDetails) | **GET** /v1/customer/{handle}/payment_method/card/{id}/details | Get gateway card details
-[**getCustomer**](CustomerApi.md#getCustomer) | **GET** /v1/customer/{handle} | Get customer
-[**getCustomerNotes**](CustomerApi.md#getCustomerNotes) | **GET** /v1/customer/{handle}/note | Get customer notes
-[**getCustomerPaymentMethods**](CustomerApi.md#getCustomerPaymentMethods) | **GET** /v1/customer/{handle}/payment_method | Get payment methods
-[**getCustomers**](CustomerApi.md#getCustomers) | **GET** /v1/customer | Get list of customers
-[**importCardJson**](CustomerApi.md#importCardJson) | **POST** /v1/customer/{handle}/payment_method/card_import | Import card payment method
-[**inactivatePaymentMethod**](CustomerApi.md#inactivatePaymentMethod) | **POST** /v1/customer/{handle}/payment_method/{method_id}/inactivate | Inactivate payment method
-[**reactivateCard**](CustomerApi.md#reactivateCard) | **POST** /v1/customer/{handle}/payment_method/{card_id}/card_reactivate | Reactivate failed card
-[**updateCustomerJson**](CustomerApi.md#updateCustomerJson) | **PUT** /v1/customer/{handle} | Update customer
-
-
-# **activatePaymentMethod**
-> \Reepay\Model\PaymentMethods activatePaymentMethod($handle, $method_id)
-
-Activate payment method
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$apiInstance = new Reepay\Api\CustomerApi();
-$handle = "handle_example"; // string | Customer handle
-$method_id = "method_id_example"; // string | Payment method id
-
-try {
-    $result = $apiInstance->activatePaymentMethod($handle, $method_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->activatePaymentMethod: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Customer handle |
- **method_id** | **string**| Payment method id |
-
-### Return type
-
-[**\Reepay\Model\PaymentMethods**](../Model/PaymentMethods.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **addCardJson**
-> \Reepay\Model\Card addCardJson($handle, $body)
-
-Add card payment method
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$apiInstance = new Reepay\Api\CustomerApi();
-$handle = "handle_example"; // string | Customer handle
-$body = new \Reepay\Model\CardToken(); // \Reepay\Model\CardToken |
-
-try {
-    $result = $apiInstance->addCardJson($handle, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->addCardJson: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Customer handle |
- **body** | [**\Reepay\Model\CardToken**](../Model/CardToken.md)|  | [optional]
-
-### Return type
-
-[**\Reepay\Model\Card**](../Model/Card.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[**createCustomerInvoice**](CustomerApi.md#createcustomerinvoice) | **POST** /v1/customer/{handle}/invoice | Create invoice for customer
+[**createCustomerJson**](CustomerApi.md#createcustomerjson) | **POST** /v1/customer | Create customer
+[**createCustomerNoteJson**](CustomerApi.md#createcustomernotejson) | **POST** /v1/customer/{handle}/note | Create customer note
+[**deleteCustomer**](CustomerApi.md#deletecustomer) | **DELETE** /v1/customer/{handle} | Delete customer
+[**deleteMetadata1**](CustomerApi.md#deletemetadata1) | **DELETE** /v1/customer/{handle}/metadata | Delete metadata
+[**getCustomer**](CustomerApi.md#getcustomer) | **GET** /v1/customer/{handle} | Get customer
+[**getCustomerNotes**](CustomerApi.md#getcustomernotes) | **GET** /v1/customer/{handle}/note | Get customer notes
+[**getMetadata1**](CustomerApi.md#getmetadata1) | **GET** /v1/customer/{handle}/metadata | Get metadata
+[**updateCustomerJson**](CustomerApi.md#updatecustomerjson) | **PUT** /v1/customer/{handle} | Update customer
+[**updateMetadata1**](CustomerApi.md#updatemetadata1) | **PUT** /v1/customer/{handle}/metadata | Create or update metadata
 
 # **createCustomerInvoice**
-> \Reepay\Model\Invoice createCustomerInvoice($handle, $body)
+> \Reepay\Model\Invoice createCustomerInvoice($body, $handle)
 
 Create invoice for customer
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\CustomerApi();
+
+$apiInstance = new Reepay\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\CreateCustomerInvoice(); // \Reepay\Model\CreateCustomerInvoice | 
 $handle = "handle_example"; // string | Customer handle
-$body = new \Reepay\Model\CreateCustomerInvoice(); // \Reepay\Model\CreateCustomerInvoice |
 
 try {
-    $result = $apiInstance->createCustomerInvoice($handle, $body);
+    $result = $apiInstance->createCustomerInvoice($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->createCustomerInvoice: ', $e->getMessage(), PHP_EOL;
@@ -169,8 +52,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\CreateCustomerInvoice**](../Model/CreateCustomerInvoice.md)|  |
  **handle** | **string**| Customer handle |
- **body** | [**\Reepay\Model\CreateCustomerInvoice**](../Model/CreateCustomerInvoice.md)|  | [optional]
 
 ### Return type
 
@@ -178,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -192,23 +75,23 @@ Name | Type | Description  | Notes
 
 Create customer
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\CustomerApi();
-$body = new \Reepay\Model\CreateCustomer(); // \Reepay\Model\CreateCustomer |
+
+$apiInstance = new Reepay\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\CreateCustomer(); // \Reepay\Model\CreateCustomer | 
 
 try {
     $result = $apiInstance->createCustomerJson($body);
@@ -223,7 +106,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateCustomer**](../Model/CreateCustomer.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateCustomer**](../Model/CreateCustomer.md)|  |
 
 ### Return type
 
@@ -231,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -241,31 +124,31 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **createCustomerNoteJson**
-> \Reepay\Model\CustomerNote createCustomerNoteJson($handle, $body)
+> \Reepay\Model\CustomerNote createCustomerNoteJson($body, $handle)
 
 Create customer note
-
-
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\CustomerApi();
-$handle = "handle_example"; // string |
-$body = new \Reepay\Model\CreateCustomerNote(); // \Reepay\Model\CreateCustomerNote |
+
+$apiInstance = new Reepay\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\CreateCustomerNote(); // \Reepay\Model\CreateCustomerNote | 
+$handle = "handle_example"; // string | 
 
 try {
-    $result = $apiInstance->createCustomerNoteJson($handle, $body);
+    $result = $apiInstance->createCustomerNoteJson($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->createCustomerNoteJson: ', $e->getMessage(), PHP_EOL;
@@ -277,8 +160,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\CreateCustomerNote**](../Model/CreateCustomerNote.md)|  |
  **handle** | **string**|  |
- **body** | [**\Reepay\Model\CreateCustomerNote**](../Model/CreateCustomerNote.md)|  | [optional]
 
 ### Return type
 
@@ -286,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -300,22 +183,22 @@ Name | Type | Description  | Notes
 
 Delete customer
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\CustomerApi();
+
+$apiInstance = new Reepay\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Customer handle
 
 try {
@@ -339,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -348,35 +231,33 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getCard**
-> \Reepay\Model\Card getCard($handle, $id)
+# **deleteMetadata1**
+> deleteMetadata1($handle)
 
-Get card
-
-
+Delete metadata
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\CustomerApi();
-$handle = "handle_example"; // string | Customer handle
-$id = "id_example"; // string | Card id
+
+$apiInstance = new Reepay\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$handle = "handle_example"; // string | Resource handle
 
 try {
-    $result = $apiInstance->getCard($handle, $id);
-    print_r($result);
+    $apiInstance->deleteMetadata1($handle);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->getCard: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->deleteMetadata1: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -385,71 +266,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **handle** | **string**| Customer handle |
- **id** | **string**| Card id |
+ **handle** | **string**| Resource handle |
 
 ### Return type
 
-[**\Reepay\Model\Card**](../Model/Card.md)
+void (empty response body)
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getCardDetails**
-> map[string,object] getCardDetails($handle, $id)
-
-Get gateway card details
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$apiInstance = new Reepay\Api\CustomerApi();
-$handle = "handle_example"; // string | Customer handle
-$id = "id_example"; // string | Card id
-
-try {
-    $result = $apiInstance->getCardDetails($handle, $id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->getCardDetails: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Customer handle |
- **id** | **string**| Card id |
-
-### Return type
-
-[**map[string,object]**](../Model/map.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -463,22 +288,22 @@ Name | Type | Description  | Notes
 
 Get customer
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\CustomerApi();
+
+$apiInstance = new Reepay\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Customer handle
 
 try {
@@ -502,7 +327,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -516,22 +341,22 @@ Name | Type | Description  | Notes
 
 Get customer notes
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\CustomerApi();
+
+$apiInstance = new Reepay\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Customer handle
 
 try {
@@ -555,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -564,35 +389,34 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **getCustomerPaymentMethods**
-> \Reepay\Model\PaymentMethods getCustomerPaymentMethods($handle, $only_active)
+# **getMetadata1**
+> map[string,object] getMetadata1($handle)
 
-Get payment methods
-
-
+Get metadata
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\CustomerApi();
-$handle = "handle_example"; // string | Customer handle
-$only_active = false; // bool | Get only active
+
+$apiInstance = new Reepay\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$handle = "handle_example"; // string | Resource handle
 
 try {
-    $result = $apiInstance->getCustomerPaymentMethods($handle, $only_active);
+    $result = $apiInstance->getMetadata1($handle);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->getCustomerPaymentMethods: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling CustomerApi->getMetadata1: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -601,240 +425,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **handle** | **string**| Customer handle |
- **only_active** | **bool**| Get only active | [optional] [default to false]
+ **handle** | **string**| Resource handle |
 
 ### Return type
 
-[**\Reepay\Model\PaymentMethods**](../Model/PaymentMethods.md)
+**map[string,object]**
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getCustomers**
-> \Reepay\Model\CustomerSearch getCustomers($page, $size, $search, $sort)
-
-Get list of customers
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$apiInstance = new Reepay\Api\CustomerApi();
-$page = 1; // int | Page number to get
-$size = 20; // int | Page size to use
-$search = "search_example"; // string | Optional search expression
-$sort = "sort_example"; // string | Optional sorting expression
-
-try {
-    $result = $apiInstance->getCustomers($page, $size, $search, $sort);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->getCustomers: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **int**| Page number to get | [optional] [default to 1]
- **size** | **int**| Page size to use | [optional] [default to 20]
- **search** | **string**| Optional search expression | [optional]
- **sort** | **string**| Optional sorting expression | [optional]
-
-### Return type
-
-[**\Reepay\Model\CustomerSearch**](../Model/CustomerSearch.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **importCardJson**
-> \Reepay\Model\Card importCardJson($handle, $body)
-
-Import card payment method
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$apiInstance = new Reepay\Api\CustomerApi();
-$handle = "handle_example"; // string | Customer handle
-$body = new \Reepay\Model\CardImport(); // \Reepay\Model\CardImport |
-
-try {
-    $result = $apiInstance->importCardJson($handle, $body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->importCardJson: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Customer handle |
- **body** | [**\Reepay\Model\CardImport**](../Model/CardImport.md)|  | [optional]
-
-### Return type
-
-[**\Reepay\Model\Card**](../Model/Card.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **inactivatePaymentMethod**
-> \Reepay\Model\PaymentMethods inactivatePaymentMethod($handle, $method_id)
-
-Inactivate payment method
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$apiInstance = new Reepay\Api\CustomerApi();
-$handle = "handle_example"; // string | Customer handle
-$method_id = "method_id_example"; // string | Payment method id
-
-try {
-    $result = $apiInstance->inactivatePaymentMethod($handle, $method_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->inactivatePaymentMethod: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Customer handle |
- **method_id** | **string**| Payment method id |
-
-### Return type
-
-[**\Reepay\Model\PaymentMethods**](../Model/PaymentMethods.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **reactivateCard**
-> \Reepay\Model\Card reactivateCard($handle, $card_id)
-
-Reactivate failed card
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$apiInstance = new Reepay\Api\CustomerApi();
-$handle = "handle_example"; // string | Customer handle
-$card_id = "card_id_example"; // string | Card id
-
-try {
-    $result = $apiInstance->reactivateCard($handle, $card_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling CustomerApi->reactivateCard: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **handle** | **string**| Customer handle |
- **card_id** | **string**| Card id |
-
-### Return type
-
-[**\Reepay\Model\Card**](../Model/Card.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -844,31 +443,31 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateCustomerJson**
-> \Reepay\Model\Customer updateCustomerJson($handle, $body)
+> \Reepay\Model\Customer updateCustomerJson($body, $handle)
 
 Update customer
-
-
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\CustomerApi();
+
+$apiInstance = new Reepay\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\UpdateCustomer(); // \Reepay\Model\UpdateCustomer | 
 $handle = "handle_example"; // string | Customer handle
-$body = new \Reepay\Model\UpdateCustomer(); // \Reepay\Model\UpdateCustomer |
 
 try {
-    $result = $apiInstance->updateCustomerJson($handle, $body);
+    $result = $apiInstance->updateCustomerJson($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling CustomerApi->updateCustomerJson: ', $e->getMessage(), PHP_EOL;
@@ -880,8 +479,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateCustomer**](../Model/UpdateCustomer.md)|  |
  **handle** | **string**| Customer handle |
- **body** | [**\Reepay\Model\UpdateCustomer**](../Model/UpdateCustomer.md)|  | [optional]
 
 ### Return type
 
@@ -889,11 +488,66 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateMetadata1**
+> map[string,object] updateMetadata1($body, $handle)
+
+Create or update metadata
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\CustomerApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\map(); // map[string,object] | 
+$handle = "handle_example"; // string | Resource handle
+
+try {
+    $result = $apiInstance->updateMetadata1($body, $handle);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling CustomerApi->updateMetadata1: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**map[string,object]**](../Model/map.md)|  |
+ **handle** | **string**| Resource handle |
+
+### Return type
+
+**map[string,object]**
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

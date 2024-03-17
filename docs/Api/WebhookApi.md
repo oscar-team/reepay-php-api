@@ -4,36 +4,35 @@ All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**disableWebhooks**](WebhookApi.md#disableWebhooks) | **POST** /v1/webhook/disable | Disable webhooks
-[**getWebhook**](WebhookApi.md#getWebhook) | **GET** /v1/webhook/{id} | Get webhooks
-[**getWebhookRequests**](WebhookApi.md#getWebhookRequests) | **GET** /v1/webhook/{id}/request | Get webhook requests
-[**getWebhooks**](WebhookApi.md#getWebhooks) | **GET** /v1/webhook | Get list of webhooks
-[**resendJson**](WebhookApi.md#resendJson) | **POST** /v1/webhook/resend | Re-send webhooks
-[**updateWebhooks**](WebhookApi.md#updateWebhooks) | **POST** /v1/webhook/update | Update and resend webhooks
-
+[**disableWebhooks**](WebhookApi.md#disablewebhooks) | **POST** /v1/webhook/disable | Disable webhooks
+[**getWebhook**](WebhookApi.md#getwebhook) | **GET** /v1/webhook/{id} | Get webhooks
+[**getWebhookRequests**](WebhookApi.md#getwebhookrequests) | **GET** /v1/webhook/{id}/request | Get webhook requests
+[**getWebhooks**](WebhookApi.md#getwebhooks) | **GET** /v1/webhook | Get list of webhooks
+[**resendJson**](WebhookApi.md#resendjson) | **POST** /v1/webhook/resend | Re-send webhooks
+[**updateWebhooks**](WebhookApi.md#updatewebhooks) | **POST** /v1/webhook/update | Update and resend webhooks
 
 # **disableWebhooks**
 > \Reepay\Model\Webhook[] disableWebhooks($body)
 
 Disable webhooks
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\WebhookApi();
-$body = new \Reepay\Model\WebhookDisableRequest(); // \Reepay\Model\WebhookDisableRequest |
+
+$apiInstance = new Reepay\Api\WebhookApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\WebhookDisableRequest(); // \Reepay\Model\WebhookDisableRequest | 
 
 try {
     $result = $apiInstance->disableWebhooks($body);
@@ -48,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\WebhookDisableRequest**](../Model/WebhookDisableRequest.md)|  | [optional]
+ **body** | [**\Reepay\Model\WebhookDisableRequest**](../Model/WebhookDisableRequest.md)|  |
 
 ### Return type
 
@@ -56,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -70,22 +69,22 @@ Name | Type | Description  | Notes
 
 Get webhooks
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\WebhookApi();
+
+$apiInstance = new Reepay\Api\WebhookApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Webhook id or event id
 
 try {
@@ -109,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -123,22 +122,22 @@ Name | Type | Description  | Notes
 
 Get webhook requests
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\WebhookApi();
+
+$apiInstance = new Reepay\Api\WebhookApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $id = "id_example"; // string | Webhook id
 
 try {
@@ -162,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -172,32 +171,33 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getWebhooks**
-> \Reepay\Model\Webhook[] getWebhooks($created_before, $size, $state)
+> \Reepay\Model\Webhook[] getWebhooks($created_before, $size, $state, $created_after)
 
 Get list of webhooks
-
-
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\WebhookApi();
-$created_before = "created_before_example"; // string | Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page.
-$size = 100; // int | Page size. A maximum of 100 is allowed.
-$state = "state_example"; // string | Optional state to filter on, one of the following: `pending`, `disabled`, `failed`, `completed`
+
+$apiInstance = new Reepay\Api\WebhookApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$created_before = "created_before_example"; // string | 
+$size = 100; // int | 
+$state = "state_example"; // string | 
+$created_after = "created_after_example"; // string | 
 
 try {
-    $result = $apiInstance->getWebhooks($created_before, $size, $state);
+    $result = $apiInstance->getWebhooks($created_before, $size, $state, $created_after);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebhookApi->getWebhooks: ', $e->getMessage(), PHP_EOL;
@@ -209,9 +209,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **created_before** | **string**| Get webhooks created before this date, in [ISO-8601](http://en.wikipedia.org/wiki/ISO_8601) extended offset date-time format. Use last created date as filter for next page. |
- **size** | **int**| Page size. A maximum of 100 is allowed. | [optional] [default to 100]
- **state** | **string**| Optional state to filter on, one of the following: `pending`, `disabled`, `failed`, `completed` | [optional]
+ **created_before** | **string**|  |
+ **size** | **int**|  | [optional] [default to 100]
+ **state** | **string**|  | [optional]
+ **created_after** | **string**|  | [optional]
 
 ### Return type
 
@@ -219,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -233,23 +234,23 @@ Name | Type | Description  | Notes
 
 Re-send webhooks
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\WebhookApi();
-$body = new \Reepay\Model\WebhookResendRequest(); // \Reepay\Model\WebhookResendRequest |
+
+$apiInstance = new Reepay\Api\WebhookApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\WebhookResendRequest(); // \Reepay\Model\WebhookResendRequest | 
 
 try {
     $result = $apiInstance->resendJson($body);
@@ -264,7 +265,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\WebhookResendRequest**](../Model/WebhookResendRequest.md)|  | [optional]
+ **body** | [**\Reepay\Model\WebhookResendRequest**](../Model/WebhookResendRequest.md)|  |
 
 ### Return type
 
@@ -272,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -286,23 +287,23 @@ Name | Type | Description  | Notes
 
 Update and resend webhooks
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\WebhookApi();
-$body = new \Reepay\Model\WebhookUpdateRequest(); // \Reepay\Model\WebhookUpdateRequest |
+
+$apiInstance = new Reepay\Api\WebhookApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\WebhookUpdateRequest(); // \Reepay\Model\WebhookUpdateRequest | 
 
 try {
     $result = $apiInstance->updateWebhooks($body);
@@ -317,7 +318,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\WebhookUpdateRequest**](../Model/WebhookUpdateRequest.md)|  | [optional]
+ **body** | [**\Reepay\Model\WebhookUpdateRequest**](../Model/WebhookUpdateRequest.md)|  |
 
 ### Return type
 
@@ -325,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 

@@ -6,29 +6,31 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**login**](AuthenticateApi.md#login) | **POST** /v1/authenticate/login | User login
 [**renew**](AuthenticateApi.md#renew) | **POST** /v1/authenticate/renew | Renew user login
-[**verifyAuthentication**](AuthenticateApi.md#verifyAuthentication) | **GET** /v1/authenticate/verify | Verify authentication
-
+[**verifyAuthentication**](AuthenticateApi.md#verifyauthentication) | **GET** /v1/authenticate/verify | Verify authentication
 
 # **login**
-> \Reepay\Model\UserLogin login($email, $password, $organisation, $account)
+> \Reepay\Model\UserLogin login($email, $password, $organisation, $account, $mfa_code)
 
 User login
-
-
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Reepay\Api\AuthenticateApi();
-$email = "email_example"; // string | User email
-$password = "password_example"; // string | User password
-$organisation = "organisation_example"; // string | Organisation subdomain to login to
-$account = "account_example"; // string | Account handle or id to login to
+$apiInstance = new Reepay\Api\AuthenticateApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$email = "email_example"; // string | 
+$password = "password_example"; // string | 
+$organisation = "organisation_example"; // string | 
+$account = "account_example"; // string | 
+$mfa_code = "mfa_code_example"; // string | 
 
 try {
-    $result = $apiInstance->login($email, $password, $organisation, $account);
+    $result = $apiInstance->login($email, $password, $organisation, $account, $mfa_code);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AuthenticateApi->login: ', $e->getMessage(), PHP_EOL;
@@ -40,10 +42,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **email** | **string**| User email | [optional]
- **password** | **string**| User password | [optional]
- **organisation** | **string**| Organisation subdomain to login to | [optional]
- **account** | **string**| Account handle or id to login to | [optional]
+ **email** | **string**|  | [optional]
+ **password** | **string**|  | [optional]
+ **organisation** | **string**|  | [optional]
+ **account** | **string**|  | [optional]
+ **mfa_code** | **string**|  | [optional]
 
 ### Return type
 
@@ -65,14 +68,16 @@ No authorization required
 
 Renew user login
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$apiInstance = new Reepay\Api\AuthenticateApi();
+$apiInstance = new Reepay\Api\AuthenticateApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 
 try {
     $result = $apiInstance->renew();
@@ -106,22 +111,22 @@ No authorization required
 
 Verify authentication
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\AuthenticateApi();
+
+$apiInstance = new Reepay\Api\AuthenticateApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 
 try {
     $apiInstance->verifyAuthentication();
@@ -140,7 +145,7 @@ void (empty response body)
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 

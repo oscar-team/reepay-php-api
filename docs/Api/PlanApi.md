@@ -4,38 +4,40 @@ All URIs are relative to *https://api.reepay.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createPlanJson**](PlanApi.md#createPlanJson) | **POST** /v1/plan | Create plan
-[**deletePlan**](PlanApi.md#deletePlan) | **DELETE** /v1/plan/{handle} | Delete plan
-[**getCurrentPlan**](PlanApi.md#getCurrentPlan) | **GET** /v1/plan/{handle}/current | Get plan
-[**getPlan**](PlanApi.md#getPlan) | **GET** /v1/plan/{handle}/{version} | Get plan version
-[**getPlans**](PlanApi.md#getPlans) | **GET** /v1/plan/{handle} | Get list of plan versions
-[**getPlansList**](PlanApi.md#getPlansList) | **GET** /v1/plan | Get list of plans
-[**supersedePlanJson**](PlanApi.md#supersedePlanJson) | **POST** /v1/plan/{handle} | Supersede plan
-[**updatePlanJson**](PlanApi.md#updatePlanJson) | **PUT** /v1/plan/{handle} | Update plan
-
+[**createPlanJson**](PlanApi.md#createplanjson) | **POST** /v1/plan | Create plan
+[**deleteMetadata3**](PlanApi.md#deletemetadata3) | **DELETE** /v1/plan/{handle}/metadata | Delete metadata
+[**deletePlan**](PlanApi.md#deleteplan) | **DELETE** /v1/plan/{handle} | Delete plan
+[**getCurrentPlan**](PlanApi.md#getcurrentplan) | **GET** /v1/plan/{handle}/current | Get plan
+[**getMetadata3**](PlanApi.md#getmetadata3) | **GET** /v1/plan/{handle}/metadata | Get metadata
+[**getPlan**](PlanApi.md#getplan) | **GET** /v1/plan/{handle}/{version} | Get plan version
+[**getPlans**](PlanApi.md#getplans) | **GET** /v1/plan/{handle} | Get list of plan versions
+[**supersedePlanJson**](PlanApi.md#supersedeplanjson) | **POST** /v1/plan/{handle} | Supersede plan
+[**unDeletePlan**](PlanApi.md#undeleteplan) | **POST** /v1/plan/{handle}/undelete | Undelete plan
+[**updateMetadata3**](PlanApi.md#updatemetadata3) | **PUT** /v1/plan/{handle}/metadata | Create or update metadata
+[**updatePlanJson**](PlanApi.md#updateplanjson) | **PUT** /v1/plan/{handle} | Update plan
 
 # **createPlanJson**
 > \Reepay\Model\Plan createPlanJson($body)
 
 Create plan
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\PlanApi();
-$body = new \Reepay\Model\CreateSubscriptionPlan(); // \Reepay\Model\CreateSubscriptionPlan |
+
+$apiInstance = new Reepay\Api\PlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\CreateSubscriptionPlan(); // \Reepay\Model\CreateSubscriptionPlan | 
 
 try {
     $result = $apiInstance->createPlanJson($body);
@@ -50,7 +52,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**\Reepay\Model\CreateSubscriptionPlan**](../Model/CreateSubscriptionPlan.md)|  | [optional]
+ **body** | [**\Reepay\Model\CreateSubscriptionPlan**](../Model/CreateSubscriptionPlan.md)|  |
 
 ### Return type
 
@@ -58,11 +60,63 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **deleteMetadata3**
+> deleteMetadata3($handle)
+
+Delete metadata
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\PlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$handle = "handle_example"; // string | Resource handle
+
+try {
+    $apiInstance->deleteMetadata3($handle);
+} catch (Exception $e) {
+    echo 'Exception when calling PlanApi->deleteMetadata3: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **handle** | **string**| Resource handle |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
@@ -72,22 +126,22 @@ Name | Type | Description  | Notes
 
 Delete plan
 
-
-
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\PlanApi();
+
+$apiInstance = new Reepay\Api\PlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Subscription plan handle
 
 try {
@@ -111,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -121,30 +175,31 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getCurrentPlan**
-> \Reepay\Model\Plan getCurrentPlan($handle)
+> \Reepay\Model\Plan getCurrentPlan($handle, $tax_rate_for_country)
 
 Get plan
-
-
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\PlanApi();
+
+$apiInstance = new Reepay\Api\PlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Plan handle
+$tax_rate_for_country = "tax_rate_for_country_example"; // string | 
 
 try {
-    $result = $apiInstance->getCurrentPlan($handle);
+    $result = $apiInstance->getCurrentPlan($handle, $tax_rate_for_country);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->getCurrentPlan: ', $e->getMessage(), PHP_EOL;
@@ -157,6 +212,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Plan handle |
+ **tax_rate_for_country** | **string**|  | [optional]
 
 ### Return type
 
@@ -164,7 +220,60 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getMetadata3**
+> map[string,object] getMetadata3($handle)
+
+Get metadata
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\PlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$handle = "handle_example"; // string | Resource handle
+
+try {
+    $result = $apiInstance->getMetadata3($handle);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PlanApi->getMetadata3: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **handle** | **string**| Resource handle |
+
+### Return type
+
+**map[string,object]**
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -174,31 +283,32 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPlan**
-> \Reepay\Model\Plan getPlan($handle, $version)
+> \Reepay\Model\Plan getPlan($handle, $version, $tax_rate_for_country)
 
 Get plan version
-
-
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\PlanApi();
+
+$apiInstance = new Reepay\Api\PlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Plan handle
 $version = 56; // int | Plan version
+$tax_rate_for_country = "tax_rate_for_country_example"; // string | 
 
 try {
-    $result = $apiInstance->getPlan($handle, $version);
+    $result = $apiInstance->getPlan($handle, $version, $tax_rate_for_country);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->getPlan: ', $e->getMessage(), PHP_EOL;
@@ -212,6 +322,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Plan handle |
  **version** | **int**| Plan version |
+ **tax_rate_for_country** | **string**|  | [optional]
 
 ### Return type
 
@@ -219,7 +330,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -229,30 +340,31 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getPlans**
-> \Reepay\Model\Plan[] getPlans($handle)
+> \Reepay\Model\Plan[] getPlans($handle, $tax_rate_for_country)
 
 Get list of plan versions
-
-
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\PlanApi();
+
+$apiInstance = new Reepay\Api\PlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
 $handle = "handle_example"; // string | Plan handle
+$tax_rate_for_country = "tax_rate_for_country_example"; // string | 
 
 try {
-    $result = $apiInstance->getPlans($handle);
+    $result = $apiInstance->getPlans($handle, $tax_rate_for_country);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->getPlans: ', $e->getMessage(), PHP_EOL;
@@ -265,6 +377,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **handle** | **string**| Plan handle |
+ **tax_rate_for_country** | **string**|  | [optional]
 
 ### Return type
 
@@ -272,60 +385,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **getPlansList**
-> \Reepay\Model\Plan[] getPlansList($only_active)
-
-Get list of plans
-
-
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
-// Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
-
-$apiInstance = new Reepay\Api\PlanApi();
-$only_active = false; // bool | Get only active
-
-try {
-    $result = $apiInstance->getPlansList($only_active);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling PlanApi->getPlansList: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **only_active** | **bool**| Get only active | [optional] [default to false]
-
-### Return type
-
-[**\Reepay\Model\Plan[]**](../Model/Plan.md)
-
-### Authorization
-
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -335,31 +395,31 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **supersedePlanJson**
-> \Reepay\Model\Plan supersedePlanJson($handle, $body)
+> \Reepay\Model\Plan supersedePlanJson($body, $handle)
 
 Supersede plan
-
-
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\PlanApi();
+
+$apiInstance = new Reepay\Api\PlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\SupersedeSubscriptionPlan(); // \Reepay\Model\SupersedeSubscriptionPlan | 
 $handle = "handle_example"; // string | Plan handle
-$body = new \Reepay\Model\SupersedeSubscriptionPlan(); // \Reepay\Model\SupersedeSubscriptionPlan |
 
 try {
-    $result = $apiInstance->supersedePlanJson($handle, $body);
+    $result = $apiInstance->supersedePlanJson($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->supersedePlanJson: ', $e->getMessage(), PHP_EOL;
@@ -371,8 +431,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\SupersedeSubscriptionPlan**](../Model/SupersedeSubscriptionPlan.md)|  |
  **handle** | **string**| Plan handle |
- **body** | [**\Reepay\Model\SupersedeSubscriptionPlan**](../Model/SupersedeSubscriptionPlan.md)|  | [optional]
 
 ### Return type
 
@@ -380,7 +440,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
@@ -389,32 +449,140 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **updatePlanJson**
-> \Reepay\Model\Plan updatePlanJson($handle, $body)
+# **unDeletePlan**
+> \Reepay\Model\Plan unDeletePlan($handle)
 
-Update plan
-
-
+Undelete plan
 
 ### Example
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
-
-// Configure API key authorization: apiKey
-Reepay\Configuration::getDefaultConfiguration()->setApiKey('X-Auth-Token', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// Reepay\Configuration::getDefaultConfiguration()->setApiKeyPrefix('X-Auth-Token', 'Bearer');
 // Configure HTTP basic authorization: basicAuth
-Reepay\Configuration::getDefaultConfiguration()->setUsername('YOUR_USERNAME');
-Reepay\Configuration::getDefaultConfiguration()->setPassword('YOUR_PASSWORD');
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
 
-$apiInstance = new Reepay\Api\PlanApi();
-$handle = "handle_example"; // string | Subscription handle
-$body = new \Reepay\Model\UpdateSubscriptionPlan(); // \Reepay\Model\UpdateSubscriptionPlan |
+
+$apiInstance = new Reepay\Api\PlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$handle = "handle_example"; // string | Subscription plan handle
 
 try {
-    $result = $apiInstance->updatePlanJson($handle, $body);
+    $result = $apiInstance->unDeletePlan($handle);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PlanApi->unDeletePlan: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **handle** | **string**| Subscription plan handle |
+
+### Return type
+
+[**\Reepay\Model\Plan**](../Model/Plan.md)
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updateMetadata3**
+> map[string,object] updateMetadata3($body, $handle)
+
+Create or update metadata
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\PlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\map(); // map[string,object] | 
+$handle = "handle_example"; // string | Resource handle
+
+try {
+    $result = $apiInstance->updateMetadata3($body, $handle);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling PlanApi->updateMetadata3: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**map[string,object]**](../Model/map.md)|  |
+ **handle** | **string**| Resource handle |
+
+### Return type
+
+**map[string,object]**
+
+### Authorization
+
+[basicAuth](../../README.md#basicAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: */*
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **updatePlanJson**
+> \Reepay\Model\Plan updatePlanJson($body, $handle)
+
+Update plan
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+// Configure HTTP basic authorization: basicAuth
+$config = Reepay\Configuration::getDefaultConfiguration()
+              ->setUsername('YOUR_USERNAME')
+              ->setPassword('YOUR_PASSWORD');
+
+
+$apiInstance = new Reepay\Api\PlanApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$body = new \Reepay\Model\UpdateSubscriptionPlan(); // \Reepay\Model\UpdateSubscriptionPlan | 
+$handle = "handle_example"; // string | Subscription handle
+
+try {
+    $result = $apiInstance->updatePlanJson($body, $handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling PlanApi->updatePlanJson: ', $e->getMessage(), PHP_EOL;
@@ -426,8 +594,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**\Reepay\Model\UpdateSubscriptionPlan**](../Model/UpdateSubscriptionPlan.md)|  |
  **handle** | **string**| Subscription handle |
- **body** | [**\Reepay\Model\UpdateSubscriptionPlan**](../Model/UpdateSubscriptionPlan.md)|  | [optional]
 
 ### Return type
 
@@ -435,7 +603,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[apiKey](../../README.md#apiKey), [basicAuth](../../README.md#basicAuth)
+[basicAuth](../../README.md#basicAuth)
 
 ### HTTP request headers
 
