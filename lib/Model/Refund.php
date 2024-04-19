@@ -180,9 +180,8 @@ class Refund implements ArrayAccess
     const STATE_FAILED = 'failed';
     const STATE_PROCESSING = 'processing';
     const TYPE_CARD = 'card';
-    const TYPE_CARD_TOKEN = 'card_token';
-    const TYPE_MOBILEPAY = 'mobilepay';
     const TYPE_MPO = 'mpo';
+    const TYPE_MOBILEPAY = 'mobilepay';
     const TYPE_VIPPS = 'vipps';
     const TYPE_VIPPS_RECURRING = 'vipps_recurring';
     const TYPE_SWISH = 'swish';
@@ -198,15 +197,36 @@ class Refund implements ArrayAccess
     const TYPE_KLARNA_DIRECT_BANK_TRANSFER = 'klarna_direct_bank_transfer';
     const TYPE_KLARNA_DIRECT_DEBIT = 'klarna_direct_debit';
     const TYPE_RESURS = 'resurs';
-    const TYPE_BANCONTACT = 'bancontact';
+    const TYPE_MOBILEPAY_SUBSCRIPTIONS = 'mobilepay_subscriptions';
+    const TYPE_EMV_TOKEN = 'emv_token';
+    const TYPE_BANCOMATPAY = 'bancomatpay';
     const TYPE_BCMC = 'bcmc';
     const TYPE_BLIK = 'blik';
+    const TYPE_PP_BLIK_OC = 'pp_blik_oc';
     const TYPE_GIROPAY = 'giropay';
     const TYPE_IDEAL = 'ideal';
     const TYPE_P24 = 'p24';
     const TYPE_SEPA = 'sepa';
+    const TYPE_TRUSTLY = 'trustly';
+    const TYPE_EPS = 'eps';
+    const TYPE_ESTONIA_BANKS = 'estonia_banks';
+    const TYPE_LATVIA_BANKS = 'latvia_banks';
+    const TYPE_LITHUANIA_BANKS = 'lithuania_banks';
+    const TYPE_MB_WAY = 'mb_way';
+    const TYPE_MULTIBANCO = 'multibanco';
+    const TYPE_MYBANK = 'mybank';
+    const TYPE_PAYCONIQ = 'payconiq';
+    const TYPE_PAYSAFECARD = 'paysafecard';
+    const TYPE_PAYSERA = 'paysera';
+    const TYPE_POSTFINANCE = 'postfinance';
+    const TYPE_SATISPAY = 'satispay';
+    const TYPE_TWINT = 'twint';
+    const TYPE_WECHATPAY = 'wechatpay';
+    const TYPE_SANTANDER = 'santander';
     const TYPE_VERKKOPANKKI = 'verkkopankki';
-    const TYPE_MOBILEPAY_SUBSCRIPTIONS = 'mobilepay_subscriptions';
+    const TYPE_OFFLINE_CASH = 'offline_cash';
+    const TYPE_OFFLINE_BANK_TRANSFER = 'offline_bank_transfer';
+    const TYPE_OFFLINE_OTHER = 'offline_other';
     const ERROR_STATE_HARD_DECLINED = 'hard_declined';
     const ERROR_STATE_SOFT_DECLINED = 'soft_declined';
     const ERROR_STATE_PROCESSING_ERROR = 'processing_error';
@@ -234,9 +254,8 @@ class Refund implements ArrayAccess
     {
         return [
             self::TYPE_CARD,
-            self::TYPE_CARD_TOKEN,
-            self::TYPE_MOBILEPAY,
             self::TYPE_MPO,
+            self::TYPE_MOBILEPAY,
             self::TYPE_VIPPS,
             self::TYPE_VIPPS_RECURRING,
             self::TYPE_SWISH,
@@ -252,15 +271,36 @@ class Refund implements ArrayAccess
             self::TYPE_KLARNA_DIRECT_BANK_TRANSFER,
             self::TYPE_KLARNA_DIRECT_DEBIT,
             self::TYPE_RESURS,
-            self::TYPE_BANCONTACT,
+            self::TYPE_MOBILEPAY_SUBSCRIPTIONS,
+            self::TYPE_EMV_TOKEN,
+            self::TYPE_BANCOMATPAY,
             self::TYPE_BCMC,
             self::TYPE_BLIK,
+            self::TYPE_PP_BLIK_OC,
             self::TYPE_GIROPAY,
             self::TYPE_IDEAL,
             self::TYPE_P24,
             self::TYPE_SEPA,
+            self::TYPE_TRUSTLY,
+            self::TYPE_EPS,
+            self::TYPE_ESTONIA_BANKS,
+            self::TYPE_LATVIA_BANKS,
+            self::TYPE_LITHUANIA_BANKS,
+            self::TYPE_MB_WAY,
+            self::TYPE_MULTIBANCO,
+            self::TYPE_MYBANK,
+            self::TYPE_PAYCONIQ,
+            self::TYPE_PAYSAFECARD,
+            self::TYPE_PAYSERA,
+            self::TYPE_POSTFINANCE,
+            self::TYPE_SATISPAY,
+            self::TYPE_TWINT,
+            self::TYPE_WECHATPAY,
+            self::TYPE_SANTANDER,
             self::TYPE_VERKKOPANKKI,
-            self::TYPE_MOBILEPAY_SUBSCRIPTIONS,
+            self::TYPE_OFFLINE_CASH,
+            self::TYPE_OFFLINE_BANK_TRANSFER,
+            self::TYPE_OFFLINE_OTHER,
         ];
     }
 
