@@ -419,6 +419,9 @@ class Transaction implements ArrayAccess
     const PAYMENT_TYPE_OFFLINE_CASH = 'offline_cash';
     const PAYMENT_TYPE_OFFLINE_BANK_TRANSFER = 'offline_bank_transfer';
     const PAYMENT_TYPE_OFFLINE_OTHER = 'offline_other';
+    const PAYMENT_CONTEXT_CIT = 'cit';
+    const PAYMENT_CONTEXT_MIT = 'mit';
+    const PAYMENT_CONTEXT_CIT_COF = 'cit_cof';
 
     /**
      * Gets allowable values of the enum
