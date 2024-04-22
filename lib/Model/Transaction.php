@@ -372,9 +372,8 @@ class Transaction implements ArrayAccess
     const TYPE_REFUND = 'refund';
     const TYPE_AUTHORIZATION = 'authorization';
     const PAYMENT_TYPE_CARD = 'card';
-    const PAYMENT_TYPE_CARD_TOKEN = 'card_token';
-    const PAYMENT_TYPE_MOBILEPAY = 'mobilepay';
     const PAYMENT_TYPE_MPO = 'mpo';
+    const PAYMENT_TYPE_MOBILEPAY = 'mobilepay';
     const PAYMENT_TYPE_VIPPS = 'vipps';
     const PAYMENT_TYPE_VIPPS_RECURRING = 'vipps_recurring';
     const PAYMENT_TYPE_SWISH = 'swish';
@@ -390,19 +389,36 @@ class Transaction implements ArrayAccess
     const PAYMENT_TYPE_KLARNA_DIRECT_BANK_TRANSFER = 'klarna_direct_bank_transfer';
     const PAYMENT_TYPE_KLARNA_DIRECT_DEBIT = 'klarna_direct_debit';
     const PAYMENT_TYPE_RESURS = 'resurs';
-    const PAYMENT_TYPE_BANCONTACT = 'bancontact';
-    const PAYMENT_TYPE_BCMC = 'bcmc';
-    const PAYMENT_TYPE_BLIK = 'blik';
-    const PAYMENT_TYPE_GIROPAY = 'giropay';
     const PAYMENT_TYPE_IDEAL = 'ideal';
     const PAYMENT_TYPE_P24 = 'p24';
+    const PAYMENT_TYPE_BANCOMATPAY = 'bancomatpay';
+    const PAYMENT_TYPE_BLIK = 'blik';
+    const PAYMENT_TYPE_GIROPAY = 'giropay';
     const PAYMENT_TYPE_SEPA = 'sepa';
     const PAYMENT_TYPE_VERKKOPANKKI = 'verkkopankki';
     const PAYMENT_TYPE_MOBILEPAY_SUBSCRIPTIONS = 'mobilepay_subscriptions';
-    const PAYMENT_CONTEXT_CIT = 'cit';
-    const PAYMENT_CONTEXT_MIT = 'mit';
-    const PAYMENT_CONTEXT_CIT_COF = 'cit_cof';
-
+    const PAYMENT_TYPE_EMV_TOKEN = 'emv_token';
+    const PAYMENT_TYPE_BCMC = 'bcmc';
+    const PAYMENT_TYPE_PP_BLIK_OC = 'pp_blik_oc';
+    const PAYMENT_TYPE_TRUSTLY = 'trustly';
+    const PAYMENT_TYPE_EPS = 'eps';
+    const PAYMENT_TYPE_ESTONIA_BANKS = 'estonia_banks';
+    const PAYMENT_TYPE_LATVIA_BANKS = 'latvia_banks';
+    const PAYMENT_TYPE_LITHUANIA_BANKS = 'lithuania_banks';
+    const PAYMENT_TYPE_MB_WAY = 'mb_way';
+    const PAYMENT_TYPE_MULTIBANCO = 'multibanco';
+    const PAYMENT_TYPE_MYBANK = 'mybank';
+    const PAYMENT_TYPE_PAYCONIQ = 'payconiq';
+    const PAYMENT_TYPE_PAYSAFECARD = 'paysafecard';
+    const PAYMENT_TYPE_PAYSERA = 'paysera';
+    const PAYMENT_TYPE_POSTFINANCE = 'postfinance';
+    const PAYMENT_TYPE_SATISPAY = 'satispay';
+    const PAYMENT_TYPE_TWINT = 'twint';
+    const PAYMENT_TYPE_WECHATPAY = 'wechatpay';
+    const PAYMENT_TYPE_SANTANDER = 'santander';
+    const PAYMENT_TYPE_OFFLINE_CASH = 'offline_cash';
+    const PAYMENT_TYPE_OFFLINE_BANK_TRANSFER = 'offline_bank_transfer';
+    const PAYMENT_TYPE_OFFLINE_OTHER = 'offline_other';
 
     /**
      * Gets allowable values of the enum
@@ -443,9 +459,8 @@ class Transaction implements ArrayAccess
     {
         return [
             self::PAYMENT_TYPE_CARD,
-            self::PAYMENT_TYPE_CARD_TOKEN,
-            self::PAYMENT_TYPE_MOBILEPAY,
             self::PAYMENT_TYPE_MPO,
+            self::PAYMENT_TYPE_MOBILEPAY,
             self::PAYMENT_TYPE_VIPPS,
             self::PAYMENT_TYPE_VIPPS_RECURRING,
             self::PAYMENT_TYPE_SWISH,
@@ -461,15 +476,36 @@ class Transaction implements ArrayAccess
             self::PAYMENT_TYPE_KLARNA_DIRECT_BANK_TRANSFER,
             self::PAYMENT_TYPE_KLARNA_DIRECT_DEBIT,
             self::PAYMENT_TYPE_RESURS,
-            self::PAYMENT_TYPE_BANCONTACT,
-            self::PAYMENT_TYPE_BCMC,
-            self::PAYMENT_TYPE_BLIK,
-            self::PAYMENT_TYPE_GIROPAY,
             self::PAYMENT_TYPE_IDEAL,
             self::PAYMENT_TYPE_P24,
+            self::PAYMENT_TYPE_BANCOMATPAY,
+            self::PAYMENT_TYPE_BLIK,
+            self::PAYMENT_TYPE_GIROPAY,
             self::PAYMENT_TYPE_SEPA,
             self::PAYMENT_TYPE_VERKKOPANKKI,
             self::PAYMENT_TYPE_MOBILEPAY_SUBSCRIPTIONS,
+            self::PAYMENT_TYPE_EMV_TOKEN,
+            self::PAYMENT_TYPE_BCMC,
+            self::PAYMENT_TYPE_PP_BLIK_OC,
+            self::PAYMENT_TYPE_TRUSTLY,
+            self::PAYMENT_TYPE_EPS,
+            self::PAYMENT_TYPE_ESTONIA_BANKS,
+            self::PAYMENT_TYPE_LATVIA_BANKS,
+            self::PAYMENT_TYPE_LITHUANIA_BANKS,
+            self::PAYMENT_TYPE_MB_WAY,
+            self::PAYMENT_TYPE_MULTIBANCO,
+            self::PAYMENT_TYPE_MYBANK,
+            self::PAYMENT_TYPE_PAYCONIQ,
+            self::PAYMENT_TYPE_PAYSAFECARD,
+            self::PAYMENT_TYPE_PAYSERA,
+            self::PAYMENT_TYPE_POSTFINANCE,
+            self::PAYMENT_TYPE_SATISPAY,
+            self::PAYMENT_TYPE_TWINT,
+            self::PAYMENT_TYPE_WECHATPAY,
+            self::PAYMENT_TYPE_SANTANDER,
+            self::PAYMENT_TYPE_OFFLINE_CASH,
+            self::PAYMENT_TYPE_OFFLINE_BANK_TRANSFER,
+            self::PAYMENT_TYPE_OFFLINE_OTHER,
         ];
     }
 
