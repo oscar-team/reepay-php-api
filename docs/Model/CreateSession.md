@@ -12,5 +12,6 @@ Name | Type | Description | Notes
 **recurring** | **bool** | If set a recurring payment method is stored for the customer and a reference returned. This parameter if set to true will limit payment methods to those that are reusable.
 **accept_url** | **string** | If checkout is opened in separate window the customer will be directed to this page after success
 **cancel_url** | **string** | If checkout is opened in separate window the customer will be directed to this page if the customer cancels
+**ttl** | **string** | Optional session lifetime as an ISO-8601 duration, for example `PT30M`. The session expires after this duration.
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

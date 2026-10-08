@@ -45,6 +45,7 @@ class CreateSession implements ArrayAccess
         'accept_url' => 'string',
         'cancel_url' => 'string',
         'button_text' => 'string',
+        'ttl' => 'string',
     ];
 
     /**
@@ -63,6 +64,7 @@ class CreateSession implements ArrayAccess
         'accept_url' => null,
         'cancel_url' => null,
         'button_text' => null,
+        'ttl' => null,
     ];
 
     /**
@@ -82,6 +84,7 @@ class CreateSession implements ArrayAccess
         'accept_url' => 'accept_url',
         'cancel_url' => 'cancel_url',
         'button_text' => 'button_text',
+        'ttl' => 'ttl',
     ];
 
     /**
@@ -100,6 +103,7 @@ class CreateSession implements ArrayAccess
         'accept_url' => 'setAcceptUrl',
         'cancel_url' => 'setCancelUrl',
         'button_text' => 'setButtonText',
+        'ttl' => 'setTtl',
     ];
 
     /**
@@ -118,6 +122,7 @@ class CreateSession implements ArrayAccess
         'accept_url' => 'getAcceptUrl',
         'cancel_url' => 'getCancelUrl',
         'button_text' => 'getButtonText',
+        'ttl' => 'getTtl',
     ];
 
     /**
@@ -139,6 +144,7 @@ class CreateSession implements ArrayAccess
         $this->container['accept_url'] = isset($data['accept_url']) ? $data['accept_url'] : null;
         $this->container['cancel_url'] = isset($data['cancel_url']) ? $data['cancel_url'] : null;
         $this->container['button_text'] = isset($data['button_text']) ? $data['button_text'] : null;
+        $this->container['ttl'] = isset($data['ttl']) ? $data['ttl'] : null;
     }
 
     public static function swaggerTypes()
@@ -425,6 +431,30 @@ class CreateSession implements ArrayAccess
     public function setButtonText($buttonText)
     {
         $this->container['button_text'] = $buttonText;
+
+        return $this;
+    }
+
+    /**
+     * Get ttl
+     *
+     * @return string
+     */
+    public function getTtl()
+    {
+        return $this->container['ttl'];
+    }
+
+    /**
+     * Set ttl
+     *
+     * @param string $ttl ISO-8601 duration, for example PT30M
+     *
+     * @return $this
+     */
+    public function setTtl($ttl)
+    {
+        $this->container['ttl'] = $ttl;
 
         return $this;
     }
