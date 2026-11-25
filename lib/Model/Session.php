@@ -87,7 +87,7 @@ class Session implements ArrayAccess
      */
     protected $container = [];
 
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['url'] = isset($data['url']) ? $data['url'] : null;

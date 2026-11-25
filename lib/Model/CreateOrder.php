@@ -122,7 +122,7 @@ class CreateOrder implements ArrayAccess
      */
     protected $container = [];
 
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
         $this->container['key'] = isset($data['key']) ? $data['key'] : null;

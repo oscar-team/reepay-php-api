@@ -130,7 +130,7 @@ class ChangeNextPeriodStart implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['next_period_start'] = isset($data['next_period_start']) ? $data['next_period_start'] : null;
     }

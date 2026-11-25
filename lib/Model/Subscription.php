@@ -468,7 +468,7 @@ class Subscription implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['handle'] = isset($data['handle']) ? $data['handle'] : null;
         $this->container['customer'] = isset($data['customer']) ? $data['customer'] : null;

@@ -166,7 +166,7 @@ class TransactionSearch implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['page'] = isset($data['page']) ? $data['page'] : null;
         $this->container['size'] = isset($data['size']) ? $data['size'] : null;
