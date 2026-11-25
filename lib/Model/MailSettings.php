@@ -140,7 +140,7 @@ class MailSettings implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['bcc'] = isset($data['bcc']) ? $data['bcc'] : null;
         $this->container['default_from'] = isset($data['default_from']) ? $data['default_from'] : null;

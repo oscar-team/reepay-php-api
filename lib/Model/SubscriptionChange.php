@@ -175,7 +175,7 @@ class SubscriptionChange implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['plan'] = isset($data['plan']) ? $data['plan'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;

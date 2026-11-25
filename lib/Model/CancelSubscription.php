@@ -140,7 +140,7 @@ class CancelSubscription implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['notice_periods'] = isset($data['notice_periods']) ? $data['notice_periods'] : null;
         $this->container['notice_periods_after_current'] = isset($data['notice_periods_after_current']) ? $data['notice_periods_after_current'] : null;

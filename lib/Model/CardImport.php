@@ -135,7 +135,7 @@ class CardImport implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['agreement'] = isset($data['agreement']) ? $data['agreement'] : null;
         $this->container['card_identifier'] = isset($data['card_identifier']) ? $data['card_identifier'] : null;

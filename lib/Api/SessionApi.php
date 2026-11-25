@@ -45,7 +45,7 @@ class SessionApi
      *
      * @param \Reepay\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Reepay\ApiClient $apiClient = null)
+    public function __construct(?\Reepay\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $config = clone Configuration::getDefaultConfiguration();

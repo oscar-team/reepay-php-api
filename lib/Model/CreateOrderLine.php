@@ -150,7 +150,7 @@ class CreateOrderLine implements ArrayAccess
      * Constructor
      * @param mixed[] $data Associated array of property values initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['ordertext'] = isset($data['ordertext']) ? $data['ordertext'] : null;
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;

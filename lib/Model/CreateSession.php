@@ -132,7 +132,7 @@ class CreateSession implements ArrayAccess
      */
     protected $container = [];
 
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['configuration'] = isset($data['configuration']) ? $data['configuration'] : null;
         $this->container['locale'] = isset($data['locale']) ? $data['locale'] : null;
